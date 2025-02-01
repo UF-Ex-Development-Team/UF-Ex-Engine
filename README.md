@@ -1,8 +1,8 @@
-## What is UF-Ex Engine?
-UF-Ex, standing for UndyneFight-Ex, is a [C#](https://learn.microsoft.com/en-us/dotnet/csharp/) based engine that uses the [MonoGame Framework](https://monogame.net/) to create Undertale styled rhythm games that was created by T-mas in 2020. The engine is used to create [Rhythm Recall](https://gamejolt.com/games/rhythmrecall/707354) and [OversaveTale Undyne Remake II](https://gamejolt.com/games/OSTundyneRemake2/655685).
+## What is UF-Ex SDK?
+UF-Ex, standing for UndyneFight-Ex, is a SDK written in [C#](https://learn.microsoft.com/en-us/dotnet/csharp/) that uses the [MonoGame Framework](https://monogame.net/) to create Undertale styled rhythm games that was created by T-mas in 2020. The SDK is most well known to have created [Rhythm Recall](https://gamejolt.com/games/rhythmrecall/707354).
 
 ## Why was this repository made?
-The 0.2.2 version of the engine, along with the incomplete 0.2.2 version of Rhythm Recall, is currently [open sourced](https://github.com/Undertale-T-mas/UndyneFight-Ex-RE) and is **discontinued**. This repository is held by one of the original developers (TK), aiming to maintain and optimize the UF-Ex engine for public use and to further develop Rhythm Recall 0.3.0+.
+The 0.2.2 version of the SDK, along with the incomplete 0.2.2 version of Rhythm Recall, is currently [open sourced](https://github.com/Undertale-T-mas/UndyneFight-Ex-RE) and is **discontinued**. This repository is held by one of the original developers (TK), aiming to maintain and optimize the UF-Ex SDK for public use and to further develop Rhythm Recall 0.3.0+.
 
 ## Requirements
 - Microsoft Visual Studio
@@ -14,5 +14,14 @@ The 0.2.2 version of the engine, along with the incomplete 0.2.2 version of Rhyt
 - Windows
 - Linux
 
-## Documentation
-WIP
+## Setting up
+For setting up the solution, please refer to the PDF file attached with the SDK.
+
+## Purpose of this documentation
+Due to the lack of documentation of the earlier versions of the SDK and internal codes, 
+this documentation aims to explain most public variables and functions in the SDK, there are also sections to provide tips and tricks to program in Visual Studio and charting.
+
+This documentation will categorize the functions and variables by their functionality (due to context), and then by their classes, and not by the .cs file they are in respectively, this will also  will **not** cover all variables and/or functions as some of them are only declared public due to the UF-Ex RE SDK.
+
+## Warning
+Due to the lack of documentation prior to v0.3.0, the descriptions of the variables/functions **may not be fully accurate**, if any discrepancy was found between the description of the variable/function and it's actual functionality, please report it in the Discord server.
