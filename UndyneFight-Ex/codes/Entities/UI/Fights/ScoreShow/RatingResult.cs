@@ -4,7 +4,7 @@ using static UndyneFight_Ex.GameStates;
 
 namespace UndyneFight_Ex.Entities
 {
-    public partial class StateShower
+    internal partial class StateShower
     {
         internal partial class ResultShower
         {
@@ -27,13 +27,13 @@ namespace UndyneFight_Ex.Entities
                     oldRating = old;
                     curRating = cur;
                 }
-                readonly float oldRating, curRating;
-                readonly RatingShowing ratingShowing;
+                private readonly float oldRating, curRating;
+                private readonly RatingShowing ratingShowing;
 
                 private class LineDrawer(RatingShowing ratingShowing) : Entity
                 {
-                    readonly RatingShowing rshow = ratingShowing;
-                    int appearTime = 0;
+                    private readonly RatingShowing rshow = ratingShowing;
+                    private int appearTime = 0;
 
                     public override void Draw()
                     {
@@ -82,7 +82,7 @@ namespace UndyneFight_Ex.Entities
                                 "As long as you do yourself well, you are respectable.",
                             ],
                             <95 => [
-                                "Don't be arrogant for brillant achievements of yourself!",
+                                "Don't be arrogant for brilliant achievements of yourself!",
                                 "Only when you have a calm mind will you move forward."
                             ],
                             <100 => [
@@ -136,7 +136,7 @@ namespace UndyneFight_Ex.Entities
                     {
                         case RatingShowState.AddingRating:
                             ratingShowing.SkillColor = Color.Lerp(Color.Transparent, Color.Lime, Min(1, appearTime / 30f));
-                            ratingShowing.SkillString = "+" + Round(curRating - oldRating, 1);
+                            ratingShowing.SkillString = "+" + MathUtil.FloatToString(curRating - oldRating, 1);
                             if (appearTime == 90)
                                 ChangeState(RatingShowState.ShowRating);
                             break;
@@ -154,7 +154,7 @@ namespace UndyneFight_Ex.Entities
                             else if (appearTime >= 40)
                             {
                                 ratingShowing.SkillColor = Color.Lerp(Color.Transparent, Color.White, Min(1, (appearTime - 40) / 30f));
-                                ratingShowing.SkillString = Round(curRating, 2).ToString();
+                                ratingShowing.SkillString = MathUtil.FloatToString(curRating, 2).ToString();
                             }
                             break;
                         case RatingShowState.Encourage:
@@ -177,9 +177,9 @@ namespace UndyneFight_Ex.Entities
                     curState = state;
                     appearTime = 0;
                 }
-                RatingShowState curState;
-                int appearTime;
-                enum RatingShowState
+                private RatingShowState curState;
+                private int appearTime;
+                private enum RatingShowState
                 {
                     AddingRating = 1,
                     KeepRating = 2,

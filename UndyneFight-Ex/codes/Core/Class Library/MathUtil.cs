@@ -7,8 +7,8 @@ namespace UndyneFight_Ex
 {
     public static class MathUtil
     {
-        public static Random rander = new();
-        public static float PI = 3.141592f;
+        internal static Random rander = new();
+        public const float PI = 3.141592f;
         /// <summary>
         /// Checks whether the point is inside of a triangle
         /// </summary>
@@ -22,100 +22,62 @@ namespace UndyneFight_Ex
         {
             Vector2 l1 = v2 - v1, l2 = v3 - v2, l3 = v1 - v3;
             Vector2 d1 = target - v1, d2 = target - v2, d3 = target - v3;
-            float re1 = l1.Cross(d1), re2 = l2.Cross(d2);
-            bool sg1 = re1 > 0, sg2 = re2 > 0;
-            if (sg1 ^ sg2)
-                return false;
-            float re3 = l3.Cross(d3);
-            bool sg3 = re3 > 0;
-            return !(sg1 ^ sg3);
+            float re1 = l1.Cross(d1);
+            return !((re1 > 0) ^ (l2.Cross(d2) > 0)) && !((re1 > 0) ^ l3.Cross(d3) > 0);
         }
         /// <summary>
         /// Checks whether two polygons are colliding
         /// </summary>
-        /// <param name="polygon1">The list of vertices of the first polygon (In clockwise order)</param>
-        /// <param name="polygon2">The list of vertices of the second polygon (In clockwise order)</param>
+        /// <param name="polygonA">The list of vertices of the first polygon (In clockwise order)</param>
+        /// <param name="polygonB">The list of vertices of the second polygon (In clockwise order)</param>
         /// <returns></returns>
-        public static bool PolygonCollide(Vector2[] polygon1, Vector2[] polygon2)
+        public static bool PolygonCollide(Vector2[] polygonA, Vector2[] polygonB)
         {
-            //This function uses the GJK algorithm
+            //Convert polygon to list of lines
+            static List<(Vector2, Vector2)> ConvertToLine(Vector2[] polygon)
+            {
+                List<(Vector2, Vector2)> list = [];
+                for (int i = 0; i < polygon.Length; i++)
+                    list.Add(new(polygon[i], polygon[(i + 1) % polygon.Length]));
+                return list;
+            }
+            List<(Vector2 StartPoint, Vector2 EndPoint)> LinesA = ConvertToLine(polygonA), LinesB = ConvertToLine(polygonB);
+            static bool PointOverlap(Vector2 Point, List<(Vector2, Vector2)> Polygon)
+            {
+                int PointIntersectCount = 0;
+                (Vector2, Vector2) test = new(Point, new Vector2(Point.X + 10000, Point.Y));
+                foreach ((Vector2, Vector2) L in Polygon)
+                    if (LineIntersect(test, L))
+                        PointIntersectCount++;
+                return PointIntersectCount % 2 != 0;
+            }
+            static bool LineIntersect((Vector2 StartPoint, Vector2 EndPoint) lineA, (Vector2 StartPoint, Vector2 EndPoint) lineB)
+            {
+                Vector2 A = lineA.EndPoint - lineA.StartPoint, B = lineB.EndPoint - lineB.StartPoint;
+                float determinant = A.Cross(B);
 
-            //First determine the centroid of the two polygons
-            Vector3 GetCentroid(Vector2[] poly)
-            {
-                float accumulatedArea = 0.0f;
-                Vector2 center = Vector2.Zero;
-                for (int i = 0, j = poly.Length - 1; i < poly.Length; j = i++)
-                {
-                    float temp = Vector2.Dot(poly[i], poly[j]);
-                    accumulatedArea += temp;
-                    center += (poly[i] + poly[j]) * temp;
-                }
-                return Math.Abs(accumulatedArea) < 1E-7f ? Vector3.Zero :  new(center / (accumulatedArea * 3), 0);
+                return determinant != 0 &&
+                    InRange((B.X * (lineA.StartPoint.Y - lineB.StartPoint.Y) - B.Y * (lineA.StartPoint.X - lineB.StartPoint.X)) / determinant, 0, 1) &&
+                    InRange((A.X * (lineA.StartPoint.Y - lineB.StartPoint.Y) - A.Y * (lineA.StartPoint.X - lineB.StartPoint.X)) / determinant, 0, 1);
             }
-            Vector3 GetFurthestPoint(Vector2[] vertices, Vector3 Center)
-            {
-                Vector3 furtherestPt = Center;
-                foreach (var vertex in vertices)
-                {
-                    Vector3 ver3 = new(vertex, 0);
-                    if ((ver3 - furtherestPt).Length() > (furtherestPt - Center).Length())
-                        furtherestPt = ver3;
-                }
-                return furtherestPt;
-            }
-            Vector3 GetSupport(Vector2[] poly1, Vector2[] poly2, Vector3 cen) => GetFurthestPoint(poly1, cen) - GetFurthestPoint(poly2, -cen);
-            //Get the normalized displacement of the two polygons
-            Vector3 Distance = GetCentroid(polygon2) - GetCentroid(polygon1), A; Distance.Normalize();
-            //Get the simplex
-            List<Vector3> Simplex = [GetSupport(polygon1, polygon2, Distance)];
-            Vector3 d = -Simplex[0];
-            //Function for handling the simplex value
-            bool HandleSimplex(List<Vector3> simplex, Vector3 d)
-            {
-                bool LineCase(List<Vector3> simplex, Vector3 d, out Vector3 newD)
-                {
-                    Vector3 B = simplex[0], A = simplex[1], AB = B - A;
-                    //Update d
-                    newD = AB.Cross(-A).Cross(AB);
-                    return false;
-                }
-                bool TriangleCase(List<Vector3> simplex, Vector3 d, out Vector3 newD)
-                {
-                    //Assign default value
-                    newD = d;
-                    Vector3 C = simplex[0], B = simplex[1], A = simplex[2], AB = B - A, AC = C - A,
-                    //Gets the perpendicular vector of each line segment
-                    ABPerp = AC.Cross(AB).Cross(AB), ACPerp = AB.Cross(AC).Cross(AC);
-                    if (Vector3.Dot(ABPerp, -A) > 0)
-                    {
-                        simplex.Remove(C);
-                        newD = ABPerp;
-                        return false;
-                    }
-                    else if (Vector3.Dot(ACPerp, -A) > 0)
-                    {
-                        simplex.Remove(B);
-                        newD = ACPerp;
-                        return false;
-                    }
+
+            //Check if any two pairs of lines intersect
+            foreach ((Vector2, Vector2) lineA in LinesA)
+                foreach ((Vector2, Vector2) lineB in LinesB)
+                    if (LineIntersect(lineA, lineB))
+                        return true;
+            //Check if two points collide with respect to polygonA
+            foreach ((Vector2 StartPoint, Vector2 EndPoint) lineA in LinesA)
+                if (PointOverlap(lineA.StartPoint, LinesB))
                     return true;
-                }
-                return simplex.Count == 2 ? LineCase(simplex, d, out d) : TriangleCase(simplex, d, out d);
-            }
-            //Check whether the support point passes through the origin
-            while (true)
-            {
-                A = GetSupport(polygon1, polygon2, d);
-                if (Vector3.Dot(A, d) < 0)
-                    return false;
-                Simplex.Add(A);
-                if (HandleSimplex(Simplex, d))
+            //Check if two points collide with respect to polygonB
+            foreach ((Vector2 StartPoint, Vector2 EndPoint) lineB in LinesB)
+                if (PointOverlap(lineB.StartPoint, LinesA))
                     return true;
-            }
+            return false;
         }
         /// <summary>
-        /// Converts a float to a string, regardless of decimal seperator
+        /// Converts a float to a string, regardless of decimal separator
         /// </summary>
         /// <param name="val">The value to convert to string</param>
         /// <param name="digits">The rounding digit of the string</param>
@@ -129,14 +91,14 @@ namespace UndyneFight_Ex
             return Round(val, digits).ToString(padMeth).Replace(',', '.');
         }
         /// <summary>
-        /// Converts a float from a string, regardless of decimal seperator
+        /// Converts a float from a string, regardless of decimal separator
         /// </summary>
         /// <param name="str">The string to convert to a float</param>
         /// <returns>The float from string</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float FloatFromString(string str)
         {
-            //Uses , as seperator
+            //Uses , as separator
             if (str.Contains(','))
                 str = str.Trim(',');
             string[] strs = str.Split('.');
@@ -147,17 +109,16 @@ namespace UndyneFight_Ex
                 for (int i = 1; i < strs.Length - 2; i++)
                     BeforeDecimal += strs[i];
             float fin = (float)Convert.ToDouble(BeforeDecimal) + (float)Convert.ToDouble(AfterDecimal) / Pow(10, AfterDecimal.Length);
-            return fin;
+            return str.Contains('.') ? fin : (float)Convert.ToDouble(BeforeDecimal);
         }
         /// <summary>
         /// Returns the minimal angle difference between two angles
         /// </summary>
         /// <param name="rot1">The first angle</param>
         /// <param name="rot2">The second angle</param>
-        /// <returns>The angle difference, [0, 180)</returns>
+        /// <returns>The angle difference, range is [0, 180]</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float RotationDist(float rot1, float rot2) =>
-            MathF.Min((rot1 + 360 - rot2) % 360, (rot2 + 360 - rot1) % 360);
+        public static float RotationDist(float rot1, float rot2) => MathF.Min((rot1 + 360 - rot2) % 360, (rot2 + 360 - rot1) % 360);
         /// <summary>
         /// Projects a vector onto the given vector
         /// </summary>
@@ -165,8 +126,7 @@ namespace UndyneFight_Ex
         /// <param name="vec">The vector to project to</param>
         /// <returns></returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float Project(Vector2 origin, Vector2 vec) =>
-            Vector2.Dot(origin, vec) / origin.Length();
+        public static float Project(Vector2 origin, Vector2 vec) => Vector2.Dot(origin, vec) / origin.Length();
         /// <summary>
         /// Rotates the vector by the given angle in degrees
         /// </summary>
@@ -174,8 +134,7 @@ namespace UndyneFight_Ex
         /// <param name="rot">The amount of degrees to rotate</param>
         /// <returns>The rotated vector</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static Vector2 Rotate(Vector2 origin, float rot) =>
-            GetVector2(origin.Length(), origin.Direction() + rot);
+        public static Vector2 Rotate(Vector2 origin, float rot) => GetVector2(origin.Length(), origin.Direction() + rot);
         /// <summary>
         /// Rotates the vector by the given angle in radians
         /// </summary>
@@ -185,16 +144,15 @@ namespace UndyneFight_Ex
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Vector2 RotateRadian(Vector2 origin, float rad)
         {
-            float len = origin.Length();
-            float angle = Atan2(origin.Y, origin.X);
-            return new Vector2(MathF.Cos(angle + rad) * len, Sin(angle + rad) * len);
+            float angle = Atan2(origin.Y, origin.X) + rad;
+            return new Vector2(MathF.Cos(angle), Sin(angle)) * origin.Length();
         }
         /// <summary>
         /// Returns the minimal angle difference between two angles
         /// </summary>
         /// <param name="rot1">The first angle</param>
         /// <param name="rot2">The second angle</param>
-        /// <returns>The angle difference, [0, 180)</returns>
+        /// <returns>The angle difference, [0, 180]</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float MinRotate(float rot1, float rot2)
         {
@@ -210,8 +168,7 @@ namespace UndyneFight_Ex
         /// <param name="pow">The power to raise to</param>
         /// <returns>The number raised to the power <paramref name="pow"/> maintaining the sign of <paramref name="val"/>.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float SignedPow(float val, float pow) =>
-            val >= 0 ? Pow(val, pow) : -Pow(-val, pow);
+        public static float SignedPow(float val, float pow) => val >= 0 ? Pow(val, pow) : -Pow(-val, pow);
 
         /// <summary>
         /// Get the angle in degrees between the two vectors
@@ -220,33 +177,35 @@ namespace UndyneFight_Ex
         /// <param name="end">The ending vector</param>
         /// <returns>The angle between the two vectors</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float Direction(Vector2 start, Vector2 end) =>
-            Atan2((end - start).Y, (end - start).X) / MathF.PI * 180;
+        public static float Direction(Vector2 start, Vector2 end) => Atan2((end - start).Y, (end - start).X) / MathF.PI * 180;
         /// <summary>
         /// Gets the direction of the vector with respect to the origin
         /// </summary>
         /// <param name="vec">The vector to check</param>
         /// <returns>The angle of the vector</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float Direction(this Vector2 vec) =>
-            Atan2(vec.Y, vec.X) / MathF.PI * 180;
+        public static float Direction(this Vector2 vec) => Atan2(vec.Y, vec.X) / MathF.PI * 180;
         /// <summary>
-        /// 即调整后的Tanh函数。用于丝滑过渡。val定义域为[0, 1]时，函数值域为[0, 1]
         /// Adjusted <see cref="Tanh(float)"/> value, used for smooth transition. range and domain are both [0, 1]
         /// </summary>
         /// <param name="val"></param>
         /// <returns></returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float Sigmoid01(float val) =>
-            (Tanh(val * 6 - 3) / 0.99505f + 1) / 2f;
+        public static float Sigmoid01(float val) => (Tanh(val * 6 - 3) / 0.99505f + 1) / 2f;
         /// <summary>
-        /// Cross product of two vectors
+        /// The determinant/cross product of two 2D vectors
+        /// </summary>
+        /// <param name="vec">The first vector</param>
+        /// <param name="vec2">The second vector</param>
+        /// <returns>The determinant/cross product</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float Cross(this Vector2 vec, Vector2 vec2) => vec.X * vec2.Y - vec.Y * vec2.X;
+        /// <summary>
+        /// The cross product of two 3D vectors
         /// </summary>
         /// <param name="vec">The first vector</param>
         /// <param name="vec2">The second vector</param>
         /// <returns>The cross product</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float Cross(this Vector2 vec, Vector2 vec2) => vec.X * vec2.Y - vec.Y * vec2.X;
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Vector3 Cross(this Vector3 vec, Vector3 vec2) => new(vec.Y * vec2.Z - vec.Z * vec2.Y, vec.Z * vec2.X - vec.X * vec2.Z, vec.X * vec2.Y - vec.Y * vec2.X);
         /// <summary>
@@ -255,20 +214,18 @@ namespace UndyneFight_Ex
         /// <param name="min">The minimum value</param>
         /// <param name="val">The value to set</param>
         /// <param name="max">The maximum value</param>
-        /// <returns>The clampped value</returns>
+        /// <returns>The clamped value</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static int Clamp(int min, int val, int max) =>
-            val > max ? max : (val < min ? min : val);
+        public static int Clamp(int min, int val, int max) => val > max ? max : (val < min ? min : val);
         /// <summary>
         /// Clamps the value between the two specified values
         /// </summary>
         /// <param name="min">The minimum value</param>
         /// <param name="val">The value to set</param>
         /// <param name="max">The maximum value</param>
-        /// <returns>The clampped value</returns>
+        /// <returns>The clamped value</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float Clamp(float min, float val, float max) =>
-            val > max ? max : (val < min ? min : val);
+        public static float Clamp(float min, float val, float max) => val > max ? max : (val < min ? min : val);
         /// <summary>
         /// Gets the radian equivalent of the angle in degrees
         /// </summary>
@@ -290,8 +247,7 @@ namespace UndyneFight_Ex
         /// <param name="angle">The specified angle (in degrees)</param>
         /// <returns></returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static Vector2 GetVector2(float length, float angle) =>
-            new(MathF.Cos(GetRadian(angle)) * length, Sin(GetRadian(angle)) * length);
+        public static Vector2 GetVector2(float length, float angle) => new Vector2(MathF.Cos(GetRadian(angle)), Sin(GetRadian(angle))) * length;
         /// <summary>
         /// Gets the distance between two vectors
         /// </summary>
@@ -444,15 +400,13 @@ namespace UndyneFight_Ex
         /// </summary>
         /// <param name="password">The string to encrypt</param>
         /// <param name="rsaKeyPublic">The key of encryption</param>
-        /// <returns>The enrypted string</returns>
+        /// <returns>The encrypted string</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static string Encrypt(string password, string rsaKeyPublic)
         {
-            byte[] bytes = Encoding.ASCII.GetBytes(password);
             RSACryptoServiceProvider rsa = new();
             rsa.FromXmlString(rsaKeyPublic);
-            byte[] encrypted = rsa.Encrypt(bytes, false);
-            return Convert.ToBase64String(encrypted);
+            return Convert.ToBase64String(rsa.Encrypt(Encoding.ASCII.GetBytes(password), false));
         }
         /// <summary>
         /// RSA decryption of a string
@@ -479,7 +433,7 @@ namespace UndyneFight_Ex
         /// <param name="value">The value to check</param>
         /// <param name="min">The minimum range</param>
         /// <param name="max">The maximum range</param>
-        /// <returns>Whether the value is within the range</returns>
+        /// <returns>Whether value is [<paramref name="min"/>,<paramref name="max"/>]</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool InRange<T>(this T value, T min, T max) where T : IComparable => value.CompareTo(min) >= 0 && value.CompareTo(max) <= 0;
     }

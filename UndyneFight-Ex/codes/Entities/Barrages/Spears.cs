@@ -108,7 +108,7 @@ namespace UndyneFight_Ex.Entities
         /// </summary>
         public float Speed { set => speed = value; }
         /// <summary>
-        /// The acceleration of the spear
+        /// The acceleration of the spear (Default 0.41f)
         /// </summary>
         public float Acceleration { private get; set; } = 0.41f;
         /// <summary>
@@ -176,7 +176,7 @@ namespace UndyneFight_Ex.Entities
     /// <param name="linearSpeed">The speed of the spear</param>
     /// <param name="distance">The initial distance between the spear and the target</param>
     /// <param name="rotation">The angle of the spear with respect to the center</param>
-    /// <param name="waitingTime">The time delay before shooting</param>
+    /// <param name="waitingTime">The time delay before the spear shoots</param>
     public class SwarmSpear(Vector2 rotateCentre, float linearSpeed, float distance, float rotation, float waitingTime) : Spear
     {
         private Vector2 missionCentre = rotateCentre;
@@ -232,13 +232,13 @@ namespace UndyneFight_Ex.Entities
     /// </summary>
     public class CircleSpear : Spear
     {
-        public Vector2 rotateCentre;
+        private Vector2 rotateCentre;
         private int appearTime = 0;
-        public float rotateSpeed;
-        public float linearSpeed;
-        public float distance;
-        public readonly float rotateFriction = 0.01f;
-        public readonly float rotateAngleDisplace = 0;
+        private float rotateSpeed;
+        private readonly float linearSpeed;
+        private float distance;
+        private readonly float rotateFriction = 0.01f;
+        private readonly float rotateAngleDisplace = 0;
         /// <summary>
         /// Creates a spear that moves around the target with a circular motion
         /// </summary>
@@ -284,30 +284,19 @@ namespace UndyneFight_Ex.Entities
         public override void Draw() => FormalDraw(Image, Centre, drawingColor * alpha, GetRadian(Rotation + rotateAngleDisplace), ImageCentre);
     }
     /// <summary>
-    /// Warning, this spear type is rarely used and TK is unsure whether it will function properly as it did not function properly during the development of TaS
+    /// A spear with custom motion (Initial alpha is 0, be aware)
     /// </summary>
     public class CustomSpear : Spear, ICustomMotion
     {
         /// <inheritdoc/>
-        public Vector2 CentrePosition => delta;
-        /// <inheritdoc/>
-        public float[] PositionRouteParam { get; set; }
-        /// <inheritdoc/>
-        public float[] RotationRouteParam { get; set; }
-        /// <inheritdoc/>
-        public float AppearTime { get; private set; } = 0;
-        /// <inheritdoc/>
-        public Func<ICustomMotion, Vector2> PositionRoute { get; set; }
-        /// <inheritdoc/>
-        public Func<ICustomMotion, float> RotationRoute { get; set; }
+        public new Vector2 CentrePosition => delta;
         private Vector2 delta, startPos;
         /// <inheritdoc/>
-        public CustomSpear(Vector2 startPos, Func<ICustomMotion, Vector2> positionRoute, Func<ICustomMotion, float> rotationRoute)
+        public CustomSpear(Func<ICustomMotion, Vector2> positionRoute, Func<ICustomMotion, float> rotationRoute)
         {
             UpdateIn120 = true;
             alpha = 0.0f;
-            Centre = startPos;
-            this.startPos = startPos;
+            Centre = startPos = Vector2.Zero;
             PositionRoute = positionRoute;
             RotationRoute = rotationRoute;
         }
@@ -321,19 +310,19 @@ namespace UndyneFight_Ex.Entities
         }
         /// <inheritdoc/>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void AlphaIncrease(float time)
+        public void AlphaIncrease(float time, float val = 1)
         {
-            float del = (1 - alpha) / (time * 2f);
-            AddInstance(new TimeRangedEvent(time, () => alpha = Min(1, alpha + del)) { UpdateIn120 = true });
-            AddInstance(new InstantEvent(time + 0.5f, () => alpha = 1));
+            float total = val, once = total / time;
+            AddInstance(new TimeRangedEvent(time, () => Alpha += once));
         }
         /// <inheritdoc/>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void AlphaDecrease(float time)
+        public void AlphaDecrease(float time, float? val = null, bool? willDispose = true)
         {
-            float del = alpha / (time * 2f);
-            AddInstance(new TimeRangedEvent(time, () => alpha = Max(0, alpha - del)) { UpdateIn120 = true });
-            AddInstance(new InstantEvent(time + 0.5f, () => { alpha = 0; Dispose(); }));
+            float total = val ??= Alpha, once = total / time;
+            AddInstance(new TimeRangedEvent(time, () => Alpha -= once));
+            if (val == Alpha && (willDispose ?? true))
+                AddInstance(new InstantEvent(time, Dispose));
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using Microsoft.Xna.Framework.Audio;
-using Microsoft.Xna.Framework.Input;
+﻿using Microsoft.Xna.Framework.Input;
 using static UndyneFight_Ex.GameStates;
 
 namespace UndyneFight_Ex.Entities
@@ -9,16 +8,17 @@ namespace UndyneFight_Ex.Entities
     /// </summary>
     public class RebindKeyScene : Scene
     {
-        Dictionary<InputIdentity, List<Keys>> InputKeys;
-        Dictionary<InputIdentity, string> KeyNames;
-        List<Keys> UsedKeys, KeysHeldBeforeBinding;
-        readonly static List<Keys> ForbiddenKeys = [Keys.Escape, Keys.CapsLock, Keys.LeftWindows, Keys.RightWindows, Keys.Apps, Keys.Sleep, Keys.Separator, Keys.BrowserBack, Keys.BrowserFavorites, Keys.BrowserForward, Keys.BrowserHome, Keys.BrowserRefresh, Keys.BrowserSearch, Keys.BrowserStop, Keys.VolumeMute, Keys.VolumeDown, Keys.VolumeUp, Keys.MediaNextTrack, Keys.MediaNextTrack, Keys.MediaPlayPause, Keys.MediaStop, Keys.MediaStop, Keys.SelectMedia, Keys.LaunchMail, Keys.LaunchApplication1, Keys.LaunchApplication2, Keys.Pause, Keys.Scroll, Keys.PrintScreen];
-        readonly static List<InputIdentity> debugKeys = [InputIdentity.Number0, InputIdentity.Number1, InputIdentity.Number2, InputIdentity.Number3, InputIdentity.Number4, InputIdentity.Number5, InputIdentity.Number6, InputIdentity.Number7, InputIdentity.Number8, InputIdentity.Number9, InputIdentity.Heal, InputIdentity.Tab, InputIdentity.Special, InputIdentity.Backspace];
-        int curSelection = 0, keysCount, arrowHeld = 0, state = 0, RKeyTimer = 0;
-        float scrollY = 175, scrollYTar = 175, bindAlpha = 0;
-        bool moreBindSelection;
-        string BindingDisplayText;
-        float[] textScale, textScaleTar;
+        private Dictionary<InputIdentity, List<Keys>> InputKeys;
+        private Dictionary<InputIdentity, string> KeyNames;
+        private List<Keys> UsedKeys, KeysHeldBeforeBinding;
+        //I know, it's a holy table, but it has to be this way
+        private static readonly HashSet<Keys> ForbiddenKeys = [Keys.Escape, Keys.CapsLock, Keys.LeftWindows, Keys.RightWindows, Keys.Apps, Keys.Sleep, Keys.Separator, Keys.BrowserBack, Keys.BrowserFavorites, Keys.BrowserForward, Keys.BrowserHome, Keys.BrowserRefresh, Keys.BrowserSearch, Keys.BrowserStop, Keys.VolumeMute, Keys.VolumeDown, Keys.VolumeUp, Keys.MediaNextTrack, Keys.MediaNextTrack, Keys.MediaPlayPause, Keys.MediaStop, Keys.MediaStop, Keys.SelectMedia, Keys.LaunchMail, Keys.LaunchApplication1, Keys.LaunchApplication2, Keys.Pause, Keys.Scroll, Keys.PrintScreen];
+        private static readonly HashSet<InputIdentity> debugKeys = [InputIdentity.Number0, InputIdentity.Number1, InputIdentity.Number2, InputIdentity.Number3, InputIdentity.Number4, InputIdentity.Number5, InputIdentity.Number6, InputIdentity.Number7, InputIdentity.Number8, InputIdentity.Number9, InputIdentity.Heal, InputIdentity.Tab, InputIdentity.Special, InputIdentity.Backspace];
+        private int curSelection = 0, keysCount, arrowHeld = 0, state = 0, RKeyTimer = 0;
+        private float scrollY = 175, scrollYTar = 175, bindAlpha = 0;
+        private bool moreBindSelection;
+        private string BindingDisplayText;
+        private float[] textScale, textScaleTar;
         private enum BindingState
         {
             Choosing = 0,
@@ -26,9 +26,9 @@ namespace UndyneFight_Ex.Entities
             ConfirmMoreBind = 2,
             BindMore = 3
         }
-        public RebindKeyScene() => Initalize();
+        public RebindKeyScene() => Initialize();
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        private void Initalize()
+        private void Initialize()
         {
             InputKeys = KeyChecker.InputKeys;
             KeyNames = [];
@@ -38,7 +38,7 @@ namespace UndyneFight_Ex.Entities
                 if (debugKeys.Contains(InputKeys.Keys.ElementAt(i)))
                     continue;
                 string FinTxt = string.Empty;
-                foreach (var item in InputKeys.Values.ElementAt(i))
+                foreach (Keys item in InputKeys.Values.ElementAt(i))
                 {
                     FinTxt += MiscUtil.KeyToString(item) + ", ";
                     UsedKeys.Add(item);
@@ -73,7 +73,7 @@ namespace UndyneFight_Ex.Entities
                         InputKeys = new(KeyChecker.DefaultKeys);
                         for (int i = 0; i < InputKeys.Count; i++)
                             KeyChecker.SetIdentityKey(InputKeys.Keys.ElementAt(i), KeyChecker.DefaultKeys.Values.ElementAt(i));
-                        Initalize();
+                        Initialize();
                         FightResources.Sounds.damaged.CreateInstance().Play();
                     }
                 }
@@ -107,7 +107,7 @@ namespace UndyneFight_Ex.Entities
                 if (IsKeyPressed120f(Keys.Enter))
                 {
                     state = (int)BindingState.Binding;
-                    BindingDisplayText = "Press the key you want to bind to\n" + KeyNames.Keys.ElementAt(curSelection).ToString();
+                    BindingDisplayText = $"Press the key you want to bind to\n{KeyNames.Keys.ElementAt(curSelection)}";
                     KeysHeldBeforeBinding = [.. Keyboard.GetState().GetPressedKeys()];
                     KeyChecker.InputKeys[KeyNames.Keys.ElementAt(curSelection)].ForEach(x => UsedKeys.Remove(x));
                     FightResources.Sounds.select.CreateInstance().Play();
@@ -115,7 +115,7 @@ namespace UndyneFight_Ex.Entities
             }
             else if (state == (int)BindingState.Binding)
             {
-                foreach (var item in KeysHeldBeforeBinding)
+                foreach (Keys item in KeysHeldBeforeBinding)
                 {
                     if (!IsKeyDown(item))
                     {
@@ -125,22 +125,22 @@ namespace UndyneFight_Ex.Entities
                 }
                 if (Keyboard.GetState().GetPressedKeyCount() > 0)
                 {
-                    var list = Keyboard.GetState().GetPressedKeys();
-                    var finList = list.Except(KeysHeldBeforeBinding);
+                    Keys[] list = Keyboard.GetState().GetPressedKeys();
+                    IEnumerable<Keys> finList = list.Except(KeysHeldBeforeBinding);
                     if (!finList.Any())
                         return;
-                    var firstKey = finList.First();
+                    Keys firstKey = finList.First();
                     if (ForbiddenKeys.Contains(firstKey))
-                        BindingDisplayText = "This key is forbidden\nPlease choose another key for\n" + KeyNames.Keys.ElementAt(curSelection).ToString();
+                        BindingDisplayText = $"This key is forbidden\nPlease choose another key for\n{KeyNames.Keys.ElementAt(curSelection)}";
                     else if (UsedKeys.Contains(firstKey))
-                        BindingDisplayText = "This key is already chosen\nPlease choose another key for\n" + KeyNames.Keys.ElementAt(curSelection).ToString();
+                        BindingDisplayText = $"This key is already chosen\nPlease choose another key for\n{KeyNames.Keys.ElementAt(curSelection)}";
                     else
                     {
                         KeyChecker.InputKeys[KeyNames.Keys.ElementAt(curSelection)] = [firstKey];
                         UsedKeys.Add(firstKey);
-                        Initalize();
+                        Initialize();
                         KeyChecker.SetIdentityKey(KeyNames.Keys.ElementAt(curSelection), [firstKey]);
-                        BindingDisplayText = "Do you want to bind more keys to " + KeyNames.Keys.ElementAt(curSelection).ToString() + "?";
+                        BindingDisplayText = $"Do you want to bind more keys to {KeyNames.Keys.ElementAt(curSelection)}?";
                         state = (int)BindingState.ConfirmMoreBind;
                         moreBindSelection = false;
                     }
@@ -156,7 +156,7 @@ namespace UndyneFight_Ex.Entities
                     if (moreBindSelection)
                     {
                         KeysHeldBeforeBinding = [.. Keyboard.GetState().GetPressedKeys()];
-                        BindingDisplayText = "Press the key you want to bind to\n" + KeyNames.Keys.ElementAt(curSelection).ToString();
+                        BindingDisplayText = $"Press the key you want to bind to\n{KeyNames.Keys.ElementAt(curSelection)}";
                     }
                 }
             }
@@ -164,22 +164,22 @@ namespace UndyneFight_Ex.Entities
             {
                 if (Keyboard.GetState().GetPressedKeyCount() > 0)
                 {
-                    var list = Keyboard.GetState().GetPressedKeys();
-                    var finList = list.Except(KeysHeldBeforeBinding);
+                    Keys[] list = Keyboard.GetState().GetPressedKeys();
+                    IEnumerable<Keys> finList = list.Except(KeysHeldBeforeBinding);
                     if (!finList.Any())
                         return;
-                    var firstKey = finList.First();
+                    Keys firstKey = finList.First();
                     if (ForbiddenKeys.Contains(firstKey))
-                        BindingDisplayText = "This key is forbidden\nPlease choose another key for\n" + KeyNames.Keys.ElementAt(curSelection).ToString();
+                        BindingDisplayText = $"This key is forbidden\nPlease choose another key for\n{KeyNames.Keys.ElementAt(curSelection)}";
                     else if (KeyChecker.InputKeys[KeyChecker.InputKeys.Keys.ElementAt(curSelection)].Contains(firstKey) || UsedKeys.Contains(firstKey))
-                        BindingDisplayText = "This key is already chosen\nPlease choose another key for\n" + KeyNames.Keys.ElementAt(curSelection).ToString();
+                        BindingDisplayText = $"This key is already chosen\nPlease choose another key for\n{KeyNames.Keys.ElementAt(curSelection)}";
                     else
                     {
                         KeyChecker.InputKeys[KeyNames.Keys.ElementAt(curSelection)].Add(firstKey);
                         UsedKeys.Add(firstKey);
                         KeyChecker.SetIdentityKey(KeyNames.Keys.ElementAt(curSelection), KeyChecker.InputKeys[KeyNames.Keys.ElementAt(curSelection)]);
-                        Initalize();
-                        BindingDisplayText = "Do you want to bind more keys to\n" + KeyNames.Keys.ElementAt(curSelection).ToString() + "?";
+                        Initialize();
+                        BindingDisplayText = $"Do you want to bind more keys to\n{KeyNames.Keys.ElementAt(curSelection)}?";
                         state = (int)BindingState.ConfirmMoreBind;
                         moreBindSelection = false;
                     }

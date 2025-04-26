@@ -3,18 +3,18 @@ namespace UndyneFight_Ex.Entities
 {
     internal class CheatDetector : Entity
     {
-        class FrameDetector : Entity
+        private class FrameDetector : Entity
         {
             public FrameDetector()
             {
                 cur = DateTime.Now;
                 UpdateIn120 = true;
             }
-            DateTime cur;
-            int count = 0;
-            float frameAverage = 0;
-            readonly List<int> frames = [];
-            int timeSustain0 = 0, timeSustain1 = 0, timeSustain2 = 0;
+            private DateTime cur;
+            private int count = 0;
+            private float frameAverage = 0;
+            private readonly List<int> frames = [];
+            private int timeSustain0 = 0, timeSustain1 = 0, timeSustain2 = 0;
             public override void Draw()
             {
 #if DEBUG
@@ -29,7 +29,7 @@ namespace UndyneFight_Ex.Entities
                 else if (timeSustain0 >= 1)
                     color = Color.Yellow;
 
-                font.Draw(frameAverage.ToString("F1"), new(0, 0), color, 0.6f, 0.5f);
+                font.Draw(frameAverage.ToString("F1"), new(0, 0), color * Fight.Functions.ScreenDrawing.UIColor.A, 0.6f, 0.5f);
 #endif
             }
 
@@ -71,9 +71,9 @@ namespace UndyneFight_Ex.Entities
                 }
             }
         }
-        class ProcessDetector : GameObject
+        private class ProcessDetector : GameObject
         {
-            int appearTime = 0;
+            private int appearTime = 0;
             public override void Update()
             {
                 appearTime++;

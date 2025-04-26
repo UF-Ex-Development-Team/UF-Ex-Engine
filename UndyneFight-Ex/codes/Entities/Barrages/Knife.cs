@@ -11,7 +11,7 @@ namespace UndyneFight_Ex.Entities
                     ? (GameStates.CurrentScene as SongFightingScene).JudgeState
                     : JudgementState.Lenient;
 
-        readonly float delay;
+        private readonly float delay;
 
         public Knife(float delay, Func<ICustomMotion, Vector2> vecease, Func<ICustomMotion, float> rotease)
         {
@@ -25,9 +25,9 @@ namespace UndyneFight_Ex.Entities
         }
         public Knife(float delay, Vector2 centre, float rot) : this(delay, SimplifiedEasing.Stable(0, centre), SimplifiedEasing.Stable(0, rot)) { }
 
-        bool build = true;
-        int score = 3;
-        bool hasHit;
+        private bool build = true;
+        private int score = 3;
+        private bool hasHit;
         public bool MarkScore { get; set; } = true;
 
         public Func<ICustomMotion, Vector2> PositionRoute { get; set; }
@@ -62,7 +62,7 @@ namespace UndyneFight_Ex.Entities
                 return;
             float A, B, C, dist;
             bool needAP = ((CurrentScene as FightScene).Mode & GameMode.PerfectOnly) != 0;
-            if (Rotation % 90 < 0.1f || Rotation % 90 > 89.9f)
+            if (Rotation % 90 is < 0.1f or > 89.9f)
                 dist = Centre.X - Heart.Centre.X;
             else
             {
@@ -111,8 +111,8 @@ namespace UndyneFight_Ex.Entities
             }
         }
 
-        float scale = 0;
-        float rayAlpha = 1;
+        private float scale = 0;
+        private float rayAlpha = 1;
         public override void Update()
         {
             AppearTime += 0.5f;

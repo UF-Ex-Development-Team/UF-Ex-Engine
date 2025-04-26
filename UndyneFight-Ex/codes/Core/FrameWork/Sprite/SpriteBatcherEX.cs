@@ -44,7 +44,7 @@ namespace UndyneFight_Ex
                 _items.Clear();
             }
 
-            readonly VertexPositionColorTexture[] buffer = new VertexPositionColorTexture[3];
+            private readonly VertexPositionColorTexture[] buffer = new VertexPositionColorTexture[3];
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             private void DrawItem(SpriteBatchItem item)
             {

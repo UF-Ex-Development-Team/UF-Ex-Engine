@@ -5,12 +5,12 @@ namespace UndyneFight_Ex.Entities
 {
     public class CashIndicater : Entity
     {
-        float x = -444;
+        private float x = -444;
         public CashIndicater()
         {
             ValueEasing.EaseBuilder builder = new();
             builder.Insert(45, ValueEasing.EaseOutBack(-220, 0, 45));
-            builder.Run(s => { x = s; });
+            builder.Run(s => x = s);
         }
 
         public override void Draw()
@@ -29,7 +29,7 @@ namespace UndyneFight_Ex.Entities
         {
             ValueEasing.EaseBuilder builder = new();
             builder.Insert(44, ValueEasing.EaseInBack(x, -220, 44));
-            builder.Run(s => { x = s; });
+            builder.Run(s => x = s);
             AddChild(new InstantEvent(45, base.Dispose));
         }
     }
@@ -42,7 +42,7 @@ namespace UndyneFight_Ex.Entities
 
             protected abstract Selector AreaEntity { get; }
 
-            bool isSelected = false;
+            private bool isSelected = false;
             public void DeSelected() => isSelected = false;
 
             public void Selected() => isSelected = true;
@@ -79,11 +79,8 @@ namespace UndyneFight_Ex.Entities
             };
             ResetSelect();
             Fight.Functions.PlaySound(FightResources.Sounds.select, 0.45f);
-            Selected += () => { Fight.Functions.PlaySound(FightResources.Sounds.select); };
-            SelectChanged += () =>
-            {
-                Fight.Functions.PlaySound(FightResources.Sounds.changeSelection, 0.45f);
-            };
+            Selected += () => Fight.Functions.PlaySound(FightResources.Sounds.select);
+            SelectChanged += () => Fight.Functions.PlaySound(FightResources.Sounds.changeSelection, 0.45f);
             PushSelection(new CashChanger(new(30, 30, 283, 110)));
         }
         public override void Update() => base.Update();

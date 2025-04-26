@@ -13,11 +13,11 @@ namespace UndyneFight_Ex
         private RasterizerState _rasterizerState;
         private Effect _effect;
         protected GraphicsDevice _graphicDevice;
+        public GraphicsDevice GraphicsDevice => _graphicDevice;
         private readonly SpriteEffect _spriteEffect;
         private readonly EffectPass _spritePass;
-        private SamplerState _defaultState;
         public static SamplerState NearestSample { get; set; }
-        public SamplerState DefaultState { get => _defaultState; set => _defaultState = value; }
+        public SamplerState DefaultState { get; set; }
         private static readonly Dictionary<GLFont, float> MinFontHeight = [];
         public SpriteBatchEX(GraphicsDevice graphicsDevice)
         {
@@ -41,8 +41,8 @@ namespace UndyneFight_Ex
                     ComparisonFunction = CompareFunction.Never,
                     Filter = TextureFilter.Point
                 };
-                _defaultState = state;
-                NearestSample = _defaultState;
+                DefaultState = state;
+                NearestSample = DefaultState;
             }
         }
         private bool _beginCalled = false;
@@ -91,7 +91,7 @@ namespace UndyneFight_Ex
 
             _sortMode = sortMode;
             _blendState = blendState ?? BlendState.AlphaBlend;
-            _samplerState = samplerState ?? _defaultState;
+            _samplerState = samplerState ?? DefaultState;
             _depthStencilState = depthStencilState ?? DepthStencilState.None;
             _rasterizerState = rasterizerState ?? RasterizerState.CullNone;
             _effect = effect;
@@ -349,9 +349,9 @@ namespace UndyneFight_Ex
         private static void ParseMinFontHeight(GLFont font)
         {
             float minHeight = float.MaxValue;
-            foreach (var item in font.SFX.Characters)
+            foreach (char item in font.SFX.Characters)
             {
-                if (item >= 'a' && item <= 'z')
+                if (item is >= 'a' and <= 'z')
                 {
                     SpriteFont.Glyph curGlyph = font.SFX.Glyphs[font.GetGlyphIndexOrDefault(item)];
                     minHeight = MathF.Min(minHeight, curGlyph.BoundsInTexture.Height);
@@ -359,8 +359,9 @@ namespace UndyneFight_Ex
             }
             MinFontHeight.Add(font, minHeight);
         }
+        public void DrawString(GLFont font, string text, Vector2 position, Color color, float rotation = 0, Vector2? originN = null, Vector2? scaleN = null, SpriteEffects effects = SpriteEffects.None, float layerDepth = 0) => DrawString(font, text, position, [color, color, color, color], rotation, originN, scaleN, effects, layerDepth);
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void DrawString(GLFont font, string text, Vector2 position, Color color, float rotation = 0, Vector2? originN = null, Vector2? scaleN = null, SpriteEffects effects = SpriteEffects.None, float layerDepth = 0)
+        public unsafe void DrawString(GLFont font, string text, Vector2 position, Color[] color, float rotation = 0, Vector2? originN = null, Vector2? scaleN = null, SpriteEffects effects = SpriteEffects.None, float layerDepth = 0)
         {
             vec2 origin = originN ?? Vector2.Zero;
             vec2 scale = scaleN ?? Vector2.One;
@@ -431,9 +432,8 @@ namespace UndyneFight_Ex
                         case '\r':
                             continue;
                         //Fixing incorrect spacing for certain characters
-                        case '(':
-                        case ':':
-                            zero2.X += spriteFont.MeasureString(c.ToString()).X * 0.2f / scale.X;
+                        case '.':
+                            zero2.X += (font.MeasureChar('M').X - font.MeasureChar(c).X) * scale.X;
                             break;
                     }
                     //Fixing incorrect spacing for certain characters
@@ -441,14 +441,8 @@ namespace UndyneFight_Ex
                         switch (prevChar)
                         {
                             case '(':
-                                zero2.X -= spriteFont.MeasureString(c.ToString()).X * 0.2f / scale.X;
-                                break;
-                            case '.':
-                                zero2.X -= spriteFont.MeasureString(c.ToString()).X * 0.1f;
-                                break;
-                            case ':':
                             case '\'':
-                                zero2.X -= spriteFont.MeasureString(c.ToString()).X * 0.4f / scale.X;
+                                zero2.X -= 5 * scale.X;
                                 break;
                         }
 
@@ -491,134 +485,6 @@ namespace UndyneFight_Ex
                     SpriteBatchItem spriteBatchItem = rotation == 0f
                         ? new RectangleItem(position2.X, position2.Y, ptr2->BoundsInTexture.Width * scale.X, ptr2->BoundsInTexture.Height * scale.Y, color, _uvTL, _uvBR, layerDepth, spriteFont.Texture, sortKey)
                         : (SpriteBatchItem)new RectangleItem(position2.X, position2.Y, 0f, 0f, ptr2->BoundsInTexture.Width * scale.X, ptr2->BoundsInTexture.Height * scale.Y, num2, num, color, _uvTL, _uvBR, layerDepth, spriteFont.Texture, sortKey);
-                    _batcher.Insert(spriteBatchItem);
-                    if (false)
-                    {
-                        DrawingLab.DrawRectangle(new CollideRect(position2, ptr2->BoundsInTexture.Size.ToVector2() * scale), color, 2, layerDepth);
-                        DrawingLab.DrawRectangle(new CollideRect(position2, ptr2->Cropping.Size.ToVector2() * scale), Color.Lime, 2, layerDepth + .1f);
-                    }
-                    //position2.Y += spriteFont.LineSpacing;
-                    zero2.X += ptr2->Width + ptr2->RightSideBearing;
-                    prevChar = c;
-                }
-            }
-
-            FlushIfNeeded();
-        }
-        /// <summary>
-        /// Draws a string with 3D vector rotation
-        /// </summary>
-        /// <param name="font">The font to draw</param>
-        /// <param name="text">The text to draw</param>
-        /// <param name="position">The position of the text to draw</param>
-        /// <param name="color">The color of the text</param>
-        /// <param name="rotation">The rotation of the text (X/Yaw, Y/Pitch, Z/Roll)</param>
-        /// <param name="origin">The origin of the text</param>
-        /// <param name="scale">The scale of the text (Doesn't work for now)</param>
-        /// <param name="effects"></param>
-        /// <param name="layerDepth"></param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe void DrawString(GLFont font, string text, Vector2 position, Color[] color, Vector3 rotation, Vector2 origin, Vector2 scale, SpriteEffects effects, float layerDepth)
-        {
-            SpriteFont spriteFont = font.SFX;
-            CheckValid(spriteFont, text);
-            float sortKey = TextureSortKey(layerDepth);
-            Vector2 zero = Vector2.Zero;
-            bool flipV = (effects & SpriteEffects.FlipVertically) == SpriteEffects.FlipVertically;
-            bool flipH = (effects & SpriteEffects.FlipHorizontally) == SpriteEffects.FlipHorizontally;
-            if (flipV || flipH)
-            {
-                Vector2 size = spriteFont.MeasureString(text);
-                if (flipH)
-                {
-                    origin.X *= -1f;
-                    zero.X = -size.X;
-                    scale.X *= -1f;
-                }
-
-                if (flipV)
-                {
-                    origin.Y *= -1f;
-                    zero.Y = spriteFont.LineSpacing - size.Y;
-                    scale.Y *= -1f;
-                }
-            }
-            Matrix.CreateFromYawPitchRoll(MathUtil.GetAngle(rotation.X), MathUtil.GetAngle(rotation.Y), MathUtil.GetAngle(rotation.Z), out Matrix matrix);
-            matrix.M41 = (zero.X - origin.X) * matrix.M11 + (zero.Y - origin.Y) * matrix.M21 + position.X;
-            matrix.M42 = (zero.X - origin.X) * matrix.M12 + (zero.Y - origin.Y) * matrix.M22 + position.Y;
-            matrix.M43 = (zero.X - origin.X) * matrix.M13 + (zero.Y - origin.Y) * matrix.M23;
-            matrix.M33 = scale.X;
-            matrix.M34 = scale.Y;
-
-            Vector2 zero2 = Vector2.Zero;
-            bool newLine = true;
-            char? prevChar = null;
-            fixed (SpriteFont.Glyph* ptr = spriteFont.Glyphs)
-            {
-                foreach (char c in text)
-                {
-                    switch (c)
-                    {
-                        case '\n':
-                            zero2.X = 0f;
-                            zero2.Y += spriteFont.LineSpacing;
-                            newLine = true;
-                            continue;
-                        case '\r':
-                            continue;
-                        //Fixing incorrect spacing for certain characters
-                        case '(':
-                        case ':':
-                            zero2.X += spriteFont.MeasureString(c.ToString()).X * 0.2f / scale.X;
-                            break;
-                    }
-                    //Fixing incorrect spacing for certain characters
-                    if (prevChar != null)
-                        switch (prevChar)
-                        {
-                            case '(':
-                                zero2.X -= spriteFont.MeasureString(c.ToString()).X * 0.2f / scale.X;
-                                break;
-                            case '.':
-                                zero2.X -= spriteFont.MeasureString(c.ToString()).X * 0.1f;
-                                break;
-                            case ':':
-                            case '\'':
-                                zero2.X -= spriteFont.MeasureString(c.ToString()).X * 0.4f / scale.X;
-                                break;
-                        }
-
-                    SpriteFont.Glyph* ptr2 = ptr + font.GetGlyphIndexOrDefault(c);
-                    if (newLine)
-                    {
-                        zero2.X = Math.Max(ptr2->LeftSideBearing, 0f);
-                        newLine = false;
-                    }
-                    else
-                        zero2.X += spriteFont.Spacing + ptr2->LeftSideBearing;
-
-                    Vector2 position2 = zero2;
-                    if (flipH)
-                        position2.X += ptr2->BoundsInTexture.Width;
-
-                    position2.X += ptr2->Cropping.X;
-                    if (flipV)
-                        position2.Y += ptr2->BoundsInTexture.Height - spriteFont.LineSpacing;
-
-                    position2.Y += ptr2->Cropping.Y;
-                    Vector2.Transform(ref position2, ref matrix, out position2);
-
-                    Vector2 _texCoordTL, _texCoordBR;
-                    _texCoordTL.X = ptr2->BoundsInTexture.X;
-                    _texCoordTL.Y = ptr2->BoundsInTexture.Y;
-                    _texCoordBR.X = ptr2->BoundsInTexture.X + ptr2->BoundsInTexture.Width;
-                    _texCoordBR.Y = ptr2->BoundsInTexture.Y + ptr2->BoundsInTexture.Height;
-                    Vector2 _uvTL, _uvBR;
-                    _uvTL.X = _texCoordTL.X / spriteFont.Texture.Width;
-                    _uvTL.Y = _texCoordTL.Y / spriteFont.Texture.Height;
-                    _uvBR.X = _texCoordBR.X / spriteFont.Texture.Width;
-                    _uvBR.Y = _texCoordBR.Y / spriteFont.Texture.Height;
-                    SpriteBatchItem spriteBatchItem = new RectangleItem(position2.X, position2.Y, 0f, 0f, ptr2->BoundsInTexture.Width * scale.X, ptr2->BoundsInTexture.Height * scale.Y, matrix.M32, matrix.M22, color, _uvTL, _uvBR, layerDepth, spriteFont.Texture, sortKey);
                     _batcher.Insert(spriteBatchItem);
                     zero2.X += ptr2->Width + ptr2->RightSideBearing;
                     prevChar = c;

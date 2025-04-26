@@ -9,8 +9,8 @@ namespace UndyneFight_Ex.Entities
     {
         internal class PasswordInputUI : OKCancelSelector
         {
-            readonly string playerName;
-            readonly TextInputer inputer1;
+            private readonly string playerName;
+            private readonly TextInputer inputer1;
             public PasswordInputUI(string playerName)
             {
                 this.playerName = playerName;
@@ -99,7 +99,7 @@ namespace UndyneFight_Ex.Entities
             {
                 Size = 1.0f,
                 TextColor = Color.MediumPurple,
-                SetSelectionAction = () => { InstanceCreate(new RegisterUI()); }
+                SetSelectionAction = () => InstanceCreate(new RegisterUI())
             });
         }
 

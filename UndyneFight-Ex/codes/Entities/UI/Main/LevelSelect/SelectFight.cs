@@ -154,10 +154,7 @@ namespace UndyneFight_Ex.Entities
 
             ResetSelect();
             PlaySound(select, 0.9f);
-            SelectChanged += () =>
-            {
-                PlaySound(changeSelection, 0.9f);
-            };
+            SelectChanged += () => PlaySound(changeSelection, 0.9f);
 
             int y = 0;
 

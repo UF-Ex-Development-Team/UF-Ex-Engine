@@ -21,13 +21,13 @@ namespace UndyneFight_Ex.Entities
 
             bool isDownEnabled = true, isUpEnabled = true, isLeftEnabled = true, isRightEnabled = true;
 
-            if (rotation >= 0 && rotation <= 180)
+            if (rotation is >= 0 and <= 180)
                 isUpEnabled = false;
-            if (rotation >= 90 && rotation <= 270)
+            if (rotation is >= 90 and <= 270)
                 isRightEnabled = false;
-            if (rotation >= 180 || rotation == 0)
+            if (rotation is >= 180 or 0)
                 isDownEnabled = false;
-            if (rotation >= 270 || rotation <= 90)
+            if (rotation is >= 270 or <= 90)
                 isLeftEnabled = false;
 
             float downCollideX = 0, upCollideX = 0, rightCollideY = 0, leftCollideY = 0;
@@ -113,6 +113,9 @@ namespace UndyneFight_Ex.Entities
             }
         }
     }
+    /// <summary>
+    /// A (Sudden Changes) bullet
+    /// </summary>
     public class GunBullet : Entity
     {
         /// <summary>

@@ -6,7 +6,7 @@ namespace UndyneFight_Ex.Entities
     {
         private class StateStorer : GameObject
         {
-            Line follow;
+            private Line follow;
             public StateStorer() => UpdateIn120 = true;
             public override void Start() => follow = FatherObject as Line;
             public override void Update()
@@ -25,7 +25,7 @@ namespace UndyneFight_Ex.Entities
             }
             public Dictionary<float, LineState> DataStore = [];
         }
-        StateStorer storer;
+        private StateStorer storer;
         /// <summary>
         /// Inserts a retention effect
         /// </summary>
@@ -48,11 +48,12 @@ namespace UndyneFight_Ex.Entities
         /// </summary>
         public new class RetentionEffect : Entity
         {
-            float timeLag;
-            readonly Func<float, float> alphaGenerator;
+            private float timeLag;
+            private readonly Func<float, float> alphaGenerator;
 
-            Line follow;
+            private Line follow;
             private RetentionEffect() => UpdateIn120 = true;
+            /// <inheritdoc/>
             public override void Start()
             {
                 follow = FatherObject as Line;
@@ -66,7 +67,7 @@ namespace UndyneFight_Ex.Entities
             /// Creates a retention effect
             /// </summary>
             /// <param name="timeLag">The delay before it spawns</param>
-            /// <param name="alphaFactor">The alpha scale of the line</param>
+            /// <param name="alphaFactor">The alpha of the line retention (Default 1)</param>
             public RetentionEffect(float timeLag, float alphaFactor = 1) : this()
             {
                 this.timeLag = timeLag;
@@ -76,14 +77,15 @@ namespace UndyneFight_Ex.Entities
             /// Creates a retention effect
             /// </summary>
             /// <param name="timeLag">The delay before it spawns</param>
-            /// <param name="alphaGenerator">The easing of the alpha multiplication of the retention effect</param>
+            /// <param name="alphaGenerator">The easing of the alpha of the line retention effect</param>
             public RetentionEffect(float timeLag, Func<float, float> alphaGenerator) : this()
             {
                 this.timeLag = timeLag;
                 this.alphaGenerator = alphaGenerator;
             }
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            void DrawTargetLine(Vector2 Start, Vector2 End) => DrawLine(Start, End, follow.Width, follow.DrawingColor * alpha, Depth);
+            private void DrawTargetLine(Vector2 Start, Vector2 End) => DrawLine(Start, End, follow.Width, follow.DrawingColor * alpha, Depth);
+            /// <inheritdoc/>
             public override void Draw()
             {
                 if (!available || alpha <= 0)
@@ -107,16 +109,15 @@ namespace UndyneFight_Ex.Entities
                 }
             }
 
-            Vector2 vec1, vec2;
-            float alpha;
-            Color color;
-            bool transverseMirror, verticalMirror, obliqueMirror, verticalline;
+            private Vector2 vec1, vec2;
+            private float alpha;
+            private bool transverseMirror, verticalMirror, obliqueMirror, verticalline;
 
-            bool available = false;
+            private bool available = false;
+            /// <inheritdoc/>
             public override void Update()
             {
-                float key = follow.AppearTime - timeLag;
-                if (!follow.storer.DataStore.TryGetValue(key, out LineState value))
+                if (!follow.storer.DataStore.TryGetValue(follow.AppearTime - timeLag, out LineState value))
                 {
                     available = false;
                     return;
@@ -125,7 +126,6 @@ namespace UndyneFight_Ex.Entities
                 vec1 = value.p1;
                 vec2 = value.p2;
                 alpha = alphaGenerator(value.alpha);
-                color = value.color;
                 transverseMirror = value.transverseMirror;
                 verticalMirror = value.verticalMirror;
                 obliqueMirror = value.obliqueMirror;

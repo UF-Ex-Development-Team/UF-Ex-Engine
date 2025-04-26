@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using static UndyneFight_Ex.Fight.AdvanceFunctions;
+﻿using static UndyneFight_Ex.Fight.AdvanceFunctions;
 using static UndyneFight_Ex.Fight.Functions;
 using static UndyneFight_Ex.MathUtil;
 
@@ -14,12 +13,12 @@ namespace UndyneFight_Ex.Entities
     {
         internal class CEaseBuilder
         {
-            readonly List<EaseUnit<Vector2>> eases = [];
+            private readonly List<EaseUnit<Vector2>> eases = [];
             public bool Adjust { private get; set; } = true;
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public void Insert(EaseUnit<Vector2> unit) => eases.Add(unit);
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public EaseUnit<Vector2> GetResult() => LinkEase(Adjust, [..eases]);
+            public EaseUnit<Vector2> GetResult() => LinkEase(Adjust, [.. eases]);
             public void Run(Action<Vector2> func)
             {
                 VirtualEasingObject easingObject = new();
@@ -28,11 +27,11 @@ namespace UndyneFight_Ex.Entities
                 AddInstance(new TimeRangedEvent(ease.Time, () =>
                 {
                     easingObject.AppearTime += 0.5f;
-                    func.Invoke(ease.Easing.Invoke(easingObject));
+                    func(ease.Easing(easingObject));
                 })
                 { UpdateIn120 = true });
                 easingObject.AppearTime += 0.5f;
-                func.Invoke(Easer.Invoke(easingObject));
+                func(Easer(easingObject));
             }
         }
 
@@ -41,17 +40,13 @@ namespace UndyneFight_Ex.Entities
         /// </summary>
         internal class VirtualEasingObject : GameObject, ICustomMotion
         {
-            public VirtualEasingObject()
-            {
-                UpdateIn120 = true;
-                AppearTime = 0;
-            }
+            public VirtualEasingObject() => UpdateIn120 = true;
             public Func<ICustomMotion, Vector2> PositionRoute { get; set; }
             public Func<ICustomMotion, float> RotationRoute { get; set; }
             public float[] RotationRouteParam { get; set; }
             public float[] PositionRouteParam { get; set; }
 
-            public float AppearTime { get; set; }
+            public float AppearTime { get; set; } = 0;
             public Vector2 CentrePosition { get; set; }
             public float Rotation { get; set; } = 0;
 
@@ -109,7 +104,7 @@ namespace UndyneFight_Ex.Entities
         /// Links multiple easing functions into an <see cref="EaseUnit{T}"/> where T is float
         /// </summary>
         /// <param name="isAdjust">Whether the value will automatically start from the previous easing result</param>
-        /// <param name="funcs">The easing funtions to link</param>
+        /// <param name="funcs">The easing functions to link</param>
         /// <returns>The linked easing functions</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         public static EaseUnit<float> LinkEase(bool isAdjust, params EaseUnit<float>[] funcs)
@@ -155,15 +150,15 @@ namespace UndyneFight_Ex.Entities
                 return curProgress >= len
                     ? basis[^1]
                     : !isAdjust
-                    ? funcs[curProgress].Easing.Invoke(easingObject)
-                    : funcs[curProgress].Easing.Invoke(easingObject) - funcs[curProgress].Start + basis[curProgress];
+                    ? funcs[curProgress].Easing(easingObject)
+                    : funcs[curProgress].Easing(easingObject) - funcs[curProgress].Start + basis[curProgress];
             }
             return new(funcs[0].Start, basis[^1], time, easeResult);
         }
         /// <summary>
         /// Links multiple easing functions into an <see cref="EaseUnit{T}"/> where T is float
         /// </summary>
-        /// <param name="funcs">The easing funtions to link</param>
+        /// <param name="funcs">The easing functions to link</param>
         /// <returns>The linked easing functions</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static EaseUnit<float> LinkEase(params EaseUnit<float>[] funcs) => LinkEase(true, funcs);
@@ -171,7 +166,7 @@ namespace UndyneFight_Ex.Entities
         /// Links multiple easing functions into an <see cref="EaseUnit{Vector2}"/>
         /// </summary>
         /// <param name="isAdjust">Whether the value will automatically start from the previous easing result</param>
-        /// <param name="funcs">The easing funtions to link</param>
+        /// <param name="funcs">The easing functions to link</param>
         /// <returns>The linked easing functions</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         public static EaseUnit<Vector2> LinkEase(bool isAdjust = true, params EaseUnit<Vector2>[] funcs)
@@ -217,15 +212,15 @@ namespace UndyneFight_Ex.Entities
                 return curProgress >= len
                     ? basis[^1]
                     : !isAdjust
-                    ? funcs[curProgress].Easing.Invoke(easingObject)
-                    : funcs[curProgress].Easing.Invoke(easingObject) - funcs[curProgress].Start + basis[curProgress];
+                    ? funcs[curProgress].Easing(easingObject)
+                    : funcs[curProgress].Easing(easingObject) - funcs[curProgress].Start + basis[curProgress];
             }
             return new(funcs[0].Start, basis[^1], time, easeResult);
         }
         /// <summary>
         /// Links multiple easing functions into an <see cref="EaseUnit{Vector2}"/>
         /// </summary>
-        /// <param name="funcs">The easing funtions to link</param>
+        /// <param name="funcs">The easing functions to link</param>
         /// <returns>The linked easing functions</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static EaseUnit<Vector2> LinkEase(params EaseUnit<Vector2>[] funcs) => LinkEase(true, funcs);
@@ -263,7 +258,7 @@ namespace UndyneFight_Ex.Entities
             Bounce = 10
         }
         #region Linear easing
-        //Note: Do not convert 9999.0f into float.maxValue
+        //Note: Do not convert 99999.0f into float.maxValue
         /// <summary>
         /// Returns an infinite linear movement
         /// </summary>
@@ -780,7 +775,7 @@ namespace UndyneFight_Ex.Entities
                 }
                 if (curProgress == addons.Length)
                     curProgress = -1;
-                return curProgress == -1 ? main.Easing.Invoke(s) : addons[curProgress].Easing.Invoke(s);
+                return curProgress == -1 ? main.Easing(s) : addons[curProgress].Easing(s);
             });
         }
         /// <summary>
@@ -805,7 +800,7 @@ namespace UndyneFight_Ex.Entities
                 }
                 if (curProgress == addons.Length)
                     curProgress = -1;
-                return curProgress == -1 ? main.Easing.Invoke(s) : addons[curProgress].Easing.Invoke(s);
+                return curProgress == -1 ? main.Easing(s) : addons[curProgress].Easing(s);
             });
         }
         /// <summary>
@@ -815,7 +810,7 @@ namespace UndyneFight_Ex.Entities
         /// <param name="addon">The easing function to add</param>
         /// <returns>The sum of the two easing functions</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static EaseUnit<Vector2> Add(EaseUnit<Vector2> main, EaseUnit<Vector2> addon) => new(main.Start + addon.Start, main.End + addon.End, main.Time, (s) => main.Easing.Invoke(s) + addon.Easing.Invoke(s));
+        public static EaseUnit<Vector2> Add(EaseUnit<Vector2> main, EaseUnit<Vector2> addon) => new(main.Start + addon.Start, main.End + addon.End, main.Time, (s) => main.Easing(s) + addon.Easing(s));
         /// <summary>
         /// Returns the result of a <see cref="Vector2"/> easing function and a <see cref="Vector2"/>
         /// </summary>
@@ -823,7 +818,7 @@ namespace UndyneFight_Ex.Entities
         /// <param name="addon">The displacement to add</param>
         /// <returns>The sum of the easing function and vector</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static EaseUnit<Vector2> Add(EaseUnit<Vector2> main, Vector2 addon) => new(main.Start + addon, main.End + addon, main.Time, (s) => main.Easing.Invoke(s) + addon);
+        public static EaseUnit<Vector2> Add(EaseUnit<Vector2> main, Vector2 addon) => new(main.Start + addon, main.End + addon, main.Time, (s) => main.Easing(s) + addon);
         /// <summary>
         /// Scales the <see cref="Vector2"/> easing by a <see cref="float"/> easing function
         /// </summary>
@@ -831,7 +826,7 @@ namespace UndyneFight_Ex.Entities
         /// <param name="scalar">The float easing to scale</param>
         /// <returns>The result of the easing functions</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static EaseUnit<Vector2> Scale(EaseUnit<Vector2> origin, EaseUnit<float> scalar) => new(origin.Start * scalar.Start, origin.End * scalar.End, origin.Time, (s) => origin.Easing.Invoke(s) * scalar.Easing.Invoke(s));
+        public static EaseUnit<Vector2> Scale(EaseUnit<Vector2> origin, EaseUnit<float> scalar) => new(origin.Start * scalar.Start, origin.End * scalar.End, origin.Time, (s) => origin.Easing(s) * scalar.Easing(s));
         /// <summary>
         /// Scales the <see cref="Vector2"/> easing by a sclar float value
         /// </summary>
@@ -839,7 +834,7 @@ namespace UndyneFight_Ex.Entities
         /// <param name="scalar">The float to scale</param>
         /// <returns>The result of the scaled easing function</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static EaseUnit<Vector2> Scale(EaseUnit<Vector2> origin, float scalar) => new(origin.Start * scalar, origin.End * scalar, origin.Time, (s) => origin.Easing.Invoke(s) * scalar);
+        public static EaseUnit<Vector2> Scale(EaseUnit<Vector2> origin, float scalar) => new(origin.Start * scalar, origin.End * scalar, origin.Time, (s) => origin.Easing(s) * scalar);
         /// <summary>
         /// Scales the <see cref="float"/> easing by a <see cref="float"/> easing function
         /// </summary>
@@ -847,7 +842,7 @@ namespace UndyneFight_Ex.Entities
         /// <param name="scalar">The float easing to scale</param>
         /// <returns>The result of the easing functions</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static EaseUnit<float> Scale(EaseUnit<float> origin, EaseUnit<float> scalar) => new(origin.Start * scalar.Start, origin.End * scalar.End, origin.Time, (s) => origin.Easing.Invoke(s) * scalar.Easing.Invoke(s));
+        public static EaseUnit<float> Scale(EaseUnit<float> origin, EaseUnit<float> scalar) => new(origin.Start * scalar.Start, origin.End * scalar.End, origin.Time, (s) => origin.Easing(s) * scalar.Easing(s));
         /// <summary>
         /// Scales the <see cref="float"/> easing by a scalar float value
         /// </summary>
@@ -856,7 +851,7 @@ namespace UndyneFight_Ex.Entities
         /// <returns>The result of the scaled easing function</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static EaseUnit<float> Scale(EaseUnit<float> origin, float scalar) => new(origin.Start * scalar, origin.End * scalar, origin.Time,
-                (s) => origin.Easing.Invoke(s) * scalar);
+                (s) => origin.Easing(s) * scalar);
         /// <summary>
         /// Returns a easing of a rotating <see cref="Vector2"/> easing
         /// </summary>
@@ -864,7 +859,7 @@ namespace UndyneFight_Ex.Entities
         /// <param name="rotate">The easing of the rotation</param>
         /// <returns>The result of the easing function</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static EaseUnit<Vector2> Polar(EaseUnit<Vector2> main, EaseUnit<float> rotate) => new(Rotate(main.Start, rotate.Start), Rotate(main.End, rotate.End), main.Time, (s) => Rotate(main.Easing.Invoke(s), rotate.Easing.Invoke(s)));
+        public static EaseUnit<Vector2> Polar(EaseUnit<Vector2> main, EaseUnit<float> rotate) => new(Rotate(main.Start, rotate.Start), Rotate(main.End, rotate.End), main.Time, (s) => Rotate(main.Easing(s), rotate.Easing(s)));
         /// <summary>
         /// Returns a easing of a rotating <see cref="float"/> easing
         /// </summary>
@@ -872,7 +867,7 @@ namespace UndyneFight_Ex.Entities
         /// <param name="rotate">The easing of the rotation</param>
         /// <returns>The result of the easing function</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static EaseUnit<Vector2> Polar(EaseUnit<float> main, EaseUnit<float> rotate) => new(GetVector2(main.Start, rotate.Start), GetVector2(main.End, rotate.End), main.Time, (s) => GetVector2(main.Easing.Invoke(s), rotate.Easing.Invoke(s)));
+        public static EaseUnit<Vector2> Polar(EaseUnit<float> main, EaseUnit<float> rotate) => new(GetVector2(main.Start, rotate.Start), GetVector2(main.End, rotate.End), main.Time, (s) => GetVector2(main.Easing(s), rotate.Easing(s)));
         /// <summary>
         /// Returns a easing of a rotating <see cref="Vector2"/> easing
         /// </summary>
@@ -888,7 +883,7 @@ namespace UndyneFight_Ex.Entities
         /// <param name="addon">The easing function to add</param>
         /// <returns>The sum of the two easing functions</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static EaseUnit<float> Add(EaseUnit<float> main, EaseUnit<float> addon) => new(main.Start + addon.Start, main.End + addon.End, main.Time, (s) => main.Easing.Invoke(s) + addon.Easing.Invoke(s));
+        public static EaseUnit<float> Add(EaseUnit<float> main, EaseUnit<float> addon) => new(main.Start + addon.Start, main.End + addon.End, main.Time, (s) => main.Easing(s) + addon.Easing(s));
         /// <summary>
         /// Returns the result of a <see cref="float"/> easing function and a float value
         /// </summary>
@@ -896,7 +891,7 @@ namespace UndyneFight_Ex.Entities
         /// <param name="addon">The float value to add</param>
         /// <returns>The sum of the easing function and the float value</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static EaseUnit<float> Add(EaseUnit<float> main, float addon) => new(main.Start + addon, main.End + addon, main.Time, (s) => main.Easing.Invoke(s) + addon);
+        public static EaseUnit<float> Add(EaseUnit<float> main, float addon) => new(main.Start + addon, main.End + addon, main.Time, (s) => main.Easing(s) + addon);
         /// <summary>
         /// Returns a <see cref="Vector2"/> easing with the given <paramref name="xEase"/> and <paramref name="yEase"/> as the x and y components of the <see cref="Vector2"/> easing function
         /// </summary>
@@ -913,7 +908,7 @@ namespace UndyneFight_Ex.Entities
         /// <param name="end">The maximum value of the wave</param>
         /// <param name="T">The period of the wave</param>
         /// <param name="waveCount">The amount of times the wave will run (Default 99999)</param>
-        /// <param name="phase">The intial position (Default 0)</param>
+        /// <param name="phase">The initial position (Default 0)</param>
         /// <returns>The result of the easing</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static EaseUnit<Vector2> SineWave(Vector2 start, Vector2 end, float T, float waveCount = 99999, float phase = 0)
@@ -928,7 +923,7 @@ namespace UndyneFight_Ex.Entities
         /// <param name="end">The maximum value of the wave</param>
         /// <param name="T">The period of the wave</param>
         /// <param name="waveCount">The amount of times the wave will run (Default 99999)</param>
-        /// <param name="phase">The intial position (Default 0)</param>
+        /// <param name="phase">The initial position (Default 0)</param>
         /// <returns>The result of the easing</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static EaseUnit<float> SineWave(float start, float end, float T, float waveCount = 99999, float phase = 0)
@@ -942,7 +937,7 @@ namespace UndyneFight_Ex.Entities
         /// <param name="impact">The magnitude of the wave</param>
         /// <param name="T">The period of the wave</param>
         /// <param name="waveCount">The amount of times the wave will run (Default 99999)</param>
-        /// <param name="phase">The intial position (Default 0)</param>
+        /// <param name="phase">The initial position (Default 0)</param>
         /// <returns>The result of the easing</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static EaseUnit<Vector2> SineWave(Vector2 impact, float T, float waveCount = 99999, float phase = 0)
@@ -956,7 +951,7 @@ namespace UndyneFight_Ex.Entities
         /// <param name="impact">The magnitude of the wave</param>
         /// <param name="T">The period of the wave</param>
         /// <param name="waveCount">The amount of times the wave will run (Default 99999)</param>
-        /// <param name="phase">The intial position (Default 0)</param>
+        /// <param name="phase">The initial position (Default 0)</param>
         /// <returns>The result of the easing</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static EaseUnit<float> SineWave(float impact, float T, float waveCount = 99999, float phase = 0)
@@ -976,7 +971,7 @@ namespace UndyneFight_Ex.Entities
         public static implicit operator Func<ICustomMotion, T>(EaseUnit<T> u) => u.Easing;
     }
     /// <summary>
-    /// Easing utilities that support <see cref="SimplifiedEasing"/>, however it is better to use <see cref="SimplifiedEasing"/> for better readibility
+    /// Easing utilities that support <see cref="SimplifiedEasing"/>, however it is better to use <see cref="SimplifiedEasing"/> for better readability
     /// </summary>
     public static class EasingUtil
     {
@@ -1024,11 +1019,11 @@ namespace UndyneFight_Ex.Entities
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public static Func<ICustomMotion, Vector2> Circle(Vector2 centre, float radius, float roundTime, float startingRotation) => (s) => centre + GetVector2(radius, s.AppearTime / roundTime * 360f + startingRotation);
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public static Func<ICustomMotion, Vector2> Convert(Func<float, Vector2> timeParamEase) => (s) => timeParamEase.Invoke(s.AppearTime);
+            public static Func<ICustomMotion, Vector2> Convert(Func<float, Vector2> timeParamEase) => (s) => timeParamEase(s.AppearTime);
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public static Func<ICustomMotion, Vector2> Circle(Func<ICustomMotion, Vector2> easing, float radius, float roundTime, float startingRotation) => (s) => easing.Invoke(s) + GetVector2(radius, s.AppearTime / roundTime * 360f + startingRotation);
+            public static Func<ICustomMotion, Vector2> Circle(Func<ICustomMotion, Vector2> easing, float radius, float roundTime, float startingRotation) => (s) => easing(s) + GetVector2(radius, s.AppearTime / roundTime * 360f + startingRotation);
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public static Func<ICustomMotion, Vector2> Circle(Func<ICustomMotion, Vector2> easing, Func<ICustomMotion, float> radius, float roundTime, float startingRotation) => (s) => easing.Invoke(s) + GetVector2(radius.Invoke(s), s.AppearTime / roundTime * 360f + startingRotation);
+            public static Func<ICustomMotion, Vector2> Circle(Func<ICustomMotion, Vector2> easing, Func<ICustomMotion, float> radius, float roundTime, float startingRotation) => (s) => easing(s) + GetVector2(radius(s), s.AppearTime / roundTime * 360f + startingRotation);
 
             /// <summary>
             /// 构建一个摆动的正弦波的缓动
@@ -1059,7 +1054,7 @@ namespace UndyneFight_Ex.Entities
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public static Func<ICustomMotion, Vector2> YSinWave(float intensity, float cycleTime, float startPhase) => (s) => new(0, Sin01(s.AppearTime * 2 / cycleTime + startPhase) * intensity);
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public static Func<ICustomMotion, Vector2> Accelerating(Vector2 speed, Vector2 accerlation) => (s) => speed * s.AppearTime + accerlation * (0.5f * s.AppearTime * s.AppearTime);
+            public static Func<ICustomMotion, Vector2> Accelerating(Vector2 speed, Vector2 acceleration) => (s) => speed * s.AppearTime + acceleration * (0.5f * s.AppearTime * s.AppearTime);
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public static Func<ICustomMotion, Vector2> Linear(Vector2 v1, Vector2 v2, float time) => (s) => Vector2.Lerp(v1, v2, s.AppearTime / time);
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1278,7 +1273,7 @@ namespace UndyneFight_Ex.Entities
             /// <summary>
             /// 模拟缓动物件，模拟值从CentrePosition提取
             /// </summary>
-            class VirtualEasingObject : GameObject, ICustomMotion
+            private class VirtualEasingObject : GameObject, ICustomMotion
             {
                 public VirtualEasingObject(ICustomMotion copy)
                 {
@@ -1318,7 +1313,7 @@ namespace UndyneFight_Ex.Entities
                 public static implicit operator Func<ICustomMotion, Vector2>(EaseBuilder val) => val.GetResult();
                 public Vector2 OffsetPosition { get; set; }
                 public bool Adjust { get; set; } = true;
-                readonly List<Tuple<float, Func<ICustomMotion, Vector2>>> motionPairs = [];
+                private readonly List<Tuple<float, Func<ICustomMotion, Vector2>>> motionPairs = [];
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 public void Insert(float time, Func<ICustomMotion, Vector2> function) => motionPairs.Add(new(time, function));
                 public void Run(Action<Vector2> action)
@@ -1414,7 +1409,7 @@ namespace UndyneFight_Ex.Entities
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public static Func<ICustomMotion, float> SinWave(float intensity, float cycleTime, float startPhase) => (s) => Sin01(s.AppearTime * 2 / cycleTime + startPhase) * intensity;
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public static Func<ICustomMotion, float> Accelerating(float speed, float accerlation) => (s) => speed * s.AppearTime + accerlation * (0.5f * s.AppearTime * s.AppearTime);
+            public static Func<ICustomMotion, float> Accelerating(float speed, float acceleration) => (s) => speed * s.AppearTime + acceleration * (0.5f * s.AppearTime * s.AppearTime);
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public static Func<ICustomMotion, float> Linear(float v1, float v2, float time) => (s) => MathHelper.Lerp(v1, v2, s.AppearTime / time);
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1430,14 +1425,14 @@ namespace UndyneFight_Ex.Entities
                 (s) =>
                 {
                     float scale = s.AppearTime / time;
-                    return MathHelper.Lerp(v1, v2, scale * scale);
+                    return MathHelper.LerpPrecise(v1, v2, scale * scale);
                 };
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public static Func<ICustomMotion, float> EaseOutQuad(float v1, float v2, float time) =>
                 (s) =>
                 {
                     float scale = s.AppearTime / time;
-                    return MathHelper.Lerp(v1, v2, 1 - (1 - scale) * (1 - scale));
+                    return MathHelper.LerpPrecise(v1, v2, 1 - (1 - scale) * (1 - scale));
                 };
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public static Func<ICustomMotion, float> EaseInCubic(float v1, float v2, float time) =>
@@ -1610,7 +1605,7 @@ namespace UndyneFight_Ex.Entities
             /// <summary>
             /// 模拟缓动物件，模拟值从Rotation提取
             /// </summary>
-            class VirtualEasingObject : GameObject, ICustomMotion
+            private class VirtualEasingObject : GameObject, ICustomMotion
             {
                 public VirtualEasingObject(ICustomMotion copy)
                 {
@@ -1649,7 +1644,7 @@ namespace UndyneFight_Ex.Entities
             {
                 public float OffsetPosition { get; set; }
                 public bool Adjust { get; set; } = true;
-                readonly List<Tuple<float, Func<ICustomMotion, float>>> motionPairs = [];
+                private readonly List<Tuple<float, Func<ICustomMotion, float>>> motionPairs = [];
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 public void Insert(float time, Func<ICustomMotion, float> function) => motionPairs.Add(new(time, function));
                 public static implicit operator Func<ICustomMotion, float>(EaseBuilder val) => val.GetResult();

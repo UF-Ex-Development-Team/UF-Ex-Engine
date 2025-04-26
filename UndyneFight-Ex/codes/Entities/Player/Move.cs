@@ -21,6 +21,20 @@ namespace UndyneFight_Ex.Entities
                 public static int currentLine = 0;
 
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                private static void ClampHeartInBox()
+                {
+                    RectangleBox _curBox = mission.controlingBox as RectangleBox;
+                    if (mission.collidingBox.X < _curBox.Left)
+                        mission.collidingBox.X = _curBox.Left;
+                    else if (mission.collidingBox.Right > _curBox.Right)
+                        mission.collidingBox.X = _curBox.Right - 16;
+                    if (mission.collidingBox.Y < _curBox.Up)
+                        mission.collidingBox.Y = _curBox.Up;
+                    else if (mission.collidingBox.Down > _curBox.Down)
+                        mission.collidingBox.Y = _curBox.Down - 16;
+                }
+
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 public static void MoveAsPurple()
                 {
                     RectangleBox _curBox = mission.controlingBox as RectangleBox;
@@ -40,30 +54,22 @@ namespace UndyneFight_Ex.Entities
                     if (IsKeyDown(Keys_[0]))
                         moving = vec2.UnitX;
 
-                    if (IsKeyPressed120f(Keys_[3]) && currentLine > 1)
+                    if (IsKeyPressed120f(Keys_[3]))
                         currentLine--;
-                    if (IsKeyPressed120f(Keys_[1]) && currentLine < mission.purpleLineCount)
+                    if (IsKeyPressed120f(Keys_[1]))
                         currentLine++;
 
                     currentLine = Math.Clamp(currentLine, 1, mission.purpleLineCount);
 
-                    int count = mission.purpleLineCount + 1;
-                    float delta = _curBox.CollidingBox.Height / count;
+                    float delta = _curBox.CollidingBox.Height / (mission.purpleLineCount + 1);
 
                     Vector2 delta2 = new(0, delta * currentLine + _curBox.Up - mission.Centre.Y);
                     mission.positionRest.Y = delta2.Y;
 
                     if (moving != Vector2.Zero)
-                    {
-                        moving.Normalize();
-                        if (Slow)
-                            moving *= 0.5f;
-
-                        moving *= mission.Speed;
-                    }
+                        moving *= mission.Speed * (Slow ? 0.5f : 1);
 
                     mission.collidingBox.Offset(moving * 0.5f);
-
                     if (mission.collidingBox.X < _curBox.Left)
                         mission.collidingBox.X = _curBox.Left;
                     else if (mission.collidingBox.Right > _curBox.Right)
@@ -93,28 +99,15 @@ namespace UndyneFight_Ex.Entities
                         1 => Vector2.UnitY,
                         2 => -Vector2.UnitX,
                         3 => -Vector2.UnitY,
-                        _ when last >= 4 && last <= 7 => GetVector2(1, (last - 4) * 90 + 45),
+                        _ when last is >= 4 and <= 7 => GetVector2(1, (last - 4) * 90 + 45),
                         _ => Vector2.Zero
                     };
 
                     if (moving != Vector2.Zero)
-                    {
-                        moving.Normalize();
-                        if (Slow)
-                            moving *= 0.5f;
-                        moving *= mission.Speed;
-                    }
+                        moving *= mission.Speed * (Slow ? 0.5f : 1);
 
                     mission.collidingBox.Offset(moving * 0.5f);
-                    RectangleBox _curBox = mission.controlingBox as RectangleBox;
-                    if (mission.collidingBox.X < _curBox.Left)
-                        mission.collidingBox.X = _curBox.Left;
-                    else if (mission.collidingBox.Right > _curBox.Right)
-                        mission.collidingBox.X = _curBox.Right - 16;
-                    if (mission.collidingBox.Y < _curBox.Up)
-                        mission.collidingBox.Y = _curBox.Up;
-                    else if (mission.collidingBox.Down > _curBox.Down)
-                        mission.collidingBox.Y = _curBox.Down - 16;
+                    ClampHeartInBox();
                 }
 
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -128,22 +121,13 @@ namespace UndyneFight_Ex.Entities
                     if (moving != Vector2.Zero)
                     {
                         moving.Normalize();
-                        if (Slow)
-                            moving *= 0.5f;
-                        moving *= mission.Speed;
+                        moving *= mission.Speed * (Slow ? 0.5f : 1);
                     }
 
                     Vector2 finalMoving = GetVector2(moving.Length(), MathF.Atan2(moving.Y, moving.X) / PI * 180 + mission.missionRotation);
 
                     mission.collidingBox.Offset(finalMoving * 0.5f);
-                    if (mission.collidingBox.X < _curBox.Left)
-                        mission.collidingBox.X = _curBox.Left;
-                    else if (mission.collidingBox.Right > _curBox.Right)
-                        mission.collidingBox.X = _curBox.Right - 16;
-                    if (mission.collidingBox.Y < _curBox.Up)
-                        mission.collidingBox.Y = _curBox.Up;
-                    else if (mission.collidingBox.Down > _curBox.Down)
-                        mission.collidingBox.Y = _curBox.Down - 16;
+                    ClampHeartInBox();
                 }
 
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -154,19 +138,17 @@ namespace UndyneFight_Ex.Entities
 
                     int jumpKey = trueRot switch
                     {
-                        _ when trueRot > 45 && trueRot < 135 => 3,
-                        _ when trueRot > 135 && trueRot < 225 => 0,
-                        _ when trueRot > 115 && trueRot < 315 => 1,
+                        _ when trueRot is > 45 and < 135 => 3,
+                        _ when trueRot is > 135 and < 225 => 0,
+                        _ when trueRot is > 115 and < 315 => 1,
                         _ => 2
                     };
 
                     int XWay = (IsKeyDown(Keys_[(jumpKey + 1) % 4]) ? 1 : 0) - (IsKeyDown(Keys_[(jumpKey + 3) % 4]) ? 1 : 0);
 
-                    float moving = Slow ? 0.5f : 1.0f;
-
                     Vector2 oldCentre = mission.Centre;
 
-                    float xMoved = mission.Speed * XWay * moving;
+                    float xMoved = mission.Speed * XWay * (Slow ? 0.5f : 1.0f);
 
                     mission.Centre += GetVector2(xMoved * 0.5f, mission.missionRotation);
 
@@ -213,14 +195,9 @@ namespace UndyneFight_Ex.Entities
                     {
                         if (v.IsCollideWith(mission) && mission.gravitySpeed >= 0f)
                         {
-                            float rot;
-                            rot = v.Rotation / PI * 180 % 180.01f;
-
-                            final = rot;
+                            final = v.Rotation / PI * 180 % 180.01f;
                             res = true;
-
                             adapt = v.CorrectPosition(mission);
-
                             break;
                         }
                     }
@@ -248,13 +225,11 @@ namespace UndyneFight_Ex.Entities
                         if (mission.jumpTimeLeft == mission.jumpTimeLimit && mission.gravitySpeed >= 1f)
                             mission.jumpTimeLeft = mission.jumpTimeLimit - 1;
 
-                        if (mission.SoftFalling)
-                        {
-                            mission.gravitySpeed += (mission.gravitySpeed >= 0 && mission.gravitySpeed <= mission.Gravity / 5f)
-                                ? MathHelper.Lerp(0.5f, 1.0f, mission.gravitySpeed / (mission.Gravity / 5f)) * mission.Gravity * 0.01f
-                            : mission.Gravity / 100;
-                        }
-                        else mission.gravitySpeed += mission.Gravity / 100;
+                        mission.gravitySpeed += mission.SoftFalling ?
+                            ((mission.gravitySpeed >= 0 && mission.gravitySpeed <= mission.Gravity / 5f)
+                            ? MathHelper.Lerp(0.5f, 1.0f, mission.gravitySpeed / (mission.Gravity / 5f)) * mission.Gravity * 0.01f
+                        : mission.Gravity / 100)
+                        : mission.Gravity / 100;
                     }
                     Vector2 ori = mission.Centre;
                     mission.Centre += GetVector2(mission.gravitySpeed * 0.5f, trueRot);
@@ -319,25 +294,21 @@ namespace UndyneFight_Ex.Entities
                     if (mission.collidingBox.X < _curBox.Left)
                     {
                         res = mission.YFacing == 2 && mission.collidingBox.X < _curBox.Left - 0.9f;
-
                         mission.collidingBox.X = _curBox.Left;
                     }
                     else if (mission.collidingBox.Right > _curBox.Right)
                     {
                         res = mission.YFacing == 0 && mission.collidingBox.Right > _curBox.CollidingBox.Right + 0.9f;
-
                         mission.collidingBox.X = _curBox.Right - 16;
                     }
                     if (mission.collidingBox.Y < _curBox.Up)
                     {
                         res = mission.YFacing == 3 && mission.collidingBox.Up < _curBox.CollidingBox.Up - 0.9f;
-
                         mission.collidingBox.Y = _curBox.Up;
                     }
                     else if (mission.collidingBox.Down > _curBox.Down)
                     {
                         res = mission.YFacing == 1 && mission.collidingBox.Down > _curBox.CollidingBox.Down + 0.9f;
-
                         mission.collidingBox.Y = _curBox.Down - 16;
                     }
 
@@ -377,9 +348,9 @@ namespace UndyneFight_Ex.Entities
 
                     int jumpKey = trueRot switch
                     {
-                        _ when trueRot > 45 && trueRot < 135 => 3,
-                        _ when trueRot > 135 && trueRot < 225 => 0,
-                        _ when trueRot > 115 && trueRot < 315 => 1,
+                        _ when trueRot is > 45 and < 135 => 3,
+                        _ when trueRot is > 135 and < 225 => 0,
+                        _ when trueRot is > 115 and < 315 => 1,
                         _ => 2
                     };
                     int XWay = 0;
@@ -391,15 +362,11 @@ namespace UndyneFight_Ex.Entities
 
                     XWay -= blueLastWay ? 1 : -1;
 
-                    float moving = 1.0f;
-                    if (Slow)
-                        moving *= 0.5f;
-
                     float xFacing = mission.XFacing * 90;
 
                     Vector2 oldCentre = mission.Centre;
 
-                    float xMoved = mission.Speed * XWay * moving;
+                    float xMoved = mission.Speed * XWay * (Slow ? 0.5f : 1);
 
                     mission.Centre += GetVector2(xMoved, mission.missionRotation);
 

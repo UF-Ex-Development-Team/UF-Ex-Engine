@@ -15,30 +15,30 @@ namespace UndyneFight_Ex
         private int loopLengthBytes;
         private int loopEndBytes;
 
-        long loopStartSamples = 0;
-        long loopLengthSamples = 0;
-        long loopEndSamples = 0;
+        private long loopStartSamples = 0;
+        private long loopLengthSamples = 0;
+        private long loopEndSamples = 0;
 
-        int chunkId;
-        int fileSize;
-        int riffType;
-        int fmtId;
-        int fmtSize;
-        int fmtCode;
+        private int chunkId;
+        private int fileSize;
+        private int riffType;
+        private int fmtId;
+        private int fmtSize;
+        private int fmtCode;
 
-        int channels;
-        int sampleRate;
+        private int channels;
+        private int sampleRate;
 
-        int fmtAvgBps;
-        int fmtBlockAlign;
-        int bitDepth;
+        private int fmtAvgBps;
+        private int fmtBlockAlign;
+        private int bitDepth;
 
-        int fmtExtraSize;
+        private int fmtExtraSize;
 
-        int dataID;
-        int dataSize;
+        private int dataID;
+        private int dataSize;
 
-        const int bufferDuration = 100;
+        private const int bufferDuration = 100;
 
         // Private
 

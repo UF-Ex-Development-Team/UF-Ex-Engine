@@ -19,7 +19,7 @@ namespace UndyneFight_Ex.Entities
             if (!initialized)
             {
                 initialized = true;
-                GameStartUp.MainSceneIntro.Invoke();
+                GameStartUp.MainSceneIntro();
             }
 
             base.Update();
@@ -34,7 +34,7 @@ namespace UndyneFight_Ex.Entities
         public TryAgainScene(StateShower shower) : this() => obj = new StateShower.FailureShower(shower);
         public TryAgainScene(Fight.IClassicFight fight, GameMode mode) : this() => obj = new Fight.FailureShower(fight, mode);
         public TryAgainScene(GameObject obj) : this() => this.obj = obj;
-        TryAgainScene() => PlayerManager.CurrentUser?.PlayerStatistic.AddDeath();
+        private TryAgainScene() => PlayerManager.CurrentUser?.PlayerStatistic.AddDeath();
         public override void Update()
         {
             alpha = MathHelper.Lerp(alpha, 0.2f, 0.16f);

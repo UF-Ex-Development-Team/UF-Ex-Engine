@@ -37,7 +37,7 @@ namespace UndyneFight_Ex.GameInterface
             FightSystem.Initialize(fights);
         }
         /// <summary>
-        /// Adds an item to the shop (It does not exist)
+        /// Adds an item to the shop
         /// </summary>
         /// <param name="item"></param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

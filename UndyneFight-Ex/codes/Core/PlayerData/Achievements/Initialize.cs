@@ -14,7 +14,7 @@ namespace UndyneFight_Ex.UserService
             foreach (KeyValuePair<string, SaveInfo> pair in info.Nexts)
             {
                 if (Achievements.AchievementManager.achievements.TryGetValue(pair.Key, out Achievement value))
-                { 
+                {
                     Insert(value);
                     AchievementObjects[pair.Key].Load(pair.Value);
                 }
@@ -27,6 +27,9 @@ namespace UndyneFight_Ex.UserService
         }
         public void Insert(Achievement achievement)
         {
+            //Force new achievement to be unachieved due to user IO bug >:(
+            achievement.Achieved = false;
+            achievement.CurrentProgress = 0;
             AchievementObject obj = new(achievement);
             AchievementObjects.TryAdd(achievement.Title, obj);
         }
@@ -34,9 +37,9 @@ namespace UndyneFight_Ex.UserService
         public SaveInfo Save()
         {
             SaveInfo info = new("Achievements{");
-            foreach (KeyValuePair<string, AchievementObject> v in AchievementObjects)
+            foreach (Achievement v in Achievements.AchievementManager.achievements.Values)
             {
-                info.PushNext(v.Value.Save());
+                info.PushNext(new AchievementObject(v).Save());
             }
             return info;
         }

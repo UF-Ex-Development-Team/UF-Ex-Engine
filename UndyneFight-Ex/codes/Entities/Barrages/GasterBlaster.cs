@@ -32,17 +32,21 @@ namespace UndyneFight_Ex.Entities
         /// Whether the color of the blaster is the theme color
         /// </summary>
         public bool ColorIsTheme { get; set; } = false;
+        /// <summary>
+        /// Overrides the default rotating behavior
+        /// </summary>
+        public bool OverrideRotation { get; set; } = false;
 
         public GasterBlaster() => Image = Sprites.GBStart[0];
 
         private protected float depth_ = 0.6f;
-        private static protected int _blasterCount = 0;
+        private protected static int _blasterCount = 0;
         private protected Color drawingColor = Color.White;
-        private protected static CollideRect screen = new(-150, -50, 940, 580);
+        private protected static CollideRect screen = new CollideRect(-250, -250, 890, 730) * ScreenDrawing.ScreenScale;
         internal static bool spawnSoundPlayed = false, shootSoundPlayed = false;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private float GetDelta() => Math.Min((missionRotation - Rotation + 360) % 360, (360 - missionRotation + Rotation) % 360);
+        private float GetDelta() => OverrideRotation ? 0 : Math.Min((missionRotation - Rotation + 360) % 360, (360 - missionRotation + Rotation) % 360);
 
         private protected float missionRotation, waitingTime, appearTime = 0, recoilSpeed = 0, laserAffectTime = 1, duration;
         private protected Vector2 missionPlace, size, laserPlace, laserSize;
@@ -51,7 +55,7 @@ namespace UndyneFight_Ex.Entities
         private protected int score = 3;
         private protected float alpha = 0, beamAlpha = 1f, movingScale = 0.9f;
         private protected bool hasHit = false;
-        readonly vec2 rotDisplace = new(0, 35);
+        private readonly vec2 rotDisplace = new(0, 35);
 
         public override void Draw()
         {
@@ -69,7 +73,7 @@ namespace UndyneFight_Ex.Entities
             if (ColorIsTheme)
                 drawingColor = ScreenDrawing.ThemeColor;
             appearTime++;
-            if (this is NormalGB && (appearTime < waitingTime || (appearTime >= waitingTime && screen.Contain(Centre))))
+            if (this is NormalGB && (appearTime < waitingTime || (appearTime >= waitingTime && screen.Contain(laserPlace))))
                 laserPlace = GetVector2(27 * size.Y, this is NormalGB ? Rotation : missionRotation) + Centre;
 
             if ((int)(appearTime - waitingTime) == -12)
@@ -173,7 +177,7 @@ namespace UndyneFight_Ex.Entities
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void Delay(float delay) => AddChild(new DelayControl(delay, DelayControl.DelayType.Pull));
         /// <summary>
-        /// Stops the given blaster for the given frames
+        /// Stops the blaster for the given frames
         /// </summary>
         /// <param name="delay">The frames to stop</param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -199,7 +203,7 @@ namespace UndyneFight_Ex.Entities
         private float pushDelta;
         private float distanceToSoul = 0;
 
-        readonly float timeDelta;
+        private readonly float timeDelta;
         /// <summary>
         /// Creates a green soul blaster
         /// </summary>
@@ -244,7 +248,7 @@ namespace UndyneFight_Ex.Entities
         internal bool Follow { private get; set; } = false;
         internal bool Ending { get; private set; } = false;
         /// <summary>
-        /// The drawing color of the blaster
+        /// The drawing color type of the blaster
         /// </summary>
         public int DrawingColor { get; }
         private int ShieldDirection => missionPlayer.Shields.DirectionOf(DrawingColor);
@@ -434,13 +438,13 @@ namespace UndyneFight_Ex.Entities
     public class NormalGB : GasterBlaster, ICollideAble
     {
         /// <summary>
-        /// Creates a blaster that automatically aims towards the palyer
+        /// Creates a blaster that automatically aims towards the player
         /// </summary>
         /// <param name="missionPlace">Target position</param>
         /// <param name="spawnPlace">Initial position</param>
-        /// <param name="size">Size of the blaster(Width, Height), a small blaster is (1, 0.55f) and a big blaster is (1, 1)</param>
+        /// <param name="size">Size of the blaster(Width, Height), a small blaster is (1, 0.5f) and a big blaster is (1, 1)</param>
         /// <param name="waitingTime">Time required to pass before firing</param>
-        /// <param name="duration">Duration of blast</param>
+        /// <param name="duration">Duration of the blast</param>
         public NormalGB(Vector2 missionPlace, Vector2 spawnPlace, Vector2 size, float waitingTime, float duration) : this(missionPlace, spawnPlace, size,
             (float)(Math.Atan2(Heart.Centre.Y - missionPlace.Y, Heart.Centre.X - missionPlace.X) * 180 / Math.PI), waitingTime, duration)
         { }
@@ -452,7 +456,7 @@ namespace UndyneFight_Ex.Entities
         /// <param name="size">Size of the blaster(Width, Height), a small blaster is (1, 0.55f) and a big blaster is (1, 1)</param>
         /// <param name="rotation">The target rotation of the blaster</param>
         /// <param name="waitingTime">Time required to pass before firing</param>
-        /// <param name="duration">Duration of blast</param>
+        /// <param name="duration">Duration of the blast</param>
         public NormalGB(Vector2 missionPlace, Vector2 spawnPlace, Vector2 size, float rotation, float waitingTime, float duration)
         {
             movingScale = waitingTime < 30 ? 0.5f + waitingTime / 90f : 0.93334f - 3f / waitingTime;
@@ -479,7 +483,6 @@ namespace UndyneFight_Ex.Entities
 
         public override void Update()
         {
-            #region 缓动
             MoveToMission();
 
             base.Update();
@@ -489,7 +492,6 @@ namespace UndyneFight_Ex.Entities
 
             if (appearTime >= waitingTime + duration)
                 BeamDisappear();
-            #endregion
         }
         /// <summary>
         /// Whether the enable the bug fix for reverse collision

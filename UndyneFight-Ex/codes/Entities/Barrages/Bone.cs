@@ -20,7 +20,7 @@ namespace UndyneFight_Ex.Entities
         /// </summary>
         public float MissionLength { get => missionLength; set => missionLength = value; }
         /// <summary>
-        /// The scale of the lerp animation of the length of the bone
+        /// The scale of the lerp animation of the length of the bone (Default 0.1f)
         /// </summary>
         public float LengthLerpScale { get; set; } = 0.1f;
     }
@@ -46,7 +46,7 @@ namespace UndyneFight_Ex.Entities
             movingWay = way;
         }
         /// <summary>
-        /// Creates a bone at the bottom of the box
+        /// Creates a bone at the bottom of the box with a specified x coordiante
         /// </summary>
         /// <param name="way">Whether to spawn on the left or right side, true-> right, false-> left</param>
         /// <param name="position">The initial x coordinate of the bone</param>
@@ -61,11 +61,8 @@ namespace UndyneFight_Ex.Entities
             this.speed = speed;
             movingWay = way;
         }
-
         private readonly bool movingWay;
-
         public override void Draw() => base.Draw();
-
         public override void Update()
         {
             Length = Lerp(Length, missionLength, LengthLerpScale);
@@ -97,7 +94,7 @@ namespace UndyneFight_Ex.Entities
             movingWay = way;
         }
         /// <summary>
-        /// Creates a bone at the top of the box
+        /// Creates a bone at the top of the box with a specified x coordinate
         /// </summary>
         /// <param name="way">Whether to spawn on the left or right side, true-> right, false-> left</param>
         /// <param name="position">The initial x coordinate of the bone</param>
@@ -112,11 +109,8 @@ namespace UndyneFight_Ex.Entities
             this.speed = speed;
             movingWay = way;
         }
-
         private readonly bool movingWay;
-
         public override void Draw() => base.Draw();
-
         public override void Update()
         {
             Length = Lerp(Length, missionLength, LengthLerpScale);
@@ -149,7 +143,7 @@ namespace UndyneFight_Ex.Entities
             movingWay = way;
         }
         /// <summary>
-        /// Creates a bone at the left side of the box
+        /// Creates a bone at the left side of the box with a specified y coordinate
         /// </summary>
         /// <param name="way">Whether to spawn on the upper or lower side, true-> lower, false-> upper</param>
         /// <param name="position">The initial y coordinate of the bone</param>
@@ -165,11 +159,8 @@ namespace UndyneFight_Ex.Entities
             this.speed = speed;
             movingWay = way;
         }
-
         private readonly bool movingWay;
-
         public override void Draw() => base.Draw();
-
         public override void Update()
         {
             Length = Lerp(Length, missionLength, LengthLerpScale);
@@ -218,11 +209,8 @@ namespace UndyneFight_Ex.Entities
             this.speed = speed;
             movingWay = way;
         }
-
         private readonly bool movingWay;
-
         public override void Draw() => base.Draw();
-
         public override void Update()
         {
             Length = Lerp(Length, missionLength, LengthLerpScale);
@@ -267,9 +255,7 @@ namespace UndyneFight_Ex.Entities
             this.rotateSpeed = rotateSpeed;
             Rotation = startRotation;
         }
-
         public override void Draw() => base.Draw();
-
         public override void Update()
         {
             Centre = controlingBox.Centre;
@@ -296,7 +282,6 @@ namespace UndyneFight_Ex.Entities
         public SideCircleBone(float startRotation, float rotateSpeed, float length, float duration)
         {
             autoDispose = false;
-            IsMasked = false;
             Rotation = startRotation + 360;
             alpha = 1;
             RotateSpeed = rotateSpeed;
@@ -304,16 +289,18 @@ namespace UndyneFight_Ex.Entities
             length1 = -controlingBox.CollidingBox.Width * 0.25f;
             this.duration = duration;
         }
-
         private float length1, appearTime = 0;
-        private readonly float duration, missionLength;
+        private readonly float duration;
+        private float missionLength;
         /// <summary>
         /// The angular speed of the bone
         /// </summary>
         public float RotateSpeed { set; get; }
-
+        /// <summary>
+        /// The target length of the bone
+        /// </summary>
+        public float MissionLength { set => missionLength = value; }
         public override void Draw() => base.Draw();
-
         public override void Update()
         {
             if (appearTime <= duration)
@@ -398,23 +385,27 @@ namespace UndyneFight_Ex.Entities
     public class CustomBone : Bone, ICustomMotion, ICustomLength
     {
         /// <summary>
-        /// Whether the bone will have a ffade in animation
+        /// Whether the bone will have a fade in animation
         /// </summary>
         public bool AlphaIncrease { get; set; } = false;
         /// <summary>
-        /// The range the bone can exist in (Once left this rectangle, the bone will be disposed)
+        /// The range the bone can exist in (The bone will be disposed when it leaves this rectangle)
         /// </summary>
 
         public CollideRect screenC = new(-50, -50, 740, 580);
 
         private readonly Vector2 startPos;
+        /// <inheritdoc/>
         public Func<ICustomLength, float> LengthRoute { get; set; }
-
+        /// <inheritdoc/>
         public new Vector2 CentrePosition => delta;
+        /// <inheritdoc/>
         public float[] LengthRouteParam { get; set; }
-
+        /// <summary>
+        /// The alpha easing function of the bone
+        /// </summary>
         public Func<CustomBone, float> AlphaRoute { private get; set; }
-
+        /// <inheritdoc/>
         public new float AppearTime { get; private set; } = 0;
         /// <summary>
         /// The extra rotation angle of the bone
@@ -432,43 +423,43 @@ namespace UndyneFight_Ex.Entities
         /// <param name="length">The length of the bone</param>
         public CustomBone(EaseUnit<Vector2> positionRoute, EaseUnit<float> rotationRoute, float length) : this(Vector2.Zero, positionRoute.Easing, (s) => length, rotationRoute.Easing) { }
         /// <summary>
-        /// Craetes a custom bone with a custom position route, rotation easing, fixed length, and specified duration
+        /// Creates a custom bone with a custom position route, rotation easing, fixed length, and specified duration
         /// </summary>
         /// <param name="startPos">The initial position of the bone</param>
         /// <param name="positionRoute">The route of the position of the bone (Delta positioning, therefore the position of the bone will be the sum of <paramref name="startPos"/> and <paramref name="positionRoute"/></param>
         /// <param name="rotationRoute">The easing of the rotation of the bone</param>
-        /// <param name="len">The length of the bone</param>
+        /// <param name="length">The length of the bone</param>
         /// <param name="duration">The duration of the bone</param>
-        public CustomBone(Vector2 startPos, Func<ICustomMotion, Vector2> positionRoute, EaseUnit<float> rotationRoute, float len, float duration) : this(startPos, positionRoute, Motions.LengthRoute.autoFold, Motions.RotationRoute.stableValue)
+        public CustomBone(Vector2 startPos, Func<ICustomMotion, Vector2> positionRoute, EaseUnit<float> rotationRoute, float length, float duration) : this(startPos, positionRoute, Motions.LengthRoute.autoFold, Motions.RotationRoute.stableValue)
         {
             RotationRoute = rotationRoute;
-            LengthRouteParam = [len, duration];
+            LengthRouteParam = [length, duration];
         }
         /// <summary>
-        /// Craetes a custom bone with a custom position route, fixed rotation, fixed length, and specified duration
+        /// Creates a custom bone with a custom position route, fixed rotation, fixed length, and specified duration
         /// </summary>
         /// <param name="startPos">The initial position of the bone</param>
         /// <param name="positionRoute">The route of the position of the bone (Delta positioning, therefore the position of the bone will be the sum of <paramref name="startPos"/> and <paramref name="positionRoute"/></param>
-        /// <param name="rot">The rotation of the bone</param>
-        /// <param name="len">The length of the bone</param>
+        /// <param name="rotation">The rotation of the bone</param>
+        /// <param name="length">The length of the bone</param>
         /// <param name="duration">The duration of the bone</param>
-        public CustomBone(Vector2 startPos, Func<ICustomMotion, Vector2> positionRoute, float rot, float len, float duration) : this(startPos, positionRoute, Motions.LengthRoute.autoFold, Motions.RotationRoute.stableValue)
+        public CustomBone(Vector2 startPos, Func<ICustomMotion, Vector2> positionRoute, float rotation, float length, float duration) : this(startPos, positionRoute, Motions.LengthRoute.autoFold, Motions.RotationRoute.stableValue)
         {
-            RotationRouteParam = [rot];
-            LengthRouteParam = [len, duration];
+            RotationRouteParam = [rotation];
+            LengthRouteParam = [length, duration];
         }
 
         /// <summary>
-        /// Craetes a custom bone with a custom position route, fixed rotation, and fixed length
+        /// Creates a custom bone with a custom position route, fixed rotation, and fixed length
         /// </summary>
         /// <param name="startPos">The initial position of the bone</param>
         /// <param name="positionRoute">The route of the position of the bone (Delta positioning, therefore the position of the bone will be the sum of <paramref name="startPos"/> and <paramref name="positionRoute"/></param>
-        /// <param name="rot">The rotation of the bone</param>
-        /// <param name="len">The length of the bone</param>
-        public CustomBone(Vector2 startPos, Func<ICustomMotion, Vector2> positionRoute, float rot, float len) : this(startPos, positionRoute, Motions.LengthRoute.stableValue, Motions.RotationRoute.stableValue)
+        /// <param name="rotation">The rotation of the bone</param>
+        /// <param name="length">The length of the bone</param>
+        public CustomBone(Vector2 startPos, Func<ICustomMotion, Vector2> positionRoute, float rotation, float length) : this(startPos, positionRoute, Motions.LengthRoute.stableValue, Motions.RotationRoute.stableValue)
         {
-            RotationRouteParam = [rot];
-            LengthRouteParam = [len];
+            RotationRouteParam = [rotation];
+            LengthRouteParam = [length];
         }
         /// <summary>
         /// Creates a custom bone with custom position route, custom length route, and custom position route

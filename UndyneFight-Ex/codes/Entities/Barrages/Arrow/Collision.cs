@@ -39,11 +39,11 @@ namespace UndyneFight_Ex.Entities
         /// </summary>
         public float BlockTime { get; private set; }
 
-        float perfectNegative, perfectPositive;
-        float niceNegative, nicePositive;
-        float okayNegative, okayPositive;
+        private float perfectNegative, perfectPositive;
+        private float niceNegative, nicePositive;
+        private float okayNegative, okayPositive;
 
-        bool isSoundPlayed = false;
+        private bool isSoundPlayed = false;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private void PlayHitSound(float scale, bool isSettingBased = true)
@@ -388,7 +388,8 @@ namespace UndyneFight_Ex.Entities
 
             if (HasTag())
                 foreach (string str in Tags)
-                    _ = taggedArrows[str].Remove(this);
+                    if (taggedArrows.TryGetValue(str, out List<Arrow> value))
+                        _ = value.Remove(this);
         }
     }
 }

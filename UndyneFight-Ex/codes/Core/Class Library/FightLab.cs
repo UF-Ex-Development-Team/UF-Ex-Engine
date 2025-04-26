@@ -80,7 +80,10 @@ namespace UndyneFight_Ex.Fight
                 if (v.Shields == null)
                     continue;
                 if (v.Shields.OverRotate)
-                { p = v; break; }
+                {
+                    p = v;
+                    break;
+                }
             }
             if (p != null && actual >= 3)
             {
@@ -102,17 +105,11 @@ namespace UndyneFight_Ex.Fight
             /// <summary>
             /// Sets whether the blue soul will have a softer falling (Smoother but longer)
             /// </summary>
-            public static bool SoftFalling
-            {
-                set => Heart.SoftFalling = value; get => Heart.SoftFalling;
-            }
+            public static bool SoftFalling { set => Heart.SoftFalling = value; get => Heart.SoftFalling; }
             /// <summary>
             /// Determine whether the arrows rotate along the soul
             /// </summary>
-            public static bool ArrowFixed
-            {
-                set => Heart.FixArrow = value; get => Heart.FixArrow;
-            }
+            public static bool ArrowFixed { set => Heart.FixArrow = value; get => Heart.FixArrow; }
             /// <summary>
             /// Is the player at full HP
             /// </summary>
@@ -121,106 +118,63 @@ namespace UndyneFight_Ex.Fight
             /// <summary>
             /// Damage taken by the player per hit
             /// </summary>
-            public static int DamageTaken
-            {
-                set => PlayerInstance.hpControl.DamageTaken = value; get => PlayerInstance.hpControl.DamageTaken;
-            }
+            public static int DamageTaken { set => PlayerInstance.hpControl.DamageTaken = value; get => PlayerInstance.hpControl.DamageTaken; }
             /// <summary>
             /// Level of HP drain of the player
             /// </summary>
-            public static float BuffedLevel
-            {
-                set => PlayerInstance.hpControl.BuffedLevel = value;
-                get => PlayerInstance.hpControl.BuffedLevel;
-            }
+            public static float BuffedLevel { set => PlayerInstance.hpControl.BuffedLevel = value; get => PlayerInstance.hpControl.BuffedLevel; }
             /// <summary>
             /// The amount of purple lines in purple soul mode
             /// </summary>
-            public static int PurpleLineCount
-            {
-                set => Heart.PurpleLineCount = value;
-            }
+            public static int PurpleLineCount { set => Heart.PurpleLineCount = value; }
             /// <summary>
             /// Gravity of the blue soul (Default 9.8f)
             /// </summary>
-            public static float Gravity
-            {
-                set => Heart.Gravity = value;
-            }
+            public static float Gravity { set => Heart.Gravity = value; }
             /// <summary>
             /// Initial jump speed of blue soul (Default 6)
             /// </summary>
-            public static float JumpSpeed
-            {
-                set => Heart.JumpSpeed = value;
-            }
+            public static float JumpSpeed { set => Heart.JumpSpeed = value; }
             /// <summary>
             /// Amount of times a player can jump (Default 2)
             /// </summary>
-            public static int JumpTimeLimit
-            {
-                set => Heart.JumpTimeLimit = value;
-            }
+            public static int JumpTimeLimit { set => Heart.JumpTimeLimit = value; }
             /// <summary>
             /// Whether to enable KR
             /// </summary>
-            public static bool KR
-            {
-                set => PlayerInstance.hpControl.KR = value;
-                get => PlayerInstance.hpControl.KR;
-            }
+            public static bool KR { set => PlayerInstance.hpControl.KR = value; get => PlayerInstance.hpControl.KR; }
             /// <summary>
             /// The damage the KR deals (Default 4)
             /// </summary>
-            public static float KRDamage
-            {
-                set => PlayerInstance.hpControl.KRDamage = value;
-            }
+            public static float KRDamage { set => PlayerInstance.hpControl.KRDamage = value; get => PlayerInstance.hpControl.KRDamage; }
             /// <summary>
             /// Speed of the player (Default 2.5f)
             /// </summary>
-            public static float Speed
-            {
-                set => Heart.Speed = value;
-            }
+            public static float Speed { set => Heart.Speed = value; }
             /// <summary>
             /// The max HP of the player (Also automatically sets the current HP of the player)
             /// </summary>
-            public static float MaxHP
-            {
-                set => PlayerInstance.hpControl.ResetMaxHP(value);
-                get => PlayerInstance.hpControl.maxHP;
-            }
+            public static float MaxHP { set => PlayerInstance.hpControl.ResetMaxHP(value); get => PlayerInstance.hpControl.maxHP; }
             /// <summary>
             /// Whether the player is immune to physical damage
             /// </summary>
-            public static bool InvincibleToPhysics
-            {
-                set => PlayerInstance.hpControl.InvincibleToPhysic = value;
-                get => PlayerInstance.hpControl.InvincibleToPhysic;
-            }
+            public static bool InvincibleToPhysics { get => PlayerInstance.hpControl.InvincibleToPhysic; set => PlayerInstance.hpControl.InvincibleToPhysic = value; }
             /// <summary>
             /// The current HP of the player
             /// </summary>
-            public static float HP
-            {
-                set => PlayerInstance.hpControl.HP = value;
-                get => PlayerInstance.hpControl.HP;
-            }
+            public static float HP { set => PlayerInstance.hpControl.HP = value; get => PlayerInstance.hpControl.HP; }
+            /// <summary>
+            /// The current KR of the player
+            /// </summary>
+            public static float KRHP { set => PlayerInstance.hpControl.KRHP = value; get => PlayerInstance.hpControl.KRHP; }
             /// <summary>
             /// Whether the blue soul can descend slower by holding spacebar (Default false)
             /// </summary>
-            public static bool UmbrellaAvailable
-            {
-                set => Heart.UmbrellaAvailable = value;
-            }
+            public static bool UmbrellaAvailable { set => Heart.UmbrellaAvailable = value; }
             /// <summary>
             /// The falling speed of the player when descending using umbrella (Default 2/3f)
             /// </summary>
-            public static float UmbrellaSpeed
-            {
-                set => Heart.UmbrellaSpeed = value;
-            }
+            public static float UmbrellaSpeed { set => Heart.UmbrellaSpeed = value; }
         }
         /// <summary>
         /// Use this static class to access variables of the box
@@ -286,12 +240,12 @@ namespace UndyneFight_Ex.Fight
         /// </summary>
         public static ContentManager Loader => Scene.Loader;
         /// <summary>
-        /// The cover of the chart
+        /// The cover of the current chart (If any)
         /// </summary>
         public static Texture2D SongIllustration => (CurrentScene as SongFightingScene).SongIllustration;
 
         /// <summary>
-        /// Whether the chart automatically switches to the result screen after ending
+        /// Whether the chart automatically switch to the result screen after ending
         /// </summary>
         public static bool AutoEnd { set => (CurrentScene as SongFightingScene).AutoEnd = value; get => (CurrentScene as SongFightingScene).AutoEnd; }
         /// <summary>
@@ -299,15 +253,15 @@ namespace UndyneFight_Ex.Fight
         /// </summary>
         public static float PlayOffset { set => (CurrentScene as SongFightingScene).PlayOffset = value; }
         /// <summary>
-        /// Gametime displacement of the chart
+        /// Gametime displacement of the chart (Initialization only)
         /// </summary>
-        public static float GametimeDelta = 0;
+        public static float GametimeDelta { get; set; } = 0;
         /// <summary>
-        /// Frames elapsed in integers (Not recommended to use)
+        /// Frames elapsed in integers (Readonly, Not recommended to use)
         /// </summary>
         public static int Gametime => (int)(GameMain.gameTime + GametimeDelta);
         /// <summary>
-        /// Frames elapsed in float (Recommended)
+        /// Frames elapsed in float (Readonly, Recommended)
         /// </summary>
         public static float GametimeF => GameMain.gameTime + GametimeDelta;
         /// <summary>
@@ -315,7 +269,7 @@ namespace UndyneFight_Ex.Fight
         /// </summary>
         public static Difficulty CurrentDifficulty => (CurrentScene as SongFightingScene).CurrentDifficulty;
         /// <summary>
-        /// The player you are currently controlling
+        /// The soul you are currently controlling
         /// </summary>
         public static Player.Heart Heart => Player.heartInstance;
         /// <summary>
@@ -422,6 +376,10 @@ namespace UndyneFight_Ex.Fight
         /// <param name="heart">The heart to apply the damage to (For particle effect)</param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void LoseHP(Player.Heart heart) => PlayerInstance.hpControl.LoseHP(heart);
+        /// <summary>
+        /// Applies KR damage to the player
+        /// </summary>
+        /// <param name="scale">The scale of the KR damage (X times <see cref="HeartAttribute.KRDamage"/>)</param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void GiveKR(float scale) => PlayerInstance.hpControl.GiveKR(scale);
         /// <summary>
@@ -431,14 +389,14 @@ namespace UndyneFight_Ex.Fight
         /// <param name="tag">The tag to contain</param>
         /// <returns>The array of objects of the type <typeparamref name="T"/> that contains the <paramref name="tag"/></returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static T[] GetAll<T>(string tag) where T : GameObject => (from x in Objects where x.ContainTag(tag) select x).OfType<T>().ToArray();
+        public static T[] GetAll<T>(string tag) where T : GameObject => [.. (from x in Objects where x.ContainTag(tag) select x).OfType<T>()];
         /// <summary>
         /// Gets all the objects of the given type
         /// </summary>
         /// <typeparam name="T">The type to check</typeparam>
         /// <returns>The array of objects of the type <typeparamref name="T"/></returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static T[] GetAll<T>() where T : GameObject => Objects.OfType<T>().ToArray();
+        public static T[] GetAll<T>() where T : GameObject => [.. Objects.OfType<T>()];
 
         /// <summary>
         /// Change the soul state
@@ -453,8 +411,6 @@ namespace UndyneFight_Ex.Fight
         /// <param name="state">The moving state of the player (Mostly for custom souls)</param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void SetSoul(Player.MoveState state) => Player.heartInstance.ChangeState(state);
-
-        private static Arrow last;
 
         /// <summary>
         /// Attributes of an arrow
@@ -547,10 +503,7 @@ namespace UndyneFight_Ex.Fight
         public static void CreateArrow(float shootShieldTime, int way, float speed, int color, int rotatingType, ArrowAttribute attribute = ArrowAttribute.None)
         {
             Arrow arr = new(Heart, shootShieldTime + GametimeF, (way + 16) % 4, speed, color, rotatingType);
-            last = arr;
-
             GiveAttribute(arr, attribute);
-
             InstanceCreate(arr);
         }
         /// <summary>
@@ -570,8 +523,6 @@ namespace UndyneFight_Ex.Fight
                 arr.IsSpeedup = true;
 
             GiveAttribute(arr, attribute);
-
-            last = arr;
             return arr;
         }
         private static int lastArrow;
@@ -579,9 +530,9 @@ namespace UndyneFight_Ex.Fight
         /// <summary>
         /// The allocated direction for arrows, use 'A' to access
         /// </summary>
-        public static int[] DirectionAllocate = new int[10];
+        public static int[] DirectionAllocate { get; set; } = new int[10];
 
-        public static HashSet<char> OneElementArrows = [];
+        public static HashSet<char> OneElementArrows { get; set; } = [];
 
         public static Func<char, int> CustomAnalyzer { private get; set; } = null;
 
@@ -599,17 +550,13 @@ namespace UndyneFight_Ex.Fight
                         color = wayTag[1] == ' ' && wayTag.Length >= 3 ? MathUtil.Clamp(0, wayTag[2] - '0', 9) : MathUtil.Clamp(0, wayTag[1] - '0', 9);
                     }
                 }
-                else
-                {
-                    if (wayTag.Length >= 3)
-                        color = MathUtil.Clamp(0, wayTag[2] - '0', 9);
-                }
+                else if (wayTag.Length >= 3)
+                    color = MathUtil.Clamp(0, wayTag[2] - '0', 9);
             }
             switch (wayTag[0])
             {
                 case 'R':
-                    lastArrow = Rand(0, 3);
-                    return colorLastArrow[color] = lastArrow;
+                    return colorLastArrow[color] = lastArrow = Rand(0, 3);
                 case 'D':
                 case 'd':
                     cur = Rand(0, 3);
@@ -624,23 +571,17 @@ namespace UndyneFight_Ex.Fight
                         cur = Rand(0, 3);
                     return colorLastArrow[color] = lastArrow = cur;
                 case '+':
-                    lastArrow += wayTag[1] - '0';
-                    return colorLastArrow[color] = lastArrow;
+                    return colorLastArrow[color] = lastArrow += wayTag[1] - '0';
                 case '-':
-                    lastArrow -= wayTag[1] - '0';
-                    return colorLastArrow[color] = lastArrow;
+                    return colorLastArrow[color] = lastArrow -= wayTag[1] - '0';
                 case '$':
-                    lastArrow = wayTag[1] - '0';
-                    return colorLastArrow[color] = lastArrow;
+                    return colorLastArrow[color] = lastArrow = wayTag[1] - '0';
                 case 'A':
-                    lastArrow = DirectionAllocate[wayTag[1] - '0'];
-                    return colorLastArrow[color] = lastArrow;
+                    return colorLastArrow[color] = lastArrow = DirectionAllocate[wayTag[1] - '0'];
                 case 'C':
-                    lastArrow = CustomAnalyzer(wayTag[1]);
-                    return colorLastArrow[color] = lastArrow;
+                    return colorLastArrow[color] = lastArrow = CustomAnalyzer(wayTag[1]);
                 default:
-                    lastArrow = wayTag[0] - '0';
-                    return colorLastArrow[color] = lastArrow;
+                    return colorLastArrow[color] = lastArrow = wayTag[0] - '0';
             }
         }
         /// <summary>
@@ -689,7 +630,7 @@ namespace UndyneFight_Ex.Fight
         public static void CreateArrow(float shootShieldTime, string wayTag, float speed, int color, int rotatingType, ArrowAttribute attribute) => CreateArrow(shootShieldTime, GetWayFromTag(wayTag), speed, color, rotatingType, attribute);
 
         /// <summary>
-        /// Craete a spear
+        /// Create a spear
         /// </summary>
         /// <param name="spear">The spear to create</param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -740,13 +681,9 @@ namespace UndyneFight_Ex.Fight
         /// </summary>
         /// <param name="go">The objects to create</param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void AddInstances(params GameObject[] go)
-        {
-            foreach (GameObject obj in go)
-                InstanceCreate(obj);
-        }
+        public static void AddInstances(params GameObject[] go) => Array.ForEach(go, InstanceCreate);
         /// <summary>
-        /// Applies behaviour to all arrows marked with the tag with the given <see cref="Action"/>
+        /// Applies behavior to all arrows marked with the tag with the given <see cref="Action"/>
         /// </summary>
         /// <param name="tag">The tag of the arrows to apply to</param>
         /// <param name="action">The action applied to the arrows</param>
@@ -920,7 +857,6 @@ namespace UndyneFight_Ex.Fight
             for (int i = 1; i <= times; i++)
                 action.Invoke();
         }
-
         /// <summary>
         /// Carry an action with the given times
         /// </summary>
@@ -1012,13 +948,9 @@ namespace UndyneFight_Ex.Fight
         /// Play multiple sound effects
         /// </summary>
         /// <param name="effect"></param>
-        public static void PlaySound(params SoundEffect[] effect)
-        {
-            foreach (SoundEffect sfx in effect)
-                PlaySound(sfx);
-        }
+        public static void PlaySound(params SoundEffect[] effect) => Array.ForEach(effect, (s) => PlaySound(s));
         /// <summary>
-        /// Creates a blackscreen
+        /// Creates a black screen
         /// </summary>
         /// <param name="time">The duration of the black screen</param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1032,13 +964,9 @@ namespace UndyneFight_Ex.Fight
         /// Kills all barrages on screen (Does not invoke their .Dispose() event)
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void ResetBarrage() => Objects.ForEach(s =>
-                                                      {
-                                                          if (s is Bone or Platform or Spear or NormalGB)
-                                                              s.Kill();
-                                                      });
+        public static void ResetBarrage() => Objects.ForEach(s => { if (s is Barrage) s.Kill(); });
         /// <summary>
-        /// End the current ssong
+        /// End the current song
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void EndSong() => (CurrentScene as SongFightingScene).ForceEnd();

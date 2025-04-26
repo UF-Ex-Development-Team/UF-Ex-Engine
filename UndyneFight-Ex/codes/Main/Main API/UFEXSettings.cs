@@ -23,14 +23,13 @@ namespace UndyneFight_Ex.GameInterface
         /// <summary>
         /// Actions to invoke when a chart is completed
         /// </summary>
-        public static Action<SongPlayData> OnSongComplete;
+        public static Action<SongPlayData> OnSongComplete { get; set; }
         /// <summary>
         /// Custom update action
         /// </summary>
         public static event Action Update;
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         internal static void DoUpdate() => Update?.Invoke();
-
         internal static Func<StateShower, Player.Analyzer, GameObject> SongCompleteCreate { get; set; } = (s, t) => new StateShower.ResultShower(s, t);
     }
 }

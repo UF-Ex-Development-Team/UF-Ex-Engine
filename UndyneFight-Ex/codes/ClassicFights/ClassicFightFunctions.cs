@@ -96,7 +96,7 @@ namespace UndyneFight_Ex.Fight
         internal static void DoingAction()
         {
             if (EventAfterAction != null)
-                EventAfterAction.Invoke();
+                EventAfterAction();
             else
                 ChangeRound();
         }

@@ -22,10 +22,11 @@ namespace UndyneFight_Ex.Entities
             float ms = MathF.Round(d % 60 * 100/60f);
             FightResources.Font.NormalFont.CentreDraw($"{min}:{(sec < 10 ? "0" : "") + sec}:{(ms < 10 ? "0" : "") + ms}",
                 new Vector2(94, 30), col);
+            FightResources.Font.FightFont.Draw("(Beta 10)", new Vector2(585, 0), Color.Gray * 0.5f, 0.5f, 1);
 #if DEBUG
-            if ((CurrentScene as SongFightingScene).waveset is not null && (CurrentScene as SongFightingScene).waveset is WaveConstructor)
+            if ((CurrentScene as SongFightingScene).waveset is not null and WaveConstructor)
             {
-                var waveset = (CurrentScene as SongFightingScene).waveset as WaveConstructor;
+                WaveConstructor waveset = (CurrentScene as SongFightingScene).waveset as WaveConstructor;
                 if (!waveset._isMultiBPM)
                     FightResources.Font.NormalFont.CentreDraw($"Beat: {FloatToString(GametimeF / waveset.SingleBeat, 1)}", new Vector2(94, 50), col, 0.7f, 0.3f);
                 else
@@ -37,14 +38,9 @@ namespace UndyneFight_Ex.Entities
             }
 #endif
         }
-        int appearTime = 0;
-        bool del = false;
-        float curBeat = 0;
-        public override void Update()
-        {
-            appearTime++;
-            if (appearTime % 62 == 0)
-                del = RandBool();
-        }
+        private int appearTime = 0;
+        private bool del = false;
+        private float curBeat = 0;
+        public override void Update() => del = (++appearTime % 62 == 0) ? RandBool() : del;
     }
 }

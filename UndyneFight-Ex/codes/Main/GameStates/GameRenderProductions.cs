@@ -136,12 +136,12 @@ namespace UndyneFight_Ex
             {
                 public OutScreenShader() : base(null, SpriteSortMode.Immediate, BlendState.AlphaBlend, 0.15f) { }
 
-                Color flinkerColor;
-                float alpha = 0;
+                private Color flickerColor;
+                private float alpha = 0;
 
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 public static void MakeFlicker() => isFlickerMade = true;
-                static bool isFlickerMade = false;
+                private static bool isFlickerMade = false;
                 public override void Update()
                 {
                     if (isFlickerMade)
@@ -159,12 +159,12 @@ namespace UndyneFight_Ex
                     {
                         alpha *= 0.86f;
                     }
-                    flinkerColor = Fight.Functions.ScreenDrawing.flinkerColor;
+                    flickerColor = Fight.Functions.ScreenDrawing.flickerColor;
                 }
                 public override RenderTarget2D Draw(RenderTarget2D obj)
                 {
                     float alp = alpha;
-                    Color col = flinkerColor;
+                    Color col = flickerColor;
                     if (CurrentScene is FightScene && ((CurrentScene as FightScene).Mode & SongSystem.GameMode.Buffed) != 0 && (CurrentScene as FightScene).PlayerInstance != null)
                     {
                         float scale = (CurrentScene as FightScene).PlayerInstance.hpControl.LostSpeed / 3 - 0.125f;

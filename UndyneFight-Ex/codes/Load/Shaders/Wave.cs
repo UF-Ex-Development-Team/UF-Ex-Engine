@@ -14,18 +14,15 @@ namespace UndyneFight_Ex
                 /// <summary>
                 /// Shader class for <see cref="FightResources.Shaders.Wave"/>
                 /// </summary>
-                public WaveShader(Effect eff) : base(eff)
-                {
-                    StableEvents = (x) =>
-                    {
-                        Time += 0.5f * Speed * TimeElapsed / 480f;
+                public WaveShader(Effect eff) : base(eff) => StableEvents = (x) =>
+                                                                              {
+                                                                                  Time += 0.5f * Speed * TimeElapsed / 480f;
 
-                        x.Parameters["iTime"].SetValue(Time);
+                                                                                  x.Parameters["iTime"].SetValue(Time);
 
-                        x.Parameters["iIntensity"].SetValue(new Vector3(Intensity[0], Intensity[1], Intensity[2]) / 640f);
-                        x.Parameters["iFrequency"].SetValue(new Vector3(Frequency[0], Frequency[1], Frequency[2]) * MathF.PI * 960f);
-                    };
-                }
+                                                                                  x.Parameters["iIntensity"].SetValue(new Vector3(Intensity[0], Intensity[1], Intensity[2]) / 640f);
+                                                                                  x.Parameters["iFrequency"].SetValue(new Vector3(Frequency[0], Frequency[1], Frequency[2]) * MathF.PI * 960f);
+                                                                              };
                 /// <summary>
                 /// The time of the shader
                 /// </summary>

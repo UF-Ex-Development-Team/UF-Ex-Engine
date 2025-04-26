@@ -16,14 +16,12 @@ namespace UndyneFight_Ex.Debugging
                 int index = (int)key;
                 if (IsKeyPressed(key))
                 {
-                    if (index < 91 && index > 64)
+                    if (index is < 91 and > 64)
                         return (char)((ShiftPressed ? 0 : 32) + index);
-                    else if (index > 47 && index < 58)
+                    else if (index is > 47 and < 58)
                     {
-#pragma warning disable CS8509 
-                        if (ShiftPressed)
-                            return (index - 48) switch
-#pragma warning restore CS8509
+                        return ShiftPressed
+                            ? (index - 48) switch
                             {
                                 0 => ')',
                                 1 => '!',
@@ -35,8 +33,8 @@ namespace UndyneFight_Ex.Debugging
                                 7 => '&',
                                 8 => '*',
                                 9 => '('
-                            };
-                        return (char)index;
+                            }
+                            : (char)index;
                     }
                     else
                         switch (index)

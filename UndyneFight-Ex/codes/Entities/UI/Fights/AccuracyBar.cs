@@ -7,30 +7,12 @@ namespace UndyneFight_Ex.Entities
     /// </summary>
     public class AccuracyBar : Entity
     {
-        internal class MultiTag : Entity
-        {
-            readonly Arrow a1, a2;
-            internal MultiTag(Arrow a1, Arrow a2)
-            {
-                UpdateIn120 = true;
-                this.a1 = a1;
-                this.a2 = a2;
-            }
-
-            public override void Draw()
-            {
-                /* DrawingLab.DrawLine(a1.Centre + MathUtil.GetVector2(4, a1.Rotation + 180), a2.Centre + MathUtil.GetVector2(4, a2.Rotation + 180),
-                     3, Color.Gold * 0.25f, 0);*/
-            }
-
-            public override void Update() => Dispose();
-        }
         internal class AccuracyPointer : Entity
         {
-            Color drawingColor;
-            readonly float timeDel;
-            float alpha = 4;
-            readonly int areaBelong;
+            private Color drawingColor;
+            private readonly float timeDel;
+            private float alpha = 4;
+            private readonly int areaBelong;
             public AccuracyPointer(float timedel, int remark)
             {
                 UpdateIn120 = true;
@@ -59,7 +41,7 @@ namespace UndyneFight_Ex.Entities
 
             public override void Draw()
             {
-                float ra = MathF.Min(alpha, 1);
+                float ra = MathF.Min(alpha, 1) * (Fight.Functions.ScreenDrawing.UIColor.A / 255f);
                 Depth = 0.2f;
                 FormalDraw(Sprites.accuracyPointers[1], Centre, drawingColor * ra, 0, Sprites.accuracyPointers[1].Bounds.Size.ToVector2() / 2);
                 Depth = 0.01f;
@@ -69,12 +51,8 @@ namespace UndyneFight_Ex.Entities
 
             public override void Update()
             {
-                alpha -= 0.009f;
-                if (alpha < 0)
-                {
+                if ((alpha -= 0.009f) < 0)
                     Dispose();
-                    return;
-                }
             }
         }
         public AccuracyBar()
@@ -88,10 +66,10 @@ namespace UndyneFight_Ex.Entities
         public override void Draw()
         {
             Depth = 0.15f;
-            FormalDraw(Image, Centre, Color.White, 0, ImageCentre);
+            FormalDraw(Image, Centre, Color.White * (Fight.Functions.ScreenDrawing.UIColor.A / 255f), 0, ImageCentre);
         }
 
-        int appearTime = 0;
+        private int appearTime = 0;
         public override void Update()
         {
             appearTime++;
@@ -119,22 +97,10 @@ namespace UndyneFight_Ex.Entities
                             continue;
                         timeSame.ForEach(s => { if (s.Way == i) s.GoldenMarkIntensity = 2; });
                     }
-                    if (EnabledLine)
-                    {
-                        Arrow[] cur = [.. timeSame];
-                        for (int i = 1; i < cur.Length; i++)
-                        {
-                            if ((cur[i].Way - cur[i - 1].Way + 40) % 4 == 2)
-                                continue;
-                            AddChild(new MultiTag(cur[i], cur[i - 1]));
-                        }
-                    }
                     timeSame.Clear();
                 }
                 for (int i = 0; i < arrows.Length; i++)
                 {
-                    if (arrows[i].BlockTime - Fight.Functions.GametimeF > MaxTime)
-                        break;
                     if (i != 0 && arrows[i].BlockTime - arrows[i - 1].BlockTime > SpecifyTime)
                     {
                         add();
@@ -145,14 +111,15 @@ namespace UndyneFight_Ex.Entities
             }
         }
         public float SpecifyTime { get; set; } = 0.6f;
+        /// <summary>
+        /// Whether the golden outline of arrows are enabled
+        /// </summary>
         public bool EnabledGolden { get; set; } = true;
-        public bool EnabledLine { get; set; } = true;
-        public float MaxTime { get; set; } = 150f;
 
-        public List<Arrow> AllArrows { get; init; } = [];
-        public Dictionary<string, List<Arrow>> TaggedArrows { get; init; } = [];
+        internal List<Arrow> AllArrows { get; init; } = [];
+        internal Dictionary<string, List<Arrow>> TaggedArrows { get; init; } = [];
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void PushDelta(float time, int remark, int col, int way, Player.Heart.ShieldManager shieldManager)
+        internal void PushDelta(float time, int remark, int col, int way, Player.Heart.ShieldManager shieldManager)
         {
             AddChild(new AccuracyPointer(time, remark));
             shieldManager.ShieldShine(way, col, remark);

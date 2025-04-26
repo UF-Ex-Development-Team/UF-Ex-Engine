@@ -78,17 +78,13 @@ namespace UndyneFight_Ex
             debugTarget2 = new RenderTarget2D(GraphicsDevice, 96, 35, true, SurfaceFormat.Color, DepthFormat.None);
 #endif
             finalTarget = new RenderTarget2D(GraphicsDevice, (int)(480f * Aspect), 480, false, SurfaceFormat.Color, DepthFormat.None);
-            Window.ClientSizeChanged += (s, t) =>
-            {
-                CilentBoundChanged();
-                //  hiddenTarget = new RenderTarget2D(GraphicsDevice, graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight, false, SurfaceFormat.Color, DepthFormat.None);
-            };
+            Window.ClientSizeChanged += (s, t) => ClientBoundChanged();
             RenderProduction.UpdateBase(new(480f * Aspect, 480));
             //base.Initialize();
             LoadContent();
         }
 
-        private void CilentBoundChanged()
+        private void ClientBoundChanged()
         {
             float trueX = Window.ClientBounds.Width, trueY = Window.ClientBounds.Height;
             screenSize = new Vector2(Window.ClientBounds.Width, Window.ClientBounds.Height);
@@ -104,7 +100,7 @@ namespace UndyneFight_Ex
         public static void ResetRendering()
         {
             DrawFPS = DataLibrary.DrawFPS;
-            instance.CilentBoundChanged();
+            instance.ClientBoundChanged();
             Graphics.SynchronizeWithVerticalRetrace = false;
             MissionSpriteBatch.DefaultState = DataLibrary.SamplerState switch
             {
@@ -197,8 +193,8 @@ namespace UndyneFight_Ex
 
         private void TryExit() => Exit();
 
-        bool escPressed = false;
-        float escHeld = 0;
+        private bool escPressed = false;
+        private float escHeld = 0;
 
         protected override bool BeginDraw()
         {
@@ -211,7 +207,7 @@ namespace UndyneFight_Ex
             return false;
         }
         public static float DrawFPS { get; set; } = 60f;
-        float _totalElapsedMS = 0;
+        private float _totalElapsedMS = 0;
 
         public static float UpdateCost = 0.0f;
 
@@ -236,7 +232,8 @@ namespace UndyneFight_Ex
             //Pausing
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
             {
-                if (!escPressed) escPressed = true;
+                if (!escPressed)
+                    escPressed = true;
                 if (escHeld++ >= 62.5f * 1.5f)
                     TryExit();
             }
@@ -284,7 +281,7 @@ namespace UndyneFight_Ex
                 Graphics.PreferredBackBufferWidth = (int)(480 * Aspect);
                 Graphics.PreferredBackBufferHeight = 480;
                 Window.AllowUserResizing = false;
-                CilentBoundChanged();
+                ClientBoundChanged();
                 Graphics.ToggleFullScreen();
                 Graphics.ApplyChanges();
             }

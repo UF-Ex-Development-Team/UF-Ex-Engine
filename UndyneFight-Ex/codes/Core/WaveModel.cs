@@ -1,4 +1,6 @@
-﻿using UndyneFight_Ex.Entities;
+﻿using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Graphics;
+using UndyneFight_Ex.Entities;
 using static UndyneFight_Ex.Fight.Functions;
 
 namespace UndyneFight_Ex.SongSystem
@@ -81,20 +83,24 @@ namespace UndyneFight_Ex.SongSystem
     public class WaveConstructor : GameObject
     {
         /// <summary>
+        /// The list of loaded contents to dispose
+        /// </summary>
+        private readonly List<object> loadedContents = [];
+        /// <summary>
         /// Whether the chart has multiple BPMs
         /// </summary>
         internal readonly bool _isMultiBPM = false;
         /// <summary>
-        /// [Beat Count of this BPM, BPM]
+        /// The list of bpms and their durations
         /// </summary>
-        private readonly float[][] _MultiBPM;
+        private readonly (float beatCount, float bpm)[] _MultiBPM;
         private readonly float[] _MultiBPMChange;
         private int _curBPMStage = 0;
         /// <summary>
         /// Initializes the wave data
         /// </summary>
         /// <param name="beatTime">Duration of 1 beat or the BPM</param>
-        /// <param name="isBPM">Whether <paramref name="beatTime"/> is the BPM itself</param>
+        /// <param name="isBPM">Whether <paramref name="beatTime"/> is the BPM itself (Default false)</param>
         public WaveConstructor(float beatTime, bool isBPM = false)
         {
             SingleBeat = isBPM ? (62.5f / (beatTime / 60f)) : beatTime;
@@ -104,18 +110,18 @@ namespace UndyneFight_Ex.SongSystem
         /// Initializes the wave data
         /// </summary>
         /// <param name="beats">Duration of each beat, [Beat Count, BPM]</param>
-        public WaveConstructor(params float[][] beats)
+        public WaveConstructor(params (float beatCount, float bpm)[] beats)
         {
             _isMultiBPM = true;
             //Convert BPM into frames
             _MultiBPMChange = new float[beats.Length];
-            for ( int i = 0; i < beats.Length; ++i)
+            for (int i = 0; i < beats.Length; ++i)
             {
-                beats[i][1] = 62.5f / (beats[i][1] / 60f);
-                _MultiBPMChange[i] = beats[i][0] + (i > 0 ? _MultiBPMChange[i - 1] : 0);
+                beats[i].bpm = 62.5f / (beats[i].bpm / 60f);
+                _MultiBPMChange[i] = beats[i].beatCount + (i > 0 ? _MultiBPMChange[i - 1] : 0);
             }
-            //Set inital BPM
-            SingleBeat = (_MultiBPM = beats)[0][1];
+            //Set initial BPM
+            SingleBeat = (_MultiBPM = beats)[0].bpm;
             DelayEnabled = true;
         }
         /// <summary>
@@ -133,14 +139,14 @@ namespace UndyneFight_Ex.SongSystem
             if (_isMultiBPM)
             {
                 float AccumulateFrames = 0;
-                foreach (float[] bpm in _MultiBPM)
+                foreach ((float beatCount, float bpm) BPMList in _MultiBPM)
                 {
-                    if (x <= bpm[0])
-                        return AccumulateFrames + x * bpm[1];
+                    if (x <= BPMList.beatCount)
+                        return AccumulateFrames + x * BPMList.bpm;
                     else
                     {
-                        AccumulateFrames += bpm[0] * bpm[1];
-                        x -= bpm[0];
+                        AccumulateFrames += BPMList.beatCount * BPMList.bpm;
+                        x -= BPMList.beatCount;
                     }
                 }
             }
@@ -179,7 +185,7 @@ namespace UndyneFight_Ex.SongSystem
         /// <summary>
         /// Invokes an action after the given beats
         /// </summary>
-        /// <param name="delayBeat">The amount of beats to delay</param>
+        /// <param name="delayBeat">The amount of    to delay</param>
         /// <param name="action">The action to invoke</param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void DelayBeat(float delayBeat, Action action) => AddInstance(new InstantEvent(delayBeat * SingleBeat, action));
@@ -337,26 +343,20 @@ namespace UndyneFight_Ex.SongSystem
             }
         }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private static string[] SplitBracket(string origin)
-        {
-            return origin.Count(s => s == '(') != origin.Count(s => s == ')')
+        private static string[] SplitBracket(string origin) => origin.Count(s => s == '(') != origin.Count(s => s == ')')
                 ? throw new ArgumentException($"{origin} isn't a legal bracket sequence")
-                : ([.. new BracketTreeNode(origin).GetAll([])]);
-        }
+                : [.. new BracketTreeNode(origin).GetAll([])];
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static string[] ProduceTag(ref string origin)
         {
             if (origin[^1] != '}')
                 return null;
-            int tag = -1;
-            for (int i = 0; i < origin.Length; i++)
-                if (origin[i] == '{')
-                    tag = i;
+            int tag = origin.LastIndexOf('{');
             if (tag == -1)
                 throw new ArgumentException($"{nameof(origin)} has no character '{{'", origin);
 
             string result = origin[(tag + 1)..^1];
-            origin = origin[0..tag];
+            origin = origin[..tag];
 
             return result.Split(',');
         }
@@ -398,7 +398,7 @@ namespace UndyneFight_Ex.SongSystem
             string tag = null;
             float speedMul = 1f;
             bool isvoid = false;
-            //Apply speed multiplcation
+            //Apply speed multiplication
             if (speedPos != -1)
                 speedMul = tagPos > speedPos
                     ? MathUtil.FloatFromString(origin[(speedPos + 1)..tagPos])
@@ -517,9 +517,7 @@ namespace UndyneFight_Ex.SongSystem
                         i = 2;
                     else
                         for (; origin[i] != '>'; i++)
-                        {
                             args += origin[i];
-                        }
                     origin = origin[(i + 1)..];
                 }
                 else
@@ -543,14 +541,14 @@ namespace UndyneFight_Ex.SongSystem
                         Action action = value;
                         GameObject[] list = [new InstantEvent(delay, () => {
                             Arguments = argsFloat;
-                            action.Invoke();
+                            action();
                         })];
                         return list;
                     }
                     else
                     {
                         Arguments = argsFloat;
-                        value.Invoke();
+                        value();
                         return null;
                     }
                 }
@@ -561,7 +559,7 @@ namespace UndyneFight_Ex.SongSystem
                 }
                 else
                 {
-                    value.Invoke();
+                    value();
                     return null;
                 }
             }
@@ -573,23 +571,23 @@ namespace UndyneFight_Ex.SongSystem
         public class ChartSettings
         {
             /// <summary>
-            /// The appearing volume of <see cref="GreenSoulGB"/>
+            /// The appearing volume of <see cref="GreenSoulGB"/> (Default 0.5f)
             /// </summary>
             public float GBAppearVolume = 0.5f;
             /// <summary>
-            /// The shooting volume of <see cref="GreenSoulGB"/>
+            /// The shooting volume of <see cref="GreenSoulGB"/> (Default 0.5f)
             /// </summary>
             public float GBShootVolume = 0.75f;
             /// <summary>
-            /// The volume of collision of <see cref="Arrow"/> that has <see cref="Arrow.VoidMode"/> set to true
+            /// The volume of collision of <see cref="Arrow"/> that has <see cref="Arrow.VoidMode"/> set to true (Default 0.5f)
             /// </summary>
             public float VoidArrowVolume = 0.5f;
             /// <summary>
-            /// Whether all Tap arrows are displayed as green outlined arrows
+            /// Whether all Tap arrows are displayed as green outlined arrows (Default false)
             /// </summary>
             public bool GreenTap = false;
             /// <summary>
-            /// Whether the <see cref="GreenSoulGB"/> follows the player rotation or not
+            /// Whether the <see cref="GreenSoulGB"/> follows the player rotation or not (Default false)
             /// </summary>
             public bool GBFollowing { get; set; } = false;
         }
@@ -700,7 +698,7 @@ namespace UndyneFight_Ex.SongSystem
         public static float CurrentTime { get; private set; } = 0;
         public static bool DelayEnabled { private get; set; } = true;
         /// <summary>
-        /// Tempoary variable slot you can use, has a size of 100
+        /// Temporary variable slot you can use, has a size of 100
         /// </summary>
         public static object[] Temps { get; private set; } = new object[100];
         /// <summary>
@@ -720,7 +718,7 @@ namespace UndyneFight_Ex.SongSystem
         /// Use <see cref="RegisterFunction(string, Action)"/> or <see cref="RegisterFunctionOnce(string, Action)"/> to declare functions to execute them inside here<br/>
         /// For example RegisterFunctionOnce("func", ()=> {});<br/>
         /// "(func)(R)", will invoke the action in "func" and creates an arrow<br/>
-        /// "!!X*/Y", the beats will be a 8 * X beat for the next Y beats (If Y is undefined then it will last for the rest of the function)<br/>
+        /// "!!X*/Y", Each item will last Beat / 2X beats (i.e. X = 2 then 1 beat is 4 items) for the next Y beats (If Y is undefined then it will last for the rest of the function)<br/>
         /// You can add arguments in the form of "&lt;Arg1,Arg2...&gt;Action"<br/>
         /// You may use <see cref="Arguments"/> inside the declared action in RegisterFunction(Once) to access them.
         /// </summary>
@@ -734,6 +732,7 @@ namespace UndyneFight_Ex.SongSystem
             float t = Delay;
             int effectLast = 0;
             int currentCount = 4;
+            Arguments = [];
             for (int i = 0; i < Barrage.Length; i++)
             {
                 ReadOnlySpan<char> cur = Barrage[i];
@@ -743,12 +742,7 @@ namespace UndyneFight_Ex.SongSystem
                     if (cur[0] == '!' && cur[1] == '!')
                     {
                         string str = Barrage[i][2..];
-                        int pos = -1;
-                        for (int j = 0; j < str.Length; j++)
-                        {
-                            if (str[j] == '/')
-                                pos = j;
-                        }
+                        int pos = str.LastIndexOf('/');
                         if (pos == -1)
                         {
                             int count = Convert.ToInt32(str);
@@ -791,13 +785,46 @@ namespace UndyneFight_Ex.SongSystem
         }
         public sealed override void Update()
         {
-            //Remove chating actions
-            removingActions.ForEach(s => chartingActions.Remove(s));
-            removingActions.Clear();
+            //Remove charting actions
+            if (removingActions.Count > 0)
+            {
+                removingActions.ForEach(s => chartingActions.Remove(s));
+                removingActions.Clear();
+            }
             //Set multiple BPM
             if (_isMultiBPM && InBeat(_MultiBPMChange[_curBPMStage]))
-                SingleBeat = _MultiBPM[++_curBPMStage][1];
+                SingleBeat = _MultiBPM[++_curBPMStage].bpm;
         }
+        /// <summary>
+        /// Loads a file (Cross-platform, auto dispose)
+        /// </summary>
+        /// <typeparam name="T">Content type</typeparam>
+        /// <param name="path">Path to file</param>
+        /// <param name="cm">Content manager to use</param>
+        /// <returns>The loaded content</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public T LoadContent<T>(string path, ContentManager cm = null)
+        {
+            T content = DrawingLab.LoadContent<T>(path, cm);
+            loadedContents.Add(content);
+            return content;
+        }
+        /// <summary>
+        /// Loads an image (.bmp /.gif /.jpg /.png, auto dispose)
+        /// </summary>
+        /// <param name="path">Path of the image</param>
+        /// <returns>The loaded texture</returns>
+        public Texture2D LoadImage(string path)
+        {
+            Texture2D image = Texture2D.FromFile(GameStates.SpriteBatch.GraphicsDevice, path);
+            loadedContents.Add(image);
+            return image;
+        }
+        public override void Dispose() => loadedContents.ForEach(s =>
+        {
+            if (s is Texture2D)
+                (s as Texture2D).Dispose();
+        });
     }
     /// <summary>
     /// The list of information of the chart
@@ -805,11 +832,11 @@ namespace UndyneFight_Ex.SongSystem
     public abstract class SongInformation
     {
         /// <summary>
-        /// Whether the music will be in sync with the time elapsed (Must be an .ogg file)
+        /// Whether the music is an .ogg file
         /// </summary>
-        public bool MusicOptimized { get; protected set; } = false;
+        public bool MusicOptimized { get; protected set; } = true;
         /// <summary>
-        /// The display name of the chart (Does not affect Save File)
+        /// The display name of the chart (Does not affect save data)
         /// </summary>
         public virtual string DisplayName => "";
         /// <summary>
@@ -857,13 +884,13 @@ namespace UndyneFight_Ex.SongSystem
         /// </summary>
         public virtual Dictionary<Difficulty, float> CompleteDifficulty => [];
         /// <summary>
+        /// The difficulty constant for achieving accuracy in the chart
+        /// </summary>
+        public virtual Dictionary<Difficulty, float> ComplexDifficulty => [];
+        /// <summary>
         /// The difficulty constants for All Perfecting the chart
         /// </summary>
         public virtual Dictionary<Difficulty, float> APDifficulty => [];
-        /// <summary>
-        /// The difficulty constant for acheving accuracy in the chart
-        /// </summary>
-        public virtual Dictionary<Difficulty, float> ComplexDifficulty => [];
         /// <summary>
         /// The difficulties that are unlocked, if they are locked, the player cannot play them
         /// </summary>

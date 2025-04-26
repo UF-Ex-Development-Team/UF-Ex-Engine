@@ -9,7 +9,7 @@ namespace UndyneFight_Ex.Entities
         {
             private readonly List<Arrow> arrows = [];
 
-            public bool RotateOffset { get; set; } = false;
+            protected internal bool RotateOffset { get; set; } = false;
             public ArrowEasing() => UpdateIn120 = true;
             /// <summary>
             /// Applies the easing functions to the arrows with the given tag
@@ -30,13 +30,13 @@ namespace UndyneFight_Ex.Entities
             public void SetArrowSet(List<Arrow> arrows) => this.arrows.AddRange(arrows);
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public abstract void SetArrowPos(Arrow arr);
+            protected abstract void ApplyArrowEasing(Arrow arr);
 
             private bool _lastRotateOffsetState = false;
             public override void Update()
             {
                 _ = arrows.RemoveAll(s => s.Disposed);
-                arrows.ForEach(SetArrowPos);
+                arrows.ForEach(ApplyArrowEasing);
                 if (RotateOffset ^ _lastRotateOffsetState)
                 {
                     arrows.ForEach(s => s.RotateOffset = RotateOffset);
@@ -46,14 +46,12 @@ namespace UndyneFight_Ex.Entities
 
             public float Intensity { get; set; } = 1.0f;
         }
-        public class EnsembleEasing : ArrowEasing
+        public class EnsembleEasing() : ArrowEasing
         {
             private Vector2 _deltaEasing = Vector2.Zero;
             private float _revolutionEasing = 0;
             private float _rotationEasing = 0;
             private float _distanceEasing = 0;
-
-            public EnsembleEasing() { }
             /// <summary>
             /// Eases the coordinate displacement of the arrow
             /// </summary>
@@ -80,7 +78,7 @@ namespace UndyneFight_Ex.Entities
             public void DistanceEase(params EaseUnit<float>[] distanceEases) => RunEase((s) => _distanceEasing = s, distanceEases);
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public override void SetArrowPos(Arrow arr)
+            protected override void ApplyArrowEasing(Arrow arr)
             {
                 arr.Offset = _deltaEasing * Intensity;
                 arr.CentreRotationOffset = _revolutionEasing * Intensity;
@@ -126,6 +124,9 @@ namespace UndyneFight_Ex.Entities
                             alphaBuffer = new float[maxIndex];
                 }
             }
+            /// <summary>
+            /// The total time of the easing
+            /// </summary>
             public float ApplyTime { get; set; } = 60;
             private float _easingTimeMax = 0;
 
@@ -155,27 +156,25 @@ namespace UndyneFight_Ex.Entities
 
             private Vector2[] positionBuffer;
             private float[] rotationBuffer, distanceBuffer, alphaBuffer;
-
+            /// <inheritdoc/>
             public Func<ICustomMotion, Vector2> PositionRoute { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+            /// <inheritdoc/>
             public Func<ICustomMotion, float> RotationRoute { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+            /// <inheritdoc/>
             public float[] RotationRouteParam { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+            /// <inheritdoc/>
             public float[] PositionRouteParam { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
             /// <summary>
             /// Time elapsed after spawning
             /// </summary>
             public float AppearTime { get; set; } = 0f;
-            /// <summary>
-            /// The rotation with respect with the soul
-            /// </summary>
+            /// <inheritdoc/>
             public float Rotation { get; set; } = 0f;
-            public float TempAlpha { get; set; } = 0f;
             /// <summary>
             /// The distance between the arrow and the target
             /// </summary>
             public float Distance { get; set; } = 0f;
-            /// <summary>
-            /// The position of the target
-            /// </summary>
+            /// <inheritdoc/>
             public Vector2 CentrePosition { get; set; }
             /// <summary>
             /// The rotation of the arrow itself
@@ -183,20 +182,20 @@ namespace UndyneFight_Ex.Entities
             public float SelfRotation { get; set; } = 0f;
             public bool AutoDispose { get; internal set; }
 
-            int maxIndex = 0;
-            int arrayIndex = -1;
+            private int maxIndex = 0;
+            private int arrayIndex = -1;
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             private static int ToArrayIndex(float x) => (int)((x - 0.5f) * 2f);
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public override void SetArrowPos(Arrow arr)
+            protected override void ApplyArrowEasing(Arrow arr)
             {
                 float time = ApplyTime - arr.TimeDelta;
                 if (time < 0.5f)
                     return;
                 if (MathF.Abs(SelfRotation) > 1)
-                { arr.SelfRotationOffset = SelfRotation; }
+                    arr.SelfRotationOffset = SelfRotation;
                 int l = ToArrayIndex(time), r = l + 1;
 
                 if (l >= maxIndex + 2)
@@ -261,7 +260,7 @@ namespace UndyneFight_Ex.Entities
                 if (distanceEaseEnabled)
                     distanceBuffer[arrayIndex] = Distance = distanceEase.Easing.Invoke(this);
                 if (alphaEaseEnabled)
-                    alphaBuffer[arrayIndex] = TempAlpha = alphaEase.Easing.Invoke(this);
+                    alphaBuffer[arrayIndex] = alphaEase.Easing.Invoke(this);
 
                 if (AppearTime > 20 && AutoDispose)
                 {
@@ -284,10 +283,10 @@ namespace UndyneFight_Ex.Entities
             /// <param name="stopTime">The duration of time to stop</param>
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public void ApplyStop(float stopTime) => tuples.Add(new(stopTime, DelayControl.DelayType.Stop));
-            readonly List<Tuple<float, DelayControl.DelayType>> tuples = [];
+            private readonly List<Tuple<float, DelayControl.DelayType>> tuples = [];
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public override void SetArrowPos(Arrow arr)
+            protected override void ApplyArrowEasing(Arrow arr)
             {
                 foreach (Tuple<float, DelayControl.DelayType> pair in tuples)
                 {

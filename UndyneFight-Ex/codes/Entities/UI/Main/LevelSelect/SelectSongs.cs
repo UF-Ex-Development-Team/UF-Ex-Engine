@@ -48,14 +48,8 @@ namespace UndyneFight_Ex.Entities
                 else if (currentSelect < 0)
                     currentSelect = SelectionCount - 1;
             };
-            SelectChanged += () =>
-            {
-                PlaySound(changeSelection, 0.9f);
-            };
-            Selected += () =>
-            {
-                PlaySound(select, 0.9f);
-            };
+            SelectChanged += () => PlaySound(changeSelection, 0.9f);
+            Selected += () => PlaySound(select, 0.9f);
             PushSelection(new SelectEnd(this));
             PushSelection(new ChallengeMode(this));
             PushSelection(new Buffed(this));
@@ -138,7 +132,7 @@ namespace UndyneFight_Ex.Entities
                 this.selector = selector;
                 TextColor = (this.selector.selectedMode & GameMode.NoHit) != 0 ? Color.Yellow : Color.Gray;
             }
-            bool Interrupted => (selector.selectedMode & GameMode.Practice) != 0;
+            private bool Interrupted => (selector.selectedMode & GameMode.Practice) != 0;
             public override void SelectionEvent()
             {
                 if (!Interrupted)
@@ -180,7 +174,7 @@ namespace UndyneFight_Ex.Entities
                 this.selector = selector;
                 TextColor = (this.selector.selectedMode & GameMode.Practice) != 0 ? Color.Lime : Color.Gray;
             }
-            bool Interrupted => (selector.selectedMode & GameMode.NoHit) != 0;
+            private bool Interrupted => (selector.selectedMode & GameMode.NoHit) != 0;
             public override void SelectionEvent()
             {
                 if (!Interrupted)
@@ -440,10 +434,7 @@ namespace UndyneFight_Ex.Entities
                 else if (currentSelect < 0)
                     currentSelect = 0;
             };
-            SelectChanged += () =>
-            {
-                PlaySound(changeSelection, 0.9f);
-            };
+            SelectChanged += () => PlaySound(changeSelection, 0.9f);
 
             camera = new Camera();
             AddChild(camera);
@@ -649,7 +640,7 @@ namespace UndyneFight_Ex.Entities
         }
 
         private readonly JudgeSelector judgeSelector;
-        readonly Texture2D _songIllustration;
+        private readonly Texture2D _songIllustration;
 
         public DifficultySelector(IWaveSet wave)
         {
@@ -674,10 +665,7 @@ namespace UndyneFight_Ex.Entities
             };
             ResetSelect();
             PlaySound(select, 0.9f);
-            SelectChanged += () =>
-            {
-                PlaySound(changeSelection, 0.9f);
-            };
+            SelectChanged += () => PlaySound(changeSelection, 0.9f);
 
 #if !DEBUG
             if (InChampionShip)
@@ -752,10 +740,7 @@ namespace UndyneFight_Ex.Entities
                 }
                 divNames = [.. current.DifficultyPanel.Keys];
             }
-            Selected += () =>
-            {
-                StartSong(this.wave, _songIllustration, filePath, (Selections[currentSelect] as IGetDifficulty).ThisDifficulty, judgeSelector.JudgeState, mode);
-            };
+            Selected += () => StartSong(this.wave, _songIllustration, filePath, (Selections[currentSelect] as IGetDifficulty).ThisDifficulty, judgeSelector.JudgeState, mode);
 #if !DEBUG
             }
 #endif

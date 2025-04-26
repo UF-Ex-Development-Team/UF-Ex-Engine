@@ -16,7 +16,7 @@ namespace UndyneFight_Ex
         /// <param name="_component">The <see cref="ICollidingComponent"/> to check collision with</param>
         /// <returns>Whether they are collided</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public bool CollideWith(ICollidingComponent _component);
+        bool CollideWith(ICollidingComponent _component);
     }
     internal static class CheckCollision
     {
@@ -41,7 +41,7 @@ namespace UndyneFight_Ex
         /// Creates a line segment
         /// </summary>
         /// <param name="v1">The first vertex of the line</param>
-        /// <param name="v2">The otehr vertex of the line</param>
+        /// <param name="v2">The other vertex of the line</param>
         public CollidingSegment(Vector2 v1, Vector2 v2)
         {
             this.v1 = v1;
@@ -251,11 +251,11 @@ namespace UndyneFight_Ex
         /// </summary>
         public float Height { get; set; } = Height;
         /// <summary>
-        /// The x coordiante of the center of the rectangle
+        /// The x coordinate of the top left corner of the rectangle
         /// </summary>
         public float X { get; set; } = X;
         /// <summary>
-        /// The y coordiante of the center of the rectangle
+        /// The y coordinate of the top left corner of the rectangle
         /// </summary>
         public float Y { get; set; } = Y;
         /// <summary>
@@ -263,7 +263,7 @@ namespace UndyneFight_Ex
         /// </summary>
         /// <returns>The array of vertices</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public Vector2[] GetVertices() => [new(Left, Up), new(Right, Up), new(Right, Down), new(Left, Down)];
+        public readonly Vector2[] GetVertices() => [new(Left, Up), new(Right, Up), new(Right, Down), new(Left, Down)];
         /// <summary>
         /// Whether the rectangle is colliding with another <see cref="ICollidingComponent"/>
         /// </summary>
@@ -278,10 +278,15 @@ namespace UndyneFight_Ex
         /// <param name="size">The dimensions of the rectangle</param>
         public CollideRect(Vector2 pos, Vector2 size) : this(pos.X, pos.Y, size.X, size.Y) { }
         /// <summary>
-        /// Crates a reatangle with collision from an <see cref="Rectangle"/>
+        /// Creates a rectangle with collision from a <see cref="Rectangle"/>
         /// </summary>
         /// <param name="rec">The <see cref="Rectangle"/> to create from</param>
         public CollideRect(Rectangle rec) : this(rec.X, rec.Y, rec.Width, rec.Height) { }
+        /// <summary>
+        /// Creates a rectangle with collision from a <see cref="System.Drawing.RectangleF"/>
+        /// </summary>
+        /// <param name="rec">The <see cref="System.Drawing.RectangleF"/> to create from</param>
+        public CollideRect(System.Drawing.RectangleF rec) : this(rec.X, rec.Y, rec.Width, rec.Height) { }
         /// <summary>
         /// Offsets the position of the rectangle
         /// </summary>
@@ -303,8 +308,8 @@ namespace UndyneFight_Ex
         /// <summary>
         /// Sets the centre of the rectangle
         /// </summary>
-        /// <param name="X">The x coordiante of the center of the rectangle</param>
-        /// <param name="Y">The y coordiante of the center of the rectangle</param>
+        /// <param name="X">The x coordinate of the center of the rectangle</param>
+        /// <param name="Y">The y coordinate of the center of the rectangle</param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void SetCentre(float X, float Y) => Offset(new Vector2(X, Y) - GetCentre());
         /// <summary>
@@ -332,9 +337,9 @@ namespace UndyneFight_Ex
             return Math.Abs(anyz.X) <= Width / 2 && Math.Abs(anyz.Y) <= Height / 2;
         }
         /// <summary>
-        /// Converts a <see cref="Rectangle"/> to <see cref="CollideRect"/>
+        /// Converts a <see cref="CollideRect"/> to <see cref="Rectangle"/> (Without rotation)
         /// </summary>
-        /// <returns>The <see cref="CollideRect"/></returns>
+        /// <returns>The <see cref="Rectangle"/></returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public readonly Rectangle ToRectangle() => new((int)X, (int)Y, (int)Width, (int)Height);
         /// <summary>
@@ -361,8 +366,8 @@ namespace UndyneFight_Ex
                 Y = value.Y - Size.Y;
             }
         }/// <summary>
-        /// The top left corner of the rectangle
-        /// </summary>
+         /// The top left corner of the rectangle
+         /// </summary>
         public Vector2 TopLeft
         {
             get => new(X, Y);
@@ -396,24 +401,29 @@ namespace UndyneFight_Ex
                 Height = value.Y;
             }
         }
+        /// <summary>
+        /// Converts the rectangle collision to a <see cref="Rectangle"/> (No rotation)
+        /// </summary>
+        /// <param name="rect"></param>
         public static implicit operator Rectangle(CollideRect rect) => rect.ToRectangle();
         public static implicit operator CollideRect(Rectangle rect) => new(rect);
+        public static implicit operator CollideRect(System.Drawing.RectangleF rect) => new(rect);
         /// <summary>
         /// The y coordinate of the upper side of the rectangle
         /// </summary>
-        public float Up => Y;
+        public readonly float Up => Y;
         /// <summary>
         /// The y coordinate of the lower side of the rectangle
         /// </summary>
-        public float Down => Y + Height;
+        public readonly float Down => Y + Height;
         /// <summary>
         /// The x coordinate of the right side of the rectangle
         /// </summary>
-        public float Right => X + Width;
+        public readonly float Right => X + Width;
         /// <summary>
         /// The x coordinate of the left side of the rectangle
         /// </summary>
-        public float Left => X;
+        public readonly float Left => X;
         /// <summary>
         /// Displaces the rectangle by the given vector
         /// </summary>
@@ -452,7 +462,7 @@ namespace UndyneFight_Ex
         /// Scales the rectangle
         /// </summary>
         /// <param name="left">The rectangle to scale</param>
-        /// <param name="right">The scalr to multiply</param>
+        /// <param name="right">The scalar to multiply</param>
         /// <returns>The scaled rectangle</returns>
         public static CollideRect operator *(CollideRect left, float right)
         {

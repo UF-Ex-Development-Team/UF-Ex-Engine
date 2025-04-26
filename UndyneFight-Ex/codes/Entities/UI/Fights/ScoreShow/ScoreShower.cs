@@ -4,7 +4,7 @@ using static UndyneFight_Ex.GameStates;
 
 namespace UndyneFight_Ex.Entities
 {
-    public partial class StateShower : Entity
+    internal partial class StateShower : Entity
     {
         private static float FontScale { get; set; } = 0.75f;
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -101,7 +101,7 @@ namespace UndyneFight_Ex.Entities
             };
             if (type != 0)
             {
-                score.Value = score + type switch
+                score.Value = score + (int)(type switch
                 {
                     1 => 0,
                     2 => 40,
@@ -109,7 +109,7 @@ namespace UndyneFight_Ex.Entities
                     4 => 80,
                     5 => 80,
                     _ => throw new NotImplementedException()
-                };
+                } * (CurrentScene as SongFightingScene).ScoreMultiplier);
             }
         }
 
@@ -261,7 +261,7 @@ namespace UndyneFight_Ex.Entities
                 CheatAffirmed();
         }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void DisposeInstance() => instance = null;
+        internal static void DisposeInstance() => instance = null;
         #endregion
     }
 }

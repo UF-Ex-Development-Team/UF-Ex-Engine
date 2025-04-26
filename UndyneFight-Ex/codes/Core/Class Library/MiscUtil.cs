@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System.Diagnostics;
 
 namespace UndyneFight_Ex
 {
@@ -26,11 +27,11 @@ namespace UndyneFight_Ex
         /// Gets the <see cref="ShorthandName"/> of the object
         /// </summary>
         /// <typeparam name="T">An object</typeparam>
-        /// <param name="thing">The object to pull the shortnand name of</param>
+        /// <param name="thing">The object to pull the shorthand name of</param>
         /// <returns>The <see cref="ShorthandName"/> of the object</returns>
         public static string GetShorthandName(object thing)
         {
-            var attributes = thing.GetType().GetMember(thing.ToString())[0].GetCustomAttributes(typeof(ShorthandName), false);
+            object[] attributes = thing.GetType().GetMember(thing.ToString())[0].GetCustomAttributes(typeof(ShorthandName), false);
             return (attributes.Length > 0) ? ((ShorthandName)attributes[0]).Name : "";
         }
         #endregion
@@ -132,8 +133,22 @@ namespace UndyneFight_Ex
                     .Select(pair => pair.Key)
                     .FirstOrDefault() :
                     //Individual chars
-                    (text.Length == 1 && ((text[0] >= 'a' && text[0] <= 'z') || (text[0] >= 'A' && text[0] <= 'Z') || text[0] >= '0' && text[0] <= '9') ? (Keys)text[0] : Keys.None);
+                    (text.Length == 1 && ((text[0] >= 'a' && text[0] <= 'z') || (text[0] >= 'A' && text[0] <= 'Z') || (text[0] >= '0' && text[0] <= '9')) ? (Keys)text[0] : Keys.None);
         #endregion
+        /// <summary>
+        /// Gets the asset from the name, i.e. FightResources.Sounds.spearAppear -> GetAsset("spearAppear", typeof(FightResources.Sounds)) would return the audio
+        /// </summary>
+        /// <param name="name">The name of the asset</param>
+        /// <param name="type">The type the asset belongs to</param>
+        /// <returns>The asset</returns>
+        public static object GetAsset(string name, Type type)
+        {
+            foreach (System.Reflection.MemberInfo asset in type.GetMembers())
+                if (asset.Name == name)
+                    return type.GetField(name).GetValue(null);
+            Debug.WriteLine($"Error loading {name}, check if you made a typo");
+            return null;
+        }
         #region Text renderer
         /// <summary>
         /// User defined textures for sprite drawing
@@ -145,7 +160,7 @@ namespace UndyneFight_Ex
         private static readonly Dictionary<string, GLFont> GlobalDefinedFonts = [];
         /// <summary>
         /// <para>A text builder that allows text formatting on the fly</para>
-        /// <para>Use '[[' for dispalying '[' and '\b' for displaying ']'</para>
+        /// <para>Use '[[' for displaying '[' and '\b' for displaying ']'</para>
         /// </summary>
         /// <param name="text">The text to display with format commands</param>
         /// <param name="typer">The text typer class to associate (Can be null)</param>
@@ -175,11 +190,11 @@ namespace UndyneFight_Ex
             /// </summary>
             private string ParsedText = text;
             /// <summary>
-            /// The list of text height seperated by the lines
+            /// The list of text height separated by the lines
             /// </summary>
             private readonly List<float> TextLineHeights = [];
             /// <summary>
-            /// The list of text width seperated by the lines
+            /// The list of text width separated by the lines
             /// </summary>
             private readonly List<float> TextLineWidths = [];
             /// <summary>
@@ -205,7 +220,7 @@ namespace UndyneFight_Ex
             /// <summary>
             /// The command queue to execute
             /// </summary>
-            private readonly Queue<int> CommandQueue = [];
+            private Queue<int> CommandQueue = [];
             /// <summary>
             /// The current ID of the command to execute
             /// </summary>
@@ -243,7 +258,7 @@ namespace UndyneFight_Ex
             /// </summary>
             private int _currentDrawingCharIndex = 0;
             /// <summary>
-            /// The current amount of sprites drawn (Index displacement due to insertment of null char)
+            /// The current amount of sprites drawn (Index displacement due to inserting the null char)
             /// </summary>
             private int _currentDrawSpriteCount = 0;
             /// <summary>
@@ -259,7 +274,7 @@ namespace UndyneFight_Ex
             /// </summary>
             private int Timer = 0;
             /// <summary>
-            /// Whether the rendering process will be done automatically or requries <see cref="Render"/> to render
+            /// Whether the rendering process will be done automatically or requires <see cref="Render"/> to render
             /// </summary>
             public bool AutoRender = true;
             /// <summary>
@@ -282,6 +297,7 @@ namespace UndyneFight_Ex
                 //Reset position
                 drawingPositions.Clear();
                 _parseDrawingPosition = defaultTextBuilderData.Position;
+                _parseDrawingPosition = Vector2.Zero;
                 //Check for close command tags, while "[[" is for indication for displaying '[' in text
                 while (ParsedText.Contains(CommandTag[1]) || ParsedText.Contains($"{CommandTag[0]}{CommandTag[0]}"))
                 {
@@ -325,11 +341,11 @@ namespace UndyneFight_Ex
                     ParsedText = stringBeforeCommand + stringAfterCommand;
                 }
                 //Set all text to instantly display if no typer is associated
-                if (TextDisplayIndex == -1)
-                    TextDisplayIndex = ParsedText.Length;
                 //Replace backspace for ']'
                 ParsedText = ParsedText.Replace('\b', CommandTag[1]);
                 PostParseAlignment();
+                if (TextDisplayIndex == -1)
+                    TextDisplayIndex = ParsedText.Length;
             }
             [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
             private void ParseCommand(string command_text)
@@ -340,16 +356,23 @@ namespace UndyneFight_Ex
                     case "/":
                         int curEffCount = currentDrawingData.curEffCount;
                         Vector2 prevPos = currentDrawingData.Position;
+                        List<List<object>> effs = currentDrawingData.EffectParam;
+                        Effects eff = currentDrawingData.Effect;
                         currentDrawingData = (TextBuilderData)defaultTextBuilderData.Clone();
-                        curStackEffCount = 0;
-                        currentDrawingData.curEffCount = curEffCount + 1;
+                        currentDrawingData.curEffCount = curEffCount + 1; //Add 1 since '/' is also an effect
                         currentDrawingData.Position = prevPos;
+                        currentDrawingData.EffectParam = effs;
+                        currentDrawingData.Effect = eff;
+                        currentDrawingData.curEffCount--;
                         break;
                     case "Color":
                         //Check whether it is just 1 color or 4 colors
-                        var ColorArg = Arguments.ElementAt(CurrentCommandCount);
+                        TextArgument ColorArg = Arguments.ElementAt(CurrentCommandCount);
+                        //Allocate array
+                        currentDrawingData.Col = new Color[4];
                         if (ColorArg.Arguments.Length == 1)
-                            currentDrawingData.Col = [ToXNAColor(System.Drawing.Color.FromName(ColorArg.Arguments[0]))];
+                            for (int i = 0; i < 4; i++)
+                                currentDrawingData.Col[i] = ToXNAColor(System.Drawing.Color.FromName(ColorArg.Arguments[0]));
                         else if (ColorArg.Arguments.Length == 4)
                             currentDrawingData.Col = [
                                 ToXNAColor(System.Drawing.Color.FromName(ColorArg.Arguments[0])),
@@ -362,7 +385,7 @@ namespace UndyneFight_Ex
                         break;
                     case "Scale":
                         //Check for a scalar scale or vector scale
-                        var ScaleArg = Arguments.ElementAt(CurrentCommandCount).Arguments;
+                        string[] ScaleArg = Arguments.ElementAt(CurrentCommandCount).Arguments;
                         currentDrawingData.Scale = ScaleArg.Length == 1
                             ? new(MathUtil.FloatFromString(ScaleArg[0]))
                             : new(MathUtil.FloatFromString(ScaleArg[0]), MathUtil.FloatFromString(ScaleArg[1]));
@@ -371,18 +394,20 @@ namespace UndyneFight_Ex
                         currentDrawingData.Scale = defaultTextBuilderData.Scale;
                         break;
                     case "Font":
-                        var FontArg = Arguments.ElementAt(CurrentCommandCount).Arguments[0];
+                        string FontArg = Arguments.ElementAt(CurrentCommandCount).Arguments[0];
                         //Check for defined fonts
                         if (DefinedFonts.TryGetValue(FontArg, out GLFont value))
                             currentDrawingData.CurrentFont = value;
-                        //Check for string name of in-engine fonts
-                        currentDrawingData.CurrentFont = FontArg switch
+                        //Check for shorthand names
+                        FontArg = FontArg switch
                         {
-                            "Normal" or "NormalFont" => GlobalResources.Font.NormalFont,
-                            "Fight" or "FightFont" => GlobalResources.Font.FightFont,
-                            "Sans" or "SansFont" => GlobalResources.Font.SansFont,
-                            "Damage" or "DamageFont" => GlobalResources.Font.DamageFont,
+                            "Normal" => "NormalFont",
+                            "Sans" => "SansFont",
+                            "Fight" => "FightFont",
+                            "Damage" => "DamageFont",
+                            _ => FontArg
                         };
+                        currentDrawingData.CurrentFont = GetAsset(FontArg, typeof(GlobalResources.Sprites)) as GLFont;
                         break;
                     case "/Font":
                         currentDrawingData.CurrentFont = defaultTextBuilderData.CurrentFont;
@@ -392,7 +417,7 @@ namespace UndyneFight_Ex
                         {
                             if (isDrawing)
                             {
-                                var curData = currentDrawingData;
+                                TextBuilderData curData = currentDrawingData;
                                 FormalDraw(tex, ParseRenderPosition(_currentDrawingCharIndex) + spritePosDelta, curData.Col[0], curData.Scale, 0, curData.VAlignment switch
                                 {
                                     TextVAlignment.Top => Vector2.Zero,
@@ -400,7 +425,7 @@ namespace UndyneFight_Ex
                                     TextVAlignment.Bottom => new(0, tex.Height)
                                 });
                                 if (_currentDrawingCharIndex == MathF.Floor(TextDisplayIndex))
-                                    Typer.Delay(Typer.TypingSpeed * 120f);
+                                    Typer.Delay(Typer.TypingSpeed * 125f);
                                 _currentDrawSpriteCount++;
                             }
                             else
@@ -411,7 +436,7 @@ namespace UndyneFight_Ex
                                 drawingPositions.Add(drawingPositions[_currentDrawingCharIndex - 1]);
                             }
                         }
-                        var SpriteArg = Arguments.ElementAt(CurrentCommandCount);
+                        TextArgument SpriteArg = Arguments.ElementAt(CurrentCommandCount);
                         string SpriteToDraw = SpriteArg.Arguments[0];
                         Vector2 spritePosDelta = Vector2.Zero;
                         int spriteIndex = 0;
@@ -428,38 +453,23 @@ namespace UndyneFight_Ex
                         //Check defined textures
                         if (DefinedTextures.TryGetValue(SpriteToDraw, out Texture2D tex))
                             ProcessTexture(tex, spritePosDelta);
-                        //Check GlobalResoruces
-                        var GloSpr = typeof(GlobalResources.Sprites);
-                        var SpriteList = GloSpr.GetMembers();
-                        foreach (var sprite in SpriteList)
+                        //Check GlobalResources
+                        object preTex = GetAsset(SpriteToDraw, typeof(GlobalResources.Sprites));
+                        if (preTex is not null)
                         {
-                            if (sprite.Name == SpriteToDraw)
-                            {
-                                var preTex = GloSpr.GetField(sprite.Name).GetValue(null);
-                                tex = preTex is Texture2D ? preTex as Texture2D : (preTex as Texture2D[])[spriteIndex];
-                                ProcessTexture(tex, spritePosDelta);
-                                return;
-                            }
+                            ProcessTexture(preTex is Texture2D ? preTex as Texture2D : (preTex as Texture2D[])[spriteIndex], spritePosDelta);
                         }
-                        //Check FightResources
-                        var FightSpr = typeof(FightResources.Sprites);
-                        SpriteList = FightSpr.GetMembers();
-                        foreach (var sprite in SpriteList)
+                        else //Check FightResources
                         {
-                            if (sprite.Name == SpriteToDraw)
-                            {
-                                var preTex = GloSpr.GetField(sprite.Name).GetValue(null);
-                                tex = preTex is Texture2D ? preTex as Texture2D : (preTex as Texture2D[])[spriteIndex];
-                                ProcessTexture(tex, spritePosDelta);
-                                return;
-                            }
+                            if ((preTex = GetAsset(SpriteToDraw, typeof(FightResources.Sprites))) is not null)
+                                ProcessTexture(preTex is Texture2D ? preTex as Texture2D : (preTex as Texture2D[])[spriteIndex], spritePosDelta);
                         }
                         break;
                     case "Wave":
                         currentDrawingData.Effect ^= Effects.Wave;
                         if (!isDrawing)
                         {
-                            var WaveArg = Arguments.ElementAt(CurrentCommandCount).Arguments;
+                            string[] WaveArg = Arguments.ElementAt(CurrentCommandCount).Arguments;
                             int countDiff = currentDrawingData.EffectParam.Count - currentDrawingData.curEffCount;
                             if (countDiff == 0)
                             {
@@ -484,7 +494,7 @@ namespace UndyneFight_Ex
                         currentDrawingData.Effect ^= Effects.Shake;
                         if (!isDrawing)
                         {
-                            var ShakeArg = Arguments.ElementAt(CurrentCommandCount).Arguments;
+                            string[] ShakeArg = Arguments.ElementAt(CurrentCommandCount).Arguments;
                             Vector3 ShakeParam = ShakeArg.Length switch
                             {
                                 1 => new(new Vector2(MathUtil.FloatFromString(ShakeArg[0])), 1),
@@ -492,7 +502,7 @@ namespace UndyneFight_Ex
                                 3 => new(MathUtil.FloatFromString(ShakeArg[0]), MathUtil.FloatFromString(ShakeArg[1]), MathUtil.FloatFromString(ShakeArg[2]))
                             };
                             int countDiff = currentDrawingData.EffectParam.Count - currentDrawingData.curEffCount;
-                            if (countDiff == 0)
+                            if (countDiff <= 0)
                             {
                                 currentDrawingData.EffectParam.Add([ShakeParam]);
                                 curStackEffCount++;
@@ -511,6 +521,11 @@ namespace UndyneFight_Ex
                             curStackEffCount--;
                         }
                         break;
+#if DEBUG
+                    default:
+                        Debug.WriteLine($"Unrecognized command: {command_text}");
+                        break;
+#endif
                 }
             }
             [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
@@ -520,22 +535,25 @@ namespace UndyneFight_Ex
                 currentDrawingData = (TextBuilderData)defaultTextBuilderData.Clone();
                 currentDrawingData.Position = Vector2.Zero;
                 _currentDrawSpriteCount = 0;
-                Queue<int> TempQueue = new(CommandQueue);
+                int[] TempQueue = [..CommandQueue];
                 //Parse text positions
                 CurrentCommandCount = 0;
                 Vector2 charSize = Vector2.Zero;
                 float maxCharHeight = 0;
                 float lineWidth = 0;
                 float mult;
+                float prevXScale = currentDrawingData.Scale.X;
                 for (int i = 0; i < ParsedText.Length; i++)
                 {
+                    prevXScale = currentDrawingData.Scale.X;
                     while (TempQueue.Contains(i - _currentDrawSpriteCount))
                     {
                         _currentDrawingCharIndex = i;
                         ParseCommand(Commands[CurrentCommandCount]);
-                        TempQueue.Dequeue();
+                        TempQueue = TempQueue[1..];
                         CurrentCommandCount++;
                     }
+                    //Debug.WriteLine($"{ParsedText[i]}: {_parseDrawingPosition}");
                     //Try parse drawable text (NULL char for sprite -> cannot parse size)
                     if (ParsedText[i] != '\u0000')
                     {
@@ -543,21 +561,43 @@ namespace UndyneFight_Ex
                         //I don't know why yet, but the first char is displaced by 1 char width
                         if (i == 0 && currentDrawingData.HAlignment == TextHAlignment.Left)
                         {
-                            _parseDrawingPosition.X -= charSize.X;
+                            _parseDrawingPosition.X -= charSize.X * currentDrawingData.Scale.X;
                         }
                         lineWidth += charSize.X * currentDrawingData.Scale.X;
                         //Line wrapping
                         if (forceMaxLineWidth != -1 && lineWidth > forceMaxLineWidth)
                         {
-                            var trimText = ParsedText[..(i + 1)];
-                            int lastIndex = trimText.LastIndexOf(' ');
+                            int lastIndex = ParsedText[..(i + 1)].LastIndexOf(' ');
                             int checkIndex = wrapIgnoreSpace ? i : (lastIndex == -1 ? i : lastIndex);
                             ParsedText = ParsedText.Insert(checkIndex, "\n");
-                            ParsedText = ParsedText.Remove(checkIndex + 1, 1);
                             lineWidth = 0;
                             drawingPositions.RemoveRange(checkIndex, i - checkIndex);
                             _parseDrawingPosition = drawingPositions[^1];
                             i = checkIndex;
+                            //Adjust command queue values due to extra '\n'
+                            int[] tmp = [.. CommandQueue];
+                            for (int j = 0; j < tmp.Length; j++)
+                            {
+                                if (tmp[j] >= i)
+                                    tmp[j]++;
+                            }
+                            CommandQueue = new(tmp); //Do not convert
+                            //Check for space
+                            if (!wrapIgnoreSpace)
+                            {
+                                while (ParsedText[i + 1] == ' ')
+                                {
+                                    ParsedText = ParsedText.Remove(i + 1, 1);
+                                    //Adjust command queue values due to removed space
+                                    tmp = [.. CommandQueue];
+                                    for (int j = 0; j < tmp.Length; j++)
+                                    {
+                                        if (tmp[j] >= i + 1)
+                                            tmp[j]--;
+                                    }
+                                    CommandQueue = new(tmp); //Do not convert
+                                }
+                            }
                         }
                         if (ParsedText[i] != '\n')
                             maxCharHeight = MathF.Max(maxCharHeight, charSize.Y * currentDrawingData.Scale.Y);
@@ -567,9 +607,9 @@ namespace UndyneFight_Ex
                         continue;
                     }
                     //Parse line breaking
+                    vec2 prevCharSize = i == 0 ? Vector2.Zero : currentDrawingData.CurrentFont.SFX.MeasureString(ParsedText[i - 1].ToString());
                     if (ParsedText[i] == '\n')
                     {
-                        var prevCharSize = i == 0 ? Vector2.Zero : currentDrawingData.CurrentFont.SFX.MeasureString(ParsedText[i - 1].ToString());
                         float charYDisplace = maxCharHeight == 0 ? prevCharSize.Y * currentDrawingData.Scale.Y : maxCharHeight;
                         currentDrawingData.Position.Y += charYDisplace;
                         TextLineHeights.Add(charYDisplace);
@@ -581,16 +621,17 @@ namespace UndyneFight_Ex
                             _ => 0
                         };
                         TextLineWidths.Add(_parseDrawingPosition.X + prevCharSize.X * currentDrawingData.Scale.X * mult);
-                        _parseDrawingPosition.X = currentDrawingData.HAlignment == TextHAlignment.Left ? -prevCharSize.X * currentDrawingData.Scale.X : 0;
+                        _parseDrawingPosition.X = currentDrawingData.HAlignment == TextHAlignment.Left ? -prevCharSize.X * prevXScale : 0;
+                        lineWidth = 0;
                     }
                     else
-                        _parseDrawingPosition.X += charSize.X * currentDrawingData.Scale.X;
+                        _parseDrawingPosition.X += charSize.X * prevXScale;
                     _parseDrawingPosition.Y = currentDrawingData.Position.Y;
                     drawingPositions.Add(_parseDrawingPosition);
                     _currentDrawingCharIndex = 0;
                 }
                 _currentDrawSpriteCount = 0;
-                TextLineHeights.Add(currentDrawingData.CurrentFont.SFX.MeasureString(ParsedText.Last().ToString()).Y * currentDrawingData.Scale.Y);
+                TextLineHeights.Add(currentDrawingData.CurrentFont.SFX.MeasureString(ParsedText[^1..]).Y * currentDrawingData.Scale.Y);
                 TotalTextHeight = TextLineHeights.Sum();
                 bool hasSpace = ParsedText.Contains('\n') && ParsedText[ParsedText.LastIndexOf('\n')..].Contains(' ');
                 mult = currentDrawingData.HAlignment switch
@@ -604,7 +645,7 @@ namespace UndyneFight_Ex
             [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
             private Vector2 ParseRenderPosition(int index)
             {
-                var curData = currentDrawingData;
+                TextBuilderData curData = currentDrawingData;
                 vec2 DrawingPos = drawingPositions[index];
                 curStackEffCount = 0;
                 if ((curData.Effect & Effects.Wave) != 0)
@@ -652,6 +693,8 @@ namespace UndyneFight_Ex
                     //Play audio and execute action if a char is displayed
                     if (MathF.Floor(TextDisplayIndex) != MathF.Floor(prevIndex))
                     {
+                        if (ParsedText[Math.Min((int)TextDisplayIndex, ParsedText.Length - 1)] == '\n')
+                            TextDisplayIndex++;
                         //Play audio
                         Typer.SoundPerChar?.CreateInstance().Play();
                         //Execute action
@@ -668,13 +711,13 @@ namespace UndyneFight_Ex
                 CurrentCommandCount = 0;
                 _curDrawingLine = 0;
                 //Reset current drawing data
-                var EffParam = currentDrawingData.EffectParam;
+                List<List<object>> EffParam = currentDrawingData.EffectParam;
                 currentDrawingData = (TextBuilderData)defaultTextBuilderData.Clone();
                 currentDrawingData.Position = Vector2.Zero;
                 currentDrawingData.EffectParam = EffParam;
                 _currentDrawSpriteCount = 0;
                 currentDrawingData.curEffCount = 0;
-                Queue<int> TempQueue = new(CommandQueue);
+                Queue<int> TempQueue = new(CommandQueue); //Do not convert to collection expression
                 int charsToDisplay = (int)MathF.Floor(TextDisplayIndex);
                 while (i <= charsToDisplay)
                 {
@@ -685,7 +728,6 @@ namespace UndyneFight_Ex
                         TempQueue.Dequeue();
                         CurrentCommandCount++;
                     }
-                    //FIX NO COLOR ARRAY
                     //Check if the current char is not a NULL char (Reserved for sprite)
                     if (i < charsToDisplay)
                     {
@@ -693,9 +735,16 @@ namespace UndyneFight_Ex
                         if (curChar == '\u0000')
                             continue;
                         if (curChar == '\n')
+                        {
                             _curDrawingLine++;
-                        var curData = currentDrawingData;
-                        curData.CurrentFont.Draw(curChar.ToString(), ParseRenderPosition(i), curData.Col[0], 0, curData.Scale, Depth);
+                            i++;
+                            continue;
+                        }
+                        TextBuilderData curData = currentDrawingData;
+                        Vector2 parsedPos = ParseRenderPosition(i);
+                        System.Drawing.RectangleF rect = new(-100, -100, GraphicsDeviceManager.DefaultBackBufferWidth * Fight.Functions.ScreenDrawing.ScreenScale + 200, GraphicsDeviceManager.DefaultBackBufferHeight * Fight.Functions.ScreenDrawing.ScreenScale + 200);
+                        if (rect.Contains(new System.Drawing.PointF(parsedPos.X, parsedPos.Y)))
+                            SpriteBatch.DrawString(curData.CurrentFont, curChar.ToString(), parsedPos, curData.Col, 0, scaleN: curData.Scale, layerDepth: Depth);
                     }
                     ++i;
                 }
@@ -716,7 +765,7 @@ namespace UndyneFight_Ex
                 public override readonly string ToString()
                 {
                     string tmp = string.Empty;
-                    foreach (var item in Arguments)
+                    foreach (string item in Arguments)
                         tmp += item + ", ";
                     return $"Command {Command} has argument(s) {tmp[..^2]}.";
                 }
@@ -729,11 +778,11 @@ namespace UndyneFight_Ex
                 /// <summary>
                 /// Aligns the text to the left side
                 /// </summary>
-                Left, 
+                Left,
                 /// <summary>
                 /// Aligns the text horizontally at the center
                 /// </summary>
-                Middle, 
+                Middle,
                 /// <summary>
                 /// Aligns the text to the right side
                 /// </summary>
@@ -770,7 +819,7 @@ namespace UndyneFight_Ex
                 /// <summary>
                 /// The color of the text
                 /// </summary>
-                public Color[] Col = [Color.White];
+                public Color[] Col = [Color.White, Color.White, Color.White, Color.White];
                 /// <summary>
                 /// The horizontal alignment of the text
                 /// </summary>
@@ -798,7 +847,7 @@ namespace UndyneFight_Ex
                 public readonly object Clone() => MemberwiseClone();
             }
             /// <summary>
-            /// Availabe text effects to apply
+            /// Available text effects to apply
             /// </summary>
             [Flags]
             public enum Effects
@@ -863,8 +912,8 @@ namespace UndyneFight_Ex
             /// <summary>
             /// Sets the alignment of the text
             /// </summary>
-            /// <param name="halignment">The horizontal alignement to set to</param>
-            /// <param name="valignment">The vertical alignement to set to</param>
+            /// <param name="halignment">The horizontal alignment to set to</param>
+            /// <param name="valignment">The vertical alignment to set to</param>
             /// <returns></returns>
             public TextBuilder Align(TextHAlignment? halignment = null, TextVAlignment? valignment = null)
             {
@@ -898,7 +947,7 @@ namespace UndyneFight_Ex
             /// <returns></returns>
             public TextBuilder Blend(Color color)
             {
-                defaultTextBuilderData.Col = [color];
+                defaultTextBuilderData.Col = [color, color, color, color];
                 return this;
             }
             /// <summary>
@@ -976,7 +1025,7 @@ namespace UndyneFight_Ex
                 return this;
             }
             /// <summary>
-            /// Gets the <see cref="TextTyper"/> of this instance
+            /// Gets the <see cref="MiscUtil.TextTyper"/> of this instance
             /// </summary>
             /// <returns></returns>
             public TextTyper TextTyper() => Typer;
@@ -995,6 +1044,11 @@ namespace UndyneFight_Ex
             /// </summary>
             public void Render() => DoRender = true;
             #endregion
+            public override void Dispose()
+            {
+                base.Dispose();
+                Typer?.Dispose();
+            }
         }
         /// <summary>
         /// A text typer class associated with <see cref="TextBuilder"/>

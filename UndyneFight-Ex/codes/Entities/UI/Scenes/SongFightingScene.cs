@@ -1,39 +1,41 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using System.Diagnostics;
-using UndyneFight_Ex.Settings;
 using UndyneFight_Ex.SongSystem;
+using UndyneFight_Ex.UserService;
 using static UndyneFight_Ex.DebugState;
 using static UndyneFight_Ex.Fight.Functions;
 using static UndyneFight_Ex.GameStates;
 
 namespace UndyneFight_Ex.Entities
 {
+    /// <summary>
+    /// Chart scene
+    /// </summary>
     public class SongFightingScene : FightScene
     {
         private class SongConditionOptimizer : Entity
         {
-            readonly SongFightingScene fatherScene;
+            private readonly SongFightingScene fatherScene;
             public SongConditionOptimizer(SongFightingScene scene)
             {
                 UpdateIn120 = true;
                 fatherScene = scene;
             }
-            const float deltaDured = 3.1f;
 
-            int index = 0;
-            readonly float[] data = new float[55];
-            readonly float[] cur = new float[10];
-            float timer = 0.0f;
-            float avg = 0.0f;
+            private int index = 0;
+            private readonly float[] data = new float[55];
+            private readonly float[] cur = new float[10];
+            private float timer = 0.0f;
+            private float avg = 0.0f;
 
             public float GlobalAVG = 0.0f;
 
             public override void Draw()
             {
 #if DEBUG
-                FightResources.Font.NormalFont.CentreDraw(GameMain.UpdateCost.ToString("F3"), new(100, 150), Color.White, 0.7f, 0.1f);
-                FightResources.Font.NormalFont.CentreDraw(KeyCheckTime1.ToString("F3"), new(50, 200), Color.White, 0.7f, 0.1f);
-                FightResources.Font.NormalFont.CentreDraw(KeyCheckTime2.ToString("F3"), new(150, 200), Color.White, 0.7f, 0.1f);
+                FightResources.Font.NormalFont.CentreDraw(GameMain.UpdateCost.ToString("F3"), new(100, 150), Color.White * ScreenDrawing.UIColor.A, 0.7f, 0.1f);
+                FightResources.Font.NormalFont.CentreDraw(KeyCheckTime1.ToString("F3"), new(50, 200), Color.White * ScreenDrawing.UIColor.A, 0.7f, 0.1f);
+                FightResources.Font.NormalFont.CentreDraw(KeyCheckTime2.ToString("F3"), new(150, 200), Color.White * ScreenDrawing.UIColor.A, 0.7f, 0.1f);
 #endif
             }
 
@@ -53,16 +55,13 @@ namespace UndyneFight_Ex.Entities
                 if (!result)
                     fatherScene.GlobalDelta = 0f;
 
-                if (timer > 15f)
+                if (timer > 15f && index < data.Length)
                 {
-                    if (index < data.Length)
+                    data[index++] = fatherScene.GlobalDelta;
+                    if (index == data.Length)
                     {
-                        data[index++] = fatherScene.GlobalDelta;
-                        if (index == data.Length)
-                        {
-                            foreach (float item in data)
-                                avg += item / index;
-                        }
+                        foreach (float item in data)
+                            avg += item / index;
                     }
                 }
                 if (index > data.Length / 2f && timer > 25f)
@@ -78,21 +77,18 @@ namespace UndyneFight_Ex.Entities
                     foreach (float item in cur)
                         GlobalAVG += item / cur.Length;
                 }
-                if (index >= data.Length)
-                {
-                    if (MathF.Abs(GlobalAVG - avg + del2) > deltaDured)
-                        _ = fatherScene.music.TrySetPosition(avg + GametimeF + del2);
-                }
+                if (index >= data.Length && MathF.Abs(curTime - GametimeF) > 15)
+                    _ = fatherScene.music.TrySetPosition(avg + GametimeF + del2);
             }
         }
         /// <summary>
         /// Sets the current song to the given position
         /// </summary>
-        /// <param name="position"></param>
+        /// <param name="position">The position to set to</param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void SetSongPosition(float position) => music.TrySetPosition(position);
         /// <summary>
-        /// Sets the paramters of the chart
+        /// Sets the parameters of the chart
         /// </summary>
         /// <param name="waveset">The <see cref="IWaveSet"/> interface of the chart</param>
         /// <param name="songIllustration">The illustration of the chart</param>
@@ -106,7 +102,7 @@ namespace UndyneFight_Ex.Entities
             /// <summary>
             /// The <see cref="IWaveSet"/> of the current chart
             /// </summary>
-            public IWaveSet Waveset => Activator.CreateInstance(wavesetType) as IWaveSet;
+            public IWaveSet Waveset => (IWaveSet)Activator.CreateInstance(wavesetType);
 
             private readonly Type wavesetType = waveset.GetType();
             /// <summary>
@@ -132,14 +128,13 @@ namespace UndyneFight_Ex.Entities
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public void LoadMusic()
             {
-                Loader.RootDirectory = "";
-                Music = !MusicOptimized ? new(musicPath, Loader) : new(musicPath + ".ogg", Loader);
                 if (SongIllustration?.IsDisposed ?? false)
                 {
                     string name = SongIllustration.Name;
-                    name = name.StartsWith("Content") ? name : "Content\\" + name;
-                    SongIllustration = GlobalResources.LoadContent<Texture2D>(Path.Combine(name.Split('\\')));
+                    name = name.StartsWith("Content") ? name[8..] : name;
+                    SongIllustration = DrawingLab.LoadContent<Texture2D>(Path.Combine(name.Split('\\')));
                 }
+                Music = new(MusicOptimized ? musicPath + ".ogg" : musicPath, Loader);
                 MusicDuration = (float)Music.SongDuration.TotalSeconds * 62.5f;
             }
             /// <summary>
@@ -167,6 +162,7 @@ namespace UndyneFight_Ex.Entities
         internal IWaveSet waveset;
         private readonly SceneParams currentParam;
         private int appearTime = 0;
+        /// <inheritdoc/>
         public SongFightingScene(SceneParams _params, Challenge challenge = null)
         {
             _challenge = challenge;
@@ -215,17 +211,30 @@ namespace UndyneFight_Ex.Entities
         /// </summary>
         internal bool GreenSoulUsed = false;
         /// <summary>
+        /// Whether an item was used (that affects result) during the chart
+        /// </summary>
+        internal bool ItemUsed = false;
+        /// <summary>
+        /// The score multiplier
+        /// </summary>
+        internal float ScoreMultiplier = 1;
+        /// <summary>
         /// The illustration of the chart
         /// </summary>
         public Texture2D SongIllustration { get; set; } = null;
-        private bool endRunned = false;
+        private bool endRan = false;
 
         private int restartTimer = 0;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         internal void ForceEnd() => forceEnd = true;
-        public float GlobalDelta { get; private set; }
+        private float GlobalDelta;
+        /// <summary>
+        /// Whether the chart music has been played (Sanity check for negative <see cref="PlayOffset"/>)
+        /// </summary>
+        private bool MusicPlayed = false;
 
+        /// <inheritdoc/>
         public override void Update()
         {
             if (waveset != null)
@@ -238,40 +247,86 @@ namespace UndyneFight_Ex.Entities
                     return;
                 }
             }
-            appearTime++;
 
             //Play Music
-            if (appearTime >= 30)
+            if (++appearTime >= 30)
             {
                 if (!songLoaded)
                 {
-                    SetSongFight();
-                    music = currentParam.Music;
-                    if (PlayOffset < 0)
-                        AddInstance(new InstantEvent(-PlayOffset, music.Play));
-                    else
+                    lock (this)
                     {
-                        music.PlayPosition = PlayOffset;
-                        music.Play();
+                        SetSongFight();
+                        music = currentParam.Music;
+                        if (PlayOffset < 0)
+                            AddInstance(new InstantEvent(-PlayOffset, () =>
+                            {
+                                music.Play();
+                                MusicPlayed = true;
+                            }));
+                        else
+                        {
+                            MusicPlayed = true;
+                            music.PlayPosition = PlayOffset;
+                            music.Play();
+                        }
+                        InstanceCreate(new SongConditionOptimizer(this));
+                        isInBattle = true;
+                        songLoaded = true;
+                        ResetTime();
+                        //Initialize Items
+                        if (PlayerManager.CurrentUser != null)
+                            foreach (StoreItem item in StoreData.UserItems.Values)
+                            {
+                                if (item.Activated && (item.Attributes & StoreItem.ItemAttribute.Initialize) != 0)
+                                    item.InitializeItem();
+                            }
                     }
-#if DEBUG
-                    InstanceCreate(new SongConditionOptimizer(this));
-#endif
-                    isInBattle = true;
-                    songLoaded = true;
-                    ResetTime();
                 }
                 else if (waveset != null)
                     UpdateSong();
+                //Items
+                void ProcessItems()
+                {
+                    //Sanity check for the 0.5f delay
+                    if (CurrentScene is not SongFightingScene)
+                        return;
+                    ScoreMultiplier = 1;
+                    if (PlayerManager.CurrentUser != null)
+                        foreach (StoreItem item in StoreData.UserItems.Values)
+                        {
+                            if (item.Activated)
+                            {
+                                bool ItemVoidScore = (item.Attributes & StoreItem.ItemAttribute.VoidScore) != 0;
+                                if ((item.Attributes & StoreItem.ItemAttribute.Decoration) != 0)
+                                {
+                                    item.Decoration();
+                                    if (ItemVoidScore)
+                                        ItemUsed = true;
+                                }
+                                if ((item.Attributes & StoreItem.ItemAttribute.Consumable) != 0 && item.TriggerCondition())
+                                {
+                                    item.Used();
+                                    if (ItemVoidScore)
+                                        ItemUsed = true;
+                                }
+                                if (item.Affecting && (item.Attributes & StoreItem.ItemAttribute.ReduceScore) != 0)
+                                {
+                                    ScoreMultiplier *= 1 - item.ReducePercentage;
+                                }
+                            }
+                        }
+                }
+                ProcessItems();
+                AddInstance(new InstantEvent(0.5f, ProcessItems));
             }
 
-            bool needEnd = waveset != null && appearTime > currentParam.MusicDuration * 2 && (music?.IsEnd ?? false);
+            bool needEnd = waveset != null && MusicPlayed && appearTime > currentParam.MusicDuration * 2 && (music?.IsEnd ?? false);
             if (needEnd)
             {
-                if (!endRunned)
+                if (!endRan)
                 {
                     StateShower.instance.EndAction?.Invoke();
-                    endRunned = true;
+                    endRan = true;
                 }
             }
             if ((needEnd && AutoEnd) || forceEnd)
@@ -332,13 +387,9 @@ namespace UndyneFight_Ex.Entities
             InstanceCreate(HPBar = new());
             if (waveset is GameObject)
                 InstanceCreate(waveset as GameObject);
-            lock (this)
-            {
-                waveset.Start();
-            }
+            waveset.Start();
             SongIllustration = currentParam.SongIllustration;
         }
-
         private void UpdateSong()
         {
             if (waveset is IWaveSetS)
@@ -378,12 +429,16 @@ namespace UndyneFight_Ex.Entities
             _challenge.ResultBuffer.Add(new SongResult(SkillMark.Acceptable, 0, 0.96f, true, true));
             ResetScene(new ChallengeWinScene(_challenge));
         }
+        /// <inheritdoc/>
         public override void Dispose()
         {
             music?.Stop();
             base.Dispose();
             waveset = null;
         }
+        /// <summary>
+        /// Call player death event
+        /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         protected override void PlayerDied() => ResetScene(!isReplay ? new TryAgainScene(StateShower.instance) : new TryAgainScene(new RecordSelector()));
     }

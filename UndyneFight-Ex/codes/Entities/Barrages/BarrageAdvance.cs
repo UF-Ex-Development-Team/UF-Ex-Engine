@@ -82,45 +82,4 @@ namespace UndyneFight_Ex.Entities.Advanced
                 new SplitBone(c1 - delta, GetVector2(1, Rand(0, 359)),bone.Rotation,  bone.Length / 2 - 1){ IsMasked = bone.IsMasked }];
         }
     }
-    /// <summary>
-    /// It is not suggested to use these functions as they are very simple to recreate
-    /// <para>For reference, this class is only referenced in Spacedrift (More precisely 1:17 - 1:24, 1:32 - 1:39)</para>
-    /// You can see why it is very simple to recreate
-    /// </summary>
-    [Obsolete("Just create your own function instead, this will be removed soon")]
-    public static class BarrageStruct
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void BoneWindfall(Vector2 centre, int boneCount, float rotationSpeed, float length, float duration, int colorType, bool isAlphaIncrease)
-        {
-            for (int i = 0; i < boneCount; i++)
-            {
-                float delta = 180 / boneCount * i;
-                CreateBone(new CustomBone(Vector2.Zero, (x) => { return centre; }, Motions.LengthRoute.autoFold, Motions.RotationRoute.linear)
-                {
-                    LengthRouteParam = [length, duration],
-                    RotationRouteParam = [rotationSpeed, 0],
-                    RotationDelta = delta,
-                    AlphaIncrease = isAlphaIncrease,
-                    ColorType = colorType
-                });
-            }
-        }
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void BoneWindfall(Vector2 centre, int boneCount, ICustomMotion motion, float length, float duration)
-        {
-            for (int i = 0; i < boneCount; i++)
-            {
-                float delta = 180 / boneCount * i;
-                CreateBone(new CustomBone(centre, motion.PositionRoute, Motions.LengthRoute.autoFold, motion.RotationRoute)
-                {
-                    PositionRouteParam = motion.PositionRouteParam,
-                    LengthRouteParam = [length, duration],
-                    RotationRouteParam = motion.RotationRouteParam,
-                    RotationDelta = delta,
-                    AlphaIncrease = true
-                });
-            }
-        }
-    }
 }

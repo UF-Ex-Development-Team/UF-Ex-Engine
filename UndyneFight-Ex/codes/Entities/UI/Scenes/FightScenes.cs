@@ -38,6 +38,10 @@ namespace UndyneFight_Ex.Entities
         public void PlayDeath()
         {
             playerAlive = false;
+            foreach (Arrow bullet in Fight.Functions.GetAll<Arrow>())
+                bullet.NoScore = true;
+            foreach (Barrage bullet in Fight.Functions.GetAll<Barrage>())
+                bullet.MarkScore = false;
             PlayerDied();
 
             Achievements.AchievementManager.CheckUserAchievements();

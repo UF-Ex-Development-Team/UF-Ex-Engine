@@ -1,6 +1,5 @@
 ﻿using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
-using System.Drawing;
 using static UndyneFight_Ex.GameMain;
 using static UndyneFight_Ex.MathUtil;
 using Color = Microsoft.Xna.Framework.Color;
@@ -8,10 +7,11 @@ using Color = Microsoft.Xna.Framework.Color;
 namespace UndyneFight_Ex
 {
     /// <summary>
-    /// Drwaing Utilities
+    /// Drawing Utilities
     /// </summary>
     public static class DrawingLab
     {
+        #region Triangulation
         /// <summary>
         /// Enter a point sequence clockwise to obtain a set of triangulations of the point sequence.
         /// </summary>
@@ -67,15 +67,17 @@ namespace UndyneFight_Ex
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static List<Tuple<int, int, int>> GetIndices(Tuple<int, Vector2>[] pointList)
         {
+            //Line segment
             if (pointList.Length <= 2)
                 return [];
+            //Triangle
             if (pointList.Length == 3)
             {
                 return [new Tuple<int, int, int>(pointList[0].Item1, pointList[1].Item1, pointList[2].Item1)];
             }
             List<Tuple<int, int, int>> result = [];
 
-            List<int> reflexs = null;
+            List<int> reflexes = null;
 
             bool[] reflex = new bool[pointList.Length];
             bool existReflex = false;
@@ -86,19 +88,14 @@ namespace UndyneFight_Ex
                 if (i2 == pointList.Length)
                     i2 = 0;
                 Vector2 cur = pointList[i2].Item2 - pointList[i].Item2;
-                if (last.Cross(cur) < 0)
+                if (reflex[i] = last.Cross(cur) < 0)
                 {
                     if (!existReflex)
                     {
-                        reflexs = [];
+                        reflexes = [];
                         existReflex = true;
                     }
-                    reflex[i] = true;
-                    reflexs.Add(i);
-                }
-                else
-                {
-                    reflex[i] = false;
+                    reflexes.Add(i);
                 }
                 last = cur;
             }
@@ -129,7 +126,7 @@ namespace UndyneFight_Ex
                     Vector2 pv1 = pointList[v1].Item2, pv0 = pointList[v0].Item2, pv2 = pointList[v2].Item2;
 
                     bool flag = true;
-                    foreach (int j in reflexs) // 检验是否可以分割
+                    foreach (int j in reflexes) // 检验是否可以分割
                     {
                         if (j == v2 || j == v0)
                             continue;
@@ -164,6 +161,7 @@ namespace UndyneFight_Ex
 
             return result;
         }
+        #endregion
         /// <summary>
         /// HSV value of a Color
         /// </summary>
@@ -359,12 +357,10 @@ namespace UndyneFight_Ex
             vertexnum = Math.Max(3, vertexnum);
             for (int i = 0; i < vertexnum; i++)
             {
-                Vector2 a = center + GetVector2(radius, i * 360f / vertexnum + startang),
-                        b = center + GetVector2(radius, (i + 1) * 360f / vertexnum + startang);
                 bool check = (i + 1) * 360 / vertexnum + startang > endang;
-                if (check)
-                    b = center + GetVector2(radius, endang);
-                DrawLine(a, b, thickness, col, depth);
+                DrawLine(center + GetVector2(radius, i * 360f / vertexnum + startang),
+                        check ? center + GetVector2(radius, endang) : center + GetVector2(radius, (i + 1) * 360f / vertexnum + startang),
+                        thickness, col, depth);
                 if (check)
                     break;
             }
@@ -395,12 +391,11 @@ namespace UndyneFight_Ex
             vertexnum = Math.Max(3, vertexnum);
             for (int i = 0; i < vertexnum; i++)
             {
-                Vector2 a = center + GetVector2(radius, i * 360f / vertexnum + startang),
-                        b = center + GetVector2(radius, (i + 1) * 360f / vertexnum + startang);
                 bool check = (i + 1) * 360 / vertexnum + startang > endang;
-                if (check)
-                    b = center + GetVector2(radius, endang);
-                DrawTriangle(center, a, b, col, depth);
+                DrawTriangle(center,
+                            center + GetVector2(radius, i * 360f / vertexnum + startang),
+                            check ? center + GetVector2(radius, endang) : center + GetVector2(radius, (i + 1) * 360f / vertexnum + startang),
+                            col, depth);
                 if (check)
                     break;
             }
@@ -449,9 +444,9 @@ namespace UndyneFight_Ex
                     p1 = v1 + del, p2 = v2 + del, p3 = v1 - del, p4 = v2 - del;
             MissionSpriteBatch.DrawVertex(texture, depth,
                 new VertexPositionColorTexture(new(p1, depth), cl[0], Vector2.Zero),
-                new VertexPositionColorTexture(new(p2, depth), cl[1], Vector2.UnitY),
+                new VertexPositionColorTexture(new(p2, depth), cl[3], Vector2.UnitY),
                 new VertexPositionColorTexture(new(p4, depth), cl[2], Vector2.One),
-                new VertexPositionColorTexture(new(p3, depth), cl[3], Vector2.UnitX));
+                new VertexPositionColorTexture(new(p3, depth), cl[1], Vector2.UnitX));
         }
         /// <summary>
         /// Draws a line with different colors in each corner
@@ -465,10 +460,34 @@ namespace UndyneFight_Ex
         /// <param name="texture">The texture of the line (Default none)</param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void DrawLineColors(Vector2 Centre, float angle, float length, float width, Color cl, float depth, Texture2D texture = null) => DrawLineColors(Centre, angle, length, width, [cl, cl, cl, cl], depth, texture);
-    }
-    public static class UsingShader
-    {
-        public static Shader BackGround { get; internal set; }
+        /// <summary>
+        /// Loads a file (Cross-platform)
+        /// </summary>
+        /// <typeparam name="T">Content type</typeparam>
+        /// <param name="path">Path to file</param>
+        /// <param name="cm">Content manager to use</param>
+        /// <returns>The loaded content</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static T LoadContent<T>(string path, ContentManager cm = null) => (cm ??= Scene.Loader).Load<T>(Path.Combine($"{AppContext.BaseDirectory}{cm.RootDirectory}\\{(path.StartsWith(cm.RootDirectory) ? path[cm.RootDirectory.Length..] : path)}".Split('\\')));
+        /// <summary>
+        /// Loads an image
+        /// </summary>
+        /// <param name="path">Path of the image</param>
+        /// <returns>The loaded texture</returns>
+        public static Texture2D LoadImage(string path) => Texture2D.FromFile(GameStates.SpriteBatch.GraphicsDevice, path);
+        /// <summary>
+        /// Draws a text
+        /// </summary>
+        /// <param name="font">The font to draw in</param>
+        /// <param name="text">The text to draw</param>
+        /// <param name="position">The position of the text</param>
+        /// <param name="color">The color of the text (Default white)</param>
+        /// <param name="scale">The scale of the text (Default 1)</param>
+        /// <param name="rotation">The rotation of the text (Default 0)</param>
+        /// <param name="rotateCenter">The rotation origin of the text (Default top left)</param>
+        /// <param name="depth">The depth of the text (Default 1)</param>
+        /// <param name="spriteBatch">The sprite batch to draw (Default <see cref="MissionSpriteBatch"/>)</param>
+        public static void DrawText(GLFont font, string text, Vector2 position, Color? color = null, Vector2? scale = null, float? rotation = 0, Vector2? rotateCenter = null, float? depth = null, SpriteBatchEX spriteBatch = null) => (spriteBatch ?? MissionSpriteBatch).DrawString(font, text, position, (color ?? Color.White) * Surface.Normal.drawingAlpha, rotation ?? 0, rotateCenter ?? Vector2.Zero, scale ?? Vector2.One, SpriteEffects.None, depth ?? 1);
     }
     /// <summary>
     /// The shader class
@@ -496,6 +515,9 @@ namespace UndyneFight_Ex
         public Action<Effect> StableEvents { private get; set; }
 
         public bool LateApply { get; set; } = false;
+        /// <summary>
+        /// The time elapsed of the shader
+        /// </summary>
         public static float TimeElapsed { get; internal set; }
         /// <summary>
         /// Applies the given texture to the shader
@@ -547,15 +569,6 @@ namespace UndyneFight_Ex
             }
         }
         public void SetParameters(KeyValuePair<string, object> vals) => SetParameters([vals]);
-        /// <summary>
-        /// Sets the vector2 parameters of the shader
-        /// </summary>
-        /// <param name="vals">A <see cref="KeyValuePair{string, Vector2}"/> of the name of the parameter and the value</param>
-        public void SetParameters(KeyValuePair<string, Vector2>[] vals)
-        {
-            foreach (KeyValuePair<string, Vector2> kvp in vals)
-                effect.Parameters[kvp.Key].SetValue(kvp.Value);
-        }
         public void Update()
         {
             Shader shader = this;
@@ -570,11 +583,11 @@ namespace UndyneFight_Ex
     public class GLFont
     {
         public SpriteFont SFX;
-        readonly Dictionary<char, Vector2> __storedGlyphSizes = [];
-        readonly Dictionary<char, int> charIndex = [];
+        private readonly Dictionary<char, Vector2> __storedGlyphSizes = [];
+        private readonly Dictionary<char, int> charIndex = [];
         public GLFont(string path, ContentManager cm)
         {
-            SFX = GlobalResources.LoadContent<SpriteFont>(path, cm);
+            SFX = DrawingLab.LoadContent<SpriteFont>(path, cm);
             for (int i = 0; i < SFX.Glyphs.Length; i++)
                 charIndex[SFX.Glyphs[i].Character] = i;
         }
@@ -586,8 +599,7 @@ namespace UndyneFight_Ex
         /// <param name="color">The color of the text</param>
         /// <param name="sb">The <see cref="SpriteBatchEX"/> used to render the text (Default default renderer)</param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void Draw(string texts, Vector2 location, Color color, SpriteBatchEX sb = null) =>
-            (sb ?? MissionSpriteBatch).DrawString(this, texts, location, color * Surface.Normal.drawingAlpha);
+        public void Draw(string texts, Vector2 location, Color color, SpriteBatchEX sb = null) => (sb ?? MissionSpriteBatch).DrawString(this, texts, location, color * Surface.Normal.drawingAlpha);
         /// <summary>
         /// Draws text
         /// </summary>
@@ -597,8 +609,7 @@ namespace UndyneFight_Ex
         /// <param name="scale">The scale of the text</param>
         /// <param name="depth">The depth of the text</param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void Draw(string texts, Vector2 location, Color color, float scale, float depth) =>
-            MissionSpriteBatch.DrawString(this, texts, location, color * Surface.Normal.drawingAlpha, 0, Vector2.Zero, scale, SpriteEffects.None, depth);
+        public void Draw(string texts, Vector2 location, Color color, float scale, float depth) => MissionSpriteBatch.DrawString(this, texts, location, color * Surface.Normal.drawingAlpha, 0, Vector2.Zero, scale, SpriteEffects.None, depth);
         /// <summary>
         /// Draws text
         /// </summary>
@@ -608,8 +619,7 @@ namespace UndyneFight_Ex
         /// <param name="scale">The scale of the text</param>
         /// <param name="depth">The depth of the text</param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void Draw(string texts, Vector2 location, Color color, Vector2 scale, float depth) =>
-            MissionSpriteBatch.DrawString(this, texts, location, color * Surface.Normal.drawingAlpha, 0, Vector2.Zero, scale, SpriteEffects.None, depth);
+        public void Draw(string texts, Vector2 location, Color color, Vector2 scale, float depth) => MissionSpriteBatch.DrawString(this, texts, location, color * Surface.Normal.drawingAlpha, 0, Vector2.Zero, scale, SpriteEffects.None, depth);
         /// <summary>
         /// Draws text
         /// </summary>

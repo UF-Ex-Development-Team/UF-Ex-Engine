@@ -4,7 +4,7 @@ namespace UndyneFight_Ex.UserService
 {
     public class ChampionshipManager : ISaveLoad
     {
-        readonly Dictionary<string, string> championshipData = [];
+        private readonly Dictionary<string, string> championshipData = [];
 
         public List<ISaveLoad> Children => throw new NotImplementedException();
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

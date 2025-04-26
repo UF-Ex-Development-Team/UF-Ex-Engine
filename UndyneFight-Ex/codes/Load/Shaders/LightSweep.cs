@@ -33,7 +33,7 @@ namespace UndyneFight_Ex
                 /// </summary>
                 public LightSweepShader(Effect eff) : base(eff) =>
                     StableEvents = (x) =>
-                    { 
+                    {
                         /*
                             uniform float2 iCenter;中心
                             uniform float iDirection; 

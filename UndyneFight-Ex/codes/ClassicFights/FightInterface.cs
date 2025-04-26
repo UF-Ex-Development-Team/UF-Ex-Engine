@@ -110,7 +110,7 @@ namespace UndyneFight_Ex.Fight
 
         public override void Update()
         {
-            selections = (from x in selections where !x.Disposed select x).ToArray();
+            selections = [.. from x in selections where !x.Disposed select x];
             if (selections == null || selections.Length == 0)
             {
                 Dispose();
@@ -178,17 +178,17 @@ namespace UndyneFight_Ex.Fight
 
     public interface IExtraOption
     {
-        public string OptionName { get; }
-        public Type IntroScene { get; }
+        string OptionName { get; }
+        Type IntroScene { get; }
     }
     public interface IClassicFight
     {
-        public string FightName { get; }
+        string FightName { get; }
 
-        public void Start();
-        public void RoundChanged();
-        public void Update();
-        public void GameEnd();
+        void Start();
+        void RoundChanged();
+        void Update();
+        void GameEnd();
     }
 
     internal class FightVirtualObject : GameObject

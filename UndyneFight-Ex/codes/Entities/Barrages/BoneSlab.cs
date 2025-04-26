@@ -59,6 +59,7 @@ namespace UndyneFight_Ex.Entities
                 }
             }
         }
+        /// <inheritdoc/>
         public new float AppearTime => appearTime - appearDelay;
 
         private FightBox controlingBox;
@@ -66,17 +67,13 @@ namespace UndyneFight_Ex.Entities
         {
             set => controlingBox = value;
         }
-        /// <summary>
-        /// The length easing for the boneslab
-        /// </summary>
+        /// <inheritdoc/>
         public Func<ICustomLength, float> LengthRoute { get; set; }
-        /// <summary>
-        /// The parameters for the <see cref="LengthRoute"/>
-        /// </summary>
+        /// <inheritdoc/>
         public float[] LengthRouteParam { get; set; }
 
         /// <summary>
-        /// Craetes a boneslab
+        /// Creates a boneslab
         /// </summary>
         /// <param name="rotation">The rotation of the wall (Must be a multiple of 90)</param>
         /// <param name="appearDelay">The duration of the warning before spawning</param>
@@ -117,25 +114,26 @@ namespace UndyneFight_Ex.Entities
 
         public override void Draw()
         {
-            if (trueRotation == 90 || trueRotation == 270)
-                GameMain.MissionSpriteBatch.Draw(BoneSlabTexture, renderPlace, new Rectangle(0, 320 - (int)currentHeight, (int)(controlingBox as RectangleBox).Height, (int)currentHeight),
-                    drawingColor, GetRadian(Rotation) + (float)Math.PI, new Vector2((controlingBox as RectangleBox).Height / 2, 0), 1.0f, SpriteEffects.None, 0.499f);
-            if (trueRotation == 0 || trueRotation == 180)
-                GameMain.MissionSpriteBatch.Draw(BoneSlabTexture, renderPlace, new Rectangle(0, 320 - (int)currentHeight, (int)(controlingBox as RectangleBox).Width, (int)currentHeight),
-                    drawingColor, GetRadian(Rotation) + (float)Math.PI, new Vector2((controlingBox as RectangleBox).Width / 2, 0), 1.0f, SpriteEffects.None, 0.499f);
+            if (trueRotation is 90 or 270)
+                GameMain.MissionSpriteBatch.Draw(BoneSlabTexture, renderPlace, new System.Drawing.RectangleF(0, 320 - currentHeight, (controlingBox as RectangleBox).Height, currentHeight),
+                    drawingColor, GetRadian(Rotation) + MathF.PI, new Vector2((controlingBox as RectangleBox).Height / 2, 0), 1.0f, SpriteEffects.None, 0.499f);
+            if (trueRotation is 0 or 180)
+                GameMain.MissionSpriteBatch.Draw(BoneSlabTexture, renderPlace, new System.Drawing.RectangleF(0, 320 - currentHeight, (controlingBox as RectangleBox).Width, currentHeight),
+                    drawingColor, GetRadian(Rotation) + MathF.PI, new Vector2((controlingBox as RectangleBox).Width / 2, 0), 1.0f, SpriteEffects.None, 0.499f);
             if (appearTime < appearDelay)
             {
-                if (trueRotation == 90 || trueRotation == 270)
+                if (trueRotation is 90 or 270)
                     GameMain.MissionSpriteBatch.Draw(WarningLine, _warningLine,
                     new Rectangle(0, 0, (int)(controlingBox as RectangleBox).Height, 2),
                     appearTime % 6 < 3 ? Color.Red : Color.Yellow,
-                    GetRadian(Rotation) + (float)Math.PI, new Vector2((int)(controlingBox as RectangleBox).Height / 2, 0),
+                    GetRadian(Rotation) + MathF.PI, new Vector2((controlingBox as RectangleBox).Height / 2, 0),
                     1.0f, SpriteEffects.None, 0.3f);
-
                 else
                     GameMain.MissionSpriteBatch.Draw(WarningLine, _warningLine,
                     new Rectangle(0, 0, (int)(controlingBox as RectangleBox).Width, 2),
-                    appearTime % 6 < 3 ? Color.Red : Color.Yellow, GetRadian(Rotation) + (float)Math.PI, new Vector2((int)(controlingBox as RectangleBox).Width / 2, 0), 1.0f, SpriteEffects.None, 0.3f);
+                    appearTime % 6 < 3 ? Color.Red : Color.Yellow,
+                    GetRadian(Rotation) + MathF.PI, new Vector2((controlingBox as RectangleBox).Width / 2, 0),
+                    1.0f, SpriteEffects.None, 0.3f);
             }
         }
 
@@ -152,11 +150,11 @@ namespace UndyneFight_Ex.Entities
                     {
                         float d = (appearTime - appearDelay * 1.0f) / (boneslabOuttime * 2);
                         float e = d * d * 0.85f + 0.15f;
-                        missionHeight = LengthRoute(this as ICustomLength);
+                        missionHeight = LengthRoute(this);
                         currentHeight = missionHeight * e + currentHeight * (1 - e);
                     }
                     else if (appearTime <= appearDelay + totalTime)
-                        currentHeight = LengthRoute(this as ICustomLength);
+                        currentHeight = LengthRoute(this);
                     else
                         currentHeight -= ((appearTime - appearDelay - totalTime) / 1.2f + 0.5f) * MathF.Sqrt(missionHeight) / 7 * (7f / boneslabOuttime);
                     goto A;

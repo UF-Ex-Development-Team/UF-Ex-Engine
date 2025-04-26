@@ -9,7 +9,7 @@ namespace UndyneFight_Ex.Entities
     public partial class Arrow : Entity, IComparable
     {
         private const float speedUpPlace = 104;
-        float DrawingScale => GoldenMarkIntensity * 0.1f + 1;
+        private float DrawingScale => GoldenMarkIntensity * 0.1f + 1;
         /// <summary>
         /// The rotating type of the arrow (None, Reverse, Diagonal)
         /// </summary>
@@ -38,7 +38,7 @@ namespace UndyneFight_Ex.Entities
         /// <param name="rotatingType">Rotation mode, 0-> None, 1-> Reverse, 2-> Diagonal</param>
         public Arrow(Player.Heart mission, float shootShieldTime, int way, float speed, int color, int rotatingType)
         {
-            if (color < 0 || color >= 4)
+            if (color is < 0 or >= 4)
                 throw new ArgumentOutOfRangeException(nameof(color));
             if (Mirror)
                 color ^= 1;
@@ -86,13 +86,13 @@ namespace UndyneFight_Ex.Entities
         private readonly bool hasGreenFlag;
         private readonly float basicScale;
         /// <summary>
-        /// The color of the arrow
+        /// The color type of the arrow
         /// </summary>
         public int ArrowColor { get; private set; }
         private int backColor;
         private readonly int rotatingType, way;
         /// <summary>
-        /// The direction of the arrow
+        /// The direction of the arrow (Right, Down, Left, Up)
         /// </summary>
         public int Way => way;
 
@@ -174,7 +174,9 @@ namespace UndyneFight_Ex.Entities
 
         private static List<Arrow> arrows => (GameStates.CurrentScene as SongFightingScene).Accuracy.AllArrows;
         private static Dictionary<string, List<Arrow>> taggedArrows => (GameStates.CurrentScene as SongFightingScene).Accuracy.TaggedArrows;
-
+        /// <summary>
+        /// The frames elapsed after creation
+        /// </summary>
         public float AppearTime { get; private set; } = 0;
     }
 }

@@ -23,7 +23,7 @@ namespace UndyneFight_Ex.UserService
     }
     public class ChallengeData() : ISaveLoad
     {
-        private Dictionary<string, SingleChallenge> AllData { get; init; } = [];
+        public Dictionary<string, SingleChallenge> AllData { get; init; } = [];
         /// <inheritdoc/>
         public List<ISaveLoad> Children => null;
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

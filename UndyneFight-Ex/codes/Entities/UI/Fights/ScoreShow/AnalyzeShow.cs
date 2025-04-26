@@ -6,7 +6,7 @@ using static UndyneFight_Ex.MathUtil;
 
 namespace UndyneFight_Ex.Entities
 {
-    public partial class StateShower
+    internal partial class StateShower
     {
         internal partial class ResultShower
         {
@@ -97,23 +97,23 @@ namespace UndyneFight_Ex.Entities
                     }
                 }
 
-                const int SplitCount = 120;
+                private const int SplitCount = 120;
 
                 private static readonly Color[] remarkColor = [Color.DarkRed, Color.Lime, Color.LightBlue, Color.Gold, Color.Orange, Color.OrangeRed];
                 private static readonly int[] remarkOrder = [3, 4, 5, 2, 1, 0];
 
-                float totalTime, leftTime, rightTime;
-                Dictionary<float, int>[] colorAlternates;
-                readonly float[,] remarkCount = new float[SplitCount, 6];
-                readonly float[] remarkTotal = new float[SplitCount];
+                private float totalTime, leftTime, rightTime;
+                private Dictionary<float, int>[] colorAlternates;
+                private readonly float[,] remarkCount = new float[SplitCount, 6];
+                private readonly float[] remarkTotal = new float[SplitCount];
 
-                readonly float[] averageDelta = new float[SplitCount];
-                readonly float[] averagePositiveDelta = new float[SplitCount];
-                readonly float[] averageNegativeDelta = new float[SplitCount];
+                private readonly float[] averageDelta = new float[SplitCount];
+                private readonly float[] averagePositiveDelta = new float[SplitCount];
+                private readonly float[] averageNegativeDelta = new float[SplitCount];
 
-                float remarkHeightMax = 0;
+                private float remarkHeightMax = 0;
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                static float PosLerp(float lPos, float rPos, float lTime, float rTime, float curTime) =>
+                private static float PosLerp(float lPos, float rPos, float lTime, float rTime, float curTime) =>
                     (rPos - lPos) * ((curTime - lTime) / (rTime - lTime)) + lPos;
                 public override void Draw()
                 {

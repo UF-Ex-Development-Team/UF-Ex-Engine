@@ -4,9 +4,9 @@
     {
         private class TimeTips : Entity
         {
-            readonly string text;
-            readonly vec2 pos, fadeSpeed;
-            readonly col color;
+            private readonly string text;
+            private readonly vec2 pos, fadeSpeed;
+            private readonly col color;
             public TimeTips(vec2 pos, col color, string text, vec2 fadeSpeed)
             {
                 this.fadeSpeed = fadeSpeed;
@@ -15,7 +15,7 @@
                 this.text = text;
                 UpdateIn120 = true;
             }
-            float appearTime = 0, alpha;
+            private float appearTime = 0, alpha;
             public override void Update()
             {
                 appearTime += 0.5f;
@@ -24,7 +24,7 @@
                 if (alpha <= 0)
                     Dispose();
             }
-            public override void Draw() => GlobalResources.Font.NormalFont.CentreDraw(text, pos, color * alpha, 0.5f, 0.5f);
+            public override void Draw() => GlobalResources.Font.NormalFont.CentreDraw(text, pos, color * (alpha * Fight.Functions.ScreenDrawing.UIColor.A / 255f), 0.5f, 0.5f);
         }
     }
 }

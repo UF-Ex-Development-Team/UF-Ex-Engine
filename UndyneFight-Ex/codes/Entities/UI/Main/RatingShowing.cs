@@ -6,7 +6,7 @@ namespace UndyneFight_Ex.Entities
 {
     internal class RatingShowing : Entity
     {
-        readonly Texture2D starMedal = GlobalResources.Sprites.starMedal;
+        private readonly Texture2D starMedal = GlobalResources.Sprites.starMedal;
         public RatingShowing()
         {
             Image = GlobalResources.Sprites.medal;
@@ -64,12 +64,10 @@ namespace UndyneFight_Ex.Entities
             }
         }
 
-        readonly Color[] SkillColors = [ Color.Lime, Color.LawnGreen, Color.Blue,
-                Color.MediumPurple, Color.Red, Color.OrangeRed, Color.Orange, Color.Gold];
+        private readonly Color[] SkillColors = [Color.Lime, Color.LawnGreen, Color.Blue, Color.MediumPurple, Color.Red, Color.OrangeRed, Color.Orange, Color.Gold];
         public override void Update()
         {
-            enabled = PlayerManager.CurrentUser != null;
-            if (!enabled)
+            if (!(enabled = PlayerManager.CurrentUser != null))
                 return;
             name = PlayerManager.CurrentUser.PlayerName;
             skill = PlayerManager.PlayerSkill;

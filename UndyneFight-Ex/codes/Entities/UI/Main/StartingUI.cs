@@ -107,45 +107,21 @@ namespace UndyneFight_Ex.Entities
 
         private static class SelectionEntities
         {
-            public class User(IntroUI ui) : Model(ui, 0, (ui) =>
-                {
-                    if (string.IsNullOrEmpty(PlayerManager.currentPlayer))
-                    {
-                        InstanceCreate(PlayerManager.playerInfos.Count != 0
-                            ? new LoginUI() : new RegisterUI());
-                    }
-                    else
-                        InstanceCreate(new AccountManager());
-                    ui.Dispose();
-                }) { }
+            public class User(IntroUI ui) : Model(ui, 0, (ui) => InstanceCreate(string.IsNullOrEmpty(PlayerManager.currentPlayer) ? (PlayerManager.playerInfos.Count != 0 ? new LoginUI() : new RegisterUI()) : new AccountManager())) { }
             public class MainGame(IntroUI ui) : Model(ui, 1, (ui) =>
                 {
                     FightSystem.SelectMainSet();
                     InstanceCreate(new ModeSelector());
-                    ui.Dispose();
                 }) { }
             public class Record(IntroUI ui) : Model(ui, 2, (ui) =>
                 {
                     if (Directory.GetFiles("Datas\\Records").Length == 0)
                         return;
                     InstanceCreate(new RecordSelector());
-                    ui.Dispose();
                 }) { }
-            public class Championship(IntroUI ui) : Model(ui, 3, (ui) =>
-                {
-                    InstanceCreate(new ChampionShipSelector());
-                    ui.Dispose();
-                }) { }
-            public class SettingsIntro(IntroUI ui) : Model(ui, 4, (ui) =>
-                {
-                    InstanceCreate(new Settings.SettingsShower());
-                    ui.Dispose();
-                }) { }
-            public class AchievementsIntro(IntroUI ui) : Model(ui, 5, (ui) =>
-                {
-                    InstanceCreate(GameStartUp.AchievementUI ?? new Achievements.AchievementUI());
-                    ui.Dispose();
-                }) { }
+            public class Championship(IntroUI ui) : Model(ui, 3, (ui) => InstanceCreate(new ChampionShipSelector())) { }
+            public class SettingsIntro(IntroUI ui) : Model(ui, 4, (ui) => InstanceCreate(new Settings.SettingsShower())) { }
+            public class AchievementsIntro(IntroUI ui) : Model(ui, 5, (ui) => InstanceCreate(GameStartUp.AchievementUI ?? new Achievements.AchievementUI())) { }
             public class Model : Entity, ISelectAble
             {
                 private readonly Selector father;
@@ -200,7 +176,11 @@ namespace UndyneFight_Ex.Entities
                 }
 
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                public void SelectionEvent() => select.Invoke(father);
+                public void SelectionEvent()
+                {
+                    select(father);
+                    father.Dispose();
+                }
 
                 public override void Update()
                 {

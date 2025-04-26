@@ -27,31 +27,18 @@ namespace UndyneFight_Ex.Entities
                 /// <summary>
                 /// The collision checking instance
                 /// </summary>
-                public CollisionSide CollisionChecker { get; private set; }
+                internal CollisionSide CollisionChecker { get; private set; }
 
                 private class ShieldShadow : Entity, IShieldImage
                 {
                     public Heart User { get; }
-                    public ShieldShadow(Shield shield, float missionRotation)
+                    public ShieldShadow(Shield shield, float? missionRotation = null)
                     {
-                        Rotation = shield.Rotation;
-                        rotateWay = (missionRotation - Rotation + 360) % 360 < (360 - missionRotation + Rotation) % 360;
-                        rotateStartTime = 1;
+                        this.missionRotation = missionRotation ?? shield.missionRotation;
                         User = shield.user;
-                        this.missionRotation = missionRotation;
-                        Image = shield.Image;
-                        drawingColor = shield.drawingColor;
-                        UpdateIn120 = true;
-                        Depth = shield.Depth;
-                        Direction = shield.way;
-                    }
-                    public ShieldShadow(Shield shield)
-                    {
-                        rotateWay = shield.rotateWay;
-                        rotateStartTime = shield.rotateStartTime;
-                        User = shield.user;
-                        missionRotation = shield.missionRotation;
                         Rotation = shield.Rotation;
+                        rotateStartTime = missionRotation == null ? shield.rotateStartTime : 1;
+                        rotateWay = missionRotation == null ? shield.rotateWay : ((missionRotation - Rotation + 360) % 360 < (360 - missionRotation + Rotation) % 360);
                         Image = shield.Image;
                         drawingColor = shield.drawingColor;
                         UpdateIn120 = true;
@@ -64,7 +51,6 @@ namespace UndyneFight_Ex.Entities
                     private Color drawingColor;
                     private readonly float missionRotation;
                     private readonly bool rotateWay;
-                    private float GetDelta() => Math.Min((missionRotation - Rotation + 360) % 360, (360 - missionRotation + Rotation) % 360);
 
                     private float rotateStartTime;
                     private float alpha = 1.0f;
@@ -77,22 +63,14 @@ namespace UndyneFight_Ex.Entities
                         Centre = User.Centre;
                         if (alpha > 0)
                         {
-                            float delta = GetDelta();
+                            float delta = Math.Min((missionRotation - Rotation + 360) % 360, (360 - missionRotation + Rotation) % 360);
                             float scale = Math.Min(Pow(rotateStartTime, 1.5f) / 2.1f * 0.04f, 0.18f);
                             if (delta <= 35f)
                             {
                                 scale *= 0.8f * Pow((delta + 37) / 77f, 1.5f) + 0.2f * 1;
                                 scale = Math.Min(1, scale * (1 + 15f / (delta * delta + 12)));
                             }
-                            if (rotateWay)
-                            {
-                                Rotation += delta * scale;
-                            }
-                            else
-                            {
-                                Rotation -= delta * scale;
-                            }
-                            Rotation = MathUtil.Posmod(Rotation, 360);
+                            Rotation = MathUtil.Posmod(Rotation + delta * scale * (rotateWay ? 1 : -1), 360);
                         }
                     }
                 }
@@ -102,10 +80,8 @@ namespace UndyneFight_Ex.Entities
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 private protected void Hold(int pos)
                 {
-                    if (pos == -1)
-                        return;
-
-                    PushDelta *= 0.8f;
+                    if (pos != -1)
+                        PushDelta *= 0.8f;
                 }
                 /// <summary>
                 /// Whether the shield is enabled
@@ -126,7 +102,7 @@ namespace UndyneFight_Ex.Entities
                 private bool rotateStarted = false;
 
                 internal float missionRotation = 0;
-                GreenSoulGB attachedGB = null;
+                private GreenSoulGB attachedGB = null;
                 /// <summary>
                 /// Whether the shield is currently attached to a green soul blaster
                 /// </summary>
@@ -136,7 +112,7 @@ namespace UndyneFight_Ex.Entities
                 /// </summary>
                 public int ColorType { get; init; }
                 /// <summary>
-                /// The keys used for changing the direction of the shield (RIght, Down, Left, Up)
+                /// The keys used for changing the direction of the shield (Right, Down, Left, Up)
                 /// </summary>
                 public InputIdentity[] UpdateKeys { private get; set; } = new InputIdentity[4];
 
@@ -165,13 +141,10 @@ namespace UndyneFight_Ex.Entities
                 /// <br>The colors for each green soul shield</br>
                 /// <br>0-> Blue, 1 -> Red etc</br>
                 /// </summary>
-                public Color[] ColorTypes { get; set; } = [new(0, 128, 255, 128), new(255, 0, 0, 128), new(0, 255, 255, 1), new(255, 128, 255, 1)];
+                public static Color[] ColorTypes { get; set; } = [new(0, 128, 255, 128), new(255, 0, 0, 128), new(255, 255, 0, 128), new(255, 128, 255, 1)];
                 internal float deltaRotation = 0;
                 internal float previousRotation;
                 internal float PushDelta { get; private set; } = 0;
-
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                private float GetDelta() => Math.Min((missionRotation - Rotation + 360) % 360, (360 - missionRotation + Rotation) % 360);
                 /// <summary>
                 /// A shield
                 /// </summary>
@@ -185,11 +158,10 @@ namespace UndyneFight_Ex.Entities
                     Depth = 0.43f - type * 0.0001f;
                     Image = FightResources.Sprites.shield;
                     Rotation = 0;
-
-                    drawingColor = ColorTypes[type];
                     ColorType = type;
                 }
 
+                /// <inheritdoc/>
                 public override void Start()
                 {
                     CollisionChecker = new();
@@ -197,10 +169,12 @@ namespace UndyneFight_Ex.Entities
                     base.Start();
                 }
 
+                /// <inheritdoc/>
                 public override void Draw()
                 {
                     if (!enabled)
                         return;
+                    drawingColor = ColorTypes[ColorType];
 
 #if DEBUG
                     for (int i = 0; i < 4; i++)
@@ -214,6 +188,7 @@ namespace UndyneFight_Ex.Entities
                     FormalDraw(Image, Centre + MathUtil.GetVector2(PushDelta, Rotation + 180 + (user.FixArrow ? 0 : user.Rotation)), drawingColor * user.Alpha, MathHelper.ToRadians(Rotation + user.Rotation), ImageCentre);
                 }
 
+                /// <inheritdoc/>
                 public override void Update()
                 {
                     previousRotation = Rotation;
@@ -229,25 +204,19 @@ namespace UndyneFight_Ex.Entities
                     Centre = user.Centre;
                     if (rotateStarted)
                     {
-                        float delta = GetDelta();
+                        float delta = Math.Min((missionRotation - Rotation + 360) % 360, (360 - missionRotation + Rotation) % 360);
                         float scale = Math.Min(Pow(rotateStartTime, 1.5f) / 2.1f * 0.04f, 0.18f);
                         if (delta <= 35f)
                         {
                             scale *= 0.8f * Pow((delta + 37) / 77f, 1.5f) + 0.2f * 1;
                             scale = Math.Min(1, scale * (1 + 15f / (delta * delta + 12)));
                         }
-                        if (rotateWay)
-                            Rotation += delta * scale;
-                        else
-                            Rotation -= delta * scale;
-                        Rotation = MathUtil.Posmod(Rotation, 360);
+                        Rotation = MathUtil.Posmod(Rotation + delta * scale * (rotateWay ? 1 : -1), 360);
                     }
                     deltaRotation = Rotation - previousRotation;
                 }
 
                 private int resetTime = 0;
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                private void ResetPushDelta() => resetTime = 20;
 
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 internal void Rotate(int missionWay)
@@ -261,7 +230,7 @@ namespace UndyneFight_Ex.Entities
                     {
                         if (hearts.Count == 1)
                             user.Shields.ShieldRotated();
-                        ResetPushDelta();
+                        resetTime = 20;
                         if (rotateStartTime < 8f)
                             AddChild(new ShieldShadow(this));
                     }
@@ -278,7 +247,7 @@ namespace UndyneFight_Ex.Entities
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 internal void CreateShinyEffect(int type, int direction)
                 {
-                    if (type < 1 || type > 4)
+                    if (type is < 1 or > 4)
                         return;
 
                     Color cl = type switch
@@ -287,12 +256,10 @@ namespace UndyneFight_Ex.Entities
                         2 => Color.LightBlue,
                         3 => Color.Gold,
                         _ => Color.Orange,
-                    };
+                    } * (ScreenDrawing.UIColor.A / 255f);
 
-                    ShieldShinyEffect effect;
-                    if (way == direction)
-                        effect = new ShieldShinyEffect(this, cl);
-                    else
+                    ShieldShinyEffect effect = new(this, cl);
+                    if (way != direction)
                     {
                         foreach (GameObject obj in ChildObjects)
                         {
@@ -301,12 +268,11 @@ namespace UndyneFight_Ex.Entities
                                 ShieldShadow shadow = obj as ShieldShadow;
                                 if (shadow.Direction == direction)
                                 {
-                                    effect = new ShieldShinyEffect(shadow, cl);
+                                    effect = new(shadow, cl);
                                     break;
                                 }
                             }
                         }
-                        effect = new ShieldShinyEffect(this, cl);
                     }
                     GameStates.InstanceCreate(effect);
 
@@ -341,7 +307,7 @@ namespace UndyneFight_Ex.Entities
                                 5 => Color.Orange,
                                 3 => Color.Gold,
                                 _ => throw new ArgumentOutOfRangeException()
-                            } * Rand(0.67f, 0.85f), MathUtil.GetVector2(Rand(4f, 8f), rotation1), Rand(6, 10), createCentre, FightResources.Sprites.square)
+                            } * Rand(0.67f, 0.85f) * (ScreenDrawing.UIColor.A / 255f), MathUtil.GetVector2(Rand(4f, 8f), rotation1), Rand(6, 10), createCentre, FightResources.Sprites.square)
                             { DarkingSpeed = Rand(10f, 14.6f), SlowLerp = 0.25f });
                         }
                     }
@@ -350,10 +316,11 @@ namespace UndyneFight_Ex.Entities
                 protected class ShieldShinyEffect(Entity att, Color cl) : Entity
                 {
                     private float drawingScale = 1.0f;
-                    private float darkerSpeed = 7.9f;
+                    private readonly float darkerSpeed = 7.9f;
 
                     private Vector2 missionSize = new(2.6f, 1.5f);
 
+                    /// <inheritdoc/>
                     public override void Update()
                     {
                         if (att != null)
@@ -367,8 +334,8 @@ namespace UndyneFight_Ex.Entities
                             Dispose();
                     }
 
-                    public override void Draw() =>
-                        FormalDraw(Image = FightResources.Sprites.shinyShield, Centre, cl * MathF.Min(1, (float)Math.Pow(2.1f - drawingScale, 2.1f)), Vector2.Lerp(Vector2.One, missionSize, drawingScale - 1), MathUtil.GetRadian(Rotation + (att as IShieldImage).User.Rotation), ImageCentre);
+                    /// <inheritdoc/>
+                    public override void Draw() => FormalDraw(Image = FightResources.Sprites.shinyShield, Centre, cl * MathF.Min(1, Pow(2.1f - drawingScale, 2.1f)), Vector2.Lerp(Vector2.One, missionSize, drawingScale - 1), MathUtil.GetRadian(Rotation + (att as IShieldImage).User.Rotation), ImageCentre);
                 }
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 internal void CheckKey()
@@ -376,7 +343,7 @@ namespace UndyneFight_Ex.Entities
                     for (int i = 0; i < 4; i++)
                         if (GameStates.IsKeyPressed120f(UpdateKeys[i]))
                             Rotate(i);
-                    //Seperate loop is required to register rotation before hold
+                    //Separate loop is required to register rotation before hold
                     for (int i = 0; i < 4; i++)
                         if (GameStates.IsKeyDown(UpdateKeys[i]))
                             Hold(i);
@@ -399,7 +366,7 @@ namespace UndyneFight_Ex.Entities
                 /// </summary>
                 private readonly Dictionary<int, Shield> shields = [];
 
-                readonly int[] oldDirections = [0, 0, 0, 0];
+                private readonly int[] oldDirections = [0, 0, 0, 0];
                 public ShieldManager() => UpdateIn120 = true;
                 /// <summary>
                 /// Red Shield
@@ -421,6 +388,7 @@ namespace UndyneFight_Ex.Entities
                 /// Shield background circle
                 /// </summary>
                 public ShieldCircle Circle { get; private set; }
+                /// <inheritdoc/>
                 public override void Start()
                 {
                     Heart mission = FatherObject as Heart;
@@ -457,6 +425,7 @@ namespace UndyneFight_Ex.Entities
                 internal int LastDirectionOf(int shieldID) => shields[shieldID].lastWay;
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 internal Shield GetShield(int shieldID) => shields[shieldID];
+                /// <inheritdoc/>
                 public override void Update()
                 {
                     Heart mission = FatherObject as Heart;
@@ -503,6 +472,10 @@ namespace UndyneFight_Ex.Entities
                     oldDirections[color] = direction;
                 }
 
+                /// <summary>
+                /// Adds a shield to the current player
+                /// </summary>
+                /// <param name="shield">The shield to add</param>
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 public void AddShield(Shield shield)
                 {
@@ -511,6 +484,10 @@ namespace UndyneFight_Ex.Entities
                     shields.Add(shield.ColorType, shield);
                     AddChild(shield);
                 }
+                /// <summary>
+                /// Removes a shield form the current player
+                /// </summary>
+                /// <param name="shield">The shield to remove</param>
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 public void RemoveShield(Shield shield)
                 {
@@ -529,11 +506,12 @@ namespace UndyneFight_Ex.Entities
                         float rotation1 = ang + 90 + Rand(0, 1) * 180;
                         float rdelta = Rand(0, 1f) * Rand(0, 1f) * Rand(0, 1f) * RandSignal();
                         rotation1 += rdelta * 90;
-                        GameStates.InstanceCreate(new Particle(col * Rand(0.67f, 0.85f), MathUtil.GetVector2(Rand(0, 9f), rotation1), Rand(4, 8), createCentre, RandBool() ? FightResources.Sprites.square : FightResources.Sprites.lightBall)
+                        GameStates.InstanceCreate(new Particle(col * Rand(0.67f, 0.85f) * (ScreenDrawing.UIColor.A / 255f), MathUtil.GetVector2(Rand(0, 9f), rotation1), Rand(4, 8), createCentre, RandBool() ? FightResources.Sprites.square : FightResources.Sprites.firePartical)
                         { DarkingSpeed = Rand(15f, 18f), SlowLerp = 0.25f });
                     }
                 }
 
+                /// <inheritdoc/>
                 public override void Draw() { }
 
                 internal bool OverRotate => RotateConsumption > 8.001f;
@@ -591,14 +569,14 @@ namespace UndyneFight_Ex.Entities
                 {
                     if (enabled)
                     {
-                        FormalDraw(Image, Centre, curColor * 0.6f * (FatherObject.FatherObject as Heart).Alpha, Rotation, ImageCentre);
+                        FormalDraw(Image, Centre, curColor * 0.6f * ((FatherObject.FatherObject as Heart).Alpha * ScreenDrawing.UIColor.A / 255f), Rotation, ImageCentre);
                         float scale = MathF.Min(1, drawConsumption);
                         if (drawConsumption > 0.004f)
                             FormalDraw(Image,
                                 Centre + new Vector2(0, Image.Height * (1 - scale)),
                                 new CollideRect(0, Image.Height * (1 - scale), Image.Width,
                                 Image.Height * scale).ToRectangle(),
-                                Color.Red * 0.8f, Rotation, ImageCentre);
+                                Color.Red * 0.8f * (ScreenDrawing.UIColor.A / 255f), Rotation, ImageCentre);
                     }
                 }
 

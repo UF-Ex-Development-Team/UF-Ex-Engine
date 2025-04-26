@@ -31,8 +31,8 @@ namespace UndyneFight_Ex
             internal bool IsKeyDown(InputIdentity identity) => identity != InputIdentity.None && _identityCheckers[identity].IsKeyDown();
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             internal bool IsKeyPressed(InputIdentity identity) => identity != InputIdentity.None && _identityCheckers[identity].IsKeyPressed();
-            readonly Dictionary<InputIdentity, IdentityChecker> _identityCheckers = [];
-            public readonly static Dictionary<InputIdentity, List<Keys>> DefaultKeys = [];
+            private readonly Dictionary<InputIdentity, IdentityChecker> _identityCheckers = [];
+            public static readonly Dictionary<InputIdentity, List<Keys>> DefaultKeys = [];
 
             static KeyChecker()
             {
@@ -118,11 +118,11 @@ namespace UndyneFight_Ex
                 {
                     WordsChanged = true;
                     //Letter keys
-                    if (i < 91 && i > 64)
+                    if (i is < 91 and > 64)
                     {
                         return (char)((shift_pressed ? 0 : 32) + i);
                     }
-                    else if (i > 47 && i < 58)
+                    else if (i is > 47 and < 58)
                         return (char)i;
                     else
                         switch (i)
@@ -247,7 +247,7 @@ namespace UndyneFight_Ex
         public void Load(SaveInfo info)
         {
             UserKeys.Clear();
-            foreach (var Identity in DefaultKeys.Keys)
+            foreach (InputIdentity Identity in DefaultKeys.Keys)
             {
                 info.Nexts.TryGetValue(Identity.ToString(), out SaveInfo value);
                 List<Keys> finKey = [];
@@ -266,7 +266,7 @@ namespace UndyneFight_Ex
         {
             UserKeys ??= new(DefaultKeys);
             SaveInfo info = new("Keybinds{");
-            foreach (var Identity in DefaultKeys.Keys)
+            foreach (InputIdentity Identity in DefaultKeys.Keys)
             {
                 string finText = string.Empty;
                 foreach (Keys finKey in UserKeys[Identity])

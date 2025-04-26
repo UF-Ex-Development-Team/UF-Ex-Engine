@@ -4,8 +4,7 @@ namespace UndyneFight_Ex.Entities
 {
     public partial class Player : Entity
     {
-        #region 组件
-        public class CollideEffect : Entity
+        internal class CollideEffect : Entity
         {
             private readonly float size;
             private readonly Color color;
@@ -15,7 +14,7 @@ namespace UndyneFight_Ex.Entities
             {
                 controlLayer = Surface.Hidden;
                 this.size = (size + 16) / 16f;
-                this.color = color;
+                this.color = color * (ScreenDrawing.UIColor.A / 255f);
                 Image = FightResources.Sprites.soulCollide;
                 UpdateIn120 = true;
                 Depth = 0.4f;
@@ -31,7 +30,13 @@ namespace UndyneFight_Ex.Entities
                     Dispose();
             }
         }
-        #endregion
+        /// <summary>
+        /// Creates a collision effect
+        /// </summary>
+        /// <param name="color">The color of the effect</param>
+        /// <param name="size">The size of the effect</param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void CreateCollideEffect(Color color, float size) => heartInstance.AddChild(new CollideEffect(color, size * 1.5f));
         /// <summary>
         /// The heart instance of the player you are controlling
         /// </summary>
@@ -56,7 +61,7 @@ namespace UndyneFight_Ex.Entities
             /// <summary>
             /// The purple filling effect of purple soul transition
             /// </summary>
-            public class PurpleFiller : Entity
+            internal class PurpleFiller : Entity
             {
                 private readonly Heart user;
                 public PurpleFiller(int lineCount, Heart player)
@@ -83,27 +88,23 @@ namespace UndyneFight_Ex.Entities
                     if (++appearTime < halfTime)
                         percent = percent * 0.85f + 0.15f;
                     else if (appearTime == halfTime)
-                        Change();
+                    {
+                        user.lastChangeTime = 0;
+
+                        if (lineCount == -1)
+                            return;
+
+                        int last = user.purpleLineCount;
+                        user.purpleLineCount = lineCount;
+                        int delta = (Move.currentLine - last) / 2;
+                        Move.currentLine += delta;
+
+                        user.purpleLineCount = lineCount;
+                    }
                     else
                         percent *= 0.86f;
                     if (appearTime == halfTime * 3)
                         Dispose();
-                }
-
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                private void Change()
-                {
-                    user.lastChangeTime = 0;
-
-                    if (lineCount == -1)
-                        return;
-
-                    int last = user.purpleLineCount;
-                    user.purpleLineCount = lineCount;
-                    int delta = (Move.currentLine - last) / 2;
-                    Move.currentLine += delta;
-
-                    user.purpleLineCount = lineCount;
                 }
             }
 
@@ -120,7 +121,6 @@ namespace UndyneFight_Ex.Entities
 
             private Vector2 lastCentre;
             private int lastChangeTime = 0;
-
             #endregion
 
             #region 各项属性
@@ -144,7 +144,6 @@ namespace UndyneFight_Ex.Entities
             /// The alpha of the soul
             /// </summary>
             public float Alpha { get; set; } = 1.0f;
-
             /// <summary>
             /// The speed of the player (Default 2.5f)
             /// </summary>
@@ -169,52 +168,14 @@ namespace UndyneFight_Ex.Entities
             /// </summary>
             public float Gravity { private get; set; } = 9.8f;
 
-            public int YFacing
+            public int YFacing => MathUtil.Posmod(missionRotation, 360) switch
             {
-                get
-                {
-                    int jumpKey = 1;
-                    missionRotation += 360;
-                    missionRotation %= 360;
-                    if (missionRotation >= 45 && missionRotation < 135)
-                    {
-                        jumpKey = 2;
-                    }
-                    else if (missionRotation >= 135 && missionRotation < 225)
-                    {
-                        jumpKey = 3;
-                    }
-                    else if (missionRotation >= 225 && missionRotation < 315)
-                    {
-                        jumpKey = 0;
-                    }
-
-                    return jumpKey;
-                }
-            }
-            public int XFacing
-            {
-                get
-                {
-                    int jumpKey = 0;
-                    missionRotation += 360;
-                    missionRotation %= 360;
-                    if (missionRotation >= 45 && missionRotation < 135)
-                    {
-                        jumpKey = 1;
-                    }
-                    else if (missionRotation >= 135 && missionRotation < 225)
-                    {
-                        jumpKey = 2;
-                    }
-                    else if (missionRotation >= 225 && missionRotation < 315)
-                    {
-                        jumpKey = 3;
-                    }
-
-                    return jumpKey;
-                }
-            }
+                _ when MathUtil.Posmod(missionRotation, 360) is >= 45 and < 135 => 2,
+                _ when MathUtil.Posmod(missionRotation, 360) is >= 135 and < 225 => 3,
+                _ when MathUtil.Posmod(missionRotation, 360) is >= 225 and < 315 => 0,
+                _ => 1
+            };
+            public int XFacing => MathUtil.Posmod(YFacing - 1, 4);
             /// <summary>
             /// Whether the player is moving
             /// </summary>
@@ -226,10 +187,7 @@ namespace UndyneFight_Ex.Entities
             /// <summary>
             /// The speed of the slow falling of blue soul (Default 2/3f)
             /// </summary>
-            public float UmbrellaSpeed
-            {
-                set => umbrellaSpeed = value;
-            }
+            public float UmbrellaSpeed { set => umbrellaSpeed = value; }
             private float umbrellaSpeed = 2/3f;
 
             private int purpleLineCount = 3;
@@ -260,7 +218,6 @@ namespace UndyneFight_Ex.Entities
                     if (value)
                     {
                         _ = new Player();
-                        soulSplitTime = 0;
                         isSoulSplit = true;
                     }
                     else
@@ -286,17 +243,14 @@ namespace UndyneFight_Ex.Entities
 
             private bool isOranged = false;
             /// <summary>
-            /// Whether the soul is oranged (Forced to move constantly)
+            /// Whether the soul is orange (Forced to move constantly)
             /// </summary>
             public bool IsOranged
             {
                 set
                 {
-                    isOranged = value;
-                    if (value)
-                    {
+                    if (isOranged = value)
                         ResetOrange();
-                    }
                 }
             }
             #endregion
@@ -305,7 +259,6 @@ namespace UndyneFight_Ex.Entities
 
             private float gravitySpeed = 0.0f;
 
-            public int soulSplitTime = 0;
             private bool isSoulSplit = false, umbrellaAvailable = false;
 
             /// <summary>
@@ -314,7 +267,6 @@ namespace UndyneFight_Ex.Entities
             private bool isForced = false;
             private float forcedSpeed = 2f, purpleLineLength = 0;
             private int jumpTimeLeft = 2;
-
             #endregion 
 
             public Heart()
@@ -333,7 +285,7 @@ namespace UndyneFight_Ex.Entities
                 Depth = 0.3f;
                 UpdateIn120 = true;
             }
-
+            /// <inheritdoc/>
             public override void Start()
             {
                 AddChild(Shields = new());
@@ -344,6 +296,7 @@ namespace UndyneFight_Ex.Entities
 
                 manager.GameAnalyzer.PushData(new SoulChangeData(SoulType, ID, GametimeF));
             }
+            /// <inheritdoc/>
             public override void Dispose()
             {
                 Player manager = FatherObject as Player;
@@ -374,7 +327,6 @@ namespace UndyneFight_Ex.Entities
             }
 
             private int mergeTime;
-            private int appearTime = 0;
             private Heart mergeMission;
             /// <summary>
             /// Splits the current soul
@@ -398,8 +350,6 @@ namespace UndyneFight_Ex.Entities
                     CurrentMoveState = CurrentMoveState
                 };
                 v.controlingBox.InstanceMove(controlingBox.CollidingBox);
-
-                soulSplitTime = 0;
                 isSoulSplit = true;
 
                 (FatherObject as Player).AddChild(v);
@@ -457,6 +407,7 @@ namespace UndyneFight_Ex.Entities
                 }
             }
 
+            /// <inheritdoc/>
             public override void Update()
             {
                 GravityLine.Recover();
@@ -466,9 +417,6 @@ namespace UndyneFight_Ex.Entities
 
                 lastCentre = Centre;
                 lastChangeTime++;
-                appearTime++;
-                if (isSoulSplit)
-                    soulSplitTime++;
 
                 if (SoulType != 4)
                 {
@@ -482,9 +430,7 @@ namespace UndyneFight_Ex.Entities
                     positionRest *= 0.7f;
                 }
 
-                float rotateDelta = GetRotateDelta();
-
-                Rotation += rotateDelta * 0.3f * (rotateWay ? 1 : -1);
+                Rotation += GetRotateDelta() * 0.3f * (rotateWay ? 1 : -1);
 
                 if (!Fight.FightStates.roundType)
                     CurrentMoveState.MoveFunction.Invoke(this);
@@ -494,8 +440,7 @@ namespace UndyneFight_Ex.Entities
                         GameStates.InstanceCreate(new RetentionEffect(this, 15, Color.Orange * 0.5f)
                         { AngleMode = true });
 
-                IsMoved = (lastCentre - Centre).Length() >= 0.005f;
-                IsStable = (lastCentre - Centre).Length() <= 0.5f;
+                IsStable = !(IsMoved = (lastCentre - Centre).Length() >= 0.005f);
             }
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             private void ResetOrange()
@@ -663,7 +608,7 @@ namespace UndyneFight_Ex.Entities
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public static void ResetMove()
+            internal static void ResetMove()
             {
                 Move.last = -1;
                 Move.currentLine = 0;
@@ -677,18 +622,19 @@ namespace UndyneFight_Ex.Entities
             public void FollowScreen(float duration) => AddInstance(new TimeRangedEvent(duration, () => InstantSetRotation(ScreenDrawing.ScreenAngle)) { UpdateIn120 = true });
             #endregion
 
+            /// <inheritdoc/>
             public override void Draw()
             {
-                if (SoulType == 2 || SoulType == 5)
+                if (SoulType is 2 or 5)
                 {
                     Depth -= 0.1f;
                     //Multi-Jump indicator
                     if (jumpTimeLeft > 0 && jumpTimeLimit > 1)
-                        FormalDraw(Image, Centre + MathUtil.GetVector2(1, Rotation + 90), Color.Lime * Alpha, MathUtil.GetRadian(Rotation), ImageCentre);
+                        FormalDraw(Image, Centre + MathUtil.GetVector2(1, Rotation + 90), Color.Lime * (Alpha * ScreenDrawing.UIColor.A / 255f), MathUtil.GetRadian(Rotation), ImageCentre);
                     Depth -= 0.1f;
                     //Parachute indicator
                     if (umbrellaAvailable)
-                        FormalDraw(Image, Centre - MathUtil.GetVector2(1, Rotation + 90), Color.Red * Alpha, MathUtil.GetRadian(Rotation), ImageCentre);
+                        FormalDraw(Image, Centre - MathUtil.GetVector2(1, Rotation + 90), Color.Red * (Alpha * ScreenDrawing.UIColor.A / 255f), MathUtil.GetRadian(Rotation), ImageCentre);
                     Depth += 0.2f;
                 }
                 DrawHeart();
@@ -706,6 +652,7 @@ namespace UndyneFight_Ex.Entities
             public void CreateCollideEffect2(Color color, float size) => AddChild(new CollideEffect(color, size * 1.5f));
         }
 
+        /// <inheritdoc/>
         public override void Update()
         {
             _ = hearts.RemoveAll(s => s.Disposed);
@@ -714,21 +661,11 @@ namespace UndyneFight_Ex.Entities
             else if (heartInstance == null || heartInstance.Disposed)
                 heartInstance = hearts[0];
         }
+        /// <inheritdoc/>
         public override void Draw() { }
-        public override void Dispose() => base.Dispose();
-
-        #region 血量控制 
-
-        public HPControl hpControl { get; private set; }
-
-        #endregion
-
         /// <summary>
-        /// Creates a collision effect
+        /// The HP controller entity
         /// </summary>
-        /// <param name="color">The color of the effect</param>
-        /// <param name="size">The size of the effect</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void CreateCollideEffect(Color color, float size) => heartInstance.AddChild(new CollideEffect(color, size * 1.5f));
+        public HPControl hpControl { get; private set; }
     }
 }

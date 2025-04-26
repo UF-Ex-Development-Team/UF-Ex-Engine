@@ -8,10 +8,10 @@ namespace UndyneFight_Ex.UserService
     {
         public List<ISaveLoad> Children => throw new NotImplementedException();
 
-        int masterVolume, spearBlockingVolume, reduceBlueAmount, drawingQuality;
-        float arrowDelay, arrowSpeed, arrowScale, fps;
-        bool dialogAvailable, preciseWarning, mirror, displayScorePercent;
-        string samplerState;
+        private int masterVolume, spearBlockingVolume, reduceBlueAmount, drawingQuality;
+        private float arrowDelay, arrowSpeed, arrowScale, fps;
+        private bool dialogAvailable, preciseWarning, mirror, displayScorePercent;
+        private string samplerState;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void Load(SaveInfo info)
@@ -118,7 +118,7 @@ namespace UndyneFight_Ex.UserService
                 return (int)playedTime;
             }
         }
-        float playedTime = 0;
+        private float playedTime = 0;
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private void UpdateTime()
         {
@@ -129,7 +129,7 @@ namespace UndyneFight_Ex.UserService
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         internal void AddDeath() => DeathCount++;
-        DateTime span = DateTime.Now;
+        private DateTime span = DateTime.Now;
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void Load(SaveInfo info)
         {

@@ -77,8 +77,8 @@ namespace UFData
             float lim = MathF.Pow(del * 3, 0.7f) / 2.4f + del * 2.0f;
             return MathF.Max(0, 1 - lim);
         }
-        float _total;
-        bool _count;
+        private float _total;
+        private bool _count;
 
         [JsonIgnore]
         public float Total

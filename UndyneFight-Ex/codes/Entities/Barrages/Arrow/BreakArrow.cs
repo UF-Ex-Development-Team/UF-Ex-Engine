@@ -32,7 +32,7 @@ namespace UndyneFight_Ex.Entities
             private Vector2 speed;
             private readonly int color, rotatingType;
             private int appearTime = 0;
-            private float rotSpeed = 0;
+            private readonly float rotSpeed = 0;
 
             public override void Update()
             {

@@ -12,12 +12,20 @@ namespace UndyneFight_Ex.Entities.Advanced
         private readonly int totalTime;
         private readonly float scale;
         private readonly float oldScreenSize;
+        private readonly Vector2 oldScreenPos;
         private Color oldScreenColor;
         private Color oldBoundColor;
         private Color frozenColor = Color.Black;
-        readonly float frozenDepth = 60;
+        private readonly float frozenDepth = 60;
 
-        public ZaWarudo(int time, float scale, Color? frozenColor = null)
+        /// <summary>
+        /// The effect used in the OST Undyne remake
+        /// </summary>
+        /// <param name="time">The duration of the effect</param>
+        /// <param name="scale">The scale of the effect</param>
+        /// <param name="frozenColor">The color of the bound</param>
+        /// <param name="backColor">The background color</param>
+        public ZaWarudo(int time, float scale, Color? frozenColor = null, Color? backColor = null)
         {
             if (exist)
             {
@@ -34,14 +42,16 @@ namespace UndyneFight_Ex.Entities.Advanced
             }
             oldScreenSize = ScreenScale;
             oldScreenColor = BackGroundColor;
+            oldScreenPos = ScreenPositionDelta;
 
-            BackGroundColor = Color.DarkBlue * 0.27f;
+            BackGroundColor = backColor ?? Color.DarkBlue * 0.27f;
             MakeFlicker(Color.LightBlue);
             totalTime = time;
             this.scale = scale;
             GameMain.GameSpeed = 0.5f;
         }
 
+        /// <inheritdoc/>
         public override void Update()
         {
             if (totalTime <= 0)
@@ -57,20 +67,34 @@ namespace UndyneFight_Ex.Entities.Advanced
             }
             appearTime++;
             if (appearTime <= 16)
-                ScreenScale -= (16 - appearTime) / 720f;
-            if (appearTime >= 8 && appearTime <= 36)
+                ScreenScale += (16 - appearTime) / 720f;
+            if (appearTime is >= 8 and <= 36)
             {
                 GameMain.GameSpeed = GameMain.gameSpeed * 0.8f + scale * 0.2f;
             }
             if (appearTime >= totalTime)
             {
                 ScreenScale = GameMain.CurrentDrawingSettings.screenScale * 0.91f + oldScreenSize * 0.09f;
+                ScreenPositionDelta = ScreenPositionDelta * 0.91f + oldScreenPos * 0.09f;
                 BackGroundColor = new Color(GameMain.CurrentDrawingSettings.backGroundColor.ToVector4() * 0.9f + oldScreenColor.ToVector4() * 0.1f);
                 GameMain.GameSpeed = (1 - scale) * (appearTime - totalTime) / 45f + scale;
+            }
+            else //Center screen at average position of hearts
+            {
+                //Get list of hearts
+                List<Vector2> Pos = [];
+                foreach (Player.Heart item in Player.hearts)
+                    Pos.Add(item.Centre);
+                Vector2 AvgPos = Vector2.Zero;
+                Pos.ForEach((pos) => AvgPos += pos);
+                AvgPos /= -Pos.Count;
+                AvgPos += new Vector2(320, 240);
+                ScreenPositionDelta = ScreenPositionDelta * 0.85f + AvgPos * 0.15f;
             }
             if (appearTime >= totalTime + 45)
                 Dispose();
         }
+        /// <inheritdoc/>
         public override void Dispose()
         {
             if (totalTime <= 0)

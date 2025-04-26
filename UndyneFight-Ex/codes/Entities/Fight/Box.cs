@@ -45,9 +45,9 @@
         /// </summary>
         public BoxVertex Previous { get; set; }
         /// <summary>
-        /// Moves the box vertex (I guess?)
+        /// Moves the box position by 1 frame in the given lerp scale
         /// </summary>
-        /// <param name="scale">The lerping scale to move</param>
+        /// <param name="scale">The lerp scale to move</param>
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void Move(float scale) => CurrentPosition = CurrentPosition * (1 - scale) + MissionPosition * scale;
@@ -81,24 +81,28 @@
         /// <summary>
         /// The <see cref="FightBox"/> instance
         /// </summary>
-        public static FightBox instance;
+        public static FightBox instance { get; set; }
         /// <summary>
-        /// The list of Fight BOxes
+        /// The list of Fight Boxes
         /// </summary>
-        public static List<FightBox> boxes = [];
+        public static List<FightBox> boxes { get; set; } = [];
         /// <summary>
         /// Moves the box to the given position
         /// </summary>
         /// <param name="v"></param>
         public abstract void MoveTo(object v);
         /// <summary>
-        /// Immediately moves the box to the given positoin
+        /// Immediately moves the box to the given position
         /// </summary>
         /// <param name="v"></param>
         public abstract void InstanceMove(object v);
 
         protected readonly Player.Heart detect;
         public Player.Heart Detect => detect;
+        /// <summary>
+        /// The lerp value of the box (Default 0.15f)
+        /// </summary>
+        public float MovingScale { get; set; } = 0.15f;
         /// <summary>
         /// The alpha of the box in green soul mode
         /// </summary>
@@ -109,22 +113,20 @@
         /// <param name="alpha">The alpha of the box</param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void InstantSetAlpha(float alpha) => GreenSoulAlpha = curAlpha = alpha;
-        float curAlpha = 1.0f;
+        private float curAlpha = 1.0f;
 
         private bool _doDraw = false;
 
         public override void Update()
         {
             _doDraw = false;
-            curAlpha = detect != null && detect.SoulType == 1
-                ? curAlpha * 0.9f + GreenSoulAlpha * 0.1f : curAlpha * 0.9f + 1 * 0.1f;
+            curAlpha = curAlpha * 0.9f + (detect?.SoulType == 1 ? GreenSoulAlpha : 1) * 0.1f;
             if (Vertices == null)
                 return;
             float scale = MovingScale * 0.6f;
             for (int i = 0; i < Vertices.Length; i++)
             {
-                float scaleBuff = MathF.Max(0, 1 - scale - Vertices[i].ToMissionDistance);
-                Vertices[i].Move(scale + scaleBuff);
+                Vertices[i].Move(scale + MathF.Max(0, 1 - scale - Vertices[i].ToMissionDistance));
             }
         }
         public override void Draw()
@@ -133,7 +135,7 @@
                 return;
             _doDraw = true;
             vec2 gravity = vec2.Zero;
-            foreach (var item in Vertices)
+            foreach (BoxVertex item in Vertices)
                 gravity += item.CurrentPosition / Vertices.Length;
             vec2[] positions = new vec2[Vertices.Length];
             for (int i = 0; i < Vertices.Length; i++)
@@ -142,11 +144,10 @@
                 delta = MathUtil.GetVector2(delta.Length() + 2f, MathF.Atan2(delta.Y, delta.X) * 180 / MathF.PI);
                 positions[i] = delta + gravity;
             }
-            for (int i = 0; i < Vertices.Length - 1; i++)
+            for (int i = 0; i < Vertices.Length; i++)
             {
-                DrawingLab.DrawLine(positions[i], positions[i + 1], 4.2f, col.Lerp(GameMain.CurrentDrawingSettings.backGroundColor, GameMain.CurrentDrawingSettings.themeColor, curAlpha), 0.4f);
+                DrawingLab.DrawLine(positions[i], positions[(i + 1) % Vertices.Length], 4.2f, new(col.Lerp(GameMain.CurrentDrawingSettings.backGroundColor, GameMain.CurrentDrawingSettings.themeColor, curAlpha), curAlpha * 255), 0.4f);
             }
-            DrawingLab.DrawLine(positions[0], positions[Vertices.Length - 1], 4.2f, col.Lerp(GameMain.CurrentDrawingSettings.backGroundColor, GameMain.CurrentDrawingSettings.themeColor, curAlpha), 0.4f);
         }
 
         public FightBox()
@@ -156,10 +157,6 @@
             instance = this;
         }
         public FightBox(Player.Heart p) : this() => detect = p;
-        /// <summary>
-        /// The lerp value of the box (Default 0.15f)
-        /// </summary>
-        public float MovingScale { get; set; } = 0.15f;
     }
 
     public class VertexBox : FightBox
@@ -203,7 +200,7 @@
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public int Split(int originID, float scale)
         {
-            if (scale < 0 || scale > 1)
+            if (scale is < 0 or > 1)
                 throw new ArgumentOutOfRangeException($"{nameof(scale)} has to be in [0, 1]");
             if (originID != Vertices.Length - 1)
             {
@@ -308,14 +305,12 @@
             gravityLines = [right, down, left, up];
         }
 
-        public override void Draw() => base.Draw();
-
         public override void Update()
         {
             vec2 v1 = collidingBox.TopLeft,
-                    v2 = new(collidingBox.Right, collidingBox.Up),
-                    v3 = new(collidingBox.Left, collidingBox.Down),
-                    v4 = new(collidingBox.Right, collidingBox.Down);
+                v2 = collidingBox.TopRight,
+                v3 = collidingBox.BottomLeft,
+                v4 = collidingBox.BottomRight;
             up.SetPosition(v1, v2);
             right.SetPosition(v2, v4);
             left.SetPosition(v3, v1);
@@ -331,7 +326,7 @@
             if (detect == null)
                 return;
             bool[] enabled = [false, false, false, false];
-            if (detect.SoulType == 2 || detect.SoulType == 5)
+            if (detect.SoulType is 2 or 5)
             {
                 enabled[detect.YFacing] = true;
             }
@@ -377,7 +372,7 @@
         /// </summary>
         public float Right => collidingBox.Right;
         /// <summary>
-        /// The Y coordiante of the down side of the box
+        /// The Y coordinate of the down side of the box
         /// </summary>
         public float Down { get => collidingBox.Down; set => InstanceMove(new CollideRect(Left, Up, Width, value - Up)); }
         /// <summary>

@@ -1,5 +1,4 @@
-﻿using Microsoft.Xna.Framework.Input;
-using UndyneFight_Ex.Entities;
+﻿using UndyneFight_Ex.Entities;
 using static UndyneFight_Ex.Settings.SettingLibrary;
 
 namespace UndyneFight_Ex.Settings

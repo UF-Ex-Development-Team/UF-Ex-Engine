@@ -19,20 +19,20 @@
         }
 
         private static readonly Queue<AchievementResult> currentList = new();
-        int appearTime = 0;
-        float bufferX = 340;
+        private int appearTime = 0;
+        private float bufferX = 340;
 
-        readonly Achievement achievement;
-        readonly string achDesc;
+        private readonly Achievement achievement;
+        private readonly string achDesc;
 
-        int id = 0;
+        private int id = 0;
 
-        float currentY = 0, targetY = 0;
+        private float currentY = 0, targetY = 0;
 
         private void SetID(int index) => targetY = 522 - 10 - (id = index) * 85;
 
-        const int totalTime = 300;
-        readonly static GLFont font = GlobalResources.Font.NormalFont;
+        private const int totalTime = 300;
+        private static readonly GLFont font = GlobalResources.Font.NormalFont;
 
         public override void Draw()
         {
@@ -41,7 +41,7 @@
             font.LimitDraw("Achievement Unlocked!", collidingBox.TopLeft + new vec2(10, 10), col.White, collidingBox.Size - new vec2(20, 5), 10, 0.4f, Depth + 0.02f);
             font.LimitDraw(achievement.Title, collidingBox.TopLeft + new vec2(10, 25), col.White, new vec2(collidingBox.Width, 20), 10, 0.5f, Depth + 0.02f);
             DrawingLab.DrawLine(collidingBox.TopLeft + new vec2(10, 43), collidingBox.TopRight + new vec2(-10, 43), 1, col.Silver, Depth + 0.02f);
-            font.LimitDraw(achDesc, collidingBox.TopLeft + new vec2(10, 45), col.White, new vec2(collidingBox.Width, 20), 10, 0.5f, Depth + 0.02f);
+            font.LimitDraw(achDesc, collidingBox.TopLeft + new vec2(10, 50), col.White, new vec2(collidingBox.Width, 20), 10, 0.5f, Depth + 0.02f);
         }
 
         public override void Update()

@@ -58,19 +58,42 @@ namespace UndyneFight_Ex
         }*/
 
         private static readonly List<Type> mainSongs = [];
-
+        /// <summary>
+        /// Current song set selected
+        /// </summary>
         public static SongSet CurrentSongs { get; private set; }
+        /// <summary>
+        /// List of all charts
+        /// </summary>
         public static SongSet AllSongs { get; private set; } = new SongSet("All");
+        /// <summary>
+        /// Main charts
+        /// </summary>
         public static SongSet MainGameSongs { get; private set; } = new SongSet("MainGameSong");
+        /// <summary>
+        /// Custom charts
+        /// </summary>
         public static SongSet CustomSongs { get; set; } = new SongSet("Custom Charts");
+        /// <summary>
+        /// Main fights (Essentially unused)
+        /// </summary>
         public static FightSet MainGameFights { get; private set; } = new FightSet("MainGameFight");
-
+        /// <summary>
+        /// List of championships
+        /// </summary>
         public static List<ChampionShip> ChampionShips { get; private set; } = [];
+        /// <summary>
+        /// Current selected championship
+        /// </summary>
         public static ChampionShip CurrentChampionShip { get; internal set; }
-
+        /// <summary>
+        /// List of challenges
+        /// </summary>
         public static List<Challenge> Challenges { get; internal set; } = [];
         public static Dictionary<string, Challenge> ChallengeDictionary { get; internal set; } = [];
-
+        /// <summary>
+        /// Other song sets
+        /// </summary>
         public static List<SongSet> ExtraSongSets { get; internal set; } = [];
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void PushSongSet(SongSet songSet) => ExtraSongSets.Add(songSet);
@@ -108,7 +131,7 @@ namespace UndyneFight_Ex
             foreach (SongSet s in ExtraSongSets)
                 result.AddRange(from v in s.Values select v);
             foreach (ChampionShip c in ChampionShips)
-                if (c.CheckTime.Invoke() == ChampionShip.ChampionShipStates.End)
+                if (c.CheckTime() == ChampionShip.ChampionShipStates.End)
                     result.AddRange(from v in c.Fights.Values select v);
             return result;
         }

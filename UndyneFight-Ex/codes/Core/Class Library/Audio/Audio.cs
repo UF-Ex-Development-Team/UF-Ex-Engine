@@ -44,8 +44,8 @@ namespace UndyneFight_Ex
         }
         private class EffectPlayer(SoundEffect effect) : IAudioSource
         {
-            readonly TimeSpan duration = effect.Duration;
-            readonly SoundEffectInstance effect = effect.CreateInstance();
+            private readonly TimeSpan duration = effect.Duration;
+            private readonly SoundEffectInstance effect = effect.CreateInstance();
 
             public TimeSpan GetDuration() => duration;
 
@@ -68,8 +68,8 @@ namespace UndyneFight_Ex
         }
         private class DynamicSongPlayer(string path, float? startPos = null, float? endPos = null) : IAudioSource
         {
-            readonly DynamicSong _dynamicSong = new(path, startPos, endPos);
-            readonly List<DynamicSongInstance> allInstances = [];
+            private readonly DynamicSong _dynamicSong = new(path, startPos, endPos);
+            private readonly List<DynamicSongInstance> allInstances = [];
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             private void Update() => allInstances.RemoveAll(s => s.State == SoundState.Stopped);
@@ -98,7 +98,7 @@ namespace UndyneFight_Ex
                 allInstances.Clear();
             }
 
-            float lastPosition = 0.0f;
+            private float lastPosition = 0.0f;
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             internal float GetPosition()
             {
@@ -123,7 +123,7 @@ namespace UndyneFight_Ex
         }
         private class SongPlayer(Song song) : IAudioSource
         {
-            readonly Song song = song;
+            private readonly Song song = song;
             public void Start()
             {
                 float x = Settings.SettingsManager.DataLibrary.masterVolume / 100f;
@@ -136,7 +136,7 @@ namespace UndyneFight_Ex
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public void Stop() => MediaPlayer.Stop();
-            TimeSpan position = TimeSpan.Zero;
+            private TimeSpan position = TimeSpan.Zero;
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public void SetPosition(float position)
             {
@@ -160,7 +160,7 @@ namespace UndyneFight_Ex
 
             public float Volume { set => MediaPlayer.Volume = value * Settings.SettingsManager.DataLibrary.masterVolume / 100f; get => MediaPlayer.Volume; }
         }
-        readonly IAudioSource source;
+        private readonly IAudioSource source;
         public float Volume { set => source.Volume = value; get => source.Volume; }
         /// <summary>
         /// Loads an audio to memory
@@ -174,12 +174,12 @@ namespace UndyneFight_Ex
             loader ??= Fight.Functions.Loader;
             if (path.EndsWith(".ogg"))
             {
-                string finPath = string.IsNullOrEmpty(loader.RootDirectory) ? path : loader.RootDirectory + "\\" + path;
+                string finPath = string.IsNullOrEmpty(loader.RootDirectory) ? path : (path.StartsWith("Content") ? path : loader.RootDirectory + "\\" + path);
                 source = new DynamicSongPlayer(Path.Combine(finPath.Split('\\')), startPos, endPos);
                 return;
             }
             //Ensure no "Content" overlap
-            object result = GlobalResources.LoadContent<object>(loader.RootDirectory == "Content" && path[..7] == "Content" ? path[9..] : path);
+            object result = GlobalResources.LoadContent<object>(loader.RootDirectory == "Content" && path[..7] == "Content" ? path[8..] : path);
             if (result is SoundEffect)
                 source = new EffectPlayer(result as SoundEffect);
             else if (result is Song)
@@ -188,8 +188,17 @@ namespace UndyneFight_Ex
         }
         public Audio(SoundEffect effect) => source = new EffectPlayer(effect) { Volume = 1f };
         public Audio(Song song) => source = new SongPlayer(song) { Volume = 1f };
+        /// <summary>
+        /// Whether the audio had just started to play
+        /// </summary>
         public bool OnPlay => source.OnPlay;
+        /// <summary>
+        /// The position to start the audio in
+        /// </summary>
         public float PlayPosition { private get; set; }
+        /// <summary>
+        /// The duration of the audio
+        /// </summary>
         public TimeSpan SongDuration => source.GetDuration();
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void Play()
@@ -208,6 +217,9 @@ namespace UndyneFight_Ex
         }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void Stop() => source.Stop();
+        /// <summary>
+        /// Whether the audio had ended
+        /// </summary>
         public bool IsEnd => source.IsEnd;
         /// <summary>
         /// Sets the position of the audio to the specified position<br/>

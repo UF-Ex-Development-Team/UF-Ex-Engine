@@ -8,7 +8,7 @@ namespace UndyneFight_Ex
 {
     public static partial class GameStates
     {
-        internal static class GameRule
+        public static class GameRule
         {
             /// <summary>
             /// The color of the player name, VIP can have blue/orange/colorful instead of only white
@@ -19,11 +19,11 @@ namespace UndyneFight_Ex
         /// <summary>
         /// Whether the current engine used is the UF-Ex RE engine
         /// </summary>
-        public static bool IsReEngine;
+        public static bool IsReEngine { get; set; }
         /// <summary>
         /// Whether the player is currently in a challenge
         /// </summary>
-        public static bool IsInChallenge = false;
+        public static bool IsInChallenge { get; set; } = false;
         /// <summary>
         /// The current challenge
         /// </summary>
@@ -48,6 +48,12 @@ namespace UndyneFight_Ex
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void InstanceCreate(GameObject e) => missionScene.InstanceCreate(e);
+        /// <summary>
+        /// Whether an instance already exists
+        /// </summary>
+        /// <param name="e">The game object to check</param>
+        /// <returns></returns>
+        public static bool InstanceExists(Type e) => Objects.FindAll(s => s.GetType() == e).Count > 0;
 
         internal static Scene currentScene, missionScene;
         /// <summary>
@@ -63,15 +69,15 @@ namespace UndyneFight_Ex
         /// <summary>
         /// The difficulty of the current chart in <see cref="int"/>, you can convert it back to <see cref="Difficulty"/>
         /// </summary>
-        public static int difficulty = -1;
-        /// <summary>
+        public static int difficulty { get; set; } = -1;
+        /// <summary>   
         /// Whether the time tips (Early, Late) are forcefully disabled
         /// </summary>
-        public static bool ForceDisableTimeTips = false;
+        public static bool ForceDisableTimeTips { get; set; } = false;
         /// <summary>
         /// The GameMode used in the previous chart
         /// </summary>
-        public static GameMode GameModeMemory;
+        public static GameMode GameModeMemory { get; set; }
 
         internal static bool isReplay = false, isRecord = false;
 
@@ -91,7 +97,7 @@ namespace UndyneFight_Ex
                 CurrentScene.UpdateRendering();
             }
             currentScene = missionScene;
-            if (Fight.Functions.GametimeF  > 0 && Fight.Functions.GametimeF % 125 == 0)
+            if (Fight.Functions.GametimeF > 0 && Fight.Functions.GametimeF % 125 == 0)
                 GC.Collect();
             KeysUpdate2();
 #if DEBUG
@@ -165,7 +171,7 @@ namespace UndyneFight_Ex
         /// </summary>
         /// <param name="wave">The chart wave</param>
         /// <param name="songIllustration">The chart cover</param>
-        /// <param name="path">The music path</param>
+        /// <param name="path">The path to the music file</param>
         /// <param name="dif">The difficulty of the chart</param>
         /// <param name="judgeState">The judgement state of the chart</param>
         /// <param name="mode">The gamemode of the chart</param>
@@ -181,7 +187,7 @@ namespace UndyneFight_Ex
         /// <summary>
         /// Starts a chart
         /// </summary>
-        /// <param name="params">The paramters of the chart</param>
+        /// <param name="params">The parameters of the chart</param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void StartSong(SongFightingScene.SceneParams @params)
         {
@@ -230,6 +236,7 @@ namespace UndyneFight_Ex
             NameShower.level = "";
             NameShower.name = null;
             NameShower.OverrideName = "";
+            NameShower.nameAlpha = 1;
 
             Surface.Hidden.BackGroundColor = Color.Black;
             FightBox.boxes = [];
@@ -286,11 +293,11 @@ namespace UndyneFight_Ex
         /// <summary>
         /// Broadcast an event globally
         /// </summary>
-        /// <param name="gameEventArgs"></param>
+        /// <param name="gameEventArgs">The event to broadcast</param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void Broadcast(GameEventArgs gameEventArgs) => currentScene.Broadcast(gameEventArgs);
         /// <summary>
-        /// Detect whether an event (Made from <see cref="Broadcast(GameEventArgs)"/> has been called
+        /// Detect whether an event (Made from <see cref="Broadcast(GameEventArgs)"/>) has been called
         /// </summary>
         /// <param name="ActionName">The name of the event to detect</param>
         /// <returns></returns>
@@ -309,6 +316,7 @@ namespace UndyneFight_Ex
         /// [Directory, File Path]
         /// </summary>
         internal static Dictionary<string, string> file_path_list = [];
+        private static readonly string[] Extensions = [".ogg", ".mp3", ".wav"];
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         internal static async void LoadSongPreviews()
         {
@@ -316,7 +324,7 @@ namespace UndyneFight_Ex
 
             foreach (Type i in FightSystem.AllSongs.Values)
             {
-                var o = Activator.CreateInstance(i);
+                object o = Activator.CreateInstance(i);
                 IWaveSet waveSet = o is IWaveSet ? o as IWaveSet : (o as IChampionShip).GameContent;
                 AudioPreviewPos.TryAdd(waveSet.Music, waveSet.Attributes.MusicPreview);
             }
@@ -324,10 +332,10 @@ namespace UndyneFight_Ex
             if (!Directory.Exists(path))
                 return;
             //Unfoldered files
-            var FileList = new DirectoryInfo(path).GetFiles();
+            FileInfo[] FileList = new DirectoryInfo(path).GetFiles();
             //Folder names
-            var sub_dirs = new DirectoryInfo(path).GetDirectories();
-            foreach (var sub_dir_files in sub_dirs)
+            DirectoryInfo[] sub_dirs = new DirectoryInfo(path).GetDirectories();
+            foreach (DirectoryInfo sub_dir_files in sub_dirs)
             {
                 path = Path.Combine($"{AppContext.BaseDirectory}Content\\Musics\\{sub_dir_files.Name}\\song.ogg".Split('\\'));
                 bool exist_ogg = File.Exists(path);
@@ -336,50 +344,56 @@ namespace UndyneFight_Ex
                     : Path.Combine($"Content\\Musics\\{sub_dir_files.Name}\\song.xnb".Split('\\')));
             }
             //Loads all non-foldered ogg files
-            foreach (var files in FileList)
+            foreach (FileInfo files in FileList)
             {
-                if (files.Name.EndsWith(".ogg"))
-                    file_path_list.Add(files.Name, Path.Combine($"Content\\{files.Name}".Split('\\')));
+                for (int i = 0; i < Extensions.Length; i++)
+                    if (files.Name.EndsWith(Extensions[i]))
+                        file_path_list.Add(files.Name, Path.Combine($"Content\\Musics\\{files.Name}".Split('\\')));
             }
-            AudLoadTask = new(() => {
-                foreach (var file_name in file_path_list)
+            Debug.WriteLine(file_path_list);
+            AudLoadTask = new(() =>
+            {
+                foreach (KeyValuePair<string, string> file_name in file_path_list)
                 {
                     string path = Path.Combine(("Musics\\" + file_name.Key).Split('\\'));
                     //Cache audio preview
-                    if (!AudioCache.TryGetValue(path, out Audio value))
+                    if (!AudioCache.TryGetValue(file_name.Key.Split(Path.DirectorySeparatorChar)[0], out Audio value))
                     {
                         //Foldered files
-                        if (!File.Exists(path))
+                        if (!File.Exists(path) && Directory.Exists(path[..^4]))
                         {
-                            if (Directory.Exists(path[..^4]))
+                            path = path[..path.LastIndexOf(Path.DirectorySeparatorChar)];
+                            FileInfo[] files_contained = new DirectoryInfo(path).GetFiles();
+                            foreach (FileInfo sub_files_contaied in files_contained)
                             {
-                                var last_slash_pos = path.LastIndexOf(Path.DirectorySeparatorChar);
-                                path = path[..last_slash_pos];
-                                var files_contained = new DirectoryInfo(path).GetFiles();
-                                foreach (var sub_files_contaied in files_contained)
-                                {
-                                    if (sub_files_contaied.Name.EndsWith(".ogg"))
+                                for (int i = 0; i < Extensions.Length; i++)
+                                    if (sub_files_contaied.Name.EndsWith(Extensions[i]))
+                                    {
                                         path = sub_files_contaied.Name;
-                                }
+                                        break;
+                                    }
                             }
                         }
-                        if (File.Exists(Path.Combine($"Content\\{path}.ogg".Split('\\'))))
-                            path += ".ogg";
-                        Debug.WriteLine(path);
-                        string musFileName = path;
-                        try
+                        for (int i = 0; i < Extensions.Length; i++)
                         {
-                            musFileName = path.Contains(Path.DirectorySeparatorChar) ? path[7..path.LastIndexOf(Path.DirectorySeparatorChar)] : path[7..];
+                            if (File.Exists(Path.Combine($"Content\\{path}{Extensions[i]}".Split('\\'))))
+                            {
+                                path += Extensions[i];
+                                break;
+                            }
                         }
-                        catch
+                        string key = path;
+                        key = key.LastIndexOf(Path.DirectorySeparatorChar) != key.IndexOf(Path.DirectorySeparatorChar) ? key[(key.IndexOf(Path.DirectorySeparatorChar) + 1)..key.LastIndexOf(Path.DirectorySeparatorChar)] : key[(key.IndexOf(Path.DirectorySeparatorChar) + 1)..];
+                        if (!key.EndsWith("song.ogg") && key.EndsWith(".ogg"))
+                            key = key[..^4];
+                        if (AudioPreviewPos.TryGetValue(key, out float[] musPreviewPos))
                         {
-                            Debug.WriteLine($"Error on {path}");
+                            Audio LoadingAudio = new(path, null, musPreviewPos[0], musPreviewPos[1]);
+                            AudioCache.TryAdd(file_name.Key.Split(Path.DirectorySeparatorChar)[0], LoadingAudio);
+                            Debug.WriteLine($"Stored {key} in cache");
                         }
-                        if (AudioPreviewPos.TryGetValue(musFileName, out float[] musPreviewPos))
-                        {
-                            Audio LoadingAudio = new(Scene.Loader.RootDirectory.StartsWith("Content") ? path : $"Content\\{path}", null, musPreviewPos[0], musPreviewPos[1]);
-                            AudioCache.TryAdd(musFileName, LoadingAudio);
-                        }
+                        else
+                            Debug.WriteLine($"Error storing to cache at {key}, No key present in AudioPreviewPos");
                     }
                 }
             });

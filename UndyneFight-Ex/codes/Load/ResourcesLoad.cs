@@ -8,17 +8,20 @@ using static UndyneFight_Ex.GlobalResources.Sprites;
 
 namespace UndyneFight_Ex
 {
+    /// <summary>
+    /// Resources that are used globally
+    /// </summary>
     public static partial class GlobalResources
     {
         /// <summary>
-        /// Loads a file (Cross-platform)
+        /// Loads a file (Cross-platform, internally calls <see cref="DrawingLab.LoadContent{T}(string, ContentManager)"/>)
         /// </summary>
         /// <typeparam name="T">Content type</typeparam>
         /// <param name="path">Path to file</param>
         /// <param name="cm">Content manager to use</param>
         /// <returns>The loaded content</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static T LoadContent<T>(string path, ContentManager cm = null) => (cm ??= Scene.Loader).Load<T>(Path.Combine($"{AppContext.BaseDirectory}{cm.RootDirectory}\\{path}".Split('\\')));
+        public static T LoadContent<T>(string path, ContentManager cm = null) => DrawingLab.LoadContent<T>(path, cm);
         internal static async void Initialize(ContentManager loader)
         {
             Task task = new(()=>
@@ -35,8 +38,6 @@ namespace UndyneFight_Ex
                     DamageFont = new GLFont("Sprites\\font\\DamageShow", loader);
                     Japanese = new GLFont("Sprites\\font\\Japanese", loader);
                     //Font.Chinese = new GLFont("Sprites\\font\\Chinese", loader);
-
-                    root = AppContext.BaseDirectory + "Content\\Global\\";
 
                     hashtex = LoadContent<Texture2D>("Global\\Shaders\\Effect Library\\hashtex", loader);
                     hashtex2 = LoadContent<Texture2D>("Global\\Shaders\\Effect Library\\hashtex2", loader);
@@ -60,8 +61,6 @@ namespace UndyneFight_Ex
                         StableEvents = (s) =>
                             s.Parameters["reduceBlueAmount"].SetValue(Settings.SettingsManager.DataLibrary.reduceBlueAmount / 200f)
                     };
-
-                    UsingShader.BackGround = backGroundShader;
 
                     ReadCustomShaders(loader);
                 });
@@ -210,14 +209,14 @@ namespace UndyneFight_Ex
     public static class FightResources
     {
         /// <summary>
-        /// Loads a file (Cross-platform)
+        /// Loads a file (Cross-platform, internally calls <see cref="DrawingLab.LoadContent{T}(string, ContentManager)"/>)
         /// </summary>
         /// <typeparam name="T">Content type</typeparam>
         /// <param name="path">Path to file</param>
         /// <param name="cm">Content manager to use</param>
         /// <returns>The loaded content</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static T LoadContent<T>(string path, ContentManager cm = null) => (cm ??= Scene.Loader).Load<T>(Path.Combine($"{AppContext.BaseDirectory}{cm.RootDirectory}\\{path}".Split('\\')));
+        public static T LoadContent<T>(string path, ContentManager cm = null) => DrawingLab.LoadContent<T>(path, cm);
         private static readonly string[] shardCol = ["white", "yellow", "green", "purple"];
         private static readonly string[] arrType = ["", "circle_", "rot_", "tran_"];
         private static readonly string[] arrColType = ["blue", "red", "green", "purple"];
@@ -234,6 +233,7 @@ namespace UndyneFight_Ex
                 Font.NormalFont = NormalFont;
                 //Font.Chinese = GlobalResources.Font.Chinese;
                 #region Sprites
+                Sprites.pixUnit = LoadContent<Texture2D>("others\\pixiv", loader);
                 Sprites.player = LoadContent<Texture2D>("SOUL\\original", loader);
                 Sprites.brokenHeart = LoadContent<Texture2D>("SOUL\\break", loader);
                 Sprites.leftHeart = LoadContent<Texture2D>("SOUL\\leftSoul", loader);
@@ -276,7 +276,6 @@ namespace UndyneFight_Ex
                 Sprites.spike = LoadContent<Texture2D>("Bone\\bone_spike", loader);
                 Sprites.spider = LoadContent<Texture2D>("OtherBarrages\\spider", loader);
                 Sprites.Croissant = LoadContent<Texture2D>("OtherBarrages\\clo", loader);
-                Sprites.pixUnit = LoadContent<Texture2D>("others\\pixiv", loader);
                 Sprites.firePartical = LoadContent<Texture2D>("others\\firePartical", loader);
                 Sprites.lightBall = LoadContent<Texture2D>("others\\lightBall", loader);
                 Sprites.lightLine = LoadContent<Texture2D>("others\\lightLine", loader);
@@ -549,7 +548,7 @@ namespace UndyneFight_Ex
             /// </summary>
             public static Texture2D[] explodes = new Texture2D[4];
             /// <summary>
-            /// SPrite of exploding card (Eternal Spring Dream)
+            /// Sprite of exploding card (Eternal Spring Dream)
             /// </summary>
             public static Texture2D explodeTrigger;
             /// <summary>

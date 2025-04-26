@@ -24,7 +24,7 @@ namespace UndyneFight_Ex.Entities
             this.championShip = championShip;
             try
             {
-                Image = LoadContent<Texture2D>(championShip.IconPath);  
+                Image = LoadContent<Texture2D>(championShip.IconPath);
             }
             catch
             {
@@ -147,10 +147,7 @@ namespace UndyneFight_Ex.Entities
                 pages--;
             ResetSelect();
             PlaySound(select, 0.9f);
-            SelectChanged += () =>
-            {
-                PlaySound(changeSelection, 0.9f);
-            };
+            SelectChanged += () => PlaySound(changeSelection, 0.9f);
             SelectChanger += () =>
             {
                 if (IsKeyPressed120f(InputIdentity.MainDown) && currentSelect != SelectionCount - 1)
@@ -225,14 +222,8 @@ namespace UndyneFight_Ex.Entities
                 else if (currentSelect < 0)
                     currentSelect = SelectionCount - 1;
             };
-            SelectChanged += () =>
-            {
-                PlaySound(changeSelection, 0.9f);
-            };
-            Selected += () =>
-            {
-                PlaySound(select, 0.9f);
-            };
+            SelectChanged += () => PlaySound(changeSelection, 0.9f);
+            Selected += () => PlaySound(select, 0.9f);
             PushSelection(new SelectEnd(this));
             PushSelection(new Buffed(this));
             PushSelection(new NoHitter(this));
@@ -293,7 +284,7 @@ namespace UndyneFight_Ex.Entities
                 this.selector = selector;
                 TextColor = (this.selector.selectedMode & GameMode.NoHit) != 0 ? Color.Yellow : Color.Gray;
             }
-            bool Interrupted => (selector.selectedMode & GameMode.Practice) != 0;
+            private bool Interrupted => (selector.selectedMode & GameMode.Practice) != 0;
             public override void SelectionEvent()
             {
                 if (!Interrupted)
@@ -336,7 +327,7 @@ namespace UndyneFight_Ex.Entities
                 this.selector = selector;
                 TextColor = (this.selector.selectedMode & GameMode.Practice) != 0 ? Color.Lime : Color.Gray;
             }
-            bool Interrupted => (selector.selectedMode & GameMode.NoHit) != 0;
+            private bool Interrupted => (selector.selectedMode & GameMode.NoHit) != 0;
             public override void SelectionEvent()
             {
                 if (!Interrupted)

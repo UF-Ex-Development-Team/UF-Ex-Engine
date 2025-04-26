@@ -18,9 +18,9 @@ namespace UndyneFight_Ex.Fight
     /// <param name="act">The action to invoke</param>
     public class TextAction(Action act) : TextAttribute
     {
-        readonly Action action = act;
+        private readonly Action action = act;
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        internal override void Reset(PrintingSettings textPrinter) => action.Invoke();
+        internal override void Reset(PrintingSettings textPrinter) => action();
     }
     /// <summary>
     /// Moves the text(s) using provided function
@@ -28,9 +28,9 @@ namespace UndyneFight_Ex.Fight
     /// <param name="act">The easing function</param>
     public class TextMoveAttribute(Func<float, Vector2> act) : TextAttribute
     {
-        readonly Func<float, Vector2> action = act;
+        private readonly Func<float, Vector2> action = act;
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        internal override void Reset(PrintingSettings textPrinter) => textPrinter.charPositionDelta = action.Invoke(textPrinter.CurrentData.restTime);
+        internal override void Reset(PrintingSettings textPrinter) => textPrinter.charPositionDelta = action(textPrinter.CurrentData.restTime);
     }
     /// <summary>
     /// Scales the text(s) by the given scale
@@ -38,7 +38,7 @@ namespace UndyneFight_Ex.Fight
     /// <param name="scale">The scale of the text</param>
     public class TextSizeAttribute(float scale) : TextAttribute
     {
-        readonly float size = scale;
+        private readonly float size = scale;
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         internal override void Reset(PrintingSettings textPrinter) => textPrinter.TextSize = size;
     }
@@ -75,7 +75,7 @@ namespace UndyneFight_Ex.Fight
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         internal override void Reset(PrintingSettings textPrinter)
         {
-            del = movingFunc.Invoke(textPrinter.CurrentData.restTime);
+            del = movingFunc(textPrinter.CurrentData.restTime);
             textPrinter.charPositionDelta += del;
         }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -108,7 +108,7 @@ namespace UndyneFight_Ex.Fight
     /// <param name="duration">The duration of the fading</param>
     public class TextFadeoutAttribute(float delay, float duration) : TextAttribute
     {
-        readonly float delay = delay, duration = duration;
+        private readonly float delay = delay, duration = duration;
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         internal override void Reset(PrintingSettings textPrinter)
         {

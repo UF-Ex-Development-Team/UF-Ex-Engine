@@ -2,47 +2,27 @@
 {
     public partial class Player
     {
+        /// <summary>
+        /// The state of heart movement
+        /// </summary>
+        /// <param name="color">The color of the heart</param>
+        /// <param name="moveFunction">The function of the heart movement</param>
         public class MoveState(col color, Action<Heart> moveFunction)
-        {/*
-                    switch (SoulType)
-                    {
-                        case 0:
-                            if (isOranged)
-                            {
-                                Move.MoveAsOrange();
-                            }
-                            else
-                            {
-                                Move.MoveAsRed();
-                            }
-
-                            break;
-                        case 2:
-                            if (isOranged)
-                            {
-                                Move.MoveAsBlueOrange();
-                            }
-                            else
-                            {
-                                Move.MoveAsBlue();
-                            }
-
-                            break;
-                        case 3:
-
-                            break;
-                        case 4:
-                            Move.MoveAsPurple();
-                            break;
-                        case 5:
-                            Move.MoveAsGray();
-                            break;
-                    }*/
+        {
+            /// <summary>
+            /// The color of the heart
+            /// </summary>
             public col StateColor { get; init; } = color;
+            /// <summary>
+            /// The function of the heart movement
+            /// </summary>
             public Action<Heart> MoveFunction { get; init; } = moveFunction;
         }
         public partial class Heart
         {
+            /// <summary>
+            /// The current move state of the heart
+            /// </summary>
             public MoveState CurrentMoveState { get; private set; }
 
             private static readonly MoveState _red = new(col.Red, (s) =>

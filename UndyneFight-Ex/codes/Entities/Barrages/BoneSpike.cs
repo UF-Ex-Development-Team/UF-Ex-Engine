@@ -22,8 +22,8 @@ namespace UndyneFight_Ex.Entities
         private bool hasHit = false;
         private int score = 3;
         private float alpha = 0;
-        float currentSpeed = 0;
-        readonly float waitingTime;
+        private float currentSpeed = 0;
+        private readonly float waitingTime;
 
         public int ColorType
         {

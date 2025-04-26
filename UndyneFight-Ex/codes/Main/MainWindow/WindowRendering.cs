@@ -64,7 +64,7 @@ namespace UndyneFight_Ex
             Surface.DistributeEntity(GetEntities(), matrix);
 
             finalTarget = DrawAll();
-            //  this.finalTarget = Surface.Normal.RenderPaint; 
+            //this.finalTarget = Surface.Normal.RenderPaint; 
 
             GraphicsDevice.SetRenderTarget(null);
             GraphicsDevice.Clear(Color.Black);

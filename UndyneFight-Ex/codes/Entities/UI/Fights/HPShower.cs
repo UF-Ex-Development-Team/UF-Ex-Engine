@@ -1,5 +1,5 @@
-﻿using static System.MathF;
-using UndyneFight_Ex.SongSystem;
+﻿using UndyneFight_Ex.SongSystem;
+using static System.MathF;
 using static UndyneFight_Ex.Fight.Functions;
 using static UndyneFight_Ex.FightResources.Sprites;
 using static UndyneFight_Ex.GameMain;
@@ -17,17 +17,17 @@ namespace UndyneFight_Ex.Entities
         public bool Vertical { set; private get; } = false;
         private static bool Buffed => ((CurrentScene as FightScene).Mode & GameMode.Buffed) != 0;
         /// <summary>
-        /// The color of the HP bar of Existing HP
+        /// The color of existing HP of the HP bar
         /// </summary>
         public Color HPExistColor { get => hpExistColor; set => hpExistColor = hpExistCurrent = value; }
         /// <summary>
-        /// The color of the HP bar of Max HP
+        /// The color of Max HP of the HP bar
         /// </summary>
-        public Color HPLoseColor { get => hpExistColor; set => hpLoseColor = hpExistCurrent = value; }
+        public Color HPLoseColor { get => hpLoseColor; set => hpLoseColor = hpLoseCurrent = value; }
         /// <summary>
         /// The color of the KR bar
         /// </summary>
-        public Color HPKRColor { set => hpKRColor = hpKRCurrent = value; }
+        public Color HPKRColor { get => hpKRColor; set => hpKRColor = hpKRCurrent = value; }
         private Color hpExistColor, hpExistCurrent;
         private Color hpLoseColor, hpLoseCurrent;
         private Color hpKRColor, hpKRCurrent;
@@ -50,6 +50,9 @@ namespace UndyneFight_Ex.Entities
         private CollideRect fullarea = new(320, 443, 100, 24);
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void ResetArea(CollideRect rect) => fullarea = rect;
+        /// <summary>
+        /// The rectangle area of the HP bar
+        /// </summary>
         public CollideRect CurrentArea => fullarea;
         public override void Draw()
         {
@@ -58,12 +61,12 @@ namespace UndyneFight_Ex.Entities
             if (HeartAttribute.KR && PlayerInstance.hpControl.KRHPExist)
             {
                 Depth = 0.06f;
-                FormalDraw(pixUnit, KRRect.ToRectangle(), hpKRCurrent);
+                FormalDraw(pixUnit, KRRect, hpKRCurrent);
             }
             Depth = 0.05f;
-            FormalDraw(pixUnit, collidingBox.ToRectangle(), hpExistCurrent);
+            FormalDraw(pixUnit, collidingBox, hpExistCurrent);
             Depth = 0.0f;
-            FormalDraw(pixUnit, FullRect.ToRectangle(), hpLoseCurrent);
+            FormalDraw(pixUnit, FullRect, hpLoseCurrent);
 
             string hpString;
             HeartAttribute.HP = MathUtil.Clamp(HeartAttribute.HP, 0, HeartAttribute.MaxHP);
@@ -97,7 +100,7 @@ namespace UndyneFight_Ex.Entities
             {
                 if (HeartAttribute.KR)
                     FormalDraw(krText, new Vector2(FullRect.Right + 20, hpPos.Y), CurrentDrawingSettings.UIColor, 1.1f, 0.0f, ImageCentre);
-                FightFont.Draw(hpString, new Vector2(FullRect.Right + (HeartAttribute.KR ? 45 : 20), collidingBox.Y + 4), Buffed ? Color.Gold : CurrentDrawingSettings.UIColor);
+                FightFont.Draw(hpString, new Vector2(FullRect.Right + (HeartAttribute.KR ? 45 : 20), collidingBox.Y + 4), Buffed ? Color.Gold * (CurrentDrawingSettings.UIColor.A / 255f) : CurrentDrawingSettings.UIColor);
             }
             else
             {
@@ -105,7 +108,7 @@ namespace UndyneFight_Ex.Entities
                     FormalDraw(krText, new Vector2(hpPos.X, FullRect.Down + 20), CurrentDrawingSettings.UIColor, 1.1f, 0.0f, ImageCentre);
                 if (((CurrentScene as FightScene).Mode & GameMode.Practice) != 0)
                 {
-                    FightFont.Draw(hpString, new Vector2(FullRect.Right + 1, collidingBox.Y + (HeartAttribute.KR ? 49 : 24)), CurrentDrawingSettings.UIColor, 1, 0, 0);
+                    FightFont.CentreDraw(hpString, new Vector2(FullRect.GetCentre().X + 4, FullRect.GetCentre().Y + FullRect.Height / 2f + (HeartAttribute.KR ? 49 : 24)), CurrentDrawingSettings.UIColor, 1, 0, 0);
                 }
                 else
                 {
@@ -125,9 +128,9 @@ namespace UndyneFight_Ex.Entities
             if (Buffed)
                 scale = MathHelper.Clamp(1.25f - PlayerInstance.hpControl.LostSpeed * 0.5f, 0.1f, 1.0f);
             scale = 1 - scale;
-            hpExistCurrent = Color.Lerp(hpExistColor, Color.Firebrick, scale);
-            hpLoseCurrent = Color.Lerp(hpLoseColor, Color.Firebrick, scale);
-            hpKRCurrent = Color.Lerp(hpKRColor, Color.Firebrick, scale);
+            hpExistCurrent = Color.Lerp(hpExistColor, Color.Firebrick, scale) * (CurrentDrawingSettings.UIColor.A / 255f);
+            hpLoseCurrent = Color.Lerp(hpLoseColor, Color.Firebrick, scale) * (CurrentDrawingSettings.UIColor.A / 255f);
+            hpKRCurrent = Color.Lerp(hpKRColor, Color.Firebrick, scale) * (CurrentDrawingSettings.UIColor.A / 255f);
         }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private void CalculatePosition()

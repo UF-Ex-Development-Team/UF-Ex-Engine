@@ -24,7 +24,7 @@ namespace UndyneFight_Ex.Entities
             public override void Update()
             {
                 AppearTime += 0.5f;
-                CentrePosition = PositionRoute.Invoke(this);
+                CentrePosition = PositionRoute(this);
             }
             public LinePoint(Func<ICustomMotion, Vector2> positionRoute)
             {
@@ -33,7 +33,7 @@ namespace UndyneFight_Ex.Entities
             }
         }
 
-        readonly LinePoint vec1, vec2;
+        private readonly LinePoint vec1, vec2;
         /// <summary>
         /// The alpha of the line
         /// </summary>
@@ -41,11 +41,19 @@ namespace UndyneFight_Ex.Entities
         /// <summary>
         /// The width of the line (Default 3 pixels)
         /// </summary>
-        public float Width { private get; set; } = 3.0f;
+        public float Width { get; set; } = 3.0f;
         /// <summary>
         /// The color of the line
         /// </summary>
         public Color DrawingColor { get; set; } = Color.White;
+        /// <summary>
+        /// Whether the line contains multiple colors
+        /// </summary>
+        public bool MultiColor { get; set; } = false;
+        /// <summary>
+        /// The colors of the line (When <see cref="MultiColor"/> is true)
+        /// </summary>
+        public Color[] DrawingColors { get; set; } = [Color.White, Color.White, Color.White, Color.White];
         /// <summary>
         /// Whether the line will be reflected vertically
         /// </summary>
@@ -63,14 +71,14 @@ namespace UndyneFight_Ex.Entities
         /// </summary>
         public bool VerticalLine { private get; set; } = false;
         /// <summary>
-        /// Whether the line will have pre-multipied alpha
+        /// Whether the line will have pre-multiplied alpha
         /// </summary>
         public bool PreMultiplyAlpha { private get; set; } = false;
         /// <summary>
         /// Creates a line
         /// </summary>
-        /// <param name="vec1">The position of the first vertex</param>
-        /// <param name="vec2">The position of the second vertex</param>
+        /// <param name="vec1">The position of the first end of the line</param>
+        /// <param name="vec2">The position of the second end of the line</param>
         public Line(Vector2 vec1, Vector2 vec2) : this(SimplifiedEasing.Stable(0, vec1), SimplifiedEasing.Stable(0, vec2)) { }
         /// <summary>
         /// Creates a line
@@ -79,7 +87,7 @@ namespace UndyneFight_Ex.Entities
         /// <param name="rotation">The rotation of the line</param>
         public Line(Vector2 centre, float rotation) : this(centre, SimplifiedEasing.Stable(0, rotation)) { }
         /// <summary>
-        /// Creates a line
+        /// Creates a line with the y coordinate being 240
         /// </summary>
         /// <param name="Xcentre">The x coordinate of the line</param>
         /// <param name="rotation">The rotation of the line</param>
@@ -115,12 +123,12 @@ namespace UndyneFight_Ex.Entities
             Vector2 centre = new();
             vec2 easing1(ICustomMotion s)
             {
-                rotation = rotationEasing.Invoke(s);
-                centre = centreEasing.Invoke(s);
+                rotation = rotationEasing(s);
+                centre = centreEasing(s);
                 float jr = rotation;
                 jr = MathUtil.Posmod(jr, 180);
                 Vector2 result;
-                xCalc = jr < 45 || jr > 135f;
+                xCalc = jr is < 45 or > 135f;
                 if (xCalc)
                 {
                     float dist = centre.X + 640;
@@ -165,13 +173,28 @@ namespace UndyneFight_Ex.Entities
             LinePoint centre = new(centreEasing);
             AddChild(centre);
 
-            vec2 easing1(ICustomMotion s) => centre.CentrePosition + MathUtil.GetVector2(lengthEasing.Invoke(s) / 2, rotation = rotationEasing.Invoke(s));
-            vec2 easing2(ICustomMotion s) => centre.CentrePosition - MathUtil.GetVector2(lengthEasing.Invoke(s) / 2, rotation);
+            vec2 easing1(ICustomMotion s) => centre.CentrePosition + MathUtil.GetVector2(lengthEasing(s) / 2, rotation = rotationEasing(s));
+            vec2 easing2(ICustomMotion s) => centre.CentrePosition - MathUtil.GetVector2(lengthEasing(s) / 2, rotation);
             AddChild(vec1 = new(easing1));
             AddChild(vec2 = new(easing2));
         }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        void DrawTargetLine(Vector2 Start, Vector2 End) => DrawLine(Start, End, Width, PreMultiplyAlpha ? Color.Lerp(DrawingColor, ScreenDrawing.BackGroundColor, Alpha) : (DrawingColor * Alpha), Depth, Image);
+        private void DrawTargetLine(Vector2 Start, Vector2 End)
+        {
+            if (MultiColor)
+            {
+                Color[] finCol =
+                [
+                    PreMultiplyAlpha ? Color.Lerp(ScreenDrawing.BackGroundColor, DrawingColors[3], Alpha) : (DrawingColors[3] * Alpha),
+                    PreMultiplyAlpha ? Color.Lerp(ScreenDrawing.BackGroundColor, DrawingColors[2], Alpha) : (DrawingColors[2] * Alpha),
+                    PreMultiplyAlpha ? Color.Lerp(ScreenDrawing.BackGroundColor, DrawingColors[1], Alpha) : (DrawingColors[1] * Alpha),
+                    PreMultiplyAlpha ? Color.Lerp(ScreenDrawing.BackGroundColor, DrawingColors[0], Alpha) : (DrawingColors[0] * Alpha)
+                ];
+                DrawLineColors((Start + End) / 2, MathUtil.Direction(Start, End), (End - Start).Length(), Width, finCol, Depth, Image);
+            }
+            else
+                DrawLine(Start, End, Width, PreMultiplyAlpha ? Color.Lerp(ScreenDrawing.BackGroundColor, DrawingColor, Alpha) : (DrawingColor * Alpha), Depth, Image);
+        }
         public override void Draw()
         {
             if (Alpha <= 0)
@@ -213,7 +236,7 @@ namespace UndyneFight_Ex.Entities
         /// </summary>
         /// <param name="time">The time taken for the line to fade out</param>
         /// <param name="val">The amount of alpha to decrease (Default entirely)</param>
-        /// <param name="willDispose">Whether the line will automatically dispose when the alpha reaches 0</param>
+        /// <param name="willDispose">Whether the line will automatically dispose when the alpha reaches 0 (Default true)</param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void AlphaDecrease(float time, float? val = null, bool? willDispose = true)
         {
@@ -284,10 +307,10 @@ namespace UndyneFight_Ex.Entities
             InstanceCreate(new InstantEvent(time, () => { if (Alpha <= once) Dispose(); }));
         }
         /// <summary>
-        /// Splits the line
+        /// Creates a clone of the line
         /// </summary>
-        /// <param name="clear">Whether to return the original line or the splitted line</param>
-        /// <returns>The split line</returns>
+        /// <param name="clear">Whether to return the original line (true) or the splitted line (false)</param>
+        /// <returns></returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public Line Split(bool clear) => clear
                 ? this

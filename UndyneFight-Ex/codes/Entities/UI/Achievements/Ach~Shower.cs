@@ -11,7 +11,7 @@ namespace UndyneFight_Ex.Achievements
     /// </summary>
     public class AchievementUI : Entity
     {
-        private readonly Tuple<Achievement, string, bool>[] Achievements = [];
+        private readonly (Achievement Achievement, string Name, bool Achieved)[] Achievements = [];
         private int Selection = 0;
         private readonly Vector2[] TargetPosition, ActualPosition;
         private readonly Vector2[] TargetBoxPosition, ActualBoxPosition;
@@ -22,15 +22,15 @@ namespace UndyneFight_Ex.Achievements
             ResetRendering();
             UpdateIn120 = true;
             int AchCount = AchievementManager.achievements.Count;
-            Achievements = new Tuple<Achievement, string, bool>[AchCount];
+            Achievements = new (Achievement Achievement, string Name, bool Achieved)[AchCount];
             ActualPosition = new Vector2[AchCount];
             TargetPosition = new Vector2[AchCount];
             TargetBoxPosition = new Vector2[AchCount];
             ActualBoxPosition = new Vector2[AchCount];
             int i = 0;
-            foreach (var achievement in AchievementManager.achievements)
+            foreach (Achievement achievement in AchievementManager.achievements.Values)
             {
-                Achievements[i] = new(achievement.Value, achievement.Value.Title, achievement.Value.Achieved);
+                Achievements[i] = new(achievement, achievement.Title, achievement.Achieved);
                 TargetPosition[i] = ActualPosition[i] = new(320 - MathF.Abs(i * 60), 240 + i * 80);
                 TargetBoxPosition[i] = ActualBoxPosition[i] = new(650, 240 + i * 80);
                 ++i;
@@ -110,7 +110,7 @@ namespace UndyneFight_Ex.Achievements
             }
         }
         private const bool Roadmap = false;
-        private readonly Color[] colors = [Color.Coral, Color.LightGoldenrodYellow, Color.Lime, Color.Blue];
+        private readonly Color[] colors = [Color.Coral, Color.LightGoldenrodYellow, Color.Lime, Color.Azure];
         private static int colorTime = 0, colorIndex = 0;
         public override void Draw()
         {
@@ -141,7 +141,7 @@ namespace UndyneFight_Ex.Achievements
                 }
                 GlobalResources.Font.NormalFont.Draw("Achievements", new Vector2(450, 20), Color.Yellow, 1, 0.1f);
                 int i = 0;
-                foreach (var achievement in AchievementManager.achievements)
+                foreach (KeyValuePair<string, Achievement> achievement in AchievementManager.achievements)
                 {
                     //White background
                     SpriteBatch.DrawVertex(pixUnit, 0.1f,
@@ -189,10 +189,10 @@ namespace UndyneFight_Ex.Achievements
                 for (int i = 0; i < 8; i++)
                     FightResources.Font.FightFont.CentreDraw("Rhythm Recall 0.3.0 Update Roadmap", new Vector2(320, 20) + MathUtil.GetVector2(2, i * 45), Color.Gray, 1, 0.12f);
                 FightResources.Font.FightFont.CentreDraw("Rhythm Recall 0.3.0 Update Roadmap", new Vector2(320, 20), Color.Yellow, 1, 0.2f);
-                var percentage = 90;
+                int percentage = 90;
                 FightResources.Font.NormalFont.CentreDraw("2024 Dec:\nImplement suggestions and fix all known bugs", new Vector2(250, 120), Color.White, 0.7f, 0.2f);
                 DrawingLab.DrawCircleSections(new Vector2(580, 120), 20, 256, 40, Color.Red, 0.12f, 0, 360);
-                DrawingLab.DrawCircleSections(new Vector2(580, 120), 20, 256, 40, Color.Green, 0.2f, -90f, 360 * percentage/100f - 90);
+                DrawingLab.DrawCircleSections(new Vector2(580, 120), 20, 256, 40, Color.Green, 0.2f, -90f, 360 * percentage / 100f - 90);
                 FightResources.Font.SansFont.CentreDraw($"{percentage}%", new Vector2(585, 120), Color.Yellow, 1, 0.21f);
                 percentage = 100;
                 FightResources.Font.NormalFont.CentreDraw("2025 Feb:\nImplement custom keybinds and chart loader", new Vector2(250, 220), Color.White, 0.7f, 0.2f);

@@ -88,7 +88,7 @@ namespace UndyneFight_Ex.Fight
                     get => (GameStates.CurrentScene as FightScene).HPBar.CurrentArea.TopLeft;
                 }
                 /// <summary>
-                /// The render production for dawing the UI surface
+                /// The render production for drawing the UI surface
                 /// </summary>
                 /// <param name="uiSurf">The UI surface</param>
                 public class UISurfaceDrawing(Surface uiSurf) : RenderProduction(null, SpriteSortMode.Immediate, BlendState.AlphaBlend, 0.50001f)
@@ -116,7 +116,7 @@ namespace UndyneFight_Ex.Fight
                     scene.ScoreState.controlLayer = surface;
                 }
                 /// <summary>
-                /// Creates a seperate surface for the UI, making the UI not affected by the screen effects
+                /// Creates a separate surface for the UI, making the UI not affected by the screen effects
                 /// </summary>
                 /// <returns></returns>
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -167,6 +167,10 @@ namespace UndyneFight_Ex.Fight
                 /// </summary>
                 public static Color HPExistColor { get => (GameStates.CurrentScene as FightScene).HPBar.HPExistColor; set => (GameStates.CurrentScene as FightScene).HPBar.HPExistColor = value; }
                 /// <summary>
+                /// The color of existing KR
+                /// </summary>
+                public static Color KRExistColor { get => (GameStates.CurrentScene as FightScene).HPBar.HPKRColor; set => (GameStates.CurrentScene as FightScene).HPBar.HPKRColor = value; }
+                /// <summary>
                 /// THe color of the HP Bar
                 /// </summary>
                 public static Color HPLoseColor { get => (GameStates.CurrentScene as FightScene).HPBar.HPLoseColor; set => (GameStates.CurrentScene as FightScene).HPBar.HPLoseColor = value; }
@@ -189,7 +193,7 @@ namespace UndyneFight_Ex.Fight
             public static class CameraEffect
             {
                 /// <summary>
-                /// Rotates the scren by 180 degrees in the given time
+                /// Rotates the screen by 180 degrees in the given time
                 /// </summary>
                 /// <param name="time">The duration of the rotation</param>
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -199,7 +203,7 @@ namespace UndyneFight_Ex.Fight
                 /// </summary>
                 /// <param name="rotation">The angle to rotate for</param>
                 /// <param name="time">The duration of the rotation</param>
-                /// <exception cref="ArgumentOutOfRangeException">Duratoin is less than 0</exception>
+                /// <exception cref="ArgumentOutOfRangeException">Duration is less than 0</exception>
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 public static void Rotate(float rotation, float time)
                 {
@@ -238,13 +242,13 @@ namespace UndyneFight_Ex.Fight
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 public static void RotateTo(float rotation, float time) => Rotate(MathUtil.MinRotate(ScreenAngle, rotation), time);
                 /// <summary>
-                /// Convulses the screen angle
+                /// Convulses the screen angle (16 degrees in 8 frames)
                 /// </summary>  
                 /// <param name="direction">Direction of convulsion, true means right and false means left</param>
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 public static void Convulse(bool direction) => Convulse(16, 8, direction);
                 /// <summary>
-                /// Convulses the screen angle
+                /// Convulses the screen angle (25 degrees)
                 /// </summary> 
                 /// <param name="time">The duration of the convulsion</param>
                 /// <param name="direction">Direction of convulsion, true means right and false means left</param>
@@ -379,7 +383,7 @@ namespace UndyneFight_Ex.Fight
             }
             internal static float whiteOutRest = 0;
             internal static Vector4 BoundDistance = Vector4.Zero;
-            internal static Color flinkerColor = Color.White;
+            internal static Color flickerColor = Color.White;
 
             /// <summary>
             /// Fades out with the given color
@@ -389,7 +393,7 @@ namespace UndyneFight_Ex.Fight
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public static void SceneOut(Color col, float time)
             {
-                flinkerColor = col;
+                flickerColor = col;
                 whiteOutRest = time;
             }
             /// <summary>
@@ -399,7 +403,7 @@ namespace UndyneFight_Ex.Fight
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public static void WhiteOut(float time)
             {
-                flinkerColor = Color.White;
+                flickerColor = Color.White;
                 whiteOutRest = time;
             }
             /// <summary>
@@ -439,7 +443,7 @@ namespace UndyneFight_Ex.Fight
             {
                 if (whiteOutRest > 0)
                     return;
-                flinkerColor = color;
+                flickerColor = color;
                 GameStates.MakeFlicker();
             }
             /// <summary>
@@ -519,7 +523,7 @@ namespace UndyneFight_Ex.Fight
             /// </summary>
             public static RenderingManager BackGroundRendering => GameStates.missionScene.BackgroundRendering;
             /// <summary>
-            /// The distances of the screen bounds (Color bound effect)
+            /// The distances of the screen bounds
             /// </summary>
             public static Vector4 ScreenExtending
             {
@@ -593,7 +597,7 @@ namespace UndyneFight_Ex.Fight
                 {
                     private static bool Initialized = false;
                     public static RenderTarget2D[] lightSources { get; private set; } = new RenderTarget2D[4];
-                    const int lightSize = 100;
+                    private const int lightSize = 100;
                     /// <summary>
                     /// Available modes for blooming, see <see href="https://en.wikipedia.org/wiki/Blend_modes"/> for more information
                     /// </summary>
@@ -745,7 +749,7 @@ namespace UndyneFight_Ex.Fight
                     /// </summary>
                     public float Intensity { get; set; } = 1f;
                     /// <summary>
-                    /// The range of the random distrubance of the RGB channel<br/>
+                    /// The range of the random disturbance of the RGB channel<br/>
                     /// Make sure <see cref="Disturbance"/> is set to true
                     /// </summary>
                     public float RandomDisturb { get; set; } = 0.2f;
@@ -768,7 +772,7 @@ namespace UndyneFight_Ex.Fight
                     /// </summary>
                     public Color SplitColor2 { get; set; } = Color.Blue;
                     /// <summary>
-                    /// The color drawn without the sahder disturbance (Default <see cref="Color.Lime"/>)
+                    /// The color drawn without the shader disturbance (Default <see cref="Color.Lime"/>)
                     /// </summary>
                     public Color MainColor { get; set; } = Color.Lime;
 
@@ -813,7 +817,7 @@ namespace UndyneFight_Ex.Fight
                     /// </summary>
                     public int AverageInterval { get; set; } = 4;
                     /// <summary>
-                    /// The average delta of the glithes
+                    /// The average delta of the glitches
                     /// </summary>
                     public float AverageDelta { get; set; } = 1f;
                     /// <summary>
@@ -826,7 +830,7 @@ namespace UndyneFight_Ex.Fight
                     public float BlockScale = 1.0f;
                     private class Updater(Glitching father) : GameObject
                     {
-                        readonly Glitching father = father;
+                        private readonly Glitching father = father;
 
                         private class MoveBlock : GameObject
                         {
@@ -854,7 +858,7 @@ namespace UndyneFight_Ex.Fight
                                 Delta *= father.AverageDelta;
                                 lastTime = Rand(18, 40);
                             }
-                            int lastTime;
+                            private int lastTime;
                             public int ColorType { get; private set; }
                             public override void Update()
                             {
@@ -882,7 +886,7 @@ namespace UndyneFight_Ex.Fight
                     /// <param name="dep">The depth of the effect</param>
                     public Glitching(float dep = 0.5f) : base(null, SpriteSortMode.Immediate, BlendState.Opaque, dep) =>
                         GameStates.InstanceCreate(updater = new Updater(this));
-                    readonly Updater updater;
+                    private readonly Updater updater;
                     public override RenderTarget2D Draw(RenderTarget2D obj)
                     {
                         if (!updater.BeingUpdated)
@@ -892,7 +896,7 @@ namespace UndyneFight_Ex.Fight
                         DrawTexture(obj, Vector2.Zero);
 
                         Tuple<Rectangle, Vector2, int>[] all = updater.GetMoves();
-                        foreach (var item in all)
+                        foreach (Tuple<Rectangle, vec2, int> item in all)
                         {
                             Rectangle rect = item.Item1;
                             Vector2 pos = item.Item2;
@@ -1046,6 +1050,26 @@ namespace UndyneFight_Ex.Fight
                         }
                         return MissionTarget;
                     }
+                }
+            }
+
+            /// <summary>
+            /// Creates particles that explodes from the given location
+            /// </summary>
+            /// <param name="color">The color of the particles</param>
+            /// <param name="speed">The average speed of the particles</param>
+            /// <param name="size">The average size of the particles</param>
+            /// <param name="centre">The centre of the particles to explode from</param>
+            /// <param name="count">The amount of particles</param>
+            /// <param name="darkingSpeed">The fading speed of the particles</param>
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            public static void CreateParticles(Color color, float speed, float size, Vector2 centre, int count, float darkingSpeed = 3)
+            {
+                for (int i = 0; i < count; i++)
+                {
+                    float sizeV = MathUtil.GetRandom(10, 20) / 15f * size;
+                    Vector2 speedV = MathUtil.GetVector2(speed * (MathUtil.GetRandom(10, 20) / 15f), MathUtil.GetRandom(0, 359f));
+                    GameStates.InstanceCreate(new Particle(color, speedV, sizeV, centre) { DarkingSpeed = darkingSpeed });
                 }
             }
         }

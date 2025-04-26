@@ -10,7 +10,7 @@ namespace Extends
 {
     #region Misc. Entities
     /// <summary>
-    /// A star (Used in Hopes and Dreams)
+    /// A star (Used in Hopes and Dreams) (Please use something else)
     /// </summary>
     public class Star : Entity, ICollideAble, ICustomMotion
     {
@@ -118,8 +118,8 @@ namespace Extends
             this.ease = ease;
             Scale = scale;
         }
-        float appeartime = 0;
-        Color light = Color.White * 0.25f;
+        private readonly float appeartime = 0;
+        private Color light = Color.White * 0.25f;
         /// <inheritdoc/>
         public override void Draw()
         {
@@ -130,7 +130,7 @@ namespace Extends
         public override void Update()
         {
             if (easeif)
-                ease.Invoke(this);
+                ease(this);
             Rotation += rotatespeed;
             TestDispose();
             if (appeartime % 2 == 0 && starshadow)
@@ -142,17 +142,11 @@ namespace Extends
             if (appeartime >= 720)
                 Dispose();
         }
-        int scoreResult = 3;
+        private int scoreResult = 3;
         private bool hasHit = false;
-        private static JudgementState JudgeState
-        {
-            get
-            {
-                return GameStates.CurrentScene is SongFightingScene
+        private static JudgementState JudgeState => GameStates.CurrentScene is SongFightingScene
                     ? (GameStates.CurrentScene as SongFightingScene).JudgeState
                     : JudgementState.Lenient;
-            }
-        }
         /// <summary>
         /// Whether the star counts to the score or not
         /// </summary>
@@ -215,7 +209,7 @@ namespace Extends
         /// <summary>
         /// The dimension of the screen to check during <see cref="AutoDispose"/>
         /// </summary>
-        public readonly static CollideRect screen = new(-150, -150, 940, 780);
+        public static readonly CollideRect screen = new(-150, -150, 940, 780);
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private void TestDispose()
         {
@@ -230,7 +224,7 @@ namespace Extends
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static Color ChangeLight(Color light) => light == Color.White * 0.25f ? new(0, 0, 0, 0) : Color.White * 0.25f;
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        float Collide(Vector2 org) => MathUtil.GetDistance(Centre, org) - 32f * Scale;
+        private float Collide(Vector2 org) => MathUtil.GetDistance(Centre, org) - 32f * Scale;
     }
     /// <summary>
     /// A fireball
@@ -276,19 +270,17 @@ namespace Extends
 
         /// <inheritdoc/>
         public float AppearTime => appeartime;
-        float appeartime = 0;
+        private readonly float appeartime = 0;
         /// <inheritdoc/>
         public Vector2 CentrePosition => Centre;
-        Func<ICustomMotion, Vector2> ease;
-        bool easeif = false;
+        private readonly Func<ICustomMotion, Vector2> ease;
         /// <summary>
         /// Creates a fireball with easing motion
         /// </summary>
-        /// <param name="ease">The easing funciton</param>
+        /// <param name="ease">The easing function</param>
         /// <param name="scale">The scale of the fireball</param>
         public Fireball(Func<ICustomMotion, Vector2> ease, float scale)
         {
-            easeif = true;
             this.ease = ease;
             Scale = scale;
         }
@@ -302,7 +294,7 @@ namespace Extends
             Centre = centre;
             Scale = scale;
         }
-        int index = 0;
+        private int index = 0;
         /// <summary>
         /// The alpha of the fireball
         /// </summary>
@@ -313,30 +305,21 @@ namespace Extends
         {
             Depth = 0.9f;
             DrawEvent();
-            FormalDraw(Image = Sprites.fireball, Centre, drawcolor * Alpha, Scale * new Vector2((index == 1 ? -1 : 1), 1), 0, ImageCentre);
+            FormalDraw(Image = Sprites.fireball, Centre, drawcolor * Alpha, Scale * new Vector2(index == 1 ? -1 : 1, 1), Rotation, ImageCentre);
         }
         /// <inheritdoc/>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void GetCollide(Player.Heart heart)
         {
-            if (!Collide(heart.Centre))
-                return;
-            if (colorType == 0)
-                LoseHP(heart);
-            else if (colorType == 1 && heart.IsMoved)
-                LoseHP(heart);
-            else if (colorType == 2 && !heart.IsMoved)
+            if (Collide(heart.Centre) && (colorType == 0 || (colorType == 1 && heart.IsMoved) || (colorType == 2 && !heart.IsMoved)))
                 LoseHP(heart);
         }
         /// <inheritdoc/>
         public override void Update()
         {
             controlLayer = IsHidden ? Surface.Hidden : Surface.Normal;
-            if (easeif)
-                ease.Invoke(this);
-            if (Centre.X >= 880 || Centre.X <= -240 || Centre.Y >= 480 + 240 || Centre.Y <= -240)
-                Dispose();
-            if (Alpha <= 0)
+            Centre = ease?.Invoke(this) ?? Centre;
+            if (Centre.X >= 880 || Centre.X <= -240 || Centre.Y >= 480 + 240 || Centre.Y <= -240 || Alpha <= 0)
                 Dispose();
         }
         /// <summary>
@@ -344,7 +327,7 @@ namespace Extends
         /// </summary>
         public bool IsHidden { set; private get; } = false;
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        void DrawEvent()
+        private void DrawEvent()
         {
             if (appeartime % 64 == 0)
             {
@@ -353,55 +336,7 @@ namespace Extends
             }
         }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        bool Collide(Vector2 org) => MathUtil.GetDistance(Centre, org) <= 6.5f * Scale;
-    }
-    /// <summary>
-    /// Creates a fake arrow
-    /// </summary>
-    public class FakeArrow : Entity
-    {
-        readonly float duration;
-        private float scale, depth = 0.75f;
-        /// <summary>
-        /// Creates a fake arrow
-        /// </summary>
-        /// <param name="color">The color of the arrow</param>
-        /// <param name="rotatingType">The rotation type of the arrow</param>
-        /// <param name="breakType">The damage level of the arrow</param>
-        /// <param name="center">The center of the arrow</param>
-        /// <param name="duration">The duration of the fake arrow</param>
-        /// <param name="scale">The scale of the arrow</param>
-        /// <param name="rotation">The rotation of the arrow</param>
-        public FakeArrow(int color, int rotatingType, int breakType, Vector2 center, float duration, float scale, float rotation)
-        {
-            Image = Sprites.arrow[color, rotatingType, breakType];
-            Centre = center;
-            this.scale = scale;
-            this.duration = duration;
-            Rotation = rotation;
-        }
-        float timer;
-        /// <inheritdoc/>
-        public override void Draw()
-        {
-            Depth = depth;
-            FormalDraw(Image, Centre, Color.White, scale, Rotation / 180 * MathF.PI, ImageCentre);
-        }
-        /// <inheritdoc/>
-        public override void Update() { if (++timer >= duration) Dispose(); }
-        /// <summary>
-        /// Changes the type of the arrow
-        /// </summary>
-        /// <param name="color">The new color</param>
-        /// <param name="rotatingType">The new rotating type</param>
-        /// <param name="breakType">The new damage level</param>
-        public void ChangeType(int color, int rotatingType, int breakType)
-        {
-            Image = Sprites.arrow[color, rotatingType, breakType];
-            var v = CreateShinyEffect(Color.White);
-            v.Depth = depth + 0.00001f;
-            v.DarkerSpeed = 6f;
-        }
+        private bool Collide(Vector2 org) => MathUtil.GetDistance(Centre, org) <= 6.5f * Scale;
     }
     #endregion
     [Obsolete("There are better functions")]
@@ -437,14 +372,14 @@ namespace Extends
             for (int i = 0; i < rhythm.Length; i++)
             {
                 int c = 0;
-                foreach (var eventname in eventsname)
+                foreach (string eventname in eventsname)
                 {
                     if (rhythm[i] == eventname)
                         AddInstance(new InstantEvent(b, events[c]));
                     c++;
                 }
                 //Empty beat
-                if (rhythm[i] == "/" || rhythm[i] == "")
+                if (rhythm[i] is "/" or "")
                     b += beat;
                 //Blaster
                 else if (rhythm[i][0] == 'G')
@@ -543,7 +478,7 @@ namespace Extends
             private readonly int colortype = colortype;
             private readonly bool way = way;
             public override void Draw() { }
-            float time = 0;
+            private float time = 0;
             public bool markscore = true;
             private int appearTime;
             public string[] tags = ["noany"];
@@ -568,8 +503,8 @@ namespace Extends
             public int colortype = colortype;
             public bool way = way;
             public override void Draw() { }
-            int appearTime;
-            float time = 0;
+            private int appearTime;
+            private float time = 0;
             public bool markscore = true;
             public string[] tags = ["noany"];
             public override void Update()
@@ -593,8 +528,8 @@ namespace Extends
             public int colortype = colortype;
             public bool way = way;
             public override void Draw() { }
-            int appearTime;
-            float time = 0;
+            private int appearTime;
+            private float time = 0;
             public bool markscore;
             public string[] tags = ["noany"];
             public override void Update()
@@ -618,8 +553,8 @@ namespace Extends
             public int colortype = colortype;
             public bool way = way;
             public override void Draw() { }
-            int appearTime;
-            float time = 0;
+            private int appearTime;
+            private float time = 0;
             public bool markscore;
             public string[] tags = ["noany"];
             public override void Update()
@@ -645,7 +580,7 @@ namespace Extends
             public static Vector2 point, deviation, distance;
             public int pointtype = pointtype;
             public override void Draw() { }
-            int appeartime = 0;
+            private int appeartime = 0;
             public override void Update()
             {
                 appeartime++;
@@ -690,13 +625,13 @@ namespace Extends
             }
         }
     }
-    [Obsolete("You can just use Extends.FakeArrow")]
+    [Obsolete("You can use a Particle instead")]
     public class FakeNote
     {
         public class LeftNote : Entity
         {
-            Func<ICustomMotion, Vector2> Eases;
-            float EasesTime = 0, Delay = 0, Speed = 0;
+            private readonly Func<ICustomMotion, Vector2> Eases;
+            private readonly float EasesTime = 0, Delay = 0, Speed = 0;
 
             public LeftNote(float delay, float speed, int color, int type, Func<ICustomMotion, Vector2> eases, float easestime)
             {
@@ -708,7 +643,7 @@ namespace Extends
                 Rotation = 180;
                 EasesTime = easestime;
             }
-            int Timer = 0;
+            private int Timer = 0;
             public Vector2 Offset;
             public override void Update()
             {
@@ -727,8 +662,8 @@ namespace Extends
         }
         public class RightNote : Entity
         {
-            Func<ICustomMotion, Vector2> Eases;
-            float EasesTime = 0, Delay = 0, Speed = 0;
+            private readonly Func<ICustomMotion, Vector2> Eases;
+            private readonly float EasesTime = 0, Delay = 0, Speed = 0;
 
             public RightNote(float delay, float speed, int color, int type, Func<ICustomMotion, Vector2> eases, float easestime)
             {
@@ -740,7 +675,7 @@ namespace Extends
                 Rotation = 0;
                 EasesTime = easestime;
             }
-            int Timer = 0;
+            private int Timer = 0;
             public Vector2 Offset;
             public override void Update()
             {
@@ -766,13 +701,13 @@ namespace Extends
         /// <summary>
         /// Creates a list of bones with provided motion and rotation
         /// </summary>
-        /// <param name="start">The inital position of the bones</param>
+        /// <param name="start">The initial position of the bones</param>
         /// <param name="speed">The speed of the bones</param>
         /// <param name="length">The length of the bones</param>
         /// <param name="num">The amount of bones</param>
         /// <param name="color">The color of the bones</param>
         /// <param name="RotSpeed">The rotation speed of the bones (Default 4)</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl(MethodImplOptions.AggressiveInlining), Obsolete("This function is the same as using a for loop to create multiple bones")]
         public static void CrossBone(Vector2 start, Vector2 speed, float length, float num, int color = 0, float RotSpeed = 4)
         {
             for (int i = 0; i < num; i++)
@@ -790,7 +725,7 @@ namespace Extends
         /// Sets the screen scale to the target size in the given duration using Quadratic easing (<see cref="SimplifiedEasing.EaseState.Quad"/>)
         /// </summary>
         /// <param name="size">The target size of the screen</param>
-        /// <param name="duration">The duration of the lerping</param>
+        /// <param name="duration">The duration of the lerp</param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void SetScreenScale(float size, float duration)
         {
@@ -824,7 +759,7 @@ namespace Extends
         /// Sets the screen angle to the target angle in the given duration using Quadratic easing (<see cref="SimplifiedEasing.EaseState.Quad"/>)
         /// </summary>
         /// <param name="angle">The target angle of the screen</param>
-        /// <param name="time">The duration of the lerping</param>
+        /// <param name="time">The duration of the lerp</param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void ScreenAngle(float angle, float time)
         {
@@ -876,9 +811,9 @@ namespace Extends
         /// <summary>
         /// Shakes the screen
         /// </summary>
-        /// <param name="interval">The interval between each shake</param>
-        /// <param name="range">The shake intensity</param>
-        /// <param name="times">Times to shake</param>
+        /// <param name="interval">The interval between each shake (Default 2 frames)</param>
+        /// <param name="range">The shake intensity (Default 2 pixels)</param>
+        /// <param name="times">Times to shake (Default 4 times)</param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void Shock(float interval = 2, float range = 2, float times = 4) => Shock(interval, range, range, times);
         /// <summary>
@@ -893,11 +828,9 @@ namespace Extends
         {
             for (int a = 0; a < times; a++)
             {
-                AddInstance(new TimeRangedEvent(a * interval, 1, () =>
-                    ScreenDrawing.ScreenPositionDelta = new Vector2(Rand(-rangeX, rangeX), Rand(-rangeY, rangeY))));
-                AddInstance(new InstantEvent((a + 1) * interval, () =>
-                    ScreenDrawing.ScreenPositionDelta = Vector2.Zero));
+                AddInstance(new TimeRangedEvent(a * interval, 1, () => ScreenDrawing.ScreenPositionDelta = new Vector2(Rand(-rangeX, rangeX), Rand(-rangeY, rangeY))));
             }
+            AddInstance(new InstantEvent((times + 1) * interval, () => ScreenDrawing.ScreenPositionDelta = Vector2.Zero));
         }
         [MethodImpl(MethodImplOptions.AggressiveInlining), Obsolete("There are better functions")]
         public static void Rain(float speed, float rotate, bool way)
@@ -946,7 +879,7 @@ namespace Extends
             }
         }
         /// <summary>
-        /// Rotates the camera and rotates back to inital angle
+        /// Rotates the camera and rotates back to origin
         /// </summary>
         /// <param name="duration">The duration of the rotations</param>
         /// <param name="range">The magnitude of the rotation</param>
@@ -954,11 +887,10 @@ namespace Extends
         public static void RotateWithBack(float duration, float range)
         {
             ScreenDrawing.CameraEffect.RotateTo(range, duration / 2);
-            AddInstance(new InstantEvent(duration / 2 + 1, () =>
-                ScreenDrawing.CameraEffect.RotateTo(0, duration / 2 - 1)));
+            AddInstance(new InstantEvent(duration / 2 + 1, () => ScreenDrawing.CameraEffect.RotateTo(0, duration / 2 - 1)));
         }
         /// <summary>
-        /// Rotates the camera and rotates it to the negation of it before rotating it back (0 -> 15 -> -15 -> 0)
+        /// Rotates the camera and rotates it to the negation of it before rotating it to the origin (10 -> 25 -> -25 -> 0)
         /// </summary>
         /// <param name="duration">The duration of the rotations</param>
         /// <param name="range">The magnitude of the rotations</param>
@@ -972,44 +904,35 @@ namespace Extends
                 ScreenDrawing.CameraEffect.RotateTo(0, duration / 3 - 1)));
         }
         /// <summary>
-        /// Lerps the box and heart to green soul position
+        /// Lerps the box and heart to green soul position (If the duration is shorter than the required lerp time, then the lerp will be incomplete. If the required lerp duration is shorter than the duration, then the lerp duration will be shortened)
         /// </summary>
         /// <param name="duration">The duration of the lerp</param>
         /// <param name="getto">The target position</param>
         /// <param name="lerpcount">The lerp amount</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void LerpGreenBox(float duration, Vector2 getto, float lerpcount)
-        {
-            AddInstance(new TimeRangedEvent(duration, () =>
-            {
-                InstantSetBox(BoxStates.Centre * (1 - lerpcount) + getto * lerpcount, 84, 84);
-                InstantTP(Heart.Centre * (1 - lerpcount) + getto * lerpcount);
-            }));
-        }
+        [MethodImpl(MethodImplOptions.AggressiveInlining), Obsolete("Use easing functions instead")]
+        public static void LerpGreenBox(float duration, Vector2 getto, float lerpcount) => AddInstance(new TimeRangedEvent(duration, () =>
+                                                                                                    {
+                                                                                                        InstantSetBox(BoxStates.Centre * (1 - lerpcount) + getto * lerpcount, 84, 84);
+                                                                                                        InstantTP(Heart.Centre * (1 - lerpcount) + getto * lerpcount);
+                                                                                                    }));
         /// <summary>
-        /// Lerps the screen position
+        /// Lerps the screen position (If the duration is shorter than the required lerp time, then the lerp will be incomplete. If the required lerp duration is shorter than the duration, then the lerp duration will be shortened)
         /// </summary>
         /// <param name="duration">The duration of the lerp</param>
         /// <param name="getto">The target position</param>
         /// <param name="lerpcount">The lerp amount</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void LerpScreenPos(float duration, Vector2 getto, float lerpcount)
-        {
-            AddInstance(new TimeRangedEvent(duration, () =>
-                ScreenDrawing.ScreenPositionDelta = ScreenDrawing.ScreenPositionDelta * (1 - lerpcount) + getto * lerpcount));
-        }
+        [MethodImpl(MethodImplOptions.AggressiveInlining), Obsolete("Use easing functions instead")]
+        public static void LerpScreenPos(float duration, Vector2 getto, float lerpcount) => AddInstance(new TimeRangedEvent(duration, () =>
+                                                                                                         ScreenDrawing.ScreenPositionDelta = ScreenDrawing.ScreenPositionDelta * (1 - lerpcount) + getto * lerpcount));
         /// <summary>
-        /// Lerps the screen scale
+        /// Lerps the screen scale (If the duration is shorter than the required lerp time, then the lerp will be incomplete. If the required lerp duration is shorter than the duration, then the lerp duration will be shortened)
         /// </summary>
         /// <param name="duration">The duration of the lerp</param>
         /// <param name="getto">The target position</param>
         /// <param name="lerpcount">The lerp amount</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void LerpScreenScale(float duration, float getto, float lerpcount)
-        {
-            AddInstance(new TimeRangedEvent(duration, () =>
-                ScreenDrawing.ScreenScale = ScreenDrawing.ScreenScale * (1 - lerpcount) + getto * lerpcount));
-        }
+        [MethodImpl(MethodImplOptions.AggressiveInlining), Obsolete("Use easing functions instead")]
+        public static void LerpScreenScale(float duration, float getto, float lerpcount) => AddInstance(new TimeRangedEvent(duration, () =>
+                                                                                                         ScreenDrawing.ScreenScale = ScreenDrawing.ScreenScale * (1 - lerpcount) + getto * lerpcount));
         /// <summary>
         /// Creates a masking rectangle
         /// </summary>
@@ -1020,6 +943,7 @@ namespace Extends
         /// <param name="duration">The duration of the masking</param>
         /// <param name="color">The color of the rectangle</param>
         /// <param name="alpha">The alpha of the rectangle</param>
+        [Obsolete("You can use ImageEntity")]
         public class MaskSquare(float LeftUpX, float LeftUpY, float width, float height, float duration, Color color, float alpha) : Entity
         {
             public float duration = duration, LeftUpX = LeftUpX, LeftUpY = LeftUpY, width = width, height = height;
@@ -1038,6 +962,7 @@ namespace Extends
                     Dispose();
             }
         }
+        [Obsolete("This class serves zero purpose")]
         public class SpecialBox : RectangleBox
         {
             public float duration = 0, width = 84 - 2, height = 84 - 2, rotate = 0;
@@ -1049,7 +974,7 @@ namespace Extends
             }
             public float alpha = 1, speed = 1;
             public int time = 0;
-            private readonly static float dist = MathF.Sqrt(42 * 42 * 2);
+            private static readonly float dist = MathF.Sqrt(42 * 42 * 2);
             public override void Draw()
             {
                 for (int a = 0; a < 4; a++)

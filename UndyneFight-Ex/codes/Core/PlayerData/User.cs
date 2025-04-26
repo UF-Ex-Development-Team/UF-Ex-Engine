@@ -132,12 +132,12 @@ namespace UndyneFight_Ex.UserService
                 long uuid = rand.NextInt64();
                 _uuid = uuid;
             }
-            //Get extra informations
+            //Get extra information
             info.Nexts.TryAdd("Achievements", new SaveInfo("Achievements{"));
             info.Nexts.TryAdd("Settings", new SaveInfo("Settings{"));
             info.Nexts.TryAdd("Customs", new SaveInfo("Customs{"));
             info.Nexts.TryAdd("ChallengeData", new SaveInfo("ChallengeData{"));
-            //Get champinship data
+            //Get championship data
             ChampionshipData = new();
             ChampionshipData.Load(info.Nexts["ChampionShips"]);
             //Get settings
@@ -171,14 +171,14 @@ namespace UndyneFight_Ex.UserService
             UpdateSkill(CalculateRating());
             //Load shop
             bool updated = false;
-            if (!info.Nexts.TryGetValue("ShopData", out SaveInfo value))
+            if (!info.Nexts.TryGetValue("ShopData", out _))
             {
-                value = new SaveInfo("ShopData{");
+                SaveInfo value = new("ShopData{");
                 info.Nexts.Add("ShopData", value);
                 updated = true;
             }
             ShopData = new();
-            ShopData.Load(value);
+            //ShopData.Load(info.Nexts["ShopData"]);
             if (updated)
             {
                 ShopData.CashManager.Coins = (int)(AbsoluteSkill * 80);
@@ -256,6 +256,7 @@ namespace UndyneFight_Ex.UserService
         public static void Logout()
         {
             GameStates.KeyChecker.InputKeys = new(GameStates.KeyChecker.DefaultKeys);
+            StoreData.UserItems = [];
         }
         public bool OnlineAsync { get; set; } = false;
         public string PasswordMemory { get; set; }

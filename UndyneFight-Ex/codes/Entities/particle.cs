@@ -49,9 +49,7 @@ namespace UndyneFight_Ex.Entities
 
         public override void Update()
         {
-            appearTime++;
-            timeLeft = duration - appearTime;
-            if (timeLeft < 0)
+            if ((timeLeft = duration - ++appearTime) < 0)
                 Dispose();
         }
 
@@ -59,8 +57,7 @@ namespace UndyneFight_Ex.Entities
         {
             for (int i = 0; i < count; i++)
             {
-                FormalDraw(Image, Centre + GetVector2(speeds[i]
-                    * timeLeft, rotations[i]), drawingColor * MathHelper.Min(0.7f, appearTime / (duration / 1.3f)), sizes[i], 0, ImageCentre);
+                FormalDraw(Image, Centre + GetVector2(speeds[i] * timeLeft, rotations[i]), drawingColor * MathHelper.Min(0.7f, appearTime / (duration / 1.3f)), sizes[i], 0, ImageCentre);
             }
         }
     }
@@ -70,32 +67,13 @@ namespace UndyneFight_Ex.Entities
     public class Particle : Entity
     {
         /// <summary>
-        /// Creates particles that explodes from the given location
-        /// </summary>
-        /// <param name="color">The color of the particles</param>
-        /// <param name="speed">The average speed of the particles</param>
-        /// <param name="size">The average size of the particles</param>
-        /// <param name="centre">The centre of the particles to explode from</param>
-        /// <param name="count">The amount of particles</param>
-        /// <param name="darkingSpeed">The fading speed of the particles</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void CreateParticles(Color color, float speed, float size, Vector2 centre, int count, float darkingSpeed = 3)
-        {
-            for (int i = 0; i < count; i++)
-            {
-                float sizeV = GetRandom(10, 20) / 15f * size;
-                Vector2 speedV = GetVector2(speed * (GetRandom(10, 20) / 15f), GetRandom(0, 359f));
-                GameStates.InstanceCreate(new Particle(color, speedV, sizeV, centre) { DarkingSpeed = darkingSpeed });
-            }
-        }
-        /// <summary>
-        /// Create a particle
+        /// Creates a particle
         /// </summary>
         /// <param name="color">The color of the particle</param>
         /// <param name="speed">The speed of the particle</param>
-        /// <param name="size">The size of the particle (In Pixels)</param>
+        /// <param name="size">The size of the particle (In Pixels) (Multiply by 20)</param>
         /// <param name="centre">The position to create the particle</param>
-        /// <param name="image">The image of the particle (Default circle)</param>
+        /// <param name="image">The image of the particle (Default <see cref="FightResources.Sprites.lightBall"/>)</param>
         public Particle(Color color, Vector2 speed, float size, Vector2 centre, Texture2D image = null)
         {
             Image = image ?? FightResources.Sprites.lightBall;
@@ -121,7 +99,7 @@ namespace UndyneFight_Ex.Entities
 
         private readonly float size;
 
-        bool autoRotate = false;
+        private bool autoRotate = false;
         /// <summary>
         /// Whether the particle automatically rotates
         /// </summary>
@@ -150,8 +128,7 @@ namespace UndyneFight_Ex.Entities
                 Alpha -= DarkingSpeed / 255f;
             else
                 Dispose();
-            Centre += speed;
-            speed *= 1 - SlowLerp;
+            Centre += (speed *= 1 - SlowLerp);
             if (autoRotate)
                 Rotation += RotateSpeed / 180f * MathHelper.Pi;
         }

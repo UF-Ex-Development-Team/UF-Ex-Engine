@@ -1,12 +1,12 @@
-﻿using static UndyneFight_Ex.MiscUtil;
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
+using static UndyneFight_Ex.MiscUtil;
 
 namespace UndyneFight_Ex.SongSystem
 {
     /// <summary>  
     ///Impeccable    -> All Perfect <br></br>
     ///Eminent       -> No Hit + 99% score<br></br>
-    ///Excellent     -> No Hit + 98% socre<br></br>
+    ///Excellent     -> No Hit + 98% score<br></br>
     ///Respectable   -> 96% score<br></br>
     ///Acceptable    -> 92% score<br></br>
     ///Ordinary      -> 75% score<br></br>
@@ -63,11 +63,9 @@ namespace UndyneFight_Ex.SongSystem
             Result = SongResult.PickBest(Result, data.Result);
         }
     }
-    public struct SongResult(SkillMark currentMark, int score = 0, float acc = 0, bool ac = false, bool ap = false)
+    public struct SongResult(SkillMark currentMark = SkillMark.Failed, int score = 0, float acc = 0, bool ac = false, bool ap = false)
     {
         public static readonly SongResult Empty = new();
-
-        public SongResult() : this(SkillMark.Failed) { }
         [JsonInclude]
         public SkillMark CurrentMark = currentMark;
         [JsonInclude]

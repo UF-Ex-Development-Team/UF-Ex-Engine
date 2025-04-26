@@ -13,7 +13,7 @@ namespace UndyneFight_Ex.Entities
         /// <summary>
         /// Whether the spear will be drawn exclusively inside the box or not
         /// </summary>
-        public bool IsHidden { set; private get; }
+        public bool IsHidden { set => Hidden = value; private protected get => Hidden; }
         private int score = 3;
         protected float alpha = 0;
         /// <summary>
@@ -25,7 +25,7 @@ namespace UndyneFight_Ex.Entities
         /// <summary>
         /// Forces the spear to dispose when offscreen
         /// </summary>
-        public bool ForceDispose { set; get; } = false;
+        private bool ForceDispose { set; get; } = false;
 
         protected bool autoDispose = true;
 
@@ -92,10 +92,6 @@ namespace UndyneFight_Ex.Entities
                 }
             }
         }
-
-        private static JudgementState JudgeState => GameStates.CurrentScene is SongFightingScene
-                    ? (GameStates.CurrentScene as SongFightingScene).JudgeState
-                    : JudgementState.Lenient;
         /// <inheritdoc/>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override void GetCollide(Player.Heart heart)

@@ -24,7 +24,7 @@ namespace UndyneFight_Ex.Fight
                     currentSelect--;
                 currentSelect = MathUtil.Posmod(currentSelect, SelectionCount);
             };
-            SelectChanged += () => { FightResources.Sounds.changeSelection.CreateInstance().Play(); };
+            SelectChanged += () => FightResources.Sounds.changeSelection.CreateInstance().Play();
 
             PushSelection(new ReTry(mode));
             PushSelection(new GiveUp(mode));
@@ -45,7 +45,7 @@ namespace UndyneFight_Ex.Fight
 
         private class ReTry : TextSelection
         {
-            readonly GameMode mode;
+            private readonly GameMode mode;
             public ReTry(GameMode mode) : base("Try again", new Vector2(320, 220)) { Size = 1.0f; this.mode = mode; }
             public override void SelectionEvent()
             {
@@ -56,7 +56,7 @@ namespace UndyneFight_Ex.Fight
 
         private class GiveUp : TextSelection
         {
-            readonly GameMode mode;
+            private readonly GameMode mode;
             public GiveUp(GameMode mode) : base("Quit", new Vector2(320, 270))
             { Size = 1.0f; this.mode = mode; }
             public override void SelectionEvent()

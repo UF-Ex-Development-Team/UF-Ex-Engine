@@ -15,13 +15,19 @@ namespace UndyneFight_Ex.Entities
 
         private float length;
         private Vector2 startPos;
+        /// <inheritdoc/>
         public Func<ICustomMotion, Vector2> PositionRoute { get; set; }
+        /// <inheritdoc/>
         public Func<ICustomLength, float> LengthRoute { get; set; }
+        /// <inheritdoc/>
         public Func<ICustomMotion, float> RotationRoute { get; set; }
+        /// <inheritdoc/>
         public Vector2 CentrePosition => delta;
-
+        /// <inheritdoc/>
         public float[] PositionRouteParam { get; set; }
+        /// <inheritdoc/>
         public float[] LengthRouteParam { get; set; }
+        /// <inheritdoc/>
         public float[] RotationRouteParam { get; set; }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -51,12 +57,12 @@ namespace UndyneFight_Ex.Entities
         /// <param name="platformType">The type of platform, 0-> Green, 1-> Purple</param>
         /// <param name="startPos">The initial position of the platform</param>
         /// <param name="positionRoute">The position route of the platform (Delta positioning, therefore the position of the platform will be the sum of <paramref name="startPos"/> and <paramref name="positionRoute"/></param>
-        /// <param name="rot">The angle of the platform</param>
-        /// <param name="len">The length of the platform</param>
-        public Platform(int platformType, Vector2 startPos, Func<ICustomMotion, Vector2> positionRoute, float rot, float len) : this(platformType, startPos, positionRoute, Motions.LengthRoute.stableValue, Motions.RotationRoute.stableValue)
+        /// <param name="rotation">The rotation of the platform</param>
+        /// <param name="length">The length of the platform</param>
+        public Platform(int platformType, Vector2 startPos, Func<ICustomMotion, Vector2> positionRoute, float rotation, float length) : this(platformType, startPos, positionRoute, Motions.LengthRoute.stableValue, Motions.RotationRoute.stableValue)
         {
-            RotationRouteParam = [rot];
-            LengthRouteParam = [len];
+            RotationRouteParam = [rotation];
+            LengthRouteParam = [length];
         }
         /// <summary>
         /// Creates a platform with fixed size that lasts for a given duration before folding itself
@@ -64,13 +70,13 @@ namespace UndyneFight_Ex.Entities
         /// <param name="platformType">The type of platform, 0-> Green, 1-> Purple</param>
         /// <param name="startPos">The initial position of the platform</param>
         /// <param name="positionRoute">The position route of the platform (Delta positioning, therefore the position of the platform will be the sum of <paramref name="startPos"/> and <paramref name="positionRoute"/></param>
-        /// <param name="rot">The angle of the platform</param>
-        /// <param name="len">The length of the platform</param>
+        /// <param name="rotation">The angle of the platform</param>
+        /// <param name="length">The length of the platform</param>
         /// <param name="duration">The duration of the platform</param>
-        public Platform(int platformType, Vector2 startPos, Func<ICustomMotion, Vector2> positionRoute, float rot, float len, float duration) : this(platformType, startPos, positionRoute, Motions.LengthRoute.autoFold, Motions.RotationRoute.stableValue)
+        public Platform(int platformType, Vector2 startPos, Func<ICustomMotion, Vector2> positionRoute, float rotation, float length, float duration) : this(platformType, startPos, positionRoute, Motions.LengthRoute.autoFold, Motions.RotationRoute.stableValue)
         {
-            RotationRouteParam = [rot];
-            LengthRouteParam = [len, duration];
+            RotationRouteParam = [rotation];
+            LengthRouteParam = [length, duration];
         }
         /// <summary>
         /// Creates a platform
@@ -133,7 +139,6 @@ namespace UndyneFight_Ex.Entities
             gravityLine.SetPosition(Centre + delta, Centre - delta);
             gravityLine.SetLength(length);
         }
-
         public override void Dispose()
         {
             gravityLine?.Dispose();

@@ -1,6 +1,4 @@
-﻿using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using UndyneFight_Ex.SongSystem;
+﻿using UndyneFight_Ex.SongSystem;
 using static UndyneFight_Ex.Fight.Functions;
 using static UndyneFight_Ex.FightResources.Sounds;
 using static UndyneFight_Ex.GameStates;
@@ -8,31 +6,25 @@ using static UndyneFight_Ex.GlobalResources.Font;
 
 namespace UndyneFight_Ex.Entities
 {
-    public partial class StateShower
+    internal partial class StateShower
     {
         internal class FailureShower : Entity
         {
             private const int previousDataCounts = 10;
             private static float[] previousTimeSurvive = new float[previousDataCounts];
-            private static bool changedSong = false;
-            private static int tryCount = 0;
-            private static int halvedScore;
-
-            private static bool retryAvailable = false;
+            private static bool changedSong = false, retryAvailable = false, recordMark = true;
+            private static int tryCount = 0, halvedScore;
             private readonly int curMode = (int)(CurrentScene as SongFightingScene).Mode;
-            private static bool recordMark = true;
 
             public FailureShower(StateShower result)
             {
-                if ((curMode & (int)GameMode.NoGreenSoul) != 0 && (CurrentScene as SongFightingScene).GreenSoulUsed)
-                    recordMark = false;
-                if ((curMode & (int)GameMode.Practice) != 0 && (CurrentScene as SongFightingScene).HPReached0)
-                    recordMark = false;
-                if ((curMode & (int)GameMode.Autoplay) != 0)
+                SongFightingScene scene = CurrentScene as SongFightingScene;
+                bool NoGreenSoulOrAutoPlay = (((curMode & (int)GameMode.NoGreenSoul) != 0) || ((curMode & (int)GameMode.Autoplay) != 0)) && scene.GreenSoulUsed;
+                bool Practice = (curMode & (int)GameMode.Practice) != 0 && scene.HPReached0;
+                if (NoGreenSoulOrAutoPlay || Practice || scene.ItemUsed)
                     recordMark = false;
                 UpdateIn120 = true;
-                int halvedScore = result.score / 2;
-                int timeSurvive = result.surviveTime;
+                int halvedScore = result.score / 2, timeSurvive = result.surviveTime;
 
                 FailureShower.halvedScore = halvedScore;
                 //判定是否比赛超时
@@ -51,9 +43,7 @@ namespace UndyneFight_Ex.Entities
                 else
                     tryCount++;
                 for (int i = 0; i < previousDataCounts - 1; i++)
-                {
                     previousTimeSurvive[i + 1] = previousTimeSurvive[i];
-                }
 
                 previousTimeSurvive[0] = timeSurvive;
 
@@ -84,7 +74,7 @@ namespace UndyneFight_Ex.Entities
                     if (retryAvailable)
                         PushSelection(new ReTry(s.wave));
 
-                    PushSelection(new GiveUp(s.mode));
+                    PushSelection(new GiveUp());
                     DiffText = difficulty switch
                     {
                         0 => "Noob Mode",
@@ -136,7 +126,7 @@ namespace UndyneFight_Ex.Entities
                     FormalDraw(GameoverBackground, Normal, Color.White * (blurIntensity / 100f) * 0.2f);
                     Depth += 0.01f;
                     //Draw name
-                    if (!IsInChallenge)
+                    if (!IsInChallenge && lastParam is not null)
                     {
                         string SongDisplayName = lastParam.Waveset.Attributes.DisplayName;
                         string ChartDiff = lastParam.Waveset.Attributes.ComplexDifficulty.ContainsKey((Difficulty)difficulty) ? lastParam.Waveset.Attributes.ComplexDifficulty[(Difficulty)difficulty].ToString() : "?";
@@ -146,7 +136,7 @@ namespace UndyneFight_Ex.Entities
                     //You lose
                     NormalFont.CentreDraw(tryCount == 1 ? "You lose" : "You lose again", new Vector2(320, 105), Color.Lerp(Color.Black, Color.White, alpha), 1, 0.1f);
                     //Time and score
-                    NormalFont.CentreDraw("Time survived : " + MathF.Round((previousTimeSurvive[0] - 2)/ 62.5f, 2) + "s", new Vector2(320, 145), Color.Lerp(Color.Black, Color.White, alpha), 0.92f, 0.1f);
+                    NormalFont.CentreDraw($"Time survived : {MathF.Round((previousTimeSurvive[0] - 2) / 62.5f, 2).ToString().Replace(',', '.')}s", new Vector2(320, 145), Color.Lerp(Color.Black, Color.White, alpha), 0.92f, 0.1f);
                     NormalFont.CentreDraw(recordMark ? "Halved score : " + halvedScore : "Modifiers used\nNo mark recorded", new Vector2(320, recordMark ? 180 : 195), Color.Lerp(Color.Black, Color.White, alpha), 0.92f, 0.1f);
                     //Space hint
                     NormalFont.CentreDraw("Press Spacebar for more details", new Vector2(320, 860 - detailY), Color.Lerp(Color.Black, Color.GreenYellow, alpha), 0.92f, 0.08f);
@@ -156,7 +146,6 @@ namespace UndyneFight_Ex.Entities
                     if (instance == null)
                         return;
                     NormalFont.Draw($"Max Combo: {instance.maxCombo}", new Vector2(40, detailY + 10), Color.White, 1, 0.1f);
-                    NormalFont.Draw($"Modifiers Used: {!recordMark}", new Vector2(310, detailY + 10), Color.White, 1, 0.1f);
                     NormalFont.Draw("Miss", new Vector2(40, detailY + 40), Color.Red, 1, 0.1f);
                     NormalFont.Draw(instance.miss.ToString(), new Vector2(40, detailY + 70), Color.White, 1, 0.1f);
                     NormalFont.Draw("Okay", new Vector2(190, detailY + 40), Color.Green, 1, 0.1f);
@@ -184,7 +173,7 @@ namespace UndyneFight_Ex.Entities
 
             private class ReTry : TextSelection
             {
-                readonly IWaveSet wave;
+                private readonly IWaveSet wave;
                 public ReTry(IWaveSet wave) : base("Try again", new Vector2(320, 250)) { Size = 1.0f; this.wave = wave; }
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 public override void SelectionEvent()
@@ -197,8 +186,7 @@ namespace UndyneFight_Ex.Entities
 
             private class GiveUp : TextSelection
             {
-                private readonly GameMode mode;
-                public GiveUp(GameMode againMode) : base("Quit", new Vector2(320, 300)) { mode = againMode; Size = 1.0f; }
+                public GiveUp() : base("Quit", new Vector2(320, 300)) => Size = 1.0f;
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 public override void SelectionEvent()
                 {
@@ -206,11 +194,11 @@ namespace UndyneFight_Ex.Entities
                     tryCount = 0;
                     DisposeInstance();
                     changedSong = true;
-                    IsInChallenge = false;
-                    ResetScene(new GameMenuScene());
                     GameMain.ResetRendering();
+                    ResetScene(new GameMenuScene());
 
                     base.SelectionEvent();
+                    IsInChallenge = false;
                 }
             }
 

@@ -37,7 +37,7 @@ namespace UndyneFight_Ex.UserService
             /// The accuracy of the chart
             /// </summary>
             public float Accuracy { get; set; }
-            static bool record { set => StateShower.ResultShower.record = value; }
+            private static bool record { set => StateShower.ResultShower.record = value; }
             internal struct ScoreData
             {
                 public int PrevScore;
@@ -49,9 +49,8 @@ namespace UndyneFight_Ex.UserService
             {
                 scoreData.PrevScore = Score;
                 scoreData.PrevAcc = Accuracy;
-                record = (Score - scoreData.PrevScore) > 0;
-                int newScore = result.Score;
-                Score = Math.Max(newScore, Score);
+                record = result.Score > Score;
+                Score = Math.Max(result.Score, Score);
                 AC |= result.AC;
                 AP |= result.AP;
                 Mark = (SkillMark)Math.Min((int)Mark, (int)result.CurrentMark);
@@ -63,7 +62,7 @@ namespace UndyneFight_Ex.UserService
                 difficulty = ToDif(info.Title);
                 AC = info["AC"] == "true";
                 AP = info["AP"] == "true";
-                Accuracy = MathHelper.Clamp(MathUtil.FloatFromString(info[info.keysForIndexs.ContainsKey("Accuracy") ? "Accuracy" : "Acc"]), 0, 1);
+                Accuracy = MathHelper.Clamp(MathUtil.FloatFromString(info[info.keysForIndexes.ContainsKey("Accuracy") ? "Accuracy" : "Acc"]), 0, 1);
                 Score = Convert.ToInt32(info["score"]);
                 Mark = ToMark(info["mark"]);
             }
@@ -101,7 +100,7 @@ namespace UndyneFight_Ex.UserService
             "Eminent" or "Em" => SkillMark.Eminent,
             "Excellent" or "Ex" => SkillMark.Excellent,
             "Respectable" or "Re" => SkillMark.Respectable,
-            "Acceptable" or "Acc"=> SkillMark.Acceptable,
+            "Acceptable" or "Acc" => SkillMark.Acceptable,
             "Ordinary" or "Ord" => SkillMark.Ordinary,
             "Failed" or "F" => SkillMark.Failed,
             _ => throw new NotImplementedException()
@@ -132,7 +131,8 @@ namespace UndyneFight_Ex.UserService
         {
             SaveInfo info = new(SongName + "{");
             for (int i = 0; i < CurrentSongStates.Keys.Count; i++)
-                info.PushNext(GetInformation(CurrentSongStates.Keys.ElementAt(i)));
+                if (CurrentSongStates[CurrentSongStates.Keys.ElementAt(i)].Score > 0)
+                    info.PushNext(GetInformation(CurrentSongStates.Keys.ElementAt(i)));
             return info;
         }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -149,7 +149,7 @@ namespace UndyneFight_Ex.UserService
         public List<ISaveLoad> Children => null;
 
         public IEnumerable<SongData> AllDatas => songData.Values;
-        readonly Dictionary<string, SongData> songData = [];
+        private readonly Dictionary<string, SongData> songData = [];
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public SongData Require(string name) => songData[name];
@@ -205,7 +205,7 @@ namespace UndyneFight_Ex.UserService
                 }
             }
             public SortedSet<SingleSong> StrictDonors { get; private set; } = [];
-            SingleSong completeDonor, fcDonor, apDonor;
+            private SingleSong completeDonor, fcDonor, apDonor;
             public SingleSong CompleteDonor => completeDonor;
             public SingleSong FCDonor => fcDonor;
             public SingleSong APDonor => apDonor;
@@ -221,7 +221,7 @@ namespace UndyneFight_Ex.UserService
             }
         }
 
-        readonly SongManager _songManager = songManager;
+        private readonly SongManager _songManager = songManager;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static Tuple<float, float, float> GetDifficulty(IWaveSet waveSet, Difficulty difficulty)

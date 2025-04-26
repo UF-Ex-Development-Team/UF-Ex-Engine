@@ -9,8 +9,8 @@ namespace UndyneFight_Ex.Achievements
     }
     public interface IAchievementCheck
     {
-        public CheckerType CheckType { get; }
-        public int ProgressCheck(object input);
+        CheckerType CheckType { get; }
+        int ProgressCheck(object input);
     }
     public class UserDataChecker(Func<User, int> checker) : IAchievementCheck
     {
@@ -40,11 +40,7 @@ namespace UndyneFight_Ex.Achievements
                 OnAchieve?.Invoke(this);
             return res;
         }
-        public void LoadProgress(int progress)
-        {
-            CurrentProgress = progress;
-            Achieved = CurrentProgress >= FullProgress;
-        }
+        public void LoadProgress(int progress) => Achieved = (CurrentProgress = progress) >= FullProgress;
 
         internal static event Action<Achievement> OnAchieve;
         /// <summary>
@@ -61,18 +57,17 @@ namespace UndyneFight_Ex.Achievements
         /// </summary>
         public int FullProgress { get; init; } = totalProgress;
         /// <summary>
-        /// Thje title of the achievement
+        /// The title of the achievement
         /// </summary>
         public string Title { get; set; } = title;
         /// <summary>
         /// The current progress of the achievement
         /// </summary>
-        public int CurrentProgress { get; private set; } = 0;
+        public int CurrentProgress { get; internal set; } = 0;
         /// <summary>
         /// Whether the achievement had been achieved
         /// </summary>
         public bool Achieved { get; set; }
-        public bool OnlineAchieved { get; set; } = false;
         /// <summary>
         /// Whether it is a hidden achievement or not
         /// </summary>

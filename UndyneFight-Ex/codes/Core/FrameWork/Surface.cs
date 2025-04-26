@@ -18,8 +18,8 @@ namespace UndyneFight_Ex
         /// </summary>
         protected static Vector2 ScreenSize => HighQuality ? GameMain.ScreenSize : new Vector2(480f * GameMain.Aspect, 480) * GameStates.SurfaceScale;
 
-        internal protected static GraphicsDevice WindowDevice => GameMain.Graphics.GraphicsDevice;
-        internal protected static SpriteBatchEX SpriteBatch => GameMain.MissionSpriteBatch;
+        protected internal static GraphicsDevice WindowDevice => GameMain.Graphics.GraphicsDevice;
+        protected internal static SpriteBatchEX SpriteBatch => GameMain.MissionSpriteBatch;
 
         private static readonly HashSet<Type> updatedTypes = [];
 
@@ -70,7 +70,7 @@ namespace UndyneFight_Ex
             SpriteSortMode = sortMode;
             BlendState = blendState;
             this.depth = depth;
-            if (depth > 1 || depth < 0)
+            if (depth is > 1 or < 0)
                 throw new ArgumentException(string.Format("the value {0} have to be in 0~1", nameof(depth)), nameof(depth));
         }
         /// <summary>
@@ -361,6 +361,10 @@ namespace UndyneFight_Ex
         /// The alpha of the surface
         /// </summary>
         public float drawingAlpha { get; set; } = 1;
+        /// <summary>
+        /// The area of the surface to restrict in
+        /// </summary>
+        public BoxVertex[] RestrictArea = [];
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         internal static void Initialize()
@@ -385,7 +389,7 @@ namespace UndyneFight_Ex
         }
         private class BoxPartDrawer : Entity
         {
-            readonly BoxVertex[] _vertexs;
+            private readonly BoxVertex[] _vertexs;
             public BoxPartDrawer(RenderTarget2D target, BoxVertex[] Vertices)
             {
                 _vertexs = Vertices;
@@ -425,7 +429,7 @@ namespace UndyneFight_Ex
         /// </summary>
         public RenderTarget2D RenderPaint { get; private set; }
         /// <summary>
-        /// The surface for drwaing on screen
+        /// The surface for drawing on screen
         /// </summary>
         public static Surface Normal { get; private set; }
         /// <summary>
@@ -502,12 +506,14 @@ namespace UndyneFight_Ex
                 distributer.TryAdd(entity.controlLayer, []);
                 distributer[entity.controlLayer].Add(entity);
             }
-            if (!distributer.ContainsKey(Hidden))
-                distributer.Add(Hidden, []);
+            distributer.TryAdd(Hidden, []);
             Hidden.Draw([.. distributer[Hidden]], transfer);
             _ = distributer.Remove(Hidden);
             for (int i = 0; i < FightBox.boxes.Count; i++)
                 distributer[Normal].Add(new BoxPartDrawer(Hidden.RenderPaint, FightBox.boxes[i].Vertices));
+            foreach (Surface kvp in surfaces.Values)
+                if (kvp.RestrictArea.Length > 0)
+                    distributer[Normal].Add(new BoxPartDrawer(kvp.RenderPaint, kvp.RestrictArea));
             foreach (KeyValuePair<Surface, List<Entity>> kvp in distributer)
                 kvp.Key.Draw([.. kvp.Value], transfer);
         }

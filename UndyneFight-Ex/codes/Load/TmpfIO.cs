@@ -20,8 +20,8 @@ namespace UndyneFight_Ex.IO
         /// <returns>The saved value</returns>
         public string this[string index]
         {
-            get => values[keysForIndexs[index]];/* return the specified index here */
-            set => values[keysForIndexs[index]] = value;
+            get => values[keysForIndexes[index]];/* return the specified index here */
+            set => values[keysForIndexes[index]] = value;
         }
         /// <summary>
         /// Gets the value in the save info with the given index
@@ -52,7 +52,7 @@ namespace UndyneFight_Ex.IO
         /// <summary>
         /// The index of the key, i.e. in A=1,B=2 -> "A" will return 0 and "B" will return 1
         /// </summary>
-        public Dictionary<string, int> keysForIndexs;
+        public Dictionary<string, int> keysForIndexes;
         /// <summary>
         /// The key of the index, i.e. in A=1,B=2 -> "0" will return A and "1" will return B
         /// </summary>
@@ -68,13 +68,9 @@ namespace UndyneFight_Ex.IO
         /// <param name="info"></param>
         public void SetNext(string mission, string info)
         {
-            if (Nexts.ContainsKey(mission))
+            if (!Nexts.TryAdd(mission, new SaveInfo(info)))
                 Nexts[mission] = new SaveInfo(info);
-            else
-                Nexts.Add(mission, new SaveInfo(info));
         }
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private bool CheckBool(int v) => values[v] is "true" or "True";
         /// <summary>
         /// The value as <see cref="float"/>
         /// </summary>
@@ -90,7 +86,7 @@ namespace UndyneFight_Ex.IO
         /// <summary>
         /// The value as a <see cref="bool"/>
         /// </summary>
-        public bool BoolValue => CheckBool(0);
+        public bool BoolValue => values[0] is "true" or "True";
         /// <summary>
         /// The value as <see cref="string"/>
         /// </summary>
@@ -108,7 +104,7 @@ namespace UndyneFight_Ex.IO
             {
                 fullValue = u1[1];
                 values = [];
-                keysForIndexs = [];
+                keysForIndexes = [];
                 indexForKeys = [];
                 List<string> units = [..u1[1].Split(',')];
                 string[] parts;
@@ -119,7 +115,7 @@ namespace UndyneFight_Ex.IO
                         values.Add(parts[0]);
                     else
                     {
-                        keysForIndexs.Add(parts[0], values.Count);
+                        keysForIndexes.Add(parts[0], values.Count);
                         indexForKeys.Add(values.Count, parts[0]);
                         values.Add(parts[1]);
                     }
@@ -132,6 +128,10 @@ namespace UndyneFight_Ex.IO
                 Nexts = [];
             }
         }
+        /// <summary>
+        /// Adds nested SaveInfo in <see cref="Nexts"/>
+        /// </summary>
+        /// <param name="info"></param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void PushNext(SaveInfo info)
         {
@@ -143,7 +143,7 @@ namespace UndyneFight_Ex.IO
         public SaveInfo GetDirectory(string path)
         {
             SaveInfo current = this;
-            foreach (var item in path.Split("\\"))
+            foreach (string item in path.Split("\\"))
                 current = current.Nexts[item];
             return current;
         }
@@ -151,7 +151,7 @@ namespace UndyneFight_Ex.IO
         public bool TryDirectory(string path)
         {
             SaveInfo current = this;
-            foreach (var item in path.Split("\\"))
+            foreach (string item in path.Split("\\"))
             {
                 if (!current.Nexts.TryGetValue(item, out SaveInfo value))
                     return false;
@@ -168,7 +168,7 @@ namespace UndyneFight_Ex.IO
         {
             for (int i = 0; i < bytes.Length; i++)
                 bytes[i] = (byte)((256 - (bytes[i] + i)) % 256);
-            return new(bytes);
+            return [.. bytes];
         }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static byte[] Encoder(List<byte> bytes)
@@ -204,9 +204,10 @@ namespace UndyneFight_Ex.IO
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void WriteTmpFile(string Location, List<byte> bytes) => WriteCustomFile(Location + ".Tmpf", bytes);
         /// <summary>
-        /// 读取自定义图片(不带后缀名)上的像素块的颜色值并得到一串字符列表
+        /// Reads the list of bytes of the custom image file
         /// </summary>
-        /// <returns>通过记忆图片得到的字符列表</returns>
+        /// <param name="Path">The path to the file</param>
+        /// <returns>The list of bytes on the image file</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static List<byte> ReadCustomFile(string Path)
         {
@@ -247,7 +248,7 @@ namespace UndyneFight_Ex.IO
             List<byte> bytes = [];
             strings.ForEach((element) =>
             {
-                foreach (var item in element)
+                foreach (char item in element)
                     bytes.Add((byte)item);
                 bytes.Add(1);
             });
@@ -265,7 +266,7 @@ namespace UndyneFight_Ex.IO
             string temp = string.Empty;
             foreach (char item in bytes.Select(v => (char)v))
             {
-                if (item != 1 && item != 0)
+                if (item is not (char)1 and not (char)0)
                     temp += item;
                 else
                 {
@@ -329,7 +330,7 @@ namespace UndyneFight_Ex.IO
                 string s = info.Title + ":";
                 for (int i = 0; i < info.values.Count; i++)
                 {
-                    if (info.keysForIndexs.ContainsValue(i))
+                    if (info.keysForIndexes.ContainsValue(i))
                         s += info.indexForKeys[i] + "=";
                     s += info.values[i];
                     if (i + 1 != info.values.Count)
@@ -363,7 +364,7 @@ namespace UndyneFight_Ex.IO
         {
             for (int i = 0; i < bytes.Length; i++)
                 bytes[i] = (byte)((256 - (bytes[i] + i)) % 256);
-            return new(bytes);
+            return [.. bytes];
         }
         /// <summary>
         /// 读取Tmp图片上的像素块的颜色值并得到一串字符列表
@@ -386,7 +387,7 @@ namespace UndyneFight_Ex.IO
             lock (res)
             {
                 int tabCount = 0;
-                foreach (var item in res)
+                foreach (string item in res)
                 {
                     tmp += item + "\n";
                     if (item.EndsWith('{'))
@@ -426,7 +427,7 @@ namespace UndyneFight_Ex.IO
         /// <summary>
         /// Creates a new player file
         /// </summary>
-        /// <param name="playerName">The name of the palyer</param>
+        /// <param name="playerName">The name of the player</param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         internal static void CreatePlayerFile(string playerName)
         {

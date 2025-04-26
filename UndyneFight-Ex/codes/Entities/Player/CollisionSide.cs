@@ -6,14 +6,14 @@
         {
             public partial class Shield
             {
-                public class CollisionSide : Entity
+                internal class CollisionSide : Entity
                 {
                     private const float FarTime = 90;
-                    Shield father;
-                    readonly bool[] blockedArrow = [false, false, false, false];
-                    readonly float[] timeDelayed = [FarTime, FarTime, FarTime, FarTime];
-                    readonly float[] tapTime = [FarTime, FarTime, FarTime, FarTime];
-                    readonly float[] holdTime = [FarTime, FarTime, FarTime, FarTime];
+                    private Shield father;
+                    private readonly bool[] blockedArrow = [false, false, false, false];
+                    private readonly float[] timeDelayed = [FarTime, FarTime, FarTime, FarTime];
+                    private readonly float[] tapTime = [FarTime, FarTime, FarTime, FarTime];
+                    private readonly float[] holdTime = [FarTime, FarTime, FarTime, FarTime];
 
                     public CollisionSide() => UpdateIn120 = true;
                     public override void Start()

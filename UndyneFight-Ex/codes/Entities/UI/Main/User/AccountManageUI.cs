@@ -214,11 +214,11 @@ namespace UndyneFight_Ex.Entities
                         GameRule.nameColor = "Blue";
                         break;
                     case "Blue":
-                        GameRule.nameColor = (PlayerManager.PlayerSkill >= 1) ?
+                        GameRule.nameColor = (PlayerManager.PlayerSkill >= 75) ?
                         "Orange" : "White";
                         break;
                     case "Orange":
-                        GameRule.nameColor = (PlayerManager.PlayerSkill >= 2) ?
+                        GameRule.nameColor = (PlayerManager.PlayerSkill >= 90) ?
                         "Colorful" : "White";
                         break;
                     case "Colorful":
@@ -256,11 +256,11 @@ namespace UndyneFight_Ex.Entities
                     playtime = statistic.PlayedTime;
                     name = PlayerManager.CurrentUser.PlayerName;
                 }
-                float alpha = 0;
+                private float alpha = 0;
                 private readonly int deathCount;
                 private int appearTime = 0;
                 private int playtime;
-                readonly string name;
+                private readonly string name;
                 public override void Update()
                 {
                     if (alpha < 1)
@@ -296,11 +296,11 @@ namespace UndyneFight_Ex.Entities
             {
                 private class DataBox : Entity
                 {
-                    Color color;
-                    CollideRect area;
-                    RatingCalculator.RatingList.SingleSong data;
+                    private Color color;
+                    private CollideRect area;
+                    private RatingCalculator.RatingList.SingleSong data;
 
-                    ListText father;
+                    private ListText father;
 
                     public DataBox(Color color, CollideRect area, RatingCalculator.RatingList.SingleSong data)
                     {
@@ -359,8 +359,8 @@ namespace UndyneFight_Ex.Entities
                     public override void Update() { }
                 }
 
-                readonly RectangleBox box;
-                Vector2 delta = Vector2.Zero;
+                private readonly RectangleBox box;
+                private Vector2 delta = Vector2.Zero;
 
                 public ListText()
                 {
@@ -396,11 +396,11 @@ namespace UndyneFight_Ex.Entities
                     }
                     dataBoxs.ForEach(AddChild);
                 }
-                readonly RatingCalculator.RatingList list;
-                float alpha = 0;
-                int appearTime = 0;
+                private readonly RatingCalculator.RatingList list;
+                private float alpha = 0;
+                private int appearTime = 0;
 
-                float speed = 0;
+                private float speed = 0;
                 public override void Update()
                 {
                     if (alpha < 1)

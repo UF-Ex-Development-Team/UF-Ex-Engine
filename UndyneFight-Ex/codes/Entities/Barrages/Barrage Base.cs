@@ -4,7 +4,7 @@ using static UndyneFight_Ex.Entities.Player;
 namespace UndyneFight_Ex.Entities
 {
     /// <summary>
-    /// The interface for a collidable instance
+    /// The interface for a player collidable instance
     /// </summary>
     public interface ICollideAble
     {
@@ -12,8 +12,8 @@ namespace UndyneFight_Ex.Entities
         /// The function to check collision with the player
         /// </summary>
         /// <param name="player">The player to check</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void GetCollide(Heart player);
+        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+        void GetCollide(Heart player);
     }
     /// <summary>
     /// <para>A parent class for barrage making, contains commonly used variables and functions</para>
@@ -22,7 +22,7 @@ namespace UndyneFight_Ex.Entities
     public abstract class Barrage : Entity, ICollideAble, ICustomMotion
     {
         /// <summary>
-        /// Whether the barrage counts towards the score
+        /// Whether the barrage count towards the score
         /// </summary>
         public bool MarkScore { get; set; } = true;
         /// <summary>
@@ -33,20 +33,20 @@ namespace UndyneFight_Ex.Entities
         /// <br>The colors for each green soul shield</br>
         /// <br>0-> Blue, 1 -> Red etc</br>
         /// </summary>
-        public Color[] ColorTypes { get; set; } = [Color.LightBlue, Color.LightCoral, new(0, 255, 255), new(255, 128, 255)];
+        public Color[] ColorTypes { get; set; } = [Color.LightBlue, Color.LightCoral, new(255, 255, 0, 128), new(255, 128, 255, 1)];
         /// <summary>
-        /// Whether the barrage will automatically dispose itself when offscreen
+        /// Whether the barrage will automatically dispose itself when it goes offscreen after entering the screen
         /// </summary>
         public bool AutoDispose { get; set; } = true;
         /// <summary>
         /// Screen bounds
         /// </summary>
-        private static readonly CollideRect screen = new(-80, -80, 720, 560);
+        private static readonly CollideRect screen = new CollideRect(-80, -80, 720, 560) * (1 / Fight.Functions.ScreenDrawing.ScreenScale);
         private bool _hasBeenInside = false;
         /// <summary>
         /// Whether the barrage will only be displayed inside the box
         /// </summary>
-        public bool Hidden { private get; set; } = false;
+        public bool Hidden { private protected get; set; } = false;
         /// <summary>
         /// The current <see cref="JudgementState"/> of the chart
         /// </summary>
@@ -82,7 +82,7 @@ namespace UndyneFight_Ex.Entities
             }
         }
         /// <summary>
-        /// Creates a shine effect of the barrage
+        /// Creates an expanding fade effect of the barrage
         /// </summary>
         public void CreateShinyEffect() => base.CreateShinyEffect().Depth = Depth + 0.001f;
     }

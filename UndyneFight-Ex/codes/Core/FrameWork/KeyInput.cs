@@ -45,14 +45,14 @@ namespace UndyneFight_Ex
     }
     public class IdentityChecker
     {
-        List<Keys> checkList;
+        private List<Keys> checkList;
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         internal void ResetKeyList(List<Keys> checkList) => this.checkList = checkList;
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         internal bool IsKeyPressed() => !lastPressed && curPressed;
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         internal bool IsKeyDown() => curPressed;
-        bool lastPressed = false, curPressed = false;
+        private bool lastPressed = false, curPressed = false;
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         internal void Update(KeyboardState curState)
         {

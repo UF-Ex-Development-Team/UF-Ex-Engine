@@ -73,21 +73,24 @@ namespace UndyneFight_Ex.Entities
         /// <param name="color"></param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void ResetColor(Color color) => drawingColor = color;
-
+        /// <summary>
+        /// Whether the depth will be automatically sorted by their color type (Will override the original depth)
+        /// </summary>
+        public bool AutoDepth = true;
         private readonly SpriteBatchEX spb = GameMain.MissionSpriteBatch;
         /// <inheritdoc/>
         public override void Draw()
         {
             if (Length < 0)
                 return;
-            Depth = 0.5f - colorType * 0.02f;
-
-            CollideRect cl1 = new(0, 0, 6, Length - 2);
-            Vector2 delta = GetVector2(Length / 2, Rotation + 90);
+            if (AutoDepth)
+                Depth = 0.5f - colorType * 0.02f;
+            CollideRect cl1 = new(0, 3, 6, Length - 3);
+            Vector2 delta = GetVector2(Length / 2f, Rotation + 90);
             col Col = Color.Lerp(Color.Transparent, drawingColor, alpha);
-            spb.Draw(Sprites.boneBody, Centre, cl1.ToRectangle(), Col, GetRadian(Rotation), new Vector2(3, Length / 2), 1.0f, SpriteEffects.None, 0.399f);
-            spb.Draw(Sprites.boneHead, Centre - delta, null, Col, GetRadian(Rotation), new Vector2(5, 3), 1.0f, SpriteEffects.None, 0.399f);
-            spb.Draw(Sprites.boneHead, Centre + delta, null, Col, GetRadian(Rotation + 180), new Vector2(5, 3), 1.0f, SpriteEffects.None, 0.399f);
+            spb.Draw(Sprites.boneBody, Centre, cl1, Col, GetRadian(Rotation), new Vector2(3, Length / 2), 1.0f, SpriteEffects.None, Depth);
+            spb.Draw(Sprites.boneHead, Centre - delta, null, Col, GetRadian(Rotation), new Vector2(5, 6), 1.0f, SpriteEffects.None, Depth);
+            spb.Draw(Sprites.boneHead, Centre + delta, null, Col, GetRadian(Rotation + 180f), new Vector2(5, 3), 1.0f, SpriteEffects.None, Depth);
         }
         /// <inheritdoc/>
         public override void Update()
@@ -102,10 +105,6 @@ namespace UndyneFight_Ex.Entities
                     Dispose();
             }
         }
-
-        private static JudgementState JudgeState => GameStates.CurrentScene is SongFightingScene
-                    ? (GameStates.CurrentScene as SongFightingScene).JudgeState
-                    : JudgementState.Lenient;
         /// <inheritdoc/>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override void GetCollide(Player.Heart Heart)
@@ -173,7 +172,6 @@ namespace UndyneFight_Ex.Entities
         public Bone()
         {
             drawingColor = GameMain.CurrentDrawingSettings.themeColor;
-            Depth = 0.5f;
             UpdateIn120 = true;
             controlingBox = FightBox.instance as RectangleBox;
             if (controlingBox == null)

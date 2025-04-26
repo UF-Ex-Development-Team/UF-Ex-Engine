@@ -253,8 +253,8 @@ namespace UndyneFight_Ex.Settings
                         GlobalResources.Font.FightFont.CentreDraw("Press Space!", delta + new Vector2(320, 420), Color.Lime * newAlpha, 1.0f, 0.0f, 0.99f);
                     }
                 }
-                int appearTime = 0;
-                float curX = 0, memX = 0;
+                private int appearTime = 0;
+                private float curX = 0, memX = 0;
                 public float Delta { get; private set; } = 0;
                 public override void Update()
                 {
@@ -296,7 +296,7 @@ namespace UndyneFight_Ex.Settings
 
             public override void SelectionEvent() { }
 
-            readonly DelayHelper helper;
+            private readonly DelayHelper helper;
 
             public override void Update()
             {
@@ -350,7 +350,7 @@ namespace UndyneFight_Ex.Settings
                         value_ -= 0.05f;
                     if (IsKeyPressed120f(InputIdentity.MainRight))
                         value_ += 0.05f;
-                    value_ = Math.Clamp(value_, 1, 1.25f);
+                    value_ = Math.Clamp(value_, 1, 1.2f);
                     if (value_ != Value)
                     {
                         Value = value_;

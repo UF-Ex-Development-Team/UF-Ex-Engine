@@ -1,5 +1,4 @@
-﻿using System.IO;
-using UndyneFight_Ex.IO;
+﻿using UndyneFight_Ex.IO;
 using UndyneFight_Ex.UserService;
 
 namespace UndyneFight_Ex
@@ -21,13 +20,17 @@ namespace UndyneFight_Ex
 
             //Directory.CreateDirectory("Mods\\Scripts");
             //Directory.CreateDirectory("Mods\\Fights");
+            #region Create Folders
+            //User folder
             path = Path.Combine($"{AppContext.BaseDirectory}Datas\\Users".Split('\\'));
             if (!Directory.Exists(path))
                 _ = Directory.CreateDirectory(path);
             //Directory.CreateDirectory("Datas\\Records");
+            //Licence folder
             path = Path.Combine($"{AppContext.BaseDirectory}Licences".Split('\\'));
             if (!Directory.Exists(path))
                 _ = Directory.CreateDirectory(path);
+            //Custom Charts folder
             path = Path.Combine($"{AppContext.BaseDirectory}Custom Charts".Split('\\'));
             if (!Directory.Exists(path))
                 _ = Directory.CreateDirectory(path);
@@ -39,6 +42,7 @@ namespace UndyneFight_Ex
             textWriter.Write(CustomChartNotes);
             textWriter.Flush();
             stream.Close();
+            #endregion
             path = Path.Combine($"{AppContext.BaseDirectory}Datas\\Users".Split('\\'));
             string[] files = Directory.GetFiles(path);
             foreach (string s in files)
@@ -66,10 +70,36 @@ namespace UndyneFight_Ex
                 CurrentUser.CalculateRating();
                 Achievements.AchievementManager.CheckUserAchievements();
                 GameStates.KeyChecker.InputKeys = new(KeybindData.UserKeys);
+                StoreData.UserItems.Clear();
+                CurrentUser.ShopData.Load(saveInfo.Nexts["ShopData"]);
+                //Store items into user inventory
+                foreach (KeyValuePair<string, StoreItem> item in StoreData.AllItems)
+                    if (item.Value.DefaultInShop)
+                        StoreData.UserItems.TryAdd(item.Value.FullName, item.Value);
             }
             else
                 GameStates.CheatAffirmed();
             Save();
+            //Create backup
+            if (!Directory.Exists(Path.Combine($"{AppContext.BaseDirectory}Datas\\Users\\Backup")))
+                Directory.CreateDirectory(Path.Combine($"{AppContext.BaseDirectory}Datas\\Users\\Backup"));
+            IOEvent.WriteTmpFile(Path.Combine($"{AppContext.BaseDirectory}Datas\\Users\\Backup\\{currentPlayer}_{DateTime.Now.Year}_{DateTime.Now.Month}_{DateTime.Now.Day}_{DateTime.Now.Hour}_{DateTime.Now.Minute}_{DateTime.Now.Second}".Split('\\')), IOEvent.InfoToByte(playerInfos[currentPlayer].Save()));
+            //Purge excess backups
+            if (Directory.Exists(Path.Combine($"{AppContext.BaseDirectory}Datas\\Users\\Backup")))
+            {
+                string[] FileList = Directory.GetFiles(Path.Combine($"{AppContext.BaseDirectory}Datas\\Users\\Backup"));
+                List<Tuple<string, long>> Files = [];
+                while (FileList.Length > 100)
+                {
+                    foreach (string file in FileList)
+                        Files.Add(new(file, File.GetCreationTimeUtc(file).ToFileTimeUtc()));
+                    //Sort by UTC time
+                    Files.Sort((x, y) => x.Item2.CompareTo(y.Item2));
+                    File.Delete(Path.Combine(Files[0].Item1));
+                    FileList = Directory.GetFiles(Path.Combine($"{AppContext.BaseDirectory}Datas\\Users\\Backup"));
+                    Files.Clear();
+                }
+            }
         }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static string TryLogin(string name, string password) => playerInfos.TryGetValue(name, out User value) ? value.CheckPassword(password) ? "Success!" : "Wrong password!" : "No such user!";
@@ -87,7 +117,7 @@ namespace UndyneFight_Ex
             int tabCount = 0;
             lock (res)
             {
-                foreach (var item in res)
+                foreach (string item in res)
                 {
                     tmp += item + "\n";
                     if (item.EndsWith('{'))

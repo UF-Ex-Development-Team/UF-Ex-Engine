@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
+using System.Diagnostics;
 using UndyneFight_Ex.Entities;
 
 namespace UndyneFight_Ex.Entities
@@ -47,7 +48,7 @@ namespace UndyneFight_Ex.Entities
         /// </summary>
         float AppearTime { get; }
         /// <summary>
-        /// The route for the length of the entity, use <see cref="Motions.LengthRoute"/> or <see cref="SimplifiedEasing"/>
+        /// The length easing function of the entity, use <see cref="Motions.LengthRoute"/> or <see cref="SimplifiedEasing"/>
         /// </summary>
         Func<ICustomLength, float> LengthRoute { get; set; }
         /// <summary>
@@ -164,12 +165,7 @@ namespace UndyneFight_Ex.Entities
             /// <summary>
             /// Sinusoidal Vertical Movement + Sinusoidal Horizontal Movement, [Y Intensity, Y Wavelength, Y Initial Time, X Intensity, X Wavelength, X Initial Time]
             /// </summary>
-            public static readonly Func<ICustomMotion, Vector2> XYAxisSin = (s) =>
-            {
-                float y = (float)(s.PositionRouteParam[0] * Math.Sin((s.AppearTime + s.PositionRouteParam[2]) / s.PositionRouteParam[1] * Math.PI * 2));
-                float x = (float)(s.PositionRouteParam[3] * Math.Sin((s.AppearTime + s.PositionRouteParam[5]) / s.PositionRouteParam[4] * Math.PI * 2));
-                return new Vector2(x, y);
-            };
+            public static readonly Func<ICustomMotion, Vector2> XYAxisSin = (s) => new Vector2((float)(s.PositionRouteParam[3] * Math.Sin((s.AppearTime + s.PositionRouteParam[5]) / s.PositionRouteParam[4] * Math.PI * 2)), (float)(s.PositionRouteParam[0] * Math.Sin((s.AppearTime + s.PositionRouteParam[2]) / s.PositionRouteParam[1] * Math.PI * 2)));
         }
     }
     /// <summary>
@@ -194,7 +190,7 @@ namespace UndyneFight_Ex.Entities
         {
             if (_timeDelay <= 0)
             {
-                _action.Invoke();
+                _action();
                 Dispose();
             }
             _timeDelay -= 0.5f;
@@ -240,7 +236,7 @@ namespace UndyneFight_Ex.Entities
                     Dispose();
                     return;
                 }
-                _action.Invoke();
+                _action();
             }
             _timeDelay -= UpdateIn120 ? 0.5f : 1;
         }
@@ -250,8 +246,8 @@ namespace UndyneFight_Ex.Entities
     /// </summary>
     internal class BackGround : Entity
     {
-        readonly Entity camera;
-        Vector2 centrePos;
+        private readonly Entity camera;
+        private Vector2 centrePos;
 
         public float Alpha { get; set; }
         public BackGround(Texture2D tex, Entity camera, Vector2 centrePosition)
@@ -277,7 +273,7 @@ namespace UndyneFight_Ex.Entities
 namespace UndyneFight_Ex
 {
     /// <summary>
-    /// Draws an image
+    /// An entity that draws an image
     /// </summary>
     /// <param name="image">The image to draw</param>
     public class ImageEntity(Texture2D image) : AutoEntity
@@ -292,7 +288,7 @@ namespace UndyneFight_Ex
         {
             Image = image;
             if (OnDraw != null)
-                OnDraw.Invoke();
+                OnDraw();
             else
                 base.Draw();
         }
@@ -446,9 +442,9 @@ namespace UndyneFight_Ex
         /// <param name="color">The color of the texture to draw</param>
         public void FormalDraw(Texture2D tex, CollideRect area, Color color) => GameMain.MissionSpriteBatch.Draw(tex, area, null, color * controlLayer.drawingAlpha, 0, Vector2.Zero, SpriteEffects.None, Depth);
         /// <summary>
-        /// Draws the iven texture in a restricted area
+        /// Draws the given texture in a restricted area
         /// </summary>
-        /// <param name="tex">The texutre to draw</param>
+        /// <param name="tex">The texture to draw</param>
         /// <param name="area">The area of the texture to draw</param>
         /// <param name="restrict">The area the texture can be drawn in</param>
         /// <param name="color">The color of the texture to draw</param>
@@ -460,7 +456,7 @@ namespace UndyneFight_Ex
         /// <param name="centre">The position to draw the texture</param>
         /// <param name="color">The color of the texture to draw</param>
         /// <param name="drawingScale">The scale of the drawn texture</param>
-        /// <param name="rotation">The rotation of the texutre</param>
+        /// <param name="rotation">The rotation of the texture</param>
         /// <param name="rotateCentre">The center of rotation</param>
         public void FormalDraw(Texture2D tex, Vector2 centre, Color color, float drawingScale, float rotation, Vector2 rotateCentre) => FormalDraw(tex, centre, color, new Vector2(drawingScale), rotation, rotateCentre);
         /// <summary>
@@ -470,7 +466,7 @@ namespace UndyneFight_Ex
         /// <param name="centre">The position to draw the texture</param>
         /// <param name="color">The color of the texture to draw</param>
         /// <param name="drawingScale">The scale of the drawn texture</param>
-        /// <param name="rotation">The rotation of the texutre</param>
+        /// <param name="rotation">The rotation of the texture</param>
         /// <param name="rotateCentre">The center of rotation</param>
         public void FormalDraw(Texture2D tex, Vector2 centre, Color color, Vector2 drawingScale, float rotation, Vector2 rotateCentre)
         {
@@ -478,12 +474,37 @@ namespace UndyneFight_Ex
             if (!NotInScene(tex, centre, drawingScale, rotation, rotateCentre))
                 GameMain.MissionSpriteBatch.Draw(tex, centre, null, color * controlLayer.drawingAlpha, rotation, rotateCentre, drawingScale, SpriteEffects.None, Depth);
         }
+        /// <summary>
+        /// A general texture drawing function that integrates all functionalities from all FormalDraw functions
+        /// </summary>
+        /// <param name="texture">The texture to draw</param>
+        /// <param name="position">The position to draw the texture</param>
+        /// <param name="color">The color of the texture to draw (Default white)</param>
+        /// <param name="scale">The scale of the texture to draw (Default 1)</param>
+        /// <param name="rotation">The rotation of the texture to draw in radians (Default 0)</param>
+        /// <param name="spriteOrigin">The origin of the texture to draw (Default center of texture)</param>
+        /// <param name="texArea">The bounds of drawing on the screen (Default null for normal drawing)</param>
+        /// <param name="sourceRect">The region of the texture to render (Default null for full texture)</param>
+        /// <param name="depth">The depth of the texture to draw (Default current depth)</param>
+        public void GeneralDraw(Texture2D texture, Vector2 position, Color? color = null, Vector2? scale = null, float rotation = 0, Vector2? spriteOrigin = null, CollideRect? texArea = null, CollideRect? sourceRect = null, float? depth = null)
+        {
+            if (texture is null)
+            {
+                Debug.WriteLine("The texture you are trying to draw is not a texture or is not loaded");
+                return;
+            }
+            Vector2 GetRotCen = spriteOrigin ?? new(texture.Width / 2f, texture.Height / 2f);
+            Vector2 drawingScale = scale ?? Vector2.One;
+            CollideRect rect = new(position - GetRotCen, texArea.HasValue ? texArea.Value.Size : texture.Bounds.Size.ToVector2());
+            if (!NotInScene(texture, position, drawingScale, rotation, GetRotCen))
+                GameMain.MissionSpriteBatch.Draw(texture, rect, sourceRect, (color ?? Color.White) * controlLayer.drawingAlpha, rotation, GetRotCen, drawingScale, SpriteEffects.None, depth ?? Depth);
+        }
         private static float SqrtTwo => MathF.Sqrt(2);
         /// <summary>
         /// Check if the texture is inside the current view
         /// </summary>
         /// <param name="tex">The texture to check</param>
-        /// <param name="centre">The position of the texutre</param>
+        /// <param name="centre">The position of the texture</param>
         /// <param name="drawingScale">The drawing scale of the texture</param>
         /// <param name="rotation">The rotation of the texture</param>
         /// <param name="rotateCentre">The center of rotation</param>
@@ -492,7 +513,7 @@ namespace UndyneFight_Ex
         {
             if (!DrawOptimize)
                 return false;
-            var drawingSettings = CurrentScene.CurrentDrawingSettings;
+            Scene.DrawingSettings drawingSettings = CurrentScene.CurrentDrawingSettings;
             float scale = 1 / MathF.Abs(drawingSettings.screenScale) * (MathF.Abs(MathF.Sin(drawingSettings.screenAngle * 2)) * (SqrtTwo - 1) + 1) * 1.212f;
             Vector4 extend = drawingSettings.Extending;
             float scrWidth = drawingSettings.defaultWidth;
@@ -512,16 +533,13 @@ namespace UndyneFight_Ex
             Vector2[] reals = new Vector2[4];
             for (int i = 0; i < reals.Length; i++)
                 reals[i] = MathUtil.Rotate(points[i], MathUtil.GetAngle(rotation)) + centre;
-            float[] dirs = new float[4];
-            dirs[0] = dirs[2] = 99999;
-            dirs[1] = dirs[3] = -99999;
-            for (int i = 0; i < dirs.Length; i++)
-            {
-                dirs[0] = MathF.Min(reals[i].X, dirs[0]);
-                dirs[1] = MathF.Max(reals[i].X, dirs[1]);
-                dirs[2] = MathF.Min(reals[i].Y, dirs[2]);
-                dirs[3] = MathF.Max(reals[i].Y, dirs[3]);
-            }
+            float[] dirs =
+            [
+                reals.Min(dir => dir.X),
+                reals.Max(dir => dir.X),
+                reals.Min(dir => dir.Y),
+                reals.Max(dir => dir.Y),
+            ];
             CollideRect bounding = new(dirs[0], dirs[2], dirs[1] - dirs[0], dirs[3] - dirs[2]);
 
             return !bounding.Intersects(cur);
@@ -581,10 +599,12 @@ namespace UndyneFight_Ex
         /// Whether the entity will be drawn regardless whether it is inside of the current view (false -> Drawn regardless, true -> Check if inside screen)
         /// </summary>
         public static bool DrawOptimize { get; set; } = true;
-
+        /// <summary>
+        /// The rendering logic of the entity
+        /// </summary>
         public abstract void Draw();
         /// <summary>
-        /// Creates an fade out effect of this entity
+        /// Creates an expanding fade out effect of this entity
         /// </summary>
         /// <param name="color">The color of the effect</param>
         /// <param name="image">The image of the effect</param>
@@ -607,7 +627,9 @@ namespace UndyneFight_Ex
         protected class ShinyEffect : Entity
         {
             private readonly Entity attracter;
-
+            private float baseScale = 1.0f;
+            private float drawingScale = 1.0f;
+            private float darkerSpeed = 3.5f;
             public ShinyEffect(Entity original, Color? color = null, Texture2D shinyImage = null)
             {
                 controlLayer = original.controlLayer;
@@ -615,18 +637,6 @@ namespace UndyneFight_Ex
                 Image = shinyImage ?? original.image;
                 drawingColor = color ?? Color.White;
             }
-
-            public ShinyEffect(Color color, Texture2D tex, Vector2 centre, float rotation)
-            {
-                Rotation = rotation;
-                drawingColor = color;
-                Image = tex;
-                Centre = centre;
-            }
-
-            private float baseScale = 1.0f;
-            private float drawingScale = 1.0f;
-            private float darkerSpeed = 3.5f;
 
             public float DarkerSpeed { set => darkerSpeed = value; }
             public Vector2 MissionSize { set => missionSize = value; }
@@ -638,6 +648,7 @@ namespace UndyneFight_Ex
             {
                 if (attracter != null)
                 {
+                    controlLayer = attracter.controlLayer;
                     Centre = attracter.Centre;
                     Rotation = attracter.Rotation;
                     Depth = attracter.Depth + 0.001f;
@@ -704,11 +715,11 @@ namespace UndyneFight_Ex
         /// <summary>
         /// Whether the object will be updated every 120 frames or 60 frames (It is better to set this as true)
         /// </summary>
-        public bool UpdateIn120 { get; set; } = false;
+        public bool UpdateIn120 { get; init; } = false;
         /// <summary>
         /// Whether the object is being updated
         /// </summary>
-        public bool BeingUpdated { get; internal protected set; } = false;
+        public bool BeingUpdated { get; protected internal set; } = false;
         /// <summary>
         /// Whether the object will be updated
         /// </summary>
@@ -762,18 +773,23 @@ namespace UndyneFight_Ex
         /// </summary>
         /// <returns></returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        protected bool HasTag() => tags != null;
+        public bool HasTag() => tags != null;
         private Tag[] tags;
         /// <summary>
-        /// An extra variable for mainipulation
+        /// An extra variable for manipulation
         /// </summary>
         public object Extras { get; set; }
         /// <summary>
         /// The list of child game objects
         /// </summary>
         public List<GameObject> ChildObjects { get; private set; } = [];
-
+        /// <summary>
+        /// The logic to run each frame
+        /// </summary>
         public abstract void Update();
+        /// <summary>
+        /// The initialization of the object
+        /// </summary>
         public virtual void Start() { }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -813,7 +829,7 @@ namespace UndyneFight_Ex
             ChildObjects.ForEach(s => s.Dispose());
         }
         /// <summary>
-        /// This does not invoke the Dispose() event
+        /// This does not invoke the <see cref="Dispose"/> event
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void Kill() => Disposed = true;

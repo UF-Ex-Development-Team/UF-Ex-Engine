@@ -1,7 +1,7 @@
 ﻿namespace UndyneFight_Ex.Entities
 {
     /// <summary>
-    /// Interface for selectable menu items
+    /// Interface for selectable menu items (Legacy)
     /// </summary>
     public interface ISelectAble
     {

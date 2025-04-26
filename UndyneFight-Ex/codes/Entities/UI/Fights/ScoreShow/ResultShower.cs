@@ -2,6 +2,7 @@
 using UndyneFight_Ex.GameInterface;
 using UndyneFight_Ex.SongSystem;
 using UndyneFight_Ex.UserService;
+using static UndyneFight_Ex.Entities.SimplifiedEasing;
 using static UndyneFight_Ex.GameStates;
 using static UndyneFight_Ex.GlobalResources.Font;
 using static UndyneFight_Ex.MathUtil;
@@ -9,14 +10,14 @@ using static UndyneFight_Ex.PlayerManager;
 
 namespace UndyneFight_Ex.Entities
 {
-    public partial class StateShower
+    internal partial class StateShower
     {
         internal partial class ResultShower : Entity
         {
-            readonly RatingResult ratingResult;
-            readonly AnalyzeShow analyzeShow;
+            private readonly RatingResult ratingResult;
+            private readonly AnalyzeShow analyzeShow;
 
-            readonly SongPlayData playData;
+            private readonly SongPlayData playData;
 
             public ResultShower(StateShower scoreResult, Player.Analyzer analyzer)
             {
@@ -56,9 +57,17 @@ namespace UndyneFight_Ex.Entities
                 hitPercent = (okayCount + niceCount + perfectCount) / (1.0f * totalNote);
                 score = scoreResult.score;
                 collidingBox = new CollideRect(96, 140, 448, 200);
-                AP = (AC = scoreResult.miss == 0) && scoreResult.okay == 0 && scoreResult.nice == 0 && totalNote > 0;
+                AP = (AC = scoreResult.miss == 0 && totalNote > 0) && scoreResult.okay == 0 && scoreResult.nice == 0;
                 GenerateMark();
                 UpdateIn120 = true;
+
+                if (File.Exists(Path.Combine($"Content\\Musics\\{gamePlayed.Music}\\paint.xnb".Split('\\'))))
+                {
+                    string curRoot = Scene.Loader.RootDirectory;
+                    Scene.Loader.RootDirectory = "";
+                    chartIllustration = DrawingLab.LoadContent<Texture2D>($"Content\\Musics\\{gamePlayed.Music}\\paint");
+                    Scene.Loader.RootDirectory = curRoot;
+                }
 
                 #region 分数保存
                 SongResult result = new(mark, score, scoreResult.judgeState != JudgementState.Lenient ? GetScorePercent() : 0, AC, AP);
@@ -96,25 +105,27 @@ namespace UndyneFight_Ex.Entities
                     PushModifiers("Practice");
                 if (((int)scoreResult.mode & (int)GameMode.Autoplay) != 0)
                     PushModifiers("AutoPlay");
+                if ((CurrentScene as SongFightingScene).ItemUsed)
+                    PushModifiers("Items");
                 if (ModifiersUsed)
                     return;
 
                 UFEXSettings.OnSongComplete?.Invoke(playData);
-
-                if (File.Exists(Path.Combine($"{AppContext.BaseDirectory}Content\\Musics\\{gamePlayed.Music}\\paint.xnb".Split('\\'))))
-                {
-                    string curRoot = Scene.Loader.RootDirectory;
-                    Scene.Loader.RootDirectory = "";
-                    chartIllustration = GlobalResources.LoadContent<Texture2D>($"Content\\Musics\\{gamePlayed.Music}\\paint");
-                    Scene.Loader.RootDirectory = curRoot;
-                }
 
                 ModesUsed = "None";
                 if (CurrentUser == null)
                     return;
                 oldRating = CurrentUser.Skill;
                 int oldCoins = CurrentUser.ShopData.CashManager.Coins;
-                CurrentUser.ShopData.CashManager.Coins += GetRandom(50, 100);
+                float constant = AC ? (AP ? playData.APThreshold : playData.ComplexThreshold) : playData.CompleteThreshold;
+                float resultMultiplier = AC ? (AP ? 2 : 1.5f) : 1;
+                float judgementMultiplier = scoreResult.judgeState switch
+                {
+                    JudgementState.Lenient => 0.9f,
+                    JudgementState.Balanced => 1,
+                    _ => 1.2f,
+                };
+                CurrentUser.ShopData.CashManager.Coins += (int)(constant * 10 * GetRandom(0.9f, 1.1f) * resultMultiplier * judgementMultiplier);
                 RecordMark(songName, difficulty, result);
                 Save();
                 coinAdded = CurrentUser.ShopData.CashManager.Coins - oldCoins;
@@ -123,11 +134,50 @@ namespace UndyneFight_Ex.Entities
                 AddChild(ratingResult);
                 if (coinAdded > 0)
                     ratingResult.AddCoin(coinAdded);
+                #endregion
+                //Check achievement
                 Achievements.AchievementManager.CheckSongAchievements(playData);
                 Achievements.AchievementManager.CheckUserAchievements();
-                #endregion
+                //Check items
+                foreach (StoreItem item in StoreData.AllItems.Values)
+                {
+                    //Remove disposable items
+                    if (StoreData.UserItems.ContainsValue(item) && item.Disposable)
+                    {
+                        StoreData.ConsumeItem(item);
+                    }
+                    //Check whether there are unlocked items
+                    if (!item.InShop && (item.ValidateItem(playData) != item.DefaultInShop))
+                    {
+                        StoreData.AllItems[item.FullName].InShop = true;
+                        ValidatedItems.Add(item);
+                    }
+                }
+                //Store items into user inventory
+                foreach (KeyValuePair<string, StoreItem> item in StoreData.AllItems)
+                    if (item.Value.InShop)
+                        StoreData.UserItems.TryAdd(item.Value.FullName, item.Value);
+                //Apply state
+                if (ratingResult?.ProgressMade ?? false)
+                    ExtraState ^= ExtraResultScreens.RatingIncrease;
+                if (ValidatedItems.Count > 0)
+                {
+                    ExtraState ^= ExtraResultScreens.ItemUnlocked;
+                    Save();
+                }
             }
-            readonly Texture2D chartIllustration;
+            private readonly List<StoreItem> ValidatedItems = [];
+            [Flags]
+            private enum ExtraResultScreens
+            {
+                None = 0,
+                ItemUnlocked = 1,
+                ItemReceiving = 2,
+                ItemTextFading = 4,
+                RatingIncrease = 8,
+            }
+            private ExtraResultScreens ExtraState = ExtraResultScreens.None;
+            private readonly Texture2D chartIllustration;
             public override void Start()
             {
                 //Auto sync achievements
@@ -145,7 +195,70 @@ namespace UndyneFight_Ex.Entities
                     }
                 });*/
             }
+            #region Get Result
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            private static Vector3 SingleCalculateRating(Vector3 Dif, float acc)
+            {
+                static Tuple<float, float, float> GetDifficulty(IWaveSet waveSet, Difficulty difficulty)
+                {
+                    SongInformation Information = waveSet.Attributes;
 
+                    float dif1 = 0, dif2 = 0, dif3 = 0;
+
+                    if (Information != null)
+                    {
+                        if (Information.CompleteDifficulty.TryGetValue(difficulty, out float value))
+                            dif1 = value;
+                        if (Information.ComplexDifficulty.TryGetValue(difficulty, out value))
+                            dif2 = value;
+                        if (Information.APDifficulty.TryGetValue(difficulty, out value))
+                            dif3 = value;
+                    }
+
+                    return new(dif1, dif2, dif3);
+                }
+                float apMax = 0, fcMax = 0, completeMax = 0;
+                SortedSet<float> alls = [];
+                Dictionary<string, IWaveSet> songType = [];
+                foreach (Type i in FightSystem.AllSongs.Values)
+                {
+                    object o = Activator.CreateInstance(i);
+                    IWaveSet waveSet = o is IWaveSet ? o as IWaveSet : (o as IChampionShip).GameContent;
+                    songType.TryAdd(waveSet.FightName, waveSet);
+                    for (int j = 0; j <= 5; j += 1)
+                    {
+                        Tuple<float, float, float> v = GetDifficulty(waveSet, (Difficulty)j);
+                        completeMax = MathF.Max(completeMax, v.Item1);
+                        fcMax = MathF.Max(fcMax, v.Item3);
+                        apMax = MathF.Max(apMax, v.Item3);
+                        _ = alls.Add(v.Item2);
+                    }
+                }
+
+                for (int i = 0; alls.Count < 7; i++)
+                    _ = alls.Add(0 - i * 0.00001f);
+                float sum = 0.001f, ideal = 0.001f;
+                for (int i = 0; i < 7; i++)
+                {
+                    float g = MathF.Max(0, alls.Max);
+                    _ = alls.Remove(g);
+                    ideal += g;
+                }
+                sum += Dif.Y * acc;
+                float rating0 = sum / ideal * 85f;
+                float rating1 = Dif.Z / apMax * 5f;
+                float rating2 = Dif.X / completeMax * 5f;
+                return new(rating0, rating1, rating2);
+            }
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            private static float ReRate(float accuracy)
+            {
+                if (accuracy > 1)
+                    return 1;
+                float del = 1 - accuracy;
+                float lim = MathF.Pow(del * 3, 0.7f) / 2.4f + del * 2.0f;
+                return MathF.Max(0, 1 - lim);
+            }
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             private float GetScorePercent() => (totalNote == 0) ? 0 : MathF.Min(1, score * 1.0f / (totalNote * 100));
 
@@ -203,8 +316,7 @@ namespace UndyneFight_Ex.Entities
 
             private readonly float oldRating, curRating;
             private float alpha = 0;
-            private readonly int coinAdded = 0;
-            private readonly int totalNote;
+            private readonly int coinAdded = 0, totalNote;
             private readonly IWaveSet gamePlayed;
             private float appearTime = 0;
             private readonly float[] dif = new float[3];
@@ -223,65 +335,10 @@ namespace UndyneFight_Ex.Entities
             private string ModesUsed = "";
             private int ModesUsedAmt = 0;
             private bool ModifiersUsed = false;
-            bool encouraged = false;
             public static bool record;
+            #endregion
+            #region UI
             private readonly string[] optionTexts = ["Play\nsummary", "Graph\nanalyze", "Resources\ngained"];
-            public override void Draw()
-            {
-                Texture2D chartPaint = chartIllustration;
-                if (chartPaint != null)
-                {
-                    float xscale = 640f / chartPaint.Width, yscale = 480f / chartPaint.Height;
-                    for (int i = 0; i < 8; i++)
-                        FormalDraw(chartPaint, new Vector2(320 * xscale, 240 * yscale) + GetVector2(5, i * 45), Color.Lerp(Color.Transparent, Color.White, 0.05f), new Vector2(xscale, yscale), 0, new(320, 240));
-                    FormalDraw(chartPaint, new(320 * xscale, 240 * yscale), Color.Lerp(Color.Transparent, Color.White, 0.05f), new Vector2(xscale, yscale), 0, new(320, 240));
-                }
-                Color col = Color.Lerp(Color.Transparent, Color.White, alpha);
-                //Main Box
-                collidingBox = new CollideRect(200, 78, 428, 295);
-                DrawingLab.DrawRectangle(CollidingBox, col, 3f, 0.5f);
-                DrawingLab.DrawLine(new Vector2(CollidingBox.Left, CollidingBox.GetCentre().Y), new Vector2(CollidingBox.Right, CollidingBox.GetCentre().Y), 295, Color.Black * 0.5f * alpha, 0.2f);
-
-                if (curSelection == 0)
-                    SummaryDraw();
-                else if (curSelection == 2)
-                    RatingDraw();
-                //Song name
-                NormalFont.CentreDraw($"Result of {(!string.IsNullOrEmpty(gamePlayed.Attributes.DisplayName) ? gamePlayed.Attributes.DisplayName : gamePlayed.FightName)}:", new Vector2(320, 40), col, 1.1f, 0.5f);
-
-                //Modifiers used:
-                float centre = ratingResult == null ? 320 : 400;
-                NormalFont.CentreDraw("Modifiers: " + ModesUsed, new Vector2(centre, 395), col, 0.8f, 0.5f);
-
-                //Arrow speed
-                NormalFont.CentreDraw($"Arrow speed: {Math.Round(Settings.SettingsManager.DataLibrary.ArrowSpeed, 2)}x", new Vector2(centre, 420), col, 0.8f, 0.5f);
-
-                //Player selection
-                NormalFont.CentreDraw("Z: Leave\nR: Restart", new Vector2(centre, 455), col, 0.8f, 0.5f);
-
-                //Difficulty box
-                DrawingLab.DrawRectangle(new CollideRect(new Vector2(12, 78), new Vector2(177, 70)), col, 3f, 0.5f);
-                DrawingLab.DrawLine(new Vector2(12, 113), new Vector2(189, 113), 70, Color.Black * 0.5f * alpha, 0.2f);
-                NormalFont.Draw("Difficulty:", new Vector2(22, 95), col, 0.8f, 0.3f);
-                NormalFont.Draw(topText, new Vector2(20, 120), Color.Lerp(Color.Transparent, topColor, alpha), 0.8f, 0.5f);
-
-                //Side text drawing
-                for (int i = 0; i < 3; i++)
-                {
-                    Color color = Color.White;
-                    float displace = 0;
-                    if (i == curSelection)
-                    {
-                        color = Color.Gold;
-                        displace = appearTime % 62.5f < 31.25f ? 2 : 0;
-                    }
-                    NormalFont.Draw(optionTexts[i], new Vector2(25, 177  + 69 * i), Color.Lerp(Color.Transparent, color, alpha), 0.8f, 0.3f);
-                    DrawingLab.DrawLine(new Vector2(19 + displace, 225 + 69 * i), new(177 - displace, 225 + 69 * i), 2f, Color.Lerp(Color.Transparent, color, alpha), 0.3f);
-                }
-                DrawingLab.DrawRectangle(new CollideRect(new Vector2(12, 158), new Vector2(177, 215)), col, 3, 0.5f);
-                DrawingLab.DrawLine(new Vector2(12, 158 + 215 / 2f), new Vector2(189, 158 + 215 / 2f), 215, Color.Black * 0.5f * alpha, 0.2f);
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             private void MarkDraw()
             {
@@ -328,13 +385,12 @@ namespace UndyneFight_Ex.Entities
                         break;
                 }
             }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             private void SummaryDraw()
             {
                 Color col = Color.Lerp(Color.Transparent, Color.White, alpha);
                 MarkDraw();
-                NormalFont.Draw("Your score:", new Vector2(214, 110), col, 1.0f, 0.5f);
+                NormalFont.Draw("Your score:", new Vector2(214, 107), col, 1.0f, 0.5f);
                 NormalFont.Draw(score.ToString(), new Vector2(392, 106), col, 1.2f, 0.5f);
                 NormalFont.Draw($"({MathF.Round(accuracy * 100, 1)}%)", new Vector2(516, 109), Color.Lerp(Color.Transparent, Color.Silver, alpha), 0.93f, 0.5f);
                 if (record)
@@ -345,8 +401,8 @@ namespace UndyneFight_Ex.Entities
                 }
                 else if (CurrentUser != null)
                 {
-                    NormalFont.Draw($"Best Score: {SongData.SongState.scoreData.PrevScore}", new Vector2(297, 127), Color.Lerp(Color.Transparent, Color.Gray, alpha), 0.5f, 0.5f);
-                    NormalFont.Draw($"({FloatToString(SongData.SongState.scoreData.PrevAcc * 100, 1)}%)", new Vector2(516, 127), Color.Lerp(Color.Transparent, Color.Gray, alpha), 0.5f, 0.5f);
+                    NormalFont.Draw($"Best Score: {SongData.SongState.scoreData.PrevScore}", new Vector2(295, 130), Color.Lerp(Color.Transparent, Color.Gray, alpha), 0.5f, 0.5f);
+                    NormalFont.Draw($"({FloatToString(SongData.SongState.scoreData.PrevAcc * 100, 1)}%)", new Vector2(516, 130), Color.Lerp(Color.Transparent, Color.Gray, alpha), 0.5f, 0.5f);
                 }
                 DrawingLab.DrawLine(new Vector2(212, 145), new Vector2(616, 145), 2, Color.Lerp(Color.Transparent, Color.Silver, alpha), 0.5f);
 
@@ -405,7 +461,6 @@ namespace UndyneFight_Ex.Entities
                     NormalFont.Draw("Max Combo:" + maxCombo, new Vector2(214, 255), Color.Lerp(Color.Transparent, Color.Silver, alpha), 1, 0.3f);
                 }
             }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             private void RatingDraw()
             {
@@ -440,7 +495,7 @@ namespace UndyneFight_Ex.Entities
                     NormalFont.Draw("No progress", new Vector2(431, 96), Color.Lerp(Color.Transparent, Color.Silver, alpha), 1, 0.3f);
                 }
                 Vector3 Rating = SingleCalculateRating(new Vector3(dif[0], dif[1], dif[2]), rerate);
-                DrawingLab.DrawLine(new Vector2(210, 237.5f), new Vector2(618, 237.5f), 2, Color.Lerp(Color.Transparent, Color.White, alpha), 0.5f);
+                DrawingLab.DrawLine(new Vector2(210, 237.5f), new Vector2(618, 237.5f), 2, Color.Lerp(Color.Transparent, Color.White, alpha), 0.4f);
                 NormalFont.Draw("->", new Vector2(211, 164), Color.Lerp(Color.Transparent, Color.Silver, alpha), 0.9f, 0.4f);
                 NormalFont.Draw("*", new Vector2(330, 164), Color.Lerp(Color.Transparent, Color.White, alpha), 0.9f, 0.4f);
                 NormalFont.Draw($"{FloatToString(rerate * 100, 1)}%({FloatToString(accuracy * 100, 1)}%)", new Vector2(354, 164), Color.Lerp(Color.Transparent, Color.White, alpha), 0.9f, 0.4f);
@@ -449,7 +504,7 @@ namespace UndyneFight_Ex.Entities
                 if ((RatingSelection == 0 && !AP) || AP)
                 {
                     NormalFont.Draw("->", new Vector2(211, 294), Color.Lerp(Color.Transparent, Color.Silver, alpha), 0.9f, 0.4f);
-                    NormalFont.Draw("*", new Vector2(330, 284), Color.Lerp(Color.Transparent, Color.White, alpha), 0.9f, 0.4f);
+                    NormalFont.Draw("*", new Vector2(330, 294), Color.Lerp(Color.Transparent, Color.White, alpha), 0.9f, 0.4f);
                     NormalFont.Draw($"{FloatToString(rerate * 100, 1)}%({FloatToString(accuracy * 100, 1)}%)", new Vector2(354, 294), Color.Lerp(Color.Transparent, Color.White, alpha), 0.9f, 0.4f);
                 }
                 if (RatingSelection == 0)
@@ -483,87 +538,155 @@ namespace UndyneFight_Ex.Entities
 
                 if (ModifiersUsed)
                 {
-                    DrawingLab.DrawLine(new Vector2(202, 80), new Vector2(627, 373), 5, Color.Lerp(Color.Transparent, Color.Red, alpha), 0.6f);
-                    DrawingLab.DrawLine(new Vector2(627, 80), new Vector2(202, 373), 5, Color.Lerp(Color.Transparent, Color.Red, alpha), 0.6f);
+                    DrawingLab.DrawLine(new Vector2(202, 80), new Vector2(627, 372), 5, Color.Lerp(Color.Transparent, Color.Red, alpha), 0.45f);
+                    DrawingLab.DrawLine(new Vector2(627, 80), new Vector2(202, 372), 5, Color.Lerp(Color.Transparent, Color.Red, alpha), 0.45f);
                     for (int i = 0; i < 8; i++)
                         NormalFont.CentreDraw("Unrated chart", new Vector2(410, 235) + GetVector2(3, i * 45), Color.Lerp(Color.Transparent, Color.Lerp(Color.Green, Color.Transparent, 0.3f), alpha), 1.5f, 0.6f);
                     NormalFont.CentreDraw("Unrated chart", new Vector2(410, 235), Color.Lerp(Color.Transparent, Color.Lime, alpha), 1.5f, 0.7f);
                 }
             }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            private static Vector3 SingleCalculateRating(Vector3 Dif, float acc)
+            #endregion
+            #region Extra
+            private bool encouraged = false, itemUnlocked = false;
+            private readonly float[] itemUnlockAlpha = [0, 0];
+            private float itemUnlockScale = 1, itemTextAngle = 0;
+            private StoreItem curItem = null;
+            private void MoveToNextState()
             {
-                static Tuple<float, float, float> GetDifficulty(IWaveSet waveSet, Difficulty difficulty)
+                curItem = null;
+                if (ExtraState == ExtraResultScreens.None)
+                    CreateNextUI();
+                else if ((ExtraState & ExtraResultScreens.ItemUnlocked) != 0)
                 {
-                    SongInformation Information = waveSet.Attributes;
-
-                    float dif1 = 0, dif2 = 0, dif3 = 0;
-
-                    if (Information != null)
+                    //There are still unlocked items for the player to receive
+                    if (itemUnlocked = ValidatedItems.Count >= 1)
                     {
-                        if (Information.CompleteDifficulty.TryGetValue(difficulty, out float value))
-                            dif1 = value;
-                        if (Information.ComplexDifficulty.TryGetValue(difficulty, out value))
-                            dif2 = value;
-                        if (Information.APDifficulty.TryGetValue(difficulty, out value))
-                            dif3 = value;
+                        //Set receiving to true
+                        if ((ExtraState & ExtraResultScreens.ItemReceiving) != 0)
+                            ExtraState ^= ExtraResultScreens.ItemReceiving;
+                        itemUnlockAlpha[0] = itemUnlockAlpha[1] = 0;
+                        RunEase((s) => itemUnlockScale = s, LinkEase(Stable(30, 1), EaseOut(20, 1, 1.5f, EaseState.Quad), EaseIn(20, 1.5f, 1, EaseState.Quad)));
+                        RunEase((s) => itemTextAngle = s, LinkEase(Stable(30, 0), EaseOut(20, 0, -10, EaseState.Quad), EaseIn(20, -10, 0, EaseState.Quad)));
+                        RunEase((s) => itemUnlockAlpha[0] = s, LinkEase(false, Stable(30, 0), Stable(0, 1)));
+                        RunEase((s) => itemUnlockAlpha[1] = s, LinkEase(false, Stable(120, 0), EaseOut(30, 0, 1, EaseState.Sine)));
+                        InstanceCreate(new InstantEvent(30, () => Fight.Functions.PlaySound(FightResources.Sounds.Ding)));
+                        curItem = ValidatedItems.First();
+                        ValidatedItems.RemoveAt(0);
                     }
-
-                    return new(dif1, dif2, dif3);
-                }
-                float apMax = 0, fcMax = 0, completeMax = 0;
-                SortedSet<float> alls = [];
-                Dictionary<string, IWaveSet> songType = [];
-                foreach (Type i in FightSystem.AllSongs.Values)
-                {
-                    object o = Activator.CreateInstance(i);
-                    IWaveSet waveSet = o is IWaveSet ? o as IWaveSet : (o as IChampionShip).GameContent;
-                    songType.TryAdd(waveSet.FightName, waveSet);
-                    for (int j = 0; j <= 5; j += 1)
+                    else
                     {
-                        Tuple<float, float, float> v = GetDifficulty(waveSet, (Difficulty)j);
-                        completeMax = MathF.Max(completeMax, v.Item1);
-                        fcMax = MathF.Max(fcMax, v.Item3);
-                        apMax = MathF.Max(apMax, v.Item3);
-                        _ = alls.Add(v.Item2);
+                        ExtraState ^= ExtraResultScreens.ItemUnlocked;
+                        if (itemUnlockAlpha[0] == 1)
+                            RunEase((s) => itemUnlockAlpha[0] = itemUnlockAlpha[1] = s, EaseOut(15, 1, 0, EaseState.Quad));
+                        MoveToNextState();
                     }
                 }
-
-                for (int i = 0; alls.Count < 7; i++)
-                    _ = alls.Add(0 - i * 0.00001f);
-                float sum = 0.001f, ideal = 0.001f;
-                for (int i = 0; i < 7; i++)
-                {
-                    float g = MathF.Max(0, alls.Max);
-                    _ = alls.Remove(g);
-                    ideal += g;
-                }
-                sum += Dif.Y * acc;
-                float rating0 = sum / ideal * 85f;
-                float rating1 = Dif.Z / apMax * 5f;
-                float rating2 = Dif.X / completeMax * 5f;
-                return new(rating0, rating1, rating2);
-            }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            static float ReRate(float accuracy)
-            {
-                if (accuracy > 1)
-                    return 1;
-                float del = 1 - accuracy;
-                float lim = MathF.Pow(del * 3, 0.7f) / 2.4f + del * 2.0f;
-                return MathF.Max(0, 1 - lim);
-            }
-            float accuracy = 0, rerate = 0;
-            int curSelection = 0, RatingSelection = 0;
-            public override void Update()
-            {
-                appearTime += 0.5f;
-                if (alpha < 1f)
+                //Rating increase must be final and no other states should be present
+                else if (ExtraState == ExtraResultScreens.RatingIncrease)
                 {
                     if (!encouraged)
-                        alpha += 0.01f;
+                    {
+                        Fight.Functions.PlaySound(FightResources.Sounds.spearAppear);
+                        ratingResult.IntoCentre();
+                        encouraged = true;
+                    }
+                    else
+                    {
+                        ExtraState ^= ExtraResultScreens.RatingIncrease;
+                        MoveToNextState();
+                    }
                 }
-                if (encouraged && alpha > 0.1f)
+            }
+            #endregion
+            public override void Draw()
+            {
+                #region Chart illustration
+                Texture2D chartPaint = chartIllustration;
+                if (chartPaint != null)
+                {
+                    float xscale = 640f / chartPaint.Width, yscale = 480f / chartPaint.Height;
+                    for (int i = 0; i < 8; i++)
+                        FormalDraw(chartPaint, new Vector2(320 * xscale, 240 * yscale) + GetVector2(5, i * 45), Color.Lerp(Color.Transparent, Color.White, 0.05f), new Vector2(xscale, yscale), 0, new(320, 240));
+                    FormalDraw(chartPaint, new(320 * xscale, 240 * yscale), Color.Lerp(Color.Transparent, Color.White, 0.05f), new Vector2(xscale, yscale), 0, new(320, 240));
+                }
+                #endregion
+                Color col = Color.Lerp(Color.Black, Color.White, alpha);
+                #region Main Box
+                collidingBox = new CollideRect(200, 78, 428, 295);
+                DrawingLab.DrawRectangle(CollidingBox, col, 3f, 0.5f);
+                DrawingLab.DrawLine(new Vector2(CollidingBox.Left, CollidingBox.GetCentre().Y), new Vector2(CollidingBox.Right, CollidingBox.GetCentre().Y), 295, Color.Black * 0.5f * alpha, 0.2f);
+
+                if (curSelection == 0)
+                    SummaryDraw();
+                else if (curSelection == 2)
+                    RatingDraw();
+                #endregion
+                #region Texts
+                //Song name
+                NormalFont.CentreDraw($"Result of {(!string.IsNullOrEmpty(gamePlayed.Attributes.DisplayName) ? gamePlayed.Attributes.DisplayName : gamePlayed.FightName)}:", new Vector2(320, 40), col, 1.1f, 0.5f);
+
+                //Modifiers used:
+                float centre = ratingResult == null ? 320 : 400;
+                NormalFont.CentreDraw("Modifiers: " + ModesUsed, new Vector2(centre, 395), col, 0.8f, 0.5f);
+
+                //Arrow speed
+                NormalFont.CentreDraw($"Arrow speed: {MathUtil.FloatToString(Settings.SettingsManager.DataLibrary.ArrowSpeed, 2)}x", new Vector2(centre, 420), col, 0.8f, 0.5f);
+
+                //Player selection
+                NormalFont.CentreDraw("Z: Leave\nR: Restart", new Vector2(centre, 455), col, 0.8f, 0.5f);
+
+                //Difficulty box
+                DrawingLab.DrawRectangle(new CollideRect(new Vector2(12, 78), new Vector2(177, 70)), col, 3f, 0.5f);
+                DrawingLab.DrawLine(new Vector2(12, 113), new Vector2(189, 113), 70, Color.Black * 0.5f * alpha, 0.2f);
+                NormalFont.Draw("Difficulty:", new Vector2(22, 95), col, 0.8f, 0.3f);
+                NormalFont.Draw(topText, new Vector2(20, 120), Color.Lerp(Color.Transparent, topColor, alpha), 0.8f, 0.5f);
+
+                //Side text drawing
+                for (int i = 0; i < 3; i++)
+                {
+                    Color color = Color.White;
+                    float displace = 0;
+                    if (i == curSelection)
+                    {
+                        color = Color.Gold;
+                        displace = appearTime % 62.5f < 31.25f ? 2 : 0;
+                    }
+                    NormalFont.Draw(optionTexts[i], new Vector2(25, 177 + 69 * i), Color.Lerp(Color.Transparent, color, alpha), 0.8f, 0.3f);
+                    DrawingLab.DrawLine(new Vector2(19 + displace, 225 + 69 * i), new(177 - displace, 225 + 69 * i), 2f, Color.Lerp(Color.Transparent, color, alpha), 0.3f);
+                }
+                #endregion
+                DrawingLab.DrawRectangle(new CollideRect(new Vector2(12, 158), new Vector2(177, 215)), col, 3, 0.5f);
+                DrawingLab.DrawLine(new Vector2(12, 158 + 215 / 2f), new Vector2(189, 158 + 215 / 2f), 215, Color.Black * 0.5f * alpha, 0.2f);
+                #region Item
+                GLFont font = FightResources.Font.NormalFont;
+                font.CentreDraw("Item Unlocked!", new Vector2(320, 140), Color.White * itemUnlockAlpha[0], itemUnlockScale, GetRadian(itemTextAngle), 1);
+                if (curItem != null)
+                {
+                    font.CentreDraw(curItem.Name, new Vector2(320, 340), Color.White * itemUnlockAlpha[1], 1, 0, 1);
+                    float dep = Depth;
+                    Depth = 1;
+                    FormalDraw(curItem.Image, new Vector2(320, 240), Color.White * itemUnlockAlpha[1], 0, new Vector2(curItem.Image.Width, curItem.Image.Height) / 2f);
+                    Depth = dep;
+                }
+                #endregion
+            }
+
+            private float accuracy = 0, rerate = 0;
+            private int curSelection = 0, RatingSelection = 0;
+            public override void Update()
+            {
+                if ((ExtraState & ExtraResultScreens.ItemTextFading) != 0)
+                {
+                    if (itemUnlockAlpha[0] == 0)
+                    {
+                        ExtraState ^= ExtraResultScreens.ItemUnlocked | ExtraResultScreens.ItemTextFading;
+                        MoveToNextState();
+                    }
+                }
+                appearTime += 0.5f;
+                if (alpha < 1f && !encouraged && !itemUnlocked)
+                    alpha += 0.01f;
+                if ((encouraged || itemUnlocked) && alpha > 0.1f)
                     alpha -= 0.01f;
                 analyzeShow.Alpha = alpha;
                 if (gamePlayed.Attributes != null)
@@ -584,8 +707,7 @@ namespace UndyneFight_Ex.Entities
                         difficultyText[2] = "" + dif[2];
                     }
                 }
-                accuracy = GetScorePercent();
-                rerate = ReRate(accuracy);
+                rerate = ReRate(accuracy = GetScorePercent());
 
                 int lastSelection = curSelection, lastSelection2 = RatingSelection;
                 if (!encouraged)
@@ -610,15 +732,17 @@ namespace UndyneFight_Ex.Entities
 
                 if (IsKeyPressed120f(InputIdentity.Confirm))
                 {
-                    if (!(ratingResult?.ProgressMade ?? false) || encouraged)
-                        CreateNextUI();
-                    else if (!encouraged)
+                    //Fading animation for item receiving
+                    if ((ExtraState & ExtraResultScreens.ItemReceiving) != 0)
                     {
-                        encouraged = true;
-                        ratingResult.IntoCentre();
+                        ExtraState ^= ExtraResultScreens.ItemReceiving | ExtraResultScreens.ItemTextFading;
+                        RunEase((s) => itemUnlockAlpha[0] = itemUnlockAlpha[1] = s, EaseOut(20, 1, 0, EaseState.Quad));
+                        curItem = null;
                     }
+                    else
+                        MoveToNextState();
                 }
-                if (IsKeyPressed120f(InputIdentity.Reset))
+                else if (IsKeyPressed120f(InputIdentity.Reset))
                     StartSong();
             }
 
@@ -626,9 +750,7 @@ namespace UndyneFight_Ex.Entities
             private void CreateNextUI()
             {
                 Dispose();
-                ResetScene(isRecord && UFEXSettings.RecordEnabled ?
-                    new GameMenuScene(new RecordSelector())
-                    : new GameMenuScene());
+                ResetScene(isRecord && UFEXSettings.RecordEnabled ? new GameMenuScene(new RecordSelector()) : new GameMenuScene());
                 InstanceCreate(new InstantEvent(2, GameMain.ResetRendering));
             }
         }

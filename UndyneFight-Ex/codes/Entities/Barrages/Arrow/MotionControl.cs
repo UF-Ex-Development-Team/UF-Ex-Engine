@@ -77,7 +77,7 @@ namespace UndyneFight_Ex.Entities
             }
         }
 
-        float lastScale = -0.5f;
+        private float lastScale = -0.5f;
 
         private float distanceFactor = 1.0f;
 
@@ -110,7 +110,7 @@ namespace UndyneFight_Ex.Entities
         }
         private Vector2 _missionCentre;
         private bool _anchorOnHeart = true;
-
+        /// <inheritdoc/>
         public Vector2 CentrePosition => Centre - mission.Centre;
 
         public float LateWaitingScale { get; set; } = 0.5f;
@@ -119,7 +119,7 @@ namespace UndyneFight_Ex.Entities
         /// </summary>
         public Vector2 Offset { get; set; }
         /// <summary>
-        /// Whether there will be an offset to the rotation
+        /// Whether <see cref="CentreRotationOffset"/> is enabled
         /// </summary>
         public bool RotateOffset { get; set; } = false;
     }

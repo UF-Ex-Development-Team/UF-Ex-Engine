@@ -2,7 +2,7 @@
 {
     public partial class Player
     {
-        public class BrokenHeart : Entity
+        internal class BrokenHeart : Entity
         {
             private static vec2 playerPos;
             private col showingColor;
@@ -19,8 +19,7 @@
             private int appearTime = 0;
             public override void Update()
             {
-                appearTime++;
-                if (appearTime == 50)
+                if (++appearTime == 50)
                 {
                     FightResources.Sounds.die2.CreateInstance().Play();
                     int c = MathUtil.GetRandom(4, 6);
@@ -31,7 +30,7 @@
             }
         }
 
-        public class HeartPiece : Entity
+        internal class HeartPiece : Entity
         {
             private static CollideRect screen = new(-50, -50, 740, 580);
             private vec2 speed;
@@ -48,12 +47,10 @@
                 Image = FightResources.Sprites.heartPieces[MathUtil.GetRandom(0, 4)];
             }
             public override void Draw() => FormalDraw(Image, Centre, color, Rotation, ImageCentre);
-            public override void Dispose() => base.Dispose();
             public override void Update()
             {
-                if (!screen.Contain(Centre))
+                if (!screen.Contain(Centre += speed))
                     Dispose();
-                Centre += speed;
                 Rotation += rotateSpeed;
                 speed.Y += 0.12f;
             }
