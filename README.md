@@ -6,7 +6,7 @@ The 0.2.2 version of the SDK, along with the incomplete 0.2.2 version of Rhythm 
 
 ## Requirements
 - Microsoft Visual Studio
-- C# 12 (.NET 8)
+- C# 13 (.NET 9)
 - 8 GB Disk space, 4 GB RAM
 - [The courage to ask for help.](https://discord.com/channels/1022852493903933510/1293941718584135710)
 
@@ -15,13 +15,15 @@ The 0.2.2 version of the SDK, along with the incomplete 0.2.2 version of Rhythm 
 - Linux
 
 ## Setting up
-For setting up the solution, please refer to the PDF file attached with the SDK.
+You will need this components in Visual Studio.
+<img width="933" height="243" alt="image" src="https://github.com/user-attachments/assets/66638e90-c13f-4209-8976-6a2db5ff28a5" />
+
 
 ## Purpose of this documentation
 Due to the lack of documentation of the earlier versions of the SDK and internal codes, 
 this documentation aims to explain most public variables and functions in the SDK, there are also sections to provide tips and tricks to program in Visual Studio and charting.
 
-This documentation will categorize the functions and variables by their functionality (due to context), and then by their classes, and not by the .cs file they are in respectively, this will also  will **not** cover all variables and/or functions as some of them are only declared public due to the UF-Ex RE SDK.
+This documentation will categorize the functions and variables by their functionality (due to context), and then by their classes, and not by the .cs file they are in respectively, this will also  will **not** cover all variables and/or functions as some of them are only declared public due to the UF-Ex RE SDK (Will be deprecated).
 
 ## Warning
 Due to the lack of documentation prior to v0.3.0, the descriptions of the variables/functions **may not be fully accurate**, if any discrepancy was found between the description of the variable/function and it's actual functionality, please report it in the Discord server.
