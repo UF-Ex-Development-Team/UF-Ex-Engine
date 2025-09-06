@@ -15,9 +15,7 @@ The 0.2.2 version of the SDK, along with the incomplete 0.2.2 version of Rhythm 
 - Linux
 
 ## Setting up
-You will need this components in Visual Studio.
-<img width="933" height="243" alt="image" src="https://github.com/user-attachments/assets/66638e90-c13f-4209-8976-6a2db5ff28a5" />
-
+Refer to the attatched PDF file.
 
 ## Purpose of this documentation
 Due to the lack of documentation of the earlier versions of the SDK and internal codes, 
