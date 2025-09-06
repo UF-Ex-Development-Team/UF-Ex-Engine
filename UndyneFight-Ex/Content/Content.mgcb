@@ -2418,6 +2418,13 @@
 #begin Sprites/font/damageShow.ttf
 /copy:Sprites/font/damageShow.ttf
 
+#begin Sprites/font/File.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:Sprites/font/File.spritefont;Sprites/font/UIFont.spritefont
+
 #begin Sprites/font/japanese.ttf
 /copy:Sprites/font/japanese.ttf
 
