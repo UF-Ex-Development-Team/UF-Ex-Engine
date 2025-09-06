@@ -18,6 +18,7 @@ The 0.2.2 version of the SDK, along with the incomplete 0.2.2 version of Rhythm 
 Refer to the attatched PDF file.
 
 ## Purpose of this documentation
+[Link to Documentation.](https://uf-ex-development-team.github.io/UF-Ex-Engine/)
 Due to the lack of documentation of the earlier versions of the SDK and internal codes, 
 this documentation aims to explain most public variables and functions in the SDK, there are also sections to provide tips and tricks to program in Visual Studio and charting.
 
