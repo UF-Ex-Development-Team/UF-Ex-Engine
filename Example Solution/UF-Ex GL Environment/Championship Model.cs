@@ -11,7 +11,8 @@ namespace UF_Ex_Environment
 			["div 1"] = Difficulty.ExtremePlus
 		};
 		public IWaveSet GameContent => new Project();
-		class Project() : WaveConstructor(120, true), IWaveSet
+		//IWaveSetS is also a valid interface
+		class Project() : WaveConstructor(120, true), IWaveSetS
 		{
 			public string Music => "";	
 			public string FightName => "";
@@ -44,29 +45,9 @@ namespace UF_Ex_Environment
 			{
 
 			}
-			public void Noob()
+			public void Chart()
 			{
 
-			}
-			public void Easy()
-			{
-				
-			}
-			public void Normal()
-			{
-				
-			}
-			public void Hard()
-			{
-				
-			}
-			public void Extreme()
-			{
-				
-			}
-			public void ExtremePlus()
-			{
-				
 			}
 		}
 	}

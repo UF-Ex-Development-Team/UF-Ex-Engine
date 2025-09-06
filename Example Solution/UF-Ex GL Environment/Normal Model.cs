@@ -10,14 +10,14 @@ using static UndyneFight_Ex.Entities.SimplifiedEasing;
 using static UndyneFight_Ex.Fight.Functions;
 using static UndyneFight_Ex.FightResources;
 using static UndyneFight_Ex.MathUtil;
-//The namespace is purely optional, but make sure it is consistent
+//The name of the namespace is purely optional, but make sure it is consistent
 namespace UF_Ex_Environment
 {
 	//Then you define a class for the chart, the name must be unique
-	class MyFirstChart : WaveConstructor, IWaveSet //WaveConstructor and IWaveSet are the base classes for the chart
+	//WaveConstructor and IWaveSet are the base classes for the chart
+	//The argument inside WaveConstructor is the BPM of the chart, this example is the implementation of multiple BPM in a chart
+	class MyFirstChart() : WaveConstructor([(20, 100), (20, 200)]), IWaveSet 
 	{
-		//Sets the BPM of the chart
-		public MyFirstChart() : base([(20, 100), (20, 200)]) { }
 		//The file path of the music
 		public string Music => "My First Chart";
 		//The name of the chart (Affects user score as FightName is used for data saving)
@@ -57,8 +57,6 @@ namespace UF_Ex_Environment
 			public override string AttributeAuthor => "Name";
 			public override string PaintAuthor => "Name";
 			public override string SongAuthor => "Name";
-			//If MusicOptimized is set to true, the song speed will be adjusted when the game is slowed down/sped up
-			public ThisInformation() { MusicOptimized = false; }
 		}
 		//If you don't want any information to be displayed, just set this to null
 		public SongInformation Attributes => new ThisInformation();
