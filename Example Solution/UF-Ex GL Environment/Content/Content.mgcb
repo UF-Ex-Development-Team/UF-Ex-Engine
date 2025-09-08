@@ -2466,6 +2466,9 @@
 #begin Sprites/font/title.otf
 /copy:Sprites/font/title.otf
 
+#begin Sprites/font/UIFont.xnb
+/copy:Sprites/font/UIFont.xnb
+
 #begin Sprites/GB/laser.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -2573,6 +2576,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Sprites/hp_show/hp.png
+
+#begin Sprites/hp_show/kr.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/hp_show/kr.png
 
 #begin Sprites/OtherBarrages/clo.png
 /importer:TextureImporter
