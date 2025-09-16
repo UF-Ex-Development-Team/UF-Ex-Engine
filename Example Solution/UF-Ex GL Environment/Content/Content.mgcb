@@ -416,6 +416,12 @@
 /processorParam:Quality=Best
 /build:Sounds/attack.wav
 
+#begin Sounds/bomb.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/bomb.wav
+
 #begin Sounds/boneslab_spawn.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
@@ -512,6 +518,12 @@
 /processorParam:Quality=Best
 /build:Sounds/L_GB_summon.wav
 
+#begin Sounds/objBurst.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/objBurst.wav
+
 #begin Sounds/pierce.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
@@ -535,6 +547,12 @@
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
 /build:Sounds/sans_sound.wav
+
+#begin Sounds/shoot.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/shoot.wav
 
 #begin Sounds/Shotgun-sound~1.wav
 /importer:WavImporter
@@ -2408,6 +2426,12 @@
 /processorParam:TextureFormat=Color
 /build:Sprites/FightSprites/target.png;Sprites/FightSprites/aimer.png
 
+#begin Sprites/font/Chinese.ttf
+/copy:Sprites/font/Chinese.ttf
+
+#begin Sprites/font/chinese.xnb
+/copy:Sprites/font/chinese.xnb
+
 #begin Sprites/font/DamageShow.spritefont
 /importer:FontDescriptionImporter
 /processor:LocalizedFontProcessor
@@ -2417,6 +2441,13 @@
 
 #begin Sprites/font/damageShow.ttf
 /copy:Sprites/font/damageShow.ttf
+
+#begin Sprites/font/File.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:Sprites/font/File.spritefont;Sprites/font/UIFont.spritefont
 
 #begin Sprites/font/japanese.ttf
 /copy:Sprites/font/japanese.ttf
@@ -2433,12 +2464,6 @@
 
 #begin Sprites/font/menu.ttf
 /copy:Sprites/font/menu.ttf
-
-#begin Sprites/font/normal_plus.otf
-/copy:Sprites/font/normal_plus.otf
-
-#begin Sprites/font/normal.otf
-/copy:Sprites/font/normal.otf
 
 #begin Sprites/font/normal.spritefont
 /importer:FontDescriptionImporter
@@ -2465,9 +2490,6 @@
 
 #begin Sprites/font/title.otf
 /copy:Sprites/font/title.otf
-
-#begin Sprites/font/UIFont.xnb
-/copy:Sprites/font/UIFont.xnb
 
 #begin Sprites/GB/laser.png
 /importer:TextureImporter
@@ -2637,6 +2659,450 @@
 /processorParam:TextureFormat=Color
 /build:Sprites/OtherBarrages/Knife/Warn.jpg
 
+#begin Sprites/OtherBarrages/Mettaton/blockA.jpg
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/OtherBarrages/Mettaton/blockA.jpg
+
+#begin Sprites/OtherBarrages/Mettaton/blockB.jpg
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/OtherBarrages/Mettaton/blockB.jpg
+
+#begin Sprites/OtherBarrages/Mettaton/bullet.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/OtherBarrages/Mettaton/bullet.png
+
+#begin Sprites/OtherBarrages/Mettaton/spr_parasolmett_0.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/OtherBarrages/Mettaton/spr_parasolmett_0.png
+
+#begin Sprites/OtherBarrages/Mettaton/spr_parasolmett_1.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/OtherBarrages/Mettaton/spr_parasolmett_1.png
+
+#begin Sprites/OtherBarrages/Mettaton/spr_parasolmett_10.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/OtherBarrages/Mettaton/spr_parasolmett_10.png
+
+#begin Sprites/OtherBarrages/Mettaton/spr_parasolmett_11.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/OtherBarrages/Mettaton/spr_parasolmett_11.png
+
+#begin Sprites/OtherBarrages/Mettaton/spr_parasolmett_12.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/OtherBarrages/Mettaton/spr_parasolmett_12.png
+
+#begin Sprites/OtherBarrages/Mettaton/spr_parasolmett_13.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/OtherBarrages/Mettaton/spr_parasolmett_13.png
+
+#begin Sprites/OtherBarrages/Mettaton/spr_parasolmett_14.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/OtherBarrages/Mettaton/spr_parasolmett_14.png
+
+#begin Sprites/OtherBarrages/Mettaton/spr_parasolmett_15.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/OtherBarrages/Mettaton/spr_parasolmett_15.png
+
+#begin Sprites/OtherBarrages/Mettaton/spr_parasolmett_16.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/OtherBarrages/Mettaton/spr_parasolmett_16.png
+
+#begin Sprites/OtherBarrages/Mettaton/spr_parasolmett_17.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/OtherBarrages/Mettaton/spr_parasolmett_17.png
+
+#begin Sprites/OtherBarrages/Mettaton/spr_parasolmett_2.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/OtherBarrages/Mettaton/spr_parasolmett_2.png
+
+#begin Sprites/OtherBarrages/Mettaton/spr_parasolmett_3.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/OtherBarrages/Mettaton/spr_parasolmett_3.png
+
+#begin Sprites/OtherBarrages/Mettaton/spr_parasolmett_4.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/OtherBarrages/Mettaton/spr_parasolmett_4.png
+
+#begin Sprites/OtherBarrages/Mettaton/spr_parasolmett_5.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/OtherBarrages/Mettaton/spr_parasolmett_5.png
+
+#begin Sprites/OtherBarrages/Mettaton/spr_parasolmett_6.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/OtherBarrages/Mettaton/spr_parasolmett_6.png
+
+#begin Sprites/OtherBarrages/Mettaton/spr_parasolmett_7.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/OtherBarrages/Mettaton/spr_parasolmett_7.png
+
+#begin Sprites/OtherBarrages/Mettaton/spr_parasolmett_8.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/OtherBarrages/Mettaton/spr_parasolmett_8.png
+
+#begin Sprites/OtherBarrages/Mettaton/spr_parasolmett_9.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/OtherBarrages/Mettaton/spr_parasolmett_9.png
+
+#begin Sprites/OtherBarrages/Mettaton/spr_plusbomb_0.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/OtherBarrages/Mettaton/spr_plusbomb_0.png
+
+#begin Sprites/OtherBarrages/Mettaton/spr_plusbomb_1.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/OtherBarrages/Mettaton/spr_plusbomb_1.png
+
+#begin Sprites/OtherBarrages/Mettaton/spr_plusbomb_blast_0.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/OtherBarrages/Mettaton/spr_plusbomb_blast_0.png
+
+#begin Sprites/OtherBarrages/Mettaton/spr_plusbomb_blast_1.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/OtherBarrages/Mettaton/spr_plusbomb_blast_1.png
+
+#begin Sprites/OtherBarrages/Mettaton/spr_plusbomb_blast_2.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/OtherBarrages/Mettaton/spr_plusbomb_blast_2.png
+
+#begin Sprites/OtherBarrages/Mettaton/spr_plusbomb_blast_3.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/OtherBarrages/Mettaton/spr_plusbomb_blast_3.png
+
+#begin Sprites/OtherBarrages/Mettaton/spr_plusbomb_blast_4.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/OtherBarrages/Mettaton/spr_plusbomb_blast_4.png
+
+#begin Sprites/OtherBarrages/Mettaton/spr_plusbomb_blast_5.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/OtherBarrages/Mettaton/spr_plusbomb_blast_5.png
+
+#begin Sprites/OtherBarrages/Mettaton/spr_plusbomb_blast_6.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/OtherBarrages/Mettaton/spr_plusbomb_blast_6.png
+
+#begin Sprites/OtherBarrages/Mettaton/spr_plusbomb_coreblast_0.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/OtherBarrages/Mettaton/spr_plusbomb_coreblast_0.png
+
+#begin Sprites/OtherBarrages/Mettaton/spr_plusbomb_coreblast_1.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/OtherBarrages/Mettaton/spr_plusbomb_coreblast_1.png
+
+#begin Sprites/OtherBarrages/Mettaton/spr_plusbomb_coreblast_2.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/OtherBarrages/Mettaton/spr_plusbomb_coreblast_2.png
+
+#begin Sprites/OtherBarrages/Mettaton/spr_plusbomb_coreblast_3.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/OtherBarrages/Mettaton/spr_plusbomb_coreblast_3.png
+
+#begin Sprites/OtherBarrages/Mettaton/spr_plusbomb_coreblast_4.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/OtherBarrages/Mettaton/spr_plusbomb_coreblast_4.png
+
+#begin Sprites/OtherBarrages/Mettaton/spr_plusbomb_coreblast_5.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/OtherBarrages/Mettaton/spr_plusbomb_coreblast_5.png
+
+#begin Sprites/OtherBarrages/Mettaton/spr_plusbomb_coreblast_6.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/OtherBarrages/Mettaton/spr_plusbomb_coreblast_6.png
+
 #begin Sprites/OtherBarrages/spider.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -2685,7 +3151,7 @@
 /processorParam:TextureFormat=Color
 /build:Sprites/others/boxPiece.png
 
-#begin Sprites/others/firePartical.png
+#begin Sprites/others/fireParticle.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -2695,7 +3161,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Sprites/others/firePartical.png
+/build:Sprites/others/fireParticle.png
 
 #begin Sprites/others/GBStuck1.png
 /importer:TextureImporter
@@ -3020,4 +3486,16 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Sprites/SOUL/shield.png
+
+#begin Sprites/SOUL/soulBullet.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/SOUL/soulBullet.png
 
