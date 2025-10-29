@@ -3316,11 +3316,13 @@
             <summary>
             A barrage with a line collision
             </summary>
+            <param name="thickness">The thickness of the collision</param>
         </member>
-        <member name="M:UndyneFight_Ex.Entities.LineCollisionBarrage.#ctor">
+        <member name="M:UndyneFight_Ex.Entities.LineCollisionBarrage.#ctor(System.Single)">
             <summary>
             A barrage with a line collision
             </summary>
+            <param name="thickness">The thickness of the collision</param>
         </member>
         <member name="F:UndyneFight_Ex.Entities.LineCollisionBarrage.Thickness">
             <summary>
@@ -3398,19 +3400,24 @@
             Local matrix based on position and rotation
             </summary>
         </member>
+        <member name="F:UndyneFight_Ex.Entities.PerfectCollisionBarrage.MaskData">
+            <summary>
+            Mask data to read from to prevent read per frame
+            </summary>
+        </member>
         <member name="M:UndyneFight_Ex.Entities.PerfectCollisionBarrage.UpdateMask(Microsoft.Xna.Framework.Graphics.Texture2D)">
             <summary>
             Updates the collision mask of the barrage (Typically when changing the <see cref="P:UndyneFight_Ex.Entity.Image"/> of the barrage)
             </summary>
             <param name="NewMask">The new texture for the mask (Default the current <see cref="P:UndyneFight_Ex.Entity.Image"/>)</param>
         </member>
-        <member name="M:UndyneFight_Ex.Entities.PerfectCollisionBarrage.IsColliding(Microsoft.Xna.Framework.Matrix,Microsoft.Xna.Framework.Matrix,Microsoft.Xna.Framework.Graphics.Texture2D)">
+        <member name="M:UndyneFight_Ex.Entities.PerfectCollisionBarrage.IsColliding(Microsoft.Xna.Framework.Matrix,Microsoft.Xna.Framework.Matrix,Microsoft.Xna.Framework.Color[])">
             <summary>
             Whether the current mask is colliding with another mask
             </summary>
             <param name="SourceTransform">The transform matrix of the current barrage</param>
             <param name="DestTransform">The transform matrix of the target</param>
-            <param name="DestMask">The mask texture of the target</param>
+            <param name="DestBitData">The color array of the texture of the target</param>
             <returns>Whether the two masks are colliding</returns>
         </member>
         <member name="M:UndyneFight_Ex.Entities.PerfectCollisionBarrage.GetCollide(UndyneFight_Ex.Entities.Player.Heart)">
@@ -3776,9 +3783,6 @@
             <inheritdoc/>
         </member>
         <member name="M:UndyneFight_Ex.Entities.Bone.GetCollide(UndyneFight_Ex.Entities.Player.Heart)">
-            <inheritdoc/>
-        </member>
-        <member name="M:UndyneFight_Ex.Entities.Bone.Dispose">
             <inheritdoc/>
         </member>
         <member name="M:UndyneFight_Ex.Entities.Bone.#ctor">
@@ -5883,7 +5887,7 @@
             The base rectangle of the mask
             </summary>
         </member>
-        <member name="P:UndyneFight_Ex.Entities.Player.Heart.Transform">
+        <member name="M:UndyneFight_Ex.Entities.Player.Heart.GetTransform(System.Single)">
             <summary>
             Local matrix based on position and rotation
             </summary>
@@ -7073,7 +7077,11 @@
             The list of glyph data of the parsed string
             </summary>
         </member>
-        <!-- Badly formed XML comment ignored for member "F:UndyneFight_Ex.MiscUtil.TextBuilder.TextLineSize" -->
+        <member name="F:UndyneFight_Ex.MiscUtil.TextBuilder.TextLineSize">
+            <summary>
+            The list of text sizes, each element contains the width and height
+            </summary>
+        </member>
         <member name="F:UndyneFight_Ex.MiscUtil.TextBuilder.forceMaxLineWidth">
             <summary>
             The maximum line width
@@ -9652,7 +9660,7 @@
             "!!X/Y", Each item will last 'Beat / 2X' beats (i.e. X = 2 then 1 beat is 4 items instead of the usual 8) for the next Y beats (If Y is undefined then it will last for the rest of the function)<br/>
             You can add arguments in the form of "&lt;Arg1,Arg2...&gt;Action"<br/>
             You may use <see cref="P:UndyneFight_Ex.SongSystem.WaveConstructor.Arguments"/> inside the declared action in RegisterFunction(Once) to access them.<br/>
-            Adding '@' at the end would apply a tag to the arrow, i.e. "$0@E" would apply the tag "E" to the arrow
+            Adding '@' at the end or wrapping it in curly brackets would apply a tag to the arrow, i.e. "$0@E" or "$0{E}" would apply the tag "E" to the arrow
             </summary>
             <param name="Delay">The delay for the events to be executed, generally used for preventing spawning immediately within view</param>
             <param name="Beat">Duration of 8 beats, generally used with <see cref="M:UndyneFight_Ex.SongSystem.WaveConstructor.BeatTime(System.Single)"/></param>
@@ -10167,7 +10175,7 @@
         </member>
         <member name="P:UndyneFight_Ex.Entity.AngleMode">
             <summary>
-            Whether to use Radians (true) or Degrees (false) for the rotation angle
+            Whether to use Radians (false) or Degrees (true) for the rotation angle
             </summary>
         </member>
         <member name="F:UndyneFight_Ex.Entity.controlLayer">
@@ -12361,7 +12369,7 @@
         </member>
         <member name="F:UndyneFight_Ex.GameStates.file_path_list">
             <summary>
-            [Directory, File Path]
+            The directory of the file path
             </summary>
         </member>
         <member name="M:UndyneFight_Ex.GameStates.LoadSongPreviews">
