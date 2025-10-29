@@ -1,70 +1,188 @@
 ﻿using Microsoft.Xna.Framework.Input;
 
-namespace UndyneFight_Ex
+namespace UndyneFight_Ex;
+/// <summary>
+/// Input verbs
+/// </summary>
+public enum InputIdentity
 {
-	public enum InputIdentity
+	/// <summary>
+	/// Unassigned key
+	/// </summary>
+	None = 999999,
+	/// <summary>
+	/// Confirm key
+	/// </summary>
+	Confirm = 0,
+	/// <summary>
+	/// Cancel key
+	/// </summary>
+	Cancel = 1,
+	/// <summary>
+	/// Alternate key (Default spacebar)
+	/// </summary>
+	Alternate = 2,
+	/// <summary>
+	/// Menu key (Default C)
+	/// </summary>
+	Special = 3,
+	/// <summary>
+	/// Primary Right key
+	/// </summary>
+	MainRight = 4,
+	/// <summary>
+	/// Primary Down key
+	/// </summary>
+	MainDown = 5,
+	/// <summary>
+	/// Primary Left key
+	/// </summary>
+	MainLeft = 6,
+	/// <summary>
+	/// Primary Up key
+	/// </summary>
+	MainUp = 7,
+	/// <summary>
+	/// Secondary Right key
+	/// </summary>
+	SecondRight = 8,
+	/// <summary>
+	/// Secondary Down key
+	/// </summary>
+	SecondDown = 9,
+	/// <summary>
+	/// Secondary Left key
+	/// </summary>
+	SecondLeft = 10,
+	/// <summary>
+	/// Secondary Up key
+	/// </summary>
+	SecondUp = 11,
+	/// <summary>
+	/// Ternary Right key
+	/// </summary>
+	ThirdRight = 12,
+	/// <summary>
+	/// Ternary Down key
+	/// </summary>
+	ThirdDown = 13,
+	/// <summary>
+	/// Ternary Left key
+	/// </summary>
+	ThirdLeft = 14,
+	/// <summary>
+	/// Ternary Up key
+	/// </summary>
+	ThirdUp = 15,
+	/// <summary>
+	/// Quaternary Right key
+	/// </summary>
+	FourthRight = 16,
+	/// <summary>
+	/// Quaternary Down key
+	/// </summary>
+	FourthDown = 17,
+	/// <summary>
+	/// Quaternary Left key
+	/// </summary>
+	FourthLeft = 18,
+	/// <summary>
+	/// Quaternary Up key
+	/// </summary>
+	FourthUp = 19,
+	/// <summary>
+	/// Fullscreen key
+	/// </summary>
+	FullScreen = 20,
+	/// <summary>
+	/// Screenshot key
+	/// </summary>
+	ScreenShot = 21,
+	/// <summary>
+	/// Self-explanatory
+	/// </summary>
+	Number1 = 22,
+	/// <summary>
+	/// Self-explanatory
+	/// </summary>
+	Number2 = 23,
+	/// <summary>
+	/// Self-explanatory
+	/// </summary>
+	Number3 = 24,
+	/// <summary>
+	/// Self-explanatory
+	/// </summary>
+	Number4 = 25,
+	/// <summary>
+	/// Self-explanatory
+	/// </summary>
+	Number5 = 26,
+	/// <summary>
+	/// Self-explanatory
+	/// </summary>
+	Number6 = 27,
+	/// <summary>
+	/// Self-explanatory
+	/// </summary>
+	Number7 = 28,
+	/// <summary>
+	/// Self-explanatory
+	/// </summary>
+	Number8 = 29,
+	/// <summary>
+	/// Self-explanatory
+	/// </summary>
+	Number9 = 30,
+	/// <summary>
+	/// Self-explanatory
+	/// </summary>
+	Number0 = 31,
+	/// <summary>
+	/// Self-explanatory
+	/// </summary>
+	Backspace = 32,
+	/// <summary>
+	/// Reset key
+	/// </summary>
+	Reset = 33,
+	/// <summary>
+	/// Debug healing key
+	/// </summary>
+	Heal = 34,
+	/// <summary>
+	/// Self-explanatory
+	/// </summary>
+	Tab = 35,
+	/// <summary>
+	/// Quick restart key
+	/// </summary>
+	QuickRestart = 36
+}
+/// <summary>
+/// Checker for player input of <see cref="InputIdentity"/>
+/// </summary>
+public class IdentityChecker
+{
+	private List<Keys> checkList;
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	internal void ResetKeyList(List<Keys> checkList) => this.checkList = checkList;
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	internal bool IsKeyPressed() => !lastPressed && curPressed;
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	internal bool IsKeyDown() => curPressed;
+	private bool lastPressed = false, curPressed = false;
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	internal void Update(KeyboardState curState)
 	{
-		None = 999999,
-		Confirm = 0, // key enter and Z
-		Cancel = 1, // key shift and X 
-		Alternate = 2, // key Space
-		Special = 3, // key C
-		MainRight = 4,
-		MainDown = 5,
-		MainLeft = 6,
-		MainUp = 7,
-		SecondRight = 8,
-		SecondDown = 9,
-		SecondLeft = 10,
-		SecondUp = 11,
-		ThirdRight = 12,
-		ThirdDown = 13,
-		ThirdLeft = 14,
-		ThirdUp = 15,
-		FourthRight = 16,
-		FourthDown = 17,
-		FourthLeft = 18,
-		FourthUp = 19,
-		FullScreen = 20,
-		ScreenShot = 21,
-		Number1 = 22,
-		Number2 = 23,
-		Number3 = 24,
-		Number4 = 25,
-		Number5 = 26,
-		Number6 = 27,
-		Number7 = 28,
-		Number8 = 29,
-		Number9 = 30,
-		Number0 = 31,
-		Backspace = 32,
-		Reset = 33,
-		Heal = 34,
-		Tab = 35,
-		QuickRestart = 36
-	}
-	public class IdentityChecker
-	{
-		private List<Keys> checkList;
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal void ResetKeyList(List<Keys> checkList) => this.checkList = checkList;
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal bool IsKeyPressed() => !lastPressed && curPressed;
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal bool IsKeyDown() => curPressed;
-		private bool lastPressed = false, curPressed = false;
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal void Update(KeyboardState curState)
+		lastPressed = curPressed;
+		curPressed = false;
+		foreach (Keys key in checkList)
 		{
-			lastPressed = curPressed;
-			curPressed = false;
-			foreach (Keys key in checkList)
+			if (curState.IsKeyDown(key))
 			{
-				if (curState.IsKeyDown(key))
-				{
-					curPressed = true;
-					break;
-				}
+				curPressed = true;
+				break;
 			}
 		}
 	}

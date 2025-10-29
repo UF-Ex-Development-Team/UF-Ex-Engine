@@ -1,20 +1,18 @@
-﻿namespace UndyneFight_Ex
-{
+﻿namespace UndyneFight_Ex;
+
 #if WINDOWS || LINUX || DEBUG
+/// <summary>
+/// The main class.
+/// </summary>
+public static class Program
+{
 	/// <summary>
-	/// The main class.
+	/// The main entry point for the application.
 	/// </summary>
-	public static class Program
+	private static void Main()
 	{
-		/// <summary>
-		/// The main entry point for the application.
-		/// </summary>
-		[STAThread]
-		private static void Main()
-		{
-			using GameMain game = new();
-			game.Run();
-		}
+		using GameMain game = new();
+		game.Run();
 	}
-#endif
 }
+#endif

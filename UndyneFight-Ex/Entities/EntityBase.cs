@@ -186,6 +186,7 @@ namespace UndyneFight_Ex.Entities
 			_action = action;
 			UpdateIn120 = true;
 		}
+		/// <inheritdoc/>
 		public override void Update()
 		{
 			if (_timeDelay <= 0)
@@ -227,6 +228,7 @@ namespace UndyneFight_Ex.Entities
 			_timeDelay = 0;
 			_action = action;
 		}
+		/// <inheritdoc/>
 		public override void Update()
 		{
 			if (_timeDelay <= 0)
@@ -278,12 +280,14 @@ namespace UndyneFight_Ex
 	/// <param name="image">The image to draw</param>
 	public class ImageEntity(Texture2D image) : AutoEntity
 	{
+		/// <inheritdoc/>
 		public override void Update() { }
 		/// <summary>
 		/// Overrides the draw event
 		/// </summary>
 		public event Action OnDraw;
 
+		/// <inheritdoc/>
 		public override void Draw()
 		{
 			Image = image;
@@ -321,7 +325,7 @@ namespace UndyneFight_Ex
 			get => _anchorEnabled ? _anchor : ImageCentre;
 			set { _anchor = value; _anchorEnabled = true; }
 		}
-
+		/// <inheritdoc/>
 		public override void Draw()
 		{
 			if (Alpha <= 0 || Image == null)
@@ -372,7 +376,7 @@ namespace UndyneFight_Ex
 		/// </summary>
 		public bool Visible { get; set; } = true;
 		/// <summary>
-		/// Whether to use Radians (true) or Degrees (false) for the rotation angle
+		/// Whether to use Radians (false) or Degrees (true) for the rotation angle
 		/// </summary>
 		public bool AngleMode { set; get; } = false;
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -643,7 +647,7 @@ namespace UndyneFight_Ex
 
 			private Color drawingColor;
 			private Vector2 missionSize = new(3);
-
+			/// <inheritdoc/>
 			public override void Update()
 			{
 				if (attracter != null)
@@ -658,7 +662,7 @@ namespace UndyneFight_Ex
 				if (drawingScale >= 2f)
 					Dispose();
 			}
-
+			/// <inheritdoc/>
 			public override void Draw() => FormalDraw(image, Centre, drawingColor * (2 - drawingScale), Vector2.Lerp(Vector2.One, missionSize * baseScale, drawingScale - 1), MathUtil.GetRadian(Rotation), ImageCentre);
 		}
 
@@ -678,9 +682,11 @@ namespace UndyneFight_Ex
 				Centre = original.Centre;
 				Image = original.image;
 			}
+			/// <inheritdoc/>
 			public override void Draw() => FormalDraw(image, Centre, color * alpha, Rotation, ImageCentre);
 
 			private float alpha = 1f;
+			/// <inheritdoc/>
 			public override void Update()
 			{
 				alpha -= 1 / totalTime;
@@ -745,10 +751,19 @@ namespace UndyneFight_Ex
 			}
 			return false;
 		}
+		/// <summary>
+		/// Broadcasts an event to all objects
+		/// </summary>
+		/// <param name="info">The name of the event</param>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public void Broadcast(string info) => GameStates.Broadcast(new GameEventArgs(this, info));
+		/// <summary>
+		/// Checks whether an event was broadcasted
+		/// </summary>
+		/// <param name="tagName"> The name of the event</param>
+		/// <returns>Whether the event is being broadcasted, if so, return its arguments too</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static Tuple<bool, GameEventArgs> TryDetect(string tagName) => GameStates.DetectEvent(tagName) is null || GameStates.DetectEvent(tagName).Count == 0 ? new(false, null) : new(true, GameStates.DetectEvent(tagName)[0]);
+		public static (bool EventExists, GameEventArgs EventArguments) TryDetect(string tagName) => GameStates.DetectEvent(tagName) is null || GameStates.DetectEvent(tagName).Count == 0 ? (false, null) : (true, GameStates.DetectEvent(tagName)[0]);
 		/// <summary>
 		/// The tags of the game object
 		/// </summary>
@@ -760,13 +775,7 @@ namespace UndyneFight_Ex
 				for (int i = 0; i < value.Length; i++)
 					tags[i] = new Tag(value[i]);
 			}
-			get
-			{
-				string[] str = new string[tags.Length];
-				for (int i = 0; i < str.Length; i++)
-					str[i] = tags[i].tagName;
-				return str;
-			}
+			get => [.. from n in tags select n.tagName];
 		}
 		/// <summary>
 		/// Whether the game object has any tags
@@ -791,7 +800,9 @@ namespace UndyneFight_Ex
 		/// The initialization of the object
 		/// </summary>
 		public virtual void Start() { }
-
+		/// <summary>
+		/// Updates the object and its children
+		/// </summary>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public void TreeUpdate()
 		{
@@ -857,7 +868,10 @@ namespace UndyneFight_Ex
 			ChildObjects.ForEach(s => s.Reverse());
 			Disposed = false;
 		}
-
+		/// <summary>
+		/// Gets the object itself and its children that is of type <see cref="Entity"/>
+		/// </summary>
+		/// <returns>The list of entities</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public List<Entity> GetDrawableTree()
 		{
@@ -897,7 +911,9 @@ namespace UndyneFight_Ex
 		/// The speed of the entity
 		/// </summary>
 		public vec2 Speed = vec2.Zero;
+		/// <inheritdoc/>
 		public override void Update() => Centre += Speed += MathUtil.GetVector2(Gravity, GravityDirection);
+		/// <inheritdoc/>
 		public override void Draw() { }
 	}
 }
