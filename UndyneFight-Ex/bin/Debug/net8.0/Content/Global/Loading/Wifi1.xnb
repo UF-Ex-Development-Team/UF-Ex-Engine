@@ -1,0 +1,106 @@
+StartInfo->
+{
+	VIP:false
+	PlayerName:tk2
+	UUID:2648881498422857222
+	Password:1698308545
+	CAsync:false
+	Skill:63.393
+	Customs
+	{
+		TaSAnomaly:value=0
+	}
+	ChampionShips
+	{
+	}
+	Settings
+	{
+		masterVolume:100
+		spearBlockingVolume:100
+		reduceBlueAmount:0
+		arrowDelay:0.000
+		arrowSpeed:1.119
+		arrowScale:1.068
+		fps:60.600
+		mirror:false
+		preciseWarning:true
+		dialogAvailable:true
+		drawingQuality:2
+		samplerState:Nearest
+		dispScorePercent:false
+	}
+	Statistic
+	{
+		DeathCount:4
+		PlayedTime:5052.0370
+	}
+	NormalFights
+	{
+		Undertale Undyne
+		{
+			Ex:score=123031,AC=false,AP=false,Acc=0.95892,mark=Acc
+		}
+		GOODRAGE
+		{
+			Ex+:score=107792,AC=false,AP=false,Acc=0.92842,mark=Acc
+		}
+		Freedom Dive
+		{
+			Ex+:score=112406,AC=false,AP=false,Acc=0.90504,mark=Acc
+		}
+		Dreadnaught
+		{
+			Ex:score=170382,AC=false,AP=false,Acc=0.95452,mark=Acc
+		}
+		DustTrust Phase 2
+		{
+			Ex+:score=684237,AC=false,AP=false,Acc=0.98792,mark=Re
+		}
+		Let's go now!
+		{
+			Ex+:score=81026,AC=false,AP=false,Acc=0.93780,mark=Acc
+		}
+		Eternal Spring Dream
+		{
+			Ex:score=232640,AC=false,AP=false,Acc=0.97338,mark=Re
+		}
+	}
+	Achievements
+	{
+		Getting Started:value=1
+		Better Accuracy:value=1
+		No hitter:value=0
+		Delicate NO-HIT:value=0
+		Impeccable:value=0
+		Extreme gameplay:value=1
+		18+:value=1
+		Beginner:value=23
+		Junior:value=31
+		Average Skill:value=40
+		Let's get higher:value=51
+		Senior:value=68
+	}
+	ShopData
+	{
+		ShopCash
+		{
+			Coins:value=10532
+		}
+		StoreData
+		{
+			No UI:count=1,unlocked=True,activated=True
+		}
+	}
+	ChallengeData
+	{
+	}
+	Keybinds
+	{
+		Confirm:Enter
+		Cancel:L Shift
+		Alternate:Space
+		Special:C
+		MainRight:Right
+		MainDown:Down
+		MainLeft:Left
+		M
