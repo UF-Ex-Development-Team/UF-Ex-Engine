@@ -4,18 +4,18 @@
 /// </summary>
 public static class DebugState
 {
-    internal static bool[] ShieldAuto = [false, false, false, false];
-    /// <summary>
-    /// Show the cost of rendering on screen during a chart
-    /// </summary>
+	internal static bool[] ShieldAuto = [false, false, false, false];
+	/// <summary>
+	/// Show the cost of rendering on screen during a chart
+	/// </summary>
 #if DEBUG
-    public const bool ShowRenderCost = true;
+	public const bool ShowRenderCost = true;
 #else
     public const bool ShowRenderCost = false;
 #endif
-    /// <summary>
-    /// Displays the intended hitbox of barrages during a chart
-    /// </summary>
+	/// <summary>
+	/// Displays the intended hitbox of barrages during a chart
+	/// </summary>
 #if DEBUG
 	public const bool ShowIntendedHitbox = false;
 #else

@@ -39,19 +39,15 @@
   <ItemGroup>
     <Compile Remove="Content\bin\**" />
     <Compile Remove="Content\obj\**" />
-    <Compile Remove="NewFolder\**" />
     <EmbeddedResource Remove="Content\bin\**" />
     <EmbeddedResource Remove="Content\obj\**" />
-    <EmbeddedResource Remove="NewFolder\**" />
     <None Remove="Content\bin\**" />
     <None Remove="Content\obj\**" />
-    <None Remove="NewFolder\**" />
     <None Remove="Icon.ico" />
     <None Remove="Icon.bmp" />
-    <None Remove="Main\GameStates\xgswjvem.x5z~" />
     <EmbeddedResource Include="Icon.ico" />
     <EmbeddedResource Include="Icon.bmp" />
-    <None Include="Entities\Barrages\Bone\Bone Base.cs" />
+    <None Include="Chart\Barrages\Bone\Bone Base.cs" />
     <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="4.14.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
