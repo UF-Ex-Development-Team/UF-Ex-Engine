@@ -26,36 +26,37 @@ namespace UF_Ex_Environment
 		private class ThisInformation : SongInformation
 		{
 			//Setup the difficulties of the chart
-			public override Dictionary<Difficulty, float> CompleteDifficulty => new(
-					[
-						new(Difficulty.Noob, 0),
-						new(Difficulty.Easy, 0),
-						new(Difficulty.Normal, 0),
-						new(Difficulty.Hard, 0),
-						new(Difficulty.Extreme, 0)
-					]
-				);
-			public override Dictionary<Difficulty, float> ComplexDifficulty => new(
-					[
-						new(Difficulty.Noob, 0),
-						new(Difficulty.Easy, 0),
-						new(Difficulty.Normal, 0),
-						new(Difficulty.Hard, 0),
-						new(Difficulty.Extreme, 0)
-					]
-				);
-			public override Dictionary<Difficulty, float> APDifficulty => new(
-					[
-						new(Difficulty.Noob, 0),
-						new(Difficulty.Easy, 0),
-						new(Difficulty.Normal, 0),
-						new(Difficulty.Hard, 0),
-						new(Difficulty.Extreme, 0)
-					]
-				);
+			public override Dictionary<Difficulty, float> CompleteDifficulty => new()
+			{
+				[Difficulty.Noob] = 0,
+				[Difficulty.Easy] = 0,
+				[Difficulty.Normal] = 0,
+				[Difficulty.Hard] = 0,
+				[Difficulty.Extreme] = 0
+			};
+			public override Dictionary<Difficulty, float> ComplexDifficulty => new()
+			{
+				[Difficulty.Noob] = 0,
+				[Difficulty.Easy] = 0,
+				[Difficulty.Normal] = 0,
+				[Difficulty.Hard] = 0,
+				[Difficulty.Extreme] = 0
+			};
+			public override Dictionary<Difficulty, float> APDifficulty => new()
+			{
+				[Difficulty.Noob] = 0,
+				[Difficulty.Easy] = 0,
+				[Difficulty.Normal] = 0,
+				[Difficulty.Hard] = 0,
+				[Difficulty.Extreme] = 0
+			};
+			//Name of charter
 			public override string BarrageAuthor => "Name";
+			//Name of effect maker
 			public override string AttributeAuthor => "Name";
+			//Name of artist of the cover
 			public override string PaintAuthor => "Name";
+			//Name of musician
 			public override string SongAuthor => "Name";
 		}
 		//If you don't want any information to be displayed, just set this to null
