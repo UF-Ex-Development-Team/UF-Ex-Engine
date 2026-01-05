@@ -7,7 +7,7 @@ public partial class Souls
 	/// <summary>
 	/// Yellow soul processing logic
 	/// </summary>
-	public static Player.MoveState YellowSoul { get; private set; } = new(Color.Yellow, (s) =>
+	public static Player.MoveState YellowSoul { get; private set; } = new(col.Yellow, (s) =>
 	{
 		SoulMove(s);
 		if (GameStates.IsKeyPressed120f(InputIdentity.Confirm))

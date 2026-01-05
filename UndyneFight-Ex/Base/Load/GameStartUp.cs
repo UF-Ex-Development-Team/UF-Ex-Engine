@@ -73,23 +73,20 @@ public static class GameStartUp
 		using GameMain game = new();
 		game.Run();
 	}
-
+	/// <summary>
+	/// Add a new set of charts
+	/// </summary>
+	/// <param name="songset"></param>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static void PushSongset(SongSet songset) => FightSystem.PushSongSet(songset);
 	/// <summary>
 	/// The title set up display
 	/// </summary>
-	public static Type SetUpShower
-	{
-		set => StartingShower.TitleSetUp = value;
-	}
+	public static Type SetUpShower { set => StartingShower.TitleSetUp = value; }
 	/// <summary>
 	/// The title display
 	/// </summary>
-	public static Type TitleShower
-	{
-		set => StartingShower.TitleShower = value;
-	}
+	public static Type TitleShower { set => StartingShower.TitleShower = value; }
 	/// <summary>
 	/// The UI used for achievements
 	/// </summary>

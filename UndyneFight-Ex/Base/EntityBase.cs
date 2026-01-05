@@ -70,7 +70,7 @@ namespace UndyneFight_Ex.Entities
 			/// Sinusoidal rotation motion, [Intensity, Wavelength, Initial Time, Constant]<br></br>
 			/// The formula is: Intensity * Sin((AppearTime + Initial Time) / Wavelength * PI * 2) + Constant
 			/// </summary>
-			public static readonly Func<ICustomMotion, float> sin = (s) => s.RotationRouteParam[3] + (float)(s.RotationRouteParam[0] * Math.Sin((s.AppearTime + s.RotationRouteParam[2]) / s.RotationRouteParam[1] * Math.PI * 2));
+			public static readonly Func<ICustomMotion, float> sin = (s) => s.RotationRouteParam[3] + s.RotationRouteParam[0] * float.Sin((s.AppearTime + s.RotationRouteParam[2]) / s.RotationRouteParam[1] * float.Pi * 2);
 			/// <summary>
 			/// Linear rotation, [Rotation speed, Initial Angle]
 			/// </summary>
@@ -403,22 +403,6 @@ namespace UndyneFight_Ex
 			rotation = DrawingRotation(rotation);
 			if (!NotInScene(tex, centre, vec2.One, rotation, rotateCentre))
 				GameMain.MissionSpriteBatch.Draw(tex, centre, null, color * controlLayer.drawingAlpha, rotation, rotateCentre, 1.0f, SpriteEffects.None, Depth);
-
-		}
-		/// <summary>
-		/// Draws the given texture
-		/// </summary>
-		/// <param name="tex">The texture to draw</param>
-		/// <param name="centre">The position to draw</param>
-		/// <param name="texArea">The rectangle area to draw the texture</param>
-		/// <param name="color">The color of the texture</param>
-		/// <param name="rotation">The rotation of the texture</param>
-		/// <param name="rotateCentre">The center of rotation</param>
-		public void FormalDraw(Texture2D tex, Vector2 centre, Rectangle? texArea, Color color, float rotation, Vector2 rotateCentre)
-		{
-			rotation = DrawingRotation(rotation);
-			if (!NotInScene(tex, centre, vec2.One, rotation, rotateCentre))
-				GameMain.MissionSpriteBatch.Draw(tex, centre, texArea, color * controlLayer.drawingAlpha, rotation, rotateCentre, 1.0f, SpriteEffects.None, Depth);
 		}
 		/// <summary>
 		/// Draws the given texture
@@ -494,7 +478,7 @@ namespace UndyneFight_Ex
 		{
 			if (texture is null)
 			{
-				Debug.WriteLine("The texture you are trying to draw is not a texture or is not loaded");
+				Debug.WriteLine($"The texture is not a texture or is not loaded");
 				return;
 			}
 			Vector2 GetRotCen = spriteOrigin ?? new(texture.Width / 2f, texture.Height / 2f);
@@ -862,6 +846,9 @@ namespace UndyneFight_Ex
 			ChildObjects.Add(obj);
 			obj.FatherObject = this;
 		}
+		/// <summary>
+		/// Un-dispose the object
+		/// </summary>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public virtual void Reverse()
 		{

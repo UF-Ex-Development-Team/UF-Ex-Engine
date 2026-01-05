@@ -46,21 +46,18 @@ public partial class Arrow
 	private bool isSoundPlayed = false;
 
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	private void PlayHitSound(float scale, bool isSettingBased = true)
+	private void PlayHitSound(float scale)
 	{
 		if (VolumeFactor <= 0.01f || isSoundPlayed)
 			return;
 		isSoundPlayed = true;
-		float volume = isSettingBased ? SpearBlockingVolume / 100f : 1f;
 
-		Microsoft.Xna.Framework.Audio.SoundEffect HitSound = SpearBlockSound switch
+		PlaySound(SpearBlockSound switch
 		{
 			0 => Ding,
 			1 => ArrowStuck,
 			_ => throw new Exception()
-		};
-
-		PlaySound(HitSound, volume * scale * VolumeFactor);
+		}, SpearBlockingVolume / 100f * scale * VolumeFactor);
 	}
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	private void Init()
@@ -103,10 +100,7 @@ public partial class Arrow
 		else if (JudgeType == JudgementType.Hold)
 			PlayHitSound(0.5f);
 		else if (JudgeType == JudgementType.Tap)
-		{
-			PlayHitSound(1f);
-			PlayHitSound(1f);
-		}
+			PlayHitSound(2);
 	}
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	private void CheckCollide()
@@ -199,8 +193,7 @@ public partial class Arrow
 				goto A;
 			int score = GetScore(time * 1.125f);
 			HitScore(score, time);
-			PlayHitSound(1f);
-			PlayHitSound(1f);
+			PlayHitSound(2);
 
 			Dispose();
 		}
@@ -335,33 +328,33 @@ public partial class Arrow
 			if (generateTip)
 			{
 				Color tipscolor = Color.CornflowerBlue;
-				float xVec = 270;
+				float xVec = Heart.Centre.Y + 30;
 				if (ArrowColor == 0)
 				{
 					tipscolor = Color.CornflowerBlue;
-					xVec = 370;
+					xVec = Heart.Centre.X - 30;
 				}
 				else if (ArrowColor == 1)
 				{
 					tipscolor = Color.Red;
-					xVec = 270;
+					xVec = Heart.Centre.X + 30;
 				}
 				else if (ArrowColor == 2)
 				{
 					tipscolor = Color.Lime;
-					xVec = 270;
+					xVec = Heart.Centre.X + 30;
 				}
 				else if (ArrowColor == 3)
 				{
 					tipscolor = Color.MediumPurple;
-					xVec = 370;
+					xVec = Heart.Centre.X - 30;
 				}
 				if (score >= 4)
 					tipscolor = Color.Lerp(tipscolor, Color.Lime * 0.7f, 0.45f);
 				if (time > -1)
-					CreateEntity(new TimeTips(new(xVec, 200), tipscolor, "early", new(0, 1)));
+					CreateEntity(new TimeTips(new(xVec, Heart.Centre.Y - 40), tipscolor, "early", new(0, 1)));
 				else
-					CreateEntity(new TimeTips(new(xVec, 280), tipscolor, "late", new(0, -1)));
+					CreateEntity(new TimeTips(new(xVec, Heart.Centre.Y + 40), tipscolor, "late", new(0, -1)));
 			}
 		}
 		if (score < 3 && score != 0 && ((CurrentScene as FightScene).Mode & GameMode.PerfectOnly) != 0)

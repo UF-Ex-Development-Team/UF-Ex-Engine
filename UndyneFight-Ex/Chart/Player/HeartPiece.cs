@@ -8,11 +8,10 @@ public partial class Player
 		private col showingColor;
 		public BrokenHeart()
 		{
-			playerPos = heartInstance.Centre;
+			Centre = playerPos = heartInstance.Centre;
 			FightResources.Sounds.die1.CreateInstance().Play();
 			showingColor = heartInstance.CurrentMoveState.StateColor;
 			Image = FightResources.Sprites.brokenHeart;
-			Centre = heartInstance.Centre;
 		}
 		public override void Draw() => FormalDraw(Image, Centre, showingColor, 0, ImageCentre);
 
@@ -42,8 +41,7 @@ public partial class Player
 			this.color = color;
 			rotateSpeed = MathUtil.GetRandom(-40, 40) / 300f;
 			Centre = startPos;
-			speed.X = MathUtil.GetRandom(-40, 40) / 8f;
-			speed.Y = MathUtil.GetRandom(-50, 20) / 8f;
+			speed = new vec2(MathUtil.GetRandom(-40, 40), MathUtil.GetRandom(-50, 20)) / 8f;
 			Image = FightResources.Sprites.heartPieces[MathUtil.GetRandom(0, 4)];
 		}
 		public override void Draw() => FormalDraw(Image, Centre, color, Rotation, ImageCentre);

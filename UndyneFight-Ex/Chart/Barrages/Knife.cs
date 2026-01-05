@@ -72,11 +72,11 @@ public class Knife : Barrage
 			dist = Centre.X - Heart.Centre.X;
 		else
 		{
-			float k = (float)Math.Tan(MathUtil.GetRadian(Rotation));
+			float k = float.Tan(MathUtil.GetRadian(Rotation));
 			A = k;
 			B = -1;
 			C = -A * Centre.X - B * Centre.Y;
-			dist = (float)((A * Heart.Centre.X + B * Heart.Centre.Y + C) / Math.Sqrt(A * A + B * B));
+			dist = (A * Heart.Centre.X + B * Heart.Centre.Y + C) / float.Sqrt(A * A + B * B);
 		}
 
 		float res = Math.Abs(dist) - 2 - 8.5f * scale;

@@ -23,20 +23,22 @@ public interface ISaveLoad
 	/// </summary>
 	List<ISaveLoad> Children { get; }
 }
+/// <summary>
+/// A user account
+/// </summary>
 public partial class User : ISaveLoad
 {
 	/// <summary>
 	/// Creates a new user
 	/// </summary>
-	/// <param name="name"></param>
-	/// <param name="password"></param>
+	/// <param name="name">The name of the user</param>
+	/// <param name="password">The password of the user</param>
 	/// <returns></returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static User CreateNew(string name, string password)
 	{
 		User user = new();
-		SaveInfo info;
-		info = new SaveInfo("StartInfo->{");
+		SaveInfo info = new("StartInfo->{");
 		Random rand = new();
 		long uuid = rand.NextInt64();
 		info.Nexts.Add("Password", new SaveInfo("Password:" + MathUtil.StringHash(password)));
@@ -132,9 +134,9 @@ public partial class User : ISaveLoad
 		//Check for VIP
 		VIP = info.GetDirectory("VIP").BoolValue;
 		//Get rating
-		info.Nexts.TryAdd("Skill", new("value:0"));
+		_ = info.Nexts.TryAdd("Skill", new("value:0"));
 		//Get online async (force false)
-		info.Nexts.TryAdd("CAsync", new("value:false"));
+		_ = info.Nexts.TryAdd("CAsync", new("value:false"));
 		Skill = info.GetDirectory("Skill").FloatValue;
 		OnlineAsync = info.GetDirectory("CAsync").BoolValue;
 		//Get name and password
@@ -150,10 +152,10 @@ public partial class User : ISaveLoad
 			_uuid = uuid;
 		}
 		//Get extra information
-		info.Nexts.TryAdd("Achievements", new SaveInfo("Achievements{"));
-		info.Nexts.TryAdd("Settings", new SaveInfo("Settings{"));
-		info.Nexts.TryAdd("Customs", new SaveInfo("Customs{"));
-		info.Nexts.TryAdd("ChallengeData", new SaveInfo("ChallengeData{"));
+		_ = info.Nexts.TryAdd("Achievements", new SaveInfo("Achievements{"));
+		_ = info.Nexts.TryAdd("Settings", new SaveInfo("Settings{"));
+		_ = info.Nexts.TryAdd("Customs", new SaveInfo("Customs{"));
+		_ = info.Nexts.TryAdd("ChallengeData", new SaveInfo("ChallengeData{"));
 		//Get championship data
 		ChampionshipData = new();
 		ChampionshipData.Load(info.Nexts["ChampionShips"]);
@@ -301,6 +303,12 @@ public partial class User : ISaveLoad
 			KeyChecker.SetIdentityKey(KeyChecker.InputKeys.Keys.ElementAt(i), KeyChecker.DefaultKeys.Values.ElementAt(i));
 		ShopItemData.UserItems = [];
 	}
+	/// <summary>
+	/// Whether the data is synced to the server (Currently unused)
+	/// </summary>
 	public bool OnlineAsync { get; set; } = false;
+	/// <summary>
+	/// The password stored in memory after login (Currently unused)
+	/// </summary>
 	public string PasswordMemory { get; set; }
 }

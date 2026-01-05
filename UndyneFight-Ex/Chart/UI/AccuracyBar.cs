@@ -34,7 +34,7 @@ public class AccuracyBar : Entity
 		{
 			controlLayer = (FatherObject as Entity).controlLayer;
 			if (areaBelong == 0)
-				Centre = (FatherObject as Entity).Centre + new Vector2(MathUtil.Clamp(-70, MathUtil.SignedPow(timeDel, 1.3f) * 6f, 70), 0);
+				Centre = (FatherObject as Entity).Centre + new Vector2(float.Clamp(MathUtil.SignedPow(timeDel, 1.3f) * 6f, -70, 70), 0);
 			else if (areaBelong == -1)
 				Centre = (FatherObject as Entity).Centre + new Vector2(-75, 0);
 		}
@@ -63,6 +63,7 @@ public class AccuracyBar : Entity
 		UpdateIn120 = true;
 	}
 
+	/// <inheritdoc/>
 	public override void Draw()
 	{
 		Depth = 0.15f;
@@ -70,6 +71,7 @@ public class AccuracyBar : Entity
 	}
 
 	private int appearTime = 0;
+	/// <inheritdoc/>
 	public override void Update()
 	{
 		appearTime++;
@@ -102,15 +104,13 @@ public class AccuracyBar : Entity
 			for (int i = 0; i < arrows.Length; i++)
 			{
 				if (i != 0 && arrows[i].BlockTime - arrows[i - 1].BlockTime > SpecifyTime)
-				{
 					add();
-				}
 				timeSame.Add(arrows[i]);
 			}
 			add();
 		}
 	}
-	public float SpecifyTime { get; set; } = 0.6f;
+	private float SpecifyTime { get; set; } = 0.6f;
 	/// <summary>
 	/// Whether the golden outline of arrows are enabled
 	/// </summary>

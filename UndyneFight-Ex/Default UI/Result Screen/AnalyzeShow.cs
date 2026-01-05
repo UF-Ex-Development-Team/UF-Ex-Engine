@@ -2,7 +2,6 @@
 using static UndyneFight_Ex.DrawingLab;
 using static UndyneFight_Ex.Entities.Player;
 using static UndyneFight_Ex.GlobalResources.Font;
-using static UndyneFight_Ex.MathUtil;
 
 namespace UndyneFight_Ex.Entities;
 
@@ -180,9 +179,9 @@ internal partial class StateShower
 				{
 					float x = PosLerp(graphL, graphR, 0, SplitCount - 1, i);
 					float y1 = averageDelta[i], yp = averagePositiveDelta[i], yn = averageNegativeDelta[i];
-					y1 = Clamp(-5, y1, 5);
-					yp = Clamp(-5, yp, 5);
-					yn = Clamp(-5, yn, 5);
+					y1 = float.Clamp(y1, -5, 5);
+					yp = float.Clamp(yp, -5, 5);
+					yn = float.Clamp(yn, -5, 5);
 
 					DrawLine(new Vector2(lastX, lastY * 10 + centreY), new Vector2(x, y1 * 10 + centreY),
 						1, Color.Lerp(Color.Transparent, Color.White, Alpha), 0.5f);

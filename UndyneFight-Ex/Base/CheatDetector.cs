@@ -41,25 +41,14 @@ internal class CheatDetector : Entity
 			{
 				cur = time;
 				frames.Add(count);
-				if (frames.Count > 5)
-				{
+				while (frames.Count > 5)
 					frames.RemoveAt(0);
-				}
 				frameAverage = 0;
-				frames.ForEach(s => frameAverage += s / frames.Count);
+				frames.ForEach(s => frameAverage += s / 5);
 
-				if (count < 120 * GameMain.GameSpeed)
-					timeSustain0++;
-				else
-					timeSustain0 = 0;
-				if (count < 115 * GameMain.GameSpeed)
-					timeSustain1++;
-				else
-					timeSustain1 = 0;
-				if (count < 110 * GameMain.GameSpeed)
-					timeSustain2++;
-				else
-					timeSustain2 = 0;
+				timeSustain0 = count < 120 * GameMain.GameSpeed ? timeSustain0 + 1 : 0;
+				timeSustain1 = count < 115 * GameMain.GameSpeed ? timeSustain1 + 1 : 0;
+				timeSustain2 = count < 110 * GameMain.GameSpeed ? timeSustain2 + 1 : 0;
 				if (timeSustain0 > 10 || timeSustain1 > 6 || timeSustain2 > 3)
 				{
 #if !DEBUG

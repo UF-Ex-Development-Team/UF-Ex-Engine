@@ -76,10 +76,10 @@ internal class SignUpUI : Entity
 	{
 		try
 		{
-			string container = "Licences";
+			string container = "Licenses";
 			string[] all = Directory.GetFiles(container);
 			if (all.Length == 0)
-				return "No valid licences found!";
+				return "No valid licenses found!";
 			foreach (string file in all)
 			{
 				List<string> lines = IO.IOEvent.ByteToString(IO.IOEvent.ReadCustomFile(file));

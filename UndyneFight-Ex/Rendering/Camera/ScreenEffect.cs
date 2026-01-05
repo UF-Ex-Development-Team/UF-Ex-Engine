@@ -43,7 +43,7 @@ public static partial class Functions
 			public override void Dispose()
 			{
 				base.Dispose();
-				GameStates.CurrentScene.CurrentDrawingSettings.surfaces.Remove(Surface.Name);
+				_ = GameStates.CurrentScene.CurrentDrawingSettings.surfaces.Remove(Surface.Name);
 			}
 		}
 		/// <summary>
@@ -53,7 +53,7 @@ public static partial class Functions
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static void CreateCustomSurface(Surface surf)
 		{
-			GameStates.CurrentScene.CurrentDrawingSettings.surfaces.TryAdd(surf.Name, surf);
+			_ = GameStates.CurrentScene.CurrentDrawingSettings.surfaces.TryAdd(surf.Name, surf);
 			SceneRendering.InsertProduction(new UISettings.UISurfaceDrawing(surf));
 		}
 		/// <summary>
@@ -63,7 +63,7 @@ public static partial class Functions
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static void RemoveCustomSurface(Surface surf)
 		{
-			GameStates.CurrentScene.CurrentDrawingSettings.surfaces.Remove(surf.Name);
+			_ = GameStates.CurrentScene.CurrentDrawingSettings.surfaces.Remove(surf.Name);
 			surf.Dispose();
 		}
 		/// <summary>

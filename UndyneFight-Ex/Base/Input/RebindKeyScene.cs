@@ -54,6 +54,7 @@ public class RebindKeyScene : Scene
 			textScaleTar[i] = 1;
 		}
 	}
+	/// <inheritdoc/>
 	public override void Update()
 	{
 		if (RKeyTimer > 0)
@@ -94,15 +95,13 @@ public class RebindKeyScene : Scene
 			{
 				FightResources.Sounds.changeSelection.CreateInstance().Play();
 				textScaleTar[curSelection] = 1;
-				curSelection--;
-				curSelection = MathUtil.Posmod(curSelection, keysCount);
+				curSelection = MathUtil.Posmod(curSelection - 1, keysCount);
 			}
 			else if (IsKeyPressed120f(InputIdentity.MainDown) || (arrowHeld > 60 && arrowHeld % 15 == 0 && IsKeyDown(InputIdentity.MainDown)))
 			{
 				FightResources.Sounds.changeSelection.CreateInstance().Play();
 				textScaleTar[curSelection] = 1;
-				curSelection++;
-				curSelection = MathUtil.Posmod(curSelection, keysCount);
+				curSelection = MathUtil.Posmod(curSelection + 1, keysCount);
 			}
 			if (IsKeyPressed120f(InputIdentity.Confirm))
 			{
@@ -119,7 +118,7 @@ public class RebindKeyScene : Scene
 			{
 				if (!IsKeyDown(item))
 				{
-					KeysHeldBeforeBinding.Remove(item);
+					_ = KeysHeldBeforeBinding.Remove(item);
 					break;
 				}
 			}
@@ -189,6 +188,7 @@ public class RebindKeyScene : Scene
 		bindAlpha = float.Lerp(bindAlpha, state != 0 ? 0.7f : 0, 0.06f);
 		base.Update();
 	}
+	/// <inheritdoc/>
 	public override void Draw()
 	{
 		base.Draw();
@@ -224,5 +224,4 @@ public class RebindKeyScene : Scene
 			FightResources.Font.FightFont.CentreDraw("Yes", new Vector2(440, 360), !moreBindSelection ? Color.White : Color.Yellow, 1, 0.4f);
 		}
 	}
-
 }

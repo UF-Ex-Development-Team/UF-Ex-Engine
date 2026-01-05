@@ -64,12 +64,20 @@ internal partial class GameMain : Game
 
 		finalTarget = DrawAll();
 
+		//GraphicsDevice.SetRenderTarget(Surface.Subtractive.RenderPaint);
+		//GraphicsDevice.Clear(Color.Black);
+
+		//MissionSpriteBatch.Begin(SpriteSortMode.Immediate, Surface.bm_subtract, MissionSpriteBatch.DefaultState);
+		//if (FightResources.Sprites.player != null)
+		//MissionSpriteBatch.Draw(FightResources.Sprites.player, MouseSystem.TransferredPosition, null, Color.Black, 0, Vector2.Zero, new Vector2(10, 10), SpriteEffects.None, 1);
+		//MissionSpriteBatch.End();
+
 		GraphicsDevice.SetRenderTarget(null);
 		GraphicsDevice.Clear(Color.Black);
 
-		MissionSpriteBatch.Begin(SpriteSortMode.Immediate, null, MissionSpriteBatch.DefaultState);
-		MissionSpriteBatch.Draw(finalTarget, screenSize / 2, null, Color.White, 0, finalTarget.Bounds.Size.ToVector2() / 2,
-			Min(screenSize.X / finalTarget.Width, screenSize.Y / finalTarget.Height), SpriteEffects.None, 0.5f);
+		MissionSpriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, MissionSpriteBatch.DefaultState);
+		MissionSpriteBatch.Draw(finalTarget, screenSize / 2, null, Color.White, 0, finalTarget.Bounds.Size.ToVector2() / 2, Min(screenSize.X / finalTarget.Width, screenSize.Y / finalTarget.Height), SpriteEffects.None, 0.5f);
+		//MissionSpriteBatch.Draw(Surface.Subtractive.RenderPaint, screenSize / 2, null, Color.White, 0, Surface.Subtractive.RenderPaint.Bounds.Size.ToVector2() / 2, Min(screenSize.X / Surface.Subtractive.RenderPaint.Width, screenSize.Y / Surface.Subtractive.RenderPaint.Height), SpriteEffects.None, 0.5f);
 		MissionSpriteBatch.End();
 
 		Result = finalTarget;

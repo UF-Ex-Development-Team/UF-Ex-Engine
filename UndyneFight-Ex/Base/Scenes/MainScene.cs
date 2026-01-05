@@ -6,14 +6,10 @@ namespace UndyneFight_Ex.Entities;
 /// <summary>
 /// The game menu scene
 /// </summary>
-public class GameMenuScene : Scene
+public class GameMenuScene() : Scene()
 {
 	private bool initialized = false;
-
-	public GameMenuScene() : base() { }
-
-	internal GameMenuScene(Selector selector) : base(selector) => initialized = true;
-
+	/// <inheritdoc/>
 	public override void Update()
 	{
 		if (!initialized)
@@ -33,7 +29,6 @@ internal class TryAgainScene : Scene
 	private readonly GameObject obj;
 	public TryAgainScene(StateShower shower) : this() => obj = new StateShower.FailureShower(shower);
 	public TryAgainScene(Fight.IClassicFight fight, GameMode mode) : this() => obj = new Fight.FailureShower(fight, mode);
-	public TryAgainScene(GameObject obj) : this() => this.obj = obj;
 	private TryAgainScene() => PlayerManager.CurrentUser?.PlayerStatistic.AddDeath();
 	public override void Update()
 	{

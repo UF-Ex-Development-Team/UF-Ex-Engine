@@ -51,7 +51,7 @@ public class Bone : LineCollisionBarrage
 					colorType = 2;
 					break;
 				default:
-					throw new ArgumentOutOfRangeException("rvalue", value, "The rvalue can only be 0, 1 or 2");
+					throw new ArgumentOutOfRangeException(nameof(value), value, "The value can only be 0, 1 or 2");
 			}
 		}
 		get => colorType;
@@ -66,7 +66,6 @@ public class Bone : LineCollisionBarrage
 	/// Whether the depth will be automatically sorted by their color type (Will override the original depth)
 	/// </summary>
 	public bool AutoDepth = true;
-	private readonly SpriteBatchEX spb = GameMain.MissionSpriteBatch;
 	/// <summary>
 	/// The sprite of the bone's head
 	/// </summary>
@@ -102,7 +101,7 @@ public class Bone : LineCollisionBarrage
 		Points.End = Centre - GetVector2(Length / 2, Rotation + 90);
 		if (autoDispose)
 		{
-			bool ins = GetType() != typeof(CustomBone) ? screen.Contain(Centre) : (this as CustomBone).screenC.Contain(Centre);
+			bool ins = this is CustomBone Cbone ? Cbone.screenC.Contain(Centre) : screen.Contain(Centre);
 			if (ins && !hasBeenInside)
 				hasBeenInside = true;
 			if (hasBeenInside && !ins)

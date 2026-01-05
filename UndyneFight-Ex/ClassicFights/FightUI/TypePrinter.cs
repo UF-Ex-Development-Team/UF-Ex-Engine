@@ -364,6 +364,7 @@ public class TextPrinter : Entity
 		}
 	}
 
+	/// <inheritdoc/>
 	public override void Update()
 	{
 		appearTime += 0.5f;

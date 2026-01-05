@@ -8,23 +8,26 @@ namespace UndyneFight_Ex.Entities;
 /// </summary>
 public class NameShower : Entity
 {
+	/// <summary>
+	/// Creates the name shower entity
+	/// </summary>
 	public NameShower() { Centre = new Vector2(20, 457); instance = this; }
 	/// <summary>
 	/// The LV of the chart
 	/// </summary>
-	public static string level = string.Empty;
+	public static string level { get; set; } = string.Empty;
 	/// <summary>
 	/// The <see cref="NameShower"/> instance
 	/// </summary>
-	public static NameShower instance;
+	public static NameShower instance { get; set; }
 	/// <summary>
 	/// The alpha of the name text
 	/// </summary>
-	public static float nameAlpha = 1;
+	public static float nameAlpha { get; set; } = 1;
 	/// <summary>
 	/// The text to override the name with, set to <see cref="string.Empty"/> if to not override
 	/// </summary>
-	public static string OverrideName = string.Empty;
+	public static string OverrideName { get; set; } = string.Empty;
 	/// <summary>
 	/// The name of the player
 	/// </summary>
@@ -49,6 +52,7 @@ public class NameShower : Entity
 			for (int j = 0; j < 3 - int.Min(3, MinIndex); j++)
 				Name += ".";
 	}
+	/// <inheritdoc/>
 	public override void Draw()
 	{
 		DisplayNameTime++;
@@ -81,5 +85,6 @@ public class NameShower : Entity
 		string trueLV = (level != string.Empty) ? level : difficulty.ToString();
 		FightFont.Draw("lv " + trueLV, lvPos, GameMain.CurrentDrawingSettings.UIColor * nameAlpha);
 	}
+	/// <inheritdoc/>
 	public override void Update() { }
 }

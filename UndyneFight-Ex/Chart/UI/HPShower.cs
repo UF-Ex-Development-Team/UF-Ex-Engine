@@ -69,7 +69,7 @@ internal class HPShower : Entity
 		FormalDraw(pixUnit, FullRect, hpLoseCurrent * (CurrentDrawingSettings.UIColor.A / 255f));
 
 		string hpString;
-		HeartAttribute.HP = MathUtil.Clamp(HeartAttribute.HP, 0, HeartAttribute.MaxHP);
+		HeartAttribute.HP = float.Clamp(HeartAttribute.HP, 0, HeartAttribute.MaxHP);
 		float RoundHP = Round(HeartAttribute.HP, 2);
 		float CeilHP = Ceiling(HeartAttribute.HP);
 		if (((CurrentScene as FightScene).Mode & GameMode.Practice) != 0)
@@ -84,11 +84,9 @@ internal class HPShower : Entity
 			}
 			else
 			{
-				float hp = HeartAttribute.HP, max = HeartAttribute.MaxHP;
-				float scale = 20 / max;
-				string hptext = string.Format("{0:N2}", hp * scale).Replace(',', '.');
+				string hptext = string.Format("{0:N2}", HeartAttribute.HP * 20 / HeartAttribute.MaxHP).Replace(',', '.');
 				if (hptext.Length == 1)
-					hptext += "0";
+					hptext = "0" + hptext;
 				hpString = hptext + " / 20.00";
 			}
 			if (Heart.Shields?.Circle.Consumption > 1)

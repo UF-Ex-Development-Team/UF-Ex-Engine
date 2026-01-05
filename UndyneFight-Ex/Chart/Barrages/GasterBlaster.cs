@@ -244,7 +244,8 @@ public class GreenSoulGB : GasterBlaster
 			0 => new Vector2(270, 0),
 			1 => new Vector2(0, 190),
 			2 => new Vector2(-270, 0),
-			3 => new Vector2(0, -190)
+			3 => new Vector2(0, -190),
+			_ => throw new ArgumentOutOfRangeException(nameof(way), "Way must be between 0 and 3"),
 		};
 	}
 	private readonly float basicRotation;
@@ -434,11 +435,7 @@ public class GreenSoulGB : GasterBlaster
 			hasHit = true;
 		}
 		if (!hasHit)
-		{
-			if (MarkScore)
-				PushScore(score);
 			missionPlayer.Shields.ValidRotated();
-		}
 
 		base.Dispose();
 	}
@@ -559,13 +556,5 @@ public class NormalGB : GasterBlaster, ICollideAble
 				}
 			}
 		}
-	}
-	/// <inheritdoc/>
-	public override void Dispose()
-	{
-		if (!hasHit && MarkScore)
-			PushScore(score);
-
-		base.Dispose();
 	}
 }

@@ -41,7 +41,7 @@ public class SoulBullet : AutoEntity, ICustomMotion
 
 	private Vector2 _delta;
 	private Vector2 _origin;
-
+	private static readonly Rectangle _bounds = new(0, 0, 640, 480);
 	/// <inheritdoc/>
 	public override void Update()
 	{
@@ -51,7 +51,7 @@ public class SoulBullet : AutoEntity, ICustomMotion
 		Depth = 0.5f;
 		Alpha = 1.0f;
 
-		if (!new Rectangle(0, 0, 640, 480).Contains(Centre.ToPoint()))
+		if (!_bounds.Contains(Centre.ToPoint()))
 			Dispose();
 	}
 }

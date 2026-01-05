@@ -98,7 +98,6 @@ public class FightSelectionCollection : Entity
 
 	public bool IsCirclulateSelection { set => isCirclulateSelection = value; }
 	public bool Enabled { get; internal set; } = true;
-	public bool UpdateEnabled { get; internal set; } = true;
 
 	public override void Draw()
 	{

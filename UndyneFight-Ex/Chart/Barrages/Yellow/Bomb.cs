@@ -41,7 +41,7 @@ public class Bomb : BulletShootable
 	/// Creates a shootable bomb
 	/// </summary>
 	/// <param name="explodeDelay">The delay before exploding when shot</param>
-	/// <param name="ease">The eassing of the position</param>
+	/// <param name="ease">The easing of the position</param>
 	public Bomb(float explodeDelay, Func<ICustomMotion, Vector2> ease)
 	{
 		_explodeDelay = explodeDelay;

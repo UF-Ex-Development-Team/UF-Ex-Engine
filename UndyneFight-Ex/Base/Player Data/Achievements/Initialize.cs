@@ -12,18 +12,18 @@ public partial class AchievementManager : ISaveLoad
 	/// <summary>
 	/// The list of singular achievements
 	/// </summary>
-
-	public Dictionary<string, AchievementObject> AchievementObjects = [];
+	public static Dictionary<string, AchievementObject> AchievementObjects { get; set; } = [];
 
 	/// <inheritdoc/>
 	public void Load(SaveInfo info)
 	{
-		foreach (KeyValuePair<string, SaveInfo> pair in info.Nexts)
+		AchievementObjects.Clear();
+		foreach (string key in info.Nexts.Keys)
 		{
-			if (Achievements.AchievementManager.achievements.TryGetValue(pair.Key, out Achievement value))
+			if (Achievements.AchievementManager.achievements.TryGetValue(key, out Achievement value))
 			{
 				Insert(value);
-				AchievementObjects[pair.Key].Load(pair.Value);
+				AchievementObjects[key].Load(info.Nexts[key]);
 			}
 		}
 		foreach (KeyValuePair<string, Achievement> achieve in Achievements.AchievementManager.achievements)
@@ -36,13 +36,13 @@ public partial class AchievementManager : ISaveLoad
 	/// Adds a new achievement
 	/// </summary>
 	/// <param name="achievement">The achievement to add</param>
-	public void Insert(Achievement achievement)
+	public static void Insert(Achievement achievement)
 	{
 		//Force new achievement to be unachieved due to user IO bug >:(
 		achievement.Achieved = false;
 		achievement.CurrentProgress = 0;
 		AchievementObject obj = new(achievement);
-		AchievementObjects.TryAdd(achievement.Title, obj);
+		_ = AchievementObjects.TryAdd(achievement.Title, obj);
 	}
 
 	/// <inheritdoc/>

@@ -90,7 +90,7 @@ public class ChampionShip(SongSet fightSet)
 		{
 			foreach (KeyValuePair<string, Difficulty> v in songs[i].DifficultyPanel)
 			{
-				result.TryAdd(v.Key, new(v.Key, [], new()));
+				_ = result.TryAdd(v.Key, new(v.Key, [], new()));
 				Dictionary<string, Tuple<int, Difficulty>> map = result[v.Key].Info;
 				map.Add(songs[i].GameContent.FightName, new(i, v.Value));
 			}

@@ -84,7 +84,6 @@ public partial class SpriteBatchEX
 			Vertices = [topLeft, topRight, bottomLeft, bottomRight];
 			PrimitiveCount = 2;
 		}
-		public RectangleItem(float x, float y, float dx, float dy, float w, float h, float sin, float cos, Color color, Vector2 texCoordTL, Vector2 texCoordBR, float depth, Texture2D tex, float key) : this(x, y, dx, dy, w, h, sin, cos, [color, color, color, color], texCoordTL, texCoordBR, depth, tex, key) { }
 		public RectangleItem(float x, float y, float dx, float dy, float w, float h, float sin, float cos, Color[] color, Vector2 texCoordTL, Vector2 texCoordBR, float depth, Texture2D tex, float key) : base(tex, key)
 		{
 			VertexPositionColorTexture vertexTL, vertexTR, vertexBL, vertexBR;
@@ -103,20 +102,19 @@ public partial class SpriteBatchEX
 			vertexBL.Position.X = x + dx * cos - (dy + h) * sin;
 			vertexBL.Position.Y = y + dx * sin + (dy + h) * cos;
 			vertexBL.Position.Z = depth;
-			vertexBL.Color = color[2];
+			vertexBL.Color = color[3];
 			vertexBL.TextureCoordinate.X = texCoordTL.X;
 			vertexBL.TextureCoordinate.Y = texCoordBR.Y;
 			vertexBR.Position.X = x + (dx + w) * cos - (dy + h) * sin;
 			vertexBR.Position.Y = y + (dx + w) * sin + (dy + h) * cos;
 			vertexBR.Position.Z = depth;
-			vertexBR.Color = color[3];
+			vertexBR.Color = color[2];
 			vertexBR.TextureCoordinate.X = texCoordBR.X;
 			vertexBR.TextureCoordinate.Y = texCoordBR.Y;
 			Indices = _indices;
 			Vertices = [vertexTL, vertexTR, vertexBL, vertexBR];
 			PrimitiveCount = 2;
 		}
-		public RectangleItem(float x, float y, float w, float h, Color color, Vector2 texCoordTL, Vector2 texCoordBR, float depth, Texture2D tex, float key) : this(x, y, w, h, [color, color, color, color], texCoordTL, texCoordBR, depth, tex, key) { }
 		public RectangleItem(float x, float y, float w, float h, Color[] color, Vector2 texCoordTL, Vector2 texCoordBR, float depth, Texture2D tex, float key) : base(tex, key)
 		{
 			VertexPositionColorTexture vertexTL, vertexTR, vertexBL, vertexBR;

@@ -11,7 +11,7 @@ namespace UndyneFight_Ex.Entities;
 public static class SimplifiedEasing
 {
 	/// <summary>
-	/// A virtual easing object that simulates the values extracted from <see cref="CentrePosition"/>
+	/// A virtual easing object that simulates the values extracted from <see cref="CentrePosition"/> and <see cref="Rotation"/> based on the given routes
 	/// </summary>
 	internal class VirtualEasingObject : GameObject, ICustomMotion
 	{
@@ -87,10 +87,8 @@ public static class SimplifiedEasing
 		basis[0] = funcs[0].Start;
 		if (isAdjust)
 		{
-			for (int i = 1; i <= len; i++)
-			{
-				basis[i] = basis[i - 1] + funcs[i - 1].End - funcs[i - 1].Start;
-			}
+			for (int i = 0; i <= len - 1; i++)
+				basis[i + 1] = basis[i] + funcs[i].End - funcs[i].Start;
 		}
 		else
 			basis[^1] = funcs[^1].End;
@@ -101,18 +99,12 @@ public static class SimplifiedEasing
 			easingObject.AppearTime += s.AppearTime - baseTime;
 			baseTime = s.AppearTime;
 			while (curProgress < len && easingObject.AppearTime >= funcs[curProgress].Time)
-			{
-				easingObject.AppearTime -= funcs[curProgress].Time;
-				curProgress++;
-			}
+				easingObject.AppearTime -= funcs[curProgress++].Time;
 			while (curProgress > 0 && easingObject.AppearTime < 0)
-			{
-				curProgress--;
-				easingObject.AppearTime += funcs[curProgress].Time;
-			}
+				easingObject.AppearTime += funcs[--curProgress].Time;
 			return curProgress >= len ? basis[^1]
-				: !isAdjust ? funcs[curProgress].Easing(easingObject)
-				: funcs[curProgress].Easing(easingObject) - funcs[curProgress].Start + basis[curProgress];
+				: isAdjust ? funcs[curProgress].Easing(easingObject) - funcs[curProgress].Start + basis[curProgress]
+				: funcs[curProgress].Easing(easingObject);
 		}
 		return new(funcs[0].Start, basis[^1], time, easeResult);
 	}
@@ -147,10 +139,8 @@ public static class SimplifiedEasing
 		basis[0] = funcs[0].Start;
 		if (isAdjust)
 		{
-			for (int i = 1; i <= len; i++)
-			{
-				basis[i] = basis[i - 1] + funcs[i - 1].End - funcs[i - 1].Start;
-			}
+			for (int i = 0; i <= len - 1; i++)
+				basis[i + 1] = basis[i] + funcs[i].End - funcs[i].Start;
 		}
 		else
 			basis[^1] = funcs[^1].End;
@@ -161,18 +151,12 @@ public static class SimplifiedEasing
 			easingObject.AppearTime += s.AppearTime - baseTime;
 			baseTime = s.AppearTime;
 			while (curProgress < len && easingObject.AppearTime >= funcs[curProgress].Time)
-			{
-				easingObject.AppearTime -= funcs[curProgress].Time;
-				curProgress++;
-			}
+				easingObject.AppearTime -= funcs[curProgress++].Time;
 			while (curProgress > 0 && easingObject.AppearTime < 0)
-			{
-				curProgress--;
-				easingObject.AppearTime += funcs[curProgress].Time;
-			}
+				easingObject.AppearTime += funcs[--curProgress].Time;
 			return curProgress >= len ? basis[^1]
-				: !isAdjust ? funcs[curProgress].Easing(easingObject)
-				: funcs[curProgress].Easing(easingObject) - funcs[curProgress].Start + basis[curProgress];
+				: isAdjust ? funcs[curProgress].Easing(easingObject) - funcs[curProgress].Start + basis[curProgress]
+				: funcs[curProgress].Easing(easingObject);
 		}
 		return new(funcs[0].Start, basis[^1], time, easeResult);
 	}
@@ -480,18 +464,10 @@ public static class SimplifiedEasing
 	/// Returns a stable value for the specified amount of time
 	/// </summary>
 	/// <param name="time">The duration of the stability of the value (Use 0 for instantly setting the value)</param>
-	/// <param name="value">The value to set to</param>
+	/// <param name="value">The value to set to (Default 0)</param>
 	/// <returns>The result of the easing</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public static EaseUnit<float> Stable(float time, float value) => new(value, value, time, (s) => value);
-	/// <summary>
-	/// Returns a stable value for the specified amount of time <br/>
-	/// If there is no previous easing, the value will be zero, or else it will be the result fo the previous easing
-	/// </summary>
-	/// <param name="time">The duration of the stability of the value (Use 0 for instantly setting the value)</param>
-	/// <returns>The result of the easing</returns>
-	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public static EaseUnit<float> Stable(float time) => new(0, 0, time, (s) => 0);
+	public static EaseUnit<float> Stable(float time, float value = 0) => new(value, value, time, (s) => value);
 	#endregion
 	#region Misc. Easing Functions
 	/// <summary>
@@ -619,8 +595,7 @@ public static class SimplifiedEasing
 	/// <param name="scalar">The float to scale</param>
 	/// <returns>The result of the scaled easing function</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public static EaseUnit<float> Scale(EaseUnit<float> origin, float scalar) => new(origin.Start * scalar, origin.End * scalar, origin.Time,
-			(s) => origin.Easing(s) * scalar);
+	public static EaseUnit<float> Scale(EaseUnit<float> origin, float scalar) => new(origin.Start * scalar, origin.End * scalar, origin.Time, (s) => origin.Easing(s) * scalar);
 	/// <summary>
 	/// Returns a easing of a rotating <see cref="Vector2"/> easing
 	/// </summary>
@@ -791,8 +766,9 @@ public static class EasingUtil
 {
 	/// <summary>
 	/// Easing library, note that they run at 125fps<br/>
-	/// The functions are not documented as they are replaced by <see cref="SimplifiedEasing"/> functions, or are not useful except for a few occasions
+	/// The functions are not documented as they are replaced by <see cref="SimplifiedEasing"/> functions, or are not useful except for a few occasions.
 	/// </summary>
+	/// <remarks>This class will be removed in UF-Ex once it has been completely removed in Rhythm Recall</remarks>
 	[Obsolete("SimplifiedEasing is better")]
 	public static class CentreEasing
 	{
@@ -1167,6 +1143,7 @@ public static class EasingUtil
 	/// Easing library, note that they run at 125fps<br/>
 	/// The functions are not documented as they are replaced by <see cref="SimplifiedEasing"/> functions, or are not useful except for a few occasions
 	/// </summary>
+	/// <remarks>This class will be removed in UF-Ex once it has been completely removed in Rhythm Recall</remarks>
 	[Obsolete("SimplifiedEasing is better")]
 	public static class ValueEasing
 	{
@@ -1465,7 +1442,7 @@ public static class EasingUtil
 		/// <summary>
 		/// The proxy object to apply the easing to
 		/// </summary>
-		private readonly static VirtualEasingObject _virtualEasingObject = new();
+		private static readonly VirtualEasingObject _virtualEasingObject = new();
 		private struct EaseProcess<T>(bool adjust, Action<T> easeAction)
 		{
 			/// <summary>
@@ -1493,6 +1470,12 @@ public static class EasingUtil
 			/// </summary>
 			public T AdjustValue;
 		}
+		/// <summary>
+		/// Adds a float easing process for the processor to handle
+		/// </summary>
+		/// <param name="Adjust">Whether to ease only the delta of the easing or ease the values as is</param>
+		/// <param name="easeAction">The action to apply with the eased value</param>
+		/// <param name="eases">The ease functions</param>
 		public static void PushProcess(bool Adjust, Action<float> easeAction, params EaseUnit<float>[] eases)
 		{
 			EaseProcess<float> process = new(Adjust, easeAction);
@@ -1502,6 +1485,12 @@ public static class EasingUtil
 			process.Eases = easeArray;
 			_floatEasingProcesses.Add(process);
 		}
+		/// <summary>
+		/// Adds a Vector2 easing process for the processor to handle
+		/// </summary>
+		/// <param name="Adjust">Whether to ease only the delta of the easing or ease the values as is</param>
+		/// <param name="easeAction">The action to apply with the eased value</param>
+		/// <param name="eases">The ease functions</param>
 		public static void PushProcess(bool Adjust, Action<Vector2> easeAction, params EaseUnit<Vector2>[] eases)
 		{
 			EaseProcess<Vector2> process = new(Adjust, easeAction);
@@ -1514,21 +1503,27 @@ public static class EasingUtil
 		/// <summary>
 		/// The processes for easing of float values
 		/// </summary>
-		private readonly static List<EaseProcess<float>> _floatEasingProcesses = [];
+		private static readonly List<EaseProcess<float>> _floatEasingProcesses = [];
 		/// <summary>
 		/// The processes for easing of Vector2 values
 		/// </summary>
-		private readonly static List<EaseProcess<Vector2>> _vec2EasingProcesses = [];
+		private static readonly List<EaseProcess<Vector2>> _vec2EasingProcesses = [];
 		/// <summary>
 		/// The indexes of completed easing processes
 		/// </summary>
-		private readonly static List<int> _EasingFreeIndices = [];
+		private static readonly List<int> _EasingFreeIndices = [];
+		/// <summary>
+		/// Removes all easing processes
+		/// </summary>
 		public static void ClearEase()
 		{
 			_floatEasingProcesses.Clear();
 			_vec2EasingProcesses.Clear();
 			_EasingFreeIndices.Clear();
 		}
+		/// <summary>
+		/// Processes all easing processes
+		/// </summary>
 		public static void ProcessEase()
 		{
 			//Process float easing
@@ -1562,8 +1557,9 @@ public static class EasingUtil
 			//Remove completed float easing functions
 			for (int i = _EasingFreeIndices.Count - 1; i >= 0; i--)
 				_floatEasingProcesses.RemoveAt(_EasingFreeIndices[i]);
-			//Clear the free indices
+			//Clear the free indices cache
 			_EasingFreeIndices.Clear();
+
 			//Process Vector2 easing
 			for (int i = 0; i < _vec2EasingProcesses.Count; i++)
 			{
@@ -1595,7 +1591,7 @@ public static class EasingUtil
 			//Remove completed Vector2 easing functions
 			for (int i = _EasingFreeIndices.Count - 1; i >= 0; i--)
 				_vec2EasingProcesses.RemoveAt(_EasingFreeIndices[i]);
-			//Clear the free indices
+			//Clear the free indices cache
 			_EasingFreeIndices.Clear();
 		}
 	}
@@ -1632,7 +1628,7 @@ public static class EaseLibrary
 	/// <summary>
 	/// Easing library (All are EaseIn functions as EaseOut functions are "1 - EaseIn" and others are combinations of both)
 	/// </summary>
-	private readonly static Dictionary<string, Func<float, float>> _EasingFunctions = new()
+	private static readonly Dictionary<string, Func<float, float>> _EasingFunctions = new()
 	{
 		[nameof(EaseState.Linear)] = (x) => x,
 		[nameof(EaseState.Quad)] = (x) => x * x,

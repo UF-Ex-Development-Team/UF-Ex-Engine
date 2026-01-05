@@ -20,25 +20,23 @@ internal class Bullet : Barrage
 		CollideRect rect = FightBox.instance.CollidingBox;
 
 		bool isDownEnabled = true, isUpEnabled = true, isLeftEnabled = true, isRightEnabled = true;
+		float downCollideX = 0, upCollideX = 0, rightCollideY = 0, leftCollideY = 0;
 
 		if (rotation is >= 0 and <= 180)
 			isUpEnabled = false;
+		else
+			upCollideX = missionCentre.X + (rect.Up - missionCentre.Y) / Tan(rotation);
 		if (rotation is >= 90 and <= 270)
 			isRightEnabled = false;
+		else
+			rightCollideY = missionCentre.Y + (rect.Right - missionCentre.X) * Tan(rotation);
 		if (rotation is >= 180 or 0)
 			isDownEnabled = false;
+		else
+			downCollideX = missionCentre.X + (rect.Down - missionCentre.Y) / Tan(rotation);
 		if (rotation is >= 270 or <= 90)
 			isLeftEnabled = false;
-
-		float downCollideX = 0, upCollideX = 0, rightCollideY = 0, leftCollideY = 0;
-
-		if (isDownEnabled)
-			downCollideX = missionCentre.X + (rect.Down - missionCentre.Y) / Tan(rotation);
-		if (isUpEnabled)
-			upCollideX = missionCentre.X + (rect.Up - missionCentre.Y) / Tan(rotation);
-		if (isRightEnabled)
-			rightCollideY = missionCentre.Y + (rect.Right - missionCentre.X) * Tan(rotation);
-		if (isLeftEnabled)
+		else
 			leftCollideY = missionCentre.Y + (rect.Left - missionCentre.X) * Tan(rotation);
 
 		if (isDownEnabled && downCollideX >= rect.Left && downCollideX <= rect.Right)
@@ -126,8 +124,7 @@ public class GunBullet : Entity
 	/// <param name="targetCentre">The position of the target</param>
 	/// <param name="delayTime">The time delay of the bullet to fire</param>
 	/// <param name="rotation">The angle of the bullet with respect to the target</param>
-	public GunBullet(Vector2 targetCentre, float delayTime, float rotation)
-		: this(targetCentre, delayTime, [rotation]) { }
+	public GunBullet(Vector2 targetCentre, float delayTime, float rotation) : this(targetCentre, delayTime, [rotation]) { }
 	/// <summary>
 	/// Creates multiple (Sudden Changes) bullets
 	/// </summary>
@@ -140,20 +137,18 @@ public class GunBullet : Entity
 		Image = Sprites.target;
 		Centre = targetCentre;
 		this.delayTime = delayTime;
-		distance = 190f;
 		Depth = 0.41f;
-		k = 0.0f;
 		this.rotations = rotations;
 	}
 
 	private readonly float[] rotations;
-	private readonly float distance;
+	private const float distance = 190;
 	private float currentDistance;
 
 	private int appearTime = 0;
 	private readonly float delayTime;
 	//TK: What is this.
-	private float k = 0f;
+	private float lerp = 0f;
 	private float alpha = 0f;
 
 	/// <inheritdoc/>
@@ -161,12 +156,12 @@ public class GunBullet : Entity
 	{
 		if (appearTime <= delayTime)
 		{
-			foreach (var item in rotations)
+			foreach (float item in rotations)
 				FormalDraw(Image, Centre + GetVector2(currentDistance, item), Color.White * alpha, 0.55f, 0, ImageCentre);
 			FormalDraw(Image, Centre, Color.White * 0.8f, 0.62f, 0, ImageCentre);
 		}
 		else
-			FormalDraw(Image, Centre, Color.White * alpha, 0.62f * k, 0, ImageCentre);
+			FormalDraw(Image, Centre, Color.White * alpha, 0.62f * lerp, 0, ImageCentre);
 	}
 
 	/// <inheritdoc/>
@@ -175,9 +170,9 @@ public class GunBullet : Entity
 		appearTime++;
 		if (appearTime <= delayTime)
 		{
-			k = F(appearTime / delayTime);
-			currentDistance = (1 - k) * distance;
-			alpha = k * 0.7f + 0.1f;
+			lerp = AlphaLerp(appearTime / delayTime);
+			currentDistance = (1 - lerp) * distance;
+			alpha = lerp * 0.7f + 0.1f;
 		}
 		if (appearTime == (int)delayTime)
 		{
@@ -189,11 +184,11 @@ public class GunBullet : Entity
 		{
 			if (alpha < 0)
 				Dispose();
-			k += 0.06f;
+			lerp += 0.06f;
 			alpha -= 0.05f;
 		}
 	}
 
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	private static float F(float x) => -2 / (x - 2) - 1;
+	private static float AlphaLerp(float x) => x / (2 - x);
 }

@@ -2,7 +2,7 @@
 
 namespace UndyneFight_Ex;
 /// <summary>
-/// Extended sparite batch class
+/// Extended sprite batch class
 /// </summary>
 public partial class SpriteBatchEX
 {
@@ -68,7 +68,6 @@ public partial class SpriteBatchEX
 	private void CheckValid(SpriteFont spriteFont, string text)
 	{
 		ArgumentNullException.ThrowIfNull(spriteFont);
-
 		ArgumentNullException.ThrowIfNull(text);
 
 		if (!_beginCalled)
@@ -169,20 +168,15 @@ public partial class SpriteBatchEX
 		_depthBuffer += 0.00001f;
 		Vector2 realAnchor = anchor + origin.TopLeft;
 		Vector2[] pos = [
-			-anchor,                                // TL
+				-anchor,                                // TL
                 new Vector2(origin.Width, 0) - anchor,  // TR
                 new Vector2(0, origin.Height) - anchor, // BL
                 origin.Size - anchor                    // BR
             ];
 		if ((effects & SpriteEffects.FlipVertically) != 0)
-		{
 			scale.Y *= -1;
-		}
-
 		if ((effects & SpriteEffects.FlipHorizontally) != 0)
-		{
 			scale.X *= -1;
-		}
 		if (scale != Vector2.One)
 		{
 			for (int i = 0; i < 4; i++)

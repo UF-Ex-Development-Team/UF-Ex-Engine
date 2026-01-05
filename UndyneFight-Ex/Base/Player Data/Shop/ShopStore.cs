@@ -224,7 +224,7 @@ public class ShopItemData : ISaveLoad
 			StoreItem item = AllItems[itemInfo.Title];
 			if (item.InShop = itemInfo["unlocked"] is "true" or "True")
 			{
-				UserItems.TryAdd(item.FullName, item);
+				_ = UserItems.TryAdd(item.FullName, item);
 				UserItems[item.FullName].InShop = true;
 				UserItems[item.FullName].Count = item.Count = (int)MathUtil.FloatFromString(itemInfo["count"]);
 				UserItems[item.FullName].Activated = item.Activated = itemInfo["activated"] is "true" or "True";

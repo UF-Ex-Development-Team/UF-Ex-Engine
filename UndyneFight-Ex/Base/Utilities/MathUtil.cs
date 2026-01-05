@@ -22,30 +22,29 @@ public static class MathUtil
 	/// <param name="lineA">The source line</param>
 	/// <param name="lineB">The destination line</param>
 	/// <returns>Whether two lines intersect</returns>
-	private static bool LineIntersect((Vector2 StartPoint, Vector2 EndPoint) lineA, (Vector2 StartPoint, Vector2 EndPoint) lineB)
+	public static bool LineIntersect((Vector2 Start, Vector2 End) lineA, (Vector2 Start, Vector2 End) lineB)
 	{
-		Vector2 A = lineA.EndPoint - lineA.StartPoint, B = lineB.EndPoint - lineB.StartPoint;
+		Vector2 A = lineA.End - lineA.Start, B = lineB.End - lineB.Start;
 		float determinant = A.Cross(B);
-
 		return determinant != 0 &&
-			InRange((B.X * (lineA.StartPoint.Y - lineB.StartPoint.Y) - B.Y * (lineA.StartPoint.X - lineB.StartPoint.X)) / determinant, 0, 1) &&
-			InRange((A.X * (lineA.StartPoint.Y - lineB.StartPoint.Y) - A.Y * (lineA.StartPoint.X - lineB.StartPoint.X)) / determinant, 0, 1);
+			InRange((B.X * (lineA.Start.Y - lineB.Start.Y) - B.Y * (lineA.Start.X - lineB.Start.X)) / determinant, 0, 1) &&
+			InRange((A.X * (lineA.Start.Y - lineB.Start.Y) - A.Y * (lineA.Start.X - lineB.Start.X)) / determinant, 0, 1);
 	}
 	/// <summary>
 	/// Checks whether the point is inside of a triangle
 	/// </summary>
-	/// <param name="v1">First vertex of the triangle</param>
-	/// <param name="v2">Second vertex of the triangle</param>
-	/// <param name="v3">Third vertex of the triangle</param>
-	/// <param name="target">The point to check</param>
+	/// <param name="A">First vertex of the triangle</param>
+	/// <param name="B">Second vertex of the triangle</param>
+	/// <param name="C">Third vertex of the triangle</param>
+	/// <param name="Point">The point to check</param>
 	/// <returns>Whether the point is inside the triangle</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public static bool InTriangle(Vector2 v1, Vector2 v2, Vector2 v3, Vector2 target)
+	public static bool InTriangle(Vector2 A, Vector2 B, Vector2 C, Vector2 Point)
 	{
-		Vector2 l1 = v2 - v1, l2 = v3 - v2, l3 = v1 - v3;
-		Vector2 d1 = target - v1, d2 = target - v2, d3 = target - v3;
-		float re1 = l1.Cross(d1);
-		return !((re1 > 0) ^ (l2.Cross(d2) > 0)) && !((re1 > 0) ^ l3.Cross(d3) > 0);
+		Vector2 AB = B - A, BC = C - B, CA = A - C;
+		Vector2 AP = Point - A, BP = Point - B, CP = Point - C;
+		bool ClockwiseToAB = AB.Cross(AP) > 0;
+		return !(ClockwiseToAB ^ BC.Cross(BP) > 0) && !(ClockwiseToAB ^ CA.Cross(CP) > 0);
 	}
 	/// <summary>
 	/// Checks if a rectangle is colliding with a triangle
@@ -177,7 +176,7 @@ public static class MathUtil
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static float RotationDist(float rot1, float rot2) => MathF.Min((rot1 + 360 - rot2) % 360, (rot2 + 360 - rot1) % 360);
 	/// <summary>
-	/// Projects a vector onto the given vector
+	/// Returns the scalar projection of a vector onto the given vector
 	/// </summary>
 	/// <param name="origin">The vector to project</param>
 	/// <param name="vec">The vector to project to</param>
@@ -240,14 +239,14 @@ public static class MathUtil
 	/// </summary>
 	/// <param name="start">The starting vector</param>
 	/// <param name="end">The ending vector</param>
-	/// <returns>The angle between the two vectors</returns>
+	/// <returns>The angle between the two vectors in degrees</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static float Direction(Vector2 start, Vector2 end) => Atan2((end - start).Y, (end - start).X) / MathF.PI * 180;
 	/// <summary>
-	/// Gets the direction of the vector with respect to the origin
+	/// Gets the direction of the vector with respect to the origin in degrees
 	/// </summary>
 	/// <param name="vec">The vector to check</param>
-	/// <returns>The angle of the vector</returns>
+	/// <returns>The angle of the vector in degrees</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static float Direction(this Vector2 vec) => Atan2(vec.Y, vec.X) / MathF.PI * 180;
 	/// <summary>
@@ -273,24 +272,6 @@ public static class MathUtil
 	/// <returns>The cross product</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static Vector3 Cross(this Vector3 vec, Vector3 vec2) => new(vec.Y * vec2.Z - vec.Z * vec2.Y, vec.Z * vec2.X - vec.X * vec2.Z, vec.X * vec2.Y - vec.Y * vec2.X);
-	/// <summary>
-	/// Clamps the value between the two specified values
-	/// </summary>
-	/// <param name="min">The minimum value</param>
-	/// <param name="val">The value to set</param>
-	/// <param name="max">The maximum value</param>
-	/// <returns>The clamped value</returns>
-	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public static int Clamp(int min, int val, int max) => val > max ? max : (val < min ? min : val);
-	/// <summary>
-	/// Clamps the value between the two specified values
-	/// </summary>
-	/// <param name="min">The minimum value</param>
-	/// <param name="val">The value to set</param>
-	/// <param name="max">The maximum value</param>
-	/// <returns>The clamped value</returns>
-	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public static float Clamp(float min, float val, float max) => val > max ? max : (val < min ? min : val);
 	/// <summary>
 	/// Gets the radian equivalent of the angle in degrees
 	/// </summary>
@@ -338,25 +319,6 @@ public static class MathUtil
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static float GetRandom(float x, float y) => float.Lerp(x, y, (float)rander.NextDouble());
 	/// <summary>
-	/// Returns the square root of the specified number
-	/// </summary>
-	/// <param name="v">The value to get the square root of</param>
-	/// <returns>The square root of <paramref name="v"/></returns>
-	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public static float Sqrt(float v)
-	{
-		float l = 0.001f, r = v, mid = -1;
-		while (r - l > 1e-5)
-		{
-			mid = (l + r) / 2;
-			if (mid * mid > v)
-				r = mid;
-			else
-				l = mid;
-		}
-		return mid;
-	}
-	/// <summary>
 	/// Gets a random value from the specified values
 	/// </summary>
 	/// <typeparam name="T">Can be any type</typeparam>
@@ -371,20 +333,14 @@ public static class MathUtil
 	/// <param name="b">The second vector</param>
 	/// <returns>The cosine value of the angle between the two vectors</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	internal static float Cos(Vector2 a, Vector2 b) => Vector2.Dot(a, b) / (a.Length() * b.Length());
+	public static float Cos(Vector2 a, Vector2 b) => Vector2.Dot(a, b) / (a.Length() * b.Length());
 	/// <summary>
 	/// Hashes the given string
 	/// </summary>
 	/// <param name="s">The string to hash</param>
 	/// <returns>The hashed value</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public static uint StringHash(string s)
-	{
-		ulong partA = GetHashCode(s);
-		ulong hashResult1 = QuickPow(97, partA);
-		uint hashResult2 = Convert.ToUInt32(hashResult1 % (1u << 31));
-		return hashResult2;
-	}
+	public static uint StringHash(string s) => Convert.ToUInt32(QuickPow(97, GetHashCode(s)) % (1u << 31));
 	/// <summary>
 	/// Gets the hash code of the string
 	/// </summary>
@@ -394,8 +350,8 @@ public static class MathUtil
 	private static ulong GetHashCode(string s)
 	{
 		ulong res = 0;
-		for (int i = 0; i < s.Length; i++)
-			res = res * 131 + Convert.ToUInt64((int)s[i]);
+		foreach (char c in s)
+			res = res * 131 + Convert.ToUInt64((int)c);
 		return res;
 	}
 	/// <summary>

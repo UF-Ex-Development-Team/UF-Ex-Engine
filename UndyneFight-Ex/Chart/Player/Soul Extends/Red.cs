@@ -5,8 +5,6 @@ namespace UndyneFight_Ex.Entities;
 
 public partial class Souls
 {
-	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	private static float Project(Vector2 origin, Vector2 vector) => Vector2.Dot(origin, vector) / origin.Length();
 	/// <summary>
 	/// Red soul processing logic
 	/// </summary>
@@ -52,12 +50,12 @@ public partial class Souls
 			along.Normalize();
 
 			//project the vector to the along vector to make sure the heart can be control by the segment
-			float dirDelta1 = Project(along, del1), dirDelta2 = Project(along, del2);
+			float dirDelta1 = MathUtil.ScalarProject(along, del1), dirDelta2 = MathUtil.ScalarProject(along, del2);
 			if (MathF.Abs(dirDelta1) > distance + 0.2f && MathF.Abs(dirDelta2) > distance + 0.2f)
 				continue;
 
 			//project the vector to the normal vector and get the distance of heart and line
-			float dis1 = Project(normal, del1), dis2 = Project(normal, del2);
+			float dis1 = MathUtil.ScalarProject(normal, del1), dis2 = MathUtil.ScalarProject(normal, del2);
 			if (dis1 < 0)
 			{
 				_ = -dis1;

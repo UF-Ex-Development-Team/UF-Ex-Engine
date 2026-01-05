@@ -16,15 +16,15 @@ public static class StartingShower
 	/// <summary>
 	/// The default UI to show
 	/// </summary>
-	public static Type defaultUI = typeof(IntroUI);
+	public static Type defaultUI { get; set; } = typeof(IntroUI);
 	/// <summary>
 	/// The title display on the loading screen
 	/// </summary>
-	public static Type TitleSetUp;
+	public static Type TitleSetUp { get; set; }
 	/// <summary>
 	/// The title display on the menu
 	/// </summary>
-	public static Type TitleShower;
+	public static Type TitleShower { get; set; }
 }
 internal class IntroUI : Selector
 {
@@ -145,7 +145,7 @@ internal class IntroUI : Selector
 				if (showingScale <= 0.01f)
 					return;
 				CollideRect area = new(0, 0, Image.Width, Image.Height * showingScale);
-				FormalDraw(Image, Centre, area.ToRectangle(), Color.White, 0, ImageCentre);
+				FormalDraw(Image, Centre, area.ToRectangle(), Color.White, Vector2.One, 0, ImageCentre);
 				area.SetCentre(Centre - new Vector2(0, Image.Height * (1 - showingScale) * 0.5f));
 				Depth -= 0.005f;
 				Color c = back * 0.2f;

@@ -135,21 +135,36 @@ public class WaveConstructor : GameObject
 	/// Duration of the given beat time in frames
 	/// </summary>
 	/// <param name="x">Amount of beats</param>
+	/// <param name="fromStart">Whether to measure the beats from the beginning of the chart, useful when the chart has multiple BPM (Default true)</param>
 	/// <returns>Amount of frames for <paramref name="x"/> beats</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-	public static float BeatTime(float x)
+	public static float BeatTime(float x, bool fromStart = true)
 	{
 		if (_isMultiBPM)
 		{
-			float AccumulateFrames = 0;
-			foreach ((float beatCount, float bpm) in _MultiBPM)
+			if (fromStart)
 			{
-				if (x <= beatCount)
-					return AccumulateFrames + x * bpm;
-				else
+				float AccumulateFrames = 0;
+				foreach ((float beatCount, float bpm) in _MultiBPM)
 				{
-					AccumulateFrames += beatCount * bpm;
-					x -= beatCount;
+					if (x <= beatCount)
+						return AccumulateFrames + x * bpm;
+					else
+					{
+						AccumulateFrames += beatCount * bpm;
+						x -= beatCount;
+					}
+				}
+			}
+			else
+			{
+				float curBeat = CurrentFightingScene.Time.curBeat;
+				foreach ((float beatCount, float bpm) in _MultiBPM)
+				{
+					if (curBeat <= beatCount)
+						return x * bpm;
+					else
+						curBeat -= beatCount;
 				}
 			}
 		}
@@ -176,7 +191,7 @@ public class WaveConstructor : GameObject
 	/// <param name="beatCount">The beat to check</param>
 	/// <returns>Whether the chart is at a multiple of the Xth beat</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public static bool At0thBeat(float beatCount) => (int)(GametimeF % BeatTime(beatCount) * 2) == 0;
+	public static bool At0thBeat(float beatCount) => AtKthBeat(beatCount, 0);
 	/// <summary>
 	/// Check whether the chart is currently at a multiple of the given beat plus the frames given
 	/// </summary>
@@ -184,14 +199,33 @@ public class WaveConstructor : GameObject
 	/// <param name="K">The frame remainder to check</param>
 	/// <returns>Whether the chart is at a multiple of the Xth beat plus the frames given</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public static bool AtKthBeat(float beatCount, float K) => (int)(GametimeF % BeatTime(beatCount) * 2) == (int)K * 2;
+	public static bool AtKthBeat(float beatCount, float K)
+	{
+		if (!_isMultiBPM)
+			return (int)(GametimeF % BeatTime(beatCount) * 2) == (int)K * 2;
+		else
+		{
+			float AccumulateFrames = 0, curBeat = CurrentFightingScene.Time.curBeat;
+			foreach ((float bpmCount, float bpm) in _MultiBPM)
+			{
+				if (curBeat <= bpmCount)
+					return (int)((GametimeF - AccumulateFrames) % bpm * 2) == (int)K * 2;
+				else
+				{
+					AccumulateFrames += bpmCount * bpm;
+					curBeat -= bpmCount;
+				}
+			}
+			return false;
+		}
+	}
 	/// <summary>
 	/// Invokes an action after the given beats
 	/// </summary>
 	/// <param name="delayBeat">The amount of    to delay</param>
 	/// <param name="action">The action to invoke</param>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public static void DelayBeat(float delayBeat, Action action) => AddInstance(new InstantEvent(delayBeat * SingleBeat, action));
+	public static void DelayBeat(float delayBeat, Action action) => AddInstance(new InstantEvent(BeatTime(delayBeat), action));
 	/// <summary>
 	/// Invokes an action after the given frames
 	/// </summary>
@@ -205,14 +239,14 @@ public class WaveConstructor : GameObject
 	/// <param name="durationBeat">The duration of the action</param>
 	/// <param name="action">The action to invoke</param>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public static void ForBeat(float durationBeat, Action action) => AddInstance(new TimeRangedEvent(durationBeat * SingleBeat, action));
+	public static void ForBeat(float durationBeat, Action action) => AddInstance(new TimeRangedEvent(BeatTime(durationBeat), action));
 	/// <summary>
 	/// Invokes an action for the next given beats (Using float calculation, recommended to use)
 	/// </summary>
 	/// <param name="durationBeat">The duration of the action</param>
 	/// <param name="action">The action to invoke</param>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public static void ForBeat120(float durationBeat, Action action) => AddInstance(new TimeRangedEvent(durationBeat * SingleBeat, action) { UpdateIn120 = true });
+	public static void ForBeat120(float durationBeat, Action action) => AddInstance(new TimeRangedEvent(BeatTime(durationBeat), action) { UpdateIn120 = true });
 	/// <summary>
 	/// Invokes an action for the next given beats after the given beats (Using int calculation, recommended not to use)
 	/// </summary>
@@ -220,7 +254,7 @@ public class WaveConstructor : GameObject
 	/// <param name="durationBeat">The duration of the action</param>
 	/// <param name="action">The action to invoke</param>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public static void ForBeat(float delayBeat, float durationBeat, Action action) => AddInstance(new TimeRangedEvent(delayBeat * SingleBeat, durationBeat * SingleBeat, action));
+	public static void ForBeat(float delayBeat, float durationBeat, Action action) => AddInstance(new TimeRangedEvent(BeatTime(delayBeat), BeatTime(durationBeat), action));
 	/// <summary>
 	/// Invokes an action for the next given beats after the given beats (Using float calculation, recommended to use)
 	/// </summary>
@@ -228,7 +262,7 @@ public class WaveConstructor : GameObject
 	/// <param name="durationBeat">The duration of the action</param>
 	/// <param name="action">The action to invoke</param>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public static void ForBeat120(float delayBeat, float durationBeat, Action action) => AddInstance(new TimeRangedEvent(delayBeat * SingleBeat, durationBeat * SingleBeat, action) { UpdateIn120 = true });
+	public static void ForBeat120(float delayBeat, float durationBeat, Action action) => AddInstance(new TimeRangedEvent(BeatTime(delayBeat), BeatTime(durationBeat), action) { UpdateIn120 = true });
 	/// <summary>
 	/// The process for all arrows that will be executed in <see cref="CreateChart(float, float, float, string[])"/>
 	/// </summary>
@@ -740,15 +774,14 @@ public class WaveConstructor : GameObject
 	{
 		float t = Delay, effectLast = 0, currentCount = 4;
 		Arguments = [];
-		for (int i = 0; i < Barrage.Length; i++)
+		foreach (string cur in Barrage.AsSpan())
 		{
-			ReadOnlySpan<char> cur = Barrage[i];
 			if (cur.Length > 2)
 			{
 				//改变间隔
 				if (cur.StartsWith("!!"))
 				{
-					string str = Barrage[i][2..];
+					string str = cur[2..];
 					int pos = str.LastIndexOf('/');
 					if (pos == -1)
 						effectLast = currentCount = MathUtil.FloatFromString(str);
@@ -761,23 +794,23 @@ public class WaveConstructor : GameObject
 				}
 				else if (cur.StartsWith("\'\'"))
 				{
-					arrowspeed = MathUtil.FloatFromString(cur[2..].ToString());
+					arrowspeed = MathUtil.FloatFromString(cur[2..]);
 					continue;
 				}
 				else if (cur.StartsWith("<<"))
 				{
-					t -= BeatTime(MathUtil.FloatFromString(cur[2..].ToString()));
+					t -= BeatTime(MathUtil.FloatFromString(cur[2..]));
 					continue;
 				}
 				else if (cur.StartsWith(">>"))
 				{
-					t += BeatTime(MathUtil.FloatFromString(cur[2..].ToString()));
+					t += BeatTime(MathUtil.FloatFromString(cur[2..]));
 					continue;
 				}
 			}
 			CurrentTime = t;
-			if (!string.IsNullOrWhiteSpace(cur.ToString()))
-				NormalizedChart(t, arrowspeed, cur.ToString());
+			if (!string.IsNullOrWhiteSpace(cur))
+				NormalizedChart(t, arrowspeed, cur);
 			t += Beat / (currentCount * 2f);
 			if (effectLast > 0)
 				effectLast--;

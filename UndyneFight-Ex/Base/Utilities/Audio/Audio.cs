@@ -68,9 +68,9 @@ public class Audio
 
 		public float Volume { set => effect.Volume = value; get => effect.Volume; }
 	}
-	private class DynamicSongPlayer(string path, float? startPos = null, float? endPos = null) : IAudioSource
+	private class DynamicSongPlayer(string path) : IAudioSource
 	{
-		private readonly DynamicSong _dynamicSong = new(path, startPos, endPos);
+		private readonly DynamicSong _dynamicSong = new(path);
 		private readonly List<DynamicSongInstance> allInstances = [];
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -172,15 +172,13 @@ public class Audio
 	/// </summary>
 	/// <param name="path">The path to the audio file directory</param>
 	/// <param name="loader">The loader to use</param>
-	/// <param name="startPos">The initial position to load (in milliseconds)</param>
-	/// <param name="endPos">The ending position to load (in milliseconds)</param>
-	public Audio(string path, ContentManager loader = null, float? startPos = null, float? endPos = null)
+	public Audio(string path, ContentManager loader = null)
 	{
 		loader ??= Fight.Functions.Loader;
 		if (path.EndsWith(".ogg"))
 		{
 			string finPath = string.IsNullOrEmpty(loader.RootDirectory) ? path : (path.StartsWith("Content") ? path : loader.RootDirectory + "\\" + path);
-			source = new DynamicSongPlayer(Path.Combine(finPath.Split('\\')), startPos, endPos);
+			source = new DynamicSongPlayer(Path.Combine(finPath.Split('\\')));
 			return;
 		}
 		//Ensure no "Content" overlap
@@ -258,18 +256,11 @@ public class Audio
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public float TryGetPosition(out bool result)
 	{
+		result = source is SongPlayer or DynamicSongPlayer;
 		if (source is SongPlayer)
-		{
-			result = true;
 			return (float)(MediaPlayer.PlayPosition.TotalMilliseconds * 62.5 / 1000);
-		}
 		else if (source is DynamicSongPlayer dSongPlayer)
-		{
-			result = true;
 			return dSongPlayer.GetPosition() / 1000f * 62.5f;
-		}
-		else
-			result = false;
 		return -1;
 	}
 

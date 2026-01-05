@@ -672,16 +672,12 @@ internal class DifficultySelector : Selector
                     : throw new NotImplementedException();
                 try
                 {
-                    _type.TrimEnd('\n');
                     var panel = SongSelector.SelectedChampionShip.DifficultyPanel;
                     int type = panel.ContainsKey("div" + _type) ? (int)panel["div" + _type] : (int)panel["div." + _type];
                     PushSelection(new TextSelection("Start!", new Vector2(320, 240))
                     {
-                        SetSelectionAction = () =>
-                        {
-                            GameStates.StartSong(this.wave, _songIllustration, filePath, type, JudgementState.Strict, mode);
-                        }
-                    });
+						SetSelectionAction = () => GameStates.StartSong(this.wave, _songIllustration, filePath, type, JudgementState.Strict, mode)
+					});
                     divNames = [.. SongSelector.SelectedChampionShip.DifficultyPanel.Keys];
                 }
                 catch

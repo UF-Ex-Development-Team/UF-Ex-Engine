@@ -131,7 +131,7 @@ public class AchievementUI : Entity
 				new VertexPositionColorTexture(new Vector3(ActualPosition[i] + new Vector2(2, 0), 0), Color.Black, Vector2.UnitY)
 				);
 			//Progress bar
-			float progressPercent = MathUtil.Clamp(0, achievement.CurrentProgress / achievement.FullProgress, 1);
+			float progressPercent = int.Clamp(achievement.CurrentProgress / achievement.FullProgress, 0, 1);
 			SpriteBatch.DrawVertex(pixUnit, 0.3f,
 				new VertexPositionColorTexture(new Vector3(ActualPosition[i] + new Vector2(2, 18), 0), Color.Lime, Vector2.Zero),
 				new VertexPositionColorTexture(new Vector3(ActualPosition[i] + new Vector2(2 + 237 * progressPercent, 18), 0), Color.Lime, Vector2.UnitX),

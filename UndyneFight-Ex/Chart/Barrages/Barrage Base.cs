@@ -39,7 +39,7 @@ public abstract class LineCollisionBarrage(float thickness = 1) : Barrage
 	/// <inheritdoc/>
 	public override void GetCollide(Heart player)
 	{
-		if ((ColorType == 1 && player.IsStable) || (ColorType == 2 && player.IsMoved) || Functions.PlayerInstance.hpControl.ScoreProtected && Functions.PlayerInstance.hpControl.protectTime > 0)
+		if ((ColorType == 1 && player.IsStable) || (ColorType == 2 && player.IsMoved) || (Functions.PlayerInstance.hpControl.ScoreProtected && Functions.PlayerInstance.hpControl.protectTime > 0))
 			return;
 
 		float res = Math.Max(Math.Abs(GetDistance(player)) - 8 + Thickness, MathUtil.GetDistance(player.Centre, Centre) - (Points.End - Points.Start).Length() / 2) - Thickness;

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System.Diagnostics;
+using UndyneFight_Ex.GameInterface;
 using static System.MathF;
 using static UndyneFight_Ex.Settings.SettingsManager;
 
@@ -32,11 +33,9 @@ internal partial class GameMain : Game
 		set => gameSpeed = value;
 		get => gameSpeed;
 	}
-	public static float gameSpeed = 1 / 1f;
+	public static float gameSpeed = 1;
 
 	public static void ExitGame() => instance.Exit();
-
-	private int appearTime = 0;
 
 	internal GameMain()
 	{
@@ -73,6 +72,8 @@ internal partial class GameMain : Game
 		RenderProduction.UpdateBase(new(480f * Aspect, 480));
 		//base.Initialize();
 		LoadContent();
+		MouseSystem.Initialize();
+		UFEXSettings.Update += MouseSystem.Update;
 	}
 	protected override void OnExiting(object sender, ExitingEventArgs args)
 	{
@@ -135,8 +136,6 @@ internal partial class GameMain : Game
 
 			InitializeRendering();
 			PlayerManager.Initialize();
-
-			//InstanceCodeAfter();
 		});
 		task.RunSynchronously();
 		await task;
@@ -148,6 +147,8 @@ internal partial class GameMain : Game
 	/// </summary>
 	protected override void UnloadContent()
 	{
+		Content.Unload();
+
 		Fight.Functions.Loader.Dispose();
 
 		base.UnloadContent();
@@ -187,7 +188,6 @@ internal partial class GameMain : Game
 	private static readonly float speedRematcher = 1.0f;
 	#endregion
 
-	private void TryExit() => Exit();
 
 	private bool escPressed = false;
 	private float escHeld = 0;
@@ -223,7 +223,6 @@ internal partial class GameMain : Game
 		if (_totalElapsedMS > 100f)
 			_totalElapsedMS /= 2f;
 		#region Event for times
-		appearTime++;
 		TargetElapsedTime = new TimeSpan(0, 0, 0, 0, Math.Max(1, (int)(8f / gameSpeed * speedRematcher)));
 
 		//Pausing
@@ -232,10 +231,13 @@ internal partial class GameMain : Game
 			if (!escPressed)
 				escPressed = true;
 			if (escHeld++ >= 62.5f * 1.5f)
-				TryExit();
+				Exit();
 		}
 		else
+		{
 			escPressed = false;
+			escHeld = 0;
+		}
 		if (GameStates.IsKeyPressed120f(InputIdentity.FullScreen))
 			ToggleFullScreen();
 		#endregion
@@ -257,7 +259,7 @@ internal partial class GameMain : Game
 			stream.Flush();
 			stream.Dispose();
 		}
-		GameInterface.UFEXSettings.DoUpdate();
+		UFEXSettings.DoUpdate();
 
 #if DEBUG
 		UpdateCost = (float)UpdateTimer.Elapsed.TotalMilliseconds;
@@ -265,7 +267,6 @@ internal partial class GameMain : Game
 		base.Update(gameTime);
 	}
 
-	private Vector2 lastSize;
 	private bool _isFullScreen = false;
 
 	public static bool OnFocus => instance.IsActive;
@@ -282,7 +283,6 @@ internal partial class GameMain : Game
 		else
 		{
 			GraphicsAdapter adapter = Graphics.GraphicsDevice.Adapter;
-			lastSize = screenSize;
 			Graphics.PreferredBackBufferWidth = adapter.CurrentDisplayMode.Width;
 			Graphics.PreferredBackBufferHeight = adapter.CurrentDisplayMode.Height;
 		}

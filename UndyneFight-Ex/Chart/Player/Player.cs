@@ -40,11 +40,11 @@ public partial class Player : Entity
 	/// <summary>
 	/// The heart instance of the player you are controlling
 	/// </summary>
-	public static Heart heartInstance;
+	public static Heart heartInstance { get; set; }
 	/// <summary>
 	/// The list of hearts
 	/// </summary>
-	public static List<Heart> hearts = [];
+	public static List<Heart> hearts { get; set; } = [];
 	/// <summary>
 	/// Creates a new player
 	/// </summary>

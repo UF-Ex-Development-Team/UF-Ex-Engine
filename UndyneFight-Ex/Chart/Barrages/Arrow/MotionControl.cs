@@ -20,7 +20,7 @@ public partial class Arrow : ICustomMotion
 				else if (distance >= 36)
 					distance -= (distance - 36) * 0.75f;
 
-				float d = MathUtil.Clamp(0, distance - 36, 37.5f) / 37.5f;
+				float d = float.Clamp(distance - 36, 0, 37.5f) / 37.5f;
 				Rotation = missionRotation + d * MathF.Sqrt(d) * 180 * RotateScale;
 			}
 			else
@@ -28,13 +28,13 @@ public partial class Arrow : ICustomMotion
 				distance = (BlockTime - GametimeF) * Speed;
 				Rotation = missionRotation + (hasGreenFlag ? 45 : 0);
 			}
-			if (isRotate)
+			if (IsRotate)
 				Rotation += (BlockTime - GametimeF) * 2.5f * RotateScale;
 
 			float trueSPP = speedUpPlace * ((way % 2 == 0) ? 1.35f : 1.0f);
-			if (isSpeedUp && distance >= trueSPP)
+			if (IsSpeedup && distance >= trueSPP)
 				distance -= (distance - trueSPP) / 1.8f;
-			else if (Rand(0, 1) == 0 && isSpeedUp)
+			else if (RandBool() && IsSpeedup)
 			{
 				Vector2 speed = MathUtil.GetVector2(Rand(2, 3f), Rotation + Rand(-25, 25));
 				Color color = RandBool() ? Color.Red : Color.Orange;
@@ -44,14 +44,9 @@ public partial class Arrow : ICustomMotion
 				Rotation += mission.Rotation;
 			if (distance < 0)
 			{
-				if (LateWaitingScale > 0.4f)
-					distance *= 0.8f * MathF.Max(LateWaitingScale, 1 + distance / 200f);
-				else
-				{
+				if (LateWaitingScale <= 0.4f)
 					distanceFactor = 0.4f / LateWaitingScale;
-					distance *= 0.8f * MathF.Max(0.4f, 1 + distance / 200f);
-				}
-				distance *= 0.9f;
+				distance *= 0.72f * float.Max(float.Max(0.4f, LateWaitingScale), 1 + distance / 200f);
 			}
 
 			float extraDist = (Scale - 1) * 10f + additiveDistance;

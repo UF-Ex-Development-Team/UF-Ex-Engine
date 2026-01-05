@@ -1,5 +1,6 @@
 ﻿//Assign global usings
 global using Microsoft.Xna.Framework;
+global using MonoGame.Extended.Graphics;
 global using System;
 global using System.Runtime.CompilerServices;
 global using col = Microsoft.Xna.Framework.Color;

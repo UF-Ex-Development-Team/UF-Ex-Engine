@@ -182,7 +182,7 @@ public class IdentityChecker
 			if (curState.IsKeyDown(key))
 			{
 				curPressed = true;
-				break;
+				break; //Breaks when any of the assigned keys is pressed
 			}
 		}
 	}

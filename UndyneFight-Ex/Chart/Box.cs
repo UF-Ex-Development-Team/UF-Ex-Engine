@@ -61,12 +61,12 @@ public class BoxVertex
 	/// Converts the box vertex into a Vector2
 	/// </summary>
 	/// <param name="v">The box vertex to convert</param>
-	public static implicit operator Vector2(BoxVertex v) => v.CurrentPosition;
+	public static implicit operator vec2(BoxVertex v) => v.CurrentPosition;
 	/// <summary>
 	/// Converts a Vector2 to box vertex
 	/// </summary>
 	/// <param name="v">The Vector2 to convert</param>
-	public static implicit operator BoxVertex(Vector2 v) => new(v);
+	public static implicit operator BoxVertex(vec2 v) => new(v);
 }
 /// <summary>
 /// The box during fight

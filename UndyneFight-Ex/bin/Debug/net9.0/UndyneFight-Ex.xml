@@ -230,6 +230,17 @@
             v0.3.0+ Rebinding scene
             </summary>
         </member>
+        <member name="M:UndyneFight_Ex.Entities.RebindKeyScene.Update">
+            <inheritdoc/>
+        </member>
+        <member name="M:UndyneFight_Ex.Entities.RebindKeyScene.Draw">
+            <inheritdoc/>
+        </member>
+        <member name="T:UndyneFight_Ex.Entities.FightScene">
+            <summary>
+            A scene of battle, whether it is a classic battle or a chart
+            </summary>
+        </member>
         <member name="P:UndyneFight_Ex.Entities.FightScene.PlayerInstance">
             <summary>
             Current player instance in fight
@@ -245,10 +256,44 @@
             The name display in fight
             </summary>
         </member>
+        <member name="P:UndyneFight_Ex.Entities.FightScene.Mode">
+            <summary>
+            The <see cref="T:UndyneFight_Ex.SongSystem.GameMode"/> the fight is in
+            </summary>
+        </member>
+        <member name="M:UndyneFight_Ex.Entities.FightScene.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="M:UndyneFight_Ex.Entities.FightScene.#ctor">
+            <summary>
+            Resets the fight scene
+            </summary>
+        </member>
+        <member name="M:UndyneFight_Ex.Entities.FightScene.PlayDeath">
+            <summary>
+            Apply game over
+            </summary>
+        </member>
+        <member name="M:UndyneFight_Ex.Entities.FightScene.PlayerDied">
+            <summary>
+            The event to invoke when the player dies
+            </summary>
+        </member>
+        <member name="M:UndyneFight_Ex.Entities.FightScene.Update">
+            <inheritdoc/>
+        </member>
         <member name="T:UndyneFight_Ex.Entities.GameMenuScene">
             <summary>
             The game menu scene
             </summary>
+        </member>
+        <member name="M:UndyneFight_Ex.Entities.GameMenuScene.#ctor">
+            <summary>
+            The game menu scene
+            </summary>
+        </member>
+        <member name="M:UndyneFight_Ex.Entities.GameMenuScene.Update">
+            <inheritdoc/>
         </member>
         <member name="T:UndyneFight_Ex.Entities.SimplifiedEasing">
             <summary>
@@ -257,7 +302,7 @@
         </member>
         <member name="T:UndyneFight_Ex.Entities.SimplifiedEasing.VirtualEasingObject">
             <summary>
-            A virtual easing object that simulates the values extracted from <see cref="P:UndyneFight_Ex.Entities.SimplifiedEasing.VirtualEasingObject.CentrePosition"/>
+            A virtual easing object that simulates the values extracted from <see cref="P:UndyneFight_Ex.Entities.SimplifiedEasing.VirtualEasingObject.CentrePosition"/> and <see cref="P:UndyneFight_Ex.Entities.SimplifiedEasing.VirtualEasingObject.Rotation"/> based on the given routes
             </summary>
         </member>
         <member name="M:UndyneFight_Ex.Entities.SimplifiedEasing.RunEase(System.Action{Microsoft.Xna.Framework.Vector2},System.Boolean,UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}[])">
@@ -629,15 +674,7 @@
             Returns a stable value for the specified amount of time
             </summary>
             <param name="time">The duration of the stability of the value (Use 0 for instantly setting the value)</param>
-            <param name="value">The value to set to</param>
-            <returns>The result of the easing</returns>
-        </member>
-        <member name="M:UndyneFight_Ex.Entities.SimplifiedEasing.Stable(System.Single)">
-            <summary>
-            Returns a stable value for the specified amount of time <br/>
-            If there is no previous easing, the value will be zero, or else it will be the result fo the previous easing
-            </summary>
-            <param name="time">The duration of the stability of the value (Use 0 for instantly setting the value)</param>
+            <param name="value">The value to set to (Default 0)</param>
             <returns>The result of the easing</returns>
         </member>
         <member name="M:UndyneFight_Ex.Entities.SimplifiedEasing.Copy(UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2},System.Int32)">
@@ -896,8 +933,9 @@
         <member name="T:UndyneFight_Ex.Entities.EasingUtil.CentreEasing">
             <summary>
             Easing library, note that they run at 125fps<br/>
-            The functions are not documented as they are replaced by <see cref="T:UndyneFight_Ex.Entities.SimplifiedEasing"/> functions, or are not useful except for a few occasions
+            The functions are not documented as they are replaced by <see cref="T:UndyneFight_Ex.Entities.SimplifiedEasing"/> functions, or are not useful except for a few occasions.
             </summary>
+            <remarks>This class will be removed in UF-Ex once it has been completely removed in Rhythm Recall</remarks>
         </member>
         <member name="M:UndyneFight_Ex.Entities.EasingUtil.CentreEasing.SinWave(System.Single,System.Single,System.Single,System.Single)">
             <summary>
@@ -932,6 +970,7 @@
             Easing library, note that they run at 125fps<br/>
             The functions are not documented as they are replaced by <see cref="T:UndyneFight_Ex.Entities.SimplifiedEasing"/> functions, or are not useful except for a few occasions
             </summary>
+            <remarks>This class will be removed in UF-Ex once it has been completely removed in Rhythm Recall</remarks>
         </member>
         <member name="M:UndyneFight_Ex.Entities.EasingUtil.ValueEasing.SinWave(System.Single,System.Single,System.Single)">
             <summary>
@@ -977,6 +1016,22 @@
             The adjustment value of the easing if <see cref="F:UndyneFight_Ex.Entities.EasingUtil.Processor.EaseProcess`1.Adjust"/> is true"/>
             </summary>
         </member>
+        <member name="M:UndyneFight_Ex.Entities.EasingUtil.Processor.PushProcess(System.Boolean,System.Action{System.Single},UndyneFight_Ex.Entities.EaseUnit{System.Single}[])">
+            <summary>
+            Adds a float easing process for the processor to handle
+            </summary>
+            <param name="Adjust">Whether to ease only the delta of the easing or ease the values as is</param>
+            <param name="easeAction">The action to apply with the eased value</param>
+            <param name="eases">The ease functions</param>
+        </member>
+        <member name="M:UndyneFight_Ex.Entities.EasingUtil.Processor.PushProcess(System.Boolean,System.Action{Microsoft.Xna.Framework.Vector2},UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}[])">
+            <summary>
+            Adds a Vector2 easing process for the processor to handle
+            </summary>
+            <param name="Adjust">Whether to ease only the delta of the easing or ease the values as is</param>
+            <param name="easeAction">The action to apply with the eased value</param>
+            <param name="eases">The ease functions</param>
+        </member>
         <member name="F:UndyneFight_Ex.Entities.EasingUtil.Processor._floatEasingProcesses">
             <summary>
             The processes for easing of float values
@@ -990,6 +1045,16 @@
         <member name="F:UndyneFight_Ex.Entities.EasingUtil.Processor._EasingFreeIndices">
             <summary>
             The indexes of completed easing processes
+            </summary>
+        </member>
+        <member name="M:UndyneFight_Ex.Entities.EasingUtil.Processor.ClearEase">
+            <summary>
+            Removes all easing processes
+            </summary>
+        </member>
+        <member name="M:UndyneFight_Ex.Entities.EasingUtil.Processor.ProcessEase">
+            <summary>
+            Processes all easing processes
             </summary>
         </member>
         <member name="T:UndyneFight_Ex.Entities.EaseLibrary">
@@ -1113,6 +1178,12 @@
             The size of a card
             </summary>
         </member>
+        <member name="M:UndyneFight_Ex.Entities.ChallengeScene.Update">
+            <inheritdoc/>
+        </member>
+        <member name="M:UndyneFight_Ex.Entities.ChallengeScene.Draw">
+            <inheritdoc/>
+        </member>
         <member name="T:UndyneFight_Ex.Entities.Arrow">
             <summary>
             An arrow
@@ -1159,7 +1230,7 @@
         </member>
         <member name="F:UndyneFight_Ex.Entities.Arrow.distance">
             <summary>
-            距离玩家灵魂的距离
+            Distance to target soul
             </summary>
         </member>
         <member name="P:UndyneFight_Ex.Entities.Arrow.ArrowColor">
@@ -1313,6 +1384,16 @@
             The intensity of the easing (Default 1)
             </summary>
         </member>
+        <member name="T:UndyneFight_Ex.Entities.Arrow.EnsembleEasing">
+            <summary>
+            Easing controller for coordinate displacement, angle, and distance
+            </summary>
+        </member>
+        <member name="M:UndyneFight_Ex.Entities.Arrow.EnsembleEasing.#ctor">
+            <summary>
+            Easing controller for coordinate displacement, angle, and distance
+            </summary>
+        </member>
         <member name="M:UndyneFight_Ex.Entities.Arrow.EnsembleEasing.DeltaEase(UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}[])">
             <summary>
             Eases the coordinate displacement of the arrow
@@ -1340,12 +1421,22 @@
         <member name="M:UndyneFight_Ex.Entities.Arrow.EnsembleEasing.ApplyArrowEasing(UndyneFight_Ex.Entities.Arrow)">
             <inheritdoc/>
         </member>
+        <member name="T:UndyneFight_Ex.Entities.Arrow.UnitEasing">
+            <summary>
+            Easing controller for the arrow's position, angle, distance, and alpha
+            </summary>
+        </member>
+        <member name="M:UndyneFight_Ex.Entities.Arrow.UnitEasing.#ctor">
+            <summary>
+            Easing controller for the arrow's position, angle, distance, and alpha
+            </summary>
+        </member>
         <member name="M:UndyneFight_Ex.Entities.Arrow.UnitEasing.Start">
             <inheritdoc/>
         </member>
         <member name="P:UndyneFight_Ex.Entities.Arrow.UnitEasing.ApplyTime">
             <summary>
-            The total time of the easing
+            The time to apply the easing at (0 is the moment the arrow hits, default 60)
             </summary>
         </member>
         <member name="P:UndyneFight_Ex.Entities.Arrow.UnitEasing.PositionEase">
@@ -1408,6 +1499,11 @@
         </member>
         <member name="M:UndyneFight_Ex.Entities.Arrow.UnitEasing.ApplyArrowEasing(UndyneFight_Ex.Entities.Arrow)">
             <inheritdoc/>
+        </member>
+        <member name="T:UndyneFight_Ex.Entities.Arrow.ClassicApplier">
+            <summary>
+            Easing controller to delay or stop the arrow
+            </summary>
         </member>
         <member name="M:UndyneFight_Ex.Entities.Arrow.ClassicApplier.ApplyDelay(System.Single)">
             <summary>
@@ -1753,6 +1849,11 @@
             </summary>
             <param name="vectors">The location of the 8 vertices in (x, y, z) with respect to the centre</param>
             <param name="rotateSpeed">The rotation speed of (x, y, z)</param>
+        </member>
+        <member name="P:UndyneFight_Ex.Entities.Advanced.VertexHull.Translated">
+            <summary>
+            The 3d coordinates translated to 2d
+            </summary>
         </member>
         <member name="P:UndyneFight_Ex.Entities.Advanced.VertexHull.Axes">
             <summary>
@@ -2447,9 +2548,6 @@
             Whether the enable the bug fix for reverse collision
             </summary>
         </member>
-        <member name="M:UndyneFight_Ex.Entities.NormalGB.Dispose">
-            <inheritdoc/>
-        </member>
         <member name="T:UndyneFight_Ex.Entities.GunBullet">
             <summary>
             A (Sudden Changes) bullet
@@ -2847,7 +2945,7 @@
             Creates a shootable bomb
             </summary>
             <param name="explodeDelay">The delay before exploding when shot</param>
-            <param name="ease">The eassing of the position</param>
+            <param name="ease">The easing of the position</param>
         </member>
         <member name="M:UndyneFight_Ex.Entities.Bomb.OnShot(UndyneFight_Ex.Entities.SoulBullet)">
             <inheritdoc/>
@@ -2902,11 +3000,19 @@
         <member name="M:UndyneFight_Ex.Entities.SoulBullet.Update">
             <inheritdoc/>
         </member>
+        <member name="T:UndyneFight_Ex.Entities.BulletShootable">
+            <summary>
+            A barrage that is shootable by a yellow soul bullet
+            </summary>
+        </member>
         <member name="M:UndyneFight_Ex.Entities.BulletShootable.OnShot(UndyneFight_Ex.Entities.SoulBullet)">
             <summary>
             Event to occur when the barrage is shot
             </summary>
             <param name="bullet">The soul bullet that shot it</param>
+        </member>
+        <member name="M:UndyneFight_Ex.Entities.BulletShootable.Update">
+            <inheritdoc/>
         </member>
         <member name="T:UndyneFight_Ex.Entities.ParasolMett">
             <summary>
@@ -3770,12 +3876,12 @@
             <param name="color">The color of the effect</param>
             <param name="size">The size of the effect</param>
         </member>
-        <member name="F:UndyneFight_Ex.Entities.Player.heartInstance">
+        <member name="P:UndyneFight_Ex.Entities.Player.heartInstance">
             <summary>
             The heart instance of the player you are controlling
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.Entities.Player.hearts">
+        <member name="P:UndyneFight_Ex.Entities.Player.hearts">
             <summary>
             The list of hearts
             </summary>
@@ -3991,6 +4097,12 @@
             The accuracy bar at the bottom of the screen
             </summary>
         </member>
+        <member name="M:UndyneFight_Ex.Entities.AccuracyBar.Draw">
+            <inheritdoc/>
+        </member>
+        <member name="M:UndyneFight_Ex.Entities.AccuracyBar.Update">
+            <inheritdoc/>
+        </member>
         <member name="P:UndyneFight_Ex.Entities.AccuracyBar.EnabledGolden">
             <summary>
             Whether the golden outline of arrows are enabled
@@ -4026,22 +4138,27 @@
             The name display entity
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.Entities.NameShower.level">
+        <member name="M:UndyneFight_Ex.Entities.NameShower.#ctor">
+            <summary>
+            Creates the name shower entity
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.Entities.NameShower.level">
             <summary>
             The LV of the chart
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.Entities.NameShower.instance">
+        <member name="P:UndyneFight_Ex.Entities.NameShower.instance">
             <summary>
             The <see cref="T:UndyneFight_Ex.Entities.NameShower"/> instance
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.Entities.NameShower.nameAlpha">
+        <member name="P:UndyneFight_Ex.Entities.NameShower.nameAlpha">
             <summary>
             The alpha of the name text
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.Entities.NameShower.OverrideName">
+        <member name="P:UndyneFight_Ex.Entities.NameShower.OverrideName">
             <summary>
             The text to override the name with, set to <see cref="F:System.String.Empty"/> if to not override
             </summary>
@@ -4050,6 +4167,12 @@
             <summary>
             The name of the player
             </summary>
+        </member>
+        <member name="M:UndyneFight_Ex.Entities.NameShower.Draw">
+            <inheritdoc/>
+        </member>
+        <member name="M:UndyneFight_Ex.Entities.NameShower.Update">
+            <inheritdoc/>
         </member>
         <member name="M:UndyneFight_Ex.Entities.StateShower.PushType(System.Int32)">
             <summary>
@@ -4077,17 +4200,17 @@
             The items to display on startup
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.Entities.StartingShower.defaultUI">
+        <member name="P:UndyneFight_Ex.Entities.StartingShower.defaultUI">
             <summary>
             The default UI to show
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.Entities.StartingShower.TitleSetUp">
+        <member name="P:UndyneFight_Ex.Entities.StartingShower.TitleSetUp">
             <summary>
             The title display on the loading screen
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.Entities.StartingShower.TitleShower">
+        <member name="P:UndyneFight_Ex.Entities.StartingShower.TitleShower">
             <summary>
             The title display on the menu
             </summary>
@@ -4420,7 +4543,7 @@
             <param name="speed">The speed of the particle</param>
             <param name="size">The size of the particle (In Pixels) (Multiply by 20)</param>
             <param name="centre">The position to create the particle</param>
-            <param name="image">The image of the particle (Default <see cref="F:UndyneFight_Ex.FightResources.Sprites.lightBall"/>)</param>
+            <param name="image">The image of the particle (Default <see cref="P:UndyneFight_Ex.FightResources.Sprites.lightBall"/>)</param>
         </member>
         <member name="P:UndyneFight_Ex.Entities.Particle.DarkingSpeed">
             <summary>
@@ -4868,17 +4991,6 @@
             <param name="rotation">The rotation of the texture</param>
             <param name="rotateCentre">The center of rotation</param>
         </member>
-        <member name="M:UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Rectangle},Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Vector2)">
-            <summary>
-            Draws the given texture
-            </summary>
-            <param name="tex">The texture to draw</param>
-            <param name="centre">The position to draw</param>
-            <param name="texArea">The rectangle area to draw the texture</param>
-            <param name="color">The color of the texture</param>
-            <param name="rotation">The rotation of the texture</param>
-            <param name="rotateCentre">The center of rotation</param>
-        </member>
         <member name="M:UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Rectangle},Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Graphics.SpriteEffects)">
             <summary>
             Draws the given texture
@@ -5165,6 +5277,11 @@
             </summary>
             <param name="obj"></param>
         </member>
+        <member name="M:UndyneFight_Ex.GameObject.Reverse">
+            <summary>
+            Un-dispose the object
+            </summary>
+        </member>
         <member name="M:UndyneFight_Ex.GameObject.GetDrawableTree">
             <summary>
             Gets the object itself and its children that is of type <see cref="T:UndyneFight_Ex.Entity"/>
@@ -5289,6 +5406,11 @@
             The name of the song set
             </summary>
         </member>
+        <member name="P:UndyneFight_Ex.GameStates.DefaultKeys">
+            <summary>
+            The default key bindings
+            </summary>
+        </member>
         <member name="P:UndyneFight_Ex.GameStates.WordsChanged">
             <summary>
             Player has typed
@@ -5339,7 +5461,22 @@
             <param name="key">The key to check</param>
             <returns>Whether the key is held</returns>
         </member>
-        <member name="F:UndyneFight_Ex.GameStates.GameRule.nameColor">
+        <member name="P:UndyneFight_Ex.GameStates.GameName">
+            <summary>
+            The name of your game, the same name will be used in the save folder
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.GameStates.SavePath">
+            <summary>
+            The save path to your game
+            </summary>
+        </member>
+        <member name="T:UndyneFight_Ex.GameStates.GameRule">
+            <summary>
+            Actually going to pull this next version
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.GameStates.GameRule.nameColor">
             <summary>
             The color of the player name, VIP can have blue/orange/colorful instead of only white
             </summary>
@@ -5524,6 +5661,15 @@
             <summary>
             Resets rendering settings
             </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.KeybindData.Children">
+            <inheritdoc/>
+        </member>
+        <member name="M:UndyneFight_Ex.KeybindData.Load(UndyneFight_Ex.IO.SaveInfo)">
+            <inheritdoc/>
+        </member>
+        <member name="M:UndyneFight_Ex.KeybindData.Save">
+            <inheritdoc/>
         </member>
         <member name="T:UndyneFight_Ex.InputIdentity">
             <summary>
@@ -5725,6 +5871,72 @@
             Checker for player input of <see cref="T:UndyneFight_Ex.InputIdentity"/>
             </summary>
         </member>
+        <member name="T:UndyneFight_Ex.MouseSystem">
+            <summary>
+            The mouse input system
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.MouseSystem.Moved">
+            <summary>
+            Whether the cursor was used (Moved, Wheel scrolled, Clicked)
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.MouseSystem.PositionMoved">
+            <summary>
+            Whether the cursor was moved
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.MouseSystem.TransferredPosition">
+            <summary>
+            The position of the cursor with respect to <see cref="P:UndyneFight_Ex.MouseSystem.ScreenSize"/>
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.MouseSystem.ScreenSize">
+            <summary>
+            The size of the screen
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.MouseSystem.MouseWheelDelta">
+            <summary>
+            The delta value of mouse scroll wheel
+            </summary>
+        </member>
+        <member name="M:UndyneFight_Ex.MouseSystem.IsLeftClick">
+            <summary>
+            Whether the left mouse button is clicked
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UndyneFight_Ex.MouseSystem.IsLeftDown">
+            <summary>
+            Whether the left mouse button was held
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UndyneFight_Ex.MouseSystem.IsLeftReleasing">
+            <summary>
+            Whether the left mouse button is just released
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UndyneFight_Ex.MouseSystem.IsRightClick">
+            <summary>
+            Whether the right mouse button is clicked
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UndyneFight_Ex.MouseSystem.IsRightDown">
+            <summary>
+            Whether the right mouse button was held
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UndyneFight_Ex.MouseSystem.IsRightReleasing">
+            <summary>
+            Whether the right mouse button is just released
+            </summary>
+            <returns></returns>
+        </member>
         <member name="P:UndyneFight_Ex.FightSystem.CurrentSongs">
             <summary>
             Current song set selected
@@ -5867,6 +6079,12 @@
             <summary>
             Starts the game
             </summary>
+        </member>
+        <member name="M:UndyneFight_Ex.GameInterface.GameStartUp.PushSongset(UndyneFight_Ex.SongSet)">
+            <summary>
+            Add a new set of charts
+            </summary>
+            <param name="songset"></param>
         </member>
         <member name="P:UndyneFight_Ex.GameInterface.GameStartUp.SetUpShower">
             <summary>
@@ -6471,84 +6689,89 @@
             A list of built-in sprites
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.GlobalResources.Sprites.cursor">
+        <member name="P:UndyneFight_Ex.GlobalResources.Sprites.cursor">
             <summary>
             Cursor sprite
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.GlobalResources.Sprites.login">
+        <member name="P:UndyneFight_Ex.GlobalResources.Sprites.login">
             <summary>
             Legacy LOGIN sprite
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.GlobalResources.Sprites.championShip">
+        <member name="P:UndyneFight_Ex.GlobalResources.Sprites.championShip">
             <summary>
             Legacy CHAMPIONSHIP sprite
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.GlobalResources.Sprites.hashtex">
+        <member name="P:UndyneFight_Ex.GlobalResources.Sprites.hashtex">
             <summary>
             Hash texture
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.GlobalResources.Sprites.hashtex2">
+        <member name="P:UndyneFight_Ex.GlobalResources.Sprites.hashtex2">
             <summary>
             Hash texture 2
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.GlobalResources.Sprites.mainGame">
+        <member name="P:UndyneFight_Ex.GlobalResources.Sprites.mainGame">
             <summary>
             Legacy MAIN GAME sprite
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.GlobalResources.Sprites.options">
+        <member name="P:UndyneFight_Ex.GlobalResources.Sprites.options">
             <summary>
             Legacy OPTIONS sprite
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.GlobalResources.Sprites.achievements">
+        <member name="P:UndyneFight_Ex.GlobalResources.Sprites.achievements">
             <summary>
             Legacy ACHIVEMENTS sprite
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.GlobalResources.Sprites.record">
+        <member name="P:UndyneFight_Ex.GlobalResources.Sprites.record">
             <summary>
             Legacy RECORD sprite
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.GlobalResources.Sprites.debugArrow">
+        <member name="P:UndyneFight_Ex.GlobalResources.Sprites.debugArrow">
             <summary>
             Debug vector arrow sprite
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.GlobalResources.Sprites.loadingText">
+        <member name="P:UndyneFight_Ex.GlobalResources.Sprites.loadingText">
             <summary>
             Loading text
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.GlobalResources.Sprites.progressArrow">
+        <member name="P:UndyneFight_Ex.GlobalResources.Sprites.progressArrow">
             <summary>
             Loading arrow
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.GlobalResources.Sprites.medal">
+        <member name="P:UndyneFight_Ex.GlobalResources.Sprites.medal">
             <summary>
             Blue star medal
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.GlobalResources.Sprites.starMedal">
+        <member name="P:UndyneFight_Ex.GlobalResources.Sprites.starMedal">
             <summary>
             Purple star medal
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.GlobalResources.Sprites.brimMedal">
+        <member name="P:UndyneFight_Ex.GlobalResources.Sprites.brimMedal">
             <summary>
             Empty medal
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.GlobalResources.Sprites.loadingTexture">
+        <member name="P:UndyneFight_Ex.GlobalResources.Sprites.loadingTexture">
             <summary>
             Root texture
+            </summary>
+        </member>
+        <member name="T:UndyneFight_Ex.FightResources">
+            <summary>
+            Resources that are used in fight/charts
             </summary>
         </member>
         <member name="M:UndyneFight_Ex.FightResources.LoadContent``1(System.String,Microsoft.Xna.Framework.Content.ContentManager)">
@@ -6559,6 +6782,11 @@
             <param name="path">Path to file</param>
             <param name="cm">Content manager to use</param>
             <returns>The loaded content</returns>
+        </member>
+        <member name="F:UndyneFight_Ex.FightResources._spritesheet">
+            <summary>
+            The entire spritesheet for UF-Ex
+            </summary>
         </member>
         <member name="T:UndyneFight_Ex.FightResources.Font">
             <summary>
@@ -6600,9 +6828,19 @@
             A list of built-in sprites
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sprites.arrow">
+        <member name="P:UndyneFight_Ex.FightResources.Sprites.arrow">
             <summary>
             The arrow sprite, the first dimension indicates the arrow color, the second dimension of the array indicates the  mode of the arrow (Normal, Yellow, Green, Purple), the third dimension indicates the damage level
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.FightResources.Sprites.arrow_base">
+            <summary>
+            The sprite of the base of an arrow
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.FightResources.Sprites.arrow_fore">
+            <summary>
+            The sprite of the foreground of an arrow
             </summary>
         </member>
         <member name="P:UndyneFight_Ex.FightResources.Sprites.arrowShards">
@@ -6610,102 +6848,112 @@
             The arrow sprite, the first dimension of the array indicates the color (Blue, Red, Green, Purple), the second dimension indicates the mode of the arrow (Normal, Yellow, Green, Purple), the third dimension indicates the shard type
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sprites.voidarrow">
+        <member name="P:UndyneFight_Ex.FightResources.Sprites.voidarrow">
             <summary>
             Sprites of the void arrows
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sprites.player">
+        <member name="P:UndyneFight_Ex.FightResources.Sprites.player">
             <summary>
             Sprite of the Soul
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sprites.soulCollide">
+        <member name="P:UndyneFight_Ex.FightResources.Sprites.soulCollide">
             <summary>
             Sprite of the Graze of the soul
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sprites.brokenHeart">
+        <member name="P:UndyneFight_Ex.FightResources.Sprites.brokenHeart">
             <summary>
             Sprite of the heart broken in game over
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sprites.star">
+        <member name="P:UndyneFight_Ex.FightResources.Sprites.star">
             <summary>
             Sprite of a star
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sprites.knife">
+        <member name="P:UndyneFight_Ex.FightResources.Sprites.knife">
             <summary>
             Sprite of a slash beam
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sprites.KnifeWarn">
+        <member name="P:UndyneFight_Ex.FightResources.Sprites.KnifeWarn">
             <summary>
             Sprite of a knife beam warning
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sprites.fireball">
+        <member name="P:UndyneFight_Ex.FightResources.Sprites.fireball">
             <summary>
             Sprite of a fireball
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sprites.leftHeart">
+        <member name="P:UndyneFight_Ex.FightResources.Sprites.leftHeart">
             <summary>
-            Left and right halves of the heart
+            Left half of the heart
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sprites.rightHeart">
+        <member name="P:UndyneFight_Ex.FightResources.Sprites.rightHeart">
             <summary>
-            Left and right halves of the heart
+            Right half of the heart
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sprites.heartPieces">
+        <member name="P:UndyneFight_Ex.FightResources.Sprites.warningLine">
+            <summary>
+            Sprite of a warning line
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.FightResources.Sprites.boneSlab">
+            <summary>
+            Sprite of a bone slab
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.FightResources.Sprites.heartPieces">
             <summary>
             Sprites of heart pieces in game over
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sprites.pixUnit">
+        <member name="P:UndyneFight_Ex.FightResources.Sprites.pixUnit">
             <summary>
             One pixel
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sprites.fireParticle">
+        <member name="P:UndyneFight_Ex.FightResources.Sprites.fireParticle">
             <summary>
             Trail sprite for arrow speed up
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sprites.bullet">
+        <member name="P:UndyneFight_Ex.FightResources.Sprites.bullet">
             <summary>
             Gun bullet sprite
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sprites.target">
+        <member name="P:UndyneFight_Ex.FightResources.Sprites.target">
             <summary>
             Gun aiming target sprite
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sprites.lightBall">
+        <member name="P:UndyneFight_Ex.FightResources.Sprites.lightBall">
             <summary>
             Circle sprite
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sprites.lightLine">
+        <member name="P:UndyneFight_Ex.FightResources.Sprites.lightLine">
             <summary>
             Sprite of pixel with bloom effect
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sprites.square">
+        <member name="P:UndyneFight_Ex.FightResources.Sprites.square">
             <summary>
             Square sprite
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sprites.shield">
+        <member name="P:UndyneFight_Ex.FightResources.Sprites.shield">
             <summary>
             The sprite of the player's shield
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sprites.shinyShield">
+        <member name="P:UndyneFight_Ex.FightResources.Sprites.shinyShield">
             <summary>
             The sprite to display on the shield when arrow collides
             </summary>
@@ -6715,112 +6963,112 @@
             Sprite background for the shield
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sprites.spear">
+        <member name="P:UndyneFight_Ex.FightResources.Sprites.spear">
             <summary>
             Sprite of a spear
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sprites.spike">
+        <member name="P:UndyneFight_Ex.FightResources.Sprites.spike">
             <summary>
             Sprite of a bone spike
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sprites.spider">
+        <member name="P:UndyneFight_Ex.FightResources.Sprites.spider">
             <summary>
             Sprite of a spider
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sprites.boxPiece">
+        <member name="P:UndyneFight_Ex.FightResources.Sprites.boxPiece">
             <summary>
             Sprite of a broken box side (Unused)
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sprites.Croissant">
+        <member name="P:UndyneFight_Ex.FightResources.Sprites.Croissant">
             <summary>
             Sprite of croissant (Spider Dance)
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sprites.stuck1">
+        <member name="P:UndyneFight_Ex.FightResources.Sprites.stuck1">
             <summary>
-            Sprites of Green Soul Blaster hitting the shield
+            Sprite of Green Soul Blaster hitting the shield
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sprites.stuck2">
+        <member name="P:UndyneFight_Ex.FightResources.Sprites.stuck2">
             <summary>
-            Sprites of Green Soul Blaster hitting the shield
+            Sprite of Green Soul Blaster hitting the shield
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sprites.hpText">
+        <member name="P:UndyneFight_Ex.FightResources.Sprites.hpText">
             <summary>
             Sprite of HP of UI
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sprites.krText">
+        <member name="P:UndyneFight_Ex.FightResources.Sprites.krText">
             <summary>
             Sprite of KR of UI
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sprites.boneHead">
+        <member name="P:UndyneFight_Ex.FightResources.Sprites.boneHead">
             <summary>
-            Sprites of bone parts
+            Sprites of bone end
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sprites.boneBody">
+        <member name="P:UndyneFight_Ex.FightResources.Sprites.boneBody">
             <summary>
-            Sprites of bone parts
+            Sprite of bone body
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sprites.platform">
-            <summary>
-            Sprites for platform
-            </summary>
-        </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sprites.platformSide">
+        <member name="P:UndyneFight_Ex.FightResources.Sprites.platform">
             <summary>
             Sprites for platform
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sprites.GBStart">
+        <member name="P:UndyneFight_Ex.FightResources.Sprites.platformSide">
+            <summary>
+            Sprites for platform sides
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.FightResources.Sprites.GBStart">
             <summary>
             Sprites of GB beginning to fire
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sprites.GBShooting">
+        <member name="P:UndyneFight_Ex.FightResources.Sprites.GBShooting">
             <summary>
             Sprites of GB during fire
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sprites.GBLaser">
+        <member name="P:UndyneFight_Ex.FightResources.Sprites.GBLaser">
             <summary>
             Sprite of GB beam
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sprites.explodes">
+        <member name="P:UndyneFight_Ex.FightResources.Sprites.explodes">
             <summary>
             Sprite of explosion (Eternal Spring Dream)
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sprites.explodeTrigger">
+        <member name="P:UndyneFight_Ex.FightResources.Sprites.explodeTrigger">
             <summary>
             Sprite of exploding card (Eternal Spring Dream)
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sprites.goldenBrim">
+        <member name="P:UndyneFight_Ex.FightResources.Sprites.goldenBrim">
             <summary>
             Sprite of golden outline of arrow
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sprites.accuracyBar">
+        <member name="P:UndyneFight_Ex.FightResources.Sprites.accuracyBar">
             <summary>
             Sprite of accuracy bar on the bottom
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sprites.allPerfectText">
+        <member name="P:UndyneFight_Ex.FightResources.Sprites.allPerfectText">
             <summary>
             Sprite of ALL PERFECT displayed in result
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sprites.accuracyPointers">
+        <member name="P:UndyneFight_Ex.FightResources.Sprites.accuracyPointers">
             <summary>
             Sprites of accuracy bars on the bottom
             </summary>
@@ -6842,7 +7090,7 @@
         </member>
         <member name="P:UndyneFight_Ex.FightResources.Sprites.ParasolMett">
             <summary>
-            Sprite of a Mettaton with parasol abrrage
+            Sprite of a Mettaton with parasol barrage
             </summary>
         </member>
         <member name="P:UndyneFight_Ex.FightResources.Sprites.MettBomb">
@@ -6870,32 +7118,32 @@
             A list of built-in audio
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sounds.switchScene">
+        <member name="P:UndyneFight_Ex.FightResources.Sounds.switchScene">
             <summary>
             Used for large scale scene transition
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sounds.boneSpawnLarge">
+        <member name="P:UndyneFight_Ex.FightResources.Sounds.boneSpawnLarge">
             <summary>
             Used for creating large bones
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sounds.slam">
+        <member name="P:UndyneFight_Ex.FightResources.Sounds.slam">
             <summary>
             Slamming SFX
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sounds.playerSlice">
+        <member name="P:UndyneFight_Ex.FightResources.Sounds.playerSlice">
             <summary>
             SFX of player attack
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sounds.printWord">
+        <member name="P:UndyneFight_Ex.FightResources.Sounds.printWord">
             <summary>
             SFX of text typing
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sounds.sansWord">
+        <member name="P:UndyneFight_Ex.FightResources.Sounds.sansWord">
             <summary>
             SFX of Sans talking
             </summary>
@@ -6915,117 +7163,117 @@
             SFX of new arrow collision
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sounds.heal">
+        <member name="P:UndyneFight_Ex.FightResources.Sounds.heal">
             <summary>
             SFX of healing
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sounds.playerHurt">
+        <member name="P:UndyneFight_Ex.FightResources.Sounds.playerHurt">
             <summary>
             SFX of player taking damage
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sounds.spearAppear">
+        <member name="P:UndyneFight_Ex.FightResources.Sounds.spearAppear">
             <summary>
             SFX of a spear appearing
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sounds.spearShoot">
+        <member name="P:UndyneFight_Ex.FightResources.Sounds.spearShoot">
             <summary>
             SFX of a spear being shot
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sounds.pierce">
+        <member name="P:UndyneFight_Ex.FightResources.Sounds.pierce">
             <summary>
             SFX of piercing, often used for creating bones
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sounds.select">
+        <member name="P:UndyneFight_Ex.FightResources.Sounds.select">
             <summary>
             SFX of selecting menu choice
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sounds.changeSelection">
+        <member name="P:UndyneFight_Ex.FightResources.Sounds.changeSelection">
             <summary>
             SFX of changing menu choice
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sounds.change">
+        <member name="P:UndyneFight_Ex.FightResources.Sounds.change">
             <summary>
             SFX of Sans flickering the screen
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sounds.damaged">
+        <member name="P:UndyneFight_Ex.FightResources.Sounds.damaged">
             <summary>
             SFX of an enemy being damaged
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sounds.die1">
+        <member name="P:UndyneFight_Ex.FightResources.Sounds.die1">
             <summary>
             SFX of soul split in half
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sounds.die2">
+        <member name="P:UndyneFight_Ex.FightResources.Sounds.die2">
             <summary>
             SFX of soul shattering
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sounds.GBSpawn">
+        <member name="P:UndyneFight_Ex.FightResources.Sounds.GBSpawn">
             <summary>
             SFX of Gaster Blaster spawning
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sounds.GBShoot">
+        <member name="P:UndyneFight_Ex.FightResources.Sounds.GBShoot">
             <summary>
             SFX of Gaster Blaster firing
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sounds.explode">
+        <member name="P:UndyneFight_Ex.FightResources.Sounds.explode">
             <summary>
             SFX of an explosion
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sounds.destroy">
+        <member name="P:UndyneFight_Ex.FightResources.Sounds.destroy">
             <summary>
             SFX of an item being destroyed
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sounds.gunTargeting">
+        <member name="P:UndyneFight_Ex.FightResources.Sounds.gunTargeting">
             <summary>
-            SFX of a gun targetting
+            SFX of a gun targeting
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sounds.gunShot">
+        <member name="P:UndyneFight_Ex.FightResources.Sounds.gunShot">
             <summary>
             SFX of a gun being fired
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sounds.largeKnife">
+        <member name="P:UndyneFight_Ex.FightResources.Sounds.largeKnife">
             <summary>
             SFX of DT2 knife
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sounds.boneSlabSpawn">
+        <member name="P:UndyneFight_Ex.FightResources.Sounds.boneSlabSpawn">
             <summary>
             SFX of a bone slab spawning/enemy encounter
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sounds.giga">
+        <member name="P:UndyneFight_Ex.FightResources.Sounds.giga">
             <summary>
             SFX of DT2 yelling
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sounds.star0">
+        <member name="P:UndyneFight_Ex.FightResources.Sounds.star0">
             <summary>
             SFX of star appearing
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sounds.star1">
+        <member name="P:UndyneFight_Ex.FightResources.Sounds.star1">
             <summary>
             SFX of star firing
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.FightResources.Sounds.sparkles">
+        <member name="P:UndyneFight_Ex.FightResources.Sounds.sparkles">
             <summary>
             SFX of a sparkle
             </summary>
@@ -7047,7 +7295,7 @@
         </member>
         <member name="T:UndyneFight_Ex.FightResources.FightSprites">
             <summary>
-            A list of sprites used in fighting
+            A list of sprites used in fighting (Currently unused)
             </summary>
         </member>
         <member name="T:UndyneFight_Ex.FightResources.Shaders">
@@ -7135,6 +7383,11 @@
             Pixelates the screen
             </summary>
         </member>
+        <member name="P:UndyneFight_Ex.FightResources.Shaders.Tyndall">
+            <summary>
+            Scattering light shader
+            </summary>
+        </member>
         <member name="P:UndyneFight_Ex.FightResources.Shaders.Spiral">
             <summary>
             That one shader in TAS right before the glowing line
@@ -7170,6 +7423,26 @@
             Creates a ripple effect, do not confuse with <see cref="P:UndyneFight_Ex.FightResources.Shaders.Seismic"/>
             </summary>
         </member>
+        <member name="T:UndyneFight_Ex.Resource">
+            <summary>
+            Utilities for resource loading
+            </summary>
+        </member>
+        <member name="M:UndyneFight_Ex.Resource.ToTexture2D(MonoGame.Extended.Graphics.Sprite)">
+            <summary>
+            Converts a <see cref="T:MonoGame.Extended.Graphics.Sprite"/> into <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D"/> for common support
+            </summary>
+            <param name="sprite">The sprite to convert</param>
+            <returns>The texture after conversion</returns>
+        </member>
+        <member name="M:UndyneFight_Ex.Resource.LoadSprite(MonoGame.Extended.Graphics.Texture2DAtlas,System.String)">
+            <summary>
+            Loads a sprite from a spritesheet
+            </summary>
+            <param name="sheet">The sheet to load from</param>
+            <param name="key">The key in the json file</param>
+            <returns>The texture</returns>
+        </member>
         <member name="T:UndyneFight_Ex.UserService.AchievementObject">
             <summary>
             A singular achievement
@@ -7181,6 +7454,11 @@
             A singular achievement
             </summary>
             <param name="target"></param>
+        </member>
+        <member name="F:UndyneFight_Ex.UserService.AchievementObject.Achievement">
+            <summary>
+            The achievement this object represents
+            </summary>
         </member>
         <member name="P:UndyneFight_Ex.UserService.AchievementObject.Children">
             <inheritdoc/>
@@ -7199,7 +7477,7 @@
         <member name="P:UndyneFight_Ex.UserService.AchievementManager.Children">
             <inheritdoc/>
         </member>
-        <member name="F:UndyneFight_Ex.UserService.AchievementManager.AchievementObjects">
+        <member name="P:UndyneFight_Ex.UserService.AchievementManager.AchievementObjects">
             <summary>
             The list of singular achievements
             </summary>
@@ -7640,6 +7918,13 @@
             <param name="name">The name of the song</param>
             <returns></returns>
         </member>
+        <member name="M:UndyneFight_Ex.UserService.SongManager.SongPlayed(System.String)">
+            <summary>
+            Checks whether a chart was played
+            </summary>
+            <param name="curFight">The name of the chart</param>
+            <returns></returns>
+        </member>
         <member name="M:UndyneFight_Ex.UserService.SongManager.Load(UndyneFight_Ex.IO.SaveInfo)">
             <inheritdoc/>
         </member>
@@ -7764,6 +8049,9 @@
             User custom settings
             </summary>
         </member>
+        <member name="P:UndyneFight_Ex.UserService.Settings.Children">
+            <inheritdoc/>
+        </member>
         <member name="M:UndyneFight_Ex.UserService.Settings.Load(UndyneFight_Ex.IO.SaveInfo)">
             <inheritdoc/>
         </member>
@@ -7774,6 +8062,9 @@
             <summary>
             User's statistic
             </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.UserService.Statistic.Children">
+            <inheritdoc/>
         </member>
         <member name="P:UndyneFight_Ex.UserService.Statistic.DeathCount">
             <summary>
@@ -7813,12 +8104,17 @@
             Nested save info
             </summary>
         </member>
+        <member name="T:UndyneFight_Ex.UserService.User">
+            <summary>
+            A user account
+            </summary>
+        </member>
         <member name="M:UndyneFight_Ex.UserService.User.CreateNew(System.String,System.String)">
             <summary>
             Creates a new user
             </summary>
-            <param name="name"></param>
-            <param name="password"></param>
+            <param name="name">The name of the user</param>
+            <param name="password">The password of the user</param>
             <returns></returns>
         </member>
         <member name="P:UndyneFight_Ex.UserService.User.Children">
@@ -7941,6 +8237,16 @@
             Invokes logout event
             </summary>
         </member>
+        <member name="P:UndyneFight_Ex.UserService.User.OnlineAsync">
+            <summary>
+            Whether the data is synced to the server (Currently unused)
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.UserService.User.PasswordMemory">
+            <summary>
+            The password stored in memory after login (Currently unused)
+            </summary>
+        </member>
         <member name="T:UndyneFight_Ex.UserService.SingleChallenge">
             <summary>
             Singular challenge data
@@ -8027,14 +8333,118 @@
             <param name="championship">The name of the championship</param>
             <returns></returns>
         </member>
+        <member name="T:UndyneFight_Ex.Achievements.CheckerType">
+            <summary>
+            The type of data to check for the achievement
+            </summary>
+        </member>
+        <member name="F:UndyneFight_Ex.Achievements.CheckerType.User">
+            <summary>
+            To check user data
+            </summary>
+        </member>
+        <member name="F:UndyneFight_Ex.Achievements.CheckerType.Song">
+            <summary>
+            To check chart data
+            </summary>
+        </member>
+        <member name="T:UndyneFight_Ex.Achievements.IAchievementCheck">
+            <summary>
+            Interface for achievement progress checkers
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.Achievements.IAchievementCheck.CheckType">
+            <summary>
+            The type of data to check
+            </summary>
+        </member>
+        <member name="M:UndyneFight_Ex.Achievements.IAchievementCheck.ProgressCheck(System.Object)">
+            <summary>
+            The method to use to evaluate the progress
+            </summary>
+            <param name="input">Whatever argument should be used for evaluation</param>
+            <returns></returns>
+        </member>
+        <member name="T:UndyneFight_Ex.Achievements.UserDataChecker">
+            <summary>
+            An achievement checker for user data
+            </summary>
+            <param name="checker">The function to use</param>
+        </member>
+        <member name="M:UndyneFight_Ex.Achievements.UserDataChecker.#ctor(System.Func{UndyneFight_Ex.UserService.User,System.Int32})">
+            <summary>
+            An achievement checker for user data
+            </summary>
+            <param name="checker">The function to use</param>
+        </member>
+        <member name="P:UndyneFight_Ex.Achievements.UserDataChecker.CheckType">
+            <inheritdoc/>
+        </member>
+        <member name="M:UndyneFight_Ex.Achievements.UserDataChecker.ProgressCheck(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="T:UndyneFight_Ex.Achievements.SongDataChecker">
+            <summary>
+            An achievement checker for chart data
+            </summary>
+            <param name="checker">The function to use</param>
+        </member>
+        <member name="M:UndyneFight_Ex.Achievements.SongDataChecker.#ctor(System.Func{UndyneFight_Ex.SongSystem.SongPlayData,System.Int32})">
+            <summary>
+            An achievement checker for chart data
+            </summary>
+            <param name="checker">The function to use</param>
+        </member>
+        <member name="P:UndyneFight_Ex.Achievements.SongDataChecker.CheckType">
+            <inheritdoc/>
+        </member>
+        <member name="M:UndyneFight_Ex.Achievements.SongDataChecker.ProgressCheck(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="T:UndyneFight_Ex.Achievements.Achievement">
+            <summary>
+            The achievement class
+            </summary>
+            <param name="title">The title of the achievement</param>
+            <param name="introduction">The description of the achievement</param>
+            <param name="totalProgress">The total progress of the achievement</param>
+            <param name="progressChecker">The class to check the progress with</param>
+        </member>
+        <member name="M:UndyneFight_Ex.Achievements.Achievement.#ctor(System.String,System.String,System.Int32,UndyneFight_Ex.Achievements.IAchievementCheck)">
+            <summary>
+            The achievement class
+            </summary>
+            <param name="title">The title of the achievement</param>
+            <param name="introduction">The description of the achievement</param>
+            <param name="totalProgress">The total progress of the achievement</param>
+            <param name="progressChecker">The class to check the progress with</param>
+        </member>
+        <member name="M:UndyneFight_Ex.Achievements.Achievement.CheckProgress(System.Object)">
+            <summary>
+            Checks whether the achievement is just achieved
+            </summary>
+            <param name="checkObj">The argument to pass into the <see cref="M:UndyneFight_Ex.Achievements.IAchievementCheck.ProgressCheck(System.Object)"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:UndyneFight_Ex.Achievements.Achievement.LoadProgress(System.Int32)">
+            <summary>
+            Updates the progress when loading from a save file
+            </summary>
+            <param name="progress">The progress fetched from the save file</param>
+        </member>
         <member name="P:UndyneFight_Ex.Achievements.Achievement.AchievementIntroduction">
             <summary>
-            The requirements/description of the achievement
+            The description of the achievement
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.Achievements.Achievement.ProgressChecker">
+            <summary>
+            The class to check the progress with
             </summary>
         </member>
         <member name="P:UndyneFight_Ex.Achievements.Achievement.CheckType">
             <summary>
-            The data to check, either the user or song
+            The type of data to check
             </summary>
         </member>
         <member name="P:UndyneFight_Ex.Achievements.Achievement.FullProgress">
@@ -8067,11 +8477,6 @@
             Whether the achievement is forcefully disabled
             </summary>
         </member>
-        <member name="P:UndyneFight_Ex.Achievements.Achievement.ID">
-            <summary>
-            The ID of the achievement
-            </summary>
-        </member>
         <member name="M:UndyneFight_Ex.Achievements.AchievementManager.PushAchievement(UndyneFight_Ex.Achievements.Achievement)">
             <summary>
             Adds an achievement
@@ -8083,12 +8488,69 @@
             v0.3.0+ Achievement UI
             </summary>
         </member>
+        <member name="M:UndyneFight_Ex.PlayerManager.Login(System.String)">
+            <summary>
+            Logins as the user with the given username
+            </summary>
+            <param name="s">The username</param>
+        </member>
+        <member name="M:UndyneFight_Ex.PlayerManager.Save">
+            <summary>
+            Saves the current user's data
+            </summary>
+        </member>
+        <member name="M:UndyneFight_Ex.PlayerManager.RecordMark(System.String,System.Int32,UndyneFight_Ex.SongSystem.SongResult)">
+            <summary>
+            Stores the chart completion result for the current user
+            </summary>
+            <param name="songName">The name of the chart</param>
+            <param name="difficulty">The difficulty played</param>
+            <param name="result">The chart result</param>
+        </member>
+        <member name="M:UndyneFight_Ex.PlayerManager.RecordMark(System.String,System.Int32,UndyneFight_Ex.SongSystem.SkillMark,System.Int32,System.Boolean,System.Boolean,System.Single)">
+            <summary>
+            Stores the chart completion result for the current user
+            </summary>
+            <param name="songName">The name of the chart</param>
+            <param name="difficulty">The difficulty played</param>
+            <param name="mark">The rating of the play</param>
+            <param name="score">The score of the play</param>
+            <param name="fc">Whether it was a Full Combo</param>
+            <param name="ap">Whether it was an All Perfect</param>
+            <param name="acc">The accuracy of the chart</param>
+        </member>
+        <member name="M:UndyneFight_Ex.PlayerManager.Remove(System.String)">
+            <summary>
+            Removes the user with the given username
+            </summary>
+            <param name="s">The username to remove</param>
+        </member>
+        <member name="M:UndyneFight_Ex.PlayerManager.Rename(System.String,System.String)">
+            <summary>
+            Renames the current user
+            </summary>
+            <param name="old">The old username</param>
+            <param name="now">The new username</param>
+        </member>
+        <member name="M:UndyneFight_Ex.PlayerManager.AddNewUser(System.String,System.String)">
+            <summary>
+            Creates a new user
+            </summary>
+            <param name="name">The new username</param>
+            <param name="password">The password of the user</param>
+        </member>
+        <member name="M:UndyneFight_Ex.PlayerManager.AddUser(UndyneFight_Ex.UserService.User)">
+            <summary>
+            Creates a new user
+            </summary>
+            <param name="info">The user to add</param>
+        </member>
         <member name="P:UndyneFight_Ex.PlayerManager.CurrentUser">
             <summary>
             The current user that is logged in
             </summary>
         </member>
-        <member name="F:UndyneFight_Ex.PlayerManager.currentPlayer">
+        <member name="P:UndyneFight_Ex.PlayerManager.currentPlayer">
             <summary>
             The name of the current user
             </summary>
@@ -8101,6 +8563,11 @@
         <member name="P:UndyneFight_Ex.PlayerManager.PlayerSkill">
             <summary>
             The rating of the user
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.PlayerManager.playerInfo">
+            <summary>
+            The list of users in the data folder
             </summary>
         </member>
         <member name="T:UndyneFight_Ex.IO.SaveInfo">
@@ -8232,6 +8699,11 @@
             <param name="path">The key of the save info</param>
             <returns></returns>
         </member>
+        <member name="T:UndyneFight_Ex.IO.IOEvent">
+            <summary>
+            Reading, writing, encoding, and decoding custom files
+            </summary>
+        </member>
         <member name="M:UndyneFight_Ex.IO.IOEvent.WriteCustomFile(System.String,System.Collections.Generic.List{System.Byte})">
             <summary>
             Creates an custom encoded file
@@ -8300,6 +8772,11 @@
             </summary>
             <param name="info">The save info to convert</param>
             <returns></returns>
+        </member>
+        <member name="T:UndyneFight_Ex.IO.FileIO">
+            <summary>
+            For reading player file data
+            </summary>
         </member>
         <member name="M:UndyneFight_Ex.IO.FileIO.ReadFile(System.String)">
             <summary>
@@ -8520,14 +8997,12 @@
             The volume of the audio
             </summary>
         </member>
-        <member name="M:UndyneFight_Ex.Audio.#ctor(System.String,Microsoft.Xna.Framework.Content.ContentManager,System.Nullable{System.Single},System.Nullable{System.Single})">
+        <member name="M:UndyneFight_Ex.Audio.#ctor(System.String,Microsoft.Xna.Framework.Content.ContentManager)">
             <summary>
             Loads an audio to memory
             </summary>
             <param name="path">The path to the audio file directory</param>
             <param name="loader">The loader to use</param>
-            <param name="startPos">The initial position to load (in milliseconds)</param>
-            <param name="endPos">The ending position to load (in milliseconds)</param>
         </member>
         <member name="P:UndyneFight_Ex.Audio.OnPlay">
             <summary>
@@ -8634,10 +9109,10 @@
             <summary>
             Checks whether the point is inside of a triangle
             </summary>
-            <param name="v1">First vertex of the triangle</param>
-            <param name="v2">Second vertex of the triangle</param>
-            <param name="v3">Third vertex of the triangle</param>
-            <param name="target">The point to check</param>
+            <param name="A">First vertex of the triangle</param>
+            <param name="B">Second vertex of the triangle</param>
+            <param name="C">Third vertex of the triangle</param>
+            <param name="Point">The point to check</param>
             <returns>Whether the point is inside the triangle</returns>
         </member>
         <member name="M:UndyneFight_Ex.MathUtil.RectangleInTriangle(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)">
@@ -8703,7 +9178,7 @@
         </member>
         <member name="M:UndyneFight_Ex.MathUtil.ScalarProject(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)">
             <summary>
-            Projects a vector onto the given vector
+            Returns the scalar projection of a vector onto the given vector
             </summary>
             <param name="origin">The vector to project</param>
             <param name="vec">The vector to project to</param>
@@ -8755,14 +9230,14 @@
             </summary>
             <param name="start">The starting vector</param>
             <param name="end">The ending vector</param>
-            <returns>The angle between the two vectors</returns>
+            <returns>The angle between the two vectors in degrees</returns>
         </member>
         <member name="M:UndyneFight_Ex.MathUtil.Direction(Microsoft.Xna.Framework.Vector2)">
             <summary>
-            Gets the direction of the vector with respect to the origin
+            Gets the direction of the vector with respect to the origin in degrees
             </summary>
             <param name="vec">The vector to check</param>
-            <returns>The angle of the vector</returns>
+            <returns>The angle of the vector in degrees</returns>
         </member>
         <member name="M:UndyneFight_Ex.MathUtil.Sigmoid01(System.Single)">
             <summary>
@@ -8786,24 +9261,6 @@
             <param name="vec">The first vector</param>
             <param name="vec2">The second vector</param>
             <returns>The cross product</returns>
-        </member>
-        <member name="M:UndyneFight_Ex.MathUtil.Clamp(System.Int32,System.Int32,System.Int32)">
-            <summary>
-            Clamps the value between the two specified values
-            </summary>
-            <param name="min">The minimum value</param>
-            <param name="val">The value to set</param>
-            <param name="max">The maximum value</param>
-            <returns>The clamped value</returns>
-        </member>
-        <member name="M:UndyneFight_Ex.MathUtil.Clamp(System.Single,System.Single,System.Single)">
-            <summary>
-            Clamps the value between the two specified values
-            </summary>
-            <param name="min">The minimum value</param>
-            <param name="val">The value to set</param>
-            <param name="max">The maximum value</param>
-            <returns>The clamped value</returns>
         </member>
         <member name="M:UndyneFight_Ex.MathUtil.GetRadian(System.Single)">
             <summary>
@@ -8850,13 +9307,6 @@
             <param name="x">The minimum value</param>
             <param name="y">The maximum value</param>
             <returns>The random value</returns>
-        </member>
-        <member name="M:UndyneFight_Ex.MathUtil.Sqrt(System.Single)">
-            <summary>
-            Returns the square root of the specified number
-            </summary>
-            <param name="v">The value to get the square root of</param>
-            <returns>The square root of <paramref name="v"/></returns>
         </member>
         <member name="M:UndyneFight_Ex.MathUtil.RandIn``1(``0[])">
             <summary>
@@ -8990,7 +9440,6 @@
             <summary>
             Gets the <see cref="T:UndyneFight_Ex.MiscUtil.ShorthandName"/> of the object
             </summary>
-            <typeparam name="T">An object</typeparam>
             <param name="thing">The object to pull the shorthand name of</param>
             <returns>The <see cref="T:UndyneFight_Ex.MiscUtil.ShorthandName"/> of the object</returns>
         </member>
@@ -9017,6 +9466,13 @@
             </summary>
             <param name="identity">The identity to get</param>
             <returns>The key the identity is binded to</returns>
+        </member>
+        <member name="M:UndyneFight_Ex.MiscUtil.SetInputKeys(UndyneFight_Ex.InputIdentity,System.Collections.Generic.List{Microsoft.Xna.Framework.Input.Keys})">
+            <summary>
+            Sets the current key binding of the input identity
+            </summary>
+            <param name="identity">The identity to set</param>
+            <param name="keys">The keys to set to</param>
         </member>
         <member name="M:UndyneFight_Ex.MiscUtil.GetAsset(System.String,System.Type)">
             <summary>
@@ -9084,6 +9540,11 @@
         <member name="F:UndyneFight_Ex.MiscUtil.TextBuilder.ParsedText">
             <summary>
             The parsed text to display
+            </summary>
+        </member>
+        <member name="F:UndyneFight_Ex.MiscUtil.TextBuilder.SourceText">
+            <summary>
+            The original string the user inputted
             </summary>
         </member>
         <member name="F:UndyneFight_Ex.MiscUtil.TextBuilder._glyphData">
@@ -9199,6 +9660,11 @@
         <member name="F:UndyneFight_Ex.MiscUtil.TextBuilder.DoRender">
             <summary>
             Whether to render the text
+            </summary>
+        </member>
+        <member name="F:UndyneFight_Ex.MiscUtil.TextBuilder._requireRegenerate">
+            <summary>
+            If a user has modified an element, mark for auto-reparse
             </summary>
         </member>
         <member name="M:UndyneFight_Ex.MiscUtil.TextBuilder.ParseText">
@@ -9602,15 +10068,6 @@
             </summary>
             <param name="time">The frames to delay</param>
             <returns></returns>
-        </member>
-        <member name="T:UndyneFight_Ex.TKValueEasing">
-            <summary>
-            Random thing I made because <see cref="T:UndyneFight_Ex.Entities.EasingUtil"/> returns inaccurate values for certain easing functions (Mostly EaseIn and EaseInOut/OutIn functions)<br/>
-            It is not recommended to use these functions without proper knowledge
-            </summary>
-        </member>
-        <member name="M:UndyneFight_Ex.TKValueEasing.EaseInQuad(System.Single,System.Single,System.Single,System.Single)">
-            Quadratic Easing
         </member>
         <member name="T:UndyneFight_Ex.Challenge">
             <summary>
@@ -11261,7 +11718,7 @@
         </member>
         <member name="F:UndyneFight_Ex.Fight.PrintingSettings.printSound">
             <summary>
-            The printing sound of the typer (Default <see cref="F:UndyneFight_Ex.FightResources.Sounds.printWord"/>)
+            The printing sound of the typer (Default <see cref="P:UndyneFight_Ex.FightResources.Sounds.printWord"/>)
             </summary>
         </member>
         <member name="T:UndyneFight_Ex.Fight.TextPrinter">
@@ -11330,6 +11787,9 @@
             </summary>
             <param name="text">The text to draw</param>
             <param name="textAttributes">The attributes of the text</param>
+        </member>
+        <member name="M:UndyneFight_Ex.Fight.TextPrinter.Update">
+            <inheritdoc/>
         </member>
         <member name="T:UndyneFight_Ex.SongSystem.IWaveSet">
             <summary>
@@ -11454,11 +11914,12 @@
             Duration of 1 beat
             </summary>
         </member>
-        <member name="M:UndyneFight_Ex.SongSystem.WaveConstructor.BeatTime(System.Single)">
+        <member name="M:UndyneFight_Ex.SongSystem.WaveConstructor.BeatTime(System.Single,System.Boolean)">
             <summary>
             Duration of the given beat time in frames
             </summary>
             <param name="x">Amount of beats</param>
+            <param name="fromStart">Whether to measure the beats from the beginning of the chart, useful when the chart has multiple BPM (Default true)</param>
             <returns>Amount of frames for <paramref name="x"/> beats</returns>
         </member>
         <member name="M:UndyneFight_Ex.SongSystem.WaveConstructor.InBeat(System.Single)">
@@ -11655,7 +12116,7 @@
             Adding '@' at the end or wrapping it in curly brackets would apply a tag to the arrow, i.e. "$0@E" or "$0{E}" would apply the tag "E" to the arrow
             </summary>
             <param name="Delay">The delay for the events to be executed, generally used for preventing spawning immediately within view</param>
-            <param name="Beat">Duration of 8 beats, generally used with <see cref="M:UndyneFight_Ex.SongSystem.WaveConstructor.BeatTime(System.Single)"/></param>
+            <param name="Beat">Duration of 8 beats, generally used with <see cref="!:BeatTime(float)"/></param>
             <param name="arrowspeed">The speed of the arrows</param>
             <param name="Barrage">The array of strings that contains the barrage</param>
         </member>
@@ -11800,6 +12261,116 @@
             The version of UF-Ex
             </summary>
         </member>
+        <member name="T:UndyneFight_Ex.Settings.SettingsManager">
+            <summary>
+            The manager for the in-game settings
+            </summary>
+        </member>
+        <member name="T:UndyneFight_Ex.Settings.SettingsManager.DataLibrary">
+            <summary>
+            The list of data used in settings
+            </summary>
+        </member>
+        <member name="T:UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality">
+            <summary>
+            The drawing quality of the game
+            </summary>
+        </member>
+        <member name="F:UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality.Low">
+            <summary>
+            Low quality
+            </summary>
+        </member>
+        <member name="F:UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality.Normal">
+            <summary>
+            Normal quality
+            </summary>
+        </member>
+        <member name="F:UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality.High">
+            <summary>
+            High quality
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.Settings.SettingsManager.DataLibrary.SpearBlockSound">
+            <summary>
+            The sound used when a spear hits the shield (0 for classic, 1 for new)
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.Settings.SettingsManager.DataLibrary.masterVolume">
+            <summary>
+            The master volume of the game
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.Settings.SettingsManager.DataLibrary.dialogAvailable">
+            <summary>
+            Whether to show dialog
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.Settings.SettingsManager.DataLibrary.preciseWarning">
+            <summary>
+            Whether the show "early" and "late" texts for green soul
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.Settings.SettingsManager.DataLibrary.reduceBlueAmount">
+            <summary>
+            The amount to reduce blue light in the game, range is [0, 100]
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.Settings.SettingsManager.DataLibrary.drawingQuality">
+            <summary>
+            The drawing quality of the game
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.Settings.SettingsManager.DataLibrary.SpearBlockingVolume">
+            <summary>
+            The volume of the spear blocking sound, range is [0, 100]
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.Settings.SettingsManager.DataLibrary.SFXVolume">
+            <summary>
+            The volume of sound effects, range is [0, 100]
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.Settings.SettingsManager.DataLibrary.ArrowSpeed">
+            <summary>
+            The speed of the arrows, range is [1, 1.5]
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.Settings.SettingsManager.DataLibrary.ArrowDelay">
+            <summary>
+            The delay of arrows and green soul blasters, range is [-50, 250]
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.Settings.SettingsManager.DataLibrary.ArrowScale">
+            <summary>
+            The scale of the arrows, range is [1, 1.25]
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.Settings.SettingsManager.DataLibrary.Mirror">
+            <summary>
+            Whether the flip blue and red arrows and blasters
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DisplayScorePercent">
+            <summary>
+            Whether to display the score percentage along side the perfect percentage
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawFPS">
+            <summary>
+            I don't...know why this is a thing?
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.Settings.SettingsManager.DataLibrary.SamplerState">
+            <summary>
+            The sampler state used in the game, can be "Nearest" or "3x Linear" or "Anisotropic"
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.Settings.SettingsManager.DataLibrary.NewArrowDrawingMethod">
+            <summary>
+            Whether to use the new arrow drawing method or not
+            </summary>
+        </member>
         <member name="T:UndyneFight_Ex.Program">
             <summary>
             The main class.
@@ -11880,7 +12451,7 @@
             <param name="width">The width of the line</param>
             <param name="cl">The <see cref="T:Microsoft.Xna.Framework.Color"/> of the line</param>
             <param name="depth">The depth of the line</param>
-            <param name="texture">The drawing texture of the line (Default <see cref="F:UndyneFight_Ex.FightResources.Sprites.pixUnit"/>)</param>
+            <param name="texture">The drawing texture of the line (Default <see cref="P:UndyneFight_Ex.FightResources.Sprites.pixUnit"/>)</param>
         </member>
         <member name="M:UndyneFight_Ex.DrawingLab.DrawVector(Microsoft.Xna.Framework.Vector2,System.Single)">
             <summary>
@@ -11986,7 +12557,7 @@
             <param name="width">The width of the line</param>
             <param name="cl">The colors of the line (Top Left, Top Right, Bottom Right, Bottom Left)</param>
             <param name="depth">The depth of the line</param>
-            <param name="texture">The drawing texture of the line (Default <see cref="F:UndyneFight_Ex.FightResources.Sprites.pixUnit"/>)</param>
+            <param name="texture">The drawing texture of the line (Default <see cref="P:UndyneFight_Ex.FightResources.Sprites.pixUnit"/>)</param>
         </member>
         <member name="M:UndyneFight_Ex.DrawingLab.DrawLineColors(Microsoft.Xna.Framework.Vector2,System.Single,System.Single,System.Single,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Graphics.Texture2D)">
             <summary>
@@ -11995,6 +12566,28 @@
             <param name="Centre">The center of the line</param>
             <param name="angle">The angle of the line</param>
             <param name="length">The length of the line</param>
+            <param name="width">The width of the line</param>
+            <param name="cl">The colors of the line (Top Left, Top Right, Bottom Right, Bottom Left)</param>
+            <param name="depth">The depth of the line</param>
+            <param name="texture">The texture of the line (Default none)</param>
+        </member>
+        <member name="M:UndyneFight_Ex.DrawingLab.DrawLineColors(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Color[],System.Single,Microsoft.Xna.Framework.Graphics.Texture2D)">
+            <summary>
+            Draws a line with different colors in each corner
+            </summary>
+            <param name="v1">The first vertex</param>
+            <param name="v2">The second vertex</param>
+            <param name="width">The width of the line</param>
+            <param name="cl">The colors of the line (Top Left, Top Right, Bottom Right, Bottom Left)</param>
+            <param name="depth">The depth of the line</param>
+            <param name="texture">The drawing texture of the line (Default <see cref="P:UndyneFight_Ex.FightResources.Sprites.pixUnit"/>)</param>
+        </member>
+        <member name="M:UndyneFight_Ex.DrawingLab.DrawLineColors(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Graphics.Texture2D)">
+            <summary>
+            Draws a line with different colors in each corner
+            </summary>
+            <param name="v1">The first vertex</param>
+            <param name="v2">The second vertex</param>
             <param name="width">The width of the line</param>
             <param name="cl">The colors of the line (Top Left, Top Right, Bottom Right, Bottom Left)</param>
             <param name="depth">The depth of the line</param>
@@ -12053,73 +12646,6 @@
             </summary>
             <param name="vec">The vector to convert</param>
             <returns>The converted color</returns>
-        </member>
-        <member name="T:UndyneFight_Ex.Shader">
-            <summary>
-            The shader class
-            </summary>
-        </member>
-        <member name="M:UndyneFight_Ex.Shader.#ctor">
-            <summary>
-            The shader class
-            </summary>
-        </member>
-        <member name="M:UndyneFight_Ex.Shader.#ctor(Microsoft.Xna.Framework.Graphics.Effect)">
-            <summary>
-            Creates a shader using an existing <see cref="T:Microsoft.Xna.Framework.Graphics.Effect"/>
-            </summary>
-            <param name="effect"></param>
-        </member>
-        <member name="M:UndyneFight_Ex.Shader.#ctor(System.String)">
-            <summary>
-            Loads a shader in the given path
-            </summary>
-            <param name="path">The path of the shader</param>
-        </member>
-        <member name="P:UndyneFight_Ex.Shader.EffectName">
-            <summary>
-            The name of the effect used within the shader
-            </summary>
-        </member>
-        <member name="P:UndyneFight_Ex.Shader.Parameters">
-            <summary>
-            The parameters of the shader
-            </summary>
-        </member>
-        <member name="P:UndyneFight_Ex.Shader.StableEvents">
-            <summary>
-            The event to execute within the shader
-            </summary>
-        </member>
-        <member name="M:UndyneFight_Ex.Shader.RegisterTexture(Microsoft.Xna.Framework.Graphics.Texture2D,System.Int32)">
-            <summary>
-            Applies the given texture to the shader
-            </summary>
-            <param name="tex">The texture to import to the shader</param>
-            <param name="index">The index of the texture to import (Range should be [1, inf))</param>
-        </member>
-        <member name="M:UndyneFight_Ex.Shader.SetParameters(System.Collections.Generic.KeyValuePair{System.String,System.Object}[])">
-            <summary>
-            Sets multiple parameters to the shader
-            </summary>
-            <param name="vals">A KeyValuePair of the name of the parameter and the value</param>
-        </member>
-        <member name="M:UndyneFight_Ex.Shader.SetParameter(System.Collections.Generic.KeyValuePair{System.String,System.Object})">
-            <summary>
-            Sets a parameter of the shader
-            </summary>
-            <param name="val">The name and value to set</param>
-        </member>
-        <member name="M:UndyneFight_Ex.Shader.Update">
-            <summary>
-            Updates the shader
-            </summary>
-        </member>
-        <member name="M:UndyneFight_Ex.Shader.op_Implicit(UndyneFight_Ex.Shader)~Microsoft.Xna.Framework.Graphics.Effect">
-            <summary>
-            Converts the shader into its effect
-            </summary>
-            <param name="shader">The shader to convert form</param>
         </member>
         <member name="T:UndyneFight_Ex.GLFont">
             <summary>
@@ -12277,6 +12803,13 @@
             <param name="depth">The depth of the text</param>
             <param name="by_word">Whether the line break will consider the spaces</param>
         </member>
+        <member name="M:UndyneFight_Ex.GLFont.CharExists(System.Char)">
+            <summary>
+            Check whether a character exists in the font
+            </summary>
+            <param name="c">The character to check</param>
+            <returns>Whether the character exists</returns>
+        </member>
         <member name="M:UndyneFight_Ex.GLFont.MeasureChar(System.Char)">
             <summary>
             Gets the size of a specified <see cref="T:System.Char"/>
@@ -12284,9 +12817,406 @@
             <param name="ch">The character to measure the size of</param>
             <returns>The size of the given character</returns>
         </member>
+        <member name="T:UndyneFight_Ex.Shader">
+            <summary>
+            The shader class
+            </summary>
+        </member>
+        <member name="M:UndyneFight_Ex.Shader.#ctor">
+            <summary>
+            The shader class
+            </summary>
+        </member>
+        <member name="M:UndyneFight_Ex.Shader.#ctor(Microsoft.Xna.Framework.Graphics.Effect)">
+            <summary>
+            Creates a shader using an existing <see cref="T:Microsoft.Xna.Framework.Graphics.Effect"/>
+            </summary>
+            <param name="effect"></param>
+        </member>
+        <member name="M:UndyneFight_Ex.Shader.#ctor(System.String)">
+            <summary>
+            Loads a shader in the given path
+            </summary>
+            <param name="path">The path of the shader</param>
+        </member>
+        <member name="P:UndyneFight_Ex.Shader.EffectName">
+            <summary>
+            The name of the effect used within the shader
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.Shader.Parameters">
+            <summary>
+            The parameters of the shader
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.Shader.StableEvents">
+            <summary>
+            The event to execute within the shader
+            </summary>
+        </member>
+        <member name="M:UndyneFight_Ex.Shader.RegisterTexture(Microsoft.Xna.Framework.Graphics.Texture2D,System.Int32)">
+            <summary>
+            Applies the given texture to the shader
+            </summary>
+            <param name="tex">The texture to import to the shader</param>
+            <param name="index">The index of the texture to import (Range should be [1, inf))</param>
+        </member>
+        <member name="M:UndyneFight_Ex.Shader.SetParameters(System.Collections.Generic.KeyValuePair{System.String,System.Object}[])">
+            <summary>
+            Sets multiple parameters to the shader
+            </summary>
+            <param name="vals">A KeyValuePair of the name of the parameter and the value</param>
+        </member>
+        <member name="M:UndyneFight_Ex.Shader.SetParameter(System.Collections.Generic.KeyValuePair{System.String,System.Object})">
+            <summary>
+            Sets a parameter of the shader
+            </summary>
+            <param name="val">The name and value to set</param>
+        </member>
+        <member name="M:UndyneFight_Ex.Shader.Update">
+            <summary>
+            Updates the shader
+            </summary>
+        </member>
+        <member name="M:UndyneFight_Ex.Shader.op_Implicit(UndyneFight_Ex.Shader)~Microsoft.Xna.Framework.Graphics.Effect">
+            <summary>
+            Converts the shader into its effect
+            </summary>
+            <param name="shader">The shader to convert form</param>
+        </member>
+        <member name="T:UndyneFight_Ex.Shapes.IShape">
+            <summary>
+            Interface for shapes
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.Shapes.IShape.Vertices">
+            <summary>
+            The list of vertices of the shape
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.Shapes.IShape.Rotation">
+            <summary>
+            The rotation of the shape
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.Shapes.IShape.DrawData">
+            <summary>
+            The data for drawing the shape
+            </summary>
+        </member>
+        <member name="M:UndyneFight_Ex.Shapes.IShape.IntersectsWith(UndyneFight_Ex.Shapes.IShape)">
+            <summary>
+            Whether this shape is intersecting with another shape
+            </summary>
+            <param name="shape">The other shape</param>
+            <returns></returns>
+        </member>
+        <member name="M:UndyneFight_Ex.Shapes.IShape.Contains(UndyneFight_Ex.Shapes.IShape)">
+            <summary>
+            Whether this shape contains another shape
+            </summary>
+            <param name="shape">The other shape</param>
+            <returns></returns>
+        </member>
+        <member name="M:UndyneFight_Ex.Shapes.IShape.Draw">
+            <summary>
+            The drawing method of the shape
+            </summary>
+        </member>
+        <member name="T:UndyneFight_Ex.Shapes.DrawingData">
+            <summary>
+            The data for drawing the shape
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.Shapes.DrawingData.DrawingMode">
+            <summary>
+            The mode to draw the shape in
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.Shapes.DrawingData.BlendArray">
+            <summary>
+            The array of blends of the shape
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.Shapes.DrawingData.Blend">
+            <summary>
+            Sets the entire blend array into the given blend
+            </summary>
+        </member>
+        <member name="T:UndyneFight_Ex.Shapes.DrawingData.DrawMode">
+            <summary>
+            The mode of drawing of the shape
+            </summary>
+        </member>
+        <member name="F:UndyneFight_Ex.Shapes.DrawingData.DrawMode.None">
+            <summary>
+            Does not draw
+            </summary>
+        </member>
+        <member name="F:UndyneFight_Ex.Shapes.DrawingData.DrawMode.Outline">
+            <summary>
+            Draws the outline
+            </summary>
+        </member>
+        <member name="F:UndyneFight_Ex.Shapes.DrawingData.DrawMode.Filled">
+            <summary>
+            Draws a filled shape
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.Shapes.DrawingData.Depth">
+            <summary>
+            The depth of the shape
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.Shapes.DrawingData.Width">
+            <summary>
+            The width of the outline
+            </summary>
+        </member>
+        <member name="T:UndyneFight_Ex.Shapes.Triangle">
+            <summary>
+            A triangle
+            </summary>
+            <param name="v1">The first vertex of the triangle</param>
+            <param name="v2">The second vertex of the triangle</param>
+            <param name="v3">The third vertex of the triangle</param>
+        </member>
+        <member name="M:UndyneFight_Ex.Shapes.Triangle.#ctor(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)">
+            <summary>
+            A triangle
+            </summary>
+            <param name="v1">The first vertex of the triangle</param>
+            <param name="v2">The second vertex of the triangle</param>
+            <param name="v3">The third vertex of the triangle</param>
+        </member>
+        <member name="P:UndyneFight_Ex.Shapes.Triangle.Vertices">
+            <inheritdoc/>
+        </member>
+        <member name="P:UndyneFight_Ex.Shapes.Triangle.Rotation">
+            <inheritdoc/>
+        </member>
+        <member name="P:UndyneFight_Ex.Shapes.Triangle.DrawData">
+            <inheritdoc/>
+        </member>
+        <member name="M:UndyneFight_Ex.Shapes.Triangle.Contains(UndyneFight_Ex.Shapes.IShape)">
+            <inheritdoc/>
+        </member>
+        <member name="P:UndyneFight_Ex.Shapes.Triangle.Inradius">
+            <summary>
+            Radius of the inscribed circle
+            <see href="https://en.wikipedia.org/wiki/Incircle_and_excircles"/>
+            </summary>
+        </member>
+        <member name="M:UndyneFight_Ex.Shapes.Triangle.Draw">
+            <inheritdoc/>
+        </member>
+        <member name="M:UndyneFight_Ex.Shapes.Triangle.IntersectsWith(UndyneFight_Ex.Shapes.IShape)">
+            <inheritdoc/>
+        </member>
+        <member name="P:UndyneFight_Ex.Shapes.Triangle.Centroid">
+            <summary>
+            Gets the centroid of the triangle
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.Shapes.Triangle.Incenter">
+            <summary>
+            Gets the incenter of the triangle
+            </summary>
+        </member>
+        <member name="M:UndyneFight_Ex.Shapes.Triangle.op_Addition(UndyneFight_Ex.Shapes.Triangle,Microsoft.Xna.Framework.Vector2)">
+            <summary>
+            Offsets the triangle by the given vector
+            </summary>
+            <param name="tri">The triangle to offset</param>
+            <param name="vec">The amount to offset</param>
+            <returns>The triangle after the offset</returns>
+        </member>
+        <member name="M:UndyneFight_Ex.Shapes.Triangle.op_Subtraction(UndyneFight_Ex.Shapes.Triangle,Microsoft.Xna.Framework.Vector2)">
+            <summary>
+            Offsets the triangle by the given vector
+            </summary>
+            <param name="tri">The triangle to offset</param>
+            <param name="vec">The amount to offset</param>
+            <returns>The triangle after the offset</returns>
+        </member>
+        <member name="M:UndyneFight_Ex.Shapes.Triangle.op_Multiply(UndyneFight_Ex.Shapes.Triangle,System.Single)">
+            <summary>
+            Scales the triangle by the given scalar
+            </summary>
+            <param name="tri">The triangle to scale</param>
+            <param name="scale">The amount to scale</param>
+            <returns>The scaled triangle</returns>
+        </member>
+        <member name="M:UndyneFight_Ex.Shapes.Triangle.op_Division(UndyneFight_Ex.Shapes.Triangle,System.Single)">
+            <summary>
+            Scales the triangle by the given scalar
+            </summary>
+            <param name="tri">The triangle to scale</param>
+            <param name="scale">The amount to scale</param>
+            <returns>The scaled triangle</returns>
+        </member>
+        <member name="T:UndyneFight_Ex.Shapes.Rectangle">
+            <summary>
+            A rectangle
+            </summary>
+        </member>
+        <member name="M:UndyneFight_Ex.Shapes.Rectangle.#ctor(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)">
+            <summary>
+            Creates a rectangle with the given center and size
+            </summary>
+            <param name="center">The center of the rectangle</param>
+            <param name="size">The width and height of the rectangle</param>
+        </member>
+        <member name="M:UndyneFight_Ex.Shapes.Rectangle.#ctor(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)">
+            <summary>
+            Creates a rectangle with the given vertices
+            </summary>
+            <param name="TopLeft">The top left corner of the rectangle</param>
+            <param name="TopRight">The top right corner of the rectangle</param>
+            <param name="BottomRight">The bottom right corner of the rectangle</param>
+            <param name="BottomLeft">The bottom left corner of the rectangle</param>
+        </member>
+        <member name="P:UndyneFight_Ex.Shapes.Rectangle.Vertices">
+            <inheritdoc/>
+        </member>
+        <member name="P:UndyneFight_Ex.Shapes.Rectangle.Rotation">
+            <inheritdoc/>
+        </member>
+        <member name="P:UndyneFight_Ex.Shapes.Rectangle.DrawData">
+            <inheritdoc/>
+        </member>
+        <member name="M:UndyneFight_Ex.Shapes.Rectangle.Contains(UndyneFight_Ex.Shapes.IShape)">
+            <inheritdoc/>
+        </member>
+        <member name="M:UndyneFight_Ex.Shapes.Rectangle.Draw">
+            <inheritdoc/>
+        </member>
+        <member name="M:UndyneFight_Ex.Shapes.Rectangle.IntersectsWith(UndyneFight_Ex.Shapes.IShape)">
+            <inheritdoc/>
+        </member>
+        <member name="P:UndyneFight_Ex.Shapes.Rectangle.Center">
+            <summary>
+            The center of the rectangle
+            </summary>
+        </member>
+        <member name="M:UndyneFight_Ex.Shapes.Rectangle.op_Addition(UndyneFight_Ex.Shapes.Rectangle,Microsoft.Xna.Framework.Vector2)">
+            <summary>
+            Offsets the rectangle by the given vector
+            </summary>
+            <param name="rect">The rectangle to offset</param>
+            <param name="vec">The amount to offset</param>
+            <returns>The rectangle after offset</returns>
+        </member>
+        <member name="M:UndyneFight_Ex.Shapes.Rectangle.op_Subtraction(UndyneFight_Ex.Shapes.Rectangle,Microsoft.Xna.Framework.Vector2)">
+            <summary>
+            Offsets the rectangle by the given vector
+            </summary>
+            <param name="rect">The rectangle to offset</param>
+            <param name="vec">The amount to offset</param>
+            <returns>The rectangle after offset</returns>
+        </member>
+        <member name="M:UndyneFight_Ex.Shapes.Rectangle.op_Multiply(UndyneFight_Ex.Shapes.Rectangle,System.Single)">
+            <summary>
+            Scales the rectangle by the given vector
+            </summary>
+            <param name="rect">The rectangle to scale</param>
+            <param name="scale">The amount to scale</param>
+            <returns>The rectangle after scaling</returns>
+        </member>
+        <member name="M:UndyneFight_Ex.Shapes.Rectangle.op_Division(UndyneFight_Ex.Shapes.Rectangle,System.Single)">
+            <summary>
+            Scales the rectangle by the given vector
+            </summary>
+            <param name="rect">The rectangle to scale</param>
+            <param name="scale">The amount to scale</param>
+            <returns>The rectangle after scaling</returns>
+        </member>
+        <member name="M:UndyneFight_Ex.Shapes.Rectangle.op_Implicit(UndyneFight_Ex.Shapes.Rectangle)~System.Drawing.Rectangle">
+            <summary>
+            Converts the rectangle into a <see cref="T:System.Drawing.Rectangle"/> without taking in the rotation
+            </summary>
+            <param name="rect">The rectangle to convert</param>
+        </member>
+        <member name="T:UndyneFight_Ex.Shapes.Circle">
+            <summary>
+            A circle
+            </summary>
+        </member>
+        <member name="M:UndyneFight_Ex.Shapes.Circle.#ctor(Microsoft.Xna.Framework.Vector2,System.Single)">
+            <summary>
+            Creates a circle with the given center and radius
+            </summary>
+            <param name="center">The center of the circle</param>
+            <param name="radius">The radius of the circle</param>
+        </member>
+        <member name="P:UndyneFight_Ex.Shapes.Circle.Vertices">
+            <inheritdoc/>
+        </member>
+        <member name="P:UndyneFight_Ex.Shapes.Circle.Rotation">
+            <inheritdoc/>
+        </member>
+        <member name="P:UndyneFight_Ex.Shapes.Circle.Resolution">
+            <summary>
+            The rendering resolution of the circle
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.Shapes.Circle.DrawData">
+            <inheritdoc/>
+        </member>
+        <member name="F:UndyneFight_Ex.Shapes.Circle.Radius">
+            <summary>
+            The radius of the circle
+            </summary>
+        </member>
+        <member name="F:UndyneFight_Ex.Shapes.Circle.Center">
+            <summary>
+            The center of the circle
+            </summary>
+        </member>
+        <member name="M:UndyneFight_Ex.Shapes.Circle.Contains(UndyneFight_Ex.Shapes.IShape)">
+            <inheritdoc/>
+        </member>
+        <member name="M:UndyneFight_Ex.Shapes.Circle.Draw">
+            <inheritdoc/>
+        </member>
+        <member name="M:UndyneFight_Ex.Shapes.Circle.IntersectsWith(UndyneFight_Ex.Shapes.IShape)">
+            <inheritdoc/>
+        </member>
+        <member name="M:UndyneFight_Ex.Shapes.Circle.op_Addition(UndyneFight_Ex.Shapes.Circle,Microsoft.Xna.Framework.Vector2)">
+            <summary>
+            Offsets the circle by the given vector
+            </summary>
+            <param name="circ">The circle to offset</param>
+            <param name="vec">The amount to offset</param>
+            <returns>The circle after offset</returns>
+        </member>
+        <member name="M:UndyneFight_Ex.Shapes.Circle.op_Subtraction(UndyneFight_Ex.Shapes.Circle,Microsoft.Xna.Framework.Vector2)">
+            <summary>
+            Offsets the circle by the given vector
+            </summary>
+            <param name="circ">The circle to offset</param>
+            <param name="vec">The amount to offset</param>
+            <returns>The circle after offset</returns>
+        </member>
+        <member name="M:UndyneFight_Ex.Shapes.Circle.op_Multiply(UndyneFight_Ex.Shapes.Circle,System.Single)">
+            <summary>
+            Scales the circle by the given scale
+            </summary>
+            <param name="circ">The circle to scale</param>
+            <param name="scale">The amount to scale</param>
+            <returns>The scaled circle</returns>
+        </member>
+        <member name="M:UndyneFight_Ex.Shapes.Circle.op_Division(UndyneFight_Ex.Shapes.Circle,System.Single)">
+            <summary>
+            Scales the circle by the given scale
+            </summary>
+            <param name="circ">The circle to scale</param>
+            <param name="scale">The amount to scale</param>
+            <returns>The scaled circle</returns>
+        </member>
         <member name="T:UndyneFight_Ex.SpriteBatchEX">
             <summary>
-            Extended sparite batch class
+            Extended sprite batch class
             </summary>
         </member>
         <member name="M:UndyneFight_Ex.SpriteBatchEX.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice)">
@@ -12644,6 +13574,11 @@
         <member name="P:UndyneFight_Ex.Surface.Hidden">
             <summary>
             The surface for drawing inside the box
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.Surface.Subtractive">
+            <summary>
+            Subtractive blendmode surface
             </summary>
         </member>
         <member name="P:UndyneFight_Ex.Surface.BackGroundColor">
@@ -13096,6 +14031,12 @@
             <param name="rad">The radius of the circle</param>
             <param name="thick">The thickness of the circle (Default full)</param>
             <param name="col">The color of the circle (Default black)</param>
+        </member>
+        <member name="M:Extends.DrawingUtil.Circle.Update">
+            <inheritdoc/>
+        </member>
+        <member name="M:Extends.DrawingUtil.Circle.Draw">
+            <inheritdoc/>
         </member>
         <member name="M:Extends.LineMoveLibrary.AlphaSin(Extends.DrawingUtil.Linerotate,System.Single)">
             <summary>

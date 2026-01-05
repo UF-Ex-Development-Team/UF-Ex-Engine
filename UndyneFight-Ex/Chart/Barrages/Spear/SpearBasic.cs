@@ -44,16 +44,13 @@ public class Spear : LineCollisionBarrage
 		if (AutoDispose)
 		{
 			bool ins = screen.Contain(Centre);
-			if (ins && (!ForceDispose))
+			if (ins && !ForceDispose)
 				ForceDispose = true;
-			if (ForceDispose && (!ins))
+			if (ForceDispose && !ins)
 			{
-				if (this is not NormalSpear)
-					Dispose();
-				else
+				if (this is NormalSpear NSpear)
 				{
-					NormalSpear _ = this as NormalSpear;
-					if (_.Rebound && _.ReboundCount > -1)
+					if (NSpear.Rebound && NSpear.ReboundCount > -1)
 					{
 						int Normal = 0;
 						//Left
@@ -70,11 +67,13 @@ public class Spear : LineCollisionBarrage
 							Normal = 180;
 
 						Rotation = 2 * Normal - Rotation;
-						_.ReboundCount--;
+						NSpear.ReboundCount--;
 					}
 					else
 						Dispose();
 				}
+				else
+					Dispose();
 			}
 		}
 	}

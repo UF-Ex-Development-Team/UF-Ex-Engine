@@ -25,7 +25,6 @@ public partial class Arrow
 			this.speed = GetVector2(speed, missionRot);
 			this.color = color;
 			this.rotatingType = rotatingType;
-			appearTime = 0;
 			Depth = 0.5f - color / 200f;
 		}
 

@@ -8,11 +8,12 @@ namespace UndyneFight_Ex.UserService;
 /// </summary>
 public class Settings : ISaveLoad
 {
+	/// <inheritdoc/>
 	public List<ISaveLoad> Children => throw new NotImplementedException();
 
 	private int masterVolume, spearBlockingVolume, reduceBlueAmount, drawingQuality;
 	private float arrowDelay, arrowSpeed, arrowScale, fps;
-	private bool dialogAvailable, preciseWarning, mirror, displayScorePercent;
+	private bool dialogAvailable, preciseWarning, mirror, displayScorePercent, newArrowDrawMethod;
 	private string samplerState;
 
 	/// <inheritdoc/>
@@ -38,6 +39,8 @@ public class Settings : ISaveLoad
 			: SamplerState;
 		displayScorePercent = info.Nexts.TryGetValue("dispScorePercent", out value) ? value.BoolValue
 			: DisplayScorePercent;
+		newArrowDrawMethod = info.Nexts.TryGetValue("newArrMeth", out value) ? value.BoolValue
+			: NewArrowDrawingMethod;
 	}
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	internal void Apply()
@@ -49,12 +52,13 @@ public class Settings : ISaveLoad
 		ArrowSpeed = arrowSpeed;
 		ArrowScale = arrowScale;
 		Mirror = mirror;
-		DrawFPS = MathUtil.Clamp(25, fps, 125);
+		DrawFPS = float.Clamp(fps, 25, 125);
 		SettingsManager.DataLibrary.preciseWarning = preciseWarning;
 		SettingsManager.DataLibrary.dialogAvailable = dialogAvailable;
 		SettingsManager.DataLibrary.drawingQuality = (DrawingQuality)drawingQuality;
 		SamplerState = samplerState;
 		DisplayScorePercent = displayScorePercent;
+		newArrowDrawMethod = NewArrowDrawingMethod;
 	}
 
 	/// <inheritdoc/>
@@ -74,6 +78,7 @@ public class Settings : ISaveLoad
 		drawingQuality = (int)SettingsManager.DataLibrary.drawingQuality;
 		samplerState = SamplerState;
 		displayScorePercent = DisplayScorePercent;
+		newArrowDrawMethod = NewArrowDrawingMethod;
 
 		SaveInfo info = new("Settings{");
 		info.PushNext(new SaveInfo("masterVolume:" + masterVolume));
@@ -89,6 +94,7 @@ public class Settings : ISaveLoad
 		info.PushNext(new SaveInfo("drawingQuality:" + drawingQuality));
 		info.PushNext(new SaveInfo("samplerState:" + samplerState));
 		info.PushNext(new SaveInfo("dispScorePercent:" + (displayScorePercent ? "true" : "false")));
+		info.PushNext(new SaveInfo("newArrMeth:" + (newArrowDrawMethod ? "true" : "false")));
 		return info;
 	}
 }
@@ -97,6 +103,7 @@ public class Settings : ISaveLoad
 /// </summary>
 public class Statistic : ISaveLoad
 {
+	/// <inheritdoc/>
 	public List<ISaveLoad> Children => null;
 	/// <summary>
 	/// The death count of the user

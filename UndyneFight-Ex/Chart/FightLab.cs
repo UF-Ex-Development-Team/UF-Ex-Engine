@@ -545,7 +545,7 @@ public static partial class Functions
 	/// </summary>
 	public static int[] DirectionAllocate { get; set; } = new int[10];
 
-	public static HashSet<char> OneElementArrows { get; set; } = [];
+	public static HashSet<char> OneElementArrows { get; set; } = ['R', 'D', 'd'];
 
 	public static Func<char, int> CustomAnalyzer { private get; set; } = null;
 
@@ -560,11 +560,11 @@ public static partial class Functions
 			{
 				if (wayTag.Length >= 2)
 				{
-					color = wayTag[1] == ' ' && wayTag.Length >= 3 ? MathUtil.Clamp(0, wayTag[2] - '0', 9) : MathUtil.Clamp(0, wayTag[1] - '0', 9);
+					color = wayTag[1] == ' ' && wayTag.Length >= 3 ? int.Clamp(wayTag[2] - '0', 0, 9) : int.Clamp(wayTag[1] - '0', 0, 9);
 				}
 			}
 			else if (wayTag.Length >= 3)
-				color = MathUtil.Clamp(0, wayTag[2] - '0', 9);
+				color = int.Clamp(wayTag[2] - '0', 0, 9);
 		}
 		switch (wayTag[0])
 		{
@@ -934,7 +934,15 @@ public static partial class Functions
 			return;
 		}
 		if (soundVolume > 1)
-			throw new Exception("Sound volume cannot exceed 1");
+		{
+			int count = (int)soundVolume;
+			float rem = soundVolume - count;
+			for (int i = 0; i < count; i++)
+				PlaySound(effect, 1f);
+			if (rem > 0)
+				PlaySound(effect, rem);
+			return;
+		}
 		float trueVal = soundVolume * soundVolume;
 		if (effect != FightResources.Sounds.ArrowStuck)
 			trueVal *= Settings.SettingsManager.DataLibrary.SFXVolume / 100f;

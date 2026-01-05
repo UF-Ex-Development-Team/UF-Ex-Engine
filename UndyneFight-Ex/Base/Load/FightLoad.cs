@@ -15,16 +15,10 @@ public static class FightSystem
 				return;
 		}
 		mainSongs.Clear();
-		for (int i = 0; i < loadItems.Count; i++)
-			mainSongs.Add(loadItems.ElementAt(i));
+		foreach (Type charts in loadItems)
+			mainSongs.Add(charts);
 		mainSongs.ForEach(MainGameSongs.Push);
 		mainSongs.ForEach(AllSongs.Push);
-
-		/* string[] files = Directory.GetFiles("Content\\Fights");
-             foreach(string s in files)
-             {
-                 PushFight(s);
-             }*/
 	}
 	private static readonly List<Type> mainSongs = [];
 	/// <summary>

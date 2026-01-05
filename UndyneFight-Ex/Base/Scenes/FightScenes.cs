@@ -2,7 +2,9 @@
 using static UndyneFight_Ex.GameStates;
 
 namespace UndyneFight_Ex.Entities;
-
+/// <summary>
+/// A scene of battle, whether it is a classic battle or a chart
+/// </summary>
 public abstract class FightScene : Scene
 {
 	/// <summary>
@@ -20,13 +22,19 @@ public abstract class FightScene : Scene
 
 	private bool playerAlive = true;
 	private readonly CheatDetector Detector = new();
-
+	/// <summary>
+	/// The <see cref="GameMode"/> the fight is in
+	/// </summary>
 	public abstract GameMode Mode { get; }
+	/// <inheritdoc/>
 	public override void Dispose()
 	{
 		ResetFightState();
 		base.Dispose();
 	}
+	/// <summary>
+	/// Resets the fight scene
+	/// </summary>
 	public FightScene()
 	{
 		ResetFightState();
@@ -34,6 +42,9 @@ public abstract class FightScene : Scene
 		InstanceCreate(NameShow = new NameShower());
 		InstanceCreate(new CheatDetector());
 	}
+	/// <summary>
+	/// Apply game over
+	/// </summary>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public void PlayDeath()
 	{
@@ -47,16 +58,16 @@ public abstract class FightScene : Scene
 		Achievements.AchievementManager.CheckUserAchievements();
 		GameStates.InstanceCreate(new Player.BrokenHeart());
 	}
+	/// <summary>
+	/// The event to invoke when the player dies
+	/// </summary>
 	protected abstract void PlayerDied();
-
-	public override void Start() { }
-
+	/// <inheritdoc/>
 	public override void Update()
 	{
 		if (stopTime <= 0.01f)
 		{
-			GasterBlaster.shootSoundPlayed = GasterBlaster.spawnSoundPlayed =
-			Pike.shootSoundPlayed = Pike.spawnSoundPlayed = false;
+			GasterBlaster.shootSoundPlayed = GasterBlaster.spawnSoundPlayed = Pike.shootSoundPlayed = Pike.spawnSoundPlayed = false;
 
 			foreach (Player.Heart heart in Player.hearts)
 			{
@@ -79,7 +90,6 @@ internal class NormalFightingScene : FightScene
 	private readonly Fight.IClassicFight current;
 	private readonly GameMode mode;
 	public override GameMode Mode => mode;
-
 	public NormalFightingScene(Fight.IClassicFight obj, GameMode mode)
 	{
 		this.mode = mode;

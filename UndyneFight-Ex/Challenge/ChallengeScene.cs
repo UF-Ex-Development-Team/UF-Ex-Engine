@@ -53,6 +53,7 @@ public class ChallengeScene(Scene previous_scene, Action exit_event) : Scene
 	{
 		None = 0, SelectedChallenge = 1
 	}
+	/// <inheritdoc/>
 	public override void Update()
 	{
 		//Return to previous scene
@@ -83,7 +84,7 @@ public class ChallengeScene(Scene previous_scene, Action exit_event) : Scene
 				CardPosition.Add(new Vector2(320 + ChallengeList.Count * 360, 240));
 				TargetCardPosition.Add(new Vector2(320 + ChallengeList.Count * 360, 240));
 				CardAlpha.Add(ChallengeList.Count != 1 ? 0 : 1);
-				CardIcons.Add(LoadContent<Texture2D>(challenge.IconPath, Loader));
+				_ = CardIcons.Add(LoadContent<Texture2D>(challenge.IconPath, Loader));
 				Illustrations.Add([]);
 				foreach (Tuple<Type, Difficulty> v in challenge.Routes)
 				{
@@ -138,12 +139,12 @@ public class ChallengeScene(Scene previous_scene, Action exit_event) : Scene
 					IWaveSet cur = Activator.CreateInstance(ChallengeChart.Item1) as IWaveSet;
 					string path = "Content\\Musics\\" + cur.Music;
 					Texture2D texture = null;
-					if (File.Exists(Path.Combine($"{AppContext.BaseDirectory}{path}\\paint.xnb".Split('\\'))))
+					if (File.Exists(Path.Combine($"{path}\\paint.xnb".Split('\\'))))
 						lock (this)
 						{
-							texture = LoadContent<Texture2D>($"{AppContext.BaseDirectory}{path}\\paint");
+							texture = LoadContent<Texture2D>($"{path}\\paint");
 						}
-					if (!File.Exists(Path.Combine($"{AppContext.BaseDirectory}{path}.xnb".Split('\\'))))
+					if (!File.Exists(Path.Combine($"{path}.xnb".Split('\\'))))
 						path += "\\song";
 					ListParams[i] = new(cur, texture, (int)ChallengeList[SelectedChallenge].Routes[i].Item2, path, JudgementState.Strict, GameMode.RestartDeny);
 					++i;
@@ -161,6 +162,7 @@ public class ChallengeScene(Scene previous_scene, Action exit_event) : Scene
 		}
 		base.Update();
 	}
+	/// <inheritdoc/>
 	public override void Draw()
 	{
 		if (FightSystem.Challenges.Count == 0)

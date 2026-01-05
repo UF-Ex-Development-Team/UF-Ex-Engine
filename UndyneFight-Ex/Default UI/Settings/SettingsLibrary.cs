@@ -163,35 +163,6 @@ internal static class SettingLibrary
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public override void Save() => SettingsManager.DataLibrary.dialogAvailable = Value;
 	}
-	public class DebugMessage : Setting
-	{
-		public static bool Value { get; private set; }
-		public DebugMessage(Vector2 centre) : base("Debug Message", centre)
-		{
-			UpdateIn120 = true;
-			Value = SettingsManager.DataLibrary.debugMessage;
-			showingValue = Value.ToString();
-		}
-
-		public override void SelectionEvent() { }
-
-		public override void Update()
-		{
-			if (IsSelected)
-			{
-				if (IsKeyPressed120f(InputIdentity.MainLeft) || IsKeyPressed120f(InputIdentity.MainRight))
-				{
-					Value ^= true;
-					PlaySound(Ding, MasterVolume.Value / 100f);
-					showingValue = Value.ToString();
-				}
-			}
-			base.Update();
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public override void Save() => SettingsManager.DataLibrary.debugMessage = Value;
-	}
 	public class ArrowSpeed : Setting
 	{
 		public static float Value { get; private set; }
@@ -311,7 +282,7 @@ internal static class SettingLibrary
 					value_ += 5;
 				if (IsKeyPressed120f(InputIdentity.Confirm))
 					value_ = helper.Delta;
-				value_ = MathUtil.Clamp(0, value_, 120);
+				value_ = float.Clamp(value_, 0, 120);
 				if (value_ != Value)
 				{
 					Value = value_;

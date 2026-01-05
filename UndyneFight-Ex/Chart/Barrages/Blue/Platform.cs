@@ -122,9 +122,9 @@ public class Platform : Entity, ICustomMotion, ICustomLength
 			if (length < 0)
 				Dispose();
 			bool ins = screen.Contain(Centre);
-			if (ins && (!hasBeenInside))
+			if (ins && !hasBeenInside)
 				hasBeenInside = true;
-			if (hasBeenInside && (!ins))
+			if (hasBeenInside && !ins)
 				Dispose();
 		}
 		scale = createWithScaling ? scale * 0.85f + 0.15f : 1.0f;
@@ -151,8 +151,7 @@ public class Platform : Entity, ICustomMotion, ICustomLength
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public void ChangeType()
 	{
-		platformType = 1 - platformType;
-		Image = platform[platformType];
+		Image = platform[platformType = 1 - platformType];
 		gravityLine.sticky ^= true;
 	}
 	/// <summary>
@@ -171,8 +170,7 @@ public class Platform : Entity, ICustomMotion, ICustomLength
 			controlLayer = Surface.Hidden;
 			following = p;
 			this.length = length;
-			this.platformType = platformType;
-			Image = platform[platformType];
+			Image = platform[this.platformType = platformType];
 		}
 		public override void Draw()
 		{

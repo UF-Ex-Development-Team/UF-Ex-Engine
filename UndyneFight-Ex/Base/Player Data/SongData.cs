@@ -78,11 +78,9 @@ public class SongData(string name) : ISaveLoad
 		public SongState(Difficulty dif, SongResult result)
 		{
 			difficulty = dif;
-			int newScore = result.CurrentMark == SkillMark.Failed ? result.Score / 2 : result.Score;
-			Score = newScore;
-			AC = result.AC == true;
-			AP = result.CurrentMark == SkillMark.Impeccable;
-			Mark = result.CurrentMark;
+			Score = result.CurrentMark == SkillMark.Failed ? result.Score / 2 : result.Score;
+			AC = result.AC;
+			AP = (Mark = result.CurrentMark) == SkillMark.Impeccable;
 		}
 		/// <summary>
 		/// Converts the song state to save info
@@ -180,8 +178,13 @@ public class SongManager : ISaveLoad
 	/// <returns></returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public SongData Acquire(string name) => songData[name];
+	/// <summary>
+	/// Checks whether a chart was played
+	/// </summary>
+	/// <param name="curFight">The name of the chart</param>
+	/// <returns></returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	internal bool SongPlayed(string curFight) => songData.ContainsKey(curFight);
+	public bool SongPlayed(string curFight) => songData.ContainsKey(curFight);
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	internal void FinishedSong(string songName, Difficulty difficulty, SongResult result)
 	{
@@ -259,11 +262,12 @@ public class RatingCalculator(SongManager songManager)
 			/// <inheritdoc/>
 			public readonly int CompareTo(object obj)
 			{
-				if (obj is not SingleSong)
-					return 0;
-				SingleSong song = (SingleSong)obj;
-				int v = scoreResult.CompareTo(song.scoreResult);
-				return v != 0 ? v : name.CompareTo(song.name);
+				if (obj is SingleSong song)
+				{
+					int v = scoreResult.CompareTo(song.scoreResult);
+					return v != 0 ? v : name.CompareTo(song.name);
+				}
+				return 0;
 			}
 		}
 		/// <summary>
@@ -341,7 +345,7 @@ public class RatingCalculator(SongManager songManager)
 		{
 			object chartObj = Activator.CreateInstance(charts);
 			IWaveSet waveSet = chartObj is IWaveSet ? chartObj as IWaveSet : (chartObj as IChampionShip).GameContent;
-			songType.TryAdd(waveSet.FightName, waveSet);
+			_ = songType.TryAdd(waveSet.FightName, waveSet);
 			for (int j = 0; j <= 5; j++)
 			{
 				Tuple<float, float, float> chartDiffs = GetDifficulty(waveSet, (Difficulty)j);
@@ -409,7 +413,7 @@ public class RatingCalculator(SongManager songManager)
 		{
 			object o = Activator.CreateInstance(i);
 			IWaveSet waveSet = o is IWaveSet wave ? wave : (o as IChampionShip).GameContent;
-			songType.TryAdd(waveSet.FightName, waveSet);
+			_ = songType.TryAdd(waveSet.FightName, waveSet);
 			for (int j = 0; j <= 5; j += 1)
 			{
 				Tuple<float, float, float> v = GetDifficulty(waveSet, (Difficulty)j);

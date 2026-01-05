@@ -8,7 +8,7 @@ namespace UndyneFight_Ex;
 /// <summary>
 /// Miscellaneous Utilities
 /// </summary>
-public class MiscUtil
+public static class MiscUtil
 {
 	#region Shorthand names
 	/// <summary>
@@ -26,7 +26,6 @@ public class MiscUtil
 	/// <summary>
 	/// Gets the <see cref="ShorthandName"/> of the object
 	/// </summary>
-	/// <typeparam name="T">An object</typeparam>
 	/// <param name="thing">The object to pull the shorthand name of</param>
 	/// <returns>The <see cref="ShorthandName"/> of the object</returns>
 	public static string GetShorthandName(object thing)
@@ -38,81 +37,80 @@ public class MiscUtil
 	#region String Key convsersion
 	private static readonly Dictionary<Keys, string> KeyStringDict = new()
 	{
-		{Keys.Escape, "Esc"},
-		{Keys.Enter, "Enter"},
-		{Keys.Back, "Backspace"},
-		{Keys.Tab, "Tab"},
-		{Keys.LeftShift, "L Shift"},
-		{Keys.RightShift, "R Shift"},
-		{Keys.LeftControl, "L Ctrl"},
-		{Keys.RightControl, "R Ctrl"},
-		{Keys.LeftAlt, "L Alt"},
-		{Keys.RightAlt, "R Alt"},
-		{Keys.Space, "Space"},
-		{Keys.CapsLock, "Caps Lock"},
-		{Keys.PageUp, "Pg Up"},
-		{Keys.PageDown, "Pg Down"},
-		{Keys.End, "End"},
-		{Keys.Home, "Home"},
-		{Keys.Select, "Select"},
-		{Keys.Print, "Print"},
-		{Keys.Execute, "Exe"},
-		{Keys.PrintScreen, "PrntScrn"},
-		{Keys.Insert, "Ins"},
-		{Keys.Delete, "Del"},
-		{Keys.Help, "Help"},
-		{Keys.LeftWindows, "L Windows"},
-		{Keys.RightWindows, "R Windows"},
-		{Keys.NumPad0, "Num 0"},
-		{Keys.NumPad1, "Num 1"},
-		{Keys.NumPad2, "Num 2"},
-		{Keys.NumPad3, "Num 3"},
-		{Keys.NumPad4, "Num 4"},
-		{Keys.NumPad5, "Num 5"},
-		{Keys.NumPad6, "Num 6"},
-		{Keys.NumPad7, "Num 7"},
-		{Keys.NumPad8, "Num 8"},
-		{Keys.NumPad9, "Num 9"},
-		{Keys.F1, "F1"},
-		{Keys.F2, "F2"},
-		{Keys.F3, "F3"},
-		{Keys.F4, "F4"},
-		{Keys.F5, "F5"},
-		{Keys.F6, "F6"},
-		{Keys.F7, "F7"},
-		{Keys.F8, "F8"},
-		{Keys.F9, "F9"},
-		{Keys.F10, "F10"},
-		{Keys.F11, "F11"},
-		{Keys.F12, "F12"},
-		{Keys.Multiply, "Num Mult"},
-		{Keys.Add, "Num Add"},
-		{Keys.Separator, "Num /"},
-		{Keys.Subtract, "Num -"},
-		{Keys.Decimal, "Num ."},
-		{Keys.Divide, "Num /"},
-		{Keys.NumLock, "Num Lock"},
-		{Keys.Scroll, "Scroll Lock"},
-		{Keys.OemSemicolon, ";"},
-		{Keys.OemComma, "Comma"},
-		{Keys.OemPlus, "+"},
-		{Keys.OemMinus, "-"},
-		{Keys.OemPeriod, "."},
-			//For some reason, '/' is stored as '?'
-			{Keys.OemQuestion, "/"},
-		{Keys.OemOpenBrackets, "["},
-		{Keys.OemCloseBrackets, "]"},
-		{Keys.OemPipe, "\\"},
-		{Keys.OemQuotes, "'"},
-		{Keys.Pause, "Pause"},
-		{Keys.Kana, "Kana"},
-		{Keys.Kanji, "Kanji"},
-		{Keys.Right, "Right"},
-		{Keys.Left, "Left"},
-		{Keys.Up, "Up"},
-		{Keys.Down, "Down"},
+		[Keys.Escape] = "Esc",
+		[Keys.Enter] = "Enter",
+		[Keys.Back] = "Backspace",
+		[Keys.Tab] = "Tab",
+		[Keys.LeftShift] = "L Shift",
+		[Keys.RightShift] = "R Shift",
+		[Keys.LeftControl] = "L Ctrl",
+		[Keys.RightControl] = "R Ctrl",
+		[Keys.LeftAlt] = "L Alt",
+		[Keys.RightAlt] = "R Alt",
+		[Keys.Space] = "Space",
+		[Keys.CapsLock] = "Caps Lock",
+		[Keys.PageUp] = "Pg Up",
+		[Keys.PageDown] = "Pg Down",
+		[Keys.End] = "End",
+		[Keys.Home] = "Home",
+		[Keys.Select] = "Select",
+		[Keys.Print] = "Print",
+		[Keys.Execute] = "Exe",
+		[Keys.PrintScreen] = "PrntScrn",
+		[Keys.Insert] = "Ins",
+		[Keys.Delete] = "Del",
+		[Keys.Help] = "Help",
+		[Keys.LeftWindows] = "L Windows",
+		[Keys.RightWindows] = "R Windows",
+		[Keys.NumPad0] = "Num 0",
+		[Keys.NumPad1] = "Num 1",
+		[Keys.NumPad2] = "Num 2",
+		[Keys.NumPad3] = "Num 3",
+		[Keys.NumPad4] = "Num 4",
+		[Keys.NumPad5] = "Num 5",
+		[Keys.NumPad6] = "Num 6",
+		[Keys.NumPad7] = "Num 7",
+		[Keys.NumPad8] = "Num 8",
+		[Keys.NumPad9] = "Num 9",
+		[Keys.F1] = "F1",
+		[Keys.F2] = "F2",
+		[Keys.F3] = "F3",
+		[Keys.F4] = "F4",
+		[Keys.F5] = "F5",
+		[Keys.F6] = "F6",
+		[Keys.F7] = "F7",
+		[Keys.F8] = "F8",
+		[Keys.F9] = "F9",
+		[Keys.F10] = "F10",
+		[Keys.F11] = "F11",
+		[Keys.F12] = "F12",
+		[Keys.Multiply] = "Num Mult",
+		[Keys.Add] = "Num Add",
+		[Keys.Separator] = "Num /",
+		[Keys.Subtract] = "Num -",
+		[Keys.Decimal] = "Num .",
+		[Keys.Divide] = "Num /",
+		[Keys.NumLock] = "Num Lock",
+		[Keys.Scroll] = "Scroll Lock",
+		[Keys.OemSemicolon] = ";",
+		[Keys.OemComma] = "Comma",
+		[Keys.OemPlus] = "+",
+		[Keys.OemMinus] = "-",
+		[Keys.OemPeriod] = ".",
+		//For some reason, '/' is stored as '?'
+		[Keys.OemQuestion] = "/",
+		[Keys.OemOpenBrackets] = "[",
+		[Keys.OemCloseBrackets] = "]",
+		[Keys.OemPipe] = "\\",
+		[Keys.OemQuotes] = "'",
+		[Keys.Pause] = "Pause",
+		[Keys.Kana] = "Kana",
+		[Keys.Kanji] = "Kanji",
+		[Keys.Right] = "Right",
+		[Keys.Left] = "Left",
+		[Keys.Up] = "Up",
+		[Keys.Down] = "Down",
 	};
-	//TODO Dictionary
 	/// <summary>
 	/// <br>Converts a key to string</br>
 	/// <br>Warning, this may not cover all the keys, report to the Discord server if you found any missing keys</br>
@@ -140,6 +138,16 @@ public class MiscUtil
 	/// <param name="identity">The identity to get</param>
 	/// <returns>The key the identity is binded to</returns>
 	public static List<Keys> GetInputKeys(InputIdentity identity) => GameStates.KeyChecker.InputKeys[identity];
+	/// <summary>
+	/// Sets the current key binding of the input identity
+	/// </summary>
+	/// <param name="identity">The identity to set</param>
+	/// <param name="keys">The keys to set to</param>
+	public static void SetInputKeys(InputIdentity identity, List<Keys> keys)
+	{
+		GameStates.KeyChecker.InputKeys[identity] = keys;
+		GameStates.KeyChecker.SetIdentityKey(identity, keys);
+	}
 	#endregion
 	/// <summary>
 	/// Gets the asset from the name, i.e. FightResources.Sounds.spearAppear -> GetAsset("spearAppear", typeof(FightResources.Sounds)) would return the audio
@@ -199,6 +207,10 @@ public class MiscUtil
 		/// The parsed text to display
 		/// </summary>
 		private string ParsedText = text;
+		/// <summary>
+		/// The original string the user inputted
+		/// </summary>
+		private readonly string SourceText = text;
 		/// <summary>
 		/// The list of glyph data of the parsed string
 		/// </summary>
@@ -291,6 +303,10 @@ public class MiscUtil
 		/// Whether to render the text
 		/// </summary>
 		private bool DoRender = true;
+		/// <summary>
+		/// If a user has modified an element, mark for auto-reparse
+		/// </summary>
+		private bool _requireRegenerate = false;
 		#endregion
 		/// <summary>
 		/// Parses the text for display
@@ -298,6 +314,9 @@ public class MiscUtil
 		[MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
 		private void ParseText()
 		{
+			//It is being regenerated
+			_requireRegenerate = false;
+			ParsedText = SourceText;
 			//Clears existing cache
 			Commands.Clear();
 			CommandQueue.Clear();
@@ -306,7 +325,6 @@ public class MiscUtil
 			_glyphData.Clear();
 			//Reset position
 			drawingPositions.Clear();
-			_parseDrawingPosition = defaultTextBuilderData.Position;
 			_parseDrawingPosition = Vector2.Zero;
 			//Check for close command tags, while "[[" is for indication for displaying '[' in text
 			while (ParsedText.Contains(CommandTag.Close) || ParsedText.Contains(_doubleCommandTag))
@@ -520,6 +538,7 @@ public class MiscUtil
 			currentDrawingData = (TextBuilderData)defaultTextBuilderData.Clone();
 			currentDrawingData.Position = Vector2.Zero;
 			_currentDrawSpriteCount = 0;
+			TotalTextHeight = 0;
 			int[] TempQueue = [..CommandQueue];
 			//Parse text positions
 			CurrentCommandCount = 0;
@@ -527,11 +546,10 @@ public class MiscUtil
 			float maxCharHeight = 0;
 			float lineWidth = 0;
 			float mult;
-			float prevXScale = currentDrawingData.Scale.X;
 			bool LineBroken = false;
 			for (int i = 0; i < ParsedText.Length; i++)
 			{
-				prevXScale = currentDrawingData.Scale.X;
+				float prevXScale = currentDrawingData.Scale.X;
 				while (TempQueue.Contains(i - _currentDrawSpriteCount))
 				{
 					_currentDrawingCharIndex = i;
@@ -698,6 +716,8 @@ public class MiscUtil
 		/// <inheritdoc/>
 		public override void Update()
 		{
+			if (_requireRegenerate)
+				ParseText();
 			Timer++;
 			//If there exists a text typer
 			if (Typer?.DelayTimer == 0)
@@ -741,7 +761,7 @@ public class MiscUtil
 				{
 					_currentDrawingCharIndex = Math.Min(i, charsToDisplay - 1);
 					ParseCommand(Commands[CurrentCommandCount]);
-					TempQueue.Dequeue();
+					_ = TempQueue.Dequeue();
 					CurrentCommandCount++;
 				}
 				//Check if the current char is not a NULL char (Reserved for sprite)
@@ -752,7 +772,7 @@ public class MiscUtil
 					//Sprite
 					if (curChar == '\u0000')
 					{
-						var SpriteArg = Arguments[CurrentCommandCount - 1].Arguments;
+						string[] SpriteArg = Arguments[CurrentCommandCount - 1].Arguments;
 						//Displacement
 						Vector2 spritePosDelta = SpriteArg.Length > 1 ? new(
 								SpriteArg[1] == "" ? 0 : MathUtil.FloatFromString(SpriteArg[1]),
@@ -966,6 +986,7 @@ public class MiscUtil
 		public TextBuilder Position(Vector2 position)
 		{
 			defaultTextBuilderData.Position = position;
+			_requireRegenerate = true;
 			return this;
 		}
 		/// <summary>
@@ -977,6 +998,7 @@ public class MiscUtil
 		public TextBuilder Position(float x, float y)
 		{
 			defaultTextBuilderData.Position = new(x, y);
+			_requireRegenerate = true;
 			return this;
 		}
 		/// <summary>
@@ -993,6 +1015,7 @@ public class MiscUtil
 		public TextBuilder Align(TextHAlignment? halignment = null, TextVAlignment? valignment = null)
 		{
 			(defaultTextBuilderData.HAlignment, defaultTextBuilderData.VAlignment) = (halignment ?? defaultTextBuilderData.HAlignment, valignment ?? defaultTextBuilderData.VAlignment);
+			_requireRegenerate = true;
 			return this;
 		}
 		/// <summary>
@@ -1008,6 +1031,7 @@ public class MiscUtil
 		public new TextBuilder Scale(Vector2 scale)
 		{
 			defaultTextBuilderData.Scale = scale;
+			_requireRegenerate = true;
 			return this;
 		}
 		/// <summary>
@@ -1023,6 +1047,7 @@ public class MiscUtil
 		public TextBuilder Blend(Color color)
 		{
 			defaultTextBuilderData.Col = [color, color, color, color];
+			_requireRegenerate = true;
 			return this;
 		}
 		/// <summary>
@@ -1033,6 +1058,7 @@ public class MiscUtil
 		public TextBuilder Blend(Color[] color)
 		{
 			defaultTextBuilderData.Col = color;
+			_requireRegenerate = true;
 			return this;
 		}
 		/// <summary>
@@ -1043,6 +1069,7 @@ public class MiscUtil
 		public TextBuilder Font(GLFont font)
 		{
 			defaultTextBuilderData.CurrentFont = font;
+			_requireRegenerate = true;
 			return this;
 		}
 		/// <summary>

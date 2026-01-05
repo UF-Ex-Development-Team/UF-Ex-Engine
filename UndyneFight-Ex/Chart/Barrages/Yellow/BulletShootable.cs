@@ -1,6 +1,8 @@
 ﻿global using UndyneFight_Ex;
 namespace UndyneFight_Ex.Entities;
-
+/// <summary>
+/// A barrage that is shootable by a yellow soul bullet
+/// </summary>
 public abstract class BulletShootable : PerfectCollisionBarrage
 {
 	/// <summary>
@@ -10,6 +12,7 @@ public abstract class BulletShootable : PerfectCollisionBarrage
 	protected abstract void OnShot(SoulBullet bullet);
 
 	private readonly List<SoulBullet> detects = [];
+	/// <inheritdoc/>
 	public override void Update()
 	{
 		base.Update();
@@ -52,16 +55,15 @@ public abstract class BulletShootable : PerfectCollisionBarrage
 
 			if (MathF.Abs(et.Centre.X - Centre.X) <= dis || MathF.Abs(et.Centre.Y - Centre.Y) <= dis)
 			{
-				if (this is not Bomb)
+				if (this is Bomb b)
 				{
-					if (et.Destructive)
-						Dispose();
+					if (b.AbleLink)
+						b.Explode();
 				}
 				else
 				{
-					Bomb b = this as Bomb;
-					if (b.AbleLink)
-						b.Explode();
+					if (et.Destructive)
+						Dispose();
 				}
 			}
 		}

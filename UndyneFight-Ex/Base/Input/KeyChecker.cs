@@ -8,6 +8,10 @@ namespace UndyneFight_Ex;
 
 public static partial class GameStates
 {
+	/// <summary>
+	/// The default key bindings
+	/// </summary>
+	public static Dictionary<InputIdentity, List<Keys>> DefaultKeys => KeyChecker.DefaultKeys;
 	#region keys
 	internal class KeyChecker
 	{
@@ -92,8 +96,7 @@ public static partial class GameStates
 	/// The character the player has inputted
 	/// </summary>
 	public static char CharInput { get; private set; }
-	internal static KeyboardState currentKeyState2;
-	internal static KeyboardState lastKeyState2;
+	internal static KeyboardState currentKeyState2, lastKeyState2;
 
 	private static readonly KeyChecker checker120f = new(), checker = new();
 
@@ -104,43 +107,36 @@ public static partial class GameStates
 
 	internal static char KeysUpdate()
 	{
-		KeyboardState currentKeyState;
-		currentKeyState = Keyboard.GetState();
-
+		KeyboardState currentKeyState = Keyboard.GetState();
 		bool shift_pressed = currentKeyState.IsKeyDown(Keys.LeftShift) || currentKeyState.IsKeyDown(Keys.RightShift);
 		for (int i = 0; i < 256; i++)
 		{
-			Keys t = (Keys)i;
-			if (IsKeyPressed120f(t))
+			if (IsKeyPressed120f((Keys)i))
 			{
 				WordsChanged = true;
-				//Letter keys
-				if (i is < 91 and > 64)
+				switch (i)
 				{
-					return (char)((shift_pressed ? 0 : 32) + i);
+					case > 47 and < 58:
+						return (char)i;
+					case > 64 and < 91: //Letters
+						return (char)(i + (shift_pressed ? 0 : 32));
+					case 188:
+						return shift_pressed ? '<' : ',';
+					case 189:
+						return shift_pressed ? '_' : '-';
+					case 190:
+						return shift_pressed ? '>' : '.';
+					case 187:
+						return shift_pressed ? '+' : '=';
+					case 191:
+						return shift_pressed ? '?' : '/';
+					case 186:
+						return shift_pressed ? ':' : ';';
+					case 0x20:
+						return (char)0x20;
+					case 13:
+						return (char)13;
 				}
-				else if (i is > 47 and < 58)
-					return (char)i;
-				else
-					switch (i)
-					{
-						case 188:
-							return shift_pressed ? '<' : ',';
-						case 189:
-							return shift_pressed ? '_' : '-';
-						case 190:
-							return shift_pressed ? '>' : '.';
-						case 187:
-							return shift_pressed ? '+' : '=';
-						case 191:
-							return shift_pressed ? '?' : '/';
-						case 186:
-							return shift_pressed ? ':' : ';';
-						case 0x20:
-							return (char)0x20;
-						case 13:
-							return (char)13;
-					}
 			}
 		}
 		WordsChanged = false;
@@ -150,7 +146,6 @@ public static partial class GameStates
 	{
 		lastKeyState2 = currentKeyState2;
 		currentKeyState2 = Keyboard.GetState();
-
 #if DEBUG
 		if (IsKeyDown(Keys.LeftControl))
 		{
@@ -175,8 +170,8 @@ public static partial class GameStates
 			if (IsKeyPressed120f(Keys.D9))
 				GameMain.GameSpeed = 2f;
 		}
-		if (IsKeyPressed120f(Keys.H) && CurrentScene is FightScene)
-			(CurrentScene as FightScene).PlayerInstance.hpControl.Regenerate();
+		if (IsKeyPressed120f(Keys.H) && CurrentScene is FightScene FScene)
+			FScene.PlayerInstance.hpControl.Regenerate();
 #endif
 		if (isInBattle)
 		{
@@ -226,29 +221,30 @@ public static partial class GameStates
 	public static bool IsKeyDown(Keys key) => currentKeyState2.IsKeyDown(key);
 	#endregion
 }
-internal class KeybindData : ISaveLoad
+public class KeybindData : ISaveLoad
 {
 	public static Dictionary<InputIdentity, List<Keys>> UserKeys { get; set; } = new(DefaultKeys);
+	/// <inheritdoc/>
 	public List<ISaveLoad> Children => throw new NotImplementedException();
-
+	/// <inheritdoc/>
 	public void Load(SaveInfo info)
 	{
 		UserKeys.Clear();
 		foreach (InputIdentity Identity in DefaultKeys.Keys)
 		{
-			info.Nexts.TryGetValue(Identity.ToString(), out SaveInfo value);
 			List<Keys> finKey = [];
-			if (value is null)
+			if (!info.Nexts.TryGetValue(Identity.ToString(), out SaveInfo value))
 				finKey = DefaultKeys[Identity];
 			else
 			{
 				foreach (string keyString in value.fullValue.Split(','))
 					finKey.Add(MiscUtil.StringToKey(keyString));
 			}
-			UserKeys.TryAdd(Identity, finKey);
+			_ = UserKeys.TryAdd(Identity, finKey);
 		}
 		InputKeys = new(UserKeys);
 	}
+	/// <inheritdoc/>
 	public SaveInfo Save()
 	{
 		UserKeys ??= new(DefaultKeys);
@@ -258,8 +254,7 @@ internal class KeybindData : ISaveLoad
 			string finText = string.Empty;
 			foreach (Keys finKey in UserKeys[Identity])
 				finText += MiscUtil.KeyToString(finKey) + ",";
-			finText = finText[..^1];
-			info.PushNext(new SaveInfo($"{Identity}:{finText}"));
+			info.PushNext(new SaveInfo($"{Identity}:{finText[..^1]}"));
 		}
 		return info;
 	}

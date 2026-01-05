@@ -1,4 +1,7 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
+using NAudio.Vorbis;
+using NAudio.Wave;
+using NAudio.Wave.SampleProviders;
 using System.Diagnostics;
 using UndyneFight_Ex.Entities;
 using UndyneFight_Ex.IO;
@@ -8,12 +11,20 @@ namespace UndyneFight_Ex;
 
 public static partial class GameStates
 {
+	/// <summary>
+	/// The save path to your game
+	/// </summary>
+	public static string SavePath => $"{Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)}\\{GameName}";
+	/// <summary>
+	/// Actually going to pull this next version
+	/// </summary>
+	[Obsolete("Will pull up to GameStates next version")]
 	public static class GameRule
 	{
 		/// <summary>
 		/// The color of the player name, VIP can have blue/orange/colorful instead of only white
 		/// </summary>
-		public static string nameColor = "White";
+		public static string nameColor { get; set; } = "White";
 
 	}
 	/// <summary>
@@ -284,8 +295,6 @@ public static partial class GameStates
 	/// <returns></returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static List<GameEventArgs> DetectEvent(string ActionName) => currentScene.DetectEvent(ActionName);
-
-
 	#region Song previews
 	/// <summary>
 	/// The audio caches for song previews
@@ -308,12 +317,15 @@ public static partial class GameStates
 	[MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
 	public static async void LoadSongPreviews()
 	{
+		//Ensure FFMpeg exists
+		if (!File.Exists(Path.Combine("Content", "FFMpeg", "ffmpeg.exe")))
+			System.IO.Compression.ZipFile.ExtractToDirectory(Path.Combine("Content", "FFMpeg.zip"), "Content");
 		//Store audio preview positions
 		foreach (Type i in FightSystem.AllSongs.Values.Concat(FightSystem.CustomSongs.Values))
 		{
 			object o = Activator.CreateInstance(i);
 			IWaveSet waveSet = o is IWaveSet wave ? wave : (o as IChampionShip).GameContent;
-			AudioPreviewPos.TryAdd(waveSet.Music, waveSet.Attributes.MusicPreview);
+			_ = AudioPreviewPos.TryAdd(waveSet.Music, waveSet.Attributes.MusicPreview);
 		}
 		//Gets each subfolder
 		file_path_list.AddRange(new DirectoryInfo(_base_music_path).GetDirectories().Select(sub_dir_files => Path.Combine((sub_dir_files.Name + "\\song.ogg").Split('\\'))));
@@ -327,13 +339,68 @@ public static partial class GameStates
 				string path = Path.Combine("Musics", file_name);
 				AudioLoadingTasks.Add(Task.Factory.StartNew(() =>
 				{
+					//Perform key string trim
 					string key = path.Split(Path.DirectorySeparatorChar)[1];
 					if (key.EndsWith(".ogg"))
 						key = key[..^4];
 					if (AudioPreviewPos.TryGetValue(key, out float[] musPreviewPos))
 					{
-						LoadedAudioNames.Add(key);
-						AudioCache.TryAdd(key, new Audio(path, null, musPreviewPos[0], musPreviewPos[1]));
+						_ = LoadedAudioNames.Add(key);
+						//Extract preview audio file if it does not exist or audio preview does not match data file
+						string preview_file_name = Path.Combine("Content", $"{path[..^4]}_preview.wav"),
+								preview_file_final_name = Path.Combine("Content", $"{path[..^4]}_preview.ogg");
+						//Check if data file exists
+						bool MatchData = true;
+						FileStream stream;
+						string datFilePath = Path.Combine("Content", path[..path.LastIndexOf('\\')], "Dat.dat");
+						if (File.Exists(datFilePath))
+						{
+							stream = new(datFilePath, FileMode.OpenOrCreate);
+							StreamReader textReader = new(stream);
+							string[] data = textReader.ReadToEnd().Split(',');
+							stream.Close();
+							if (data.Length == 2 && float.TryParse(data[0], out float startPos) && float.TryParse(data[1], out float endPos))
+								MatchData = startPos == musPreviewPos[0] && endPos == musPreviewPos[1];
+						}
+						if (!File.Exists(preview_file_final_name) || !MatchData)
+						{
+							//Read source ogg file
+							VorbisWaveReader vorbis = new(Path.Combine("Content", path));
+							OffsetSampleProvider sample = new(vorbis)
+							{
+								SkipOver = TimeSpan.FromSeconds(musPreviewPos[0]),
+								Take = TimeSpan.FromSeconds(musPreviewPos[1] - musPreviewPos[0])
+							};
+							//Convert to wave file for trimming
+							WaveFileWriter.CreateWaveFile(preview_file_name, new SampleToWaveProvider(sample));
+							vorbis.Dispose();
+							//Convert to ogg using ffmpeg
+							Process process = Process.Start(new ProcessStartInfo()
+							{
+								FileName = Path.Combine("Content", "FFMpeg", "ffmpeg"),
+								Arguments = $"-i \"{preview_file_name}\" \"{preview_file_final_name}\"",
+								RedirectStandardOutput = true,
+								RedirectStandardError = true,
+								UseShellExecute = false,
+								CreateNoWindow = true
+							});
+							process.WaitForExit();
+							//Ensure file exists and file was not used by previous process
+							while (!File.Exists(preview_file_final_name) || !process.HasExited)
+								Thread.Sleep(1);
+							//Delete tempoary wav file
+							File.Delete(preview_file_name);
+						}
+						//Add to audio cache
+						_ = AudioCache.TryAdd(key, new Audio(preview_file_final_name));
+						//Write data file
+						if (File.Exists(datFilePath))
+							File.Delete(datFilePath);
+						stream = new(datFilePath, FileMode.OpenOrCreate);
+						StreamWriter textWriter = new(stream);
+						textWriter.Write($"{musPreviewPos[0]},{musPreviewPos[1]}");
+						textWriter.Flush();
+						stream.Close();
 					}
 				}, cancelToken));
 				await AudioLoadingTasks.Last();

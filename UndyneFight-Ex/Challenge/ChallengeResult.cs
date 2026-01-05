@@ -117,7 +117,7 @@ internal class ChallengeResult(Challenge challenge) : Entity
 				_ => "Extreme Plus"
 			};
 			DrawOutlinedText(diffStr, CollidingBox.TopRight - new Vector2(15 + NormalFont.SFX.MeasureString(difficulty.ToString()).X, -12.5f), 2, Color.Black, difColor);
-			DrawOutlinedText(MathUtil.FloatToString(MathUtil.Clamp(result.Accuracy * 100f, 0, 105), 2) + "%", CollidingBox.TopLeft + new Vector2(18, 58), 2, Color.Black, Color.Wheat);
+			DrawOutlinedText(MathUtil.FloatToString(float.Clamp(result.Accuracy * 100f, 0, 105), 2) + "%", CollidingBox.TopLeft + new Vector2(18, 58), 2, Color.Black, Color.Wheat);
 			if (ChartSpecial == 1)
 				DrawOutlinedText("No Hit", CollidingBox.TopLeft + new Vector2(430, 37.5f), 2, Color.Black, Color.Orange, 0.8f);
 			else if (ChartSpecial == 2)
@@ -155,7 +155,7 @@ internal class ChallengeResult(Challenge challenge) : Entity
 				if (enumerator.Current.AP)
 					FCorAP = 2;
 				AddChild(new SingleResult(enumerator.Current, t, ChartIllustrations[t++], FCorAP));
-				totalAccuracy += MathUtil.Clamp(enumerator.Current.Accuracy, 0, 105);
+				totalAccuracy += float.Clamp(enumerator.Current.Accuracy, 0, 105);
 			}));
 			IWaveSet cur = Activator.CreateInstance(challenge.Routes[i].Item1) as IWaveSet;
 			if (File.Exists(Path.Combine($"{AppContext.BaseDirectory}Content\\Musics\\{cur.Music}\\paint.xnb".Split('\\'))))

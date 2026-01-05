@@ -47,6 +47,6 @@ internal class TimeShower : Entity
 	}
 	private int appearTime = 0;
 	private bool del = false;
-	private float curBeat = -100;
+	internal float curBeat = -100;
 	public override void Update() => del = (++appearTime % 62 == 0) ? RandBool() : del;
 }

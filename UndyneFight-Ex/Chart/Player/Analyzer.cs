@@ -35,11 +35,6 @@ public partial class Player : Entity
 		public float DeltaTime { get; init; } = deltaTime;
 		public int JudgementResult { get; init; } = judgementResult;
 	}
-	internal class Barrage(int judgementType, float time) : AnalyzerData(time)
-	{
-		public override AnalyzerDataType DataType => AnalyzerDataType.Barrage;
-		public int JudgementType { get; init; } = judgementType;
-	}
 	internal Analyzer GameAnalyzer { get; init; } = new();
 	internal class Analyzer : GameObject
 	{

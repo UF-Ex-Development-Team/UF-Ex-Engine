@@ -90,13 +90,13 @@ internal class LicenseMaker
 	public static Dictionary<string, SaveInfo> GetPlayers()
 	{
 		Dictionary<string, SaveInfo> info = [];
-		string[] files = Directory.GetFiles("Datas\\Users");
+		string[] files = Directory.GetFiles($"{GameStates.SavePath}\\Datas\\Users");
 		for (int i = 0; i < files.Length; i++)
 		{
 			SaveInfo s = FileIO.ReadFile(files[i].Split('.')[0]);
 
 			if (s != null)
-				info.TryAdd(s.Nexts["PlayerName"].StringValue, s);
+				_ = info.TryAdd(s.Nexts["PlayerName"].StringValue, s);
 		}
 		return info;
 	}

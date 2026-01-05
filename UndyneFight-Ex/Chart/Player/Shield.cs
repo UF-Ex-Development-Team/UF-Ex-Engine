@@ -290,9 +290,7 @@ public partial class Player
 						1 => 12,
 						2 => 8,
 						4 => 5,
-						5 => 3,
-						3 => 3,
-						_ => throw new ArgumentOutOfRangeException()
+						_ => 3 //3 or 5
 					};
 					for (int i = 0; i < times; i++)
 					{
@@ -301,12 +299,10 @@ public partial class Player
 						rotation1 += rdelta * 90;
 						GameStates.InstanceCreate(new Particle(type switch
 						{
-							1 => Color.Lime,
-							2 => Color.LightBlue,
-							4 => Color.Orange,
-							5 => Color.Orange,
-							3 => Color.Gold,
-							_ => throw new ArgumentOutOfRangeException()
+							1 => Color.Lime,        //Okay
+							2 => Color.LightBlue,   //Nice
+							3 => Color.Gold,        //Perfect
+							_ => Color.Orange       //PerfectE/L
 						} * Rand(0.67f, 0.85f) * (ScreenDrawing.UIColor.A / 255f), MathUtil.GetVector2(Rand(4f, 8f), rotation1), Rand(6, 10), createCentre, FightResources.Sprites.square)
 						{ DarkingSpeed = Rand(10f, 14.6f), SlowLerp = 0.25f });
 					}
@@ -587,7 +583,7 @@ public partial class Player
 							Centre + new Vector2(0, Image.Height * (1 - scale)),
 							new CollideRect(0, Image.Height * (1 - scale), Image.Width,
 							Image.Height * scale).ToRectangle(),
-							Color.Red * 0.8f * (ScreenDrawing.UIColor.A / 255f), Rotation, ImageCentre);
+							Color.Red * 0.8f * (ScreenDrawing.UIColor.A / 255f), Vector2.One, Rotation, ImageCentre);
 				}
 			}
 			private bool enabled = true;

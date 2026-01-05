@@ -83,7 +83,7 @@ public partial class Arrow : Entity, IComparable
 	}
 
 	/// <summary>
-	/// 距离玩家灵魂的距离
+	/// Distance to target soul
 	/// </summary>
 	private float distance;
 	private readonly bool hasGreenFlag;
@@ -116,10 +116,9 @@ public partial class Arrow : Entity, IComparable
 	/// </summary>
 	public float Alpha { private get; set; } = 1;
 	private readonly float missionRotation;
-	private bool isSpeedUp = false, isRotate = false;
 	private float TimeDelta => BlockTime - GametimeF;
-	internal bool IsSpeedup { set => isSpeedUp = value; }
-	internal bool IsRotate { set => isRotate = value; }
+	internal bool IsSpeedup { get; set; } = false;
+	internal bool IsRotate { get; set; } = false;
 	internal float RotateScale { get; set; } = 1.0f;
 	internal int GoldenMarkIntensity { private get; set; }
 	internal bool EnableGoldMark { private get; set; } = true;
@@ -136,19 +135,26 @@ public partial class Arrow : Entity, IComparable
 			backColor = 0;
 		if (ForceGreenBack)
 			backColor = 2;
-		Depth = 0.5f - ArrowColor / 200f;
+		Depth = 0.5f - ArrowColor / 2000f;
 		if (VoidMode)
 			GeneralDraw(Sprites.voidarrow[ArrowColor], Centre, new Color(0.98f, 0.98f, 0.98f, ArrowColor == 1 ? 0.75f : 0.25f) * Alpha, new(DrawingScale * Scale), GetRadian(Rotation + additiveRotation + SelfRotationOffset));
 		else
 		{
-			GeneralDraw(Sprites.arrow_base[0], Centre, BaseColor[backColor] * 0.95f * Alpha, new(DrawingScale * Scale), GetRadian(Rotation + additiveRotation + SelfRotationOffset));
-			GeneralDraw(Sprites.arrow_fore[0], Centre, ForeColor[ArrowColor] * 0.95f * (GoldenMarkIntensity > 0 ? 0.75f : 1) * Alpha, new(DrawingScale * Scale), GetRadian(Rotation + additiveRotation + SelfRotationOffset));
+			if (NewArrowDrawingMethod)
+			{
+				//New method
+				GeneralDraw(Sprites.arrow_base[0], Centre, BaseColor[backColor] * 0.95f * Alpha, new(DrawingScale * Scale), GetRadian(Rotation + additiveRotation + SelfRotationOffset));
+				GeneralDraw(Sprites.arrow_fore[0], Centre, ForeColor[ArrowColor] * 0.95f * (GoldenMarkIntensity > 0 ? 0.75f : 1) * Alpha, new(DrawingScale * Scale), GetRadian(Rotation + additiveRotation + SelfRotationOffset));
+			}
+			else
+				//Old method
+				GeneralDraw(Sprites.arrow[ArrowColor, rotatingType, 0], Centre, new Color(0.98f, 0.98f, 0.98f, ArrowColor == 1 ? 0.75f : 0.25f) * Alpha, new(DrawingScale * Scale), GetRadian(Rotation + additiveRotation + SelfRotationOffset));
 		}
 
 		if (GoldenMarkIntensity > 0 && EnableGoldMark)
 		{
 			Depth += 0.02f;
-			FormalDraw(brimTex, Centre, ShieldColor[ArrowColor] * 0.5f * Alpha, DrawingScale * Scale, GetRadian(Rotation + additiveRotation + SelfRotationOffset), brimDisplace);
+			FormalDraw(brimTex, Centre, (NewArrowDrawingMethod ? ShieldColor[ArrowColor] : Color.White) * 0.5f * Alpha, DrawingScale * Scale, GetRadian(Rotation + additiveRotation + SelfRotationOffset), brimDisplace);
 		}
 	}
 	private static readonly Texture2D brimTex = Sprites.goldenBrim;

@@ -1,7 +1,6 @@
 ﻿using UndyneFight_Ex.Entities;
 using UndyneFight_Ex.SongSystem;
 using static Extends.DrawingUtil;
-using static UndyneFight_Ex.Entities.EasingUtil;
 using static UndyneFight_Ex.Fight.Functions;
 using static UndyneFight_Ex.FightResources;
 
@@ -65,7 +64,7 @@ public class Star : Entity, ICollideAble, ICustomMotion
 					colorType = 2;
 					break;
 				default:
-					throw new ArgumentOutOfRangeException("rvalue", value, "The rvalue can only be 0, 1 or 2");
+					throw new ArgumentOutOfRangeException(nameof(value), value, "The value can only be 0, 1 or 2");
 			}
 		}
 	}
@@ -128,7 +127,7 @@ public class Star : Entity, ICollideAble, ICustomMotion
 	public override void Update()
 	{
 		if (easeif)
-			ease(this);
+			_ = ease(this);
 		Rotation += rotatespeed;
 		TestDispose();
 		if ((AppearTime += 0.5f) % 2 == 0 && starshadow)
@@ -253,7 +252,7 @@ public class Fireball : Entity, ICustomMotion, ICollideAble
 					colorType = 2;
 					break;
 				default:
-					throw new ArgumentOutOfRangeException("rvalue", value, "The rvalue can only be 0, 1 or 2");
+					throw new ArgumentOutOfRangeException(nameof(value), value, "The value can only be 0, 1 or 2");
 			}
 		}
 	}
@@ -404,34 +403,34 @@ public static class Someway
 			}
 			else if (rhythmList[i].StartsWith('!'))
 			{
-				var items = WaveConstructor.SplitBracket(rhythmList[i][1..]);
+				string[] items = WaveConstructor.SplitBracket(rhythmList[i][1..]);
 				string tarString = string.Empty;
-				foreach (var item in items)
+				foreach (string item in items)
 					tarString += $"(>{item}'1.05)";
 				rhythmList[i] = tarString;
 			}
 			else if (rhythmList[i].StartsWith('@'))
 			{
-				var items = WaveConstructor.SplitBracket(rhythmList[i][1..]);
+				string[] items = WaveConstructor.SplitBracket(rhythmList[i][1..]);
 				string tarString = string.Empty;
-				foreach (var item in items)
+				foreach (string item in items)
 					tarString += $"(<{item}'1.05)";
 				rhythmList[i] = tarString;
 			}
 			else if (rhythmList[i].StartsWith('~'))
 			{
-				var items = WaveConstructor.SplitBracket(rhythmList[i][1..]);
+				string[] items = WaveConstructor.SplitBracket(rhythmList[i][1..]);
 				string tarString = string.Empty;
-				foreach (var item in items)
+				foreach (string item in items)
 					tarString += $"(^{item}'1.35)";
 				rhythmList[i] = tarString;
 			}
 
 			if (rhythmList[i].Length > 2 && rhythmList[i][0] != '(' && rhythmList[i][0] != '<' && rhythmList[i][1] == '<')
 			{
-				var items = WaveConstructor.SplitBracket(rhythmList[i][2..]);
+				string[] items = WaveConstructor.SplitBracket(rhythmList[i][2..]);
 				string tarString = string.Empty;
-				foreach (var item in items)
+				foreach (string item in items)
 					tarString += $"({item})";
 				rhythmList.Insert(i + 1, "<<0.125");
 				rhythmList.Insert(i + 2, $"!!{MathUtil.FloatFromString(rhythmList[i][0].ToString()) / 4}/1");
@@ -440,7 +439,7 @@ public static class Someway
 			}
 		}
 		curWave.CreateChart(starttime, beat, arrowspeed, [.. rhythmList]);
-
+#if DEBUG && false
 		FileStream stream = new("Converter.txt", FileMode.OpenOrCreate);
 		StreamWriter textWriter = new(stream);
 		foreach (var v in eventsname)
@@ -471,6 +470,7 @@ public static class Someway
 		textWriter.Flush();
 		textWriter.Dispose();
 		stream.Dispose();
+#endif
 	}
 }
 /// <summary>
@@ -528,74 +528,6 @@ public class FightUtil
 			if (time++ >= duration)
 				Dispose();
 		}
-	}
-}
-[Obsolete("You can use a Particle instead")]
-public class FakeNote
-{
-	public class LeftNote : Entity
-	{
-		private readonly Func<ICustomMotion, Vector2> Eases;
-		private readonly float EasesTime = 0, Delay = 0, Speed = 0;
-
-		public LeftNote(float delay, float speed, int color, int type, Func<ICustomMotion, Vector2> eases, float easestime)
-		{
-			Image = Sprites.arrow[color, type, 0];
-			Delay = delay;
-			Eases = eases;
-			Speed = speed;
-			Centre = new(Heart.Centre.X - (Delay * Speed + 42), Heart.Centre.Y);
-			Rotation = 180;
-			EasesTime = easestime;
-		}
-		private int Timer = 0;
-		public Vector2 Offset;
-		public override void Update()
-		{
-			Depth = 0.99f;
-			if (++Timer == 1)
-			{
-				CentreEasing.EaseBuilder ce = new();
-				ce.Insert(0, CentreEasing.Stable(Heart.Centre.X - (Delay * Speed + 42) + Offset.X, Heart.Centre.Y + Offset.Y));
-				ce.Insert(Delay, CentreEasing.Linear(Speed));
-				ce.Insert(EasesTime, Eases);
-				ce.Run((s) => Centre = s);
-			}
-		}
-
-		public override void Draw() => FormalDraw(Image, Centre, Color.White, Rotation / 180 * MathF.PI, ImageCentre);
-	}
-	public class RightNote : Entity
-	{
-		private readonly Func<ICustomMotion, Vector2> Eases;
-		private readonly float EasesTime = 0, Delay = 0, Speed = 0;
-
-		public RightNote(float delay, float speed, int color, int type, Func<ICustomMotion, Vector2> eases, float easestime)
-		{
-			Image = Sprites.arrow[color, type, 0];
-			Delay = delay;
-			Eases = eases;
-			Speed = speed;
-			Centre = new(Heart.Centre.X + (Delay * Speed + 42), Heart.Centre.Y);
-			Rotation = 0;
-			EasesTime = easestime;
-		}
-		private int Timer = 0;
-		public Vector2 Offset;
-		public override void Update()
-		{
-			Depth = 0.99f;
-			if (++Timer == 1)
-			{
-				CentreEasing.EaseBuilder ce = new();
-				ce.Insert(0, CentreEasing.Stable(Heart.Centre.X + (Delay * Speed + 42) + Offset.X, Heart.Centre.Y + Offset.Y));
-				ce.Insert(Delay, CentreEasing.Linear(-Speed));
-				ce.Insert(EasesTime, Eases);
-				ce.Run((s) => Centre = s);
-			}
-		}
-
-		public override void Draw() => FormalDraw(Image, Centre, Color.White, Rotation / 180 * MathF.PI, ImageCentre);
 	}
 }
 /// <summary>
@@ -1031,7 +963,9 @@ public static class DrawingUtil
 			Thickness = thick ?? rad * 2;
 			color = col ?? Color.Lerp(ScreenDrawing.ThemeColor, Color.Black, Alpha);
 		}
+		/// <inheritdoc/>
 		public override void Update() { }
+		/// <inheritdoc/>
 		public override void Draw() => DrawingLab.DrawCircleSections(Centre, Radius, 512, Thickness, color, 1, StartAng, EndAng);
 	}
 }

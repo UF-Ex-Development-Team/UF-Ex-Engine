@@ -99,13 +99,13 @@ internal partial class StateShower
 				playData.ComplexThreshold = 0;
 			if (float.IsNaN(playData.APThreshold))
 				playData.APThreshold = 0;
-			if (((int)scoreResult.mode & (int)GameMode.NoGreenSoul) != 0 && (CurrentScene as SongFightingScene).GreenSoulUsed)
+			if (((int)scoreResult.mode & (int)GameMode.NoGreenSoul) != 0 && CurrentFightingScene.GreenSoulUsed)
 				PushModifiers("No Green Soul");
-			if (((int)scoreResult.mode & (int)GameMode.Practice) != 0 && (CurrentScene as SongFightingScene).HPReached0)
+			if (((int)scoreResult.mode & (int)GameMode.Practice) != 0 && CurrentFightingScene.HPReached0)
 				PushModifiers("Practice");
 			if (((int)scoreResult.mode & (int)GameMode.Autoplay) != 0)
 				PushModifiers("AutoPlay");
-			if ((CurrentScene as SongFightingScene).ItemUsed)
+			if (CurrentFightingScene.ItemUsed)
 				PushModifiers("Items");
 			if (ModifiersUsed)
 				return;
@@ -115,6 +115,7 @@ internal partial class StateShower
 			ModesUsed = "None";
 			if (CurrentUser == null)
 				return;
+			previousAccuracy = CurrentUser.SongManager.SongPlayed(playData.Name) ? CurrentUser.SongManager.Acquire(playData.Name).CurrentSongStates[(Difficulty)difficulty].Accuracy : 0;
 			oldRating = CurrentUser.Skill;
 			int oldCoins = CurrentUser.ShopData.CashManager.Coins;
 			float constant = AC ? (AP ? playData.APThreshold : playData.ComplexThreshold) : playData.CompleteThreshold;
@@ -144,7 +145,7 @@ internal partial class StateShower
 				//Remove disposable items
 				if (ShopItemData.UserItems.ContainsValue(item) && item.Disposable)
 				{
-					ShopItemData.ConsumeItem(item);
+					_ = ShopItemData.ConsumeItem(item);
 				}
 				//Check whether there are unlocked items
 				if (!item.InShop && (item.ValidateItem(playData) != item.DefaultInShop))
@@ -156,7 +157,7 @@ internal partial class StateShower
 			//Store items into user inventory
 			foreach (StoreItem item in ShopItemData.AllItems.Values)
 				if (item.InShop)
-					ShopItemData.UserItems.TryAdd(item.FullName, item);
+					_ = ShopItemData.UserItems.TryAdd(item.FullName, item);
 			//Apply state
 			if (ratingResult?.ProgressMade ?? false)
 				ExtraState ^= ExtraResultScreens.RatingIncrease;
@@ -208,7 +209,7 @@ internal partial class StateShower
 			{
 				object o = Activator.CreateInstance(i);
 				IWaveSet waveSet = o is IWaveSet wave ? wave : (o as IChampionShip).GameContent;
-				songType.TryAdd(waveSet.FightName, waveSet);
+				_ = songType.TryAdd(waveSet.FightName, waveSet);
 				for (int j = 0; j <= 5; j += 1)
 				{
 					Tuple<float, float, float> v = GetDifficulty(waveSet, (Difficulty)j);
@@ -369,6 +370,7 @@ internal partial class StateShower
 					break;
 			}
 		}
+		private readonly float previousAccuracy = 0;
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		private void SummaryDraw()
 		{
@@ -379,8 +381,7 @@ internal partial class StateShower
 			NormalFont.Draw($"({(DisplayValues.SAccuracy = float.Lerp(DisplayValues.SAccuracy, CurrentAccuracy, 0.04f)) * 100:F1}%)", new Vector2(516, 109), Color.Lerp(Color.Transparent, Color.Silver, alpha), 0.93f, 0.5f);
 			if (CurrentUser is not null)
 			{
-				float prevAcc = CurrentUser.SongManager.SongPlayed(playData.Name) ? CurrentUser.SongManager.Acquire(playData.Name).CurrentSongStates[(Difficulty)difficulty].Accuracy : 0;
-				if (CurrentAccuracy > prevAcc)
+				if (CurrentAccuracy > previousAccuracy)
 				{
 					NormalFont.Draw("New Record!", new Vector2(392, 87), Color.Lerp(Color.Transparent, Color.Gold, alpha) * (0.6f + Fight.Functions.Sin(appearTime * 4) / 2f), 0.5f, 0.5f);
 					NormalFont.Draw($"+{Score - SongData.SongState.scoreData.PrevScore}", new Vector2(392, 127), Color.Lerp(Color.Transparent, Color.Gold, alpha) * (0.8f + Fight.Functions.Sin(appearTime * 4) * 0.2f), 0.5f, 0.5f);
@@ -499,7 +500,7 @@ internal partial class StateShower
 				NormalFont.Draw("Complete:", new Vector2(211, 134), Color.Lerp(Color.Transparent, new Color(0, 255, 0), alpha), 0.95f, 0.4f);
 				NormalFont.Draw(difficultyText[0], new Vector2(261, 164), Color.Lerp(Color.Transparent, topColor, alpha), 0.9f, 0.4f);
 				NormalFont.Draw("Complete Rating:", new Vector2(211, 197), Color.Lerp(Color.Transparent, Color.White, alpha), 1, 0.3f);
-				NormalFont.Draw($"{FloatToString(Rating.Z, 2)}", new Vector2(520, 195), Color.Lerp(Color.Transparent, Color.PowderBlue, alpha), 1.2f, 0.4f);
+				NormalFont.Draw($"{FloatToString(Rating.Z, 2)}", new Vector2(520, 197), Color.Lerp(Color.Transparent, Color.PowderBlue, alpha), 1.2f, 0.4f);
 				NormalFont.Draw("Complex:", new Vector2(211, 264), Color.Lerp(Color.Transparent, Color.White, alpha), 0.95f, 0.4f);
 				NormalFont.Draw(difficultyText[1], new Vector2(261, 295), Color.Lerp(Color.Transparent, topColor, alpha), 0.9f, 0.4f);
 				NormalFont.Draw("Complex Rating:", new Vector2(211, 328), Color.Lerp(Color.Transparent, Color.White, alpha), 1, 0.3f);

@@ -16,9 +16,5 @@ internal partial class GameMain : Game
 		});
 		task.RunSynchronously();
 		await task;
-
-		_ = Fight.Functions.OneElementArrows.Add('R');
-		_ = Fight.Functions.OneElementArrows.Add('D');
-		_ = Fight.Functions.OneElementArrows.Add('d');
 	}
 }

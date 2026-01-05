@@ -168,15 +168,7 @@ public abstract class RenderProduction : IComparable<RenderProduction>
 	protected void DrawEntities(Entity[] entities)
 	{
 		TrySetTarget();
-		if (Shader == null)
-		{
-			GameMain.MissionSpriteBatch.Begin(SpriteSortMode, BlendState, SamplerState, transform: enabledMatrix ? matrix : null);
-			for (int i = 0; i < entities.Length; i++)
-				entities[i].Draw();
-			GameMain.MissionSpriteBatch.End();
-			return;
-		}
-		Shader.Update();
+		Shader?.Update();
 		GameMain.MissionSpriteBatch.Begin(SpriteSortMode, BlendState, SamplerState, effect: Shader, transform: enabledMatrix ? matrix : null);
 		for (int i = 0; i < entities.Length; i++)
 			entities[i].Draw();
@@ -198,15 +190,8 @@ public abstract class RenderProduction : IComparable<RenderProduction>
 			s = screenSizedTarget;
 		}
 		TrySetTarget();
-		if (Shader != null)
-		{
-			Shader.Update();
-			GameMain.MissionSpriteBatch.Begin(SpriteSortMode, BlendState, SamplerState, effect: Shader, transform: enabledMatrix ? matrix : null);
-		}
-		else
-		{
-			GameMain.MissionSpriteBatch.Begin(SpriteSortMode, BlendState, SamplerState, transform: enabledMatrix ? matrix : null);
-		}
+		Shader?.Update();
+		GameMain.MissionSpriteBatch.Begin(SpriteSortMode, BlendState, SamplerState, effect: Shader, transform: enabledMatrix ? matrix : null);
 		GameMain.MissionSpriteBatch.Draw(s, pos, from, color);
 		GameMain.MissionSpriteBatch.End();
 	}
@@ -227,15 +212,8 @@ public abstract class RenderProduction : IComparable<RenderProduction>
 				tex[i] = screenSizedTarget;
 			}
 		TrySetTarget();
-		if (Shader != null)
-		{
-			Shader.Update();
-			GameMain.MissionSpriteBatch.Begin(SpriteSortMode, BlendState, effect: Shader, transform: enabledMatrix ? matrix : null);
-		}
-		else
-		{
-			GameMain.MissionSpriteBatch.Begin(SpriteSortMode, BlendState, transform: enabledMatrix ? matrix : null);
-		}
+		Shader?.Update();
+		GameMain.MissionSpriteBatch.Begin(SpriteSortMode, BlendState, effect: Shader, transform: enabledMatrix ? matrix : null);
 		for (int i = 0; i < tex.Length; ++i)
 			GameMain.MissionSpriteBatch.Draw(tex[i], pos, from, colors[i]);
 		GameMain.MissionSpriteBatch.End();
@@ -364,7 +342,6 @@ public abstract class RenderProduction : IComparable<RenderProduction>
 	protected static void CopyRenderTarget(RenderTarget2D distin, Texture2D source)
 	{
 		TrySetTarget(distin);
-		//ResetTargetColor(Color.Transparent);
 		SpriteBatch.Begin(SpriteSortMode.Immediate);
 		SpriteBatch.Draw(source, distin.Bounds, null, Color.White);
 		SpriteBatch.End();
@@ -402,8 +379,8 @@ public abstract class RenderProduction : IComparable<RenderProduction>
 	/// <param name="target">The render target to remove</param>
 	public static void RemoveHelperTarget(RenderTarget2D target)
 	{
-		if (!HelperTargets[..2].Contains(target))
-			HelperTargets.Remove(target);
+		if (!HelperTargets[..Surface.internalSurfaces.Length].Contains(target))
+			_ = HelperTargets.Remove(target);
 	}
 	/// <summary>
 	/// Whether the drawing action is enabled
@@ -423,11 +400,21 @@ public class Surface : RenderProduction
 	/// The area of the surface to restrict in
 	/// </summary>
 	public BoxVertex[] RestrictArea = [];
+	internal static readonly BlendState bm_subtract = new()
+	{
+		ColorSourceBlend = Blend.One,
+		AlphaSourceBlend = Blend.One,
+		ColorDestinationBlend = Blend.One,
+		AlphaDestinationBlend = Blend.One,
+		ColorBlendFunction = BlendFunction.ReverseSubtract,
+		AlphaBlendFunction = BlendFunction.ReverseSubtract
+	};
 
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	internal static void Initialize()
 	{
 		Normal = new("normal") { BlendState = BlendState.AlphaBlend, SpriteSortMode = SpriteSortMode.FrontToBack, Transfer = TransferUse.ForceNormal };
+		Subtractive = new("subtractive") { BlendState = bm_subtract, SpriteSortMode = SpriteSortMode.FrontToBack, Transfer = TransferUse.ForceNormal };
 		Hidden = new("hidden", true) { BlendState = BlendState.AlphaBlend, SpriteSortMode = SpriteSortMode.FrontToBack, BackGroundColor = Color.Black };
 	}
 	/// <summary>
@@ -497,6 +484,11 @@ public class Surface : RenderProduction
 	/// The surface for drawing inside the box
 	/// </summary>
 	public static Surface Hidden { get; private set; }
+	/// <summary>
+	/// Subtractive blendmode surface
+	/// </summary>
+	public static Surface Subtractive { get; set; }
+	internal static readonly Surface[] internalSurfaces = [Normal, Hidden, Subtractive];
 	/// <summary>
 	/// The color of the background
 	/// </summary>
@@ -589,10 +581,10 @@ public class Surface : RenderProduction
 		Dictionary<Surface, List<Entity>> distributer = [];
 		foreach (Entity entity in entities)
 		{
-			distributer.TryAdd(entity.controlLayer, []);
+			_ = distributer.TryAdd(entity.controlLayer, []);
 			distributer[entity.controlLayer].Add(entity);
 		}
-		distributer.TryAdd(Hidden, []);
+		_ = distributer.TryAdd(Hidden, []);
 		Hidden.Draw([.. distributer[Hidden]], transfer);
 		_ = distributer.Remove(Hidden);
 		for (int i = 0; i < FightBox.boxes.Count; i++)
@@ -602,7 +594,7 @@ public class Surface : RenderProduction
 			//Unsure whether it's useful or not
 			if (surfs != Normal && surfs != Hidden)
 			{
-				distributer.TryAdd(surfs, []);
+				_ = distributer.TryAdd(surfs, []);
 				surfs.Draw([.. distributer[surfs]], transfer);
 				_ = distributer.Remove(surfs);
 				if (surfs.RestrictArea.Length > 0)
@@ -643,7 +635,7 @@ public class RenderingManager
 	public RenderTarget2D Draw(RenderTarget2D startTarget)
 	{
 		_ = surfaces.RemoveWhere((s) => s.disposed);
-		surfaces.Where(t => t.Enabled).ToList().ForEach(t => startTarget = t.Draw(startTarget));
+		surfaces.ToList().ForEach(t => { if (t.Enabled) startTarget = t.Draw(startTarget); });
 		return startTarget;
 	}
 	/// <summary>

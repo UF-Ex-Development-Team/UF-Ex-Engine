@@ -26,10 +26,10 @@ public partial class Arrow : Entity
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public void TagApply(string tagName)
 		{
-			if (CurrentScene is SongFightingScene songFightScene)
+			if (CurrentScene is SongFightingScene)
 				AddInstance(new InstantEvent(1.2f, () =>
 				{
-					if (songFightScene.Accuracy.TaggedArrows.TryGetValue(tagName, out List<Arrow> value))
+					if (CurrentFightingScene.Accuracy.TaggedArrows.TryGetValue(tagName, out List<Arrow> value))
 						arrows.AddRange(value);
 				}));
 		}
@@ -57,6 +57,9 @@ public partial class Arrow : Entity
 		/// </summary>
 		public float Intensity { get; set; } = 1.0f;
 	}
+	/// <summary>
+	/// Easing controller for coordinate displacement, angle, and distance
+	/// </summary>
 	public class EnsembleEasing() : ArrowEasing
 	{
 		private Vector2 _deltaEasing = Vector2.Zero;
@@ -98,6 +101,9 @@ public partial class Arrow : Entity
 			arr.additiveDistance = _distanceEasing * Intensity;
 		}
 	}
+	/// <summary>
+	/// Easing controller for the arrow's position, angle, distance, and alpha
+	/// </summary>
 	public class UnitEasing() : ArrowEasing, ICustomMotion
 	{
 		/// <inheritdoc/>
@@ -123,22 +129,18 @@ public partial class Arrow : Entity
 			maxIndex = ToArrayIndex(_easingTimeMax) + 1;
 			if (maxIndex > 0)
 			{
-				if (positionEaseEnabled)
-					if (positionBuffer == null || maxIndex > positionBuffer.Length)
-						positionBuffer = new Vector2[maxIndex];
-				if (rotationEaseEnabled)
-					if (rotationBuffer == null || maxIndex > rotationBuffer.Length)
-						rotationBuffer = new float[maxIndex];
-				if (distanceEaseEnabled)
-					if (distanceBuffer == null || maxIndex > distanceBuffer.Length)
-						distanceBuffer = new float[maxIndex];
-				if (alphaEaseEnabled)
-					if (alphaBuffer == null || maxIndex > alphaBuffer.Length)
-						alphaBuffer = new float[maxIndex];
+				if (positionEaseEnabled && (positionBuffer == null || maxIndex > positionBuffer.Length))
+					positionBuffer = new Vector2[maxIndex];
+				if (rotationEaseEnabled && (rotationBuffer == null || maxIndex > rotationBuffer.Length))
+					rotationBuffer = new float[maxIndex];
+				if (distanceEaseEnabled && (distanceBuffer == null || maxIndex > distanceBuffer.Length))
+					distanceBuffer = new float[maxIndex];
+				if (alphaEaseEnabled && (alphaBuffer == null || maxIndex > alphaBuffer.Length))
+					alphaBuffer = new float[maxIndex];
 			}
 		}
 		/// <summary>
-		/// The total time of the easing
+		/// The time to apply the easing at (0 is the moment the arrow hits, default 60)
 		/// </summary>
 		public float ApplyTime { get; set; } = 60;
 		private float _easingTimeMax = 0;
@@ -283,6 +285,9 @@ public partial class Arrow : Entity
 				Dispose();
 		}
 	}
+	/// <summary>
+	/// Easing controller to delay or stop the arrow
+	/// </summary>
 	public class ClassicApplier : ArrowEasing
 	{
 		/// <summary>

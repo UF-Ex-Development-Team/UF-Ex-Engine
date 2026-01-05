@@ -11,6 +11,9 @@ public class VertexHull(Vector3[] vectors, Vector3 rotateSpeed) : GameObject
 {
 	private Vector3 rotateSpeed = rotateSpeed;
 	private readonly Vector3[] positions = vectors;
+	/// <summary>
+	/// The 3d coordinates translated to 2d
+	/// </summary>
 	public Vector2[] Translated { get; private set; } = new Vector2[vectors.Length];
 	/// <summary>
 	/// The X, Y and XZ axes

@@ -43,11 +43,11 @@ public class GravityLine
 	{
 		this.v1 = v1;
 		this.v2 = v2;
-		Vector2 v = (v1 + v2) / 2, old = Centre;
-		Centre = v;
-		float old_ = Rotation;
+		Vector2 newCen = (v1 + v2) / 2, prevCen = Centre;
+		Centre = newCen;
+		float prevRot = Rotation;
 		Rotation = MathF.Atan2(v1.Y - v2.Y, v1.X - v2.X);
-		float delta = Rotation - old_;
+		float delta = Rotation - prevRot;
 		if (v1.X == v2.X)
 		{
 			A = 1;
@@ -67,20 +67,20 @@ public class GravityLine
 			{
 				Vector2 oldPos = s.Centre;
 				float dx = s.Centre.X - Centre.X, dy = s.Centre.Y - Centre.Y;
-				Vector2 delta_ = v - old;
+				Vector2 _delta = newCen - prevCen;
 				if (Math.Abs(delta) > 1e-5f)
 				{
 					float ori = MathF.Atan2(dy, dx);
 					float length = GetDistance(Centre, s.Centre);
-					delta_ += Centre + GetVector2(length, (ori + delta) / PI * 180) - s.Centre;
+					_delta += Centre + GetVector2(length, (ori + delta) / PI * 180) - s.Centre;
 				}
 				if (sticky)
-					s.Centre += delta_;
+					s.Centre += _delta;
 				else
 				{
 					Vector2 v_ = new(MathF.Cos(NormalRotation), MathF.Sin(NormalRotation));
-					if (delta_.Length() > 0.001f)
-						s.Centre += v_ * Cos(v_, delta_) * delta_.Length();
+					if (_delta.Length() > 0.001f)
+						s.Centre += v_ * Cos(v_, _delta) * _delta.Length();
 				}
 			});
 		}
@@ -101,7 +101,7 @@ public class GravityLine
 	{
 		this.v1 = v1;
 		this.v2 = v2;
-		GravityLines.Add(this);
+		_ = GravityLines.Add(this);
 		Centre = (v1 + v2) / 2;
 		Rotation = MathF.Atan2(v1.Y - v2.Y, v1.X - v2.X);
 		if (v1.Y == v2.Y)
@@ -163,10 +163,10 @@ public class GravityLine
 		return false;
 	}
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public Vector2 CorrectPosition(Player.Heart player)
+	internal Vector2 CorrectPosition(Player.Heart player)
 	{
-		Vector2 v_ = new(MathF.Cos(NormalRotation), MathF.Sin(NormalRotation));
-		Vector2 change = v_ * (8 + width - Cos(player.Centre - Centre, v_) * GetDistance(player.Centre, Centre)) * 0.25f;
+		Vector2 _v = new(MathF.Cos(NormalRotation), MathF.Sin(NormalRotation));
+		Vector2 change = _v * (8 + width - Cos(player.Centre - Centre, _v) * GetDistance(player.Centre, Centre)) * 0.25f;
 		return change;
 	}
 	/// <summary>

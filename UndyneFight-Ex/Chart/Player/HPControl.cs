@@ -193,7 +193,7 @@ public partial class Player
 			if (Buffed || BuffedLevel != 0)
 			{
 				float dif = BuffedLevel + (Buffed ? BuffDifficulty : 0);
-				hp.Value -= maxHP * (missionLostSpeed - MathUtil.Clamp(0, 0.03f - hp.Value / maxHP * 0.03f, 0.01f) * 6.5f / dif) * 0.0014f * dif * (NoHIT ? 1 : MathF.Min(1, hp / maxHP * 5 * 0.8f + 0.2f));
+				hp.Value -= maxHP * (missionLostSpeed - float.Clamp(0.03f - hp.Value / maxHP * 0.03f, 0, 0.01f) * 6.5f / dif) * 0.0014f * dif * (NoHIT ? 1 : MathF.Min(1, hp / maxHP * 5 * 0.8f + 0.2f));
 			}
 			if (KR && KRHP > 0)
 			{
@@ -217,7 +217,7 @@ public partial class Player
 			{
 				if (((CurrentScene as FightScene).Mode & GameMode.Practice) == 0)
 				{
-					GameMain.instance.SetGameoverScreen();
+					_ = GameMain.instance.SetGameoverScreen();
 					(CurrentScene as FightScene).PlayDeath();
 					return;
 				}

@@ -1,55 +1,100 @@
 ﻿using UndyneFight_Ex.UserService;
 
 namespace UndyneFight_Ex.Achievements;
-
+/// <summary>
+/// The type of data to check for the achievement
+/// </summary>
 public enum CheckerType
 {
+	/// <summary>
+	/// To check user data
+	/// </summary>
 	User = 1,
+	/// <summary>
+	/// To check chart data
+	/// </summary>
 	Song = 2
 }
+/// <summary>
+/// Interface for achievement progress checkers
+/// </summary>
 public interface IAchievementCheck
 {
+	/// <summary>
+	/// The type of data to check
+	/// </summary>
 	CheckerType CheckType { get; }
+	/// <summary>
+	/// The method to use to evaluate the progress
+	/// </summary>
+	/// <param name="input">Whatever argument should be used for evaluation</param>
+	/// <returns></returns>
 	int ProgressCheck(object input);
 }
+/// <summary>
+/// An achievement checker for user data
+/// </summary>
+/// <param name="checker">The function to use</param>
 public class UserDataChecker(Func<User, int> checker) : IAchievementCheck
 {
 	private readonly Func<User, int> checker = checker;
-
+	/// <inheritdoc/>
 	public CheckerType CheckType => CheckerType.User;
-
-	public int ProgressCheck(object input) => checker(input as User);
+	/// <inheritdoc/>
+	public int ProgressCheck(object input) => checker((User)input);
 }
+/// <summary>
+/// An achievement checker for chart data
+/// </summary>
+/// <param name="checker">The function to use</param>
 public class SongDataChecker(Func<SongSystem.SongPlayData, int> checker) : IAchievementCheck
 {
 	private readonly Func<SongSystem.SongPlayData, int> checker = checker;
 
+	/// <inheritdoc/>
 	public CheckerType CheckType => CheckerType.Song;
-	public int ProgressCheck(object input) => checker(input as SongSystem.SongPlayData);
+	/// <inheritdoc/>
+	public int ProgressCheck(object input) => checker((SongSystem.SongPlayData)input);
 }
-public class Achievement(string title, string introduction, int totalProgress, IAchievementCheck progressChecker) : IComparable<Achievement>
+/// <summary>
+/// The achievement class
+/// </summary>
+/// <param name="title">The title of the achievement</param>
+/// <param name="introduction">The description of the achievement</param>
+/// <param name="totalProgress">The total progress of the achievement</param>
+/// <param name="progressChecker">The class to check the progress with</param>
+public class Achievement(string title, string introduction, int totalProgress, IAchievementCheck progressChecker)
 {
+	/// <summary>
+	/// Checks whether the achievement is just achieved
+	/// </summary>
+	/// <param name="checkObj">The argument to pass into the <see cref="IAchievementCheck.ProgressCheck(object)"/></param>
+	/// <returns></returns>
 	public bool CheckProgress(object checkObj)
 	{
 		bool last = CurrentProgress >= FullProgress && !Locked;
-		CurrentProgress = Math.Max(CurrentProgress, ProgressChecker.ProgressCheck(checkObj));
-		bool cur = CurrentProgress >= FullProgress && !Locked;
-		Achieved = cur;
-		bool res = cur && !last;
+		bool res = (Achieved = (CurrentProgress = Math.Max(CurrentProgress, ProgressChecker.ProgressCheck(checkObj))) >= FullProgress && !Locked) && !last;
 		if (res)
 			OnAchieve?.Invoke(this);
 		return res;
 	}
-	public void LoadProgress(int progress) => Achieved = (CurrentProgress = progress) >= FullProgress;
+	/// <summary>
+	/// Updates the progress when loading from a save file
+	/// </summary>
+	/// <param name="progress">The progress fetched from the save file</param>
+	internal void LoadProgress(int progress) => Achieved = (CurrentProgress = progress) >= FullProgress;
 
 	internal static event Action<Achievement> OnAchieve;
 	/// <summary>
-	/// The requirements/description of the achievement
+	/// The description of the achievement
 	/// </summary>
 	public string AchievementIntroduction { get; set; } = introduction;
+	/// <summary>
+	/// The class to check the progress with
+	/// </summary>
 	public IAchievementCheck ProgressChecker { private get; set; } = progressChecker;
 	/// <summary>
-	/// The data to check, either the user or song
+	/// The type of data to check
 	/// </summary>
 	public CheckerType CheckType => ProgressChecker.CheckType;
 	/// <summary>
@@ -76,12 +121,6 @@ public class Achievement(string title, string introduction, int totalProgress, I
 	/// Whether the achievement is forcefully disabled
 	/// </summary>
 	public bool Locked { get; set; } = false;
-	/// <summary>
-	/// The ID of the achievement
-	/// </summary>
-	public int ID { private get; set; } = 0;
-
-	public int CompareTo(Achievement other) => other.ID == ID ? other.Title.CompareTo(Title) : other.ID.CompareTo(ID);
 }
 internal static class AchievementManager
 {

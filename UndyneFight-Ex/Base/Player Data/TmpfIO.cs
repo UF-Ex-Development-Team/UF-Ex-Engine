@@ -152,7 +152,7 @@ public class SaveInfo
 	{
 		Nexts ??= [];
 		HasDeepInfo = true;
-		Nexts.TryAdd(info.Title, info);
+		_ = Nexts.TryAdd(info.Title, info);
 	}
 	/// <summary>
 	/// Gets the save info of the given key, which is a nested save info
@@ -167,20 +167,10 @@ public class SaveInfo
 			current = current.Nexts[item];
 		return current;
 	}
-	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public bool TryDirectory(string path)
-	{
-		SaveInfo current = this;
-		foreach (string item in path.Split("\\"))
-		{
-			if (!current.Nexts.TryGetValue(item, out SaveInfo value))
-				return false;
-			current = value;
-		}
-		return true;
-	}
 }
-
+/// <summary>
+/// Reading, writing, encoding, and decoding custom files
+/// </summary>
 public static class IOEvent
 {
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -376,7 +366,9 @@ public static class IOEvent
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static List<byte> InfoToByte(SaveInfo info) => StringToByte(info);
 }
-
+/// <summary>
+/// For reading player file data
+/// </summary>
 public static class FileIO
 {
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -420,8 +412,7 @@ public static class FileIO
 				}
 				else if (item.EndsWith('}'))
 				{
-					tmp = tmp[..^3];
-					tmp += "}\n";
+					tmp = tmp[..^3] + "}\n";
 					tabCount--;
 				}
 				for (int i = 0; i < tabCount; i++)
@@ -450,12 +441,12 @@ public static class FileIO
 	internal static void CreatePlayerFile(string playerName)
 	{
 		List<string> formals = ["PlayerName:" + playerName, "VIP:false", "NormalFight{", "}"];
-		IOEvent.WriteTmpFile(Path.Combine($"Datas\\Users\\{playerName}".Split('\\')), IOEvent.StringToByte(formals));
+		IOEvent.WriteTmpFile(Path.Combine($"{GameStates.SavePath}\\Datas\\Users\\{playerName}".Split('\\')), IOEvent.StringToByte(formals));
 	}
 	/// <summary>
 	/// Creates a player file using existing save info data
 	/// </summary>
 	/// <param name="info">The save info of the player</param>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public static void CreatePlayerFile(SaveInfo info) => IOEvent.WriteTmpFile(Path.Combine($"Datas\\Users\\{info.Nexts["PlayerName"].StringValue}".Split('\\')), IOEvent.StringToByte(info));
+	public static void CreatePlayerFile(SaveInfo info) => IOEvent.WriteTmpFile(Path.Combine($"{GameStates.SavePath}\\Datas\\Users\\{info.Nexts["PlayerName"].StringValue}".Split('\\')), IOEvent.StringToByte(info));
 }

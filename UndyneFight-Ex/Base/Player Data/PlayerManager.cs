@@ -6,7 +6,7 @@ namespace UndyneFight_Ex;
 public static class PlayerManager
 {
 	private const string CustomChartNotes = "Importing custom charts are very easy, as long as the source chart is made on the same SDK version and the same .NET version, you can import it!\nRequired files:\n - .dll file of the source charts (Rhythm Recall generates Rhythm Recall.dll)\n - The Content files of the source charts (song.ogg, song.xnb, paint.xnb, those kind of files, you can just copy the entire source Content folder)\n\nTo load a custom chart, just open the game!";
-	public static void Initialize()
+	internal static void Initialize()
 	{
 		string path = AppContext.BaseDirectory + "D:\\Microsoft.CodeAnalysis.dll";
 		if (File.Exists(Path.Combine(path.Split('\\'))))
@@ -22,19 +22,19 @@ public static class PlayerManager
 		//Directory.CreateDirectory("Mods\\Fights");
 		#region Create Folders
 		//User folder
-		path = Path.Combine($"{AppContext.BaseDirectory}Datas\\Users".Split('\\'));
+		path = Path.Combine($"{GameStates.SavePath}\\Datas\\Users".Split('\\'));
 		if (!Directory.Exists(path))
 			_ = Directory.CreateDirectory(path);
 		//Directory.CreateDirectory("Datas\\Records");
-		//Licence folder
-		path = Path.Combine($"{AppContext.BaseDirectory}Licences".Split('\\'));
+		//Licenses folder
+		path = Path.Combine($"{AppContext.BaseDirectory}Licenses".Split('\\'));
 		if (!Directory.Exists(path))
 			_ = Directory.CreateDirectory(path);
 		//Custom Charts folder
-		path = Path.Combine($"{AppContext.BaseDirectory}Custom Charts".Split('\\'));
+		path = Path.Combine($"{GameStates.SavePath}\\Custom Charts".Split('\\'));
 		if (!Directory.Exists(path))
 			_ = Directory.CreateDirectory(path);
-		path = Path.Combine($"{AppContext.BaseDirectory}Custom Charts\\Note.txt".Split('\\'));
+		path = Path.Combine($"{GameStates.SavePath}\\Custom Charts\\Note.txt".Split('\\'));
 		if (File.Exists(path))
 			File.Delete(path);
 		FileStream stream = new(path, FileMode.OpenOrCreate);
@@ -43,7 +43,7 @@ public static class PlayerManager
 		textWriter.Flush();
 		stream.Close();
 		#endregion
-		path = Path.Combine($"{AppContext.BaseDirectory}Datas\\Users".Split('\\'));
+		path = Path.Combine($"{GameStates.SavePath}\\Datas\\Users".Split('\\'));
 		string[] files = Directory.GetFiles(path);
 		foreach (string s in files)
 		{
@@ -58,6 +58,10 @@ public static class PlayerManager
 		}
 	}
 	internal static Dictionary<string, SaveInfo> userSaveInfo = [];
+	/// <summary>
+	/// Logins as the user with the given username
+	/// </summary>
+	/// <param name="s">The username</param>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static void Login(string s)
 	{
@@ -65,30 +69,31 @@ public static class PlayerManager
 		{
 			currentPlayer = s;
 			CurrentUser.ApplySettings();
-			userSaveInfo.TryGetValue(currentPlayer, out SaveInfo saveInfo);
+			_ = userSaveInfo.TryGetValue(currentPlayer, out SaveInfo saveInfo);
 			CurrentUser._achievement.Load(saveInfo.Nexts["Achievements"]);
-			CurrentUser.CalculateRating();
+			_ = CurrentUser.CalculateRating();
 			Achievements.AchievementManager.CheckUserAchievements();
 			CurrentUser.KeyBinds.Load(saveInfo.Nexts["Keybinds"]);
 			GameStates.KeyChecker.InputKeys = new(KeybindData.UserKeys);
 			ShopItemData.UserItems.Clear();
 			CurrentUser.ShopData.Load(saveInfo.Nexts["ShopData"]);
 			//Store items into user inventory
-			foreach (KeyValuePair<string, StoreItem> item in ShopItemData.AllItems)
-				if (item.Value.DefaultInShop)
-					ShopItemData.UserItems.TryAdd(item.Value.FullName, item.Value);
+			foreach (StoreItem item in ShopItemData.AllItems.Values)
+				if (item.DefaultInShop)
+					_ = ShopItemData.UserItems.TryAdd(item.FullName, item);
 		}
 		else
 			GameStates.CheatAffirmed();
 		Save();
 		//Create backup
-		if (!Directory.Exists(Path.Combine($"{AppContext.BaseDirectory}Datas\\Users\\Backup")))
-			Directory.CreateDirectory(Path.Combine($"{AppContext.BaseDirectory}Datas\\Users\\Backup"));
-		IOEvent.WriteTmpFile(Path.Combine($"{AppContext.BaseDirectory}Datas\\Users\\Backup\\{currentPlayer}_{DateTime.Now.Year}_{DateTime.Now.Month}_{DateTime.Now.Day}_{DateTime.Now.Hour}_{DateTime.Now.Minute}_{DateTime.Now.Second}".Split('\\')), IOEvent.InfoToByte(playerInfo[currentPlayer].Save()));
+		if (!Directory.Exists(Path.Combine($"{GameStates.SavePath}\\Datas\\Users\\Backup")))
+			_ = Directory.CreateDirectory(Path.Combine($"{GameStates.SavePath}\\Datas\\Users\\Backup"));
+		IOEvent.WriteTmpFile(Path.Combine($"{GameStates.SavePath}\\Datas\\Users\\Backup\\{currentPlayer}_{DateTime.Now.Year}_{DateTime.Now.Month}_{DateTime.Now.Day}_{DateTime.Now.Hour}_{DateTime.Now.Minute}_{DateTime.Now.Second}".Split('\\')), IOEvent.InfoToByte(playerInfo[currentPlayer].Save()));
 		//Purge excess backups
-		if (Directory.Exists(Path.Combine($"{AppContext.BaseDirectory}Datas\\Users\\Backup")))
+		string BackupPath = Path.Combine($"{GameStates.SavePath}\\Datas\\Users\\Backup");
+		if (Directory.Exists(BackupPath))
 		{
-			string[] FileList = Directory.GetFiles(Path.Combine($"{AppContext.BaseDirectory}Datas\\Users\\Backup"));
+			string[] FileList = Directory.GetFiles(BackupPath);
 			List<Tuple<string, long>> Files = [];
 			while (FileList.Length > 100)
 			{
@@ -97,21 +102,23 @@ public static class PlayerManager
 				//Sort by UTC time
 				Files.Sort((x, y) => x.Item2.CompareTo(y.Item2));
 				File.Delete(Path.Combine(Files[0].Item1));
-				FileList = Directory.GetFiles(Path.Combine($"{AppContext.BaseDirectory}Datas\\Users\\Backup"));
+				FileList = Directory.GetFiles(BackupPath);
 				Files.Clear();
 			}
 		}
 	}
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static string TryLogin(string name, string password) => playerInfo.TryGetValue(name, out User value) ? value.CheckPassword(password) ? "Success!" : "Wrong password!" : "No such user!";
-
+	/// <summary>
+	/// Saves the current user's data
+	/// </summary>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static void Save()
 	{
 		if (string.IsNullOrEmpty(currentPlayer))
 			return;
 		List<string> res = IOEvent.InfoToString(userSaveInfo[currentPlayer] = playerInfo[currentPlayer].Save());
-		string path = Path.Combine($"{AppContext.BaseDirectory}Datas\\Users\\{currentPlayer}".Split('\\'));
+		string path = Path.Combine($"{GameStates.SavePath}\\Datas\\Users\\{currentPlayer}".Split('\\'));
 		IOEvent.WriteTmpFile(path, IOEvent.StringToByte(res));
 #if DEBUG
 		string tmp = string.Empty;
@@ -138,7 +145,7 @@ public static class PlayerManager
 				for (int i = 0; i < tabCount; i++)
 					tmp += "\t";
 			}
-			path = Path.Combine($"{AppContext.BaseDirectory}Datas\\Users\\{currentPlayer} Data.txt".Split('\\'));
+			path = Path.Combine($"{GameStates.SavePath}\\Datas\\Users\\{currentPlayer} Data.txt".Split('\\'));
 			if (File.Exists(path))
 				File.Delete(path);
 			FileStream stream2 = new(path, FileMode.OpenOrCreate);
@@ -149,6 +156,12 @@ public static class PlayerManager
 		}
 #endif
 	}
+	/// <summary>
+	/// Stores the chart completion result for the current user
+	/// </summary>
+	/// <param name="songName">The name of the chart</param>
+	/// <param name="difficulty">The difficulty played</param>
+	/// <param name="result">The chart result</param>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static void RecordMark(string songName, int difficulty, SongSystem.SongResult result)
 	{
@@ -165,21 +178,33 @@ public static class PlayerManager
 
 		Save();
 	}
+	/// <summary>
+	/// Stores the chart completion result for the current user
+	/// </summary>
+	/// <param name="songName">The name of the chart</param>
+	/// <param name="difficulty">The difficulty played</param>
+	/// <param name="mark">The rating of the play</param>
+	/// <param name="score">The score of the play</param>
+	/// <param name="fc">Whether it was a Full Combo</param>
+	/// <param name="ap">Whether it was an All Perfect</param>
+	/// <param name="acc">The accuracy of the chart</param>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public static void RecordMark(string songName, int difficulty, SongSystem.SkillMark mark, int score, bool fc, bool ap, float acc)
-	{
-		if (string.IsNullOrEmpty(currentPlayer))
-			return;
-
-		RecordMark(songName, difficulty, new SongSystem.SongResult(mark, score, acc, fc, ap));
-	}
-
+	public static void RecordMark(string songName, int difficulty, SongSystem.SkillMark mark, int score, bool fc, bool ap, float acc) => RecordMark(songName, difficulty, new SongSystem.SongResult(mark, score, acc, fc, ap));
+	/// <summary>
+	/// Removes the user with the given username
+	/// </summary>
+	/// <param name="s">The username to remove</param>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static void Remove(string s)
 	{
-		File.Delete("Datas\\Users\\" + s + ".Tmpf");
+		File.Delete($"{GameStates.SavePath}\\Datas\\Users\\" + s + ".Tmpf");
 		_ = playerInfo.Remove(s);
 	}
+	/// <summary>
+	/// Renames the current user
+	/// </summary>
+	/// <param name="old">The old username</param>
+	/// <param name="now">The new username</param>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static void Rename(string old, string now)
 	{
@@ -188,6 +213,11 @@ public static class PlayerManager
 		Remove(old);
 		AddUser(user);
 	}
+	/// <summary>
+	/// Creates a new user
+	/// </summary>
+	/// <param name="name">The new username</param>
+	/// <param name="password">The password of the user</param>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static void AddNewUser(string name, string password)
 	{
@@ -197,6 +227,10 @@ public static class PlayerManager
 		Login(name);
 		Save();
 	}
+	/// <summary>
+	/// Creates a new user
+	/// </summary>
+	/// <param name="info">The user to add</param>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static void AddUser(User info)
 	{
@@ -210,16 +244,17 @@ public static class PlayerManager
 	/// <summary>
 	/// The name of the current user
 	/// </summary>
-	public static string currentPlayer;
+	public static string currentPlayer { get; set; }
 	/// <summary>
 	/// Whether is user is logged in
 	/// </summary>
 	public static bool UserLogin => !string.IsNullOrEmpty(currentPlayer);
-
-	public static bool IsPlayerVIP => CurrentUser.VIP;
 	/// <summary>
 	/// The rating of the user
 	/// </summary>
 	public static float PlayerSkill => CurrentUser.Skill;
-	public static Dictionary<string, User> playerInfo = [];
+	/// <summary>
+	/// The list of users in the data folder
+	/// </summary>
+	public static Dictionary<string, User> playerInfo { get; set; } = [];
 }

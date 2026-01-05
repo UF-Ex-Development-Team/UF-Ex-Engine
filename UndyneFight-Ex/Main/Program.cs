@@ -1,4 +1,5 @@
-﻿namespace UndyneFight_Ex;
+﻿[assembly: System.Reflection.AssemblyVersion("0.4.0")]
+namespace UndyneFight_Ex;
 
 #if WINDOWS || LINUX || DEBUG
 /// <summary>

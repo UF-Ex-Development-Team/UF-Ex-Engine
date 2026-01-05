@@ -8,10 +8,14 @@ namespace UndyneFight_Ex.UserService;
 /// <param name="target"></param>
 public class AchievementObject(Achievement target) : ISaveLoad
 {
+	/// <summary>
+	/// The achievement this object represents
+	/// </summary>
+	public readonly Achievement Achievement = target;
 	/// <inheritdoc/>
 	public List<ISaveLoad> Children => throw new NotImplementedException();
 	/// <inheritdoc/>
-	public void Load(SaveInfo info) => target.LoadProgress(info.IntValue);
+	public void Load(SaveInfo info) => Achievement.LoadProgress(info.IntValue);
 	/// <inheritdoc/>
-	public SaveInfo Save() => new($"{target.Title}:value={target.CurrentProgress}");
+	public SaveInfo Save() => new($"{Achievement.Title}:value={Achievement.CurrentProgress}");
 }

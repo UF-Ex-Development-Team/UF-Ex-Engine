@@ -22,9 +22,9 @@ internal partial class StateShower : Entity
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	internal void PushType(int type)
 	{
-		if ((CurrentScene as FightScene).PlayerInstance.hpControl == null)
+		if (CurrentFightingScene.PlayerInstance.hpControl == null)
 			return;
-		(CurrentScene as FightScene).PlayerInstance.hpControl.GetMark(type);
+		CurrentFightingScene.PlayerInstance.hpControl.GetMark(type);
 		switch (type)
 		{
 			case 0:
@@ -42,7 +42,7 @@ internal partial class StateShower : Entity
 		}
 		if (type == 0)
 		{
-			if (PlayerInstance.hpControl.KR && ((CurrentScene as FightScene).Mode & GameMode.NoGreenSoul) != 0 && Heart.SoulType != 1)
+			if (PlayerInstance.hpControl.KR && (CurrentFightingScene.Mode & GameMode.NoGreenSoul) != 0 && Heart.SoulType != 1)
 				PlayerInstance.hpControl.GiveKR(1);
 			combo = 0;
 		}
@@ -96,8 +96,7 @@ internal partial class StateShower : Entity
 		{
 			JudgementState.Strict => 100,
 			JudgementState.Balanced => 98,
-			JudgementState.Lenient => 96,
-			_ => throw new ArgumentOutOfRangeException()
+			_ => 96,
 		};
 		if (type != 0)
 		{
@@ -160,7 +159,7 @@ internal partial class StateShower : Entity
 		{
 			if (combo != 0)
 			{
-				FightResources.Font.NormalFont.CentreDraw("x" + combo, Centre + new Vector2(30 * scale, 32 * scale), color * alpha, Math.Min(10, appearTime) / 10f * scale, 0.45f);
+				FightResources.Font.NormalFont.CentreDraw("x" + combo, Centre + new Vector2(30, 32) * scale, color * alpha, Math.Min(10, appearTime) / 10f * scale, 0.45f);
 			}
 
 			FightResources.Font.NormalFont.CentreDraw(text, Centre, color * alpha, Math.Min(10, appearTime) / 10f * scale * 1.25f, 0.45f);

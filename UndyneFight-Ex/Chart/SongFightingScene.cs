@@ -198,7 +198,7 @@ public class SongFightingScene : FightScene
 			restartTimer = IsKeyDown(InputIdentity.Reset) ? restartTimer++ : 0;
 			if (restartTimer >= 60 || (IsKeyDown(InputIdentity.Reset) && IsKeyDown(InputIdentity.Alternate)))
 			{
-				GameMain.instance.SetGameoverScreen();
+				_ = GameMain.instance.SetGameoverScreen();
 				PlayDeath();
 				return;
 			}
@@ -386,6 +386,7 @@ public class SongFightingScene : FightScene
 	public override void Dispose()
 	{
 		music?.Stop();
+		currentParam.Music?.Stop();
 		base.Dispose();
 		waveset = null;
 	}

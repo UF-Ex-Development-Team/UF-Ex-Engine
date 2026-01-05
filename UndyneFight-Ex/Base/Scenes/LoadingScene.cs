@@ -45,8 +45,7 @@ public class LoadingScene : Scene
 	/// <inheritdoc/>
 	public override void Update()
 	{
-		appearTime++;
-		if (appearTime == 2)
+		if (++appearTime == 2)
 			loadingTask.Start();
 		else if (appearTime >= LeastLoadingTime && finishedLoad && !eventInvoked && (AudioCache.Count == AudioPreviewPos.Count || SkipLoadingAudio || this is not ResourcesLoadingScene))
 		{
