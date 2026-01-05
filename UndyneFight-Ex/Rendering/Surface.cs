@@ -4,7 +4,7 @@ using UndyneFight_Ex.Entities;
 namespace UndyneFight_Ex;
 
 /// <summary>
-/// THe class for most rendering actions, see the documentation for more information
+/// The class for most rendering actions, see the documentation for more information
 /// </summary>
 public abstract class RenderProduction : IComparable<RenderProduction>
 {

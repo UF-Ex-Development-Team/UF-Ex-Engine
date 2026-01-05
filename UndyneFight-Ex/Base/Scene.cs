@@ -142,9 +142,9 @@ public abstract class Scene : Entity
 		_ = Objects.RemoveAll(s => s.Disposed);
 		EasingUtil.Processor.ProcessEase();
 		Objects.ForEach(s => s.TreeUpdate());
-		foreach (KeyValuePair<string, List<GameEventArgs>> v in GameEvents)
+		foreach (List<GameEventArgs> v in GameEvents.Values)
 		{
-			_ = v.Value.RemoveAll(s => s.Disposed);
+			_ = v.RemoveAll(s => s.Disposed);
 		}
 
 		if (stopTime > 0)

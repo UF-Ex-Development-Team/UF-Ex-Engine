@@ -815,7 +815,7 @@ namespace UndyneFight_Ex
 		/// </summary>
 		public bool Disposed { get; private set; } = false;
 		/// <summary>
-		/// Disposes the object
+		/// Disposes the object and its children
 		/// </summary>
 		public virtual void Dispose()
 		{

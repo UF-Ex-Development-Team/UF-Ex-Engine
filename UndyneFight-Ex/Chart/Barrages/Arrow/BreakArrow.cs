@@ -35,10 +35,18 @@ public partial class Arrow
 
 		public override void Update()
 		{
-			appearTime++;
 			Centre += speed;
-			if (appearTime >= 4)
+			if (++appearTime >= 4)
 			{
+				for (int i = 0; i < 6; i++)
+				{
+					Texture2D image = FightResources.Sprites.arrowShards[color, rotatingType, i];
+					Vector2 pos = Centre + Rotate(shardPosition[i] - ImageCentre + image.Bounds.Size.ToVector2() / 2, Rotation) * Scale;
+					GameStates.InstanceCreate(new ArrowPiece(
+						GetVector2(Rand(1.1f, 2.6f) / 1.5f, Rand(-28, 28) + Rotation + (shardPosition[i].Y > ImageCentre.Y / 2 ? 90 : -90)) * Scale + GetVector2(speed.Length() / 3f, Rotation),
+						pos, Rotation, image, Scale
+					));
+				}
 				Dispose();
 				return;
 			}
@@ -46,18 +54,5 @@ public partial class Arrow
 		}
 
 		public override void Draw() => FormalDraw(Image, Centre, Color.White * 0.5f, Scale, GetRadian(Rotation += rotSpeed), ImageCentre);
-		public override void Dispose()
-		{
-			for (int i = 0; i < 6; i++)
-			{
-				Texture2D image = FightResources.Sprites.arrowShards[color, rotatingType, i];
-				Vector2 pos = Centre + Rotate(shardPosition[i] - ImageCentre + image.Bounds.Size.ToVector2() / 2, Rotation) * Scale;
-				GameStates.InstanceCreate(new ArrowPiece(
-					GetVector2(Rand(1.1f, 2.6f) / 1.5f, Rand(-28, 28) + Rotation + (shardPosition[i].Y > ImageCentre.Y / 2 ? 90 : -90)) * Scale + GetVector2(speed.Length() / 3f, Rotation),
-					pos, Rotation, image, Scale
-				));
-			}
-			base.Dispose();
-		}
 	}
 }

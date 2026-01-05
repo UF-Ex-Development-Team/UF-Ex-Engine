@@ -17,10 +17,9 @@ internal partial class StateShower
 
 		public FailureShower(StateShower result)
 		{
-			SongFightingScene scene = CurrentScene as SongFightingScene;
-			bool NoGreenSoulOrAutoPlay = (((curMode & (int)GameMode.NoGreenSoul) != 0) || ((curMode & (int)GameMode.Autoplay) != 0)) && scene.GreenSoulUsed;
-			bool Practice = (curMode & (int)GameMode.Practice) != 0 && scene.HPReached0;
-			if (NoGreenSoulOrAutoPlay || Practice || scene.ItemUsed)
+			bool NoGreenSoulOrAutoPlay = (((curMode & (int)GameMode.NoGreenSoul) != 0) || ((curMode & (int)GameMode.Autoplay) != 0)) && CurrentFightingScene.GreenSoulUsed;
+			bool Practice = (curMode & (int)GameMode.Practice) != 0 && CurrentFightingScene.HPReached0;
+			if (NoGreenSoulOrAutoPlay || Practice || CurrentFightingScene.ItemUsed)
 				recordMark = false;
 			UpdateIn120 = true;
 			int halvedScore = result.score / 2, timeSurvive = result.surviveTime;

@@ -374,7 +374,7 @@ public partial class Arrow
 	public override void Dispose()
 	{
 		InstanceCreate(new BreakArrow(Speed, Rotation + additiveRotation + mission.Shields.GetShield(ArrowColor).deltaRotation * 6, ArrowColor, rotatingType, Centre, Scale * DrawingScale));
-		_ = arrows.Remove(this);
+		_ = arrows?.Remove(this);
 
 		base.Dispose();
 

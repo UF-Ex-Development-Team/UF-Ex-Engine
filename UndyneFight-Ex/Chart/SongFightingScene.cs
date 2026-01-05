@@ -14,12 +14,7 @@ public class SongFightingScene : FightScene
 {
 	private class SongConditionOptimizer : Entity
 	{
-		private readonly SongFightingScene fatherScene;
-		public SongConditionOptimizer(SongFightingScene scene)
-		{
-			UpdateIn120 = true;
-			fatherScene = scene;
-		}
+		public SongConditionOptimizer() => UpdateIn120 = true;
 		public override void Draw()
 		{
 #if DEBUG
@@ -59,9 +54,7 @@ public class SongFightingScene : FightScene
 		/// <summary>
 		/// The <see cref="IWaveSet"/> of the current chart
 		/// </summary>
-		public IWaveSet Waveset => (IWaveSet)Activator.CreateInstance(wavesetType);
-
-		private readonly Type wavesetType = waveset.GetType();
+		public IWaveSet Waveset = (IWaveSet)Activator.CreateInstance(waveset.GetType());
 		/// <summary>
 		/// The current difficulty of the chart
 		/// </summary>
@@ -178,7 +171,7 @@ public class SongFightingScene : FightScene
 	/// <summary>
 	/// The illustration of the chart
 	/// </summary>
-	public Texture2D SongIllustration { get; set; } = null;
+	public Texture2D SongIllustration => currentParam.SongIllustration;
 	private bool endRan = false;
 
 	private int restartTimer = 0;
@@ -225,7 +218,7 @@ public class SongFightingScene : FightScene
 						music.PlayPosition = PlayOffset;
 						music.Play();
 					}
-					InstanceCreate(new SongConditionOptimizer(this));
+					InstanceCreate(new SongConditionOptimizer());
 					isInBattle = songLoaded = true;
 					ResetTime();
 					//Initialize Items
@@ -341,7 +334,6 @@ public class SongFightingScene : FightScene
 		if (waveset is GameObject obj)
 			InstanceCreate(obj);
 		waveset.Start();
-		SongIllustration = currentParam.SongIllustration;
 	}
 	private void UpdateSong()
 	{

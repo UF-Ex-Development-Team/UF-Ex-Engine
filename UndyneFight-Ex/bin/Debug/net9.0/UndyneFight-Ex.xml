@@ -3963,7 +3963,7 @@
             <param name="mode">The game mode of the chart (Default <see cref="F:UndyneFight_Ex.SongSystem.GameMode.None"/></param>
             <param name="unload">Unload assets (Default true)</param>
         </member>
-        <member name="P:UndyneFight_Ex.Entities.SongFightingScene.SceneParams.Waveset">
+        <member name="F:UndyneFight_Ex.Entities.SongFightingScene.SceneParams.Waveset">
             <summary>
             The <see cref="T:UndyneFight_Ex.SongSystem.IWaveSet"/> of the current chart
             </summary>
@@ -5253,7 +5253,7 @@
         </member>
         <member name="M:UndyneFight_Ex.GameObject.Dispose">
             <summary>
-            Disposes the object
+            Disposes the object and its children
             </summary>
         </member>
         <member name="M:UndyneFight_Ex.GameObject.Kill">
@@ -13294,7 +13294,7 @@
         </member>
         <member name="T:UndyneFight_Ex.RenderProduction">
             <summary>
-            THe class for most rendering actions, see the documentation for more information
+            The class for most rendering actions, see the documentation for more information
             </summary>
         </member>
         <member name="P:UndyneFight_Ex.RenderProduction.AdaptingScale">

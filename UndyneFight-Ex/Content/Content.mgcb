@@ -717,36 +717,6 @@
 #begin Sprites/font/UIFont.xnb
 /copy:Sprites/font/UIFont.xnb
 
-#begin Sprites/font/ut常用字体大全/Comic Sans MS.ttf
-/copy:Sprites/font/ut常用字体大全/Comic Sans MS.ttf;Sprites/font/ut常用字体大全/Comic Sans MS
-
-#begin Sprites/font/ut常用字体大全/Determination Mono.otf
-/copy:Sprites/font/ut常用字体大全/Determination Mono.otf;Sprites/font/ut常用字体大全/Determination Mono
-
-#begin Sprites/font/ut常用字体大全/Determination Sans.otf
-/copy:Sprites/font/ut常用字体大全/Determination Sans.otf;Sprites/font/ut常用字体大全/Determination Sans
-
-#begin Sprites/font/ut常用字体大全/Hachicro.ttf
-/copy:Sprites/font/ut常用字体大全/Hachicro.ttf;Sprites/font/ut常用字体大全/Hachicro
-
-#begin Sprites/font/ut常用字体大全/japanese.ttf
-/copy:Sprites/font/ut常用字体大全/japanese.ttf;Sprites/font/ut常用字体大全/japanese
-
-#begin Sprites/font/ut常用字体大全/Mars Needs Cunnilingus.ttf
-/copy:Sprites/font/ut常用字体大全/Mars Needs Cunnilingus.ttf;Sprites/font/ut常用字体大全/Mars Needs Cunnilingus
-
-#begin Sprites/font/ut常用字体大全/Monster Friend Back.otf
-/copy:Sprites/font/ut常用字体大全/Monster Friend Back.otf;Sprites/font/ut常用字体大全/Monster Friend Back
-
-#begin Sprites/font/ut常用字体大全/Monster Friend Fore.otf
-/copy:Sprites/font/ut常用字体大全/Monster Friend Fore.otf;Sprites/font/ut常用字体大全/Monster Friend Fore
-
-#begin Sprites/font/ut常用字体大全/Papyrus.ttf
-/copy:Sprites/font/ut常用字体大全/Papyrus.ttf;Sprites/font/ut常用字体大全/Papyrus
-
-#begin Sprites/font/ut常用字体大全/Wingdings.ttf
-/copy:Sprites/font/ut常用字体大全/Wingdings.ttf;Sprites/font/ut常用字体大全/Wingdings
-
 #begin UndyneFight_Ex Spritesheet-texture.png
 /importer:TextureImporter
 /processor:TextureProcessor

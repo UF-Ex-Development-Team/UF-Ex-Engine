@@ -117,7 +117,7 @@ public static partial class GameStates
 			CurrentScene.UpdateRendering();
 		}
 		currentScene = missionScene;
-		if (Fight.Functions.GametimeF > 0 && Fight.Functions.GametimeF % 125 == 0)
+		if (Fight.Functions.GametimeF > 0 && Fight.Functions.GametimeF % 125 < 1)
 			GC.Collect();
 		KeysUpdate2();
 		CharInput = KeysUpdate();
