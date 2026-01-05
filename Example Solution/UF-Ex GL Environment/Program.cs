@@ -9,6 +9,7 @@ namespace UF_Ex_Environment //You can define your own namespace name
 		[STAThread]
 		static void Main()
 		{
+			GameStates.GameName = "YOUR_GAME_NAME";
 			//For each chart, you will have to manually load the type of the class
 			GameStartUp.SetMainSongs(
 			[
