@@ -1161,7 +1161,7 @@ public static class EasingUtil
 		/// <param name="startPhase">初始位置在第一个半波里面的比例位置。例如写0.5即从第一个半波的一半位置开始。</param>
 		/// <returns></returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static Func<ICustomMotion, float> SinWave(float intensity, float cycleTime, float startPhase) => (s) => Sin(s.AppearTime * 2 * PI / cycleTime + startPhase) * intensity;
+		public static Func<ICustomMotion, float> SinWave(float intensity, float cycleTime, float startPhase) => (s) => Sin(s.AppearTime * 2 * 90 / cycleTime + startPhase) * intensity;
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static Func<ICustomMotion, float> Accelerating(float speed, float acceleration) => (s) => speed * s.AppearTime + acceleration * (0.5f * s.AppearTime * s.AppearTime);
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]

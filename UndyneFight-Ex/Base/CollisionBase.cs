@@ -120,7 +120,7 @@ public class GravityLine
 	}
 
 	private float A, B, C, width = 0;
-	private float length => Vector2.Distance(v1, v2);
+	private float Length => Vector2.Distance(v1, v2);
 	private Vector2 Centre;
 	/// <summary>
 	/// The rotation of the line
@@ -148,19 +148,14 @@ public class GravityLine
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public bool IsCollideWith(Player.Heart player)
 	{
-		if (!IsEnable)
+		if (!IsEnable || !(isCollide = Math.Abs(Distance(player)) <= 8.01f + width && GetDistance(player.Centre, Centre) <= (Length / 2 + 6)))
 			return false;
-		if (isCollide = Math.Abs(Distance(player)) <= 8.01f + width && GetDistance(player.Centre, Centre) <= (length / 2 + 6))
-		{
-			float dx = player.Centre.X - Centre.X, dy = player.Centre.Y - Centre.Y;
-			Vector2 v1 = new(dx, dy);
-			Vector2 v2 = GetVector2(1, player.Rotation - 90);
-			if (Vector2.Dot(v1, v2) < 0)
-				return isCollide = false;
-			collidePlayers.Add(player);
-			return true;
-		}
-		return false;
+		Vector2 v1 = player.Centre - Centre;
+		Vector2 v2 = GetVector2(1, player.Rotation - 90);
+		if (Vector2.Dot(v1, v2) < 0)
+			return isCollide = false;
+		collidePlayers.Add(player);
+		return true;
 	}
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	internal Vector2 CorrectPosition(Player.Heart player)

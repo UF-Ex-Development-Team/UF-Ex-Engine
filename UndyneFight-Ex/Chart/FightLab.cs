@@ -697,62 +697,58 @@ public static partial class Functions
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static void UnitRotation(string tag, EaseUnit<float> rotationEase)
 		{
-			if (CurrentScene is SongFightingScene)
+			if (CurrentScene is not SongFightingScene)
+				return;
+			Arrow.UnitEasing ease = new()
 			{
-				Arrow.UnitEasing ease = new()
-				{
-					ApplyTime = rotationEase.Time,
-					RotationEase = rotationEase
-				};
-				ease.TagApply(tag);
-				AddInstance(ease);
-				ease.AutoDispose = true;
-			}
+				ApplyTime = rotationEase.Time,
+				RotationEase = rotationEase
+			};
+			ease.TagApply(tag);
+			AddInstance(ease);
+			ease.AutoDispose = true;
 		}
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static void UnitDistance(string tag, EaseUnit<float> distanceEase)
 		{
-			if (CurrentScene is SongFightingScene)
+			if (CurrentScene is not SongFightingScene)
+				return;
+			Arrow.UnitEasing ease = new()
 			{
-				Arrow.UnitEasing ease = new()
-				{
-					ApplyTime = distanceEase.Time,
-					DistanceEase = distanceEase
-				};
-				ease.TagApply(tag);
-				AddInstance(ease);
-				ease.AutoDispose = true;
-			}
+				ApplyTime = distanceEase.Time,
+				DistanceEase = distanceEase
+			};
+			ease.TagApply(tag);
+			AddInstance(ease);
+			ease.AutoDispose = true;
 		}
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static void UnitPosition(string tag, EaseUnit<Vector2> positionEase)
 		{
-			if (CurrentScene is SongFightingScene)
+			if (CurrentScene is not SongFightingScene)
+				return;
+			Arrow.UnitEasing ease = new()
 			{
-				Arrow.UnitEasing ease = new()
-				{
-					ApplyTime = positionEase.Time,
-					PositionEase = positionEase
-				};
-				ease.TagApply(tag);
-				AddInstance(ease);
-				ease.AutoDispose = true;
-			}
+				ApplyTime = positionEase.Time,
+				PositionEase = positionEase
+			};
+			ease.TagApply(tag);
+			AddInstance(ease);
+			ease.AutoDispose = true;
 		}
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static void UnitAlpha(string tag, EaseUnit<float> alphaEase)
 		{
-			if (CurrentScene is SongFightingScene)
+			if (CurrentScene is not SongFightingScene)
+				return;
+			Arrow.UnitEasing ease = new()
 			{
-				Arrow.UnitEasing ease = new()
-				{
-					ApplyTime = alphaEase.Time,
-					AlphaEase = alphaEase
-				};
-				ease.TagApply(tag);
-				AddInstance(ease);
-				ease.AutoDispose = true;
-			}
+				ApplyTime = alphaEase.Time,
+				AlphaEase = alphaEase
+			};
+			ease.TagApply(tag);
+			AddInstance(ease);
+			ease.AutoDispose = true;
 		}
 	}
 	/// <summary>

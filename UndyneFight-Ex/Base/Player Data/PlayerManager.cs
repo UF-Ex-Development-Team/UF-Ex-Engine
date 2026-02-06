@@ -86,25 +86,22 @@ public static class PlayerManager
 			GameStates.CheatAffirmed();
 		Save();
 		//Create backup
-		if (!Directory.Exists(Path.Combine($"{GameStates.SavePath}\\Datas\\Users\\Backup")))
-			_ = Directory.CreateDirectory(Path.Combine($"{GameStates.SavePath}\\Datas\\Users\\Backup"));
-		IOEvent.WriteTmpFile(Path.Combine($"{GameStates.SavePath}\\Datas\\Users\\Backup\\{currentPlayer}_{DateTime.Now.Year}_{DateTime.Now.Month}_{DateTime.Now.Day}_{DateTime.Now.Hour}_{DateTime.Now.Minute}_{DateTime.Now.Second}".Split('\\')), IOEvent.InfoToByte(playerInfo[currentPlayer].Save()));
-		//Purge excess backups
 		string BackupPath = Path.Combine($"{GameStates.SavePath}\\Datas\\Users\\Backup");
-		if (Directory.Exists(BackupPath))
+		if (!Directory.Exists(BackupPath))
+			_ = Directory.CreateDirectory(BackupPath);
+		IOEvent.WriteTmpFile(Path.Combine($"{BackupPath}\\{currentPlayer}_{DateTime.Now.Year}_{DateTime.Now.Month}_{DateTime.Now.Day}_{DateTime.Now.Hour}_{DateTime.Now.Minute}_{DateTime.Now.Second}".Split('\\')), IOEvent.InfoToByte(playerInfo[currentPlayer].Save()));
+		//Purge excess backups
+		string[] FileList = Directory.GetFiles(BackupPath);
+		List<Tuple<string, long>> Files = [];
+		while (FileList.Length > 100)
 		{
-			string[] FileList = Directory.GetFiles(BackupPath);
-			List<Tuple<string, long>> Files = [];
-			while (FileList.Length > 100)
-			{
-				foreach (string file in FileList)
-					Files.Add(new(file, File.GetCreationTimeUtc(file).ToFileTimeUtc()));
-				//Sort by UTC time
-				Files.Sort((x, y) => x.Item2.CompareTo(y.Item2));
-				File.Delete(Path.Combine(Files[0].Item1));
-				FileList = Directory.GetFiles(BackupPath);
-				Files.Clear();
-			}
+			foreach (string file in FileList)
+				Files.Add(new(file, File.GetCreationTimeUtc(file).ToFileTimeUtc()));
+			//Sort by UTC time
+			Files.Sort((x, y) => x.Item2.CompareTo(y.Item2));
+			File.Delete(Path.Combine(Files[0].Item1));
+			FileList = Directory.GetFiles(BackupPath);
+			Files.Clear();
 		}
 	}
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]

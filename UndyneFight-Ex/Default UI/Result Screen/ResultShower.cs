@@ -252,44 +252,27 @@ internal partial class StateShower
 		{
 			bool buffed = (lastMode & GameMode.Buffed) == GameMode.Buffed;
 			float scorePercent = GetScorePercent();
-			if (AP && scorePercent >= 0.997f)
+			mark = scorePercent switch
 			{
-				mark = SkillMark.Impeccable;
-			}
-			else if ((AC && okayCount == 0 && scorePercent >= 0.99f) || (buffed && scorePercent >= 0.995f))
+				>= 0.997f when AP => SkillMark.Impeccable,
+				>= 0.995f when buffed => SkillMark.Eminent,
+				>= 0.99f when AC && okayCount == 0 => SkillMark.Eminent,
+				>= 0.99f when buffed => SkillMark.Excellent,
+				>= 0.98f when AC => SkillMark.Excellent,
+				>= 0.96f => SkillMark.Respectable,
+				>= 0.9f => SkillMark.Acceptable,
+				>= 0.75f => SkillMark.Ordinary,
+				_ => SkillMark.Failed
+			};
+			plus = mark switch
 			{
-				mark = SkillMark.Eminent;
-				if (buffed && scorePercent >= 0.995f && AC && okayCount == 0)
-					plus = true;
-			}
-			else if ((AC && scorePercent >= 0.98f) || (buffed && scorePercent >= 0.99f))
-			{
-				mark = SkillMark.Excellent;
-				if ((buffed && AC) || (scorePercent >= 0.99f && AC))
-					plus = true;
-			}
-			else if (scorePercent >= 0.96f)
-			{
-				mark = SkillMark.Respectable;
-				if (scorePercent >= 0.97f)
-					plus = true;
-			}
-			else if (scorePercent >= 0.9f)
-			{
-				mark = SkillMark.Acceptable;
-				if (scorePercent >= 0.93f)
-					plus = true;
-			}
-			else if (scorePercent >= 0.75f)
-			{
-				mark = SkillMark.Ordinary;
-				if (scorePercent >= 0.85f)
-					plus = true;
-			}
-			else
-			{
-				mark = SkillMark.Failed;
-			}
+				SkillMark.Ordinary when scorePercent >= 0.85f => true,
+				SkillMark.Acceptable when scorePercent >= 0.93f => true,
+				SkillMark.Respectable when scorePercent >= 0.97f => true,
+				SkillMark.Excellent when (buffed && AC) || (scorePercent >= 0.99f && AC) => true,
+				SkillMark.Eminent when (buffed && scorePercent >= 0.995f && AC && okayCount == 0) => true,
+				_ => false
+			};
 		}
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		private void PushModifiers(string Name)
@@ -440,14 +423,12 @@ internal partial class StateShower
 				else
 					NormalFont.CentreDraw("!NO BARRAGE!", new Vector2(400, 220), Color.Lerp(Color.Black, Color.Red, alpha), 1, 0.3f);
 			}
-
-			if (CurrentAccuracy > 0)
-			{
-				NormalFont.Draw("Perfect", new Vector2(214, 212), Color.Lerp(Color.Transparent, Color.Yellow, alpha), 1, 0.3f);
-				NormalFont.Draw($"{DisplayValues.Perfect = MathF.Ceiling(float.Lerp(DisplayValues.Perfect, perfectCount, 0.04f))} = {(DisplayValues.PAccuracy = float.Lerp(DisplayValues.PAccuracy, perfectPercent, 0.04f)) * 100:F2}%", new Vector2(214 + 125, 212), Color.Lerp(Color.Transparent, Color.LightGray, alpha), 1, 0.3f);
-				NormalFont.Draw($"Early: {DisplayValues.PerfectE = MathF.Ceiling(float.Lerp(DisplayValues.PerfectE, perfectECount, 0.04f))} Late: {DisplayValues.PerfectL = MathF.Ceiling(float.Lerp(DisplayValues.PerfectL, perfectLCount, 0.04f))}", new(214, 235), Color.Lerp(Color.Transparent, Color.Orange, alpha), 0.7f, 0.3f);
-				NormalFont.Draw($"Max Combo: {DisplayValues.Combo = MathF.Ceiling(float.Lerp(DisplayValues.Combo, maxCombo, 0.04f))}", new Vector2(214, 255), Color.Lerp(Color.Transparent, Color.Silver, alpha), 1, 0.3f);
-			}
+			if (CurrentAccuracy <= 0)
+				return;
+			NormalFont.Draw("Perfect", new Vector2(214, 212), Color.Lerp(Color.Transparent, Color.Yellow, alpha), 1, 0.3f);
+			NormalFont.Draw($"{DisplayValues.Perfect = MathF.Ceiling(float.Lerp(DisplayValues.Perfect, perfectCount, 0.04f))} = {(DisplayValues.PAccuracy = float.Lerp(DisplayValues.PAccuracy, perfectPercent, 0.04f)) * 100:F2}%", new Vector2(214 + 125, 212), Color.Lerp(Color.Transparent, Color.LightGray, alpha), 1, 0.3f);
+			NormalFont.Draw($"Early: {DisplayValues.PerfectE = MathF.Ceiling(float.Lerp(DisplayValues.PerfectE, perfectECount, 0.04f))} Late: {DisplayValues.PerfectL = MathF.Ceiling(float.Lerp(DisplayValues.PerfectL, perfectLCount, 0.04f))}", new(214, 235), Color.Lerp(Color.Transparent, Color.Orange, alpha), 0.7f, 0.3f);
+			NormalFont.Draw($"Max Combo: {DisplayValues.Combo = MathF.Ceiling(float.Lerp(DisplayValues.Combo, maxCombo, 0.04f))}", new Vector2(214, 255), Color.Lerp(Color.Transparent, Color.Silver, alpha), 1, 0.3f);
 		}
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		private void RatingDraw()
@@ -475,13 +456,9 @@ internal partial class StateShower
 			}
 			NormalFont.Draw("Rating gained:", new Vector2(211, 96), Color.Lerp(Color.Transparent, Color.White, alpha), 0.95f, 0.4f);
 			if (curRating > oldRating + 0.001f)
-			{
 				NormalFont.Draw("+" + FloatToString(curRating - oldRating, 3), new Vector2(431, 96), Color.Lerp(Color.Transparent, Color.Lime, alpha), 1, 0.3f);
-			}
 			else
-			{
 				NormalFont.Draw("No progress", new Vector2(431, 96), Color.Lerp(Color.Transparent, Color.Silver, alpha), 1, 0.3f);
-			}
 			Vector3 Rating = SingleCalculateRating(new Vector3(dif[0], dif[1], dif[2]), rerate);
 			DrawingLab.DrawLine(new Vector2(210, 237.5f), new Vector2(618, 237.5f), 2, Color.Lerp(Color.Transparent, Color.White, alpha), 0.4f);
 			NormalFont.Draw("->", new Vector2(211, 164), Color.Lerp(Color.Transparent, Color.Silver, alpha), 0.9f, 0.4f);
@@ -523,15 +500,13 @@ internal partial class StateShower
 					NormalFont.Draw($"{FloatToString(Rating.Y, 2)}", new Vector2(520, 326), Color.Lerp(Color.Transparent, Color.Gold, alpha), 1.2f, 0.4f);
 				}
 			}
-
-			if (ModifiersUsed)
-			{
-				DrawingLab.DrawLine(new Vector2(202, 80), new Vector2(627, 372), 5, Color.Lerp(Color.Transparent, Color.Red, alpha), 0.45f);
-				DrawingLab.DrawLine(new Vector2(627, 80), new Vector2(202, 372), 5, Color.Lerp(Color.Transparent, Color.Red, alpha), 0.45f);
-				for (int i = 0; i < 8; i++)
-					NormalFont.CentreDraw("Unrated chart", new Vector2(410, 235) + GetVector2(3, i * 45), Color.Lerp(Color.Transparent, Color.Lerp(Color.Green, Color.Transparent, 0.3f), alpha), 1.5f, 0.6f);
-				NormalFont.CentreDraw("Unrated chart", new Vector2(410, 235), Color.Lerp(Color.Transparent, Color.Lime, alpha), 1.5f, 0.7f);
-			}
+			if (!ModifiersUsed)
+				return;
+			DrawingLab.DrawLine(new Vector2(202, 80), new Vector2(627, 372), 5, Color.Lerp(Color.Transparent, Color.Red, alpha), 0.45f);
+			DrawingLab.DrawLine(new Vector2(627, 80), new Vector2(202, 372), 5, Color.Lerp(Color.Transparent, Color.Red, alpha), 0.45f);
+			for (int i = 0; i < 8; i++)
+				NormalFont.CentreDraw("Unrated chart", new Vector2(410, 235) + GetVector2(3, i * 45), Color.Lerp(Color.Transparent, Color.Lerp(Color.Green, Color.Transparent, 0.3f), alpha), 1.5f, 0.6f);
+			NormalFont.CentreDraw("Unrated chart", new Vector2(410, 235), Color.Lerp(Color.Transparent, Color.Lime, alpha), 1.5f, 0.7f);
 		}
 		#endregion
 		#region Extra

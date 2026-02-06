@@ -172,9 +172,9 @@ public partial class Player : Entity
 
 		internal int YFacing => MathUtil.Posmod(missionRotation, 360) switch
 		{
-			_ when MathUtil.Posmod(missionRotation, 360) is >= 45 and < 135 => 2,
-			_ when MathUtil.Posmod(missionRotation, 360) is >= 135 and < 225 => 3,
-			_ when MathUtil.Posmod(missionRotation, 360) is >= 225 and < 315 => 0,
+			float x when x is >= 45 and < 135 => 2,
+			float x when x is >= 135 and < 225 => 3,
+			float x when x is >= 225 and < 315 => 0,
 			_ => 1
 		};
 		internal int XFacing => MathUtil.Posmod(YFacing - 1, 4);
@@ -208,7 +208,7 @@ public partial class Player : Entity
 		/// </summary>
 		public bool EnabledRedShield
 		{
-			set { enabledRedShield = value; (CurrentScene as SongFightingScene).GreenSoulUsed = true; }
+			set { enabledRedShield = value; CurrentFightingScene.GreenSoulUsed = true; }
 		}
 		/// <summary>
 		/// Whether the soul is split into several souls
@@ -400,17 +400,16 @@ public partial class Player : Entity
 			int protectTime = (FatherObject as Player).hpControl.protectTime;
 			Color drawingColor = isOranged ? Color.Orange : CurrentMoveState.StateColor;
 			FormalDraw(Image, Centre, drawingColor * (protectTime > 0 ? ((protectTime % 30) > 8 ? 0.6f : 1) : 1) * Alpha, MathUtil.GetRadian(Rotation), ImageCentre);
-
-			if (SoulType == 4)
+			//Process purple soul lines
+			if (SoulType != 4)
+				return;
+			int count = PurpleLineCount + 1;
+			float delta = controllingBox.CollidingBox.Height / count;
+			for (int i = 1; i < count; i++)
 			{
-				int count = PurpleLineCount + 1;
-				float delta = controllingBox.CollidingBox.Height / count;
-				for (int i = 1; i < count; i++)
-				{
-					RectangleBox box = controllingBox as RectangleBox;
-					DrawingLab.DrawLine(new Vector2(box.Centre.X, i * delta + box.Up),
-						0, purpleLineLength, 3, Color.MediumPurple, 0.1f);
-				}
+				RectangleBox box = controllingBox as RectangleBox;
+				DrawingLab.DrawLine(new Vector2(box.Centre.X, i * delta + box.Up),
+					0, purpleLineLength, 3, Color.MediumPurple, 0.1f);
 			}
 		}
 
@@ -441,10 +440,9 @@ public partial class Player : Entity
 
 			if (!Fight.FightStates.roundType)
 				CurrentMoveState.MoveFunction(this);
-
-			if (isOranged)
-				if ((Gametime % 3) == 0)
-					GameStates.InstanceCreate(new RetentionEffect(this, 15, Color.Orange * 0.5f)
+			//Orange soul trail effect
+			if (isOranged && (Gametime % 3) == 0)
+				GameStates.InstanceCreate(new RetentionEffect(this, 15, Color.Orange * 0.5f)
 					{ AngleMode = true });
 
 			IsStable = !(IsMoved = (lastCentre - Centre).Length() >= 0.005f);

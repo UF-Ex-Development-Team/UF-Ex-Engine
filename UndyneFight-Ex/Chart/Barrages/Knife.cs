@@ -84,37 +84,20 @@ public class Knife : Barrage
 		int offset = 3 - (int)JudgeState;
 
 		if (res < 0)
-		{
-			if (!hasHit)
-				PushScore(0);
-			LoseHP(Heart);
-			hasHit = true;
-		}
+			goto TakeDamage;
 		else if (res <= 1.6f - offset * 0.4f)
-		{
-			if (score >= 2)
-			{
-				score = 1;
-				Player.CreateCollideEffect(Color.LawnGreen, 3f);
-			}
-		}
+			OkayCollision();
 		else if (res <= 4.2f - offset * 1.2f)
-		{
-			if (score >= 3)
-			{
-				score = 2;
-				Player.CreateCollideEffect(Color.LightBlue, 6f);
-			}
-		}
-		if (score != 3 && needAP && MarkScore)
-		{
-			if (!hasHit)
-			{
-				PushScore(0);
-				LoseHP(Heart);
-				hasHit = true;
-			}
-		}
+			NiceCollision();
+		if (score == 3 || !needAP || !MarkScore)
+			return;
+		goto TakeDamage;
+
+	TakeDamage:
+		if (!hasHit)
+			PushScore(0);
+		LoseHP(Heart);
+		hasHit = true;
 	}
 
 	private float scale = 0;

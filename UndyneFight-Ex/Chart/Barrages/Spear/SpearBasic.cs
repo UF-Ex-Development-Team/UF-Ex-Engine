@@ -41,41 +41,42 @@ public class Spear : LineCollisionBarrage
 	public override void Update()
 	{
 		controlLayer = IsHidden ? Surface.Hidden : Surface.Normal;
-		if (AutoDispose)
+		//Process auto dispose
+		if (!AutoDispose)
+			return;
+		//Check whether the spear is inside the screen, if so then dispose when it goes outside
+		bool ins = screen.Contain(Centre);
+		if (ins && !ForceDispose)
+			ForceDispose = true;
+		if (!ForceDispose || ins)
+			return;
+		//Bouncing spears
+		if (this is NormalSpear NSpear)
 		{
-			bool ins = screen.Contain(Centre);
-			if (ins && !ForceDispose)
-				ForceDispose = true;
-			if (ForceDispose && !ins)
+			if (NSpear.Rebound && NSpear.ReboundCount > -1)
 			{
-				if (this is NormalSpear NSpear)
-				{
-					if (NSpear.Rebound && NSpear.ReboundCount > -1)
-					{
-						int Normal = 0;
-						//Left
-						if (Centre.X <= 30)
-							Normal = 270;
-						//Right
-						else if (Centre.X >= 610)
-							Normal = 90;
-						//Top
-						if (Centre.Y <= 30)
-							Normal = 0;
-						//Down
-						else if (Centre.Y >= 450)
-							Normal = 180;
+				int Normal = 0;
+				//Left
+				if (Centre.X <= 30)
+					Normal = 270;
+				//Right
+				else if (Centre.X >= 610)
+					Normal = 90;
+				//Top
+				if (Centre.Y <= 30)
+					Normal = 0;
+				//Down
+				else if (Centre.Y >= 450)
+					Normal = 180;
 
-						Rotation = 2 * Normal - Rotation;
-						NSpear.ReboundCount--;
-					}
-					else
-						Dispose();
-				}
-				else
-					Dispose();
+				Rotation = 2 * Normal - Rotation;
+				NSpear.ReboundCount--;
 			}
+			else
+				Dispose();
 		}
+		else
+			Dispose();
 	}
 	/// <inheritdoc/>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]

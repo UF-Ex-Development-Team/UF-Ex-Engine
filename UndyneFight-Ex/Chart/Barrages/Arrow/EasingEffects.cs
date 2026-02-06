@@ -118,13 +118,13 @@ public partial class Arrow : Entity
 		{
 			_easingTimeMax = 0;
 			if (positionEaseEnabled)
-				_easingTimeMax = MathF.Max(_easingTimeMax, positionEase.Time);
+				_easingTimeMax = float.Max(_easingTimeMax, positionEase.Time);
 			if (rotationEaseEnabled)
-				_easingTimeMax = MathF.Max(_easingTimeMax, rotationEase.Time);
+				_easingTimeMax = float.Max(_easingTimeMax, rotationEase.Time);
 			if (distanceEaseEnabled)
-				_easingTimeMax = MathF.Max(_easingTimeMax, distanceEase.Time);
+				_easingTimeMax = float.Max(_easingTimeMax, distanceEase.Time);
 			if (alphaEaseEnabled)
-				_easingTimeMax = MathF.Max(_easingTimeMax, alphaEase.Time);
+				_easingTimeMax = float.Max(_easingTimeMax, alphaEase.Time);
 
 			maxIndex = ToArrayIndex(_easingTimeMax) + 1;
 			if (maxIndex > 0)
@@ -281,7 +281,7 @@ public partial class Arrow : Entity
 			if (alphaEaseEnabled)
 				alphaBuffer[arrayIndex] = alphaEase.Easing(this);
 
-			if (AppearTime > 20 && AutoDispose && arrows.Count == 0)
+			if (AppearTime > 20 && AutoDispose && AllArrows.Count == 0)
 				Dispose();
 		}
 	}

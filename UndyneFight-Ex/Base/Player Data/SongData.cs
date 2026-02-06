@@ -314,15 +314,9 @@ public class RatingCalculator(SongManager songManager)
 
 		float dif1 = 0, dif2 = 0, dif3 = 0;
 
-		if (Information != null)
-		{
-			if (Information.CompleteDifficulty.TryGetValue(difficulty, out float value))
-				dif1 = value;
-			if (Information.ComplexDifficulty.TryGetValue(difficulty, out value))
-				dif2 = value;
-			if (Information.APDifficulty.TryGetValue(difficulty, out value))
-				dif3 = value;
-		}
+		_ = Information?.CompleteDifficulty.TryGetValue(difficulty, out dif1);
+		_ = Information?.ComplexDifficulty.TryGetValue(difficulty, out dif2);
+		_ = Information?.APDifficulty.TryGetValue(difficulty, out dif3);
 
 		return new(dif1, dif2, dif3);
 	}
@@ -428,47 +422,47 @@ public class RatingCalculator(SongManager songManager)
 			SongData song = i;
 			foreach (KeyValuePair<Difficulty, SongData.SongState> j in song.CurrentSongStates)
 			{
-				SongData.SongState cur = j.Value;
+				Difficulty curDiff = j.Key;
+				SongData.SongState curState = j.Value;
 				if (!songType.ContainsKey(song.SongName))
 					continue;
-				Tuple<float, float, float> dif = GetDifficulty(songType[song.SongName], j.Key);
+				Tuple<float, float, float> dif = GetDifficulty(songType[song.SongName], curDiff);
 
-				_ = best7.Add(dif.Item2 * ReRate(cur.Accuracy) + MathUtil.GetRandom(-0.00001f, 0.00001f));
-				if (cur.Mark != SkillMark.Failed)
+				_ = best7.Add(dif.Item2 * ReRate(curState.Accuracy) + MathUtil.GetRandom(-0.00001f, 0.00001f));
+				if (curState.Mark != SkillMark.Failed)
 					comp1 = MathF.Max(comp1, dif.Item1);
-				if (cur.AP)
+				if (curState.AP)
 					ap1 = MathF.Max(ap1, dif.Item3);
-				if (cur.AC)
+				if (curState.AC)
 					fc1 = MathF.Max(fc1, dif.Item3);
 				//Achievement logic
-				if (PlayerManager.CurrentUser != null)
-				{
-					SongResult res = new(j.Value.Mark, j.Value.Score, j.Value.Accuracy, j.Value.AC, j.Value.AP);
+				if (PlayerManager.CurrentUser == null)
+					continue;
 
-					SongInformation att = songType[song.SongName].Attributes;
-					SongPlayData playData = (att?.ComplexDifficulty.ContainsKey(j.Key) ?? false)
-					? new SongPlayData()
-					{
-						Result = res,
-						Name = song.SongName,
-						GameMode = GameMode.None,
-						CompleteThreshold = att.CompleteDifficulty[j.Key],
-						ComplexThreshold = att.ComplexDifficulty[j.Key],
-						APThreshold = att.APDifficulty[j.Key],
-						Difficulty = j.Key
-					}
-					: new SongPlayData()
-					{
-						Result = res,
-						Name = song.SongName,
-						GameMode = GameMode.None,
-						CompleteThreshold = 0,
-						ComplexThreshold = 0,
-						APThreshold = 0,
-						Difficulty = j.Key
-					};
-					Achievements.AchievementManager.CheckSongAchievements(playData);
+				SongResult res = new(curState.Mark, curState.Score, curState.Accuracy, curState.AC, curState.AP);
+				SongInformation att = songType[song.SongName].Attributes;
+				SongPlayData playData = (att?.ComplexDifficulty.ContainsKey(curDiff) ?? false)
+				? new SongPlayData()
+				{
+					Result = res,
+					Name = song.SongName,
+					GameMode = GameMode.None,
+					CompleteThreshold = att.CompleteDifficulty[curDiff],
+					ComplexThreshold = att.ComplexDifficulty[curDiff],
+					APThreshold = att.APDifficulty[curDiff],
+					Difficulty = curDiff
 				}
+				: new SongPlayData()
+				{
+					Result = res,
+					Name = song.SongName,
+					GameMode = GameMode.None,
+					CompleteThreshold = 0,
+					ComplexThreshold = 0,
+					APThreshold = 0,
+					Difficulty = curDiff
+				};
+				Achievements.AchievementManager.CheckSongAchievements(playData);
 			}
 		}
 		for (int i = 0; best7.Count < 7; i++)

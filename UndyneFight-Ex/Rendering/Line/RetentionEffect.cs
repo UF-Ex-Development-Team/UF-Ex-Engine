@@ -97,16 +97,16 @@ public partial class Line
 				DrawTargetLine(new Vector2(640 - vec1.X, vec1.Y), new Vector2(640 - vec2.X, vec2.Y));
 			if (obliqueMirror)
 				DrawTargetLine(new Vector2(640 - vec1.X, 480 - vec1.Y), new Vector2(640 - vec2.X, 480 - vec2.Y));
-			if (verticalLine)
-			{
-				DrawTargetLine(new Vector2(560 - vec1.Y, vec1.X - 80), new Vector2(560 - vec2.Y, vec2.X - 80));
-				if (transverseMirror)
-					DrawTargetLine(new Vector2(640 - (560 - vec1.Y), vec1.X - 80), new Vector2(640 - (560 - vec2.Y), vec2.X - 80));
-				if (verticalMirror)
-					DrawTargetLine(new Vector2(560 - vec1.Y, 480 - (vec1.X - 80)), new Vector2(560 - vec2.Y, 480 - (vec2.X - 80)));
-				if (obliqueMirror)
-					DrawTargetLine(new Vector2(640 - (560 - vec1.Y), 480 - (vec1.X - 80)), new Vector2(640 - (560 - vec2.Y), 480 - (vec2.X - 80)));
-			}
+
+			if (!verticalLine)
+				return;
+			DrawTargetLine(new Vector2(560 - vec1.Y, vec1.X - 80), new Vector2(560 - vec2.Y, vec2.X - 80));
+			if (transverseMirror)
+				DrawTargetLine(new Vector2(640 - (560 - vec1.Y), vec1.X - 80), new Vector2(640 - (560 - vec2.Y), vec2.X - 80));
+			if (verticalMirror)
+				DrawTargetLine(new Vector2(560 - vec1.Y, 480 - (vec1.X - 80)), new Vector2(560 - vec2.Y, 480 - (vec2.X - 80)));
+			if (obliqueMirror)
+				DrawTargetLine(new Vector2(640 - (560 - vec1.Y), 480 - (vec1.X - 80)), new Vector2(640 - (560 - vec2.Y), 480 - (vec2.X - 80)));
 		}
 
 		private Vector2 vec1, vec2;

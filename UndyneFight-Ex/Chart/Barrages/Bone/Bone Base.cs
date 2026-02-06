@@ -99,22 +99,21 @@ public class Bone : LineCollisionBarrage
 		controlLayer = IsMasked ? Surface.Hidden : Surface.Normal;
 		Points.Start = Centre + GetVector2(Length / 2, Rotation + 90);
 		Points.End = Centre - GetVector2(Length / 2, Rotation + 90);
-		if (autoDispose)
-		{
-			bool ins = this is CustomBone Cbone ? Cbone.screenC.Contain(Centre) : screen.Contain(Centre);
-			if (ins && !hasBeenInside)
-				hasBeenInside = true;
-			if (hasBeenInside && !ins)
-				Dispose();
-		}
+		//Process auto dispose
+		if (!autoDispose)
+			return;
+		bool ins = this is CustomBone Cbone ? Cbone.screenC.Contain(Centre) : screen.Contain(Centre);
+		if (ins && !hasBeenInside)
+			hasBeenInside = true;
+		if (hasBeenInside && !ins)
+			Dispose();
 	}
 	/// <inheritdoc/>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public override void GetCollide(Player.Heart Heart)
 	{
-		if (Alpha <= 0.9f)
-			return;
-		base.GetCollide(Heart);
+		if (Alpha > 0.9f)
+			base.GetCollide(Heart);
 	}
 	/// <inheritdoc/>
 	public Bone() : base(3.5f)

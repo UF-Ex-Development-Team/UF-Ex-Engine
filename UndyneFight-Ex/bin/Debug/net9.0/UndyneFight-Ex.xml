@@ -1275,7 +1275,7 @@
             </summary>
             <param name="color">The color to set to</param>
         </member>
-        <member name="M:UndyneFight_Ex.Entities.Arrow.CompareTo(System.Object)">
+        <member name="M:UndyneFight_Ex.Entities.Arrow.CompareTo(UndyneFight_Ex.Entities.Arrow)">
             <inheritdoc/>
         </member>
         <member name="P:UndyneFight_Ex.Entities.Arrow.AppearTime">
@@ -12055,12 +12055,22 @@
             The <see cref="T:UndyneFight_Ex.SongSystem.WaveConstructor.ChartSettings"/> of the chart (Note that the settings persist)
             </summary>
         </member>
+        <member name="F:UndyneFight_Ex.SongSystem.WaveConstructor.chartingActions">
+            <summary>
+            List of registered functions for <see cref="M:UndyneFight_Ex.SongSystem.WaveConstructor.CreateChart(System.Single,System.Single,System.Single,System.String[])"/>
+            </summary>
+        </member>
         <member name="M:UndyneFight_Ex.SongSystem.WaveConstructor.RegisterFunction(System.String,System.Action)">
             <summary>
             Registers a function for <see cref="M:UndyneFight_Ex.SongSystem.WaveConstructor.CreateChart(System.Single,System.Single,System.Single,System.String[])"/> to execute
             </summary>
             <param name="name">The name of the function</param>
             <param name="action">The action to invoke when executed</param>
+        </member>
+        <member name="F:UndyneFight_Ex.SongSystem.WaveConstructor.removingActions">
+            <summary>
+            The one time functions to remove next frame
+            </summary>
         </member>
         <member name="M:UndyneFight_Ex.SongSystem.WaveConstructor.RegisterFunctionOnce(System.String,System.Action)">
             <summary>

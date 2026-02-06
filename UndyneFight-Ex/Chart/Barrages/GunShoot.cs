@@ -85,32 +85,21 @@ internal class Bullet : Barrage
 				PushScore(0);
 				GiveKR(0.6f);
 			}
-			LoseHP(player);
-			hasHit = true;
+			goto TakeDamage;
 		}
 		else if (res <= 2)
-		{
-			if (score >= 2)
-			{
-				score = 1;
-				Player.CreateCollideEffect(Color.LawnGreen, 3f);
-			}
-		}
+			OkayCollision();
 		else if (res <= 6)
-		{
-			if (score >= 3)
-			{
-				score = 2;
-				Player.CreateCollideEffect(Color.LightBlue, 6f);
-			}
-		}
-		if (score != 3 && ((CurrentScene as FightScene).Mode & GameMode.PerfectOnly) != 0 && MarkScore)
-		{
-			if (!hasHit)
-				PushScore(0);
-			LoseHP(player);
-			hasHit = true;
-		}
+			NiceCollision();
+		if (score == 3 || ((CurrentScene as FightScene).Mode & GameMode.PerfectOnly) == 0 || !MarkScore)
+			return;
+
+		if (!hasHit)
+			PushScore(0);
+		goto TakeDamage;
+	TakeDamage:
+		LoseHP(Heart);
+		hasHit = true;
 	}
 }
 /// <summary>
@@ -167,25 +156,24 @@ public class GunBullet : Entity
 	/// <inheritdoc/>
 	public override void Update()
 	{
-		appearTime++;
-		if (appearTime <= delayTime)
+		switch (++appearTime)
 		{
-			lerp = AlphaLerp(appearTime / delayTime);
-			currentDistance = (1 - lerp) * distance;
-			alpha = lerp * 0.7f + 0.1f;
-		}
-		if (appearTime == (int)delayTime)
-		{
-			PlaySound(Sounds.gunShot, 0.8f);
-			for (int i = 0; i < rotations.Length; i++)
-				GameStates.InstanceCreate(new Bullet(Centre, rotations[i]));
-		}
-		if (appearTime >= delayTime)
-		{
-			if (alpha < 0)
-				Dispose();
-			lerp += 0.06f;
-			alpha -= 0.05f;
+			case int x when x <= delayTime:
+				lerp = AlphaLerp(appearTime / delayTime);
+				currentDistance = (1 - lerp) * distance;
+				alpha = lerp * 0.7f + 0.1f;
+				break;
+			case int x when x == (int)delayTime:
+				PlaySound(Sounds.gunShot, 0.8f);
+				for (int i = 0; i < rotations.Length; i++)
+					GameStates.InstanceCreate(new Bullet(Centre, rotations[i]));
+				break;
+			default:
+				if (alpha < 0)
+					Dispose();
+				lerp += 0.06f;
+				alpha -= 0.05f;
+				break;
 		}
 	}
 

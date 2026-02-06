@@ -21,7 +21,7 @@ public partial class Arrow : ICustomMotion
 					distance -= (distance - 36) * 0.75f;
 
 				float d = float.Clamp(distance - 36, 0, 37.5f) / 37.5f;
-				Rotation = missionRotation + d * MathF.Sqrt(d) * 180 * RotateScale;
+				Rotation = missionRotation + d * float.Sqrt(d) * 180 * RotateScale;
 			}
 			else
 			{

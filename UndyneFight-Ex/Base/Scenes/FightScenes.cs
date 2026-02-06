@@ -49,10 +49,7 @@ public abstract class FightScene : Scene
 	public void PlayDeath()
 	{
 		playerAlive = false;
-		foreach (Arrow bullet in Fight.Functions.GetAll<Arrow>())
-			bullet.NoScore = true;
-		foreach (Barrage bullet in Fight.Functions.GetAll<Barrage>())
-			bullet.MarkScore = false;
+		Fight.Functions.ResetBarrage();
 		PlayerDied();
 
 		Achievements.AchievementManager.CheckUserAchievements();

@@ -24,16 +24,15 @@ public class Bomb : BulletShootable
 
 		public override void Update()
 		{
-			if (++count > 4)
+			if (++count <= 4)
+				return;
+			count -= 2;
+			if (++index >= allStates.Length)
 			{
-				count -= 2;
-				if (++index >= allStates.Length)
-				{
-					Dispose();
-					return;
-				}
-				Image = allStates[index];
+				Dispose();
+				return;
 			}
+			Image = allStates[index];
 		}
 	}
 	private readonly float _explodeDelay;
@@ -79,16 +78,15 @@ public class Bomb : BulletShootable
 	public override void Update()
 	{
 		base.Update();
-		if (isShot)
-		{
-			count++;
-			Image = Sprites.MettBomb[count % 8 < 4 ? 1 : 0];
-			if (count / 2f >= _explodeDelay)
-			{
-				PlaySound(Sounds.Bomb);
-				Explode();
-			}
-		}
+		//Early exit if not yet shot
+		if (!isShot)
+			return;
+		Image = Sprites.MettBomb[++count % 8 < 4 ? 1 : 0];
+		//Early exit if not yet blown up
+		if (count / 2f < _explodeDelay)
+			return;
+		PlaySound(Sounds.Bomb);
+		Explode();
 	}
 	/// <summary>
 	/// Explode the bomb
@@ -114,8 +112,7 @@ public class Bomb : BulletShootable
 			while (Screen.Contain(centre))
 			{
 				centre += MathUtil.GetVector2(20, rotation);
-				GameStates.InstanceCreate(new BombBlast(centre, Sprites.MettBombBlast)
-				{ controlLayer = controlLayer, Depth = Depth, Rotation = i % 2 == 0 ? 0 : 90 });
+				GameStates.InstanceCreate(new BombBlast(centre, Sprites.MettBombBlast) { controlLayer = controlLayer, Depth = Depth, Rotation = i % 2 == 0 ? 0 : 90 });
 			}
 		}
 	}

@@ -328,10 +328,8 @@ namespace UndyneFight_Ex
 		/// <inheritdoc/>
 		public override void Draw()
 		{
-			if (Alpha <= 0 || Image == null)
-				return;
-
-			FormalDraw(Image, Centre, PreMultiplyAlpha ? Color.Lerp(Color.Transparent, BlendColor, Alpha) : BlendColor * Alpha, Scale, Rotation, Anchor);
+			if (Alpha > 0 && Image != null)
+				FormalDraw(Image, Centre, PreMultiplyAlpha ? Color.Lerp(Color.Transparent, BlendColor, Alpha) : BlendColor * Alpha, Scale, Rotation, Anchor);
 		}
 	}
 	/// <summary>
@@ -801,12 +799,11 @@ namespace UndyneFight_Ex
 				Update();
 				BeingUpdated = true;
 			}
-			if (UpdateChildren)
-			{
-				_ = ChildObjects.RemoveAll(s => s.Disposed);
-				if (!ChildrenUpdateFirst)
-					ChildObjects.ForEach(s => s.TreeUpdate());
-			}
+			if (!UpdateChildren)
+				return;
+			_ = ChildObjects.RemoveAll(s => s.Disposed);
+			if (!ChildrenUpdateFirst)
+				ChildObjects.ForEach(s => s.TreeUpdate());
 		}
 
 		private static bool Update120F => GameMain.Update120F;
@@ -863,8 +860,8 @@ namespace UndyneFight_Ex
 		public List<Entity> GetDrawableTree()
 		{
 			List<Entity> list = [];
-			if (BeingUpdated && this is Entity && (this as Entity).Visible)
-				list.Add(this as Entity);
+			if (BeingUpdated && this is Entity ent && ent.Visible)
+				list.Add(ent);
 			foreach (GameObject child in ChildObjects)
 				list.AddRange(child.GetDrawableTree());
 			return list;

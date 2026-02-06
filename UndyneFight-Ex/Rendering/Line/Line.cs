@@ -207,16 +207,16 @@ public partial class Line : Entity
 			DrawTargetLine(new Vector2(640 - vec1.CentrePosition.X, vec1.CentrePosition.Y), new Vector2(640 - vec2.CentrePosition.X, vec2.CentrePosition.Y));
 		if (ObliqueMirror)
 			DrawTargetLine(new Vector2(640 - vec1.CentrePosition.X, 480 - vec1.CentrePosition.Y), new Vector2(640 - vec2.CentrePosition.X, 480 - vec2.CentrePosition.Y));
-		if (VerticalLine)
-		{
-			DrawTargetLine(new Vector2(-vec1.CentrePosition.Y - 80, vec1.CentrePosition.X - 80), new Vector2(-vec2.CentrePosition.Y - 80, vec2.CentrePosition.X - 80));
-			if (TransverseMirror)
-				DrawTargetLine(new Vector2(640 - (560 - vec1.CentrePosition.Y), vec1.CentrePosition.X - 80), new Vector2(640 - (560 - vec2.CentrePosition.Y), vec2.CentrePosition.X - 80));
-			if (VerticalMirror)
-				DrawTargetLine(new Vector2(560 - vec1.CentrePosition.Y, 480 - (vec1.CentrePosition.X - 80)), new Vector2(560 - vec2.CentrePosition.Y, 480 - (vec2.CentrePosition.X - 80)));
-			if (ObliqueMirror)
-				DrawTargetLine(new Vector2(640 - (560 - vec1.CentrePosition.Y), 480 - (vec1.CentrePosition.X - 80)), new Vector2(640 - (560 - vec2.CentrePosition.Y), 480 - (vec2.CentrePosition.X - 80)));
-		}
+
+		if (!VerticalLine)
+			return;
+		DrawTargetLine(new Vector2(-vec1.CentrePosition.Y - 80, vec1.CentrePosition.X - 80), new Vector2(-vec2.CentrePosition.Y - 80, vec2.CentrePosition.X - 80));
+		if (TransverseMirror)
+			DrawTargetLine(new Vector2(640 - (560 - vec1.CentrePosition.Y), vec1.CentrePosition.X - 80), new Vector2(640 - (560 - vec2.CentrePosition.Y), vec2.CentrePosition.X - 80));
+		if (VerticalMirror)
+			DrawTargetLine(new Vector2(560 - vec1.CentrePosition.Y, 480 - (vec1.CentrePosition.X - 80)), new Vector2(560 - vec2.CentrePosition.Y, 480 - (vec2.CentrePosition.X - 80)));
+		if (ObliqueMirror)
+			DrawTargetLine(new Vector2(640 - (560 - vec1.CentrePosition.Y), 480 - (vec1.CentrePosition.X - 80)), new Vector2(640 - (560 - vec2.CentrePosition.Y), 480 - (vec2.CentrePosition.X - 80)));
 	}
 	/// <summary>
 	/// The frames elapsed after the line was created

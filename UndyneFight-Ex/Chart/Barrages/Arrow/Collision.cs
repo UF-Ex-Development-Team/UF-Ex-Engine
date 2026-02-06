@@ -119,43 +119,16 @@ public partial class Arrow
 		{
 			if (p.Shields == null)
 				continue;
-			if (DebugState.ShieldAuto[0] && ArrowColor == 0)
-			{
-				auto = true;
-				if (BlockTime - GametimeF <= 1 && curShieldWay != way)
+			for (int i = 0; i < 4; i++)
+				if (DebugState.ShieldAuto[i] && ArrowColor == i)
 				{
-					p.Shields.Rotate(0, way);
-					p.Shields.ValidRotated();
+					auto = true;
+					if (BlockTime - GametimeF <= 1 && curShieldWay != way)
+					{
+						p.Shields.Rotate(i, way);
+						p.Shields.ValidRotated();
+					}
 				}
-			}
-
-			if (DebugState.ShieldAuto[1] && ArrowColor == 1)
-			{
-				auto = true;
-				if (BlockTime - GametimeF <= 1 && curShieldWay != way)
-				{
-					p.Shields.Rotate(1, way);
-					p.Shields.ValidRotated();
-				}
-			}
-			if (DebugState.ShieldAuto[2] && ArrowColor == 2)
-			{
-				auto = true;
-				if (BlockTime - GametimeF <= 1 && curShieldWay != way)
-				{
-					p.Shields.Rotate(2, way);
-					p.Shields.ValidRotated();
-				}
-			}
-			if (DebugState.ShieldAuto[3] && ArrowColor == 3)
-			{
-				auto = true;
-				if (BlockTime - GametimeF <= 1 && curShieldWay != way)
-				{
-					p.Shields.Rotate(3, way);
-					p.Shields.ValidRotated();
-				}
-			}
 		}
 
 		float trueTime = rotatingType != 2
@@ -284,15 +257,13 @@ public partial class Arrow
 	}
 
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	private int GetScore(float time)
+	private int GetScore(float time) => time switch
 	{
-		int score = time >= perfectNegative && time <= perfectPositive
-			? 3
-			: time >= niceNegative && time <= nicePositive
-				? time > perfectPositive ? 4 : 5
-				: time >= okayNegative && time <= okayPositive ? 2 : 1;
-		return score;
-	}
+		float x when x >= perfectNegative && x <= perfectPositive => 3,
+		float x when x >= niceNegative && x <= nicePositive => time > perfectPositive ? 4 : 5,
+		float x when x >= okayNegative && x <= okayPositive => 2,
+		_ => 1
+	};
 
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	private void HitScore(int score, float time)
@@ -374,13 +345,13 @@ public partial class Arrow
 	public override void Dispose()
 	{
 		InstanceCreate(new BreakArrow(Speed, Rotation + additiveRotation + mission.Shields.GetShield(ArrowColor).deltaRotation * 6, ArrowColor, rotatingType, Centre, Scale * DrawingScale));
-		_ = arrows?.Remove(this);
+		_ = AllArrows?.Remove(this);
 
 		base.Dispose();
 
 		if (HasTag())
 			foreach (string str in Tags)
-				if (taggedArrows.TryGetValue(str, out List<Arrow> value))
+				if (AllTaggedArrows.TryGetValue(str, out List<Arrow> value))
 					_ = value.Remove(this);
 	}
 }

@@ -9,6 +9,7 @@ internal class CheatDetector : Entity
 		{
 			cur = DateTime.Now;
 			UpdateIn120 = true;
+			CrossScene = true;
 		}
 		private DateTime cur;
 		private int count = 0;
@@ -49,13 +50,12 @@ internal class CheatDetector : Entity
 				timeSustain0 = count < 120 * GameMain.GameSpeed ? timeSustain0 + 1 : 0;
 				timeSustain1 = count < 115 * GameMain.GameSpeed ? timeSustain1 + 1 : 0;
 				timeSustain2 = count < 110 * GameMain.GameSpeed ? timeSustain2 + 1 : 0;
+#if !DEBUG
 				if (timeSustain0 > 10 || timeSustain1 > 6 || timeSustain2 > 3)
 				{
-#if !DEBUG
                         (CurrentScene as FightScene).PlayDeath();
-#endif
 				}
-
+#endif
 				count = 0;
 			}
 		}
@@ -88,8 +88,4 @@ internal class CheatDetector : Entity
 	public override void Draw() { }
 
 	public override void Update() { }
-	public override void Dispose()
-	{
-		// Unable to dispose!
-	}
 }

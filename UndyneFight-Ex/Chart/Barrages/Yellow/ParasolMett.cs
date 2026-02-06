@@ -87,13 +87,10 @@ public class ParasolMett : BulletShootable
 			_ = shootQueue.Dequeue();
 			MakeShoot();
 		}
-		if (index != -1 && appearTime % 1f < 0.5f)
+		if (index != -1 && appearTime % 1f < 0.5f && ++index >= images.Length)
 		{
-			if (++index >= images.Length)
-			{
-				index = -1;
-				GameStates.InstanceCreate(new MettBullet(Centre, WaveTime) { Depth = BulletDepth });
-			}
+			index = -1;
+			GameStates.InstanceCreate(new MettBullet(Centre, WaveTime) { Depth = BulletDepth });
 		}
 		if (index != -1)
 			Image = images[index];

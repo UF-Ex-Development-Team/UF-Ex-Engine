@@ -120,21 +120,22 @@ public class Boneslab : Barrage, ICustomLength
 		if (trueRotation is 0 or 180)
 			GameMain.MissionSpriteBatch.Draw(BoneSlabTexture, renderPlace, new System.Drawing.RectangleF(0, 320 - currentHeight, (controllingBox as RectangleBox).Width, currentHeight),
 				drawingColor, GetRadian(Rotation) + MathF.PI, new Vector2((controllingBox as RectangleBox).Width / 2, 0), 1.0f, SpriteEffects.None, 0.499f);
-		if (appearTime < appearDelay)
-		{
-			if (trueRotation is 90 or 270)
-				GameMain.MissionSpriteBatch.Draw(WarningLine, _warningLine,
-				new Rectangle(0, 0, (int)(controllingBox as RectangleBox).Height, 2),
-				appearTime % 6 < 3 ? Color.Red : Color.Yellow,
-				GetRadian(Rotation) + MathF.PI, new Vector2((controllingBox as RectangleBox).Height / 2, 0),
-				1.0f, SpriteEffects.None, 0.3f);
-			else
-				GameMain.MissionSpriteBatch.Draw(WarningLine, _warningLine,
-				new Rectangle(0, 0, (int)(controllingBox as RectangleBox).Width, 2),
-				appearTime % 6 < 3 ? Color.Red : Color.Yellow,
-				GetRadian(Rotation) + MathF.PI, new Vector2((controllingBox as RectangleBox).Width / 2, 0),
-				1.0f, SpriteEffects.None, 0.3f);
-		}
+
+		if (appearTime >= appearDelay)
+			return;
+
+		if (trueRotation is 90 or 270)
+			GameMain.MissionSpriteBatch.Draw(WarningLine, _warningLine,
+			new Rectangle(0, 0, (int)(controllingBox as RectangleBox).Height, 2),
+			appearTime % 6 < 3 ? Color.Red : Color.Yellow,
+			GetRadian(Rotation) + MathF.PI, new Vector2((controllingBox as RectangleBox).Height / 2, 0),
+			1.0f, SpriteEffects.None, 0.3f);
+		else
+			GameMain.MissionSpriteBatch.Draw(WarningLine, _warningLine,
+			new Rectangle(0, 0, (int)(controllingBox as RectangleBox).Width, 2),
+			appearTime % 6 < 3 ? Color.Red : Color.Yellow,
+			GetRadian(Rotation) + MathF.PI, new Vector2((controllingBox as RectangleBox).Width / 2, 0),
+			1.0f, SpriteEffects.None, 0.3f);
 	}
 
 	/// <inheritdoc/>
@@ -187,27 +188,18 @@ public class Boneslab : Barrage, ICustomLength
 	public override void GetCollide(Player.Heart heart)
 	{
 		RectangleBox box = controllingBox as RectangleBox;
-		if (!box.CollidingBox.Contain(heart.Centre))
-			return;
-		if (currentHeight <= 1)
-			return;
-		if (colorType == 1 && heart.IsStable)
-			return;
-		if (colorType == 2 && heart.IsMoved)
+		//Early exit if not colliding, height insufficient, or color conditions
+		if (!box.CollidingBox.Contain(heart.Centre) || currentHeight <= 1 || (colorType == 1 && heart.IsStable) || (colorType == 2 && heart.IsMoved) || appearTime <= appearDelay)
 			return;
 
-		float res = 0x3f3f3f3f;
-		if (trueRotation == 0)
-			res = box.Down - currentHeight - heart.Centre.Y;
-		else if (trueRotation == 270)
-			res = box.Right - currentHeight - heart.Centre.X;
-		else if (trueRotation == 180)
-			res = -(box.Up + currentHeight - heart.Centre.Y);
-		else if (trueRotation == 90)
-			res = -(box.Left + currentHeight - heart.Centre.X);
-
-		if (appearTime <= appearDelay)
-			return;
+		float res = trueRotation switch
+		{
+			0 => box.Down - currentHeight - heart.Centre.Y,
+			90 => -(box.Left + currentHeight - heart.Centre.X),
+			180 => -(box.Up + currentHeight - heart.Centre.Y),
+			270 => box.Right - currentHeight - heart.Centre.X,
+			_ => 0x3f3f3f3f
+		};
 
 		if (res < 0.7f)
 			MissCollision(heart);

@@ -270,9 +270,8 @@ public partial class Player
 						mission.Centre = ori + GetVector2(mission.gravitySpeed * 0.5f, trueRot);
 					}
 				}
-				if (mission.gravitySpeed > 0)
-					if (mission.umbrellaAvailable && IsKeyDown(InputIdentity.Alternate) && (!mission.isForced))
-						mission.gravitySpeed = mission.gravitySpeed * 0.85f + mission.umbrellaSpeed * 0.15f;
+				if (mission.gravitySpeed > 0 && mission.umbrellaAvailable && IsKeyDown(InputIdentity.Alternate) && (!mission.isForced))
+					mission.gravitySpeed = mission.gravitySpeed * 0.85f + mission.umbrellaSpeed * 0.15f;
 			}
 
 			[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -334,9 +333,8 @@ public partial class Player
 				}
 				mission.Centre += GetVector2(mission.gravitySpeed, trueRot) * 0.5f;
 
-				if (mission.gravitySpeed > 0)
-					if (mission.umbrellaAvailable && IsKeyDown(InputIdentity.Alternate))
-						mission.gravitySpeed = mission.gravitySpeed * 0.8f + 1.0f * 0.2f;
+				if (mission.gravitySpeed > 0 && mission.umbrellaAvailable && IsKeyDown(InputIdentity.Alternate))
+					mission.gravitySpeed = mission.gravitySpeed * 0.8f + 1.0f * 0.2f;
 			}
 
 			[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -450,9 +448,8 @@ public partial class Player
 				else if (mission.gravitySpeed < 0)
 					mission.gravitySpeed /= 3f;
 
-				if (mission.gravitySpeed > 0)
-					if (mission.umbrellaAvailable && IsKeyDown(InputIdentity.Alternate))
-						mission.gravitySpeed = mission.gravitySpeed * 0.8f + mission.umbrellaSpeed * 0.2f;
+				if (mission.gravitySpeed > 0 && mission.umbrellaAvailable && IsKeyDown(InputIdentity.Alternate))
+					mission.gravitySpeed = mission.gravitySpeed * 0.8f + mission.umbrellaSpeed * 0.2f;
 			}
 		}
 	}

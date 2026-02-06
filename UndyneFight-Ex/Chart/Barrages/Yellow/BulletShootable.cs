@@ -17,9 +17,10 @@ public abstract class BulletShootable : PerfectCollisionBarrage
 	{
 		base.Update();
 		(bool EventExists, GameEventArgs EventArguments) = TryDetect("Bullet");
+		GameEventArgs args = null;
 		if (EventExists)
 		{
-			GameEventArgs args = EventArguments;
+			args = EventArguments;
 			SoulBullet newBullet = args.Source as SoulBullet;
 			detects.Add(newBullet);
 			EventArguments.Dispose();
@@ -46,26 +47,24 @@ public abstract class BulletShootable : PerfectCollisionBarrage
 			}
 		});
 		(EventExists, EventArguments) = TryDetect("Explode");
-		if (EventExists)
+		//Early exit if no event exists
+		if (!EventExists)
+			return;
+		Bomb et = args.Source as Bomb;
+		float dis = 6;
+		args.Dispose();
+		//Early exit if not in range
+		if (MathF.Abs(et.Centre.X - Centre.X) > dis && MathF.Abs(et.Centre.Y - Centre.Y) > dis)
+			return;
+		if (this is Bomb b)
 		{
-			GameEventArgs args = EventArguments;
-			Bomb et = args.Source as Bomb;
-			float dis = 6;
-			args.Dispose();
-
-			if (MathF.Abs(et.Centre.X - Centre.X) <= dis || MathF.Abs(et.Centre.Y - Centre.Y) <= dis)
-			{
-				if (this is Bomb b)
-				{
-					if (b.AbleLink)
-						b.Explode();
-				}
-				else
-				{
-					if (et.Destructive)
-						Dispose();
-				}
-			}
+			if (b.AbleLink)
+				b.Explode();
+		}
+		else
+		{
+			if (et.Destructive)
+				Dispose();
 		}
 	}
 }

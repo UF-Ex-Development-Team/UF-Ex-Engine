@@ -36,7 +36,8 @@ public interface IShape
 	/// The drawing method of the shape
 	/// </summary>
 	void Draw();
-}/// <summary>
+}
+/// <summary>
  /// The data for drawing the shape
  /// </summary>
 public struct DrawingData

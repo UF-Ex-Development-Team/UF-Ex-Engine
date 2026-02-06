@@ -210,17 +210,11 @@ public class Audio
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public void Play()
 	{
-		if (MathF.Abs(PlayPosition) > 0.01f)
-		{
-			if (source is SongPlayer sPlayer)
-				sPlayer.SetPosition(PlayPosition);
-		}
+		if (MathF.Abs(PlayPosition) > 0.01f && source is SongPlayer sPlayer)
+			sPlayer.SetPosition(PlayPosition);
 		source.Start();
-		if (MathF.Abs(PlayPosition) > 0.01f)
-		{
-			if (source is DynamicSongPlayer dSongPlayer)
-				dSongPlayer.SetPosition(PlayPosition);
-		}
+		if (MathF.Abs(PlayPosition) > 0.01f && source is DynamicSongPlayer dSongPlayer)
+			dSongPlayer.SetPosition(PlayPosition);
 	}
 	/// <summary>
 	/// Stops the audio

@@ -568,44 +568,44 @@ public class WaveConstructor : GameObject
 				return null;
 			}
 		}
-		if (chartingActions.TryGetValue(origin, out Action value))
+		//Check if it's a registered function
+		if (!chartingActions.TryGetValue(origin, out Action func))
+			return null;
+		isFunction = true;
+		if (!string.IsNullOrEmpty(args))
 		{
-			isFunction = true;
-			if (!string.IsNullOrEmpty(args))
-			{
-				string[] argStrings = args.Split(',');
-				float[] argsFloat = new float[argStrings.Length];
-				for (int i = 0; i < argsFloat.Length; i++)
-					argsFloat[i] = MathUtil.FloatFromString(argStrings[i]);
+			string[] argStrings = args.Split(',');
+			float[] argsFloat = new float[argStrings.Length];
+			for (int i = 0; i < argsFloat.Length; i++)
+				argsFloat[i] = MathUtil.FloatFromString(argStrings[i]);
 
-				if (delayMode)
-				{
-					Action action = value;
-					GameObject[] list = [new InstantEvent(delay, () => {
-						Arguments = argsFloat;
-						action();
-					})];
-					return list;
-				}
-				else
-				{
-					Arguments = argsFloat;
-					value();
-					return null;
-				}
-			}
 			if (delayMode)
 			{
-				GameObject[] list = [new InstantEvent(delay, value)];
+				//Store for delayed execution
+				Action action = func;
+				GameObject[] list = [new InstantEvent(delay, () => {
+					Arguments = argsFloat;
+					action();
+				})];
 				return list;
 			}
 			else
 			{
-				value();
+				Arguments = argsFloat;
+				func();
 				return null;
 			}
 		}
-		return null;
+		if (delayMode)
+		{
+			GameObject[] list = [new InstantEvent(delay, func)];
+			return list;
+		}
+		else
+		{
+			func();
+			return null;
+		}
 	}
 	/// <summary>
 	/// The settings of the charts
@@ -698,7 +698,9 @@ public class WaveConstructor : GameObject
 	}
 	[MethodImpl(MethodImplOptions.AggressiveInlining), Obsolete("Use CreateChart() instead")]
 	public GameObject[] NormalizedObjects(float shootShieldTime, float speed, string allArrowTag) => MakeArrows(shootShieldTime, speed, allArrowTag, true);
-
+	/// <summary>
+	/// List of registered functions for <see cref="CreateChart(float, float, float, string[])"/>
+	/// </summary>
 	private readonly Dictionary<string, Action> chartingActions = [];
 	/// <summary>
 	/// Registers a function for <see cref="CreateChart(float, float, float, string[])"/> to execute
@@ -711,6 +713,9 @@ public class WaveConstructor : GameObject
 		if (!chartingActions.TryAdd(name, action))
 			chartingActions[name] = action;
 	}
+	/// <summary>
+	/// The one time functions to remove next frame
+	/// </summary>
 	private readonly List<string> removingActions = [];
 	/// <summary>
 	/// Registers a one time function for <see cref="CreateChart(float, float, float, string[])"/> to execute, function will be unregistered in the next frame

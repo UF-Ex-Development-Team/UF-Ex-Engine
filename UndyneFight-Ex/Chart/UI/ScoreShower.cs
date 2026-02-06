@@ -98,18 +98,17 @@ internal partial class StateShower : Entity
 			JudgementState.Balanced => 98,
 			_ => 96,
 		};
-		if (type != 0)
+		if (type == 0)
+			return;
+		score.Value = score + (int)(type switch
 		{
-			score.Value = score + (int)(type switch
-			{
-				1 => 0,
-				2 => 40,
-				3 => perfectScore,
-				4 => 80,
-				5 => 80,
-				_ => throw new NotImplementedException()
-			} * (CurrentScene as SongFightingScene).ScoreMultiplier);
-		}
+			1 => 0,
+			2 => 40,
+			3 => perfectScore,
+			4 => 80,
+			5 => 80,
+			_ => throw new NotImplementedException()
+		} * CurrentFightingScene.ScoreMultiplier);
 	}
 
 	private int miss, okay, nice, perfect, perfectL, perfectE, maxCombo, combo, totalCount = 0, surviveTime = 0;
@@ -158,9 +157,7 @@ internal partial class StateShower : Entity
 		public override void Draw()
 		{
 			if (combo != 0)
-			{
 				FightResources.Font.NormalFont.CentreDraw("x" + combo, Centre + new Vector2(30, 32) * scale, color * alpha, Math.Min(10, appearTime) / 10f * scale, 0.45f);
-			}
 
 			FightResources.Font.NormalFont.CentreDraw(text, Centre, color * alpha, Math.Min(10, appearTime) / 10f * scale * 1.25f, 0.45f);
 		}
@@ -202,17 +199,18 @@ internal partial class StateShower : Entity
 		float scorePercent = MathF.Min(1, score * 1.0f / (totalCount * 100));
 		bool AC = miss == 0;
 		bool AP = (miss + okay + nice) == 0;
-		mark = AP && scorePercent >= 0.997f
-			? SkillMark.Impeccable
-			: (AC && okay == 0 && scorePercent >= 0.99f) || (buffed && scorePercent >= 0.995f)
-				? SkillMark.Eminent
-				: (AC && scorePercent >= 0.98f) || (buffed && scorePercent >= 0.99f)
-								? SkillMark.Excellent
-								: scorePercent >= 0.96f
-												? SkillMark.Respectable
-												: scorePercent >= 0.9f ? SkillMark.Acceptable :
-												scorePercent >= 0.75f ? SkillMark.Ordinary : SkillMark.Failed;
-		return mark;
+		return scorePercent switch
+		{
+			>= 0.997f when AP => SkillMark.Impeccable,
+			>= 0.995f when buffed => SkillMark.Eminent,
+			>= 0.99f when AC && okay == 0 => SkillMark.Eminent,
+			>= 0.99f when buffed => SkillMark.Excellent,
+			>= 0.98f when AC => SkillMark.Excellent,
+			>= 0.96f => SkillMark.Respectable,
+			>= 0.9f => SkillMark.Acceptable,
+			>= 0.75f => SkillMark.Ordinary,
+			_ => SkillMark.Failed,
+		};
 	}
 	internal static StateShower instance;
 

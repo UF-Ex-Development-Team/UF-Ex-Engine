@@ -25,24 +25,21 @@ internal class TimeShower : Entity
 		//FightResources.Font.FightFont.Draw("(Beta 12)", new Vector2(580, 0), Color.Gray * 0.5f, 0.5f, 1);
 #if DEBUG
 		IWaveSet curWave = CurrentFightingScene.waveset;
-		if (curWave is not null)
+		if (curWave is null)
+			return;
+		if (curWave is WaveConstructor waveset)
 		{
-			if (curWave is WaveConstructor waveset)
-			{
-				if (!WaveConstructor._isMultiBPM)
-					FightResources.Font.NormalFont.CentreDraw($"Beat: {FloatToString(GametimeF / WaveConstructor.SingleBeat, 1)}", new Vector2(94, 50), col, 0.7f, 0.3f);
-				else
-				{
-					while (WaveConstructor.BeatTime(curBeat) < GametimeF)
-						curBeat += 0.1f;
-					FightResources.Font.NormalFont.CentreDraw($"Beat: {FloatToString(curBeat, 1)}", new Vector2(94, 50), col, 0.7f, 0.3f);
-				}
-			}
+			if (!WaveConstructor._isMultiBPM)
+				FightResources.Font.NormalFont.CentreDraw($"Beat: {FloatToString(GametimeF / WaveConstructor.SingleBeat, 1)}", new Vector2(94, 50), col, 0.7f, 0.3f);
 			else
 			{
-				FightResources.Font.NormalFont.CentreDraw($"GametimeF: {FloatToString(GametimeF, 1)}", new Vector2(94, 50), col, 0.7f, 0.3f);
+				while (WaveConstructor.BeatTime(curBeat) < GametimeF)
+					curBeat += 0.1f;
+				FightResources.Font.NormalFont.CentreDraw($"Beat: {FloatToString(curBeat, 1)}", new Vector2(94, 50), col, 0.7f, 0.3f);
 			}
 		}
+		else
+			FightResources.Font.NormalFont.CentreDraw($"GametimeF: {FloatToString(GametimeF, 1)}", new Vector2(94, 50), col, 0.7f, 0.3f);
 #endif
 	}
 	private int appearTime = 0;

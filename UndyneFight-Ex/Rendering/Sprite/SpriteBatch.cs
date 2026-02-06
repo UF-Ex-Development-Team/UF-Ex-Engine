@@ -33,23 +33,22 @@ public partial class SpriteBatchEX
 		_beginCalled = false;
 		_batcher = new(graphicsDevice);
 
-		if (NearestSample == null)
+		if (NearestSample != null)
+			return;
+		SamplerState state = new()
 		{
-			SamplerState state = new()
-			{
-				AddressU = TextureAddressMode.Clamp,
-				AddressV = TextureAddressMode.Clamp,
-				AddressW = TextureAddressMode.Clamp,
-				MaxMipLevel = 0,
-				MipMapLevelOfDetailBias = 0,
-				MaxAnisotropy = 0,
+			AddressU = TextureAddressMode.Clamp,
+			AddressV = TextureAddressMode.Clamp,
+			AddressW = TextureAddressMode.Clamp,
+			MaxMipLevel = 0,
+			MipMapLevelOfDetailBias = 0,
+			MaxAnisotropy = 0,
 
-				ComparisonFunction = CompareFunction.Never,
-				Filter = TextureFilter.Point
-			};
-			DefaultState = state;
-			NearestSample = DefaultState;
-		}
+			ComparisonFunction = CompareFunction.Never,
+			Filter = TextureFilter.Point
+		};
+		DefaultState = state;
+		NearestSample = DefaultState;
 	}
 	private bool _beginCalled = false;
 

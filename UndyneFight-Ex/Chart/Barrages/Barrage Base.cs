@@ -39,6 +39,7 @@ public abstract class LineCollisionBarrage(float thickness = 1) : Barrage
 	/// <inheritdoc/>
 	public override void GetCollide(Heart player)
 	{
+		//Early exit if color conditions are met or player has invincibility frames
 		if ((ColorType == 1 && player.IsStable) || (ColorType == 2 && player.IsMoved) || (Functions.PlayerInstance.hpControl.ScoreProtected && Functions.PlayerInstance.hpControl.protectTime > 0))
 			return;
 
@@ -69,9 +70,8 @@ public abstract class CircleCollisionBarrage(float Radius) : Barrage
 	/// <inheritdoc/>
 	public override void GetCollide(Heart player)
 	{
-		if ((ColorType == 1 && player.IsStable) ||
-			(ColorType == 2 && player.IsMoved) ||
-			Functions.PlayerInstance.hpControl.protectTime > 0)
+		//Early exit if color conditions are met or player has invincibility frames
+		if ((ColorType == 1 && player.IsStable) || (ColorType == 2 && player.IsMoved) || Functions.PlayerInstance.hpControl.protectTime > 0)
 			return;
 
 		float res = GetDistance(player) - Radius * Scale - 6;
@@ -208,9 +208,8 @@ public abstract class PerfectCollisionBarrage() : Barrage
 	/// <inheritdoc/>
 	public override void GetCollide(Heart player)
 	{
-		if ((ColorType == 1 && player.IsStable) ||
-			(ColorType == 2 && player.IsMoved) ||
-			Functions.PlayerInstance.hpControl.protectTime > 0 || Disposed)
+		//Early exit if color conditions are met or player has invincibility frames
+		if ((ColorType == 1 && player.IsStable) || (ColorType == 2 && player.IsMoved) || Functions.PlayerInstance.hpControl.protectTime > 0 || Disposed)
 			return;
 		//Prevent empty color bitmask for whatever reason
 		if (ColorBits.Length == 0)
@@ -296,22 +295,20 @@ public abstract class Barrage : Entity, ICollideAble, ICustomMotion
 	/// </summary>
 	protected void NiceCollision()
 	{
-		if (score >= 3)
-		{
-			score = 2;
-			CreateCollideEffect(Color.LightBlue, 6f);
-		}
+		if (score < 3)
+			return;
+		score = 2;
+		CreateCollideEffect(Color.LightBlue, 6f);
 	}
 	/// <summary>
 	/// Change bullet score to okay
 	/// </summary>
 	protected void OkayCollision()
 	{
-		if (score >= 2)
-		{
-			score = 1;
-			CreateCollideEffect(Color.LawnGreen, 3f);
-		}
+		if (score < 2)
+			return;
+		score = 1;
+		CreateCollideEffect(Color.LawnGreen, 3f);
 	}
 	/// <summary>
 	/// Change bullet score to miss and damage the player
@@ -330,21 +327,20 @@ public abstract class Barrage : Entity, ICollideAble, ICustomMotion
 		Centre = PositionRoute?.Invoke(this) ?? Centre;
 		Rotation = RotationRoute?.Invoke(this) ?? Rotation;
 		controlLayer = Hidden ? Surface.Hidden : Surface.Normal;
-		if (AutoDispose)
-		{
-			bool inside = screen.Contain(Centre);
-			if (inside && (!_hasBeenInside))
-				_hasBeenInside = true;
-			if (_hasBeenInside && (!inside))
-				Dispose();
-		}
+		//Process auto dispose
+		if (!AutoDispose)
+			return;
+		bool inside = screen.Contain(Centre);
+		if (inside && (!_hasBeenInside))
+			_hasBeenInside = true;
+		if (_hasBeenInside && (!inside))
+			Dispose();
 	}
 	/// <inheritdoc/>
 	public override void Draw()
 	{
-		if (Alpha <= 0 || Image == null)
-			return;
-		GeneralDraw(Image, Centre, BarrageColorTypes[ColorType] * Alpha, new(Scale), Rotation * float.Pi / 180, depth: Depth);
+		if (Alpha > 0 && Image != null)
+			GeneralDraw(Image, Centre, BarrageColorTypes[ColorType] * Alpha, new(Scale), Rotation * float.Pi / 180, depth: Depth);
 	}
 	/// <inheritdoc/>
 	public override void Dispose()

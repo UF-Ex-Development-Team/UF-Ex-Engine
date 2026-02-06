@@ -57,13 +57,13 @@ public abstract class GasterBlaster : Barrage
 	{
 		Depth = depth_;
 		FormalDraw(Image, Centre, drawingColor * alpha, size, GetRadian(this is NormalGB ? Rotation : missionRotation), ImageCentre);
-		if (appearTime >= waitingTime && laserSize.Y > 0 && this is not GreenSoulGB)
-		{
-			Depth -= 0.001f;
-			for (int i = 0; i < 4; i++)
-				DrawingLab.DrawLine(laserPlace + GetVector2(14 * i, Rotation), laserPlace + GetVector2(14 * i + 12, Rotation), 14 * i * laserSize.Y * size.Y * 1.2f, drawingColor * beamAlpha, Depth);
-			DrawingLab.DrawLine(laserPlace + GetVector2(56, Rotation), laserPlace + GetVector2(1000 + laserSize.X, Rotation), 56 * laserSize.Y * size.Y * 1.2f, drawingColor * beamAlpha, Depth);
-		}
+		//Early exit in cases beam should not be drawn
+		if (appearTime < waitingTime || laserSize.Y <= 0 || this is GreenSoulGB)
+			return;
+		Depth -= 0.001f;
+		for (int i = 0; i < 4; i++)
+			DrawingLab.DrawLine(laserPlace + GetVector2(14 * i, Rotation), laserPlace + GetVector2(14 * i + 12, Rotation), 14 * i * laserSize.Y * size.Y * 1.2f, drawingColor * beamAlpha, Depth);
+		DrawingLab.DrawLine(laserPlace + GetVector2(56, Rotation), laserPlace + GetVector2(1000 + laserSize.X, Rotation), 56 * laserSize.Y * size.Y * 1.2f, drawingColor * beamAlpha, Depth);
 	}
 
 	/// <inheritdoc/>
@@ -115,19 +115,14 @@ public abstract class GasterBlaster : Barrage
 	{
 		Centre -= GetVector2(recoilSpeed += 0.4f, Rotation);
 		Image = Sprites.GBShooting[(int)Convert.ToSingle(appearTime % 6 <= 3)];
+		beamAlpha = beamAlpha * 0.8f + 0.2f;
 		if (laserIncreasing)
 		{
-			beamAlpha = beamAlpha * 0.8f + 0.2f;
-			laserSize.Y = laserSize.Y * 0.8f + 0.21f;
-			if (laserSize.Y >= 0.88f)
+			if ((laserSize.Y = laserSize.Y * 0.8f + 0.21f) >= 0.88f)
 				laserIncreasing = false;
 		}
 		else
-		{
-			beamAlpha = beamAlpha * 0.8f + 0.2f;
-			laserSize.Y = 0.9f + Sin(laserAffectTime * 15) * 0.18f;
-			laserAffectTime++;
-		}
+			laserSize.Y = 0.9f + Sin(laserAffectTime++ * 15) * 0.18f;
 	}
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	private protected void BeamDisappear()
@@ -137,9 +132,7 @@ public abstract class GasterBlaster : Barrage
 		if (recoilSpeed >= 5f)
 			beamAlpha *= 0.9f;
 
-		float delta = appearTime - waitingTime - duration;
-		laserSize.Y -= MathF.Sqrt(delta) / 36f;
-		if (laserSize.Y <= 0 && (!screen.Contain(Centre)))
+		if ((laserSize.Y -= MathF.Sqrt(appearTime - waitingTime - duration) / 36f) <= 0 && (!screen.Contain(Centre)))
 			Dispose();
 	}
 	private class DelayControl : GameObject
@@ -368,17 +361,17 @@ public class GreenSoulGB : GasterBlaster
 	public override void Draw()
 	{
 		base.Draw();
-		if (appearTime >= waitingTime + timeDelta && laserSize.Y > 0)
-		{
-			Color finCol = drawingColor * beamAlpha;
-			Depth -= 0.001f;
-			//Override beam drawing
-			DrawingLab.DrawLine(laserPlace + GetVector2(2, missionRotation), Centre + GetVector2(Image.Width * size.X / 2 + 10, missionRotation), (laserSize * size).Y * Sprites.GBLaser.Height, finCol, Depth);
-			for (int i = 0; i < 3; i++)
-				DrawingLab.DrawLine(Centre + GetVector2(Image.Width * size.X * (0.5f - i * 0.1f) + 10, missionRotation), Centre + GetVector2(Image.Width * size.X * (0.4f - i * 0.1f) + 10, missionRotation), (laserSize * size).Y * Sprites.GBLaser.Height * (0.8f - i * 0.2f), finCol, Depth);
-			//Stuck drawing
-			FormalDraw(StuckTexture, laserPlace + GetVector2(2, missionRotation), finCol, 1.33f * laserSize.Y, GetRadian(missionRotation + 180), new Vector2(0, 35));
-		}
+		//Early exit in cases beam should not be drawn
+		if (appearTime < waitingTime + timeDelta || laserSize.Y <= 0)
+			return;
+		Color finCol = drawingColor * beamAlpha;
+		Depth -= 0.001f;
+		//Override beam drawing
+		DrawingLab.DrawLine(laserPlace + GetVector2(2, missionRotation), Centre + GetVector2(Image.Width * size.X / 2 + 10, missionRotation), (laserSize * size).Y * Sprites.GBLaser.Height, finCol, Depth);
+		for (int i = 0; i < 3; i++)
+			DrawingLab.DrawLine(Centre + GetVector2(Image.Width * size.X * (0.5f - i * 0.1f) + 10, missionRotation), Centre + GetVector2(Image.Width * size.X * (0.4f - i * 0.1f) + 10, missionRotation), (laserSize * size).Y * Sprites.GBLaser.Height * (0.8f - i * 0.2f), finCol, Depth);
+		//Stuck drawing
+		FormalDraw(StuckTexture, laserPlace + GetVector2(2, missionRotation), finCol, 1.33f * laserSize.Y, GetRadian(missionRotation + 180), new Vector2(0, 35));
 	}
 
 	/// <inheritdoc/>
@@ -505,56 +498,46 @@ public class NormalGB : GasterBlaster, ICollideAble
 	public override void GetCollide(Player.Heart heart)
 	{
 		//If the Cos of the angle is < 0, then Theta is (90, 180), therefore the heart is behind blaster
-		if (Cos(GetVector2(1, Rotation), Centre - Heart.Centre) > 0)
+		if ((Cos(GetVector2(1, Rotation), Centre - Heart.Centre) > 0) ||
+			//Early exit in cases beam should not be drawn
+			appearTime > waitingTime + duration + 2 || (appearTime < waitingTime - 2) || alpha <= 0.8f ||
+			//No collision in green soul
+			heart.SoulType == 1)
 			return;
-		if (appearTime <= waitingTime + duration + 2)
+
+		float A, B, C, dist;
+		if (Rotation == 0)
+			dist = Centre.X - heart.Centre.X;
+		else
 		{
-			if ((appearTime < waitingTime - 2) || heart.SoulType == 1 || alpha <= 0.8f)
-				return;
+			float k = (float)Math.Tan(GetRadian(Rotation));
+			A = k;
+			B = -1;
+			C = -A * Centre.X - B * Centre.Y;
+			dist = (float)((A * heart.Centre.X + B * heart.Centre.Y + C) / Math.Sqrt(A * A + B * B));
+		}
+		float res = Math.Abs(dist) - (32 * laserSize.Y * size.Y - 2);
 
-			float A, B, C, dist;
-			if (Rotation == 0)
-				dist = Centre.X - heart.Centre.X;
-			else
-			{
-				float k = (float)Math.Tan(GetRadian(Rotation));
-				A = k;
-				B = -1;
-				C = -A * Centre.X - B * Centre.Y;
-				dist = (float)((A * heart.Centre.X + B * heart.Centre.Y + C) / Math.Sqrt(A * A + B * B));
-			}
-			float res = Math.Abs(dist) - (32 * laserSize.Y * size.Y - 2);
-
-			if (res < 0)
-			{
-				if (!hasHit)
-				{
-					PushScore(0);
-				}
-				LoseHP(heart);
-				hasHit = true;
-			}
-			if (!hasHit && MarkScore)
-			{
-				if (res <= 2)
-				{
-					if (score >= 2)
-					{ score = 1; Player.CreateCollideEffect(Color.LawnGreen, 3f); }
-				}
-				else if (res <= 5.4f)
-				{
-					if (score >= 3)
-					{ score = 2; Player.CreateCollideEffect(Color.LightBlue, 6f); }
-				}
-				if (score != 3 && ((CurrentScene as FightScene).Mode & GameMode.PerfectOnly) != 0)
-				{
-					if (!hasHit)
-						PushScore(0);
-
-					LoseHP(heart);
-					hasHit = true;
-				}
-			}
+		if (res < 0)
+		{
+			if (!hasHit)
+				PushScore(0);
+			LoseHP(heart);
+			hasHit = true;
+		}
+		//Early exit if no score should be marked
+		if (hasHit || !MarkScore)
+			return;
+		if (res <= 2)
+			OkayCollision();
+		else if (res <= 5.4f)
+			NiceCollision();
+		if (score != 3 && ((CurrentScene as FightScene).Mode & GameMode.PerfectOnly) != 0)
+		{
+			if (!hasHit)
+				PushScore(0);
+			LoseHP(heart);
+			hasHit = true;
 		}
 	}
 }

@@ -130,9 +130,7 @@ public abstract class FightBox : Entity
 			return;
 		float scale = MovingScale * 0.6f;
 		for (int i = 0; i < Vertices.Length; i++)
-		{
 			Vertices[i].Move(scale + MathF.Max(0, 1 - scale - Vertices[i].ToMissionDistance));
-		}
 	}
 	/// <inheritdoc/>
 	public override void Draw()
@@ -151,9 +149,7 @@ public abstract class FightBox : Entity
 			positions[i] = delta + gravity;
 		}
 		for (int i = 0; i < Vertices.Length; i++)
-		{
 			DrawingLab.DrawLine(positions[i], positions[(i + 1) % Vertices.Length], 4.2f, new(col.Lerp(GameMain.CurrentDrawingSettings.backGroundColor, GameMain.CurrentDrawingSettings.themeColor, curAlpha), curAlpha * 255), 0.4f);
-		}
 	}
 	/// <summary>
 	/// Creates a box

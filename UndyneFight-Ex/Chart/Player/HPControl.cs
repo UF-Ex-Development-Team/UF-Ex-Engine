@@ -77,19 +77,13 @@ public partial class Player
 		public bool ScoreProtected { get; set; } = false;
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal void GetMark(int mark)
+		internal void GetMark(int mark) => missionLostSpeed = mark switch
 		{
-			if (mark <= 1)
-				missionLostSpeed = missionLostSpeed * 0.8f + 0.2f * 0.2f;
-			if (mark == 2)
-				missionLostSpeed = missionLostSpeed * 0.85f + 0.12f * 0.15f;
-			if (mark == 3)
-				missionLostSpeed *= 0.965f;
-			if (mark >= 4)
-				missionLostSpeed = missionLostSpeed < 0.05f ?
-					(missionLostSpeed * 0.95f + 0.05f * 0.1f) :
-					missionLostSpeed;
-		}
+			<= 1 => missionLostSpeed * 0.8f + 0.2f * 0.2f,
+			2 => missionLostSpeed * 0.85f + 0.12f * 0.15f,
+			3 => missionLostSpeed * 0.965f,
+			>= 4 => missionLostSpeed < 0.05f ? (missionLostSpeed * 0.95f + 0.05f * 0.1f) : missionLostSpeed,
+		};
 		/// <summary>
 		/// Applies the invincibility frames to the heart
 		/// </summary>
@@ -212,20 +206,20 @@ public partial class Player
 
 			if (hp.Hacked)
 				GameStates.CheatAffirmed();
-
-			if (hp <= 0)
+			//Early exit if HP didn't reach 0
+			if (hp > 0)
+				return;
+			//Process practice mode and death
+			if (((CurrentScene as FightScene).Mode & GameMode.Practice) == 0)
 			{
-				if (((CurrentScene as FightScene).Mode & GameMode.Practice) == 0)
-				{
-					_ = GameMain.instance.SetGameoverScreen();
-					(CurrentScene as FightScene).PlayDeath();
-					return;
-				}
-				else if (!(CurrentScene as SongFightingScene).HPReached0)
-				{
-					PlayerManager.CurrentUser?.PlayerStatistic.AddDeath();
-					(CurrentScene as SongFightingScene).HPReached0 = true;
-				}
+				_ = GameMain.instance.SetGameoverScreen();
+				(CurrentScene as FightScene).PlayDeath();
+				return;
+			}
+			else if (!CurrentFightingScene.HPReached0)
+			{
+				PlayerManager.CurrentUser?.PlayerStatistic.AddDeath();
+				CurrentFightingScene.HPReached0 = true;
 			}
 		}
 		/// <summary>

@@ -61,17 +61,16 @@ public partial class Player
 					alpha -= rotateStartTime * 0.004f;
 					rotateStartTime++;
 					Centre = User.Centre;
-					if (alpha > 0)
+					if (alpha <= 0)
+						return;
+					float delta = Math.Min((missionRotation - Rotation + 360) % 360, (360 - missionRotation + Rotation) % 360);
+					float scale = Math.Min(Pow(rotateStartTime, 1.5f) / 2.1f * 0.04f, 0.18f);
+					if (delta <= 35f)
 					{
-						float delta = Math.Min((missionRotation - Rotation + 360) % 360, (360 - missionRotation + Rotation) % 360);
-						float scale = Math.Min(Pow(rotateStartTime, 1.5f) / 2.1f * 0.04f, 0.18f);
-						if (delta <= 35f)
-						{
-							scale *= 0.8f * Pow((delta + 37) / 77f, 1.5f) + 0.2f * 1;
-							scale = Math.Min(1, scale * (1 + 15f / (delta * delta + 12)));
-						}
-						Rotation = MathUtil.Posmod(Rotation + delta * scale * (rotateWay ? 1 : -1), 360);
+						scale *= 0.8f * Pow((delta + 37) / 77f, 1.5f) + 0.2f * 1;
+						scale = Math.Min(1, scale * (1 + 15f / (delta * delta + 12)));
 					}
+					Rotation = MathUtil.Posmod(Rotation + delta * scale * (rotateWay ? 1 : -1), 360);
 				}
 			}
 
@@ -263,14 +262,10 @@ public partial class Player
 				{
 					foreach (GameObject obj in ChildObjects)
 					{
-						if (obj is ShieldShadow)
+						if (obj is ShieldShadow shadow && shadow.Direction == direction)
 						{
-							ShieldShadow shadow = obj as ShieldShadow;
-							if (shadow.Direction == direction)
-							{
-								effect = new(shadow, cl);
-								break;
-							}
+							effect = new(shadow, cl);
+							break;
 						}
 					}
 				}
@@ -282,30 +277,29 @@ public partial class Player
 			[MethodImpl(MethodImplOptions.AggressiveInlining)]
 			private void MakeParticle(int type)
 			{
+				if (type == 0)
+					return;
 				Vector2 createCentre = Centre + MathUtil.GetVector2(33, missionRotation + Functions.Heart.Rotation);
-				if (type != 0)
+				int times = type switch
 				{
-					int times = type switch
+					1 => 12,
+					2 => 8,
+					4 => 5,
+					_ => 3 //3 or 5
+				};
+				for (int i = 0; i < times; i++)
+				{
+					float rotation1 = missionRotation + 90 + Rand(0, 1) * 180;
+					float rdelta = Rand(0, 1f) * Rand(0, 1f) * Rand(0, 1f) * RandSignal();
+					rotation1 += rdelta * 90;
+					GameStates.InstanceCreate(new Particle(type switch
 					{
-						1 => 12,
-						2 => 8,
-						4 => 5,
-						_ => 3 //3 or 5
-					};
-					for (int i = 0; i < times; i++)
-					{
-						float rotation1 = missionRotation + 90 + Rand(0, 1) * 180;
-						float rdelta = Rand(0, 1f) * Rand(0, 1f) * Rand(0, 1f) * RandSignal();
-						rotation1 += rdelta * 90;
-						GameStates.InstanceCreate(new Particle(type switch
-						{
-							1 => Color.Lime,        //Okay
-							2 => Color.LightBlue,   //Nice
-							3 => Color.Gold,        //Perfect
-							_ => Color.Orange       //PerfectE/L
-						} * Rand(0.67f, 0.85f) * (ScreenDrawing.UIColor.A / 255f), MathUtil.GetVector2(Rand(4f, 8f), rotation1), Rand(6, 10), createCentre, FightResources.Sprites.square)
-						{ DarkingSpeed = Rand(10f, 14.6f), SlowLerp = 0.25f });
-					}
+						1 => Color.Lime,        //Okay
+						2 => Color.LightBlue,   //Nice
+						3 => Color.Gold,        //Perfect
+						_ => Color.Orange       //PerfectE/L
+					} * Rand(0.67f, 0.85f) * (ScreenDrawing.UIColor.A / 255f), MathUtil.GetVector2(Rand(4f, 8f), rotation1), Rand(6, 10), createCentre, FightResources.Sprites.square)
+					{ DarkingSpeed = Rand(10f, 14.6f), SlowLerp = 0.25f });
 				}
 			}
 
@@ -574,17 +568,12 @@ public partial class Player
 			/// <inheritdoc/>
 			public override void Draw()
 			{
-				if (enabled)
-				{
-					FormalDraw(Image, Centre, curColor * 0.6f * ((FatherObject.FatherObject as Heart).Alpha * ScreenDrawing.UIColor.A / 255f), Rotation, ImageCentre);
-					float scale = MathF.Min(1, drawConsumption);
-					if (drawConsumption > 0.004f)
-						FormalDraw(Image,
-							Centre + new Vector2(0, Image.Height * (1 - scale)),
-							new CollideRect(0, Image.Height * (1 - scale), Image.Width,
-							Image.Height * scale).ToRectangle(),
-							Color.Red * 0.8f * (ScreenDrawing.UIColor.A / 255f), Vector2.One, Rotation, ImageCentre);
-				}
+				if (!enabled)
+					return;
+				FormalDraw(Image, Centre, curColor * 0.6f * ((FatherObject.FatherObject as Heart).Alpha * ScreenDrawing.UIColor.A / 255f), Rotation, ImageCentre);
+				float scale = MathF.Min(1, drawConsumption);
+				if (drawConsumption > 0.004f)
+					FormalDraw(Image, Centre + new Vector2(0, Image.Height * (1 - scale)), new CollideRect(0, Image.Height * (1 - scale), Image.Width, Image.Height * scale).ToRectangle(), Color.Red * 0.8f * (ScreenDrawing.UIColor.A / 255f), Vector2.One, Rotation, ImageCentre);
 			}
 			private bool enabled = true;
 			private Color curColor = Color.Gold;
@@ -601,9 +590,14 @@ public partial class Player
 			[MethodImpl(MethodImplOptions.AggressiveInlining)]
 			internal void CheckScore(int score)
 			{
-				if (score == 3)
-					return;
-				type = score >= 4 ? Min(type, 3) : score == 2 ? Min(type, 2) : score == 1 ? Min(type, 1) : Min(type, 0);
+				if (score != 3)
+					type = score switch
+					{
+						>= 4 => Min(type, 3),
+						2 => Min(type, 2),
+						1 => Min(type, 1),
+						_ => Min(type, 0),
+					};
 			}
 		}
 	}

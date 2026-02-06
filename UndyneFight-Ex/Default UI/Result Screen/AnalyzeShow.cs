@@ -52,9 +52,7 @@ internal partial class StateShower
 				}
 				colorAlternates = new Dictionary<float, int>[maximumSoulCount];
 				for (int i = 0; i < maximumSoulCount; i++)
-				{
 					colorAlternates[i] = [];
-				}
 
 				foreach (SoulChangeData datum in soulChangeData)
 				{

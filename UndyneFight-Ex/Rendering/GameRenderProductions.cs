@@ -94,10 +94,10 @@ public static partial class GameStates
 			{
 				Vector4 vec = Fight.Functions.ScreenDrawing.BoundColor.ToVector4();
 
-				if (CurrentScene is FightScene && ((CurrentScene as FightScene).Mode & SongSystem.GameMode.Buffed) != 0 && (CurrentScene as FightScene).PlayerInstance != null)
+				if (CurrentScene is FightScene FScene && (FScene.Mode & SongSystem.GameMode.Buffed) != 0 && FScene.PlayerInstance != null)
 				{
-					float scale = (CurrentScene as FightScene).PlayerInstance.hpControl.LostSpeed / 3 - 0.125f;
-					scale = MathHelper.Clamp(scale, 0, 0.5f) + (CurrentScene as FightScene).PlayerInstance.hpControl.Under1HPScale * 0.5f;
+					float scale = FScene.PlayerInstance.hpControl.LostSpeed / 3 - 0.125f;
+					scale = MathHelper.Clamp(scale, 0, 0.5f) + FScene.PlayerInstance.hpControl.Under1HPScale * 0.5f;
 					vec = Vector4.Lerp(vec, Color.DarkRed.ToVector4(), scale * 0.9f);
 				}
 				return vec;

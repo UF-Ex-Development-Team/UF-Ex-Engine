@@ -183,6 +183,56 @@ public class SongFightingScene : FightScene
 	/// </summary>
 	private bool MusicPlayed = false;
 
+	void ProcessItems()
+	{
+		//Sanity check for the 0.5f delay
+		if (CurrentScene is not SongFightingScene)
+			return;
+		ScoreMultiplier = 1;
+		if (PlayerManager.CurrentUser == null)
+			return;
+		foreach (StoreItem item in ShopItemData.UserItems.Values)
+		{
+			if (!item.Activated)
+				continue;
+			bool ItemVoidScore = (item.Attributes & StoreItem.ItemAttribute.VoidScore) != 0;
+			if ((item.Attributes & StoreItem.ItemAttribute.Decoration) != 0)
+			{
+				item.Decoration();
+				if (ItemVoidScore)
+					ItemUsed = true;
+			}
+			if ((item.Attributes & StoreItem.ItemAttribute.Consumable) != 0 && item.TriggerCondition())
+			{
+				item.Used();
+				if (ItemVoidScore)
+					ItemUsed = true;
+			}
+			if (item.Affecting && (item.Attributes & StoreItem.ItemAttribute.ReduceScore) != 0)
+				ScoreMultiplier *= 1 - item.ReducePercentage;
+		}
+	}
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	void WinFight()
+	{
+		StateShower ss = StateShower.instance;
+		ResetFightState();
+		ResetScene(new WinScene(ss, PlayerInstance.GameAnalyzer));
+	}
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	void ChallengeSave()
+	{
+		SongResult result;
+		result = StateShower.instance.GenerateResult();
+		PlayerManager.RecordMark(currentParam.Waveset.FightName, currentParam.difficulty,
+			result.CurrentMark, result.Score, result.AC, result.AP, result.Accuracy);
+		PlayerManager.Save();
+		ResetFightState();
+		_challenge.ResultBuffer.Add(result);
+		ResetScene(ChallengeCount == ++CurChallengeNum
+			? new ChallengeWinScene(_challenge)
+			: new SongLoadingScene(_challenge, ChallengeCharts[1..]));
+	}
 	/// <inheritdoc/>
 	public override void Update()
 	{
@@ -233,49 +283,15 @@ public class SongFightingScene : FightScene
 			else if (waveset != null)
 				UpdateSong();
 			//Items
-			void ProcessItems()
-			{
-				//Sanity check for the 0.5f delay
-				if (CurrentScene is not SongFightingScene)
-					return;
-				ScoreMultiplier = 1;
-				if (PlayerManager.CurrentUser != null)
-					foreach (StoreItem item in ShopItemData.UserItems.Values)
-					{
-						if (item.Activated)
-						{
-							bool ItemVoidScore = (item.Attributes & StoreItem.ItemAttribute.VoidScore) != 0;
-							if ((item.Attributes & StoreItem.ItemAttribute.Decoration) != 0)
-							{
-								item.Decoration();
-								if (ItemVoidScore)
-									ItemUsed = true;
-							}
-							if ((item.Attributes & StoreItem.ItemAttribute.Consumable) != 0 && item.TriggerCondition())
-							{
-								item.Used();
-								if (ItemVoidScore)
-									ItemUsed = true;
-							}
-							if (item.Affecting && (item.Attributes & StoreItem.ItemAttribute.ReduceScore) != 0)
-							{
-								ScoreMultiplier *= 1 - item.ReducePercentage;
-							}
-						}
-					}
-			}
 			ProcessItems();
 			AddInstance(new InstantEvent(0.5f, ProcessItems));
 		}
 
 		bool needEnd = waveset != null && MusicPlayed && appearTime > currentParam.MusicDuration * 2 && (music?.IsEnd ?? false);
-		if (needEnd)
+		if (needEnd && !endRan)
 		{
-			if (!endRan)
-			{
-				StateShower.instance.EndAction?.Invoke();
-				endRan = true;
-			}
+			StateShower.instance.EndAction?.Invoke();
+			endRan = true;
 		}
 		if ((needEnd && AutoEnd) || forceEnd)
 		{
@@ -292,27 +308,6 @@ public class SongFightingScene : FightScene
 		}
 		mode = currentParam.mode;
 		base.Update();
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		void WinFight()
-		{
-			StateShower ss = StateShower.instance;
-			ResetFightState();
-			ResetScene(new WinScene(ss, PlayerInstance.GameAnalyzer));
-		}
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		void ChallengeSave()
-		{
-			SongResult result;
-			result = StateShower.instance.GenerateResult();
-			PlayerManager.RecordMark(currentParam.Waveset.FightName, currentParam.difficulty,
-				result.CurrentMark, result.Score, result.AC, result.AP, result.Accuracy);
-			PlayerManager.Save();
-			ResetFightState();
-			_challenge.ResultBuffer.Add(result);
-			ResetScene(ChallengeCount == ++CurChallengeNum
-				? new ChallengeWinScene(_challenge)
-				: new SongLoadingScene(_challenge, ChallengeCharts[1..]));
-		}
 	}
 
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]

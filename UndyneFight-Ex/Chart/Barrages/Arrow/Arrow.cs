@@ -8,7 +8,7 @@ namespace UndyneFight_Ex.Entities;
 /// <summary>
 /// An arrow
 /// </summary>
-public partial class Arrow : Entity, IComparable
+public partial class Arrow : Entity, IComparable<Arrow>
 {
 	private const float speedUpPlace = 104;
 	private float DrawingScale => GoldenMarkIntensity * 0.1f + 1;
@@ -49,7 +49,7 @@ public partial class Arrow : Entity, IComparable
 		Init();
 		Centre = new(-50000);
 		UpdateIn120 = true;
-		arrows.Add(this);
+		AllArrows.Add(this);
 
 		BlockTime = shootShieldTime + (settingDelay = ArrowDelay / 16);
 		Speed = speed * ArrowSpeed;
@@ -77,8 +77,8 @@ public partial class Arrow : Entity, IComparable
 		if (HasTag())
 			foreach (string str in Tags)
 			{
-				if (!taggedArrows.TryAdd(str, [this]))
-					taggedArrows[str].Add(this);
+				if (!AllTaggedArrows.TryAdd(str, [this]))
+					AllTaggedArrows[str].Add(this);
 			}
 	}
 
@@ -131,7 +131,7 @@ public partial class Arrow : Entity, IComparable
 	public override void Draw()
 	{
 		//Tap -> Green outline, else no outline
-		if (JudgeType != JudgementType.Tap && !taggedArrows.ContainsKey("Tap") && backColor == 2)
+		if (JudgeType != JudgementType.Tap && !AllTaggedArrows.ContainsKey("Tap") && backColor == 2)
 			backColor = 0;
 		if (ForceGreenBack)
 			backColor = 2;
@@ -148,7 +148,7 @@ public partial class Arrow : Entity, IComparable
 			}
 			else
 				//Old method
-				GeneralDraw(Sprites.arrow[ArrowColor, rotatingType, 0], Centre, new Color(0.98f, 0.98f, 0.98f, ArrowColor == 1 ? 0.75f : 0.25f) * Alpha, new(DrawingScale * Scale), GetRadian(Rotation + additiveRotation + SelfRotationOffset));
+				GeneralDraw(Sprites.arrow[ArrowColor, backColor, 0], Centre, new Color(0.98f, 0.98f, 0.98f, ArrowColor == 1 ? 0.75f : 0.25f) * Alpha, new(DrawingScale * Scale), GetRadian(Rotation + additiveRotation + SelfRotationOffset));
 		}
 
 		if (GoldenMarkIntensity > 0 && EnableGoldMark)
@@ -184,16 +184,10 @@ public partial class Arrow : Entity, IComparable
 
 	/// <inheritdoc/>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public int CompareTo(object obj)
-	{
-		int res = BlockTime.CompareTo((obj as Arrow).BlockTime);
-		if (MathF.Abs((obj as Arrow).BlockTime - BlockTime) < 0.35f)
-			res = 0;
-		return res != 0 ? res : way.CompareTo((obj as Arrow).way);
-	}
+	public int CompareTo(Arrow obj) => MathF.Abs(obj.BlockTime - BlockTime) < 0.35f ? way.CompareTo(obj.way) : BlockTime.CompareTo(obj.BlockTime);
 
-	private static List<Arrow> arrows => (GameStates.CurrentScene as SongFightingScene).Accuracy.AllArrows;
-	private static Dictionary<string, List<Arrow>> taggedArrows => (GameStates.CurrentScene as SongFightingScene).Accuracy.TaggedArrows;
+	private static List<Arrow> AllArrows => CurrentFightingScene.Accuracy.AllArrows;
+	private static Dictionary<string, List<Arrow>> AllTaggedArrows => CurrentFightingScene.Accuracy.TaggedArrows;
 	/// <summary>
 	/// The frames elapsed after creation
 	/// </summary>

@@ -1047,17 +1047,15 @@ public static partial class Functions
 						kawase.Factor = OriginToFactor(new Vector2(2.5f) * sigma2) * scale;
 						DrawTexture(obj, Vector2.Zero);
 					}
-
-					if (Glittering && GlitterScale > 0.05f)
-					{
-						SamplerState = null;
-						Shader = null;
-						MissionTarget = screen;
-						BlendState = BlendState.Additive;
-						DrawTextures([HelperTarget, MissionTarget], HelperTarget.Bounds, null, [Color.White, Color.White * GlitterScale]);
-
+					if (!Glittering || GlitterScale <= 0.05f)
 						return MissionTarget;
-					}
+
+					SamplerState = null;
+					Shader = null;
+					MissionTarget = screen;
+					BlendState = BlendState.Additive;
+					DrawTextures([HelperTarget, MissionTarget], HelperTarget.Bounds, null, [Color.White, Color.White * GlitterScale]);
+
 					return MissionTarget;
 				}
 			}

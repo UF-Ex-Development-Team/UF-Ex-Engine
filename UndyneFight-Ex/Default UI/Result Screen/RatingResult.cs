@@ -148,9 +148,7 @@ internal partial class StateShower
 						break;
 					case RatingShowState.ShowRating:
 						if (appearTime <= 30)
-						{
 							ratingShowing.SkillColor = Color.Lerp(ratingShowing.SkillColor, Color.Transparent, appearTime / 30f);
-						}
 						else if (appearTime >= 40)
 						{
 							ratingShowing.SkillColor = Color.Lerp(Color.Transparent, Color.White, Min(1, (appearTime - 40) / 30f));
@@ -159,9 +157,7 @@ internal partial class StateShower
 						break;
 					case RatingShowState.Encourage:
 						if (appearTime <= 30)
-						{
 							ratingShowing.SkillColor = Color.Lerp(ratingShowing.SkillColor, Color.Transparent, appearTime / 30f);
-						}
 						else if (appearTime >= 40)
 						{
 							ratingShowing.SkillColor = Color.Lerp(Color.Transparent, Color.Gold, Min(1, (appearTime - 40) / 30f));
