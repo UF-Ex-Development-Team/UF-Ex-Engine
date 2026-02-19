@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class GameObject | UF-Ex Docs </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class GameObject | UF-Ex Docs ">
+      
+      <meta name="description" content="A game object">
+      <link rel="icon" href="../images/Icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/new/main/apiSpec/new?filename=UndyneFight_Ex_GameObject.md&amp;value=---%0Auid%3A%20UndyneFight_Ex.GameObject%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/Icon.ico" alt="UF-Ex Docs">
+            UF-Ex Docs
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="UndyneFight_Ex.GameObject">
+
+
+
+  <h1 id="UndyneFight_Ex_GameObject" data-uid="UndyneFight_Ex.GameObject" class="text-break">
+Class GameObject  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/EntityBase.cs/#L687"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="UndyneFight_Ex.html">UndyneFight_Ex</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>UndyneFight-Ex.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>A game object</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class GameObject</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">GameObject</span></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist derived">
+    <dt>Derived</dt>
+    <dd>
+      <div><a class="xref" href="UndyneFight_Ex.Entities.Advanced.FightAlphaManager.html">FightAlphaManager</a></div>
+      <div><a class="xref" href="UndyneFight_Ex.Entities.Advanced.ScreenShaker.html">ScreenShaker</a></div>
+      <div><a class="xref" href="UndyneFight_Ex.Entities.Advanced.VertexHull.html">VertexHull</a></div>
+      <div><a class="xref" href="UndyneFight_Ex.Entities.Advanced.ZaWarudo.html">ZaWarudo</a></div>
+      <div><a class="xref" href="UndyneFight_Ex.Entities.Arrow.ArrowEasing.html">Arrow.ArrowEasing</a></div>
+      <div><a class="xref" href="UndyneFight_Ex.Entities.InstantEvent.html">InstantEvent</a></div>
+      <div><a class="xref" href="UndyneFight_Ex.Entities.Player.HPControl.html">Player.HPControl</a></div>
+      <div><a class="xref" href="UndyneFight_Ex.Entities.TimeRangedEvent.html">TimeRangedEvent</a></div>
+      <div><a class="xref" href="UndyneFight_Ex.Entity.html">Entity</a></div>
+      <div><a class="xref" href="UndyneFight_Ex.SongSystem.WaveConstructor.html">WaveConstructor</a></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="UndyneFight_Ex_GameObject_BeingUpdated_" data-uid="UndyneFight_Ex.GameObject.BeingUpdated*"></a>
+
+  <h3 id="UndyneFight_Ex_GameObject_BeingUpdated" data-uid="UndyneFight_Ex.GameObject.BeingUpdated">
+  BeingUpdated
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/EntityBase.cs/#L712"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Whether the object is being updated</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool BeingUpdated { get; protected set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_GameObject_ChildObjects_" data-uid="UndyneFight_Ex.GameObject.ChildObjects*"></a>
+
+  <h3 id="UndyneFight_Ex_GameObject_ChildObjects" data-uid="UndyneFight_Ex.GameObject.ChildObjects">
+  ChildObjects
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/EntityBase.cs/#L778"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The list of child game objects</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;GameObject&gt; ChildObjects { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="UndyneFight_Ex.GameObject.html">GameObject</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_GameObject_ChildrenUpdateFirst_" data-uid="UndyneFight_Ex.GameObject.ChildrenUpdateFirst*"></a>
+
+  <h3 id="UndyneFight_Ex_GameObject_ChildrenUpdateFirst" data-uid="UndyneFight_Ex.GameObject.ChildrenUpdateFirst">
+  ChildrenUpdateFirst
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/EntityBase.cs/#L696"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Whether the <a class="xref" href="UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_ChildObjects">ChildObjects</a> updates before this object updates</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool ChildrenUpdateFirst { set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_GameObject_CrossScene_" data-uid="UndyneFight_Ex.GameObject.CrossScene*"></a>
+
+  <h3 id="UndyneFight_Ex_GameObject_CrossScene" data-uid="UndyneFight_Ex.GameObject.CrossScene">
+  CrossScene
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/EntityBase.cs/#L720"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Whether the object will persist after changing to another scene</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CrossScene { get; protected set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_GameObject_CurrentFightingScene_" data-uid="UndyneFight_Ex.GameObject.CurrentFightingScene*"></a>
+
+  <h3 id="UndyneFight_Ex_GameObject_CurrentFightingScene" data-uid="UndyneFight_Ex.GameObject.CurrentFightingScene">
+  CurrentFightingScene
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/EntityBase.cs/#L704"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The current <a class="xref" href="UndyneFight_Ex.Entities.SongFightingScene.html">SongFightingScene</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected static SongFightingScene CurrentFightingScene { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.SongFightingScene.html">SongFightingScene</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_GameObject_CurrentScene_" data-uid="UndyneFight_Ex.GameObject.CurrentScene*"></a>
+
+  <h3 id="UndyneFight_Ex_GameObject_CurrentScene" data-uid="UndyneFight_Ex.GameObject.CurrentScene">
+  CurrentScene
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/EntityBase.cs/#L700"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The current scene</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected static Scene CurrentScene { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Scene.html">Scene</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_GameObject_Disposed_" data-uid="UndyneFight_Ex.GameObject.Disposed*"></a>
+
+  <h3 id="UndyneFight_Ex_GameObject_Disposed" data-uid="UndyneFight_Ex.GameObject.Disposed">
+  Disposed
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/EntityBase.cs/#L816"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Whether the game object is disposed</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Disposed { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_GameObject_Extras_" data-uid="UndyneFight_Ex.GameObject.Extras*"></a>
+
+  <h3 id="UndyneFight_Ex_GameObject_Extras" data-uid="UndyneFight_Ex.GameObject.Extras">
+  Extras
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/EntityBase.cs/#L774"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>An extra variable for manipulation</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public object Extras { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_GameObject_FatherObject_" data-uid="UndyneFight_Ex.GameObject.FatherObject*"></a>
+
+  <h3 id="UndyneFight_Ex_GameObject_FatherObject" data-uid="UndyneFight_Ex.GameObject.FatherObject">
+  FatherObject
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/EntityBase.cs/#L838"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The father game object of this child game object (if any)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameObject FatherObject { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.GameObject.html">GameObject</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_GameObject_Tags_" data-uid="UndyneFight_Ex.GameObject.Tags*"></a>
+
+  <h3 id="UndyneFight_Ex_GameObject_Tags" data-uid="UndyneFight_Ex.GameObject.Tags">
+  Tags
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/EntityBase.cs/#L754"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The tags of the game object</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string[] Tags { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_GameObject_UpdateChildren_" data-uid="UndyneFight_Ex.GameObject.UpdateChildren*"></a>
+
+  <h3 id="UndyneFight_Ex_GameObject_UpdateChildren" data-uid="UndyneFight_Ex.GameObject.UpdateChildren">
+  UpdateChildren
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/EntityBase.cs/#L692"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Whether the <a class="xref" href="UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_ChildObjects">ChildObjects</a> will be updated as well</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool UpdateChildren { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_GameObject_UpdateEnabled_" data-uid="UndyneFight_Ex.GameObject.UpdateEnabled*"></a>
+
+  <h3 id="UndyneFight_Ex_GameObject_UpdateEnabled" data-uid="UndyneFight_Ex.GameObject.UpdateEnabled">
+  UpdateEnabled
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/EntityBase.cs/#L716"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Whether the object will be updated</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool UpdateEnabled { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_GameObject_UpdateIn120_" data-uid="UndyneFight_Ex.GameObject.UpdateIn120*"></a>
+
+  <h3 id="UndyneFight_Ex_GameObject_UpdateIn120" data-uid="UndyneFight_Ex.GameObject.UpdateIn120">
+  UpdateIn120
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/EntityBase.cs/#L708"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Whether the object will be updated every 120 frames or 60 frames (It is better to set this as true)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool UpdateIn120 { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="UndyneFight_Ex_GameObject_AddChild_" data-uid="UndyneFight_Ex.GameObject.AddChild*"></a>
+
+  <h3 id="UndyneFight_Ex_GameObject_AddChild_UndyneFight_Ex_GameObject_" data-uid="UndyneFight_Ex.GameObject.AddChild(UndyneFight_Ex.GameObject)">
+  AddChild(GameObject)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/EntityBase.cs/#L843"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Adds a child to the current game object</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddChild(GameObject obj)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>obj</code> <a class="xref" href="UndyneFight_Ex.GameObject.html">GameObject</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_GameObject_Broadcast_" data-uid="UndyneFight_Ex.GameObject.Broadcast*"></a>
+
+  <h3 id="UndyneFight_Ex_GameObject_Broadcast_System_String_" data-uid="UndyneFight_Ex.GameObject.Broadcast(System.String)">
+  Broadcast(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/EntityBase.cs/#L742"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Broadcasts an event to all objects</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Broadcast(string info)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>info</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The name of the event</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_GameObject_ContainTag_" data-uid="UndyneFight_Ex.GameObject.ContainTag*"></a>
+
+  <h3 id="UndyneFight_Ex_GameObject_ContainTag_System_String_" data-uid="UndyneFight_Ex.GameObject.ContainTag(System.String)">
+  ContainTag(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/EntityBase.cs/#L726"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Whether the object contains the given tag</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ContainTag(string tagName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tagName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The tag to check</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Whether the object contains the given tag</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_GameObject_Dispose_" data-uid="UndyneFight_Ex.GameObject.Dispose*"></a>
+
+  <h3 id="UndyneFight_Ex_GameObject_Dispose" data-uid="UndyneFight_Ex.GameObject.Dispose">
+  Dispose()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/EntityBase.cs/#L820"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Disposes the object</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Dispose()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_GameObject_GetDrawableTree_" data-uid="UndyneFight_Ex.GameObject.GetDrawableTree*"></a>
+
+  <h3 id="UndyneFight_Ex_GameObject_GetDrawableTree" data-uid="UndyneFight_Ex.GameObject.GetDrawableTree">
+  GetDrawableTree()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/EntityBase.cs/#L862"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the object itself and its children that is of type <a class="xref" href="UndyneFight_Ex.Entity.html">Entity</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;Entity&gt; GetDrawableTree()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="UndyneFight_Ex.Entity.html">Entity</a>&gt;</dt>
+    <dd><p>The list of entities</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_GameObject_HasTag_" data-uid="UndyneFight_Ex.GameObject.HasTag*"></a>
+
+  <h3 id="UndyneFight_Ex_GameObject_HasTag" data-uid="UndyneFight_Ex.GameObject.HasTag">
+  HasTag()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/EntityBase.cs/#L768"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Whether the game object has any tags</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasTag()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_GameObject_Kill_" data-uid="UndyneFight_Ex.GameObject.Kill*"></a>
+
+  <h3 id="UndyneFight_Ex_GameObject_Kill" data-uid="UndyneFight_Ex.GameObject.Kill">
+  Kill()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/EntityBase.cs/#L829"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>This does not invoke the <a class="xref" href="UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Dispose">Dispose()</a> event</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Kill()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_GameObject_Reverse_" data-uid="UndyneFight_Ex.GameObject.Reverse*"></a>
+
+  <h3 id="UndyneFight_Ex_GameObject_Reverse" data-uid="UndyneFight_Ex.GameObject.Reverse">
+  Reverse()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/EntityBase.cs/#L852"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Un-dispose the object</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Reverse()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_GameObject_Start_" data-uid="UndyneFight_Ex.GameObject.Start*"></a>
+
+  <h3 id="UndyneFight_Ex_GameObject_Start" data-uid="UndyneFight_Ex.GameObject.Start">
+  Start()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/EntityBase.cs/#L786"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The initialization of the object</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Start()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_GameObject_TreeUpdate_" data-uid="UndyneFight_Ex.GameObject.TreeUpdate*"></a>
+
+  <h3 id="UndyneFight_Ex_GameObject_TreeUpdate" data-uid="UndyneFight_Ex.GameObject.TreeUpdate">
+  TreeUpdate()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/EntityBase.cs/#L790"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Updates the object and its children</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void TreeUpdate()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_GameObject_TryDetect_" data-uid="UndyneFight_Ex.GameObject.TryDetect*"></a>
+
+  <h3 id="UndyneFight_Ex_GameObject_TryDetect_System_String_" data-uid="UndyneFight_Ex.GameObject.TryDetect(System.String)">
+  TryDetect(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/EntityBase.cs/#L749"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Checks whether an event was broadcasted</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static (bool EventExists, GameEventArgs EventArguments) TryDetect(string tagName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tagName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The name of the event</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,undynefight_ex.gameeventargs-.eventexists">EventExists</a>, <a class="xref" href="UndyneFight_Ex.GameEventArgs.html">GameEventArgs</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,undynefight_ex.gameeventargs-.eventarguments">EventArguments</a>)</dt>
+    <dd><p>Whether the event is being broadcasted, if so, return its arguments too</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_GameObject_Update_" data-uid="UndyneFight_Ex.GameObject.Update*"></a>
+
+  <h3 id="UndyneFight_Ex_GameObject_Update" data-uid="UndyneFight_Ex.GameObject.Update">
+  Update()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/EntityBase.cs/#L782"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The logic to run each frame</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void Update()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="events">Events
+</h2>
+
+
+
+  <h3 id="UndyneFight_Ex_GameObject_OnDispose" data-uid="UndyneFight_Ex.GameObject.OnDispose">
+  OnDispose
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/EntityBase.cs/#L834"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The event to execute when the object is disposed</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action OnDispose</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action">Action</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/EntityBase.cs/#L687" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

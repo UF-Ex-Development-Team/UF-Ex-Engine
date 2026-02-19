@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Setting Up | UF-Ex Docs </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Setting Up | UF-Ex Docs ">
+      
+      
+      <link rel="icon" href="../images/Icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UF-Ex Docs/Setting Up.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/Icon.ico" alt="UF-Ex Docs">
+            UF-Ex Docs
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="setting-up">Setting Up</h1>
+
+<h2 id="installing-msvs-uf-ex">Installing MSVS + UF-Ex</h2>
+<p>Notes
+You can either use <a href="https://visualstudio.microsoft.com/downloads/">Visual Studio Code or Visual Studio</a> to use this engine, however this tutorial only covers Visual Studio, if you intend to use Visual Studio Code, you might need to figure some aspects out yourself.
+The documentation may be updated over time, if you are using the PDF version of it, remember to check the site occasionally for the latest changes.</p>
+<h2 id="requirements">Requirements</h2>
+<p>Microsoft Visual Studio (MSVS)</p>
+<p>Visual C++ Redistributable Packages for Visual Studio 2013 (Install this first)</p>
+<p>.NET 9.0 (C# 13 or higher)</p>
+<p>UF-Ex engine pack (UndyneFight-Ex.dll)</p>
+<p>UF-Ex .xml file (It is used for variable documentation)</p>
+<p>UF-Ex content pack (Included in the example solution)</p>
+<p>8 GB of disk space, 4 GB of RAM</p>
+<p>The courage to ask for help.</p>
+<h2 id="installing-visual-studio">Installing Visual Studio</h2>
+<p>Visual Studio Community is sufficient for this engine, you don’t have to install Professional or Enterprise.</p>
+<p>You have to install .NET desktop development and WinUI application development in order for the UF-Ex engine to function.</p>
+<img width="905" height="229" alt="image" src="/images/Getting Started/Net Desktop.png">
+<p>VS extension development is optional.</p>
+<img width="905" height="222" alt="image" src="/images/Getting Started/VS Extension.png">
+<p>Setting up the solution
+After installing MSVS, open the provided example solution, you can name it whatever you like.
+Open the solution (.sln), select “Extensions” at the top bar, and then choose “Manage Extensions”</p>
+<img width="408" height="159" alt="image" src="/images/Getting Started/Manage Extensions.png">
+<p>Choose it and search for “Monogame”</p>
+<img width="898" height="435" alt="image" src="/images/Getting Started/Monogame Search.png">
+<p>Install the extension shown in the image. (Note that the extension version in the image is outdated, ensure you have the latest version installed)</p>
+<p>After installing Monogame Framework, search for “HLSL”</p>
+<img width="884" height="273" alt="image" src="/images/Getting Started/HLSL Search.png">
+<p>Install the extension shown in the image.
+(You can choose to not install this if you can read HLSL shader codes in pure text.)</p>
+<p>Note that you may need to restart your computer/MSVS after installing certain components.</p>
+<p>After finishing the installation process, open MSVS and go to the solution explorer on the right hand side, Right click “Dependencies” and select “Add project reference”</p>
+<img width="415" height="74" alt="image" src="/images/Getting Started/Proj Ref.png">
+<p>Click “Browse” and select UndyneFight_Ex.dll.</p>
+<h2 id="updating-uf-ex">Updating UF-Ex</h2>
+<p>Since UF-Ex depends on Monogame to function, it should be expected that the dependencies will be updated as well (It will be indicated in the changelog). If the dependencies are updated, you should do the following.</p>
+<img width="900" height="344" alt="image" src="/images/Getting Started/Folder 1.png">
+<p>In this folder, open the Terminal and run this command “dotnet clean; dotnet restore”.</p>
+<p>Then go into this folder.</p>
+<img width="900" height="452" alt="image" src="/images/Getting Started/Folder 2.png">
+<p>And open the Terminal here, and run “dotnet tool restore”.</p>
+<p>After running them, Monogame should be up to date.
+Please make sure you have all the fonts in “Content/Sprites/font” installed, or else the content builder will not recognize the fonts.</p>
+<h2 id="importing-music">Importing music</h2>
+<p>By pressing (Ctrl +) F5, the game should run normally (And then you will see a hideous UI).
+(Ctrl + F5 will not attach the debugger to the executable, it will run faster but will not show an error log when the game crashes.)
+If you try to select a song, you should see this.</p>
+<img width="908" height="458" alt="image" src="/images/Getting Started/Import No Music.png">
+<p>A bracket indicates that there is no associated music file for the chart, that means you need to import it.
+To import assets, select “Content.mgcb” in the “Content” folder</p>
+<img width="429" height="314" alt="image" src="/images/Getting Started/Content Folder.png">
+<p>You can just double click it or choose “Open With -&gt; MGCB Editor”.
+<strong>If there is no such folder named “Musics”</strong>, create one by right clicking “Content”, and select “Add -&gt; New Folder” and name it “Musics”.</p>
+<img width="807" height="145" alt="image" src="/images/Getting Started/MGCB Editor.png">
+<p>After having the “Musics” folder, create a folder that matches the name of the chart, in this case, it would be “My First Chart”.
+Right click on the newly created folder and select “Add -&gt; Existing Item”, then you can select the music you want to import, make sure it says  and the imported music is set to a song .
+After importing the music, rename the music asset into “song.(file type)” (If the music you imported was an .ogg file, name it to song.ogg, and so on)
+If you want to add a chart cover, simply import an image file and rename it into “paint”.</p>
+<p>Note: The engine has auto scaling for chart covers, but it is best to set it to 640x480 before importing to avoid bugs.</p>
+<p>After importing the chart assets, make sure to “Build” the MGCB by pressing F6, it is best to use “Rebuild” if you have removed or renamed assets.</p>
+<h2 id="basic-template-information">Basic template information</h2>
+<p>Some comments are inside “Normal Model” and “Championship Model”, you may view them for further information.</p>
+<pre><code class="lang-csharp">class MyFirstChart : WaveConstructor, IWaveSet
+</code></pre>
+<p><code>WaveConstructor</code> contains the basic methods for charting such as beat calculation and the main chart making function.
+<code>IWaveSet</code> is the <a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/interface">interface</a> that stores the basic information of the chart, such as the difficulties and music name.</p>
+<pre><code class="lang-csharp">public MyFirstChart() : base(62.5f / (100 / 60f)) { }
+</code></pre>
+<p>The “100” is the BPM of the chart, if you are unsure of the BPM, you can use an online BPM checker or use Malody (More accurate) to find the BPM of the music.
+If there are multiple BPM in the chart, simply put them in arrays like this:</p>
+<pre><code class="lang-csharp">public MyFirstChart() : base([10, 300], [10, 50], [999, 230]) { }
+</code></pre>
+<p>This means that the first 10 beats have 300 bpm, the next 10 beats have 50 bpm, and the next 999 beats have 230 bpm.</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_IWaveSet" role="tab" aria-controls="tabpanel_1_IWaveSet" data-tab="IWaveSet" tabindex="0" aria-selected="true">IWaveSet (Classic)</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_IWaveSetS" role="tab" aria-controls="tabpanel_1_IWaveSetS" data-tab="IWaveSetS" tabindex="-1">IWaveSetS (Simplified)</a>
+</li>
+</ul>
+<section id="tabpanel_1_IWaveSet" role="tabpanel" data-tab="IWaveSet">
+
+<p>For setting up the difficulties in the most straight forward way, you can set it up like this.</p>
+<pre><code class="lang-csharp">//This is the chart function for Noob mode
+public void Noob()
+{
+
+}
+//This is the chart function for Easy mode
+public void Easy()
+{
+
+}
+//This is the chart function for Normal mode
+public void Normal()
+{
+
+}
+//This is the chart function for Hard mode
+public void Hard()
+{
+
+}
+//This is the chart function for Extreme mode
+public void Extreme()
+{
+
+}
+//This is the chart function for Extreme Plus mode
+public void ExtremePlus()
+{
+        
+}
+</code></pre>
+<p>Note that you can remove the difficulty functions that are not included in your chart.</p>
+</section>
+<section id="tabpanel_1_IWaveSetS" role="tabpanel" data-tab="IWaveSetS" aria-hidden="true" hidden="hidden">
+
+<p>Sometimes, you may find that you need to copy and paste chunks of code from one difficulty to another, and when you need to change certain aspects of the code, you need to manually change them all. Not only is this process boring and tedious, it makes the code unreadable and too large. In short, this is poor coding practice and should be avoided.</p>
+<p>To simplify the charting process, IWaveSetS is created, your code can now look as simple as this</p>
+<pre><code class="lang-csharp">public void Chart()
+{
+    Effect();
+    switch (CurrentDifficulty)
+    {
+        case Difficulty.Noob:
+            //Noob mode
+            break;
+        case Difficulty.Normal:
+            //Normal mode
+            break;
+    }
+}
+</code></pre>
+<p>Or even this</p>
+<pre><code class="lang-csharp">public void Chart()
+{
+    if (InBeat(0))
+    {
+        int spd = CurrentDifficulty switch
+        {
+            Difficulty.Noob =&gt; 4,
+            Difficulty.Easy =&gt; 5,
+            Difficulty.Normal =&gt; 6
+        }
+        CreateChart(0, BeatTime(1), spd, [&quot;R&quot;, &quot;&quot;, &quot;&quot;, &quot;etc&quot;]);
+    }
+}
+</code></pre>
+<p>Not only is the code more efficient, it is more readable and easy to keep track of.</p>
+</section>
+</div>
+
+<p>This sums up how to set up a chart, for functions and variables, check out the next chapter.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UF-Ex Docs/Setting Up.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

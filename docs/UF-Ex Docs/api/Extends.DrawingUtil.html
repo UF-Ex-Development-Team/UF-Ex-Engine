@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class DrawingUtil | UF-Ex Docs </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class DrawingUtil | UF-Ex Docs ">
+      
+      <meta name="description" content="Utilities for drawing">
+      <link rel="icon" href="../../images/Icon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/Icon.ico" alt="UF-Ex Docs">
+            UF-Ex Docs
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Extends.DrawingUtil">
+
+
+
+  <h1 id="Extends_DrawingUtil" data-uid="Extends.DrawingUtil" class="text-break">
+Class DrawingUtil  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="../../api/Extends.html">Extends</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>UndyneFight-Ex.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Utilities for drawing</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class DrawingUtil</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">DrawingUtil</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Extends_DrawingUtil_CreateTagLine_" data-uid="Extends.DrawingUtil.CreateTagLine*"></a>
+
+  <h3 id="Extends_DrawingUtil_CreateTagLine_Extends_DrawingUtil_Linerotate_System_String_" data-uid="Extends.DrawingUtil.CreateTagLine(Extends.DrawingUtil.Linerotate,System.String)">
+  CreateTagLine(Linerotate, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Use Line&quot;)]
+public static void CreateTagLine(DrawingUtil.Linerotate Line, string Tag)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>Line</code> <a class="xref" href="Extends.DrawingUtil.html">DrawingUtil</a>.<a class="xref" href="Extends.DrawingUtil.Linerotate.html">Linerotate</a></dt>
+    <dd></dd>
+    <dt><code>Tag</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Extends_DrawingUtil_CreateTagLine_" data-uid="Extends.DrawingUtil.CreateTagLine*"></a>
+
+  <h3 id="Extends_DrawingUtil_CreateTagLine_Extends_DrawingUtil_Linerotate_System_String___" data-uid="Extends.DrawingUtil.CreateTagLine(Extends.DrawingUtil.Linerotate,System.String[])">
+  CreateTagLine(Linerotate, string[])
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Use Line&quot;)]
+public static void CreateTagLine(DrawingUtil.Linerotate Line, string[] Tags)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>Line</code> <a class="xref" href="Extends.DrawingUtil.html">DrawingUtil</a>.<a class="xref" href="Extends.DrawingUtil.Linerotate.html">Linerotate</a></dt>
+    <dd></dd>
+    <dt><code>Tags</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Extends_DrawingUtil_CreateTagLine_" data-uid="Extends.DrawingUtil.CreateTagLine*"></a>
+
+  <h3 id="Extends_DrawingUtil_CreateTagLine_Extends_DrawingUtil_Linerotatelong_System_String_" data-uid="Extends.DrawingUtil.CreateTagLine(Extends.DrawingUtil.Linerotatelong,System.String)">
+  CreateTagLine(Linerotatelong, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Use Line&quot;)]
+public static void CreateTagLine(DrawingUtil.Linerotatelong Line, string Tag)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>Line</code> <a class="xref" href="Extends.DrawingUtil.html">DrawingUtil</a>.<a class="xref" href="Extends.DrawingUtil.Linerotatelong.html">Linerotatelong</a></dt>
+    <dd></dd>
+    <dt><code>Tag</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Extends_DrawingUtil_CreateTagLine_" data-uid="Extends.DrawingUtil.CreateTagLine*"></a>
+
+  <h3 id="Extends_DrawingUtil_CreateTagLine_Extends_DrawingUtil_NormalLine_System_String_" data-uid="Extends.DrawingUtil.CreateTagLine(Extends.DrawingUtil.NormalLine,System.String)">
+  CreateTagLine(NormalLine, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Use Line&quot;)]
+public static void CreateTagLine(DrawingUtil.NormalLine Line, string Tag)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>Line</code> <a class="xref" href="Extends.DrawingUtil.html">DrawingUtil</a>.<a class="xref" href="Extends.DrawingUtil.NormalLine.html">NormalLine</a></dt>
+    <dd></dd>
+    <dt><code>Tag</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Extends_DrawingUtil_CreateTagLine_" data-uid="Extends.DrawingUtil.CreateTagLine*"></a>
+
+  <h3 id="Extends_DrawingUtil_CreateTagLine_Extends_DrawingUtil_NormalLine_System_String___" data-uid="Extends.DrawingUtil.CreateTagLine(Extends.DrawingUtil.NormalLine,System.String[])">
+  CreateTagLine(NormalLine, string[])
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Use Line&quot;)]
+public static void CreateTagLine(DrawingUtil.NormalLine Line, string[] Tags)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>Line</code> <a class="xref" href="Extends.DrawingUtil.html">DrawingUtil</a>.<a class="xref" href="Extends.DrawingUtil.NormalLine.html">NormalLine</a></dt>
+    <dd></dd>
+    <dt><code>Tags</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Extends_DrawingUtil_CrossBone_" data-uid="Extends.DrawingUtil.CrossBone*"></a>
+
+  <h3 id="Extends_DrawingUtil_CrossBone_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_System_Single_System_Single_System_Int32_System_Single_" data-uid="Extends.DrawingUtil.CrossBone(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,System.Single,System.Int32,System.Single)">
+  CrossBone(Vector2, Vector2, float, float, int, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates a list of bones with provided motion and rotation</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This function is the same as using a for loop to create multiple bones&quot;)]
+public static void CrossBone(Vector2 start, Vector2 speed, float length, float num, int color = 0, float RotSpeed = 4)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>start</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The initial position of the bones</p>
+</dd>
+    <dt><code>speed</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The speed of the bones</p>
+</dd>
+    <dt><code>length</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The length of the bones</p>
+</dd>
+    <dt><code>num</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The amount of bones</p>
+</dd>
+    <dt><code>color</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The color of the bones</p>
+</dd>
+    <dt><code>RotSpeed</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The rotation speed of the bones (Default 4)</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Extends_DrawingUtil_FadeScreen_" data-uid="Extends.DrawingUtil.FadeScreen*"></a>
+
+  <h3 id="Extends_DrawingUtil_FadeScreen_System_Single_System_Single_System_Single_System_Nullable_Microsoft_Xna_Framework_Color__" data-uid="Extends.DrawingUtil.FadeScreen(System.Single,System.Single,System.Single,System.Nullable{Microsoft.Xna.Framework.Color})">
+  FadeScreen(float, float, float, Color?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates a screen fading in and out</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void FadeScreen(float inDuration, float duration, float outDuration, Color? color = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>inDuration</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The duration for the screen to fade in</p>
+</dd>
+    <dt><code>duration</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The duration of the fade screen</p>
+</dd>
+    <dt><code>outDuration</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The duration for the screen to fade out</p>
+</dd>
+    <dt><code>color</code> <span class="xref">Color</span>?</dt>
+    <dd><p>The color of the fading (Default black)</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+  <a id="Extends_DrawingUtil_LerpGreenBox_" data-uid="Extends.DrawingUtil.LerpGreenBox*"></a>
+
+  <h3 id="Extends_DrawingUtil_LerpGreenBox_System_Single_Microsoft_Xna_Framework_Vector2_System_Single_" data-uid="Extends.DrawingUtil.LerpGreenBox(System.Single,Microsoft.Xna.Framework.Vector2,System.Single)">
+  LerpGreenBox(float, Vector2, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Lerps the box and heart to green soul position (If the duration is shorter than the required lerp time, then the lerp will be incomplete. If the required lerp duration is shorter than the duration, then the lerp duration will be shortened)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Use easing functions instead&quot;)]
+public static void LerpGreenBox(float duration, Vector2 getto, float lerpcount)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>duration</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The duration of the lerp</p>
+</dd>
+    <dt><code>getto</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The target position</p>
+</dd>
+    <dt><code>lerpcount</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The lerp amount</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Extends_DrawingUtil_LerpScreenPos_" data-uid="Extends.DrawingUtil.LerpScreenPos*"></a>
+
+  <h3 id="Extends_DrawingUtil_LerpScreenPos_System_Single_Microsoft_Xna_Framework_Vector2_System_Single_" data-uid="Extends.DrawingUtil.LerpScreenPos(System.Single,Microsoft.Xna.Framework.Vector2,System.Single)">
+  LerpScreenPos(float, Vector2, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Lerps the screen position (If the duration is shorter than the required lerp time, then the lerp will be incomplete. If the required lerp duration is shorter than the duration, then the lerp duration will be shortened)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Use easing functions instead&quot;)]
+public static void LerpScreenPos(float duration, Vector2 getto, float lerpcount)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>duration</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The duration of the lerp</p>
+</dd>
+    <dt><code>getto</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The target position</p>
+</dd>
+    <dt><code>lerpcount</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The lerp amount</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Extends_DrawingUtil_LerpScreenScale_" data-uid="Extends.DrawingUtil.LerpScreenScale*"></a>
+
+  <h3 id="Extends_DrawingUtil_LerpScreenScale_System_Single_System_Single_System_Single_" data-uid="Extends.DrawingUtil.LerpScreenScale(System.Single,System.Single,System.Single)">
+  LerpScreenScale(float, float, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Lerps the screen scale (If the duration is shorter than the required lerp time, then the lerp will be incomplete. If the required lerp duration is shorter than the duration, then the lerp duration will be shortened)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Use easing functions instead&quot;)]
+public static void LerpScreenScale(float duration, float getto, float lerpcount)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>duration</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The duration of the lerp</p>
+</dd>
+    <dt><code>getto</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The target position</p>
+</dd>
+    <dt><code>lerpcount</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The lerp amount</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Extends_DrawingUtil_MinusScreenScale_" data-uid="Extends.DrawingUtil.MinusScreenScale*"></a>
+
+  <h3 id="Extends_DrawingUtil_MinusScreenScale_System_Single_System_Single_" data-uid="Extends.DrawingUtil.MinusScreenScale(System.Single,System.Single)">
+  MinusScreenScale(float, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;There are better functions&quot;)]
+public static void MinusScreenScale(float MaxSize, float time)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>MaxSize</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Extends_DrawingUtil_PlusRotate_" data-uid="Extends.DrawingUtil.PlusRotate*"></a>
+
+  <h3 id="Extends_DrawingUtil_PlusRotate_System_Single_System_Single_" data-uid="Extends.DrawingUtil.PlusRotate(System.Single,System.Single)">
+  PlusRotate(float, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;There are better functions&quot;)]
+public static void PlusRotate(float MaxAngle, float time)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>MaxAngle</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Extends_DrawingUtil_PlusScreenScale_" data-uid="Extends.DrawingUtil.PlusScreenScale*"></a>
+
+  <h3 id="Extends_DrawingUtil_PlusScreenScale_System_Single_System_Single_" data-uid="Extends.DrawingUtil.PlusScreenScale(System.Single,System.Single)">
+  PlusScreenScale(float, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;There are better functions&quot;)]
+public static void PlusScreenScale(float MaxSize, float time)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>MaxSize</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Extends_DrawingUtil_Rain_" data-uid="Extends.DrawingUtil.Rain*"></a>
+
+  <h3 id="Extends_DrawingUtil_Rain_System_Single_System_Single_System_Boolean_" data-uid="Extends.DrawingUtil.Rain(System.Single,System.Single,System.Boolean)">
+  Rain(float, float, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;There are better functions&quot;)]
+public static void Rain(float speed, float rotate, bool way)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>speed</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>rotate</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>way</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Extends_DrawingUtil_RotateSymmetricBack_" data-uid="Extends.DrawingUtil.RotateSymmetricBack*"></a>
+
+  <h3 id="Extends_DrawingUtil_RotateSymmetricBack_System_Single_System_Single_" data-uid="Extends.DrawingUtil.RotateSymmetricBack(System.Single,System.Single)">
+  RotateSymmetricBack(float, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Rotates the camera and rotates it to the negation of it before rotating it to the origin (10 -&gt; 25 -&gt; -25 -&gt; 0)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void RotateSymmetricBack(float duration, float range)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>duration</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The duration of the rotations</p>
+</dd>
+    <dt><code>range</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The magnitude of the rotations</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Extends_DrawingUtil_RotateWithBack_" data-uid="Extends.DrawingUtil.RotateWithBack*"></a>
+
+  <h3 id="Extends_DrawingUtil_RotateWithBack_System_Single_System_Single_" data-uid="Extends.DrawingUtil.RotateWithBack(System.Single,System.Single)">
+  RotateWithBack(float, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Rotates the camera and rotates back to origin</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void RotateWithBack(float duration, float range)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>duration</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The duration of the rotations</p>
+</dd>
+    <dt><code>range</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The magnitude of the rotation</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Extends_DrawingUtil_ScreenAngle_" data-uid="Extends.DrawingUtil.ScreenAngle*"></a>
+
+  <h3 id="Extends_DrawingUtil_ScreenAngle_System_Single_System_Single_" data-uid="Extends.DrawingUtil.ScreenAngle(System.Single,System.Single)">
+  ScreenAngle(float, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sets the screen angle to the target angle in the given duration using Quadratic easing (<a class="xref" href="../../api/UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.html#UndyneFight_Ex_Entities_SimplifiedEasing_EaseState_Quad">Quad</a>)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ScreenAngle(float angle, float time)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>angle</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The target angle of the screen</p>
+</dd>
+    <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The duration of the lerp</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Extends_DrawingUtil_SetScreenScale_" data-uid="Extends.DrawingUtil.SetScreenScale*"></a>
+
+  <h3 id="Extends_DrawingUtil_SetScreenScale_System_Single_System_Single_" data-uid="Extends.DrawingUtil.SetScreenScale(System.Single,System.Single)">
+  SetScreenScale(float, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sets the screen scale to the target size in the given duration using Quadratic easing (<a class="xref" href="../../api/UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.html#UndyneFight_Ex_Entities_SimplifiedEasing_EaseState_Quad">Quad</a>)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetScreenScale(float size, float duration)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>size</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The target size of the screen</p>
+</dd>
+    <dt><code>duration</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The duration of the lerp</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Extends_DrawingUtil_Shock_" data-uid="Extends.DrawingUtil.Shock*"></a>
+
+  <h3 id="Extends_DrawingUtil_Shock_System_Single_System_Single_System_Single_" data-uid="Extends.DrawingUtil.Shock(System.Single,System.Single,System.Single)">
+  Shock(float, float, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Shakes the screen</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Shock(float interval = 2, float range = 2, float times = 4)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>interval</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The interval between each shake (Default 2 frames)</p>
+</dd>
+    <dt><code>range</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The shake intensity (Default 2 pixels)</p>
+</dd>
+    <dt><code>times</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>Times to shake (Default 4 times)</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Extends_DrawingUtil_Shock_" data-uid="Extends.DrawingUtil.Shock*"></a>
+
+  <h3 id="Extends_DrawingUtil_Shock_System_Single_System_Single_System_Single_System_Single_" data-uid="Extends.DrawingUtil.Shock(System.Single,System.Single,System.Single,System.Single)">
+  Shock(float, float, float, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Shakes the screen</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Shock(float interval, float rangeX, float rangeY, float times)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>interval</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The interval between each shake</p>
+</dd>
+    <dt><code>rangeX</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The shake intensity of the x-coordinate</p>
+</dd>
+    <dt><code>rangeY</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The shake intensity of the y-coordinate</p>
+</dd>
+    <dt><code>times</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>Times to shake</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

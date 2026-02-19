@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class Arrow.UnitEasing | UF-Ex Docs </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class Arrow.UnitEasing | UF-Ex Docs ">
+      
+      
+      <link rel="icon" href="../../images/Icon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/Icon.ico" alt="UF-Ex Docs">
+            UF-Ex Docs
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="UndyneFight_Ex.Entities.Arrow.UnitEasing">
+
+
+
+  <h1 id="UndyneFight_Ex_Entities_Arrow_UnitEasing" data-uid="UndyneFight_Ex.Entities.Arrow.UnitEasing" class="text-break">
+Class Arrow.UnitEasing  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="UndyneFight_Ex.html">UndyneFight_Ex</a>.<a class="xref" href="UndyneFight_Ex.Entities.html">Entities</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>UndyneFight-Ex.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Arrow.UnitEasing : Arrow.ArrowEasing, ICustomMotion</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="../../api/UndyneFight_Ex.GameObject.html">GameObject</a></div>
+      <div><a class="xref" href="UndyneFight_Ex.Entities.Arrow.html">Arrow</a>.<a class="xref" href="UndyneFight_Ex.Entities.Arrow.ArrowEasing.html">ArrowEasing</a></div>
+      <div><span class="xref">Arrow.UnitEasing</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="../../api/UndyneFight_Ex.Entities.ICustomMotion.html">ICustomMotion</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.Entities.Arrow.ArrowEasing.html#UndyneFight_Ex_Entities_Arrow_ArrowEasing_TagApply_System_String_">Arrow.ArrowEasing.TagApply(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.Entities.Arrow.ArrowEasing.html#UndyneFight_Ex_Entities_Arrow_ArrowEasing_Update">Arrow.ArrowEasing.Update()</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.Entities.Arrow.ArrowEasing.html#UndyneFight_Ex_Entities_Arrow_ArrowEasing_RotateOffset">Arrow.ArrowEasing.RotateOffset</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.Entities.Arrow.ArrowEasing.html#UndyneFight_Ex_Entities_Arrow_ArrowEasing_Intensity">Arrow.ArrowEasing.Intensity</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_ContainTag_System_String_">GameObject.ContainTag(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Broadcast_System_String_">GameObject.Broadcast(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_TryDetect_System_String_">GameObject.TryDetect(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_HasTag">GameObject.HasTag()</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_TreeUpdate">GameObject.TreeUpdate()</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Dispose">GameObject.Dispose()</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Kill">GameObject.Kill()</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_AddChild_UndyneFight_Ex_GameObject_">GameObject.AddChild(GameObject)</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Reverse">GameObject.Reverse()</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_GetDrawableTree">GameObject.GetDrawableTree()</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_UpdateChildren">GameObject.UpdateChildren</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_ChildrenUpdateFirst">GameObject.ChildrenUpdateFirst</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_CurrentScene">GameObject.CurrentScene</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_CurrentFightingScene">GameObject.CurrentFightingScene</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_UpdateIn120">GameObject.UpdateIn120</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_BeingUpdated">GameObject.BeingUpdated</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_UpdateEnabled">GameObject.UpdateEnabled</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_CrossScene">GameObject.CrossScene</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Tags">GameObject.Tags</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Extras">GameObject.Extras</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_ChildObjects">GameObject.ChildObjects</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Disposed">GameObject.Disposed</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_FatherObject">GameObject.FatherObject</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_OnDispose">GameObject.OnDispose</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="UndyneFight_Ex_Entities_Arrow_UnitEasing__ctor_" data-uid="UndyneFight_Ex.Entities.Arrow.UnitEasing.#ctor*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_Arrow_UnitEasing__ctor" data-uid="UndyneFight_Ex.Entities.Arrow.UnitEasing.#ctor">
+  UnitEasing()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UnitEasing()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="UndyneFight_Ex_Entities_Arrow_UnitEasing_AlphaEase_" data-uid="UndyneFight_Ex.Entities.Arrow.UnitEasing.AlphaEase*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_Arrow_UnitEasing_AlphaEase" data-uid="UndyneFight_Ex.Entities.Arrow.UnitEasing.AlphaEase">
+  AlphaEase
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The easing of the alpha of the arrow</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EaseUnit&lt;float&gt; AlphaEase { set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_Arrow_UnitEasing_AppearTime_" data-uid="UndyneFight_Ex.Entities.Arrow.UnitEasing.AppearTime*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_Arrow_UnitEasing_AppearTime" data-uid="UndyneFight_Ex.Entities.Arrow.UnitEasing.AppearTime">
+  AppearTime
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Time elapsed after spawning</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float AppearTime { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_Arrow_UnitEasing_ApplyTime_" data-uid="UndyneFight_Ex.Entities.Arrow.UnitEasing.ApplyTime*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_Arrow_UnitEasing_ApplyTime" data-uid="UndyneFight_Ex.Entities.Arrow.UnitEasing.ApplyTime">
+  ApplyTime
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The total time of the easing</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float ApplyTime { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_Arrow_UnitEasing_AutoDispose_" data-uid="UndyneFight_Ex.Entities.Arrow.UnitEasing.AutoDispose*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_Arrow_UnitEasing_AutoDispose" data-uid="UndyneFight_Ex.Entities.Arrow.UnitEasing.AutoDispose">
+  AutoDispose
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Whether the unit easing object will be disposed when no child arrows are present</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool AutoDispose { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_Arrow_UnitEasing_CentrePosition_" data-uid="UndyneFight_Ex.Entities.Arrow.UnitEasing.CentrePosition*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_Arrow_UnitEasing_CentrePosition" data-uid="UndyneFight_Ex.Entities.Arrow.UnitEasing.CentrePosition">
+  CentrePosition
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The centre position of the entity</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 CentrePosition { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector2</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_Arrow_UnitEasing_Distance_" data-uid="UndyneFight_Ex.Entities.Arrow.UnitEasing.Distance*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_Arrow_UnitEasing_Distance" data-uid="UndyneFight_Ex.Entities.Arrow.UnitEasing.Distance">
+  Distance
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The distance between the arrow and the target</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Distance { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_Arrow_UnitEasing_DistanceEase_" data-uid="UndyneFight_Ex.Entities.Arrow.UnitEasing.DistanceEase*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_Arrow_UnitEasing_DistanceEase" data-uid="UndyneFight_Ex.Entities.Arrow.UnitEasing.DistanceEase">
+  DistanceEase
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The easing of the distance of the arrow</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EaseUnit&lt;float&gt; DistanceEase { set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_Arrow_UnitEasing_PositionEase_" data-uid="UndyneFight_Ex.Entities.Arrow.UnitEasing.PositionEase*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_Arrow_UnitEasing_PositionEase" data-uid="UndyneFight_Ex.Entities.Arrow.UnitEasing.PositionEase">
+  PositionEase
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The easing of the position of the arrow</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EaseUnit&lt;Vector2&gt; PositionEase { set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<span class="xref">Vector2</span>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_Arrow_UnitEasing_PositionRoute_" data-uid="UndyneFight_Ex.Entities.Arrow.UnitEasing.PositionRoute*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_Arrow_UnitEasing_PositionRoute" data-uid="UndyneFight_Ex.Entities.Arrow.UnitEasing.PositionRoute">
+  PositionRoute
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The position function of the entity, use <a class="xref" href="../../api/UndyneFight_Ex.Entities.Motions.PositionRoute.html">Motions.PositionRoute</a> or <a class="xref" href="../../api/UndyneFight_Ex.Entities.SimplifiedEasing.html">SimplifiedEasing</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Func&lt;ICustomMotion, Vector2&gt; PositionRoute { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="UndyneFight_Ex.Entities.ICustomMotion.html">ICustomMotion</a>, <span class="xref">Vector2</span>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_Arrow_UnitEasing_PositionRouteParam_" data-uid="UndyneFight_Ex.Entities.Arrow.UnitEasing.PositionRouteParam*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_Arrow_UnitEasing_PositionRouteParam" data-uid="UndyneFight_Ex.Entities.Arrow.UnitEasing.PositionRouteParam">
+  PositionRouteParam
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The parameters for the position route</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float[] PositionRouteParam { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_Arrow_UnitEasing_Rotation_" data-uid="UndyneFight_Ex.Entities.Arrow.UnitEasing.Rotation*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_Arrow_UnitEasing_Rotation" data-uid="UndyneFight_Ex.Entities.Arrow.UnitEasing.Rotation">
+  Rotation
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The rotation of the entity</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Rotation { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_Arrow_UnitEasing_RotationEase_" data-uid="UndyneFight_Ex.Entities.Arrow.UnitEasing.RotationEase*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_Arrow_UnitEasing_RotationEase" data-uid="UndyneFight_Ex.Entities.Arrow.UnitEasing.RotationEase">
+  RotationEase
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The easing of the rotation of the arrow</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EaseUnit&lt;float&gt; RotationEase { set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_Arrow_UnitEasing_RotationRoute_" data-uid="UndyneFight_Ex.Entities.Arrow.UnitEasing.RotationRoute*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_Arrow_UnitEasing_RotationRoute" data-uid="UndyneFight_Ex.Entities.Arrow.UnitEasing.RotationRoute">
+  RotationRoute
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The rotation function of the entity, use <a class="xref" href="../../api/UndyneFight_Ex.Entities.Motions.RotationRoute.html">Motions.RotationRoute</a> or <a class="xref" href="../../api/UndyneFight_Ex.Entities.SimplifiedEasing.html">SimplifiedEasing</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Func&lt;ICustomMotion, float&gt; RotationRoute { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="UndyneFight_Ex.Entities.ICustomMotion.html">ICustomMotion</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_Arrow_UnitEasing_RotationRouteParam_" data-uid="UndyneFight_Ex.Entities.Arrow.UnitEasing.RotationRouteParam*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_Arrow_UnitEasing_RotationRouteParam" data-uid="UndyneFight_Ex.Entities.Arrow.UnitEasing.RotationRouteParam">
+  RotationRouteParam
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The parameters for the rotation route</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float[] RotationRouteParam { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_Arrow_UnitEasing_SelfRotation_" data-uid="UndyneFight_Ex.Entities.Arrow.UnitEasing.SelfRotation*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_Arrow_UnitEasing_SelfRotation" data-uid="UndyneFight_Ex.Entities.Arrow.UnitEasing.SelfRotation">
+  SelfRotation
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The rotation of the arrow itself</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float SelfRotation { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="UndyneFight_Ex_Entities_Arrow_UnitEasing_ApplyArrowEasing_" data-uid="UndyneFight_Ex.Entities.Arrow.UnitEasing.ApplyArrowEasing*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_Arrow_UnitEasing_ApplyArrowEasing_UndyneFight_Ex_Entities_Arrow_" data-uid="UndyneFight_Ex.Entities.Arrow.UnitEasing.ApplyArrowEasing(UndyneFight_Ex.Entities.Arrow)">
+  ApplyArrowEasing(Arrow)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Applies the easing for the arrows</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void ApplyArrowEasing(Arrow arr)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>arr</code> <a class="xref" href="../../api/UndyneFight_Ex.Entities.Arrow.html">Arrow</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_Arrow_UnitEasing_Start_" data-uid="UndyneFight_Ex.Entities.Arrow.UnitEasing.Start*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_Arrow_UnitEasing_Start" data-uid="UndyneFight_Ex.Entities.Arrow.UnitEasing.Start">
+  Start()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The initialization of the object</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Start()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

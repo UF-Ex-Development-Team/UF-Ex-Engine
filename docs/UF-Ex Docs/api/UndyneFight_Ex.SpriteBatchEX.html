@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class SpriteBatchEX | UF-Ex Docs </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class SpriteBatchEX | UF-Ex Docs ">
+      
+      <meta name="description" content="Extended sprite batch class">
+      <link rel="icon" href="../../images/Icon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/Icon.ico" alt="UF-Ex Docs">
+            UF-Ex Docs
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="UndyneFight_Ex.SpriteBatchEX">
+
+
+
+  <h1 id="UndyneFight_Ex_SpriteBatchEX" data-uid="UndyneFight_Ex.SpriteBatchEX" class="text-break">
+Class SpriteBatchEX  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="../../api/UndyneFight_Ex.html">UndyneFight_Ex</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>UndyneFight-Ex.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Extended sprite batch class</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class SpriteBatchEX</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">SpriteBatchEX</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="UndyneFight_Ex_SpriteBatchEX__ctor_" data-uid="UndyneFight_Ex.SpriteBatchEX.#ctor*"></a>
+
+  <h3 id="UndyneFight_Ex_SpriteBatchEX__ctor_Microsoft_Xna_Framework_Graphics_GraphicsDevice_" data-uid="UndyneFight_Ex.SpriteBatchEX.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice)">
+  SpriteBatchEX(GraphicsDevice)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates a new sprite batch</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SpriteBatchEX(GraphicsDevice graphicsDevice)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>graphicsDevice</code> <span class="xref">GraphicsDevice</span></dt>
+    <dd><p>The graphics device to use</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="UndyneFight_Ex_SpriteBatchEX__graphicDevice" data-uid="UndyneFight_Ex.SpriteBatchEX._graphicDevice">
+  _graphicDevice
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected GraphicsDevice _graphicDevice</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">GraphicsDevice</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="UndyneFight_Ex_SpriteBatchEX_DefaultState_" data-uid="UndyneFight_Ex.SpriteBatchEX.DefaultState*"></a>
+
+  <h3 id="UndyneFight_Ex_SpriteBatchEX_DefaultState" data-uid="UndyneFight_Ex.SpriteBatchEX.DefaultState">
+  DefaultState
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SamplerState DefaultState { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">SamplerState</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_SpriteBatchEX_GraphicsDevice_" data-uid="UndyneFight_Ex.SpriteBatchEX.GraphicsDevice*"></a>
+
+  <h3 id="UndyneFight_Ex_SpriteBatchEX_GraphicsDevice" data-uid="UndyneFight_Ex.SpriteBatchEX.GraphicsDevice">
+  GraphicsDevice
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GraphicsDevice GraphicsDevice { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">GraphicsDevice</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_SpriteBatchEX_NearestSample_" data-uid="UndyneFight_Ex.SpriteBatchEX.NearestSample*"></a>
+
+  <h3 id="UndyneFight_Ex_SpriteBatchEX_NearestSample" data-uid="UndyneFight_Ex.SpriteBatchEX.NearestSample">
+  NearestSample
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static SamplerState NearestSample { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">SamplerState</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="UndyneFight_Ex_SpriteBatchEX_Begin_" data-uid="UndyneFight_Ex.SpriteBatchEX.Begin*"></a>
+
+  <h3 id="UndyneFight_Ex_SpriteBatchEX_Begin_Microsoft_Xna_Framework_Graphics_SpriteSortMode_Microsoft_Xna_Framework_Graphics_BlendState_Microsoft_Xna_Framework_Graphics_SamplerState_Microsoft_Xna_Framework_Graphics_DepthStencilState_Microsoft_Xna_Framework_Graphics_RasterizerState_Microsoft_Xna_Framework_Graphics_Effect_System_Nullable_Microsoft_Xna_Framework_Matrix__" data-uid="UndyneFight_Ex.SpriteBatchEX.Begin(Microsoft.Xna.Framework.Graphics.SpriteSortMode,Microsoft.Xna.Framework.Graphics.BlendState,Microsoft.Xna.Framework.Graphics.SamplerState,Microsoft.Xna.Framework.Graphics.DepthStencilState,Microsoft.Xna.Framework.Graphics.RasterizerState,Microsoft.Xna.Framework.Graphics.Effect,System.Nullable{Microsoft.Xna.Framework.Matrix})">
+  Begin(SpriteSortMode, BlendState, SamplerState, DepthStencilState, RasterizerState, Effect, Matrix?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>begins the sprite batch rendering</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Begin(SpriteSortMode sortMode = SpriteSortMode.Deferred, BlendState blendState = null, SamplerState samplerState = null, DepthStencilState depthStencilState = null, RasterizerState rasterizerState = null, Effect effect = null, Matrix? transform = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>sortMode</code> <span class="xref">SpriteSortMode</span></dt>
+    <dd><p>Sorting method of the sprites</p>
+</dd>
+    <dt><code>blendState</code> <span class="xref">BlendState</span></dt>
+    <dd><p>Blending state of the sprites</p>
+</dd>
+    <dt><code>samplerState</code> <span class="xref">SamplerState</span></dt>
+    <dd><p>The sampler state of the sprites</p>
+</dd>
+    <dt><code>depthStencilState</code> <span class="xref">DepthStencilState</span></dt>
+    <dd><p>The stencil buffer of the sprites</p>
+</dd>
+    <dt><code>rasterizerState</code> <span class="xref">RasterizerState</span></dt>
+    <dd><p>The rasterizer state of the sprites</p>
+</dd>
+    <dt><code>effect</code> <span class="xref">Effect</span></dt>
+    <dd><p>The effect to render the sprites with</p>
+</dd>
+    <dt><code>transform</code> <span class="xref">Matrix</span>?</dt>
+    <dd><p>The world matrix of the sprites</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+  <a id="UndyneFight_Ex_SpriteBatchEX_Draw_" data-uid="UndyneFight_Ex.SpriteBatchEX.Draw*"></a>
+
+  <h3 id="UndyneFight_Ex_SpriteBatchEX_Draw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_System_Nullable_UndyneFight_Ex_CollideRect__Microsoft_Xna_Framework_Color_System_Single_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Graphics_SpriteEffects_System_Single_" data-uid="UndyneFight_Ex.SpriteBatchEX.Draw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Nullable{UndyneFight_Ex.CollideRect},Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Graphics.SpriteEffects,System.Single)">
+  Draw(Texture2D, Vector2, CollideRect?, Color, float, Vector2, Vector2, SpriteEffects, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Draw(Texture2D texture, Vector2 position, CollideRect? sourceRectangle, Color color, float rotation, Vector2 anchor, Vector2 scale, SpriteEffects effects, float depth)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>texture</code> <span class="xref">Texture2D</span></dt>
+    <dd></dd>
+    <dt><code>position</code> <span class="xref">Vector2</span></dt>
+    <dd></dd>
+    <dt><code>sourceRectangle</code> <a class="xref" href="UndyneFight_Ex.CollideRect.html">CollideRect</a>?</dt>
+    <dd></dd>
+    <dt><code>color</code> <span class="xref">Color</span></dt>
+    <dd></dd>
+    <dt><code>rotation</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>anchor</code> <span class="xref">Vector2</span></dt>
+    <dd></dd>
+    <dt><code>scale</code> <span class="xref">Vector2</span></dt>
+    <dd></dd>
+    <dt><code>effects</code> <span class="xref">SpriteEffects</span></dt>
+    <dd></dd>
+    <dt><code>depth</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_SpriteBatchEX_Draw_" data-uid="UndyneFight_Ex.SpriteBatchEX.Draw*"></a>
+
+  <h3 id="UndyneFight_Ex_SpriteBatchEX_Draw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_System_Nullable_UndyneFight_Ex_CollideRect__Microsoft_Xna_Framework_Color_System_Single_Microsoft_Xna_Framework_Vector2_System_Single_Microsoft_Xna_Framework_Graphics_SpriteEffects_System_Single_" data-uid="UndyneFight_Ex.SpriteBatchEX.Draw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Nullable{UndyneFight_Ex.CollideRect},Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Graphics.SpriteEffects,System.Single)">
+  Draw(Texture2D, Vector2, CollideRect?, Color, float, Vector2, float, SpriteEffects, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Draw(Texture2D texture, Vector2 centre, CollideRect? sourceRectangle, Color color, float rotation, Vector2 anchor, float scale, SpriteEffects effects, float depth)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>texture</code> <span class="xref">Texture2D</span></dt>
+    <dd></dd>
+    <dt><code>centre</code> <span class="xref">Vector2</span></dt>
+    <dd></dd>
+    <dt><code>sourceRectangle</code> <a class="xref" href="UndyneFight_Ex.CollideRect.html">CollideRect</a>?</dt>
+    <dd></dd>
+    <dt><code>color</code> <span class="xref">Color</span></dt>
+    <dd></dd>
+    <dt><code>rotation</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>anchor</code> <span class="xref">Vector2</span></dt>
+    <dd></dd>
+    <dt><code>scale</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>effects</code> <span class="xref">SpriteEffects</span></dt>
+    <dd></dd>
+    <dt><code>depth</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_SpriteBatchEX_Draw_" data-uid="UndyneFight_Ex.SpriteBatchEX.Draw*"></a>
+
+  <h3 id="UndyneFight_Ex_SpriteBatchEX_Draw_Microsoft_Xna_Framework_Graphics_Texture2D_UndyneFight_Ex_CollideRect_System_Nullable_UndyneFight_Ex_CollideRect__Microsoft_Xna_Framework_Color_" data-uid="UndyneFight_Ex.SpriteBatchEX.Draw(Microsoft.Xna.Framework.Graphics.Texture2D,UndyneFight_Ex.CollideRect,System.Nullable{UndyneFight_Ex.CollideRect},Microsoft.Xna.Framework.Color)">
+  Draw(Texture2D, CollideRect, CollideRect?, Color)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Draw(Texture2D texture, CollideRect rect1, CollideRect? rect2, Color color)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>texture</code> <span class="xref">Texture2D</span></dt>
+    <dd></dd>
+    <dt><code>rect1</code> <a class="xref" href="../../api/UndyneFight_Ex.CollideRect.html">CollideRect</a></dt>
+    <dd></dd>
+    <dt><code>rect2</code> <a class="xref" href="UndyneFight_Ex.CollideRect.html">CollideRect</a>?</dt>
+    <dd></dd>
+    <dt><code>color</code> <span class="xref">Color</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_SpriteBatchEX_Draw_" data-uid="UndyneFight_Ex.SpriteBatchEX.Draw*"></a>
+
+  <h3 id="UndyneFight_Ex_SpriteBatchEX_Draw_Microsoft_Xna_Framework_Graphics_Texture2D_UndyneFight_Ex_CollideRect_System_Nullable_UndyneFight_Ex_CollideRect__Microsoft_Xna_Framework_Color_System_Single_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Graphics_SpriteEffects_System_Single_" data-uid="UndyneFight_Ex.SpriteBatchEX.Draw(Microsoft.Xna.Framework.Graphics.Texture2D,UndyneFight_Ex.CollideRect,System.Nullable{UndyneFight_Ex.CollideRect},Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Graphics.SpriteEffects,System.Single)">
+  Draw(Texture2D, CollideRect, CollideRect?, Color, float, Vector2, Vector2, SpriteEffects, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Draw(Texture2D texture, CollideRect origin, CollideRect? source, Color color, float rotation, Vector2 anchor, Vector2 scale, SpriteEffects effects, float depth)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>texture</code> <span class="xref">Texture2D</span></dt>
+    <dd></dd>
+    <dt><code>origin</code> <a class="xref" href="../../api/UndyneFight_Ex.CollideRect.html">CollideRect</a></dt>
+    <dd></dd>
+    <dt><code>source</code> <a class="xref" href="UndyneFight_Ex.CollideRect.html">CollideRect</a>?</dt>
+    <dd></dd>
+    <dt><code>color</code> <span class="xref">Color</span></dt>
+    <dd></dd>
+    <dt><code>rotation</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>anchor</code> <span class="xref">Vector2</span></dt>
+    <dd></dd>
+    <dt><code>scale</code> <span class="xref">Vector2</span></dt>
+    <dd></dd>
+    <dt><code>effects</code> <span class="xref">SpriteEffects</span></dt>
+    <dd></dd>
+    <dt><code>depth</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_SpriteBatchEX_Draw_" data-uid="UndyneFight_Ex.SpriteBatchEX.Draw*"></a>
+
+  <h3 id="UndyneFight_Ex_SpriteBatchEX_Draw_Microsoft_Xna_Framework_Graphics_Texture2D_UndyneFight_Ex_CollideRect_System_Nullable_UndyneFight_Ex_CollideRect__Microsoft_Xna_Framework_Color_System_Single_System_Nullable_Microsoft_Xna_Framework_Vector2__Microsoft_Xna_Framework_Graphics_SpriteEffects_System_Single_" data-uid="UndyneFight_Ex.SpriteBatchEX.Draw(Microsoft.Xna.Framework.Graphics.Texture2D,UndyneFight_Ex.CollideRect,System.Nullable{UndyneFight_Ex.CollideRect},Microsoft.Xna.Framework.Color,System.Single,System.Nullable{Microsoft.Xna.Framework.Vector2},Microsoft.Xna.Framework.Graphics.SpriteEffects,System.Single)">
+  Draw(Texture2D, CollideRect, CollideRect?, Color, float, Vector2?, SpriteEffects, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Draw(Texture2D texture, CollideRect rect1, CollideRect? rect2, Color color, float rotation = 0, Vector2? anchor = null, SpriteEffects se = SpriteEffects.None, float depth = 0)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>texture</code> <span class="xref">Texture2D</span></dt>
+    <dd></dd>
+    <dt><code>rect1</code> <a class="xref" href="../../api/UndyneFight_Ex.CollideRect.html">CollideRect</a></dt>
+    <dd></dd>
+    <dt><code>rect2</code> <a class="xref" href="UndyneFight_Ex.CollideRect.html">CollideRect</a>?</dt>
+    <dd></dd>
+    <dt><code>color</code> <span class="xref">Color</span></dt>
+    <dd></dd>
+    <dt><code>rotation</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>anchor</code> <span class="xref">Vector2</span>?</dt>
+    <dd></dd>
+    <dt><code>se</code> <span class="xref">SpriteEffects</span></dt>
+    <dd></dd>
+    <dt><code>depth</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_SpriteBatchEX_DrawSortedVertex_" data-uid="UndyneFight_Ex.SpriteBatchEX.DrawSortedVertex*"></a>
+
+  <h3 id="UndyneFight_Ex_SpriteBatchEX_DrawSortedVertex_System_Single_Microsoft_Xna_Framework_Graphics_VertexPositionColor___" data-uid="UndyneFight_Ex.SpriteBatchEX.DrawSortedVertex(System.Single,Microsoft.Xna.Framework.Graphics.VertexPositionColor[])">
+  DrawSortedVertex(float, params VertexPositionColor[])
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Give the Vertices information of sprite to draw on the current RenderTarget</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DrawSortedVertex(float depth, params VertexPositionColor[] vertices)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>depth</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The depth to sort</p>
+</dd>
+    <dt><code>vertices</code> <span class="xref">VertexPositionColor</span>[]</dt>
+    <dd><p>The Vertices given. Make them in the order of clockwise!</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_SpriteBatchEX_DrawString_" data-uid="UndyneFight_Ex.SpriteBatchEX.DrawString*"></a>
+
+  <h3 id="UndyneFight_Ex_SpriteBatchEX_DrawString_UndyneFight_Ex_GLFont_System_String_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_System_Single_Microsoft_Xna_Framework_Vector2_System_Single_Microsoft_Xna_Framework_Graphics_SpriteEffects_System_Single_" data-uid="UndyneFight_Ex.SpriteBatchEX.DrawString(UndyneFight_Ex.GLFont,System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Graphics.SpriteEffects,System.Single)">
+  DrawString(GLFont, string, Vector2, Color, float, Vector2, float, SpriteEffects, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DrawString(GLFont spriteFont, string text, Vector2 position, Color color, float rotation, Vector2 origin, float scale, SpriteEffects effects, float layerDepth)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>spriteFont</code> <a class="xref" href="../../api/UndyneFight_Ex.GLFont.html">GLFont</a></dt>
+    <dd></dd>
+    <dt><code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>position</code> <span class="xref">Vector2</span></dt>
+    <dd></dd>
+    <dt><code>color</code> <span class="xref">Color</span></dt>
+    <dd></dd>
+    <dt><code>rotation</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>origin</code> <span class="xref">Vector2</span></dt>
+    <dd></dd>
+    <dt><code>scale</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>effects</code> <span class="xref">SpriteEffects</span></dt>
+    <dd></dd>
+    <dt><code>layerDepth</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_SpriteBatchEX_DrawString_" data-uid="UndyneFight_Ex.SpriteBatchEX.DrawString*"></a>
+
+  <h3 id="UndyneFight_Ex_SpriteBatchEX_DrawString_UndyneFight_Ex_GLFont_System_String_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_System_Single_System_Nullable_Microsoft_Xna_Framework_Vector2__System_Nullable_Microsoft_Xna_Framework_Vector2__Microsoft_Xna_Framework_Graphics_SpriteEffects_System_Single_" data-uid="UndyneFight_Ex.SpriteBatchEX.DrawString(UndyneFight_Ex.GLFont,System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Vector2},Microsoft.Xna.Framework.Graphics.SpriteEffects,System.Single)">
+  DrawString(GLFont, string, Vector2, Color, float, Vector2?, Vector2?, SpriteEffects, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DrawString(GLFont font, string text, Vector2 position, Color color, float rotation = 0, Vector2? originN = null, Vector2? scaleN = null, SpriteEffects effects = SpriteEffects.None, float layerDepth = 0)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>font</code> <a class="xref" href="../../api/UndyneFight_Ex.GLFont.html">GLFont</a></dt>
+    <dd></dd>
+    <dt><code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>position</code> <span class="xref">Vector2</span></dt>
+    <dd></dd>
+    <dt><code>color</code> <span class="xref">Color</span></dt>
+    <dd></dd>
+    <dt><code>rotation</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>originN</code> <span class="xref">Vector2</span>?</dt>
+    <dd></dd>
+    <dt><code>scaleN</code> <span class="xref">Vector2</span>?</dt>
+    <dd></dd>
+    <dt><code>effects</code> <span class="xref">SpriteEffects</span></dt>
+    <dd></dd>
+    <dt><code>layerDepth</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_SpriteBatchEX_DrawString_" data-uid="UndyneFight_Ex.SpriteBatchEX.DrawString*"></a>
+
+  <h3 id="UndyneFight_Ex_SpriteBatchEX_DrawString_UndyneFight_Ex_GLFont_System_String_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color___System_Single_System_Nullable_Microsoft_Xna_Framework_Vector2__System_Nullable_Microsoft_Xna_Framework_Vector2__Microsoft_Xna_Framework_Graphics_SpriteEffects_System_Single_" data-uid="UndyneFight_Ex.SpriteBatchEX.DrawString(UndyneFight_Ex.GLFont,System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color[],System.Single,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Vector2},Microsoft.Xna.Framework.Graphics.SpriteEffects,System.Single)">
+  DrawString(GLFont, string, Vector2, Color[], float, Vector2?, Vector2?, SpriteEffects, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DrawString(GLFont font, string text, Vector2 position, Color[] color, float rotation = 0, Vector2? originN = null, Vector2? scaleN = null, SpriteEffects effects = SpriteEffects.None, float layerDepth = 0)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>font</code> <a class="xref" href="../../api/UndyneFight_Ex.GLFont.html">GLFont</a></dt>
+    <dd></dd>
+    <dt><code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>position</code> <span class="xref">Vector2</span></dt>
+    <dd></dd>
+    <dt><code>color</code> <span class="xref">Color</span>[]</dt>
+    <dd></dd>
+    <dt><code>rotation</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>originN</code> <span class="xref">Vector2</span>?</dt>
+    <dd></dd>
+    <dt><code>scaleN</code> <span class="xref">Vector2</span>?</dt>
+    <dd></dd>
+    <dt><code>effects</code> <span class="xref">SpriteEffects</span></dt>
+    <dd></dd>
+    <dt><code>layerDepth</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_SpriteBatchEX_DrawVertex_" data-uid="UndyneFight_Ex.SpriteBatchEX.DrawVertex*"></a>
+
+  <h3 id="UndyneFight_Ex_SpriteBatchEX_DrawVertex_Microsoft_Xna_Framework_Graphics_Texture2D_System_Single_Microsoft_Xna_Framework_Graphics_VertexPositionColorTexture___" data-uid="UndyneFight_Ex.SpriteBatchEX.DrawVertex(Microsoft.Xna.Framework.Graphics.Texture2D,System.Single,Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture[])">
+  DrawVertex(Texture2D, float, params VertexPositionColorTexture[])
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Give the Vertices information of sprite to draw on the current RenderTarget</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DrawVertex(Texture2D texture, float depth, params VertexPositionColorTexture[] Vertices)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>texture</code> <span class="xref">Texture2D</span></dt>
+    <dd><p>the texture sprite</p>
+</dd>
+    <dt><code>depth</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The depth to sort</p>
+</dd>
+    <dt><code>Vertices</code> <span class="xref">VertexPositionColorTexture</span>[]</dt>
+    <dd><p>The Vertices given. Make them in the order of clockwise!</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_SpriteBatchEX_DrawVertex_" data-uid="UndyneFight_Ex.SpriteBatchEX.DrawVertex*"></a>
+
+  <h3 id="UndyneFight_Ex_SpriteBatchEX_DrawVertex_Microsoft_Xna_Framework_Graphics_Texture2D_System_Single_Microsoft_Xna_Framework_Graphics_VertexPositionColor___" data-uid="UndyneFight_Ex.SpriteBatchEX.DrawVertex(Microsoft.Xna.Framework.Graphics.Texture2D,System.Single,Microsoft.Xna.Framework.Graphics.VertexPositionColor[])">
+  DrawVertex(Texture2D, float, params VertexPositionColor[])
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Give the Vertices information of sprite to draw on the current RenderTarget</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DrawVertex(Texture2D texture, float depth, params VertexPositionColor[] vertices)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>texture</code> <span class="xref">Texture2D</span></dt>
+    <dd><p>the texture sprite</p>
+</dd>
+    <dt><code>depth</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The depth to sort</p>
+</dd>
+    <dt><code>vertices</code> <span class="xref">VertexPositionColor</span>[]</dt>
+    <dd><p>The Vertices given. Make them in the order of clockwise!</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_SpriteBatchEX_DrawVertex_" data-uid="UndyneFight_Ex.SpriteBatchEX.DrawVertex*"></a>
+
+  <h3 id="UndyneFight_Ex_SpriteBatchEX_DrawVertex_Microsoft_Xna_Framework_Graphics_Texture2D_System_Single_System_Int32___Microsoft_Xna_Framework_Graphics_VertexPositionColorTexture___" data-uid="UndyneFight_Ex.SpriteBatchEX.DrawVertex(Microsoft.Xna.Framework.Graphics.Texture2D,System.Single,System.Int32[],Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture[])">
+  DrawVertex(Texture2D, float, int[], params VertexPositionColorTexture[])
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Give the Vertices information of sprite to draw on the current RenderTarget</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DrawVertex(Texture2D texture, float depth, int[] indices, params VertexPositionColorTexture[] vertices)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>texture</code> <span class="xref">Texture2D</span></dt>
+    <dd><p>the texture sprite</p>
+</dd>
+    <dt><code>depth</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The depth to sort</p>
+</dd>
+    <dt><code>indices</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>[]</dt>
+    <dd><p>The list of indices of the texture</p>
+</dd>
+    <dt><code>vertices</code> <span class="xref">VertexPositionColorTexture</span>[]</dt>
+    <dd><p>The Vertices given. Make them in the order of clockwise!</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_SpriteBatchEX_DrawVertex_" data-uid="UndyneFight_Ex.SpriteBatchEX.DrawVertex*"></a>
+
+  <h3 id="UndyneFight_Ex_SpriteBatchEX_DrawVertex_Microsoft_Xna_Framework_Graphics_Texture2D_System_Single_System_Int32___Microsoft_Xna_Framework_Graphics_VertexPositionColor___" data-uid="UndyneFight_Ex.SpriteBatchEX.DrawVertex(Microsoft.Xna.Framework.Graphics.Texture2D,System.Single,System.Int32[],Microsoft.Xna.Framework.Graphics.VertexPositionColor[])">
+  DrawVertex(Texture2D, float, int[], params VertexPositionColor[])
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Give the Vertices information of sprite to draw on the current RenderTarget</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DrawVertex(Texture2D texture, float depth, int[] indices, params VertexPositionColor[] vertices)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>texture</code> <span class="xref">Texture2D</span></dt>
+    <dd><p>the texture sprite</p>
+</dd>
+    <dt><code>depth</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The depth to sort</p>
+</dd>
+    <dt><code>indices</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>[]</dt>
+    <dd></dd>
+    <dt><code>vertices</code> <span class="xref">VertexPositionColor</span>[]</dt>
+    <dd><p>The Vertices given. Make them in the order of clockwise!</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_SpriteBatchEX_DrawVertex_" data-uid="UndyneFight_Ex.SpriteBatchEX.DrawVertex*"></a>
+
+  <h3 id="UndyneFight_Ex_SpriteBatchEX_DrawVertex_System_Single_Microsoft_Xna_Framework_Graphics_VertexPositionColor___" data-uid="UndyneFight_Ex.SpriteBatchEX.DrawVertex(System.Single,Microsoft.Xna.Framework.Graphics.VertexPositionColor[])">
+  DrawVertex(float, params VertexPositionColor[])
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Give the Vertices information of sprite to draw on the current RenderTarget</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DrawVertex(float depth, params VertexPositionColor[] Vertices)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>depth</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The depth to sort</p>
+</dd>
+    <dt><code>Vertices</code> <span class="xref">VertexPositionColor</span>[]</dt>
+    <dd><p>The Vertices given. Make them in the order of clockwise!</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_SpriteBatchEX_End_" data-uid="UndyneFight_Ex.SpriteBatchEX.End*"></a>
+
+  <h3 id="UndyneFight_Ex_SpriteBatchEX_End" data-uid="UndyneFight_Ex.SpriteBatchEX.End">
+  End()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Ends the current sprite batch rendering</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void End()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
