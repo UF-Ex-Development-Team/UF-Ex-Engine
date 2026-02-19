@@ -103,30 +103,30 @@ The documentation may be updated over time, if you are using the PDF version of 
 <h2 id="installing-visual-studio">Installing Visual Studio</h2>
 <p>Visual Studio Community is sufficient for this engine, you don’t have to install Professional or Enterprise.</p>
 <p>You have to install .NET desktop development and WinUI application development in order for the UF-Ex engine to function.</p>
-<img width="905" height="229" alt="image" src="/images/Getting Started/Net Desktop.png">
+<img width="905" height="229" alt="image" src="./images/Getting Started/Net Desktop.png">
 <p>VS extension development is optional.</p>
-<img width="905" height="222" alt="image" src="/images/Getting Started/VS Extension.png">
+<img width="905" height="222" alt="image" src="./images/Getting Started/VS Extension.png">
 <p>Setting up the solution
 After installing MSVS, open the provided example solution, you can name it whatever you like.
 Open the solution (.sln), select “Extensions” at the top bar, and then choose “Manage Extensions”</p>
-<img width="408" height="159" alt="image" src="/images/Getting Started/Manage Extensions.png">
+<img width="408" height="159" alt="image" src="./images/Getting Started/Manage Extensions.png">
 <p>Choose it and search for “Monogame”</p>
-<img width="898" height="435" alt="image" src="/images/Getting Started/Monogame Search.png">
+<img width="898" height="435" alt="image" src="./images/Getting Started/Monogame Search.png">
 <p>Install the extension shown in the image. (Note that the extension version in the image is outdated, ensure you have the latest version installed)</p>
 <p>After installing Monogame Framework, search for “HLSL”</p>
-<img width="884" height="273" alt="image" src="/images/Getting Started/HLSL Search.png">
+<img width="884" height="273" alt="image" src="./images/Getting Started/HLSL Search.png">
 <p>Install the extension shown in the image.
 (You can choose to not install this if you can read HLSL shader codes in pure text.)</p>
 <p>Note that you may need to restart your computer/MSVS after installing certain components.</p>
 <p>After finishing the installation process, open MSVS and go to the solution explorer on the right hand side, Right click “Dependencies” and select “Add project reference”</p>
-<img width="415" height="74" alt="image" src="/images/Getting Started/Proj Ref.png">
+<img width="415" height="74" alt="image" src="./images/Getting Started/Proj Ref.png">
 <p>Click “Browse” and select UndyneFight_Ex.dll.</p>
 <h2 id="updating-uf-ex">Updating UF-Ex</h2>
 <p>Since UF-Ex depends on Monogame to function, it should be expected that the dependencies will be updated as well (It will be indicated in the changelog). If the dependencies are updated, you should do the following.</p>
-<img width="900" height="344" alt="image" src="/images/Getting Started/Folder 1.png">
+<img width="900" height="344" alt="image" src="./images/Getting Started/Folder 1.png">
 <p>In this folder, open the Terminal and run this command “dotnet clean; dotnet restore”.</p>
 <p>Then go into this folder.</p>
-<img width="900" height="452" alt="image" src="/images/Getting Started/Folder 2.png">
+<img width="900" height="452" alt="image" src="./images/Getting Started/Folder 2.png">
 <p>And open the Terminal here, and run “dotnet tool restore”.</p>
 <p>After running them, Monogame should be up to date.
 Please make sure you have all the fonts in “Content/Sprites/font” installed, or else the content builder will not recognize the fonts.</p>
@@ -134,13 +134,13 @@ Please make sure you have all the fonts in “Content/Sprites/font” installed,
 <p>By pressing (Ctrl +) F5, the game should run normally (And then you will see a hideous UI).
 (Ctrl + F5 will not attach the debugger to the executable, it will run faster but will not show an error log when the game crashes.)
 If you try to select a song, you should see this.</p>
-<img width="908" height="458" alt="image" src="/images/Getting Started/Import No Music.png">
+<img width="908" height="458" alt="image" src="./images/Getting Started/Import No Music.png">
 <p>A bracket indicates that there is no associated music file for the chart, that means you need to import it.
 To import assets, select “Content.mgcb” in the “Content” folder</p>
-<img width="429" height="314" alt="image" src="/images/Getting Started/Content Folder.png">
+<img width="429" height="314" alt="image" src="./images/Getting Started/Content Folder.png">
 <p>You can just double click it or choose “Open With -&gt; MGCB Editor”.
 <strong>If there is no such folder named “Musics”</strong>, create one by right clicking “Content”, and select “Add -&gt; New Folder” and name it “Musics”.</p>
-<img width="807" height="145" alt="image" src="/images/Getting Started/MGCB Editor.png">
+<img width="807" height="145" alt="image" src="./images/Getting Started/MGCB Editor.png">
 <p>After having the “Musics” folder, create a folder that matches the name of the chart, in this case, it would be “My First Chart”.
 Right click on the newly created folder and select “Add -&gt; Existing Item”, then you can select the music you want to import, make sure it says  and the imported music is set to a song .
 After importing the music, rename the music asset into “song.(file type)” (If the music you imported was an .ogg file, name it to song.ogg, and so on)
