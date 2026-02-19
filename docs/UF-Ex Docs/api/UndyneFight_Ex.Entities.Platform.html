@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class Platform | UF-Ex Docs </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class Platform | UF-Ex Docs ">
+      
+      <meta name="description" content="A platform">
+      <link rel="icon" href="../../images/Icon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/Icon.ico" alt="UF-Ex Docs">
+            UF-Ex Docs
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="UndyneFight_Ex.Entities.Platform">
+
+
+
+  <h1 id="UndyneFight_Ex_Entities_Platform" data-uid="UndyneFight_Ex.Entities.Platform" class="text-break">
+Class Platform  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="UndyneFight_Ex.html">UndyneFight_Ex</a>.<a class="xref" href="UndyneFight_Ex.Entities.html">Entities</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>UndyneFight-Ex.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>A platform</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Platform : Entity, ICustomMotion, ICustomLength</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="../../api/UndyneFight_Ex.GameObject.html">GameObject</a></div>
+      <div><a class="xref" href="../../api/UndyneFight_Ex.Entity.html">Entity</a></div>
+      <div><span class="xref">Platform</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="../../api/UndyneFight_Ex.Entities.ICustomMotion.html">ICustomMotion</a></div>
+      <div><a class="xref" href="../../api/UndyneFight_Ex.Entities.ICustomLength.html">ICustomLength</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_controlLayer">Entity.controlLayer</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_collidingBox">Entity.collidingBox</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_FormalDraw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_System_Single_Microsoft_Xna_Framework_Vector2_">Entity.FormalDraw(Texture2D, Vector2, Color, float, Vector2)</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_FormalDraw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_System_Nullable_Microsoft_Xna_Framework_Rectangle__Microsoft_Xna_Framework_Color_Microsoft_Xna_Framework_Vector2_System_Single_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Graphics_SpriteEffects_">Entity.FormalDraw(Texture2D, Vector2, Rectangle?, Color, Vector2, float, Vector2, SpriteEffects)</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_FormalDraw_Microsoft_Xna_Framework_Graphics_Texture2D_UndyneFight_Ex_CollideRect_Microsoft_Xna_Framework_Color_">Entity.FormalDraw(Texture2D, CollideRect, Color)</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_FormalDraw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Rectangle_Microsoft_Xna_Framework_Rectangle_Microsoft_Xna_Framework_Color_">Entity.FormalDraw(Texture2D, Rectangle, Rectangle, Color)</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_FormalDraw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_System_Single_System_Single_Microsoft_Xna_Framework_Vector2_">Entity.FormalDraw(Texture2D, Vector2, Color, float, float, Vector2)</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_FormalDraw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_Microsoft_Xna_Framework_Vector2_System_Single_Microsoft_Xna_Framework_Vector2_">Entity.FormalDraw(Texture2D, Vector2, Color, Vector2, float, Vector2)</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_GeneralDraw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_System_Nullable_Microsoft_Xna_Framework_Color__System_Nullable_Microsoft_Xna_Framework_Vector2__System_Single_System_Nullable_Microsoft_Xna_Framework_Vector2__System_Nullable_UndyneFight_Ex_CollideRect__System_Nullable_UndyneFight_Ex_CollideRect__System_Nullable_System_Single__">Entity.GeneralDraw(Texture2D, Vector2, Color?, Vector2?, float, Vector2?, CollideRect?, CollideRect?, float?)</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_CreateShinyEffect_System_Nullable_Microsoft_Xna_Framework_Color__Microsoft_Xna_Framework_Graphics_Texture2D_">Entity.CreateShinyEffect(Color?, Texture2D)</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_CreateRetentionEffect_System_Single_System_Nullable_Microsoft_Xna_Framework_Color__">Entity.CreateRetentionEffect(float, Color?)</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_Visible">Entity.Visible</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_AngleMode">Entity.AngleMode</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_SpriteBatch">Entity.SpriteBatch</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_Depth">Entity.Depth</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_ImageCentre">Entity.ImageCentre</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_Image">Entity.Image</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_Rotation">Entity.Rotation</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_Scale">Entity.Scale</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_CollidingBox">Entity.CollidingBox</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_Centre">Entity.Centre</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_DrawOptimize">Entity.DrawOptimize</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_ContainTag_System_String_">GameObject.ContainTag(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Broadcast_System_String_">GameObject.Broadcast(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_TryDetect_System_String_">GameObject.TryDetect(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_HasTag">GameObject.HasTag()</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Start">GameObject.Start()</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_TreeUpdate">GameObject.TreeUpdate()</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Kill">GameObject.Kill()</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_AddChild_UndyneFight_Ex_GameObject_">GameObject.AddChild(GameObject)</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Reverse">GameObject.Reverse()</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_GetDrawableTree">GameObject.GetDrawableTree()</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_UpdateChildren">GameObject.UpdateChildren</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_ChildrenUpdateFirst">GameObject.ChildrenUpdateFirst</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_CurrentScene">GameObject.CurrentScene</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_CurrentFightingScene">GameObject.CurrentFightingScene</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_UpdateIn120">GameObject.UpdateIn120</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_BeingUpdated">GameObject.BeingUpdated</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_UpdateEnabled">GameObject.UpdateEnabled</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_CrossScene">GameObject.CrossScene</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Tags">GameObject.Tags</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Extras">GameObject.Extras</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_ChildObjects">GameObject.ChildObjects</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Disposed">GameObject.Disposed</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_FatherObject">GameObject.FatherObject</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_OnDispose">GameObject.OnDispose</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="../../api/UndyneFight_Ex.Entities.Advanced.BarrageExtend.html#UndyneFight_Ex_Entities_Advanced_BarrageExtend_CreateShinyEffect_UndyneFight_Ex_Entities_Platform_">BarrageExtend.CreateShinyEffect(Platform)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="UndyneFight_Ex_Entities_Platform__ctor_" data-uid="UndyneFight_Ex.Entities.Platform.#ctor*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_Platform__ctor_System_Int32_Microsoft_Xna_Framework_Vector2_System_Func_UndyneFight_Ex_Entities_ICustomMotion_Microsoft_Xna_Framework_Vector2__System_Func_UndyneFight_Ex_Entities_ICustomLength_System_Single__System_Func_UndyneFight_Ex_Entities_ICustomMotion_System_Single__" data-uid="UndyneFight_Ex.Entities.Platform.#ctor(System.Int32,Microsoft.Xna.Framework.Vector2,System.Func{UndyneFight_Ex.Entities.ICustomMotion,Microsoft.Xna.Framework.Vector2},System.Func{UndyneFight_Ex.Entities.ICustomLength,System.Single},System.Func{UndyneFight_Ex.Entities.ICustomMotion,System.Single})">
+  Platform(int, Vector2, Func&lt;ICustomMotion, Vector2&gt;, Func&lt;ICustomLength, float&gt;, Func&lt;ICustomMotion, float&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates a platform</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Platform(int platformType, Vector2 startPos, Func&lt;ICustomMotion, Vector2&gt; positionRoute, Func&lt;ICustomLength, float&gt; lengthRoute, Func&lt;ICustomMotion, float&gt; rotationRoute)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>platformType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The type of platform, 0-&gt; Green, 1-&gt; Purple</p>
+</dd>
+    <dt><code>startPos</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The initial position of the platform</p>
+</dd>
+    <dt><code>positionRoute</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="UndyneFight_Ex.Entities.ICustomMotion.html">ICustomMotion</a>, <span class="xref">Vector2</span>&gt;</dt>
+    <dd><p>The position route of the platform (Delta positioning, therefore the position of the platform will be the sum of <code class="paramref">startPos</code> and <code class="paramref">positionRoute</code></p>
+</dd>
+    <dt><code>lengthRoute</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="UndyneFight_Ex.Entities.ICustomLength.html">ICustomLength</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd><p>The easing of the size of the platform</p>
+</dd>
+    <dt><code>rotationRoute</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="UndyneFight_Ex.Entities.ICustomMotion.html">ICustomMotion</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd><p>The easing of the rotation of the platform</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_Platform__ctor_" data-uid="UndyneFight_Ex.Entities.Platform.#ctor*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_Platform__ctor_System_Int32_Microsoft_Xna_Framework_Vector2_System_Func_UndyneFight_Ex_Entities_ICustomMotion_Microsoft_Xna_Framework_Vector2__System_Single_System_Single_" data-uid="UndyneFight_Ex.Entities.Platform.#ctor(System.Int32,Microsoft.Xna.Framework.Vector2,System.Func{UndyneFight_Ex.Entities.ICustomMotion,Microsoft.Xna.Framework.Vector2},System.Single,System.Single)">
+  Platform(int, Vector2, Func&lt;ICustomMotion, Vector2&gt;, float, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates a platform with fixed size</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Platform(int platformType, Vector2 startPos, Func&lt;ICustomMotion, Vector2&gt; positionRoute, float rotation, float length)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>platformType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The type of platform, 0-&gt; Green, 1-&gt; Purple</p>
+</dd>
+    <dt><code>startPos</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The initial position of the platform</p>
+</dd>
+    <dt><code>positionRoute</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="UndyneFight_Ex.Entities.ICustomMotion.html">ICustomMotion</a>, <span class="xref">Vector2</span>&gt;</dt>
+    <dd><p>The position route of the platform (Delta positioning, therefore the position of the platform will be the sum of <code class="paramref">startPos</code> and <code class="paramref">positionRoute</code></p>
+</dd>
+    <dt><code>rotation</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The rotation of the platform</p>
+</dd>
+    <dt><code>length</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The length of the platform</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_Platform__ctor_" data-uid="UndyneFight_Ex.Entities.Platform.#ctor*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_Platform__ctor_System_Int32_Microsoft_Xna_Framework_Vector2_System_Func_UndyneFight_Ex_Entities_ICustomMotion_Microsoft_Xna_Framework_Vector2__System_Single_System_Single_System_Single_" data-uid="UndyneFight_Ex.Entities.Platform.#ctor(System.Int32,Microsoft.Xna.Framework.Vector2,System.Func{UndyneFight_Ex.Entities.ICustomMotion,Microsoft.Xna.Framework.Vector2},System.Single,System.Single,System.Single)">
+  Platform(int, Vector2, Func&lt;ICustomMotion, Vector2&gt;, float, float, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates a platform with fixed size that lasts for a given duration before folding itself</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Platform(int platformType, Vector2 startPos, Func&lt;ICustomMotion, Vector2&gt; positionRoute, float rotation, float length, float duration)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>platformType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The type of platform, 0-&gt; Green, 1-&gt; Purple</p>
+</dd>
+    <dt><code>startPos</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The initial position of the platform</p>
+</dd>
+    <dt><code>positionRoute</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="UndyneFight_Ex.Entities.ICustomMotion.html">ICustomMotion</a>, <span class="xref">Vector2</span>&gt;</dt>
+    <dd><p>The position route of the platform (Delta positioning, therefore the position of the platform will be the sum of <code class="paramref">startPos</code> and <code class="paramref">positionRoute</code></p>
+</dd>
+    <dt><code>rotation</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The angle of the platform</p>
+</dd>
+    <dt><code>length</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The length of the platform</p>
+</dd>
+    <dt><code>duration</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The duration of the platform</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="UndyneFight_Ex_Entities_Platform_autoDispose" data-uid="UndyneFight_Ex.Entities.Platform.autoDispose">
+  autoDispose
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Whether the platform will be automatically disposed when length is 0 or is outside the screen</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool autoDispose</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="UndyneFight_Ex_Entities_Platform_createWithScaling" data-uid="UndyneFight_Ex.Entities.Platform.createWithScaling">
+  createWithScaling
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Whether the platform will have a scaling animation when created</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool createWithScaling</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="UndyneFight_Ex_Entities_Platform_isMasked" data-uid="UndyneFight_Ex.Entities.Platform.isMasked">
+  isMasked
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Whether the platform is masked inside the box</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool isMasked</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="UndyneFight_Ex_Entities_Platform_scale" data-uid="UndyneFight_Ex.Entities.Platform.scale">
+  scale
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The default scale of the platform</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float scale</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="UndyneFight_Ex_Entities_Platform_AppearTime_" data-uid="UndyneFight_Ex.Entities.Platform.AppearTime*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_Platform_AppearTime" data-uid="UndyneFight_Ex.Entities.Platform.AppearTime">
+  AppearTime
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The time elapsed after the platform was created</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float AppearTime { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_Platform_CentrePosition_" data-uid="UndyneFight_Ex.Entities.Platform.CentrePosition*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_Platform_CentrePosition" data-uid="UndyneFight_Ex.Entities.Platform.CentrePosition">
+  CentrePosition
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The centre position of the entity</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 CentrePosition { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector2</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_Platform_LengthRoute_" data-uid="UndyneFight_Ex.Entities.Platform.LengthRoute*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_Platform_LengthRoute" data-uid="UndyneFight_Ex.Entities.Platform.LengthRoute">
+  LengthRoute
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The length easing function of the entity, use <a class="xref" href="../../api/UndyneFight_Ex.Entities.Motions.LengthRoute.html">Motions.LengthRoute</a> or <a class="xref" href="../../api/UndyneFight_Ex.Entities.SimplifiedEasing.html">SimplifiedEasing</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Func&lt;ICustomLength, float&gt; LengthRoute { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="UndyneFight_Ex.Entities.ICustomLength.html">ICustomLength</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_Platform_LengthRouteParam_" data-uid="UndyneFight_Ex.Entities.Platform.LengthRouteParam*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_Platform_LengthRouteParam" data-uid="UndyneFight_Ex.Entities.Platform.LengthRouteParam">
+  LengthRouteParam
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The parameters for the length route</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float[] LengthRouteParam { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_Platform_PositionRoute_" data-uid="UndyneFight_Ex.Entities.Platform.PositionRoute*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_Platform_PositionRoute" data-uid="UndyneFight_Ex.Entities.Platform.PositionRoute">
+  PositionRoute
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The position function of the entity, use <a class="xref" href="../../api/UndyneFight_Ex.Entities.Motions.PositionRoute.html">Motions.PositionRoute</a> or <a class="xref" href="../../api/UndyneFight_Ex.Entities.SimplifiedEasing.html">SimplifiedEasing</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Func&lt;ICustomMotion, Vector2&gt; PositionRoute { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="UndyneFight_Ex.Entities.ICustomMotion.html">ICustomMotion</a>, <span class="xref">Vector2</span>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_Platform_PositionRouteParam_" data-uid="UndyneFight_Ex.Entities.Platform.PositionRouteParam*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_Platform_PositionRouteParam" data-uid="UndyneFight_Ex.Entities.Platform.PositionRouteParam">
+  PositionRouteParam
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The parameters for the position route</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float[] PositionRouteParam { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_Platform_RotationRoute_" data-uid="UndyneFight_Ex.Entities.Platform.RotationRoute*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_Platform_RotationRoute" data-uid="UndyneFight_Ex.Entities.Platform.RotationRoute">
+  RotationRoute
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The rotation function of the entity, use <a class="xref" href="../../api/UndyneFight_Ex.Entities.Motions.RotationRoute.html">Motions.RotationRoute</a> or <a class="xref" href="../../api/UndyneFight_Ex.Entities.SimplifiedEasing.html">SimplifiedEasing</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Func&lt;ICustomMotion, float&gt; RotationRoute { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="UndyneFight_Ex.Entities.ICustomMotion.html">ICustomMotion</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_Platform_RotationRouteParam_" data-uid="UndyneFight_Ex.Entities.Platform.RotationRouteParam*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_Platform_RotationRouteParam" data-uid="UndyneFight_Ex.Entities.Platform.RotationRouteParam">
+  RotationRouteParam
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The parameters for the rotation route</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float[] RotationRouteParam { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="UndyneFight_Ex_Entities_Platform_ChangeType_" data-uid="UndyneFight_Ex.Entities.Platform.ChangeType*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_Platform_ChangeType" data-uid="UndyneFight_Ex.Entities.Platform.ChangeType">
+  ChangeType()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Changes the type of the platform (Purple becomes Green and Green becomes Purple)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ChangeType()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_Platform_Dispose_" data-uid="UndyneFight_Ex.Entities.Platform.Dispose*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_Platform_Dispose" data-uid="UndyneFight_Ex.Entities.Platform.Dispose">
+  Dispose()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Disposes the object</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Dispose()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_Platform_Draw_" data-uid="UndyneFight_Ex.Entities.Platform.Draw*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_Platform_Draw" data-uid="UndyneFight_Ex.Entities.Platform.Draw">
+  Draw()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The rendering logic of the entity</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Draw()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_Platform_ResetTime_" data-uid="UndyneFight_Ex.Entities.Platform.ResetTime*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_Platform_ResetTime" data-uid="UndyneFight_Ex.Entities.Platform.ResetTime">
+  ResetTime()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Resets the <a class="xref" href="../../api/UndyneFight_Ex.Entities.Platform.html#UndyneFight_Ex_Entities_Platform_AppearTime">AppearTime</a> to 0</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ResetTime()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_Platform_Update_" data-uid="UndyneFight_Ex.Entities.Platform.Update*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_Platform_Update" data-uid="UndyneFight_Ex.Entities.Platform.Update">
+  Update()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The logic to run each frame</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Update()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,2755 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class SimplifiedEasing | UF-Ex Docs </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class SimplifiedEasing | UF-Ex Docs ">
+      
+      <meta name="description" content="Simplified easing functions">
+      <link rel="icon" href="../../images/Icon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/Icon.ico" alt="UF-Ex Docs">
+            UF-Ex Docs
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="UndyneFight_Ex.Entities.SimplifiedEasing">
+
+
+
+  <h1 id="UndyneFight_Ex_Entities_SimplifiedEasing" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing" class="text-break">
+Class SimplifiedEasing  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="UndyneFight_Ex.html">UndyneFight_Ex</a>.<a class="xref" href="UndyneFight_Ex.Entities.html">Entities</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>UndyneFight-Ex.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Simplified easing functions</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class SimplifiedEasing</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">SimplifiedEasing</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_Accelerating_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Accelerating*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_Accelerating_System_Single_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Accelerating(System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)">
+  Accelerating(float, Vector2, Vector2)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>An accelerating easing</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;Vector2&gt; Accelerating(float time, Vector2 speed, Vector2 acceleration)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The time of the acceleration</p>
+</dd>
+    <dt><code>speed</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The speed of the value change</p>
+</dd>
+    <dt><code>acceleration</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The acceleration of the speed</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<span class="xref">Vector2</span>&gt;</dt>
+    <dd><p>The result of the easing</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_Accelerating_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Accelerating*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_Accelerating_System_Single_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Accelerating(System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)">
+  Accelerating(float, Vector2, Vector2, Vector2)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>An accelerating easing</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;Vector2&gt; Accelerating(float time, Vector2 start, Vector2 speed, Vector2 acceleration)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The time of the acceleration</p>
+</dd>
+    <dt><code>start</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The initial value</p>
+</dd>
+    <dt><code>speed</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The speed of the value change</p>
+</dd>
+    <dt><code>acceleration</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The acceleration of the speed</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<span class="xref">Vector2</span>&gt;</dt>
+    <dd><p>The result of the easing</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_Accelerating_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Accelerating*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_Accelerating_System_Single_System_Single_System_Single_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Accelerating(System.Single,System.Single,System.Single)">
+  Accelerating(float, float, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>An accelerating easing</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;float&gt; Accelerating(float time, float speed, float acceleration)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The time of the acceleration</p>
+</dd>
+    <dt><code>speed</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The speed of the value change</p>
+</dd>
+    <dt><code>acceleration</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The acceleration of the speed</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd><p>The result of the easing</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_Accelerating_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Accelerating*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_Accelerating_System_Single_System_Single_System_Single_System_Single_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Accelerating(System.Single,System.Single,System.Single,System.Single)">
+  Accelerating(float, float, float, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>An accelerating easing</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;float&gt; Accelerating(float time, float start, float speed, float acceleration)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The time of the acceleration</p>
+</dd>
+    <dt><code>start</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The initial value</p>
+</dd>
+    <dt><code>speed</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The speed of the value change</p>
+</dd>
+    <dt><code>acceleration</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The acceleration of the speed</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd><p>The result of the easing</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_Add_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Add*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_Add_UndyneFight_Ex_Entities_EaseUnit_Microsoft_Xna_Framework_Vector2__Microsoft_Xna_Framework_Vector2_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Add(UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2},Microsoft.Xna.Framework.Vector2)">
+  Add(EaseUnit&lt;Vector2&gt;, Vector2)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns the result of a <span class="xref">Microsoft.Xna.Framework.Vector2</span> easing function and a <span class="xref">Microsoft.Xna.Framework.Vector2</span></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;Vector2&gt; Add(EaseUnit&lt;Vector2&gt; main, Vector2 addon)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>main</code> <a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<span class="xref">Vector2</span>&gt;</dt>
+    <dd><p>The original easing function</p>
+</dd>
+    <dt><code>addon</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The displacement to add</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<span class="xref">Vector2</span>&gt;</dt>
+    <dd><p>The sum of the easing function and vector</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_Add_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Add*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_Add_UndyneFight_Ex_Entities_EaseUnit_Microsoft_Xna_Framework_Vector2__UndyneFight_Ex_Entities_EaseUnit_Microsoft_Xna_Framework_Vector2__" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Add(UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2},UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2})">
+  Add(EaseUnit&lt;Vector2&gt;, EaseUnit&lt;Vector2&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns the result of two <span class="xref">Microsoft.Xna.Framework.Vector2</span> easing functions</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;Vector2&gt; Add(EaseUnit&lt;Vector2&gt; main, EaseUnit&lt;Vector2&gt; addon)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>main</code> <a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<span class="xref">Vector2</span>&gt;</dt>
+    <dd><p>The original easing function</p>
+</dd>
+    <dt><code>addon</code> <a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<span class="xref">Vector2</span>&gt;</dt>
+    <dd><p>The easing function to add</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<span class="xref">Vector2</span>&gt;</dt>
+    <dd><p>The sum of the two easing functions</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_Add_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Add*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_Add_UndyneFight_Ex_Entities_EaseUnit_System_Single__System_Single_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Add(UndyneFight_Ex.Entities.EaseUnit{System.Single},System.Single)">
+  Add(EaseUnit&lt;float&gt;, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns the result of a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a> easing function and a float value</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;float&gt; Add(EaseUnit&lt;float&gt; main, float addon)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>main</code> <a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd><p>The original easing function</p>
+</dd>
+    <dt><code>addon</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The float value to add</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd><p>The sum of the easing function and the float value</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_Add_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Add*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_Add_UndyneFight_Ex_Entities_EaseUnit_System_Single__UndyneFight_Ex_Entities_EaseUnit_System_Single__" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Add(UndyneFight_Ex.Entities.EaseUnit{System.Single},UndyneFight_Ex.Entities.EaseUnit{System.Single})">
+  Add(EaseUnit&lt;float&gt;, EaseUnit&lt;float&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns the result of two <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a> easing functions</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;float&gt; Add(EaseUnit&lt;float&gt; main, EaseUnit&lt;float&gt; addon)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>main</code> <a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd><p>The original easing function</p>
+</dd>
+    <dt><code>addon</code> <a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd><p>The easing function to add</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd><p>The sum of the two easing functions</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_Alternate_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Alternate*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_Alternate_System_Single_UndyneFight_Ex_Entities_EaseUnit_Microsoft_Xna_Framework_Vector2__UndyneFight_Ex_Entities_EaseUnit_Microsoft_Xna_Framework_Vector2____" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Alternate(System.Single,UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2},UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}[])">
+  Alternate(float, EaseUnit&lt;Vector2&gt;, params EaseUnit&lt;Vector2&gt;[])
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Alternates between the given easing functions</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;Vector2&gt; Alternate(float interval, EaseUnit&lt;Vector2&gt; main, params EaseUnit&lt;Vector2&gt;[] addons)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>interval</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The interval between each easing function</p>
+</dd>
+    <dt><code>main</code> <a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<span class="xref">Vector2</span>&gt;</dt>
+    <dd><p>The main easing function</p>
+</dd>
+    <dt><code>addons</code> <a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<span class="xref">Vector2</span>&gt;[]</dt>
+    <dd><p>The additional easing functions to alternate</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<span class="xref">Vector2</span>&gt;</dt>
+    <dd><p>The result of the easing</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_Alternate_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Alternate*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_Alternate_System_Single_UndyneFight_Ex_Entities_EaseUnit_System_Single__UndyneFight_Ex_Entities_EaseUnit_System_Single____" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Alternate(System.Single,UndyneFight_Ex.Entities.EaseUnit{System.Single},UndyneFight_Ex.Entities.EaseUnit{System.Single}[])">
+  Alternate(float, EaseUnit&lt;float&gt;, params EaseUnit&lt;float&gt;[])
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Alternates between the given easing functions</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;float&gt; Alternate(float interval, EaseUnit&lt;float&gt; main, params EaseUnit&lt;float&gt;[] addons)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>interval</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The interval between each easing function</p>
+</dd>
+    <dt><code>main</code> <a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd><p>The main easing function</p>
+</dd>
+    <dt><code>addons</code> <a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;[]</dt>
+    <dd><p>The additional easing functions to alternate</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd><p>The result of the easing</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_Combine_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Combine*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_Combine_UndyneFight_Ex_Entities_EaseUnit_System_Single__UndyneFight_Ex_Entities_EaseUnit_System_Single__" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Combine(UndyneFight_Ex.Entities.EaseUnit{System.Single},UndyneFight_Ex.Entities.EaseUnit{System.Single})">
+  Combine(EaseUnit&lt;float&gt;, EaseUnit&lt;float&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a <span class="xref">Microsoft.Xna.Framework.Vector2</span> easing with the given <code class="paramref">xEase</code> and <code class="paramref">yEase</code> as the x and y components of the <span class="xref">Microsoft.Xna.Framework.Vector2</span> easing function</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;Vector2&gt; Combine(EaseUnit&lt;float&gt; xEase, EaseUnit&lt;float&gt; yEase)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>xEase</code> <a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd><p>The easing of the x value (Use <a class="xref" href="../../api/UndyneFight_Ex.Entities.SimplifiedEasing.html#UndyneFight_Ex_Entities_SimplifiedEasing_Stable_System_Single_System_Single_">Stable(float, float)</a> for stable value</p>
+</dd>
+    <dt><code>yEase</code> <a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd><p>The easing of the y value (Use <a class="xref" href="../../api/UndyneFight_Ex.Entities.SimplifiedEasing.html#UndyneFight_Ex_Entities_SimplifiedEasing_Stable_System_Single_System_Single_">Stable(float, float)</a> for stable value</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<span class="xref">Vector2</span>&gt;</dt>
+    <dd><p>The combined easing function</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_Copy_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Copy*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_Copy_UndyneFight_Ex_Entities_EaseUnit_Microsoft_Xna_Framework_Vector2__System_Int32_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Copy(UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2},System.Int32)">
+  Copy(EaseUnit&lt;Vector2&gt;, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a copy of the specified easing for the given amount of times</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;Vector2&gt; Copy(EaseUnit&lt;Vector2&gt; ease, int times)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ease</code> <a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<span class="xref">Vector2</span>&gt;</dt>
+    <dd><p>The easing function to copy</p>
+</dd>
+    <dt><code>times</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The amount of times needed to copy</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<span class="xref">Vector2</span>&gt;</dt>
+    <dd><p>The result of the easing</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_Copy_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Copy*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_Copy_UndyneFight_Ex_Entities_EaseUnit_System_Single__System_Int32_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Copy(UndyneFight_Ex.Entities.EaseUnit{System.Single},System.Int32)">
+  Copy(EaseUnit&lt;float&gt;, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a copy of the specified easing for the given amount of times</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;float&gt; Copy(EaseUnit&lt;float&gt; ease, int times)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ease</code> <a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd><p>The easing function to copy</p>
+</dd>
+    <dt><code>times</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The amount of times needed to copy</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd><p>The result of the easing</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_EaseIn_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.EaseIn*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_EaseIn_System_Single_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_UndyneFight_Ex_Entities_SimplifiedEasing_EaseState_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.EaseIn(System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)">
+  EaseIn(float, Vector2, Vector2, EaseState)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns an easing function that starts slow and ends fast</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;Vector2&gt; EaseIn(float time, Vector2 start, Vector2 end, SimplifiedEasing.EaseState state)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The duration of the easing</p>
+</dd>
+    <dt><code>start</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The initial value of the easing</p>
+</dd>
+    <dt><code>end</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The target value of the easing</p>
+</dd>
+    <dt><code>state</code> <a class="xref" href="UndyneFight_Ex.Entities.SimplifiedEasing.html">SimplifiedEasing</a>.<a class="xref" href="UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.html">EaseState</a></dt>
+    <dd><p>The type of easing used for the easing function</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<span class="xref">Vector2</span>&gt;</dt>
+    <dd><p>The result of the easing</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_EaseIn_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.EaseIn*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_EaseIn_System_Single_Microsoft_Xna_Framework_Vector2_UndyneFight_Ex_Entities_SimplifiedEasing_EaseState_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.EaseIn(System.Single,Microsoft.Xna.Framework.Vector2,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)">
+  EaseIn(float, Vector2, EaseState)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns an easing function that starts slow and ends fast <br>
+Note that this will increment <code class="paramref">end</code> based on the previous easing</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;Vector2&gt; EaseIn(float time, Vector2 end, SimplifiedEasing.EaseState state)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The duration of the easing</p>
+</dd>
+    <dt><code>end</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The target value of the easing</p>
+</dd>
+    <dt><code>state</code> <a class="xref" href="UndyneFight_Ex.Entities.SimplifiedEasing.html">SimplifiedEasing</a>.<a class="xref" href="UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.html">EaseState</a></dt>
+    <dd><p>The type of easing used for the easing function</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<span class="xref">Vector2</span>&gt;</dt>
+    <dd><p>The result of the easing</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_EaseIn_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.EaseIn*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_EaseIn_System_Single_System_Single_System_Single_UndyneFight_Ex_Entities_SimplifiedEasing_EaseState_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.EaseIn(System.Single,System.Single,System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)">
+  EaseIn(float, float, float, EaseState)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns an easing function that starts slow and ends fast</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;float&gt; EaseIn(float time, float start, float end, SimplifiedEasing.EaseState state)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The duration of the easing</p>
+</dd>
+    <dt><code>start</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The initial value of the easing</p>
+</dd>
+    <dt><code>end</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The target value of the easing</p>
+</dd>
+    <dt><code>state</code> <a class="xref" href="UndyneFight_Ex.Entities.SimplifiedEasing.html">SimplifiedEasing</a>.<a class="xref" href="UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.html">EaseState</a></dt>
+    <dd><p>The type of easing used for the easing function</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd><p>The result of the easing</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_EaseIn_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.EaseIn*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_EaseIn_System_Single_System_Single_UndyneFight_Ex_Entities_SimplifiedEasing_EaseState_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.EaseIn(System.Single,System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)">
+  EaseIn(float, float, EaseState)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns an easing function that starts slow and ends fast <br>
+Note that this will increment <code class="paramref">end</code> based on the previous easing</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;float&gt; EaseIn(float time, float end, SimplifiedEasing.EaseState state)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The duration of the easing</p>
+</dd>
+    <dt><code>end</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The target value of the easing</p>
+</dd>
+    <dt><code>state</code> <a class="xref" href="UndyneFight_Ex.Entities.SimplifiedEasing.html">SimplifiedEasing</a>.<a class="xref" href="UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.html">EaseState</a></dt>
+    <dd><p>The type of easing used for the easing function</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd><p>The result of the easing</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_EaseInOut_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.EaseInOut*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_EaseInOut_System_Single_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_System_Single_UndyneFight_Ex_Entities_SimplifiedEasing_EaseState_System_Nullable_UndyneFight_Ex_Entities_SimplifiedEasing_EaseState__" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.EaseInOut(System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState,System.Nullable{UndyneFight_Ex.Entities.SimplifiedEasing.EaseState})">
+  EaseInOut(float, Vector2, Vector2, float, EaseState, EaseState?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns an easing function that starts slow, increases in speed, then becomes slow again</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;Vector2&gt; EaseInOut(float time, Vector2 start, Vector2 end, float amount, SimplifiedEasing.EaseState Astate, SimplifiedEasing.EaseState? Bstate = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The duration of the easing</p>
+</dd>
+    <dt><code>start</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The initial value of the easing</p>
+</dd>
+    <dt><code>end</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The target value of the easing</p>
+</dd>
+    <dt><code>amount</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The proportion of the distance between the starting point and the midpoint<br>For example: 0.4f means that the starting point easing distance accounts for 40% and the midpoint easing distance accounts for 60%<br>But the easing time ratio is still 1:1</p>
+</dd>
+    <dt><code>Astate</code> <a class="xref" href="UndyneFight_Ex.Entities.SimplifiedEasing.html">SimplifiedEasing</a>.<a class="xref" href="UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.html">EaseState</a></dt>
+    <dd><p>Initial easing type</p>
+</dd>
+    <dt><code>Bstate</code> <a class="xref" href="UndyneFight_Ex.Entities.SimplifiedEasing.html">SimplifiedEasing</a>.<a class="xref" href="UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.html">EaseState</a>?</dt>
+    <dd><p>Ending easing type (Default <code class="paramref">Astate</code>)</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<span class="xref">Vector2</span>&gt;</dt>
+    <dd><p>The result of the easing</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_EaseInOut_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.EaseInOut*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_EaseInOut_System_Single_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_UndyneFight_Ex_Entities_SimplifiedEasing_EaseState_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.EaseInOut(System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)">
+  EaseInOut(float, Vector2, Vector2, EaseState)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns an easing function that starts slow, increases in speed, then becomes slow again</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;Vector2&gt; EaseInOut(float time, Vector2 start, Vector2 end, SimplifiedEasing.EaseState state)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The duration of the easing</p>
+</dd>
+    <dt><code>start</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The initial value of the easing</p>
+</dd>
+    <dt><code>end</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The target value of the easing</p>
+</dd>
+    <dt><code>state</code> <a class="xref" href="UndyneFight_Ex.Entities.SimplifiedEasing.html">SimplifiedEasing</a>.<a class="xref" href="UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.html">EaseState</a></dt>
+    <dd><p>The type of easing used in the easing function</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<span class="xref">Vector2</span>&gt;</dt>
+    <dd><p>The result of the easing</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_EaseInOut_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.EaseInOut*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_EaseInOut_System_Single_System_Single_System_Single_System_Single_UndyneFight_Ex_Entities_SimplifiedEasing_EaseState_System_Nullable_UndyneFight_Ex_Entities_SimplifiedEasing_EaseState__" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.EaseInOut(System.Single,System.Single,System.Single,System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState,System.Nullable{UndyneFight_Ex.Entities.SimplifiedEasing.EaseState})">
+  EaseInOut(float, float, float, float, EaseState, EaseState?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns an easing function that starts slow, increases in speed, then becomes slow again</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;float&gt; EaseInOut(float time, float start, float end, float amount, SimplifiedEasing.EaseState Astate, SimplifiedEasing.EaseState? Bstate = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The duration of the easing</p>
+</dd>
+    <dt><code>start</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The initial value of the easing</p>
+</dd>
+    <dt><code>end</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The target value of the easing</p>
+</dd>
+    <dt><code>amount</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The proportion of the distance between the starting point and the midpoint<br>For example: 0.4f means that the starting point easing distance accounts for 40% and the midpoint easing distance accounts for 60%<br>But the easing time ratio is still 1:1</p>
+</dd>
+    <dt><code>Astate</code> <a class="xref" href="UndyneFight_Ex.Entities.SimplifiedEasing.html">SimplifiedEasing</a>.<a class="xref" href="UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.html">EaseState</a></dt>
+    <dd><p>Initial easing type</p>
+</dd>
+    <dt><code>Bstate</code> <a class="xref" href="UndyneFight_Ex.Entities.SimplifiedEasing.html">SimplifiedEasing</a>.<a class="xref" href="UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.html">EaseState</a>?</dt>
+    <dd><p>Ending easing type (Default <code class="paramref">Astate</code>)</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd><p>The result of the easing</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_EaseInOut_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.EaseInOut*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_EaseInOut_System_Single_System_Single_System_Single_UndyneFight_Ex_Entities_SimplifiedEasing_EaseState_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.EaseInOut(System.Single,System.Single,System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)">
+  EaseInOut(float, float, float, EaseState)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns an easing function that starts slow, increases in speed, then becomes slow again</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;float&gt; EaseInOut(float time, float start, float end, SimplifiedEasing.EaseState state)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The duration of the easing</p>
+</dd>
+    <dt><code>start</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The initial value of the easing</p>
+</dd>
+    <dt><code>end</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The target value of the easing</p>
+</dd>
+    <dt><code>state</code> <a class="xref" href="UndyneFight_Ex.Entities.SimplifiedEasing.html">SimplifiedEasing</a>.<a class="xref" href="UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.html">EaseState</a></dt>
+    <dd><p>The type of easing used for the easing function</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd><p>The result of the easing</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_EaseOut_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.EaseOut*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_EaseOut_System_Single_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_UndyneFight_Ex_Entities_SimplifiedEasing_EaseState_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.EaseOut(System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)">
+  EaseOut(float, Vector2, Vector2, EaseState)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns an easing function that starts fast and ends slow</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;Vector2&gt; EaseOut(float time, Vector2 start, Vector2 end, SimplifiedEasing.EaseState state)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The duration of the easing</p>
+</dd>
+    <dt><code>start</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The initial value of the easing</p>
+</dd>
+    <dt><code>end</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The target value of the easing</p>
+</dd>
+    <dt><code>state</code> <a class="xref" href="UndyneFight_Ex.Entities.SimplifiedEasing.html">SimplifiedEasing</a>.<a class="xref" href="UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.html">EaseState</a></dt>
+    <dd><p>The type of easing used for the easing function</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<span class="xref">Vector2</span>&gt;</dt>
+    <dd><p>The result of the easing</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_EaseOut_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.EaseOut*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_EaseOut_System_Single_Microsoft_Xna_Framework_Vector2_UndyneFight_Ex_Entities_SimplifiedEasing_EaseState_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.EaseOut(System.Single,Microsoft.Xna.Framework.Vector2,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)">
+  EaseOut(float, Vector2, EaseState)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns an easing function that starts fast and ends slow <br>
+Note that this will increment <code class="paramref">end</code> based on the previous easing</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;Vector2&gt; EaseOut(float time, Vector2 end, SimplifiedEasing.EaseState state)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The duration of the easing</p>
+</dd>
+    <dt><code>end</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The target value of the easing</p>
+</dd>
+    <dt><code>state</code> <a class="xref" href="UndyneFight_Ex.Entities.SimplifiedEasing.html">SimplifiedEasing</a>.<a class="xref" href="UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.html">EaseState</a></dt>
+    <dd><p>The type of easing used for the easing function</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<span class="xref">Vector2</span>&gt;</dt>
+    <dd><p>The result of the easing</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_EaseOut_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.EaseOut*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_EaseOut_System_Single_System_Single_System_Single_UndyneFight_Ex_Entities_SimplifiedEasing_EaseState_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.EaseOut(System.Single,System.Single,System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)">
+  EaseOut(float, float, float, EaseState)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns an easing function that starts fast and ends slow</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;float&gt; EaseOut(float time, float start, float end, SimplifiedEasing.EaseState state)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The duration of the easing</p>
+</dd>
+    <dt><code>start</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The initial value of the easing</p>
+</dd>
+    <dt><code>end</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The target value of the easing</p>
+</dd>
+    <dt><code>state</code> <a class="xref" href="UndyneFight_Ex.Entities.SimplifiedEasing.html">SimplifiedEasing</a>.<a class="xref" href="UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.html">EaseState</a></dt>
+    <dd><p>The type of easing used for the easing function</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd><p>The result of the easing</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_EaseOut_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.EaseOut*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_EaseOut_System_Single_System_Single_UndyneFight_Ex_Entities_SimplifiedEasing_EaseState_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.EaseOut(System.Single,System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)">
+  EaseOut(float, float, EaseState)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns an easing function that starts fast and ends slow <br>
+Note that this will increment <code class="paramref">end</code> based on the previous easing</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;float&gt; EaseOut(float time, float end, SimplifiedEasing.EaseState state)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The duration of the easing</p>
+</dd>
+    <dt><code>end</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The target value of the easing</p>
+</dd>
+    <dt><code>state</code> <a class="xref" href="UndyneFight_Ex.Entities.SimplifiedEasing.html">SimplifiedEasing</a>.<a class="xref" href="UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.html">EaseState</a></dt>
+    <dd><p>The type of easing used for the easing function</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd><p>The result of the easing</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_EaseOutIn_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.EaseOutIn*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_EaseOutIn_System_Single_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_System_Single_UndyneFight_Ex_Entities_SimplifiedEasing_EaseState_System_Nullable_UndyneFight_Ex_Entities_SimplifiedEasing_EaseState__" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.EaseOutIn(System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState,System.Nullable{UndyneFight_Ex.Entities.SimplifiedEasing.EaseState})">
+  EaseOutIn(float, Vector2, Vector2, float, EaseState, EaseState?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns an easing function that starts fast, decreases in speed, then becomes fast again</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;Vector2&gt; EaseOutIn(float time, Vector2 start, Vector2 end, float amount, SimplifiedEasing.EaseState Astate, SimplifiedEasing.EaseState? Bstate = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The duration of the easing</p>
+</dd>
+    <dt><code>start</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The initial value of the easing</p>
+</dd>
+    <dt><code>end</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The target value of the easing</p>
+</dd>
+    <dt><code>amount</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The proportion of the distance between the starting point and the midpoint<br>For example: 0.4f means that the starting point easing distance accounts for 40% and the midpoint easing distance accounts for 60%<br>But the easing time ratio is still 1:1</p>
+</dd>
+    <dt><code>Astate</code> <a class="xref" href="UndyneFight_Ex.Entities.SimplifiedEasing.html">SimplifiedEasing</a>.<a class="xref" href="UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.html">EaseState</a></dt>
+    <dd><p>Initial easing type</p>
+</dd>
+    <dt><code>Bstate</code> <a class="xref" href="UndyneFight_Ex.Entities.SimplifiedEasing.html">SimplifiedEasing</a>.<a class="xref" href="UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.html">EaseState</a>?</dt>
+    <dd><p>Ending easing type (Default <code class="paramref">Astate</code>)</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<span class="xref">Vector2</span>&gt;</dt>
+    <dd><p>The result of the easing</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_EaseOutIn_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.EaseOutIn*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_EaseOutIn_System_Single_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_UndyneFight_Ex_Entities_SimplifiedEasing_EaseState_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.EaseOutIn(System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)">
+  EaseOutIn(float, Vector2, Vector2, EaseState)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns an easing function that starts fast, decreases in speed, then becomes fast again</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;Vector2&gt; EaseOutIn(float time, Vector2 start, Vector2 end, SimplifiedEasing.EaseState state)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The duration of the easing</p>
+</dd>
+    <dt><code>start</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The initial value of the easing</p>
+</dd>
+    <dt><code>end</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The target value of the easing</p>
+</dd>
+    <dt><code>state</code> <a class="xref" href="UndyneFight_Ex.Entities.SimplifiedEasing.html">SimplifiedEasing</a>.<a class="xref" href="UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.html">EaseState</a></dt>
+    <dd><p>The type of easing used in the easing function</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<span class="xref">Vector2</span>&gt;</dt>
+    <dd><p>The result of the easing</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_EaseOutIn_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.EaseOutIn*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_EaseOutIn_System_Single_System_Single_System_Single_System_Single_UndyneFight_Ex_Entities_SimplifiedEasing_EaseState_System_Nullable_UndyneFight_Ex_Entities_SimplifiedEasing_EaseState__" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.EaseOutIn(System.Single,System.Single,System.Single,System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState,System.Nullable{UndyneFight_Ex.Entities.SimplifiedEasing.EaseState})">
+  EaseOutIn(float, float, float, float, EaseState, EaseState?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns an easing function that starts fast, decreases in speed, then becomes fast again</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;float&gt; EaseOutIn(float time, float start, float end, float amount, SimplifiedEasing.EaseState Astate, SimplifiedEasing.EaseState? Bstate = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The duration of the easing</p>
+</dd>
+    <dt><code>start</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The initial value of the easing</p>
+</dd>
+    <dt><code>end</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The target value of the easing</p>
+</dd>
+    <dt><code>amount</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The proportion of the distance between the starting point and the midpoint<br>For example: 0.4f means that the starting point easing distance accounts for 40% and the midpoint easing distance accounts for 60%<br>But the easing time ratio is still 1:1</p>
+</dd>
+    <dt><code>Astate</code> <a class="xref" href="UndyneFight_Ex.Entities.SimplifiedEasing.html">SimplifiedEasing</a>.<a class="xref" href="UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.html">EaseState</a></dt>
+    <dd><p>Initial easing type</p>
+</dd>
+    <dt><code>Bstate</code> <a class="xref" href="UndyneFight_Ex.Entities.SimplifiedEasing.html">SimplifiedEasing</a>.<a class="xref" href="UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.html">EaseState</a>?</dt>
+    <dd><p>Ending easing type (Default <code class="paramref">Astate</code>)</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd><p>The result of the easing</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_EaseOutIn_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.EaseOutIn*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_EaseOutIn_System_Single_System_Single_System_Single_UndyneFight_Ex_Entities_SimplifiedEasing_EaseState_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.EaseOutIn(System.Single,System.Single,System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)">
+  EaseOutIn(float, float, float, EaseState)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns an easing function that starts fast, decreases in speed, then becomes fast again</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;float&gt; EaseOutIn(float time, float start, float end, SimplifiedEasing.EaseState state)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The duration of the easing</p>
+</dd>
+    <dt><code>start</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The initial value of the easing</p>
+</dd>
+    <dt><code>end</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The target value of the easing</p>
+</dd>
+    <dt><code>state</code> <a class="xref" href="UndyneFight_Ex.Entities.SimplifiedEasing.html">SimplifiedEasing</a>.<a class="xref" href="UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.html">EaseState</a></dt>
+    <dd><p>The type of easing used for the easing function</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd><p>The result of the easing</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_InfLinear_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.InfLinear*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_InfLinear_Microsoft_Xna_Framework_Vector2_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.InfLinear(Microsoft.Xna.Framework.Vector2)">
+  InfLinear(Vector2)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns an infinite linear movement (Default position (0, 0))</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;Vector2&gt; InfLinear(Vector2 speed)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>speed</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The speed of the movement</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<span class="xref">Vector2</span>&gt;</dt>
+    <dd><p>The easing result</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_InfLinear_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.InfLinear*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_InfLinear_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.InfLinear(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)">
+  InfLinear(Vector2, Vector2)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns an infinite linear movement</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;Vector2&gt; InfLinear(Vector2 start, Vector2 speed)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>start</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The initial position</p>
+</dd>
+    <dt><code>speed</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The speed of the movement</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<span class="xref">Vector2</span>&gt;</dt>
+    <dd><p>The easing result</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_InfLinear_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.InfLinear*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_InfLinear_System_Single_System_Single_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.InfLinear(System.Single,System.Single)">
+  InfLinear(float, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns an infinite linear movement</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;float&gt; InfLinear(float start, float speed)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>start</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The initial value</p>
+</dd>
+    <dt><code>speed</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The speed of the increment of the value</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd><p>The easing result</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_Linear_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Linear*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_Linear_System_Single_Microsoft_Xna_Framework_Vector2_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Linear(System.Single,Microsoft.Xna.Framework.Vector2)">
+  Linear(float, Vector2)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a linear motion <br>
+Note that this will increment <code class="paramref">end</code> based on the previous easing</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;Vector2&gt; Linear(float time, Vector2 end)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The duration of the linear movement</p>
+</dd>
+    <dt><code>end</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The target position of the movement</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<span class="xref">Vector2</span>&gt;</dt>
+    <dd><p>The easing result</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_Linear_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Linear*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_Linear_System_Single_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Linear(System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)">
+  Linear(float, Vector2, Vector2)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a linear motion</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;Vector2&gt; Linear(float time, Vector2 start, Vector2 end)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The duration of the linear movement</p>
+</dd>
+    <dt><code>start</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The initial position of the movement</p>
+</dd>
+    <dt><code>end</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The target position of the movement</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<span class="xref">Vector2</span>&gt;</dt>
+    <dd><p>The result of the easing</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_Linear_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Linear*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_Linear_System_Single_System_Single_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Linear(System.Single,System.Single)">
+  Linear(float, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a linear easing <br>
+Note that this will increment <code class="paramref">end</code> based on the previous easing</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;float&gt; Linear(float time, float end)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The duration of the linear easing</p>
+</dd>
+    <dt><code>end</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The target value of the easing</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd><p>The result of the easing</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_Linear_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Linear*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_Linear_System_Single_System_Single_System_Single_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Linear(System.Single,System.Single,System.Single)">
+  Linear(float, float, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a linear easing</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;float&gt; Linear(float time, float start, float end)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The duration of the linear easing</p>
+</dd>
+    <dt><code>start</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The initial value of the easing</p>
+</dd>
+    <dt><code>end</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The target value of the easing</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd><p>The result of the easing</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_LinkEase_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.LinkEase*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_LinkEase_System_Boolean_UndyneFight_Ex_Entities_EaseUnit_Microsoft_Xna_Framework_Vector2____" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.LinkEase(System.Boolean,UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}[])">
+  LinkEase(bool, params EaseUnit&lt;Vector2&gt;[])
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Links multiple easing functions into an <a class="xref" href="../../api/UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit&lt;T&gt;</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;Vector2&gt; LinkEase(bool isAdjust = true, params EaseUnit&lt;Vector2&gt;[] funcs)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>isAdjust</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Whether the value will automatically start from the previous easing result</p>
+</dd>
+    <dt><code>funcs</code> <a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<span class="xref">Vector2</span>&gt;[]</dt>
+    <dd><p>The easing functions to link</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<span class="xref">Vector2</span>&gt;</dt>
+    <dd><p>The linked easing functions</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_LinkEase_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.LinkEase*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_LinkEase_System_Boolean_UndyneFight_Ex_Entities_EaseUnit_System_Single____" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.LinkEase(System.Boolean,UndyneFight_Ex.Entities.EaseUnit{System.Single}[])">
+  LinkEase(bool, params EaseUnit&lt;float&gt;[])
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Links multiple easing functions into an <a class="xref" href="../../api/UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit&lt;T&gt;</a> where T is float</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;float&gt; LinkEase(bool isAdjust, params EaseUnit&lt;float&gt;[] funcs)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>isAdjust</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Whether the value will automatically start from the previous easing result</p>
+</dd>
+    <dt><code>funcs</code> <a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;[]</dt>
+    <dd><p>The easing functions to link</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd><p>The linked easing functions</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_LinkEase_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.LinkEase*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_LinkEase_UndyneFight_Ex_Entities_EaseUnit_Microsoft_Xna_Framework_Vector2____" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.LinkEase(UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}[])">
+  LinkEase(params EaseUnit&lt;Vector2&gt;[])
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Links multiple easing functions into an <a class="xref" href="../../api/UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit&lt;T&gt;</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;Vector2&gt; LinkEase(params EaseUnit&lt;Vector2&gt;[] funcs)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>funcs</code> <a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<span class="xref">Vector2</span>&gt;[]</dt>
+    <dd><p>The easing functions to link</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<span class="xref">Vector2</span>&gt;</dt>
+    <dd><p>The linked easing functions</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_LinkEase_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.LinkEase*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_LinkEase_UndyneFight_Ex_Entities_EaseUnit_System_Single____" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.LinkEase(UndyneFight_Ex.Entities.EaseUnit{System.Single}[])">
+  LinkEase(params EaseUnit&lt;float&gt;[])
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Links multiple easing functions into an <a class="xref" href="../../api/UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit&lt;T&gt;</a> where T is float</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;float&gt; LinkEase(params EaseUnit&lt;float&gt;[] funcs)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>funcs</code> <a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;[]</dt>
+    <dd><p>The easing functions to link</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd><p>The linked easing functions</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_Polar_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Polar*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_Polar_UndyneFight_Ex_Entities_EaseUnit_Microsoft_Xna_Framework_Vector2__System_Single_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Polar(UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2},System.Single)">
+  Polar(EaseUnit&lt;Vector2&gt;, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a easing of a rotating <span class="xref">Microsoft.Xna.Framework.Vector2</span> easing</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;Vector2&gt; Polar(EaseUnit&lt;Vector2&gt; main, float rotate)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>main</code> <a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<span class="xref">Vector2</span>&gt;</dt>
+    <dd><p>The vector easing to rotate</p>
+</dd>
+    <dt><code>rotate</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The rotation to set to</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<span class="xref">Vector2</span>&gt;</dt>
+    <dd><p>The result of the easing function</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_Polar_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Polar*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_Polar_UndyneFight_Ex_Entities_EaseUnit_Microsoft_Xna_Framework_Vector2__UndyneFight_Ex_Entities_EaseUnit_System_Single__" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Polar(UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2},UndyneFight_Ex.Entities.EaseUnit{System.Single})">
+  Polar(EaseUnit&lt;Vector2&gt;, EaseUnit&lt;float&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a easing of a rotating <span class="xref">Microsoft.Xna.Framework.Vector2</span> easing</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;Vector2&gt; Polar(EaseUnit&lt;Vector2&gt; main, EaseUnit&lt;float&gt; rotate)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>main</code> <a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<span class="xref">Vector2</span>&gt;</dt>
+    <dd><p>The vector easing to rotate</p>
+</dd>
+    <dt><code>rotate</code> <a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd><p>The easing of the rotation</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<span class="xref">Vector2</span>&gt;</dt>
+    <dd><p>The result of the easing function</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_Polar_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Polar*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_Polar_UndyneFight_Ex_Entities_EaseUnit_System_Single__UndyneFight_Ex_Entities_EaseUnit_System_Single__" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Polar(UndyneFight_Ex.Entities.EaseUnit{System.Single},UndyneFight_Ex.Entities.EaseUnit{System.Single})">
+  Polar(EaseUnit&lt;float&gt;, EaseUnit&lt;float&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a easing of a rotating <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a> easing</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;Vector2&gt; Polar(EaseUnit&lt;float&gt; main, EaseUnit&lt;float&gt; rotate)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>main</code> <a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd><p>The float easing to rotate</p>
+</dd>
+    <dt><code>rotate</code> <a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd><p>The easing of the rotation</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<span class="xref">Vector2</span>&gt;</dt>
+    <dd><p>The result of the easing function</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_RunEase_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.RunEase*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_RunEase_System_Action_Microsoft_Xna_Framework_Vector2__System_Boolean_UndyneFight_Ex_Entities_EaseUnit_Microsoft_Xna_Framework_Vector2____" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.RunEase(System.Action{Microsoft.Xna.Framework.Vector2},System.Boolean,UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}[])">
+  RunEase(Action&lt;Vector2&gt;, bool, params EaseUnit&lt;Vector2&gt;[])
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Runs an action with a <span class="xref">Microsoft.Xna.Framework.Vector2</span> as it's variable with the given easing functions</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void RunEase(Action&lt;Vector2&gt; action, bool isAdjust, params EaseUnit&lt;Vector2&gt;[] funcs)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>action</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<span class="xref">Vector2</span>&gt;</dt>
+    <dd><p>The action to apply the easing to</p>
+</dd>
+    <dt><code>isAdjust</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Whether the value will automatically start from the previous easing result</p>
+</dd>
+    <dt><code>funcs</code> <a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<span class="xref">Vector2</span>&gt;[]</dt>
+    <dd><p>The easing functions</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_RunEase_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.RunEase*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_RunEase_System_Action_Microsoft_Xna_Framework_Vector2__UndyneFight_Ex_Entities_EaseUnit_Microsoft_Xna_Framework_Vector2____" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.RunEase(System.Action{Microsoft.Xna.Framework.Vector2},UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}[])">
+  RunEase(Action&lt;Vector2&gt;, params EaseUnit&lt;Vector2&gt;[])
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Runs an action with a <span class="xref">Microsoft.Xna.Framework.Vector2</span> as it's variable with the given easing functions</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void RunEase(Action&lt;Vector2&gt; action, params EaseUnit&lt;Vector2&gt;[] funcs)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>action</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<span class="xref">Vector2</span>&gt;</dt>
+    <dd><p>The action to apply the easing to</p>
+</dd>
+    <dt><code>funcs</code> <a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<span class="xref">Vector2</span>&gt;[]</dt>
+    <dd><p>The easing functions</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_RunEase_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.RunEase*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_RunEase_System_Action_System_Single__System_Boolean_UndyneFight_Ex_Entities_EaseUnit_System_Single____" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.RunEase(System.Action{System.Single},System.Boolean,UndyneFight_Ex.Entities.EaseUnit{System.Single}[])">
+  RunEase(Action&lt;float&gt;, bool, params EaseUnit&lt;float&gt;[])
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Runs an action with a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a> as it's variable with the given easing functions</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void RunEase(Action&lt;float&gt; action, bool isAdjust, params EaseUnit&lt;float&gt;[] funcs)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>action</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd><p>The action to apply the easing to</p>
+</dd>
+    <dt><code>isAdjust</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Whether the value will automatically start from the previous easing result</p>
+</dd>
+    <dt><code>funcs</code> <a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;[]</dt>
+    <dd><p>The easing functions</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_RunEase_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.RunEase*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_RunEase_System_Action_System_Single__UndyneFight_Ex_Entities_EaseUnit_System_Single____" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.RunEase(System.Action{System.Single},UndyneFight_Ex.Entities.EaseUnit{System.Single}[])">
+  RunEase(Action&lt;float&gt;, params EaseUnit&lt;float&gt;[])
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Runs an action with a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a> as it's variable with the given easing functions</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void RunEase(Action&lt;float&gt; action, params EaseUnit&lt;float&gt;[] funcs)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>action</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd><p>The action to apply the easing to</p>
+</dd>
+    <dt><code>funcs</code> <a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;[]</dt>
+    <dd><p>The easing functions</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_Scale_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Scale*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_Scale_UndyneFight_Ex_Entities_EaseUnit_Microsoft_Xna_Framework_Vector2__System_Single_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Scale(UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2},System.Single)">
+  Scale(EaseUnit&lt;Vector2&gt;, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Scales the <span class="xref">Microsoft.Xna.Framework.Vector2</span> easing by a scalar float value</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;Vector2&gt; Scale(EaseUnit&lt;Vector2&gt; origin, float scalar)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>origin</code> <a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<span class="xref">Vector2</span>&gt;</dt>
+    <dd><p>The vector easing to scale to</p>
+</dd>
+    <dt><code>scalar</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The float to scale</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<span class="xref">Vector2</span>&gt;</dt>
+    <dd><p>The result of the scaled easing function</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_Scale_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Scale*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_Scale_UndyneFight_Ex_Entities_EaseUnit_Microsoft_Xna_Framework_Vector2__UndyneFight_Ex_Entities_EaseUnit_System_Single__" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Scale(UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2},UndyneFight_Ex.Entities.EaseUnit{System.Single})">
+  Scale(EaseUnit&lt;Vector2&gt;, EaseUnit&lt;float&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Scales the <span class="xref">Microsoft.Xna.Framework.Vector2</span> easing by a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a> easing function</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;Vector2&gt; Scale(EaseUnit&lt;Vector2&gt; origin, EaseUnit&lt;float&gt; scalar)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>origin</code> <a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<span class="xref">Vector2</span>&gt;</dt>
+    <dd><p>The vector easing to scale to</p>
+</dd>
+    <dt><code>scalar</code> <a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd><p>The float easing to scale</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<span class="xref">Vector2</span>&gt;</dt>
+    <dd><p>The result of the easing functions</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_Scale_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Scale*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_Scale_UndyneFight_Ex_Entities_EaseUnit_System_Single__System_Single_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Scale(UndyneFight_Ex.Entities.EaseUnit{System.Single},System.Single)">
+  Scale(EaseUnit&lt;float&gt;, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Scales the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a> easing by a scalar float value</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;float&gt; Scale(EaseUnit&lt;float&gt; origin, float scalar)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>origin</code> <a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd><p>The float easing to scale to</p>
+</dd>
+    <dt><code>scalar</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The float to scale</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd><p>The result of the scaled easing function</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_Scale_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Scale*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_Scale_UndyneFight_Ex_Entities_EaseUnit_System_Single__UndyneFight_Ex_Entities_EaseUnit_System_Single__" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Scale(UndyneFight_Ex.Entities.EaseUnit{System.Single},UndyneFight_Ex.Entities.EaseUnit{System.Single})">
+  Scale(EaseUnit&lt;float&gt;, EaseUnit&lt;float&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Scales the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a> easing by a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a> easing function</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;float&gt; Scale(EaseUnit&lt;float&gt; origin, EaseUnit&lt;float&gt; scalar)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>origin</code> <a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd><p>The float easing to scale to</p>
+</dd>
+    <dt><code>scalar</code> <a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd><p>The float easing to scale</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd><p>The result of the easing functions</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_SineWave_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.SineWave*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_SineWave_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_System_Single_System_Single_System_Single_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.SineWave(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,System.Single,System.Single)">
+  SineWave(Vector2, Vector2, float, float, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a sine wave easing</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;Vector2&gt; SineWave(Vector2 start, Vector2 end, float T, float waveCount = 99999, float phase = 0)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>start</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The minimal value of the wave</p>
+</dd>
+    <dt><code>end</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The maximum value of the wave</p>
+</dd>
+    <dt><code>T</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The period of the wave</p>
+</dd>
+    <dt><code>waveCount</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The amount of times the wave will run (Default 99999)</p>
+</dd>
+    <dt><code>phase</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The initial position (Default 0)</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<span class="xref">Vector2</span>&gt;</dt>
+    <dd><p>The result of the easing</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_SineWave_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.SineWave*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_SineWave_Microsoft_Xna_Framework_Vector2_System_Single_System_Single_System_Single_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.SineWave(Microsoft.Xna.Framework.Vector2,System.Single,System.Single,System.Single)">
+  SineWave(Vector2, float, float, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a sine wave easing</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;Vector2&gt; SineWave(Vector2 impact, float period, float waveCount = 99999, float phase = 0)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>impact</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The magnitude of the wave</p>
+</dd>
+    <dt><code>period</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The period of the wave</p>
+</dd>
+    <dt><code>waveCount</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The amount of times the wave will run (Default 99999)</p>
+</dd>
+    <dt><code>phase</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The initial position (Default 0)</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<span class="xref">Vector2</span>&gt;</dt>
+    <dd><p>The result of the easing</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_SineWave_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.SineWave*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_SineWave_System_Single_System_Single_System_Single_System_Single_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.SineWave(System.Single,System.Single,System.Single,System.Single)">
+  SineWave(float, float, float, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a sine wave easing</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;float&gt; SineWave(float amplitude, float period, float waveCount = 99999, float phase = 0)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>amplitude</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The amplitude of the wave</p>
+</dd>
+    <dt><code>period</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The period of the wave</p>
+</dd>
+    <dt><code>waveCount</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The amount of times the wave will run (Default 99999)</p>
+</dd>
+    <dt><code>phase</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The initial position (Default 0)</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd><p>The result of the easing</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_Stable_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Stable*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_Stable_System_Single_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Stable(System.Single)">
+  Stable(float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a stable value for the specified amount of time <br>
+If there is no previous easing, the value will be zero, or else it will be the result fo the previous easing</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;float&gt; Stable(float time)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The duration of the stability of the value (Use 0 for instantly setting the value)</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd><p>The result of the easing</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_Stable_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Stable*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_Stable_System_Single_Microsoft_Xna_Framework_Vector2_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Stable(System.Single,Microsoft.Xna.Framework.Vector2)">
+  Stable(float, Vector2)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a stable value for the specified amount of time</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;Vector2&gt; Stable(float time, Vector2 value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The duration of the stability of the value (Use 0 for instantly setting the value)</p>
+</dd>
+    <dt><code>value</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The value to set to</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<span class="xref">Vector2</span>&gt;</dt>
+    <dd><p>The result of the easing</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_Stable_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Stable*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_Stable_System_Single_System_Single_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Stable(System.Single,System.Single)">
+  Stable(float, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a stable value for the specified amount of time</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;float&gt; Stable(float time, float value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The duration of the stability of the value (Use 0 for instantly setting the value)</p>
+</dd>
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The value to set to</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd><p>The result of the easing</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entities_SimplifiedEasing_Stable_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Stable*"></a>
+
+  <h3 id="UndyneFight_Ex_Entities_SimplifiedEasing_Stable_System_Single_System_Single_System_Single_" data-uid="UndyneFight_Ex.Entities.SimplifiedEasing.Stable(System.Single,System.Single,System.Single)">
+  Stable(float, float, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a stable value for the specified amount of time, essentially the same with <a class="xref" href="../../api/UndyneFight_Ex.Entities.SimplifiedEasing.html#UndyneFight_Ex_Entities_SimplifiedEasing_Stable_System_Single_Microsoft_Xna_Framework_Vector2_">Stable(float, Vector2)</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EaseUnit&lt;Vector2&gt; Stable(float time, float xvalue, float yvalue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The duration of the stability of the value (Use 0 for instantly setting the value)</p>
+</dd>
+    <dt><code>xvalue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The first value to set to</p>
+</dd>
+    <dt><code>yvalue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The second value to set to</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.EaseUnit-1.html">EaseUnit</a>&lt;<span class="xref">Vector2</span>&gt;</dt>
+    <dd><p>The result of the easing</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

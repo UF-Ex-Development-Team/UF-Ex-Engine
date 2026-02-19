@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Struct Rectangle | UF-Ex Docs </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Struct Rectangle | UF-Ex Docs ">
+      
+      <meta name="description" content="A rectangle">
+      <link rel="icon" href="../../images/Icon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/Icon.ico" alt="UF-Ex Docs">
+            UF-Ex Docs
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="UndyneFight_Ex.Shapes.Rectangle">
+
+
+
+  <h1 id="UndyneFight_Ex_Shapes_Rectangle" data-uid="UndyneFight_Ex.Shapes.Rectangle" class="text-break">
+Struct Rectangle  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="UndyneFight_Ex.html">UndyneFight_Ex</a>.<a class="xref" href="UndyneFight_Ex.Shapes.html">Shapes</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>UndyneFight-Ex.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>A rectangle</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public struct Rectangle : IShape</code></pre>
+  </div>
+
+
+
+
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="../../api/UndyneFight_Ex.Shapes.IShape.html">IShape</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.equals">ValueType.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode">ValueType.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.tostring">ValueType.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="UndyneFight_Ex_Shapes_Rectangle__ctor_" data-uid="UndyneFight_Ex.Shapes.Rectangle.#ctor*"></a>
+
+  <h3 id="UndyneFight_Ex_Shapes_Rectangle__ctor_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_" data-uid="UndyneFight_Ex.Shapes.Rectangle.#ctor(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)">
+  Rectangle(Vector2, Vector2)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates a rectangle with the given center and size</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Rectangle(Vector2 center, Vector2 size)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>center</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The center of the rectangle</p>
+</dd>
+    <dt><code>size</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The width and height of the rectangle</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Shapes_Rectangle__ctor_" data-uid="UndyneFight_Ex.Shapes.Rectangle.#ctor*"></a>
+
+  <h3 id="UndyneFight_Ex_Shapes_Rectangle__ctor_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_" data-uid="UndyneFight_Ex.Shapes.Rectangle.#ctor(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)">
+  Rectangle(Vector2, Vector2, Vector2, Vector2)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates a rectangle with the given vertices</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Rectangle(Vector2 TopLeft, Vector2 TopRight, Vector2 BottomRight, Vector2 BottomLeft)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TopLeft</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The top left corner of the rectangle</p>
+</dd>
+    <dt><code>TopRight</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The top right corner of the rectangle</p>
+</dd>
+    <dt><code>BottomRight</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The bottom right corner of the rectangle</p>
+</dd>
+    <dt><code>BottomLeft</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The bottom left corner of the rectangle</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="UndyneFight_Ex_Shapes_Rectangle_Center_" data-uid="UndyneFight_Ex.Shapes.Rectangle.Center*"></a>
+
+  <h3 id="UndyneFight_Ex_Shapes_Rectangle_Center" data-uid="UndyneFight_Ex.Shapes.Rectangle.Center">
+  Center
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The center of the rectangle</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 Center { readonly get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector2</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Shapes_Rectangle_DrawData_" data-uid="UndyneFight_Ex.Shapes.Rectangle.DrawData*"></a>
+
+  <h3 id="UndyneFight_Ex_Shapes_Rectangle_DrawData" data-uid="UndyneFight_Ex.Shapes.Rectangle.DrawData">
+  DrawData
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The data for drawing the shape</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DrawingData DrawData { readonly get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="../../api/UndyneFight_Ex.Shapes.DrawingData.html">DrawingData</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Shapes_Rectangle_Rotation_" data-uid="UndyneFight_Ex.Shapes.Rectangle.Rotation*"></a>
+
+  <h3 id="UndyneFight_Ex_Shapes_Rectangle_Rotation" data-uid="UndyneFight_Ex.Shapes.Rectangle.Rotation">
+  Rotation
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The rotation of the shape</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Rotation { readonly get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Shapes_Rectangle_Vertices_" data-uid="UndyneFight_Ex.Shapes.Rectangle.Vertices*"></a>
+
+  <h3 id="UndyneFight_Ex_Shapes_Rectangle_Vertices" data-uid="UndyneFight_Ex.Shapes.Rectangle.Vertices">
+  Vertices
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The list of vertices of the shape</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2[] Vertices { readonly get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector2</span>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="UndyneFight_Ex_Shapes_Rectangle_Contains_" data-uid="UndyneFight_Ex.Shapes.Rectangle.Contains*"></a>
+
+  <h3 id="UndyneFight_Ex_Shapes_Rectangle_Contains_UndyneFight_Ex_Shapes_IShape_" data-uid="UndyneFight_Ex.Shapes.Rectangle.Contains(UndyneFight_Ex.Shapes.IShape)">
+  Contains(IShape)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Whether this shape contains another shape</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly bool Contains(IShape shape)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>shape</code> <a class="xref" href="../../api/UndyneFight_Ex.Shapes.IShape.html">IShape</a></dt>
+    <dd><p>The other shape</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Shapes_Rectangle_Draw_" data-uid="UndyneFight_Ex.Shapes.Rectangle.Draw*"></a>
+
+  <h3 id="UndyneFight_Ex_Shapes_Rectangle_Draw" data-uid="UndyneFight_Ex.Shapes.Rectangle.Draw">
+  Draw()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The drawing method of the shape</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly void Draw()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Shapes_Rectangle_IntersectsWith_" data-uid="UndyneFight_Ex.Shapes.Rectangle.IntersectsWith*"></a>
+
+  <h3 id="UndyneFight_Ex_Shapes_Rectangle_IntersectsWith_UndyneFight_Ex_Shapes_IShape_" data-uid="UndyneFight_Ex.Shapes.Rectangle.IntersectsWith(UndyneFight_Ex.Shapes.IShape)">
+  IntersectsWith(IShape)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Whether this shape is intersecting with another shape</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly bool IntersectsWith(IShape shape)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>shape</code> <a class="xref" href="../../api/UndyneFight_Ex.Shapes.IShape.html">IShape</a></dt>
+    <dd><p>The other shape</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="operators">Operators
+</h2>
+
+
+  <a id="UndyneFight_Ex_Shapes_Rectangle_op_Addition_" data-uid="UndyneFight_Ex.Shapes.Rectangle.op_Addition*"></a>
+
+  <h3 id="UndyneFight_Ex_Shapes_Rectangle_op_Addition_UndyneFight_Ex_Shapes_Rectangle_Microsoft_Xna_Framework_Vector2_" data-uid="UndyneFight_Ex.Shapes.Rectangle.op_Addition(UndyneFight_Ex.Shapes.Rectangle,Microsoft.Xna.Framework.Vector2)">
+  operator +(Rectangle, Vector2)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Offsets the rectangle by the given vector</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Rectangle operator +(Rectangle rect, Vector2 vec)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>rect</code> <a class="xref" href="../../api/UndyneFight_Ex.Shapes.Rectangle.html">Rectangle</a></dt>
+    <dd><p>The rectangle to offset</p>
+</dd>
+    <dt><code>vec</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The amount to offset</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="../../api/UndyneFight_Ex.Shapes.Rectangle.html">Rectangle</a></dt>
+    <dd><p>The rectangle after offset</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Shapes_Rectangle_op_Division_" data-uid="UndyneFight_Ex.Shapes.Rectangle.op_Division*"></a>
+
+  <h3 id="UndyneFight_Ex_Shapes_Rectangle_op_Division_UndyneFight_Ex_Shapes_Rectangle_System_Single_" data-uid="UndyneFight_Ex.Shapes.Rectangle.op_Division(UndyneFight_Ex.Shapes.Rectangle,System.Single)">
+  operator /(Rectangle, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Scales the rectangle by the given vector</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Rectangle operator /(Rectangle rect, float scale)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>rect</code> <a class="xref" href="../../api/UndyneFight_Ex.Shapes.Rectangle.html">Rectangle</a></dt>
+    <dd><p>The rectangle to scale</p>
+</dd>
+    <dt><code>scale</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The amount to scale</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="../../api/UndyneFight_Ex.Shapes.Rectangle.html">Rectangle</a></dt>
+    <dd><p>The rectangle after scaling</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Shapes_Rectangle_op_Implicit_" data-uid="UndyneFight_Ex.Shapes.Rectangle.op_Implicit*"></a>
+
+  <h3 id="UndyneFight_Ex_Shapes_Rectangle_op_Implicit_UndyneFight_Ex_Shapes_Rectangle__System_Drawing_Rectangle" data-uid="UndyneFight_Ex.Shapes.Rectangle.op_Implicit(UndyneFight_Ex.Shapes.Rectangle)~System.Drawing.Rectangle">
+  implicit operator Rectangle(Rectangle)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Converts the rectangle into a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.drawing.rectangle">Rectangle</a> without taking in the rotation</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Rectangle(Rectangle rect)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>rect</code> <a class="xref" href="../../api/UndyneFight_Ex.Shapes.Rectangle.html">Rectangle</a></dt>
+    <dd><p>The rectangle to convert</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.drawing.rectangle">Rectangle</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Shapes_Rectangle_op_Multiply_" data-uid="UndyneFight_Ex.Shapes.Rectangle.op_Multiply*"></a>
+
+  <h3 id="UndyneFight_Ex_Shapes_Rectangle_op_Multiply_UndyneFight_Ex_Shapes_Rectangle_System_Single_" data-uid="UndyneFight_Ex.Shapes.Rectangle.op_Multiply(UndyneFight_Ex.Shapes.Rectangle,System.Single)">
+  operator *(Rectangle, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Scales the rectangle by the given vector</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Rectangle operator *(Rectangle rect, float scale)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>rect</code> <a class="xref" href="../../api/UndyneFight_Ex.Shapes.Rectangle.html">Rectangle</a></dt>
+    <dd><p>The rectangle to scale</p>
+</dd>
+    <dt><code>scale</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The amount to scale</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="../../api/UndyneFight_Ex.Shapes.Rectangle.html">Rectangle</a></dt>
+    <dd><p>The rectangle after scaling</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Shapes_Rectangle_op_Subtraction_" data-uid="UndyneFight_Ex.Shapes.Rectangle.op_Subtraction*"></a>
+
+  <h3 id="UndyneFight_Ex_Shapes_Rectangle_op_Subtraction_UndyneFight_Ex_Shapes_Rectangle_Microsoft_Xna_Framework_Vector2_" data-uid="UndyneFight_Ex.Shapes.Rectangle.op_Subtraction(UndyneFight_Ex.Shapes.Rectangle,Microsoft.Xna.Framework.Vector2)">
+  operator -(Rectangle, Vector2)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Offsets the rectangle by the given vector</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Rectangle operator -(Rectangle rect, Vector2 vec)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>rect</code> <a class="xref" href="../../api/UndyneFight_Ex.Shapes.Rectangle.html">Rectangle</a></dt>
+    <dd><p>The rectangle to offset</p>
+</dd>
+    <dt><code>vec</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The amount to offset</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="../../api/UndyneFight_Ex.Shapes.Rectangle.html">Rectangle</a></dt>
+    <dd><p>The rectangle after offset</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
