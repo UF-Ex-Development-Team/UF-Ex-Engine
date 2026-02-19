@@ -1,0 +1,427 @@
+### YamlMime:ManagedReference
+items:
+- uid: UndyneFight_Ex.SongSystem.SkillMark
+  commentId: T:UndyneFight_Ex.SongSystem.SkillMark
+  id: SkillMark
+  parent: UndyneFight_Ex.SongSystem
+  children:
+  - UndyneFight_Ex.SongSystem.SkillMark.Acceptable
+  - UndyneFight_Ex.SongSystem.SkillMark.Eminent
+  - UndyneFight_Ex.SongSystem.SkillMark.Excellent
+  - UndyneFight_Ex.SongSystem.SkillMark.Failed
+  - UndyneFight_Ex.SongSystem.SkillMark.Impeccable
+  - UndyneFight_Ex.SongSystem.SkillMark.Ordinary
+  - UndyneFight_Ex.SongSystem.SkillMark.Respectable
+  langs:
+  - csharp
+  - vb
+  name: SkillMark
+  nameWithType: SkillMark
+  fullName: UndyneFight_Ex.SongSystem.SkillMark
+  type: Enum
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.SongSystem
+  summary: >-
+    Impeccable    -&gt; All Perfect <br />
+
+    Eminent       -&gt; No Hit + 99% score<br />
+
+    Excellent     -&gt; No Hit + 98% score<br />
+
+    Respectable   -&gt; 96% score<br />
+
+    Acceptable    -&gt; 92% score<br />
+
+    Ordinary      -&gt; 75% score<br />
+  example: []
+  syntax:
+    content: public enum SkillMark
+    content.vb: Public Enum SkillMark
+  extensionMethods:
+  - UndyneFight_Ex.SongSystem.SkillMark.UndyneFight_Ex.MathUtil.InRange``1(UndyneFight_Ex.SongSystem.SkillMark,UndyneFight_Ex.SongSystem.SkillMark)
+- uid: UndyneFight_Ex.SongSystem.SkillMark.Impeccable
+  commentId: F:UndyneFight_Ex.SongSystem.SkillMark.Impeccable
+  id: Impeccable
+  parent: UndyneFight_Ex.SongSystem.SkillMark
+  langs:
+  - csharp
+  - vb
+  name: Impeccable
+  nameWithType: SkillMark.Impeccable
+  fullName: UndyneFight_Ex.SongSystem.SkillMark.Impeccable
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.SongSystem
+  syntax:
+    content: >-
+      [MiscUtil.ShorthandName("Im")]
+
+      Impeccable = 1
+    return:
+      type: UndyneFight_Ex.SongSystem.SkillMark
+    content.vb: >-
+      <MiscUtil.ShorthandName("Im")>
+
+      Impeccable = 1
+  attributes:
+  - type: UndyneFight_Ex.MiscUtil.ShorthandName
+    ctor: UndyneFight_Ex.MiscUtil.ShorthandName.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Im
+- uid: UndyneFight_Ex.SongSystem.SkillMark.Eminent
+  commentId: F:UndyneFight_Ex.SongSystem.SkillMark.Eminent
+  id: Eminent
+  parent: UndyneFight_Ex.SongSystem.SkillMark
+  langs:
+  - csharp
+  - vb
+  name: Eminent
+  nameWithType: SkillMark.Eminent
+  fullName: UndyneFight_Ex.SongSystem.SkillMark.Eminent
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.SongSystem
+  syntax:
+    content: >-
+      [MiscUtil.ShorthandName("Em")]
+
+      Eminent = 2
+    return:
+      type: UndyneFight_Ex.SongSystem.SkillMark
+    content.vb: >-
+      <MiscUtil.ShorthandName("Em")>
+
+      Eminent = 2
+  attributes:
+  - type: UndyneFight_Ex.MiscUtil.ShorthandName
+    ctor: UndyneFight_Ex.MiscUtil.ShorthandName.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Em
+- uid: UndyneFight_Ex.SongSystem.SkillMark.Excellent
+  commentId: F:UndyneFight_Ex.SongSystem.SkillMark.Excellent
+  id: Excellent
+  parent: UndyneFight_Ex.SongSystem.SkillMark
+  langs:
+  - csharp
+  - vb
+  name: Excellent
+  nameWithType: SkillMark.Excellent
+  fullName: UndyneFight_Ex.SongSystem.SkillMark.Excellent
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.SongSystem
+  syntax:
+    content: >-
+      [MiscUtil.ShorthandName("Ex")]
+
+      Excellent = 3
+    return:
+      type: UndyneFight_Ex.SongSystem.SkillMark
+    content.vb: >-
+      <MiscUtil.ShorthandName("Ex")>
+
+      Excellent = 3
+  attributes:
+  - type: UndyneFight_Ex.MiscUtil.ShorthandName
+    ctor: UndyneFight_Ex.MiscUtil.ShorthandName.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Ex
+- uid: UndyneFight_Ex.SongSystem.SkillMark.Respectable
+  commentId: F:UndyneFight_Ex.SongSystem.SkillMark.Respectable
+  id: Respectable
+  parent: UndyneFight_Ex.SongSystem.SkillMark
+  langs:
+  - csharp
+  - vb
+  name: Respectable
+  nameWithType: SkillMark.Respectable
+  fullName: UndyneFight_Ex.SongSystem.SkillMark.Respectable
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.SongSystem
+  syntax:
+    content: >-
+      [MiscUtil.ShorthandName("Re")]
+
+      Respectable = 4
+    return:
+      type: UndyneFight_Ex.SongSystem.SkillMark
+    content.vb: >-
+      <MiscUtil.ShorthandName("Re")>
+
+      Respectable = 4
+  attributes:
+  - type: UndyneFight_Ex.MiscUtil.ShorthandName
+    ctor: UndyneFight_Ex.MiscUtil.ShorthandName.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Re
+- uid: UndyneFight_Ex.SongSystem.SkillMark.Acceptable
+  commentId: F:UndyneFight_Ex.SongSystem.SkillMark.Acceptable
+  id: Acceptable
+  parent: UndyneFight_Ex.SongSystem.SkillMark
+  langs:
+  - csharp
+  - vb
+  name: Acceptable
+  nameWithType: SkillMark.Acceptable
+  fullName: UndyneFight_Ex.SongSystem.SkillMark.Acceptable
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.SongSystem
+  syntax:
+    content: >-
+      [MiscUtil.ShorthandName("Acc")]
+
+      Acceptable = 5
+    return:
+      type: UndyneFight_Ex.SongSystem.SkillMark
+    content.vb: >-
+      <MiscUtil.ShorthandName("Acc")>
+
+      Acceptable = 5
+  attributes:
+  - type: UndyneFight_Ex.MiscUtil.ShorthandName
+    ctor: UndyneFight_Ex.MiscUtil.ShorthandName.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Acc
+- uid: UndyneFight_Ex.SongSystem.SkillMark.Ordinary
+  commentId: F:UndyneFight_Ex.SongSystem.SkillMark.Ordinary
+  id: Ordinary
+  parent: UndyneFight_Ex.SongSystem.SkillMark
+  langs:
+  - csharp
+  - vb
+  name: Ordinary
+  nameWithType: SkillMark.Ordinary
+  fullName: UndyneFight_Ex.SongSystem.SkillMark.Ordinary
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.SongSystem
+  syntax:
+    content: >-
+      [MiscUtil.ShorthandName("Ord")]
+
+      Ordinary = 6
+    return:
+      type: UndyneFight_Ex.SongSystem.SkillMark
+    content.vb: >-
+      <MiscUtil.ShorthandName("Ord")>
+
+      Ordinary = 6
+  attributes:
+  - type: UndyneFight_Ex.MiscUtil.ShorthandName
+    ctor: UndyneFight_Ex.MiscUtil.ShorthandName.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Ord
+- uid: UndyneFight_Ex.SongSystem.SkillMark.Failed
+  commentId: F:UndyneFight_Ex.SongSystem.SkillMark.Failed
+  id: Failed
+  parent: UndyneFight_Ex.SongSystem.SkillMark
+  langs:
+  - csharp
+  - vb
+  name: Failed
+  nameWithType: SkillMark.Failed
+  fullName: UndyneFight_Ex.SongSystem.SkillMark.Failed
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.SongSystem
+  syntax:
+    content: >-
+      [MiscUtil.ShorthandName("F")]
+
+      Failed = 7
+    return:
+      type: UndyneFight_Ex.SongSystem.SkillMark
+    content.vb: >-
+      <MiscUtil.ShorthandName("F")>
+
+      Failed = 7
+  attributes:
+  - type: UndyneFight_Ex.MiscUtil.ShorthandName
+    ctor: UndyneFight_Ex.MiscUtil.ShorthandName.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: F
+references:
+- uid: UndyneFight_Ex.SongSystem
+  commentId: N:UndyneFight_Ex.SongSystem
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex.SongSystem
+  nameWithType: UndyneFight_Ex.SongSystem
+  fullName: UndyneFight_Ex.SongSystem
+  spec.csharp:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.SongSystem
+    name: SongSystem
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.html
+  spec.vb:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.SongSystem
+    name: SongSystem
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.html
+- uid: UndyneFight_Ex.SongSystem.SkillMark.UndyneFight_Ex.MathUtil.InRange``1(UndyneFight_Ex.SongSystem.SkillMark,UndyneFight_Ex.SongSystem.SkillMark)
+  commentId: M:UndyneFight_Ex.MathUtil.InRange``1(``0,``0,``0)
+  parent: UndyneFight_Ex.MathUtil
+  definition: UndyneFight_Ex.MathUtil.InRange``1(``0,``0,``0)
+  href: UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_InRange__1___0___0___0_
+  name: InRange<SkillMark>(SkillMark, SkillMark, SkillMark)
+  nameWithType: MathUtil.InRange<SkillMark>(SkillMark, SkillMark, SkillMark)
+  fullName: UndyneFight_Ex.MathUtil.InRange<UndyneFight_Ex.SongSystem.SkillMark>(UndyneFight_Ex.SongSystem.SkillMark, UndyneFight_Ex.SongSystem.SkillMark, UndyneFight_Ex.SongSystem.SkillMark)
+  nameWithType.vb: MathUtil.InRange(Of SkillMark)(SkillMark, SkillMark, SkillMark)
+  fullName.vb: UndyneFight_Ex.MathUtil.InRange(Of UndyneFight_Ex.SongSystem.SkillMark)(UndyneFight_Ex.SongSystem.SkillMark, UndyneFight_Ex.SongSystem.SkillMark, UndyneFight_Ex.SongSystem.SkillMark)
+  name.vb: InRange(Of SkillMark)(SkillMark, SkillMark, SkillMark)
+  spec.csharp:
+  - uid: UndyneFight_Ex.MathUtil.InRange``1(UndyneFight_Ex.SongSystem.SkillMark,UndyneFight_Ex.SongSystem.SkillMark,UndyneFight_Ex.SongSystem.SkillMark)
+    name: InRange
+    isExternal: true
+    href: UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_InRange__1___0___0___0_
+  - name: <
+  - uid: UndyneFight_Ex.SongSystem.SkillMark
+    name: SkillMark
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.SkillMark.html
+  - name: '>'
+  - name: (
+  - uid: UndyneFight_Ex.SongSystem.SkillMark
+    name: SkillMark
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.SkillMark.html
+  - name: ','
+  - name: " "
+  - uid: UndyneFight_Ex.SongSystem.SkillMark
+    name: SkillMark
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.SkillMark.html
+  - name: ','
+  - name: " "
+  - uid: UndyneFight_Ex.SongSystem.SkillMark
+    name: SkillMark
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.SkillMark.html
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.MathUtil.InRange``1(UndyneFight_Ex.SongSystem.SkillMark,UndyneFight_Ex.SongSystem.SkillMark,UndyneFight_Ex.SongSystem.SkillMark)
+    name: InRange
+    isExternal: true
+    href: UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_InRange__1___0___0___0_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: UndyneFight_Ex.SongSystem.SkillMark
+    name: SkillMark
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.SkillMark.html
+  - name: )
+  - name: (
+  - uid: UndyneFight_Ex.SongSystem.SkillMark
+    name: SkillMark
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.SkillMark.html
+  - name: ','
+  - name: " "
+  - uid: UndyneFight_Ex.SongSystem.SkillMark
+    name: SkillMark
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.SkillMark.html
+  - name: ','
+  - name: " "
+  - uid: UndyneFight_Ex.SongSystem.SkillMark
+    name: SkillMark
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.SkillMark.html
+  - name: )
+- uid: UndyneFight_Ex.MathUtil.InRange``1(``0,``0,``0)
+  commentId: M:UndyneFight_Ex.MathUtil.InRange``1(``0,``0,``0)
+  isExternal: true
+  href: UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_InRange__1___0___0___0_
+  name: InRange<T>(T, T, T)
+  nameWithType: MathUtil.InRange<T>(T, T, T)
+  fullName: UndyneFight_Ex.MathUtil.InRange<T>(T, T, T)
+  nameWithType.vb: MathUtil.InRange(Of T)(T, T, T)
+  fullName.vb: UndyneFight_Ex.MathUtil.InRange(Of T)(T, T, T)
+  name.vb: InRange(Of T)(T, T, T)
+  spec.csharp:
+  - uid: UndyneFight_Ex.MathUtil.InRange``1(``0,``0,``0)
+    name: InRange
+    isExternal: true
+    href: UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_InRange__1___0___0___0_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.MathUtil.InRange``1(``0,``0,``0)
+    name: InRange
+    isExternal: true
+    href: UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_InRange__1___0___0___0_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+- uid: UndyneFight_Ex.MathUtil
+  commentId: T:UndyneFight_Ex.MathUtil
+  parent: UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.MathUtil.html
+  name: MathUtil
+  nameWithType: MathUtil
+  fullName: UndyneFight_Ex.MathUtil
+- uid: UndyneFight_Ex
+  commentId: N:UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex
+  nameWithType: UndyneFight_Ex
+  fullName: UndyneFight_Ex
+- uid: UndyneFight_Ex.SongSystem.SkillMark
+  commentId: T:UndyneFight_Ex.SongSystem.SkillMark
+  parent: UndyneFight_Ex.SongSystem
+  isExternal: true
+  href: UndyneFight_Ex.SongSystem.SkillMark.html
+  name: SkillMark
+  nameWithType: SkillMark
+  fullName: UndyneFight_Ex.SongSystem.SkillMark

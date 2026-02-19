@@ -1,0 +1,68 @@
+### YamlMime:ManagedReference
+items:
+- uid: UndyneFight_Ex.IO
+  commentId: N:UndyneFight_Ex.IO
+  id: UndyneFight_Ex.IO
+  children:
+  - UndyneFight_Ex.IO.FileIO
+  - UndyneFight_Ex.IO.IOEvent
+  - UndyneFight_Ex.IO.SaveInfo
+  langs:
+  - csharp
+  - vb
+  name: UndyneFight_Ex.IO
+  nameWithType: UndyneFight_Ex.IO
+  fullName: UndyneFight_Ex.IO
+  type: Namespace
+  assemblies:
+  - UndyneFight-Ex
+references:
+- uid: UndyneFight_Ex.IO.SaveInfo
+  commentId: T:UndyneFight_Ex.IO.SaveInfo
+  parent: UndyneFight_Ex.IO
+  isExternal: true
+  href: UndyneFight_Ex.IO.SaveInfo.html
+  name: SaveInfo
+  nameWithType: SaveInfo
+  fullName: UndyneFight_Ex.IO.SaveInfo
+- uid: UndyneFight_Ex.IO.IOEvent
+  commentId: T:UndyneFight_Ex.IO.IOEvent
+  isExternal: true
+  href: UndyneFight_Ex.IO.IOEvent.html
+  name: IOEvent
+  nameWithType: IOEvent
+  fullName: UndyneFight_Ex.IO.IOEvent
+- uid: UndyneFight_Ex.IO.FileIO
+  commentId: T:UndyneFight_Ex.IO.FileIO
+  isExternal: true
+  href: UndyneFight_Ex.IO.FileIO.html
+  name: FileIO
+  nameWithType: FileIO
+  fullName: UndyneFight_Ex.IO.FileIO
+- uid: UndyneFight_Ex.IO
+  commentId: N:UndyneFight_Ex.IO
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex.IO
+  nameWithType: UndyneFight_Ex.IO
+  fullName: UndyneFight_Ex.IO
+  spec.csharp:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.IO
+    name: IO
+    isExternal: true
+    href: UndyneFight_Ex.IO.html
+  spec.vb:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.IO
+    name: IO
+    isExternal: true
+    href: UndyneFight_Ex.IO.html

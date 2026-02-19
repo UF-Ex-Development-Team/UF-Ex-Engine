@@ -1,0 +1,10 @@
+- name: Introduction
+  href: introduction.md
+- name: C# Crash Course
+  href: Crash Course.md
+- name: Setting Up
+  href: Setting Up.md
+- name: Basic Charting
+  href: Basic Charting.md
+- name: Introduction to Effects
+  href: Introduction to Effects.md

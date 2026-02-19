@@ -1,0 +1,442 @@
+### YamlMime:ManagedReference
+items:
+- uid: UndyneFight_Ex.Entities.Advanced.BarrageExtend
+  commentId: T:UndyneFight_Ex.Entities.Advanced.BarrageExtend
+  id: BarrageExtend
+  parent: UndyneFight_Ex.Entities.Advanced
+  children:
+  - UndyneFight_Ex.Entities.Advanced.BarrageExtend.CreateShinyEffect(UndyneFight_Ex.Entities.Platform)
+  - UndyneFight_Ex.Entities.Advanced.BarrageExtend.Split(UndyneFight_Ex.Entities.Bone)
+  langs:
+  - csharp
+  - vb
+  name: BarrageExtend
+  nameWithType: BarrageExtend
+  fullName: UndyneFight_Ex.Entities.Advanced.BarrageExtend
+  type: Class
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities.Advanced
+  summary: Advanced barrage classes
+  example: []
+  syntax:
+    content: public static class BarrageExtend
+    content.vb: Public Module BarrageExtend
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+- uid: UndyneFight_Ex.Entities.Advanced.BarrageExtend.CreateShinyEffect(UndyneFight_Ex.Entities.Platform)
+  commentId: M:UndyneFight_Ex.Entities.Advanced.BarrageExtend.CreateShinyEffect(UndyneFight_Ex.Entities.Platform)
+  id: CreateShinyEffect(UndyneFight_Ex.Entities.Platform)
+  isExtensionMethod: true
+  parent: UndyneFight_Ex.Entities.Advanced.BarrageExtend
+  langs:
+  - csharp
+  - vb
+  name: CreateShinyEffect(Platform)
+  nameWithType: BarrageExtend.CreateShinyEffect(Platform)
+  fullName: UndyneFight_Ex.Entities.Advanced.BarrageExtend.CreateShinyEffect(UndyneFight_Ex.Entities.Platform)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities.Advanced
+  summary: Creates a platform fade out effect
+  example: []
+  syntax:
+    content: public static void CreateShinyEffect(this Platform pt)
+    parameters:
+    - id: pt
+      type: UndyneFight_Ex.Entities.Platform
+      description: The platform to create the effect of
+    content.vb: Public Shared Sub CreateShinyEffect(pt As Platform)
+  overload: UndyneFight_Ex.Entities.Advanced.BarrageExtend.CreateShinyEffect*
+- uid: UndyneFight_Ex.Entities.Advanced.BarrageExtend.Split(UndyneFight_Ex.Entities.Bone)
+  commentId: M:UndyneFight_Ex.Entities.Advanced.BarrageExtend.Split(UndyneFight_Ex.Entities.Bone)
+  id: Split(UndyneFight_Ex.Entities.Bone)
+  isExtensionMethod: true
+  parent: UndyneFight_Ex.Entities.Advanced.BarrageExtend
+  langs:
+  - csharp
+  - vb
+  name: Split(Bone)
+  nameWithType: BarrageExtend.Split(Bone)
+  fullName: UndyneFight_Ex.Entities.Advanced.BarrageExtend.Split(UndyneFight_Ex.Entities.Bone)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities.Advanced
+  summary: Splits the bone
+  example: []
+  syntax:
+    content: public static Bone[] Split(this Bone bone)
+    parameters:
+    - id: bone
+      type: UndyneFight_Ex.Entities.Bone
+      description: The bone to split
+    return:
+      type: UndyneFight_Ex.Entities.Bone[]
+      description: The split bones
+    content.vb: Public Shared Function Split(bone As Bone) As Bone()
+  overload: UndyneFight_Ex.Entities.Advanced.BarrageExtend.Split*
+references:
+- uid: UndyneFight_Ex.Entities.Advanced
+  commentId: N:UndyneFight_Ex.Entities.Advanced
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex.Entities.Advanced
+  nameWithType: UndyneFight_Ex.Entities.Advanced
+  fullName: UndyneFight_Ex.Entities.Advanced
+  spec.csharp:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities
+    name: Entities
+    isExternal: true
+    href: UndyneFight_Ex.Entities.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities.Advanced
+    name: Advanced
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Advanced.html
+  spec.vb:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities
+    name: Entities
+    isExternal: true
+    href: UndyneFight_Ex.Entities.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities.Advanced
+    name: Advanced
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Advanced.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UndyneFight_Ex.Entities.Advanced.BarrageExtend.CreateShinyEffect*
+  commentId: Overload:UndyneFight_Ex.Entities.Advanced.BarrageExtend.CreateShinyEffect
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Advanced.BarrageExtend.html#UndyneFight_Ex_Entities_Advanced_BarrageExtend_CreateShinyEffect_UndyneFight_Ex_Entities_Platform_
+  name: CreateShinyEffect
+  nameWithType: BarrageExtend.CreateShinyEffect
+  fullName: UndyneFight_Ex.Entities.Advanced.BarrageExtend.CreateShinyEffect
+- uid: UndyneFight_Ex.Entities.Platform
+  commentId: T:UndyneFight_Ex.Entities.Platform
+  parent: UndyneFight_Ex.Entities
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Platform.html
+  name: Platform
+  nameWithType: Platform
+  fullName: UndyneFight_Ex.Entities.Platform
+- uid: UndyneFight_Ex.Entities
+  commentId: N:UndyneFight_Ex.Entities
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex.Entities
+  nameWithType: UndyneFight_Ex.Entities
+  fullName: UndyneFight_Ex.Entities
+  spec.csharp:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities
+    name: Entities
+    isExternal: true
+    href: UndyneFight_Ex.Entities.html
+  spec.vb:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities
+    name: Entities
+    isExternal: true
+    href: UndyneFight_Ex.Entities.html
+- uid: UndyneFight_Ex.Entities.Advanced.BarrageExtend.Split*
+  commentId: Overload:UndyneFight_Ex.Entities.Advanced.BarrageExtend.Split
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Advanced.BarrageExtend.html#UndyneFight_Ex_Entities_Advanced_BarrageExtend_Split_UndyneFight_Ex_Entities_Bone_
+  name: Split
+  nameWithType: BarrageExtend.Split
+  fullName: UndyneFight_Ex.Entities.Advanced.BarrageExtend.Split
+- uid: UndyneFight_Ex.Entities.Bone
+  commentId: T:UndyneFight_Ex.Entities.Bone
+  parent: UndyneFight_Ex.Entities
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Bone.html
+  name: Bone
+  nameWithType: Bone
+  fullName: UndyneFight_Ex.Entities.Bone
+- uid: UndyneFight_Ex.Entities.Bone[]
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Bone.html
+  name: Bone[]
+  nameWithType: Bone[]
+  fullName: UndyneFight_Ex.Entities.Bone[]
+  nameWithType.vb: Bone()
+  fullName.vb: UndyneFight_Ex.Entities.Bone()
+  name.vb: Bone()
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entities.Bone
+    name: Bone
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Bone.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: UndyneFight_Ex.Entities.Bone
+    name: Bone
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Bone.html
+  - name: (
+  - name: )

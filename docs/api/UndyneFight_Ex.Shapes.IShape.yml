@@ -1,0 +1,306 @@
+### YamlMime:ManagedReference
+items:
+- uid: UndyneFight_Ex.Shapes.IShape
+  commentId: T:UndyneFight_Ex.Shapes.IShape
+  id: IShape
+  parent: UndyneFight_Ex.Shapes
+  children:
+  - UndyneFight_Ex.Shapes.IShape.Contains(UndyneFight_Ex.Shapes.IShape)
+  - UndyneFight_Ex.Shapes.IShape.Draw
+  - UndyneFight_Ex.Shapes.IShape.DrawData
+  - UndyneFight_Ex.Shapes.IShape.IntersectsWith(UndyneFight_Ex.Shapes.IShape)
+  - UndyneFight_Ex.Shapes.IShape.Rotation
+  - UndyneFight_Ex.Shapes.IShape.Vertices
+  langs:
+  - csharp
+  - vb
+  name: IShape
+  nameWithType: IShape
+  fullName: UndyneFight_Ex.Shapes.IShape
+  type: Interface
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Shapes
+  summary: Interface for shapes
+  example: []
+  syntax:
+    content: public interface IShape
+    content.vb: Public Interface IShape
+- uid: UndyneFight_Ex.Shapes.IShape.IntersectsWith(UndyneFight_Ex.Shapes.IShape)
+  commentId: M:UndyneFight_Ex.Shapes.IShape.IntersectsWith(UndyneFight_Ex.Shapes.IShape)
+  id: IntersectsWith(UndyneFight_Ex.Shapes.IShape)
+  parent: UndyneFight_Ex.Shapes.IShape
+  langs:
+  - csharp
+  - vb
+  name: IntersectsWith(IShape)
+  nameWithType: IShape.IntersectsWith(IShape)
+  fullName: UndyneFight_Ex.Shapes.IShape.IntersectsWith(UndyneFight_Ex.Shapes.IShape)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Shapes
+  summary: Whether this shape is intersecting with another shape
+  example: []
+  syntax:
+    content: bool IntersectsWith(IShape shape)
+    parameters:
+    - id: shape
+      type: UndyneFight_Ex.Shapes.IShape
+      description: The other shape
+    return:
+      type: System.Boolean
+      description: ''
+    content.vb: Function IntersectsWith(shape As IShape) As Boolean
+  overload: UndyneFight_Ex.Shapes.IShape.IntersectsWith*
+- uid: UndyneFight_Ex.Shapes.IShape.Contains(UndyneFight_Ex.Shapes.IShape)
+  commentId: M:UndyneFight_Ex.Shapes.IShape.Contains(UndyneFight_Ex.Shapes.IShape)
+  id: Contains(UndyneFight_Ex.Shapes.IShape)
+  parent: UndyneFight_Ex.Shapes.IShape
+  langs:
+  - csharp
+  - vb
+  name: Contains(IShape)
+  nameWithType: IShape.Contains(IShape)
+  fullName: UndyneFight_Ex.Shapes.IShape.Contains(UndyneFight_Ex.Shapes.IShape)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Shapes
+  summary: Whether this shape contains another shape
+  example: []
+  syntax:
+    content: bool Contains(IShape shape)
+    parameters:
+    - id: shape
+      type: UndyneFight_Ex.Shapes.IShape
+      description: The other shape
+    return:
+      type: System.Boolean
+      description: ''
+    content.vb: Function Contains(shape As IShape) As Boolean
+  overload: UndyneFight_Ex.Shapes.IShape.Contains*
+- uid: UndyneFight_Ex.Shapes.IShape.Draw
+  commentId: M:UndyneFight_Ex.Shapes.IShape.Draw
+  id: Draw
+  parent: UndyneFight_Ex.Shapes.IShape
+  langs:
+  - csharp
+  - vb
+  name: Draw()
+  nameWithType: IShape.Draw()
+  fullName: UndyneFight_Ex.Shapes.IShape.Draw()
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Shapes
+  summary: The drawing method of the shape
+  example: []
+  syntax:
+    content: void Draw()
+    content.vb: Sub Draw()
+  overload: UndyneFight_Ex.Shapes.IShape.Draw*
+- uid: UndyneFight_Ex.Shapes.IShape.Vertices
+  commentId: P:UndyneFight_Ex.Shapes.IShape.Vertices
+  id: Vertices
+  parent: UndyneFight_Ex.Shapes.IShape
+  langs:
+  - csharp
+  - vb
+  name: Vertices
+  nameWithType: IShape.Vertices
+  fullName: UndyneFight_Ex.Shapes.IShape.Vertices
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Shapes
+  summary: The list of vertices of the shape
+  example: []
+  syntax:
+    content: Vector2[] Vertices { get; set; }
+    parameters: []
+    return:
+      type: Microsoft.Xna.Framework.Vector2[]
+    content.vb: Property Vertices As Vector2()
+  overload: UndyneFight_Ex.Shapes.IShape.Vertices*
+- uid: UndyneFight_Ex.Shapes.IShape.Rotation
+  commentId: P:UndyneFight_Ex.Shapes.IShape.Rotation
+  id: Rotation
+  parent: UndyneFight_Ex.Shapes.IShape
+  langs:
+  - csharp
+  - vb
+  name: Rotation
+  nameWithType: IShape.Rotation
+  fullName: UndyneFight_Ex.Shapes.IShape.Rotation
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Shapes
+  summary: The rotation of the shape
+  example: []
+  syntax:
+    content: float Rotation { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Property Rotation As Single
+  overload: UndyneFight_Ex.Shapes.IShape.Rotation*
+- uid: UndyneFight_Ex.Shapes.IShape.DrawData
+  commentId: P:UndyneFight_Ex.Shapes.IShape.DrawData
+  id: DrawData
+  parent: UndyneFight_Ex.Shapes.IShape
+  langs:
+  - csharp
+  - vb
+  name: DrawData
+  nameWithType: IShape.DrawData
+  fullName: UndyneFight_Ex.Shapes.IShape.DrawData
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Shapes
+  summary: The data for drawing the shape
+  example: []
+  syntax:
+    content: DrawingData DrawData { get; set; }
+    parameters: []
+    return:
+      type: UndyneFight_Ex.Shapes.DrawingData
+    content.vb: Property DrawData As DrawingData
+  overload: UndyneFight_Ex.Shapes.IShape.DrawData*
+references:
+- uid: UndyneFight_Ex.Shapes
+  commentId: N:UndyneFight_Ex.Shapes
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex.Shapes
+  nameWithType: UndyneFight_Ex.Shapes
+  fullName: UndyneFight_Ex.Shapes
+  spec.csharp:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Shapes
+    name: Shapes
+    isExternal: true
+    href: UndyneFight_Ex.Shapes.html
+  spec.vb:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Shapes
+    name: Shapes
+    isExternal: true
+    href: UndyneFight_Ex.Shapes.html
+- uid: UndyneFight_Ex.Shapes.IShape.IntersectsWith*
+  commentId: Overload:UndyneFight_Ex.Shapes.IShape.IntersectsWith
+  isExternal: true
+  href: UndyneFight_Ex.Shapes.IShape.html#UndyneFight_Ex_Shapes_IShape_IntersectsWith_UndyneFight_Ex_Shapes_IShape_
+  name: IntersectsWith
+  nameWithType: IShape.IntersectsWith
+  fullName: UndyneFight_Ex.Shapes.IShape.IntersectsWith
+- uid: UndyneFight_Ex.Shapes.IShape
+  commentId: T:UndyneFight_Ex.Shapes.IShape
+  parent: UndyneFight_Ex.Shapes
+  isExternal: true
+  href: UndyneFight_Ex.Shapes.IShape.html
+  name: IShape
+  nameWithType: IShape
+  fullName: UndyneFight_Ex.Shapes.IShape
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UndyneFight_Ex.Shapes.IShape.Contains*
+  commentId: Overload:UndyneFight_Ex.Shapes.IShape.Contains
+  isExternal: true
+  href: UndyneFight_Ex.Shapes.IShape.html#UndyneFight_Ex_Shapes_IShape_Contains_UndyneFight_Ex_Shapes_IShape_
+  name: Contains
+  nameWithType: IShape.Contains
+  fullName: UndyneFight_Ex.Shapes.IShape.Contains
+- uid: UndyneFight_Ex.Shapes.IShape.Draw*
+  commentId: Overload:UndyneFight_Ex.Shapes.IShape.Draw
+  isExternal: true
+  href: UndyneFight_Ex.Shapes.IShape.html#UndyneFight_Ex_Shapes_IShape_Draw
+  name: Draw
+  nameWithType: IShape.Draw
+  fullName: UndyneFight_Ex.Shapes.IShape.Draw
+- uid: UndyneFight_Ex.Shapes.IShape.Vertices*
+  commentId: Overload:UndyneFight_Ex.Shapes.IShape.Vertices
+  isExternal: true
+  href: UndyneFight_Ex.Shapes.IShape.html#UndyneFight_Ex_Shapes_IShape_Vertices
+  name: Vertices
+  nameWithType: IShape.Vertices
+  fullName: UndyneFight_Ex.Shapes.IShape.Vertices
+- uid: Microsoft.Xna.Framework.Vector2[]
+  isExternal: true
+  name: Vector2[]
+  nameWithType: Vector2[]
+  fullName: Microsoft.Xna.Framework.Vector2[]
+  nameWithType.vb: Vector2()
+  fullName.vb: Microsoft.Xna.Framework.Vector2()
+  name.vb: Vector2()
+  spec.csharp:
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.Shapes.IShape.Rotation*
+  commentId: Overload:UndyneFight_Ex.Shapes.IShape.Rotation
+  isExternal: true
+  href: UndyneFight_Ex.Shapes.IShape.html#UndyneFight_Ex_Shapes_IShape_Rotation
+  name: Rotation
+  nameWithType: IShape.Rotation
+  fullName: UndyneFight_Ex.Shapes.IShape.Rotation
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: UndyneFight_Ex.Shapes.IShape.DrawData*
+  commentId: Overload:UndyneFight_Ex.Shapes.IShape.DrawData
+  isExternal: true
+  href: UndyneFight_Ex.Shapes.IShape.html#UndyneFight_Ex_Shapes_IShape_DrawData
+  name: DrawData
+  nameWithType: IShape.DrawData
+  fullName: UndyneFight_Ex.Shapes.IShape.DrawData
+- uid: UndyneFight_Ex.Shapes.DrawingData
+  commentId: T:UndyneFight_Ex.Shapes.DrawingData
+  parent: UndyneFight_Ex.Shapes
+  isExternal: true
+  href: UndyneFight_Ex.Shapes.DrawingData.html
+  name: DrawingData
+  nameWithType: DrawingData
+  fullName: UndyneFight_Ex.Shapes.DrawingData

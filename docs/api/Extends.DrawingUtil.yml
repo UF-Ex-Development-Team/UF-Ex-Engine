@@ -1,0 +1,1411 @@
+### YamlMime:ManagedReference
+items:
+- uid: Extends.DrawingUtil
+  commentId: T:Extends.DrawingUtil
+  id: DrawingUtil
+  parent: Extends
+  children:
+  - Extends.DrawingUtil.CreateTagLine(Extends.DrawingUtil.Linerotate,System.String)
+  - Extends.DrawingUtil.CreateTagLine(Extends.DrawingUtil.Linerotate,System.String[])
+  - Extends.DrawingUtil.CreateTagLine(Extends.DrawingUtil.Linerotatelong,System.String)
+  - Extends.DrawingUtil.CreateTagLine(Extends.DrawingUtil.NormalLine,System.String)
+  - Extends.DrawingUtil.CreateTagLine(Extends.DrawingUtil.NormalLine,System.String[])
+  - Extends.DrawingUtil.CrossBone(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,System.Single,System.Int32,System.Single)
+  - Extends.DrawingUtil.FadeScreen(System.Single,System.Single,System.Single,System.Nullable{Microsoft.Xna.Framework.Color})
+  - Extends.DrawingUtil.LerpGreenBox(System.Single,Microsoft.Xna.Framework.Vector2,System.Single)
+  - Extends.DrawingUtil.LerpScreenPos(System.Single,Microsoft.Xna.Framework.Vector2,System.Single)
+  - Extends.DrawingUtil.LerpScreenScale(System.Single,System.Single,System.Single)
+  - Extends.DrawingUtil.MinusScreenScale(System.Single,System.Single)
+  - Extends.DrawingUtil.PlusRotate(System.Single,System.Single)
+  - Extends.DrawingUtil.PlusScreenScale(System.Single,System.Single)
+  - Extends.DrawingUtil.Rain(System.Single,System.Single,System.Boolean)
+  - Extends.DrawingUtil.RotateSymmetricBack(System.Single,System.Single)
+  - Extends.DrawingUtil.RotateWithBack(System.Single,System.Single)
+  - Extends.DrawingUtil.ScreenAngle(System.Single,System.Single)
+  - Extends.DrawingUtil.SetScreenScale(System.Single,System.Single)
+  - Extends.DrawingUtil.Shock(System.Single,System.Single,System.Single)
+  - Extends.DrawingUtil.Shock(System.Single,System.Single,System.Single,System.Single)
+  langs:
+  - csharp
+  - vb
+  name: DrawingUtil
+  nameWithType: DrawingUtil
+  fullName: Extends.DrawingUtil
+  type: Class
+  assemblies:
+  - UndyneFight-Ex
+  namespace: Extends
+  summary: Utilities for drawing
+  example: []
+  syntax:
+    content: public static class DrawingUtil
+    content.vb: Public Module DrawingUtil
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+- uid: Extends.DrawingUtil.CrossBone(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,System.Single,System.Int32,System.Single)
+  commentId: M:Extends.DrawingUtil.CrossBone(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,System.Single,System.Int32,System.Single)
+  id: CrossBone(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,System.Single,System.Int32,System.Single)
+  parent: Extends.DrawingUtil
+  langs:
+  - csharp
+  - vb
+  name: CrossBone(Vector2, Vector2, float, float, int, float)
+  nameWithType: DrawingUtil.CrossBone(Vector2, Vector2, float, float, int, float)
+  fullName: Extends.DrawingUtil.CrossBone(Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, float, float, int, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: Extends
+  summary: Creates a list of bones with provided motion and rotation
+  example: []
+  syntax:
+    content: >-
+      [Obsolete("This function is the same as using a for loop to create multiple bones")]
+
+      public static void CrossBone(Vector2 start, Vector2 speed, float length, float num, int color = 0, float RotSpeed = 4)
+    parameters:
+    - id: start
+      type: Microsoft.Xna.Framework.Vector2
+      description: The initial position of the bones
+    - id: speed
+      type: Microsoft.Xna.Framework.Vector2
+      description: The speed of the bones
+    - id: length
+      type: System.Single
+      description: The length of the bones
+    - id: num
+      type: System.Single
+      description: The amount of bones
+    - id: color
+      type: System.Int32
+      description: The color of the bones
+    - id: RotSpeed
+      type: System.Single
+      description: The rotation speed of the bones (Default 4)
+    content.vb: >-
+      <Obsolete("This function is the same as using a for loop to create multiple bones")>
+
+      Public Shared Sub CrossBone(start As Vector2, speed As Vector2, length As Single, num As Single, color As Integer = 0, RotSpeed As Single = 4)
+  overload: Extends.DrawingUtil.CrossBone*
+  attributes:
+  - type: System.ObsoleteAttribute
+    ctor: System.ObsoleteAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: This function is the same as using a for loop to create multiple bones
+  nameWithType.vb: DrawingUtil.CrossBone(Vector2, Vector2, Single, Single, Integer, Single)
+  fullName.vb: Extends.DrawingUtil.CrossBone(Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, Single, Single, Integer, Single)
+  name.vb: CrossBone(Vector2, Vector2, Single, Single, Integer, Single)
+- uid: Extends.DrawingUtil.SetScreenScale(System.Single,System.Single)
+  commentId: M:Extends.DrawingUtil.SetScreenScale(System.Single,System.Single)
+  id: SetScreenScale(System.Single,System.Single)
+  parent: Extends.DrawingUtil
+  langs:
+  - csharp
+  - vb
+  name: SetScreenScale(float, float)
+  nameWithType: DrawingUtil.SetScreenScale(float, float)
+  fullName: Extends.DrawingUtil.SetScreenScale(float, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: Extends
+  summary: Sets the screen scale to the target size in the given duration using Quadratic easing (<xref href="UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.Quad" data-throw-if-not-resolved="false"></xref>)
+  example: []
+  syntax:
+    content: public static void SetScreenScale(float size, float duration)
+    parameters:
+    - id: size
+      type: System.Single
+      description: The target size of the screen
+    - id: duration
+      type: System.Single
+      description: The duration of the lerp
+    content.vb: Public Shared Sub SetScreenScale(size As Single, duration As Single)
+  overload: Extends.DrawingUtil.SetScreenScale*
+  nameWithType.vb: DrawingUtil.SetScreenScale(Single, Single)
+  fullName.vb: Extends.DrawingUtil.SetScreenScale(Single, Single)
+  name.vb: SetScreenScale(Single, Single)
+- uid: Extends.DrawingUtil.MinusScreenScale(System.Single,System.Single)
+  commentId: M:Extends.DrawingUtil.MinusScreenScale(System.Single,System.Single)
+  id: MinusScreenScale(System.Single,System.Single)
+  parent: Extends.DrawingUtil
+  langs:
+  - csharp
+  - vb
+  name: MinusScreenScale(float, float)
+  nameWithType: DrawingUtil.MinusScreenScale(float, float)
+  fullName: Extends.DrawingUtil.MinusScreenScale(float, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: Extends
+  syntax:
+    content: >-
+      [Obsolete("There are better functions")]
+
+      public static void MinusScreenScale(float MaxSize, float time)
+    parameters:
+    - id: MaxSize
+      type: System.Single
+    - id: time
+      type: System.Single
+    content.vb: >-
+      <Obsolete("There are better functions")>
+
+      Public Shared Sub MinusScreenScale(MaxSize As Single, time As Single)
+  overload: Extends.DrawingUtil.MinusScreenScale*
+  attributes:
+  - type: System.ObsoleteAttribute
+    ctor: System.ObsoleteAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: There are better functions
+  nameWithType.vb: DrawingUtil.MinusScreenScale(Single, Single)
+  fullName.vb: Extends.DrawingUtil.MinusScreenScale(Single, Single)
+  name.vb: MinusScreenScale(Single, Single)
+- uid: Extends.DrawingUtil.ScreenAngle(System.Single,System.Single)
+  commentId: M:Extends.DrawingUtil.ScreenAngle(System.Single,System.Single)
+  id: ScreenAngle(System.Single,System.Single)
+  parent: Extends.DrawingUtil
+  langs:
+  - csharp
+  - vb
+  name: ScreenAngle(float, float)
+  nameWithType: DrawingUtil.ScreenAngle(float, float)
+  fullName: Extends.DrawingUtil.ScreenAngle(float, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: Extends
+  summary: Sets the screen angle to the target angle in the given duration using Quadratic easing (<xref href="UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.Quad" data-throw-if-not-resolved="false"></xref>)
+  example: []
+  syntax:
+    content: public static void ScreenAngle(float angle, float time)
+    parameters:
+    - id: angle
+      type: System.Single
+      description: The target angle of the screen
+    - id: time
+      type: System.Single
+      description: The duration of the lerp
+    content.vb: Public Shared Sub ScreenAngle(angle As Single, time As Single)
+  overload: Extends.DrawingUtil.ScreenAngle*
+  nameWithType.vb: DrawingUtil.ScreenAngle(Single, Single)
+  fullName.vb: Extends.DrawingUtil.ScreenAngle(Single, Single)
+  name.vb: ScreenAngle(Single, Single)
+- uid: Extends.DrawingUtil.PlusRotate(System.Single,System.Single)
+  commentId: M:Extends.DrawingUtil.PlusRotate(System.Single,System.Single)
+  id: PlusRotate(System.Single,System.Single)
+  parent: Extends.DrawingUtil
+  langs:
+  - csharp
+  - vb
+  name: PlusRotate(float, float)
+  nameWithType: DrawingUtil.PlusRotate(float, float)
+  fullName: Extends.DrawingUtil.PlusRotate(float, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: Extends
+  syntax:
+    content: >-
+      [Obsolete("There are better functions")]
+
+      public static void PlusRotate(float MaxAngle, float time)
+    parameters:
+    - id: MaxAngle
+      type: System.Single
+    - id: time
+      type: System.Single
+    content.vb: >-
+      <Obsolete("There are better functions")>
+
+      Public Shared Sub PlusRotate(MaxAngle As Single, time As Single)
+  overload: Extends.DrawingUtil.PlusRotate*
+  attributes:
+  - type: System.ObsoleteAttribute
+    ctor: System.ObsoleteAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: There are better functions
+  nameWithType.vb: DrawingUtil.PlusRotate(Single, Single)
+  fullName.vb: Extends.DrawingUtil.PlusRotate(Single, Single)
+  name.vb: PlusRotate(Single, Single)
+- uid: Extends.DrawingUtil.PlusScreenScale(System.Single,System.Single)
+  commentId: M:Extends.DrawingUtil.PlusScreenScale(System.Single,System.Single)
+  id: PlusScreenScale(System.Single,System.Single)
+  parent: Extends.DrawingUtil
+  langs:
+  - csharp
+  - vb
+  name: PlusScreenScale(float, float)
+  nameWithType: DrawingUtil.PlusScreenScale(float, float)
+  fullName: Extends.DrawingUtil.PlusScreenScale(float, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: Extends
+  syntax:
+    content: >-
+      [Obsolete("There are better functions")]
+
+      public static void PlusScreenScale(float MaxSize, float time)
+    parameters:
+    - id: MaxSize
+      type: System.Single
+    - id: time
+      type: System.Single
+    content.vb: >-
+      <Obsolete("There are better functions")>
+
+      Public Shared Sub PlusScreenScale(MaxSize As Single, time As Single)
+  overload: Extends.DrawingUtil.PlusScreenScale*
+  attributes:
+  - type: System.ObsoleteAttribute
+    ctor: System.ObsoleteAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: There are better functions
+  nameWithType.vb: DrawingUtil.PlusScreenScale(Single, Single)
+  fullName.vb: Extends.DrawingUtil.PlusScreenScale(Single, Single)
+  name.vb: PlusScreenScale(Single, Single)
+- uid: Extends.DrawingUtil.Shock(System.Single,System.Single,System.Single)
+  commentId: M:Extends.DrawingUtil.Shock(System.Single,System.Single,System.Single)
+  id: Shock(System.Single,System.Single,System.Single)
+  parent: Extends.DrawingUtil
+  langs:
+  - csharp
+  - vb
+  name: Shock(float, float, float)
+  nameWithType: DrawingUtil.Shock(float, float, float)
+  fullName: Extends.DrawingUtil.Shock(float, float, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: Extends
+  summary: Shakes the screen
+  example: []
+  syntax:
+    content: public static void Shock(float interval = 2, float range = 2, float times = 4)
+    parameters:
+    - id: interval
+      type: System.Single
+      description: The interval between each shake (Default 2 frames)
+    - id: range
+      type: System.Single
+      description: The shake intensity (Default 2 pixels)
+    - id: times
+      type: System.Single
+      description: Times to shake (Default 4 times)
+    content.vb: Public Shared Sub Shock(interval As Single = 2, range As Single = 2, times As Single = 4)
+  overload: Extends.DrawingUtil.Shock*
+  nameWithType.vb: DrawingUtil.Shock(Single, Single, Single)
+  fullName.vb: Extends.DrawingUtil.Shock(Single, Single, Single)
+  name.vb: Shock(Single, Single, Single)
+- uid: Extends.DrawingUtil.Shock(System.Single,System.Single,System.Single,System.Single)
+  commentId: M:Extends.DrawingUtil.Shock(System.Single,System.Single,System.Single,System.Single)
+  id: Shock(System.Single,System.Single,System.Single,System.Single)
+  parent: Extends.DrawingUtil
+  langs:
+  - csharp
+  - vb
+  name: Shock(float, float, float, float)
+  nameWithType: DrawingUtil.Shock(float, float, float, float)
+  fullName: Extends.DrawingUtil.Shock(float, float, float, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: Extends
+  summary: Shakes the screen
+  example: []
+  syntax:
+    content: public static void Shock(float interval, float rangeX, float rangeY, float times)
+    parameters:
+    - id: interval
+      type: System.Single
+      description: The interval between each shake
+    - id: rangeX
+      type: System.Single
+      description: The shake intensity of the x-coordinate
+    - id: rangeY
+      type: System.Single
+      description: The shake intensity of the y-coordinate
+    - id: times
+      type: System.Single
+      description: Times to shake
+    content.vb: Public Shared Sub Shock(interval As Single, rangeX As Single, rangeY As Single, times As Single)
+  overload: Extends.DrawingUtil.Shock*
+  nameWithType.vb: DrawingUtil.Shock(Single, Single, Single, Single)
+  fullName.vb: Extends.DrawingUtil.Shock(Single, Single, Single, Single)
+  name.vb: Shock(Single, Single, Single, Single)
+- uid: Extends.DrawingUtil.Rain(System.Single,System.Single,System.Boolean)
+  commentId: M:Extends.DrawingUtil.Rain(System.Single,System.Single,System.Boolean)
+  id: Rain(System.Single,System.Single,System.Boolean)
+  parent: Extends.DrawingUtil
+  langs:
+  - csharp
+  - vb
+  name: Rain(float, float, bool)
+  nameWithType: DrawingUtil.Rain(float, float, bool)
+  fullName: Extends.DrawingUtil.Rain(float, float, bool)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: Extends
+  syntax:
+    content: >-
+      [Obsolete("There are better functions")]
+
+      public static void Rain(float speed, float rotate, bool way)
+    parameters:
+    - id: speed
+      type: System.Single
+    - id: rotate
+      type: System.Single
+    - id: way
+      type: System.Boolean
+    content.vb: >-
+      <Obsolete("There are better functions")>
+
+      Public Shared Sub Rain(speed As Single, rotate As Single, way As Boolean)
+  overload: Extends.DrawingUtil.Rain*
+  attributes:
+  - type: System.ObsoleteAttribute
+    ctor: System.ObsoleteAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: There are better functions
+  nameWithType.vb: DrawingUtil.Rain(Single, Single, Boolean)
+  fullName.vb: Extends.DrawingUtil.Rain(Single, Single, Boolean)
+  name.vb: Rain(Single, Single, Boolean)
+- uid: Extends.DrawingUtil.FadeScreen(System.Single,System.Single,System.Single,System.Nullable{Microsoft.Xna.Framework.Color})
+  commentId: M:Extends.DrawingUtil.FadeScreen(System.Single,System.Single,System.Single,System.Nullable{Microsoft.Xna.Framework.Color})
+  id: FadeScreen(System.Single,System.Single,System.Single,System.Nullable{Microsoft.Xna.Framework.Color})
+  parent: Extends.DrawingUtil
+  langs:
+  - csharp
+  - vb
+  name: FadeScreen(float, float, float, Color?)
+  nameWithType: DrawingUtil.FadeScreen(float, float, float, Color?)
+  fullName: Extends.DrawingUtil.FadeScreen(float, float, float, Microsoft.Xna.Framework.Color?)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: Extends
+  summary: Creates a screen fading in and out
+  example: []
+  syntax:
+    content: public static void FadeScreen(float inDuration, float duration, float outDuration, Color? color = null)
+    parameters:
+    - id: inDuration
+      type: System.Single
+      description: The duration for the screen to fade in
+    - id: duration
+      type: System.Single
+      description: The duration of the fade screen
+    - id: outDuration
+      type: System.Single
+      description: The duration for the screen to fade out
+    - id: color
+      type: System.Nullable{Microsoft.Xna.Framework.Color}
+      description: The color of the fading (Default black)
+    content.vb: Public Shared Sub FadeScreen(inDuration As Single, duration As Single, outDuration As Single, color As Color? = Nothing)
+  overload: Extends.DrawingUtil.FadeScreen*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: ''
+  nameWithType.vb: DrawingUtil.FadeScreen(Single, Single, Single, Color?)
+  fullName.vb: Extends.DrawingUtil.FadeScreen(Single, Single, Single, Microsoft.Xna.Framework.Color?)
+  name.vb: FadeScreen(Single, Single, Single, Color?)
+- uid: Extends.DrawingUtil.RotateWithBack(System.Single,System.Single)
+  commentId: M:Extends.DrawingUtil.RotateWithBack(System.Single,System.Single)
+  id: RotateWithBack(System.Single,System.Single)
+  parent: Extends.DrawingUtil
+  langs:
+  - csharp
+  - vb
+  name: RotateWithBack(float, float)
+  nameWithType: DrawingUtil.RotateWithBack(float, float)
+  fullName: Extends.DrawingUtil.RotateWithBack(float, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: Extends
+  summary: Rotates the camera and rotates back to origin
+  example: []
+  syntax:
+    content: public static void RotateWithBack(float duration, float range)
+    parameters:
+    - id: duration
+      type: System.Single
+      description: The duration of the rotations
+    - id: range
+      type: System.Single
+      description: The magnitude of the rotation
+    content.vb: Public Shared Sub RotateWithBack(duration As Single, range As Single)
+  overload: Extends.DrawingUtil.RotateWithBack*
+  nameWithType.vb: DrawingUtil.RotateWithBack(Single, Single)
+  fullName.vb: Extends.DrawingUtil.RotateWithBack(Single, Single)
+  name.vb: RotateWithBack(Single, Single)
+- uid: Extends.DrawingUtil.RotateSymmetricBack(System.Single,System.Single)
+  commentId: M:Extends.DrawingUtil.RotateSymmetricBack(System.Single,System.Single)
+  id: RotateSymmetricBack(System.Single,System.Single)
+  parent: Extends.DrawingUtil
+  langs:
+  - csharp
+  - vb
+  name: RotateSymmetricBack(float, float)
+  nameWithType: DrawingUtil.RotateSymmetricBack(float, float)
+  fullName: Extends.DrawingUtil.RotateSymmetricBack(float, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: Extends
+  summary: Rotates the camera and rotates it to the negation of it before rotating it to the origin (10 -&gt; 25 -&gt; -25 -&gt; 0)
+  example: []
+  syntax:
+    content: public static void RotateSymmetricBack(float duration, float range)
+    parameters:
+    - id: duration
+      type: System.Single
+      description: The duration of the rotations
+    - id: range
+      type: System.Single
+      description: The magnitude of the rotations
+    content.vb: Public Shared Sub RotateSymmetricBack(duration As Single, range As Single)
+  overload: Extends.DrawingUtil.RotateSymmetricBack*
+  nameWithType.vb: DrawingUtil.RotateSymmetricBack(Single, Single)
+  fullName.vb: Extends.DrawingUtil.RotateSymmetricBack(Single, Single)
+  name.vb: RotateSymmetricBack(Single, Single)
+- uid: Extends.DrawingUtil.LerpGreenBox(System.Single,Microsoft.Xna.Framework.Vector2,System.Single)
+  commentId: M:Extends.DrawingUtil.LerpGreenBox(System.Single,Microsoft.Xna.Framework.Vector2,System.Single)
+  id: LerpGreenBox(System.Single,Microsoft.Xna.Framework.Vector2,System.Single)
+  parent: Extends.DrawingUtil
+  langs:
+  - csharp
+  - vb
+  name: LerpGreenBox(float, Vector2, float)
+  nameWithType: DrawingUtil.LerpGreenBox(float, Vector2, float)
+  fullName: Extends.DrawingUtil.LerpGreenBox(float, Microsoft.Xna.Framework.Vector2, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: Extends
+  summary: Lerps the box and heart to green soul position (If the duration is shorter than the required lerp time, then the lerp will be incomplete. If the required lerp duration is shorter than the duration, then the lerp duration will be shortened)
+  example: []
+  syntax:
+    content: >-
+      [Obsolete("Use easing functions instead")]
+
+      public static void LerpGreenBox(float duration, Vector2 getto, float lerpcount)
+    parameters:
+    - id: duration
+      type: System.Single
+      description: The duration of the lerp
+    - id: getto
+      type: Microsoft.Xna.Framework.Vector2
+      description: The target position
+    - id: lerpcount
+      type: System.Single
+      description: The lerp amount
+    content.vb: >-
+      <Obsolete("Use easing functions instead")>
+
+      Public Shared Sub LerpGreenBox(duration As Single, getto As Vector2, lerpcount As Single)
+  overload: Extends.DrawingUtil.LerpGreenBox*
+  attributes:
+  - type: System.ObsoleteAttribute
+    ctor: System.ObsoleteAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Use easing functions instead
+  nameWithType.vb: DrawingUtil.LerpGreenBox(Single, Vector2, Single)
+  fullName.vb: Extends.DrawingUtil.LerpGreenBox(Single, Microsoft.Xna.Framework.Vector2, Single)
+  name.vb: LerpGreenBox(Single, Vector2, Single)
+- uid: Extends.DrawingUtil.LerpScreenPos(System.Single,Microsoft.Xna.Framework.Vector2,System.Single)
+  commentId: M:Extends.DrawingUtil.LerpScreenPos(System.Single,Microsoft.Xna.Framework.Vector2,System.Single)
+  id: LerpScreenPos(System.Single,Microsoft.Xna.Framework.Vector2,System.Single)
+  parent: Extends.DrawingUtil
+  langs:
+  - csharp
+  - vb
+  name: LerpScreenPos(float, Vector2, float)
+  nameWithType: DrawingUtil.LerpScreenPos(float, Vector2, float)
+  fullName: Extends.DrawingUtil.LerpScreenPos(float, Microsoft.Xna.Framework.Vector2, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: Extends
+  summary: Lerps the screen position (If the duration is shorter than the required lerp time, then the lerp will be incomplete. If the required lerp duration is shorter than the duration, then the lerp duration will be shortened)
+  example: []
+  syntax:
+    content: >-
+      [Obsolete("Use easing functions instead")]
+
+      public static void LerpScreenPos(float duration, Vector2 getto, float lerpcount)
+    parameters:
+    - id: duration
+      type: System.Single
+      description: The duration of the lerp
+    - id: getto
+      type: Microsoft.Xna.Framework.Vector2
+      description: The target position
+    - id: lerpcount
+      type: System.Single
+      description: The lerp amount
+    content.vb: >-
+      <Obsolete("Use easing functions instead")>
+
+      Public Shared Sub LerpScreenPos(duration As Single, getto As Vector2, lerpcount As Single)
+  overload: Extends.DrawingUtil.LerpScreenPos*
+  attributes:
+  - type: System.ObsoleteAttribute
+    ctor: System.ObsoleteAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Use easing functions instead
+  nameWithType.vb: DrawingUtil.LerpScreenPos(Single, Vector2, Single)
+  fullName.vb: Extends.DrawingUtil.LerpScreenPos(Single, Microsoft.Xna.Framework.Vector2, Single)
+  name.vb: LerpScreenPos(Single, Vector2, Single)
+- uid: Extends.DrawingUtil.LerpScreenScale(System.Single,System.Single,System.Single)
+  commentId: M:Extends.DrawingUtil.LerpScreenScale(System.Single,System.Single,System.Single)
+  id: LerpScreenScale(System.Single,System.Single,System.Single)
+  parent: Extends.DrawingUtil
+  langs:
+  - csharp
+  - vb
+  name: LerpScreenScale(float, float, float)
+  nameWithType: DrawingUtil.LerpScreenScale(float, float, float)
+  fullName: Extends.DrawingUtil.LerpScreenScale(float, float, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: Extends
+  summary: Lerps the screen scale (If the duration is shorter than the required lerp time, then the lerp will be incomplete. If the required lerp duration is shorter than the duration, then the lerp duration will be shortened)
+  example: []
+  syntax:
+    content: >-
+      [Obsolete("Use easing functions instead")]
+
+      public static void LerpScreenScale(float duration, float getto, float lerpcount)
+    parameters:
+    - id: duration
+      type: System.Single
+      description: The duration of the lerp
+    - id: getto
+      type: System.Single
+      description: The target position
+    - id: lerpcount
+      type: System.Single
+      description: The lerp amount
+    content.vb: >-
+      <Obsolete("Use easing functions instead")>
+
+      Public Shared Sub LerpScreenScale(duration As Single, getto As Single, lerpcount As Single)
+  overload: Extends.DrawingUtil.LerpScreenScale*
+  attributes:
+  - type: System.ObsoleteAttribute
+    ctor: System.ObsoleteAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Use easing functions instead
+  nameWithType.vb: DrawingUtil.LerpScreenScale(Single, Single, Single)
+  fullName.vb: Extends.DrawingUtil.LerpScreenScale(Single, Single, Single)
+  name.vb: LerpScreenScale(Single, Single, Single)
+- uid: Extends.DrawingUtil.CreateTagLine(Extends.DrawingUtil.Linerotate,System.String[])
+  commentId: M:Extends.DrawingUtil.CreateTagLine(Extends.DrawingUtil.Linerotate,System.String[])
+  id: CreateTagLine(Extends.DrawingUtil.Linerotate,System.String[])
+  parent: Extends.DrawingUtil
+  langs:
+  - csharp
+  - vb
+  name: CreateTagLine(Linerotate, string[])
+  nameWithType: DrawingUtil.CreateTagLine(DrawingUtil.Linerotate, string[])
+  fullName: Extends.DrawingUtil.CreateTagLine(Extends.DrawingUtil.Linerotate, string[])
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: Extends
+  syntax:
+    content: >-
+      [Obsolete("Use Line")]
+
+      public static void CreateTagLine(DrawingUtil.Linerotate Line, string[] Tags)
+    parameters:
+    - id: Line
+      type: Extends.DrawingUtil.Linerotate
+    - id: Tags
+      type: System.String[]
+    content.vb: >-
+      <Obsolete("Use Line")>
+
+      Public Shared Sub CreateTagLine(Line As DrawingUtil.Linerotate, Tags As String())
+  overload: Extends.DrawingUtil.CreateTagLine*
+  attributes:
+  - type: System.ObsoleteAttribute
+    ctor: System.ObsoleteAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Use Line
+  nameWithType.vb: DrawingUtil.CreateTagLine(DrawingUtil.Linerotate, String())
+  fullName.vb: Extends.DrawingUtil.CreateTagLine(Extends.DrawingUtil.Linerotate, String())
+  name.vb: CreateTagLine(Linerotate, String())
+- uid: Extends.DrawingUtil.CreateTagLine(Extends.DrawingUtil.Linerotate,System.String)
+  commentId: M:Extends.DrawingUtil.CreateTagLine(Extends.DrawingUtil.Linerotate,System.String)
+  id: CreateTagLine(Extends.DrawingUtil.Linerotate,System.String)
+  parent: Extends.DrawingUtil
+  langs:
+  - csharp
+  - vb
+  name: CreateTagLine(Linerotate, string)
+  nameWithType: DrawingUtil.CreateTagLine(DrawingUtil.Linerotate, string)
+  fullName: Extends.DrawingUtil.CreateTagLine(Extends.DrawingUtil.Linerotate, string)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: Extends
+  syntax:
+    content: >-
+      [Obsolete("Use Line")]
+
+      public static void CreateTagLine(DrawingUtil.Linerotate Line, string Tag)
+    parameters:
+    - id: Line
+      type: Extends.DrawingUtil.Linerotate
+    - id: Tag
+      type: System.String
+    content.vb: >-
+      <Obsolete("Use Line")>
+
+      Public Shared Sub CreateTagLine(Line As DrawingUtil.Linerotate, Tag As String)
+  overload: Extends.DrawingUtil.CreateTagLine*
+  attributes:
+  - type: System.ObsoleteAttribute
+    ctor: System.ObsoleteAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Use Line
+  nameWithType.vb: DrawingUtil.CreateTagLine(DrawingUtil.Linerotate, String)
+  fullName.vb: Extends.DrawingUtil.CreateTagLine(Extends.DrawingUtil.Linerotate, String)
+  name.vb: CreateTagLine(Linerotate, String)
+- uid: Extends.DrawingUtil.CreateTagLine(Extends.DrawingUtil.Linerotatelong,System.String)
+  commentId: M:Extends.DrawingUtil.CreateTagLine(Extends.DrawingUtil.Linerotatelong,System.String)
+  id: CreateTagLine(Extends.DrawingUtil.Linerotatelong,System.String)
+  parent: Extends.DrawingUtil
+  langs:
+  - csharp
+  - vb
+  name: CreateTagLine(Linerotatelong, string)
+  nameWithType: DrawingUtil.CreateTagLine(DrawingUtil.Linerotatelong, string)
+  fullName: Extends.DrawingUtil.CreateTagLine(Extends.DrawingUtil.Linerotatelong, string)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: Extends
+  syntax:
+    content: >-
+      [Obsolete("Use Line")]
+
+      public static void CreateTagLine(DrawingUtil.Linerotatelong Line, string Tag)
+    parameters:
+    - id: Line
+      type: Extends.DrawingUtil.Linerotatelong
+    - id: Tag
+      type: System.String
+    content.vb: >-
+      <Obsolete("Use Line")>
+
+      Public Shared Sub CreateTagLine(Line As DrawingUtil.Linerotatelong, Tag As String)
+  overload: Extends.DrawingUtil.CreateTagLine*
+  attributes:
+  - type: System.ObsoleteAttribute
+    ctor: System.ObsoleteAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Use Line
+  nameWithType.vb: DrawingUtil.CreateTagLine(DrawingUtil.Linerotatelong, String)
+  fullName.vb: Extends.DrawingUtil.CreateTagLine(Extends.DrawingUtil.Linerotatelong, String)
+  name.vb: CreateTagLine(Linerotatelong, String)
+- uid: Extends.DrawingUtil.CreateTagLine(Extends.DrawingUtil.NormalLine,System.String[])
+  commentId: M:Extends.DrawingUtil.CreateTagLine(Extends.DrawingUtil.NormalLine,System.String[])
+  id: CreateTagLine(Extends.DrawingUtil.NormalLine,System.String[])
+  parent: Extends.DrawingUtil
+  langs:
+  - csharp
+  - vb
+  name: CreateTagLine(NormalLine, string[])
+  nameWithType: DrawingUtil.CreateTagLine(DrawingUtil.NormalLine, string[])
+  fullName: Extends.DrawingUtil.CreateTagLine(Extends.DrawingUtil.NormalLine, string[])
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: Extends
+  syntax:
+    content: >-
+      [Obsolete("Use Line")]
+
+      public static void CreateTagLine(DrawingUtil.NormalLine Line, string[] Tags)
+    parameters:
+    - id: Line
+      type: Extends.DrawingUtil.NormalLine
+    - id: Tags
+      type: System.String[]
+    content.vb: >-
+      <Obsolete("Use Line")>
+
+      Public Shared Sub CreateTagLine(Line As DrawingUtil.NormalLine, Tags As String())
+  overload: Extends.DrawingUtil.CreateTagLine*
+  attributes:
+  - type: System.ObsoleteAttribute
+    ctor: System.ObsoleteAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Use Line
+  nameWithType.vb: DrawingUtil.CreateTagLine(DrawingUtil.NormalLine, String())
+  fullName.vb: Extends.DrawingUtil.CreateTagLine(Extends.DrawingUtil.NormalLine, String())
+  name.vb: CreateTagLine(NormalLine, String())
+- uid: Extends.DrawingUtil.CreateTagLine(Extends.DrawingUtil.NormalLine,System.String)
+  commentId: M:Extends.DrawingUtil.CreateTagLine(Extends.DrawingUtil.NormalLine,System.String)
+  id: CreateTagLine(Extends.DrawingUtil.NormalLine,System.String)
+  parent: Extends.DrawingUtil
+  langs:
+  - csharp
+  - vb
+  name: CreateTagLine(NormalLine, string)
+  nameWithType: DrawingUtil.CreateTagLine(DrawingUtil.NormalLine, string)
+  fullName: Extends.DrawingUtil.CreateTagLine(Extends.DrawingUtil.NormalLine, string)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: Extends
+  syntax:
+    content: >-
+      [Obsolete("Use Line")]
+
+      public static void CreateTagLine(DrawingUtil.NormalLine Line, string Tag)
+    parameters:
+    - id: Line
+      type: Extends.DrawingUtil.NormalLine
+    - id: Tag
+      type: System.String
+    content.vb: >-
+      <Obsolete("Use Line")>
+
+      Public Shared Sub CreateTagLine(Line As DrawingUtil.NormalLine, Tag As String)
+  overload: Extends.DrawingUtil.CreateTagLine*
+  attributes:
+  - type: System.ObsoleteAttribute
+    ctor: System.ObsoleteAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Use Line
+  nameWithType.vb: DrawingUtil.CreateTagLine(DrawingUtil.NormalLine, String)
+  fullName.vb: Extends.DrawingUtil.CreateTagLine(Extends.DrawingUtil.NormalLine, String)
+  name.vb: CreateTagLine(NormalLine, String)
+references:
+- uid: Extends
+  commentId: N:Extends
+  isExternal: true
+  href: Extends.html
+  name: Extends
+  nameWithType: Extends
+  fullName: Extends
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Extends.DrawingUtil.CrossBone*
+  commentId: Overload:Extends.DrawingUtil.CrossBone
+  isExternal: true
+  href: Extends.DrawingUtil.html#Extends_DrawingUtil_CrossBone_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_System_Single_System_Single_System_Int32_System_Single_
+  name: CrossBone
+  nameWithType: DrawingUtil.CrossBone
+  fullName: Extends.DrawingUtil.CrossBone
+- uid: Microsoft.Xna.Framework.Vector2
+  commentId: T:Microsoft.Xna.Framework.Vector2
+  parent: Microsoft.Xna.Framework
+  isExternal: true
+  name: Vector2
+  nameWithType: Vector2
+  fullName: Microsoft.Xna.Framework.Vector2
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Microsoft.Xna.Framework
+  commentId: N:Microsoft.Xna.Framework
+  isExternal: true
+  name: Microsoft.Xna.Framework
+  nameWithType: Microsoft.Xna.Framework
+  fullName: Microsoft.Xna.Framework
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.Quad
+  commentId: F:UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.Quad
+  isExternal: true
+  href: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.html#UndyneFight_Ex_Entities_SimplifiedEasing_EaseState_Quad
+  name: Quad
+  nameWithType: SimplifiedEasing.EaseState.Quad
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.Quad
+- uid: Extends.DrawingUtil.SetScreenScale*
+  commentId: Overload:Extends.DrawingUtil.SetScreenScale
+  isExternal: true
+  href: Extends.DrawingUtil.html#Extends_DrawingUtil_SetScreenScale_System_Single_System_Single_
+  name: SetScreenScale
+  nameWithType: DrawingUtil.SetScreenScale
+  fullName: Extends.DrawingUtil.SetScreenScale
+- uid: Extends.DrawingUtil.MinusScreenScale*
+  commentId: Overload:Extends.DrawingUtil.MinusScreenScale
+  isExternal: true
+  href: Extends.DrawingUtil.html#Extends_DrawingUtil_MinusScreenScale_System_Single_System_Single_
+  name: MinusScreenScale
+  nameWithType: DrawingUtil.MinusScreenScale
+  fullName: Extends.DrawingUtil.MinusScreenScale
+- uid: Extends.DrawingUtil.ScreenAngle*
+  commentId: Overload:Extends.DrawingUtil.ScreenAngle
+  isExternal: true
+  href: Extends.DrawingUtil.html#Extends_DrawingUtil_ScreenAngle_System_Single_System_Single_
+  name: ScreenAngle
+  nameWithType: DrawingUtil.ScreenAngle
+  fullName: Extends.DrawingUtil.ScreenAngle
+- uid: Extends.DrawingUtil.PlusRotate*
+  commentId: Overload:Extends.DrawingUtil.PlusRotate
+  isExternal: true
+  href: Extends.DrawingUtil.html#Extends_DrawingUtil_PlusRotate_System_Single_System_Single_
+  name: PlusRotate
+  nameWithType: DrawingUtil.PlusRotate
+  fullName: Extends.DrawingUtil.PlusRotate
+- uid: Extends.DrawingUtil.PlusScreenScale*
+  commentId: Overload:Extends.DrawingUtil.PlusScreenScale
+  isExternal: true
+  href: Extends.DrawingUtil.html#Extends_DrawingUtil_PlusScreenScale_System_Single_System_Single_
+  name: PlusScreenScale
+  nameWithType: DrawingUtil.PlusScreenScale
+  fullName: Extends.DrawingUtil.PlusScreenScale
+- uid: Extends.DrawingUtil.Shock*
+  commentId: Overload:Extends.DrawingUtil.Shock
+  isExternal: true
+  href: Extends.DrawingUtil.html#Extends_DrawingUtil_Shock_System_Single_System_Single_System_Single_
+  name: Shock
+  nameWithType: DrawingUtil.Shock
+  fullName: Extends.DrawingUtil.Shock
+- uid: Extends.DrawingUtil.Rain*
+  commentId: Overload:Extends.DrawingUtil.Rain
+  isExternal: true
+  href: Extends.DrawingUtil.html#Extends_DrawingUtil_Rain_System_Single_System_Single_System_Boolean_
+  name: Rain
+  nameWithType: DrawingUtil.Rain
+  fullName: Extends.DrawingUtil.Rain
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.ArgumentOutOfRangeException
+  commentId: T:System.ArgumentOutOfRangeException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception
+  name: ArgumentOutOfRangeException
+  nameWithType: ArgumentOutOfRangeException
+  fullName: System.ArgumentOutOfRangeException
+- uid: Extends.DrawingUtil.FadeScreen*
+  commentId: Overload:Extends.DrawingUtil.FadeScreen
+  isExternal: true
+  href: Extends.DrawingUtil.html#Extends_DrawingUtil_FadeScreen_System_Single_System_Single_System_Single_System_Nullable_Microsoft_Xna_Framework_Color__
+  name: FadeScreen
+  nameWithType: DrawingUtil.FadeScreen
+  fullName: Extends.DrawingUtil.FadeScreen
+- uid: System.Nullable{Microsoft.Xna.Framework.Color}
+  commentId: T:System.Nullable{Microsoft.Xna.Framework.Color}
+  parent: System
+  definition: System.Nullable`1
+  name: Color?
+  nameWithType: Color?
+  fullName: Microsoft.Xna.Framework.Color?
+  spec.csharp:
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: '?'
+  spec.vb:
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Extends.DrawingUtil.RotateWithBack*
+  commentId: Overload:Extends.DrawingUtil.RotateWithBack
+  isExternal: true
+  href: Extends.DrawingUtil.html#Extends_DrawingUtil_RotateWithBack_System_Single_System_Single_
+  name: RotateWithBack
+  nameWithType: DrawingUtil.RotateWithBack
+  fullName: Extends.DrawingUtil.RotateWithBack
+- uid: Extends.DrawingUtil.RotateSymmetricBack*
+  commentId: Overload:Extends.DrawingUtil.RotateSymmetricBack
+  isExternal: true
+  href: Extends.DrawingUtil.html#Extends_DrawingUtil_RotateSymmetricBack_System_Single_System_Single_
+  name: RotateSymmetricBack
+  nameWithType: DrawingUtil.RotateSymmetricBack
+  fullName: Extends.DrawingUtil.RotateSymmetricBack
+- uid: Extends.DrawingUtil.LerpGreenBox*
+  commentId: Overload:Extends.DrawingUtil.LerpGreenBox
+  isExternal: true
+  href: Extends.DrawingUtil.html#Extends_DrawingUtil_LerpGreenBox_System_Single_Microsoft_Xna_Framework_Vector2_System_Single_
+  name: LerpGreenBox
+  nameWithType: DrawingUtil.LerpGreenBox
+  fullName: Extends.DrawingUtil.LerpGreenBox
+- uid: Extends.DrawingUtil.LerpScreenPos*
+  commentId: Overload:Extends.DrawingUtil.LerpScreenPos
+  isExternal: true
+  href: Extends.DrawingUtil.html#Extends_DrawingUtil_LerpScreenPos_System_Single_Microsoft_Xna_Framework_Vector2_System_Single_
+  name: LerpScreenPos
+  nameWithType: DrawingUtil.LerpScreenPos
+  fullName: Extends.DrawingUtil.LerpScreenPos
+- uid: Extends.DrawingUtil.LerpScreenScale*
+  commentId: Overload:Extends.DrawingUtil.LerpScreenScale
+  isExternal: true
+  href: Extends.DrawingUtil.html#Extends_DrawingUtil_LerpScreenScale_System_Single_System_Single_System_Single_
+  name: LerpScreenScale
+  nameWithType: DrawingUtil.LerpScreenScale
+  fullName: Extends.DrawingUtil.LerpScreenScale
+- uid: Extends.DrawingUtil.CreateTagLine*
+  commentId: Overload:Extends.DrawingUtil.CreateTagLine
+  isExternal: true
+  href: Extends.DrawingUtil.html#Extends_DrawingUtil_CreateTagLine_Extends_DrawingUtil_Linerotate_System_String___
+  name: CreateTagLine
+  nameWithType: DrawingUtil.CreateTagLine
+  fullName: Extends.DrawingUtil.CreateTagLine
+- uid: Extends.DrawingUtil.Linerotate
+  commentId: T:Extends.DrawingUtil.Linerotate
+  parent: Extends
+  isExternal: true
+  href: Extends.DrawingUtil.html
+  name: DrawingUtil.Linerotate
+  nameWithType: DrawingUtil.Linerotate
+  fullName: Extends.DrawingUtil.Linerotate
+  spec.csharp:
+  - uid: Extends.DrawingUtil
+    name: DrawingUtil
+    isExternal: true
+    href: Extends.DrawingUtil.html
+  - name: .
+  - uid: Extends.DrawingUtil.Linerotate
+    name: Linerotate
+    isExternal: true
+    href: Extends.DrawingUtil.Linerotate.html
+  spec.vb:
+  - uid: Extends.DrawingUtil
+    name: DrawingUtil
+    isExternal: true
+    href: Extends.DrawingUtil.html
+  - name: .
+  - uid: Extends.DrawingUtil.Linerotate
+    name: Linerotate
+    isExternal: true
+    href: Extends.DrawingUtil.Linerotate.html
+- uid: System.String[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string[]
+  nameWithType: string[]
+  fullName: string[]
+  nameWithType.vb: String()
+  fullName.vb: String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
+  - name: )
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Extends.DrawingUtil.Linerotatelong
+  commentId: T:Extends.DrawingUtil.Linerotatelong
+  parent: Extends
+  isExternal: true
+  href: Extends.DrawingUtil.html
+  name: DrawingUtil.Linerotatelong
+  nameWithType: DrawingUtil.Linerotatelong
+  fullName: Extends.DrawingUtil.Linerotatelong
+  spec.csharp:
+  - uid: Extends.DrawingUtil
+    name: DrawingUtil
+    isExternal: true
+    href: Extends.DrawingUtil.html
+  - name: .
+  - uid: Extends.DrawingUtil.Linerotatelong
+    name: Linerotatelong
+    isExternal: true
+    href: Extends.DrawingUtil.Linerotatelong.html
+  spec.vb:
+  - uid: Extends.DrawingUtil
+    name: DrawingUtil
+    isExternal: true
+    href: Extends.DrawingUtil.html
+  - name: .
+  - uid: Extends.DrawingUtil.Linerotatelong
+    name: Linerotatelong
+    isExternal: true
+    href: Extends.DrawingUtil.Linerotatelong.html
+- uid: Extends.DrawingUtil.NormalLine
+  commentId: T:Extends.DrawingUtil.NormalLine
+  parent: Extends
+  isExternal: true
+  href: Extends.DrawingUtil.html
+  name: DrawingUtil.NormalLine
+  nameWithType: DrawingUtil.NormalLine
+  fullName: Extends.DrawingUtil.NormalLine
+  spec.csharp:
+  - uid: Extends.DrawingUtil
+    name: DrawingUtil
+    isExternal: true
+    href: Extends.DrawingUtil.html
+  - name: .
+  - uid: Extends.DrawingUtil.NormalLine
+    name: NormalLine
+    isExternal: true
+    href: Extends.DrawingUtil.NormalLine.html
+  spec.vb:
+  - uid: Extends.DrawingUtil
+    name: DrawingUtil
+    isExternal: true
+    href: Extends.DrawingUtil.html
+  - name: .
+  - uid: Extends.DrawingUtil.NormalLine
+    name: NormalLine
+    isExternal: true
+    href: Extends.DrawingUtil.NormalLine.html

@@ -1,0 +1,2880 @@
+### YamlMime:ManagedReference
+items:
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder
+  commentId: T:UndyneFight_Ex.MiscUtil.TextBuilder
+  id: MiscUtil.TextBuilder
+  parent: UndyneFight_Ex
+  children:
+  - UndyneFight_Ex.MiscUtil.TextBuilder.#ctor(System.String,UndyneFight_Ex.MiscUtil.TextTyper,System.Char,System.Char)
+  - UndyneFight_Ex.MiscUtil.TextBuilder.Align
+  - UndyneFight_Ex.MiscUtil.TextBuilder.Align(System.Nullable{UndyneFight_Ex.MiscUtil.TextBuilder.TextHAlignment},System.Nullable{UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment})
+  - UndyneFight_Ex.MiscUtil.TextBuilder.AutoRender
+  - UndyneFight_Ex.MiscUtil.TextBuilder.Blend
+  - UndyneFight_Ex.MiscUtil.TextBuilder.Blend(Microsoft.Xna.Framework.Color)
+  - UndyneFight_Ex.MiscUtil.TextBuilder.Blend(Microsoft.Xna.Framework.Color[])
+  - UndyneFight_Ex.MiscUtil.TextBuilder.Build
+  - UndyneFight_Ex.MiscUtil.TextBuilder.DefineFont(System.String,UndyneFight_Ex.GLFont)
+  - UndyneFight_Ex.MiscUtil.TextBuilder.DefineGlobalFont(System.String,UndyneFight_Ex.GLFont)
+  - UndyneFight_Ex.MiscUtil.TextBuilder.DefineGlobalTexture(System.String,Microsoft.Xna.Framework.Graphics.Texture2D)
+  - UndyneFight_Ex.MiscUtil.TextBuilder.DefineTexture(System.String,Microsoft.Xna.Framework.Graphics.Texture2D)
+  - UndyneFight_Ex.MiscUtil.TextBuilder.Dispose
+  - UndyneFight_Ex.MiscUtil.TextBuilder.Draw
+  - UndyneFight_Ex.MiscUtil.TextBuilder.Font(UndyneFight_Ex.GLFont)
+  - UndyneFight_Ex.MiscUtil.TextBuilder.Overwrite(System.String)
+  - UndyneFight_Ex.MiscUtil.TextBuilder.Position
+  - UndyneFight_Ex.MiscUtil.TextBuilder.Position(Microsoft.Xna.Framework.Vector2)
+  - UndyneFight_Ex.MiscUtil.TextBuilder.Position(System.Single,System.Single)
+  - UndyneFight_Ex.MiscUtil.TextBuilder.Render
+  - UndyneFight_Ex.MiscUtil.TextBuilder.Scale
+  - UndyneFight_Ex.MiscUtil.TextBuilder.Scale(Microsoft.Xna.Framework.Vector2)
+  - UndyneFight_Ex.MiscUtil.TextBuilder.TextTyper
+  - UndyneFight_Ex.MiscUtil.TextBuilder.TextTyper(UndyneFight_Ex.MiscUtil.TextTyper)
+  - UndyneFight_Ex.MiscUtil.TextBuilder.Update
+  - UndyneFight_Ex.MiscUtil.TextBuilder.Wrap(System.Single,System.Boolean)
+  langs:
+  - csharp
+  - vb
+  name: MiscUtil.TextBuilder
+  nameWithType: MiscUtil.TextBuilder
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder
+  type: Class
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: >-
+    <p>A text builder that allows text formatting on the fly</p>
+
+    <p>Use '[[' for displaying '[' and '\b' for displaying ']'</p>
+  example: []
+  syntax:
+    content: 'public class MiscUtil.TextBuilder : Entity'
+    content.vb: Public Class MiscUtil.TextBuilder Inherits Entity
+  inheritance:
+  - System.Object
+  - UndyneFight_Ex.GameObject
+  - UndyneFight_Ex.Entity
+  inheritedMembers:
+  - UndyneFight_Ex.Entity.controlLayer
+  - UndyneFight_Ex.Entity.collidingBox
+  - UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Vector2)
+  - UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Rectangle},Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Graphics.SpriteEffects)
+  - UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,UndyneFight_Ex.CollideRect,Microsoft.Xna.Framework.Color)
+  - UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Color)
+  - UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single,System.Single,Microsoft.Xna.Framework.Vector2)
+  - UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Vector2)
+  - UndyneFight_Ex.Entity.GeneralDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Vector2},System.Single,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{UndyneFight_Ex.CollideRect},System.Nullable{UndyneFight_Ex.CollideRect},System.Nullable{System.Single})
+  - UndyneFight_Ex.Entity.CreateShinyEffect(System.Nullable{Microsoft.Xna.Framework.Color},Microsoft.Xna.Framework.Graphics.Texture2D)
+  - UndyneFight_Ex.Entity.CreateRetentionEffect(System.Single,System.Nullable{Microsoft.Xna.Framework.Color})
+  - UndyneFight_Ex.Entity.Visible
+  - UndyneFight_Ex.Entity.AngleMode
+  - UndyneFight_Ex.Entity.SpriteBatch
+  - UndyneFight_Ex.Entity.Depth
+  - UndyneFight_Ex.Entity.ImageCentre
+  - UndyneFight_Ex.Entity.Image
+  - UndyneFight_Ex.Entity.Rotation
+  - UndyneFight_Ex.Entity.CollidingBox
+  - UndyneFight_Ex.Entity.Centre
+  - UndyneFight_Ex.Entity.DrawOptimize
+  - UndyneFight_Ex.GameObject.ContainTag(System.String)
+  - UndyneFight_Ex.GameObject.Broadcast(System.String)
+  - UndyneFight_Ex.GameObject.TryDetect(System.String)
+  - UndyneFight_Ex.GameObject.HasTag
+  - UndyneFight_Ex.GameObject.Start
+  - UndyneFight_Ex.GameObject.TreeUpdate
+  - UndyneFight_Ex.GameObject.Kill
+  - UndyneFight_Ex.GameObject.AddChild(UndyneFight_Ex.GameObject)
+  - UndyneFight_Ex.GameObject.Reverse
+  - UndyneFight_Ex.GameObject.GetDrawableTree
+  - UndyneFight_Ex.GameObject.UpdateChildren
+  - UndyneFight_Ex.GameObject.ChildrenUpdateFirst
+  - UndyneFight_Ex.GameObject.CurrentScene
+  - UndyneFight_Ex.GameObject.CurrentFightingScene
+  - UndyneFight_Ex.GameObject.UpdateIn120
+  - UndyneFight_Ex.GameObject.BeingUpdated
+  - UndyneFight_Ex.GameObject.UpdateEnabled
+  - UndyneFight_Ex.GameObject.CrossScene
+  - UndyneFight_Ex.GameObject.Tags
+  - UndyneFight_Ex.GameObject.Extras
+  - UndyneFight_Ex.GameObject.ChildObjects
+  - UndyneFight_Ex.GameObject.Disposed
+  - UndyneFight_Ex.GameObject.FatherObject
+  - UndyneFight_Ex.GameObject.OnDispose
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.AutoRender
+  commentId: F:UndyneFight_Ex.MiscUtil.TextBuilder.AutoRender
+  id: AutoRender
+  parent: UndyneFight_Ex.MiscUtil.TextBuilder
+  langs:
+  - csharp
+  - vb
+  name: AutoRender
+  nameWithType: MiscUtil.TextBuilder.AutoRender
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.AutoRender
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Whether the rendering process will be done automatically or requires <xref href="UndyneFight_Ex.MiscUtil.TextBuilder.Render" data-throw-if-not-resolved="false"></xref> to render
+  example: []
+  syntax:
+    content: public bool AutoRender
+    return:
+      type: System.Boolean
+    content.vb: Public AutoRender As Boolean
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.#ctor(System.String,UndyneFight_Ex.MiscUtil.TextTyper,System.Char,System.Char)
+  commentId: M:UndyneFight_Ex.MiscUtil.TextBuilder.#ctor(System.String,UndyneFight_Ex.MiscUtil.TextTyper,System.Char,System.Char)
+  id: '#ctor(System.String,UndyneFight_Ex.MiscUtil.TextTyper,System.Char,System.Char)'
+  parent: UndyneFight_Ex.MiscUtil.TextBuilder
+  langs:
+  - csharp
+  - vb
+  name: TextBuilder(string, TextTyper, char, char)
+  nameWithType: MiscUtil.TextBuilder.TextBuilder(string, MiscUtil.TextTyper, char, char)
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.TextBuilder(string, UndyneFight_Ex.MiscUtil.TextTyper, char, char)
+  type: Constructor
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: >-
+    <p>A text builder that allows text formatting on the fly</p>
+
+    <p>Use '[[' for displaying '[' and '\b' for displaying ']'</p>
+  example: []
+  syntax:
+    content: public TextBuilder(string text, MiscUtil.TextTyper typer = null, char tag_start = '[', char tag_end = ']')
+    parameters:
+    - id: text
+      type: System.String
+      description: The text to display with format commands
+    - id: typer
+      type: UndyneFight_Ex.MiscUtil.TextTyper
+      description: The text typer class to associate (Can be null)
+    - id: tag_start
+      type: System.Char
+      description: The char for tag start, default '['
+    - id: tag_end
+      type: System.Char
+      description: The char for tag end, default ']'
+    content.vb: Public Sub New(text As String, typer As MiscUtil.TextTyper = Nothing, tag_start As Char = "["c, tag_end As Char = "]"c)
+  overload: UndyneFight_Ex.MiscUtil.TextBuilder.#ctor*
+  nameWithType.vb: MiscUtil.TextBuilder.New(String, MiscUtil.TextTyper, Char, Char)
+  fullName.vb: UndyneFight_Ex.MiscUtil.TextBuilder.New(String, UndyneFight_Ex.MiscUtil.TextTyper, Char, Char)
+  name.vb: New(String, TextTyper, Char, Char)
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.Update
+  commentId: M:UndyneFight_Ex.MiscUtil.TextBuilder.Update
+  id: Update
+  parent: UndyneFight_Ex.MiscUtil.TextBuilder
+  langs:
+  - csharp
+  - vb
+  name: Update()
+  nameWithType: MiscUtil.TextBuilder.Update()
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.Update()
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: The logic to run each frame
+  example: []
+  syntax:
+    content: public override void Update()
+    content.vb: Public Overrides Sub Update()
+  overridden: UndyneFight_Ex.GameObject.Update
+  overload: UndyneFight_Ex.MiscUtil.TextBuilder.Update*
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.Draw
+  commentId: M:UndyneFight_Ex.MiscUtil.TextBuilder.Draw
+  id: Draw
+  parent: UndyneFight_Ex.MiscUtil.TextBuilder
+  langs:
+  - csharp
+  - vb
+  name: Draw()
+  nameWithType: MiscUtil.TextBuilder.Draw()
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.Draw()
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: The rendering logic of the entity
+  example: []
+  syntax:
+    content: public override void Draw()
+    content.vb: Public Overrides Sub Draw()
+  overridden: UndyneFight_Ex.Entity.Draw
+  overload: UndyneFight_Ex.MiscUtil.TextBuilder.Draw*
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.Overwrite(System.String)
+  commentId: M:UndyneFight_Ex.MiscUtil.TextBuilder.Overwrite(System.String)
+  id: Overwrite(System.String)
+  parent: UndyneFight_Ex.MiscUtil.TextBuilder
+  langs:
+  - csharp
+  - vb
+  name: Overwrite(string)
+  nameWithType: MiscUtil.TextBuilder.Overwrite(string)
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.Overwrite(string)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Overwrites the text in the text builder (Automatically rebuilds, may cause lag spike)
+  example: []
+  syntax:
+    content: public MiscUtil.TextBuilder Overwrite(string text)
+    parameters:
+    - id: text
+      type: System.String
+      description: The new text to draw
+    return:
+      type: UndyneFight_Ex.MiscUtil.TextBuilder
+      description: ''
+    content.vb: Public Function Overwrite(text As String) As MiscUtil.TextBuilder
+  overload: UndyneFight_Ex.MiscUtil.TextBuilder.Overwrite*
+  nameWithType.vb: MiscUtil.TextBuilder.Overwrite(String)
+  fullName.vb: UndyneFight_Ex.MiscUtil.TextBuilder.Overwrite(String)
+  name.vb: Overwrite(String)
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.Build
+  commentId: M:UndyneFight_Ex.MiscUtil.TextBuilder.Build
+  id: Build
+  parent: UndyneFight_Ex.MiscUtil.TextBuilder
+  langs:
+  - csharp
+  - vb
+  name: Build()
+  nameWithType: MiscUtil.TextBuilder.Build()
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.Build()
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Builds the text for text rendering
+  example: []
+  syntax:
+    content: public MiscUtil.TextBuilder Build()
+    return:
+      type: UndyneFight_Ex.MiscUtil.TextBuilder
+      description: ''
+    content.vb: Public Function Build() As MiscUtil.TextBuilder
+  overload: UndyneFight_Ex.MiscUtil.TextBuilder.Build*
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.Position
+  commentId: M:UndyneFight_Ex.MiscUtil.TextBuilder.Position
+  id: Position
+  parent: UndyneFight_Ex.MiscUtil.TextBuilder
+  langs:
+  - csharp
+  - vb
+  name: Position()
+  nameWithType: MiscUtil.TextBuilder.Position()
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.Position()
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Gets the position of the text
+  example: []
+  syntax:
+    content: public Vector2 Position()
+    return:
+      type: Microsoft.Xna.Framework.Vector2
+      description: The position of the text
+    content.vb: Public Function Position() As Vector2
+  overload: UndyneFight_Ex.MiscUtil.TextBuilder.Position*
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.Position(Microsoft.Xna.Framework.Vector2)
+  commentId: M:UndyneFight_Ex.MiscUtil.TextBuilder.Position(Microsoft.Xna.Framework.Vector2)
+  id: Position(Microsoft.Xna.Framework.Vector2)
+  parent: UndyneFight_Ex.MiscUtil.TextBuilder
+  langs:
+  - csharp
+  - vb
+  name: Position(Vector2)
+  nameWithType: MiscUtil.TextBuilder.Position(Vector2)
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.Position(Microsoft.Xna.Framework.Vector2)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Sets the position of the text
+  example: []
+  syntax:
+    content: public MiscUtil.TextBuilder Position(Vector2 position)
+    parameters:
+    - id: position
+      type: Microsoft.Xna.Framework.Vector2
+      description: The position of the text to set to
+    return:
+      type: UndyneFight_Ex.MiscUtil.TextBuilder
+      description: ''
+    content.vb: Public Function Position(position As Vector2) As MiscUtil.TextBuilder
+  overload: UndyneFight_Ex.MiscUtil.TextBuilder.Position*
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.Position(System.Single,System.Single)
+  commentId: M:UndyneFight_Ex.MiscUtil.TextBuilder.Position(System.Single,System.Single)
+  id: Position(System.Single,System.Single)
+  parent: UndyneFight_Ex.MiscUtil.TextBuilder
+  langs:
+  - csharp
+  - vb
+  name: Position(float, float)
+  nameWithType: MiscUtil.TextBuilder.Position(float, float)
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.Position(float, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Sets the position of the text
+  example: []
+  syntax:
+    content: public MiscUtil.TextBuilder Position(float x, float y)
+    parameters:
+    - id: x
+      type: System.Single
+      description: The x coordinate of the position
+    - id: y
+      type: System.Single
+      description: The y coordinate of the position
+    return:
+      type: UndyneFight_Ex.MiscUtil.TextBuilder
+      description: ''
+    content.vb: Public Function Position(x As Single, y As Single) As MiscUtil.TextBuilder
+  overload: UndyneFight_Ex.MiscUtil.TextBuilder.Position*
+  nameWithType.vb: MiscUtil.TextBuilder.Position(Single, Single)
+  fullName.vb: UndyneFight_Ex.MiscUtil.TextBuilder.Position(Single, Single)
+  name.vb: Position(Single, Single)
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.Align
+  commentId: M:UndyneFight_Ex.MiscUtil.TextBuilder.Align
+  id: Align
+  parent: UndyneFight_Ex.MiscUtil.TextBuilder
+  langs:
+  - csharp
+  - vb
+  name: Align()
+  nameWithType: MiscUtil.TextBuilder.Align()
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.Align()
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Gets the current text alignment
+  example: []
+  syntax:
+    content: public (MiscUtil.TextBuilder.TextHAlignment HAlign, MiscUtil.TextBuilder.TextVAlignment VAlign) Align()
+    return:
+      type: System.ValueTuple{UndyneFight_Ex.MiscUtil.TextBuilder.TextHAlignment,UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment}
+      description: The (Horizontal, Vertical) alignment
+    content.vb: Public Function Align() As (HAlign As MiscUtil.TextBuilder.TextHAlignment, VAlign As MiscUtil.TextBuilder.TextVAlignment)
+  overload: UndyneFight_Ex.MiscUtil.TextBuilder.Align*
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.Align(System.Nullable{UndyneFight_Ex.MiscUtil.TextBuilder.TextHAlignment},System.Nullable{UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment})
+  commentId: M:UndyneFight_Ex.MiscUtil.TextBuilder.Align(System.Nullable{UndyneFight_Ex.MiscUtil.TextBuilder.TextHAlignment},System.Nullable{UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment})
+  id: Align(System.Nullable{UndyneFight_Ex.MiscUtil.TextBuilder.TextHAlignment},System.Nullable{UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment})
+  parent: UndyneFight_Ex.MiscUtil.TextBuilder
+  langs:
+  - csharp
+  - vb
+  name: Align(TextHAlignment?, TextVAlignment?)
+  nameWithType: MiscUtil.TextBuilder.Align(MiscUtil.TextBuilder.TextHAlignment?, MiscUtil.TextBuilder.TextVAlignment?)
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.Align(UndyneFight_Ex.MiscUtil.TextBuilder.TextHAlignment?, UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment?)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Sets the alignment of the text
+  example: []
+  syntax:
+    content: public MiscUtil.TextBuilder Align(MiscUtil.TextBuilder.TextHAlignment? halignment = null, MiscUtil.TextBuilder.TextVAlignment? valignment = null)
+    parameters:
+    - id: halignment
+      type: System.Nullable{UndyneFight_Ex.MiscUtil.TextBuilder.TextHAlignment}
+      description: The horizontal alignment to set to
+    - id: valignment
+      type: System.Nullable{UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment}
+      description: The vertical alignment to set to
+    return:
+      type: UndyneFight_Ex.MiscUtil.TextBuilder
+      description: ''
+    content.vb: Public Function Align(halignment As MiscUtil.TextBuilder.TextHAlignment? = Nothing, valignment As MiscUtil.TextBuilder.TextVAlignment? = Nothing) As MiscUtil.TextBuilder
+  overload: UndyneFight_Ex.MiscUtil.TextBuilder.Align*
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.Scale
+  commentId: M:UndyneFight_Ex.MiscUtil.TextBuilder.Scale
+  id: Scale
+  parent: UndyneFight_Ex.MiscUtil.TextBuilder
+  langs:
+  - csharp
+  - vb
+  name: Scale()
+  nameWithType: MiscUtil.TextBuilder.Scale()
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.Scale()
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Gets the current scale of the text
+  example: []
+  syntax:
+    content: public Vector2 Scale()
+    return:
+      type: Microsoft.Xna.Framework.Vector2
+      description: ''
+    content.vb: Public Function Scale() As Vector2
+  overload: UndyneFight_Ex.MiscUtil.TextBuilder.Scale*
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.Scale(Microsoft.Xna.Framework.Vector2)
+  commentId: M:UndyneFight_Ex.MiscUtil.TextBuilder.Scale(Microsoft.Xna.Framework.Vector2)
+  id: Scale(Microsoft.Xna.Framework.Vector2)
+  parent: UndyneFight_Ex.MiscUtil.TextBuilder
+  langs:
+  - csharp
+  - vb
+  name: Scale(Vector2)
+  nameWithType: MiscUtil.TextBuilder.Scale(Vector2)
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.Scale(Microsoft.Xna.Framework.Vector2)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Sets the scale of the text
+  example: []
+  syntax:
+    content: public MiscUtil.TextBuilder Scale(Vector2 scale)
+    parameters:
+    - id: scale
+      type: Microsoft.Xna.Framework.Vector2
+      description: The scale to set to
+    return:
+      type: UndyneFight_Ex.MiscUtil.TextBuilder
+      description: ''
+    content.vb: Public Function Scale(scale As Vector2) As MiscUtil.TextBuilder
+  overload: UndyneFight_Ex.MiscUtil.TextBuilder.Scale*
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.Blend
+  commentId: M:UndyneFight_Ex.MiscUtil.TextBuilder.Blend
+  id: Blend
+  parent: UndyneFight_Ex.MiscUtil.TextBuilder
+  langs:
+  - csharp
+  - vb
+  name: Blend()
+  nameWithType: MiscUtil.TextBuilder.Blend()
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.Blend()
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Gets the default blend of the text
+  example: []
+  syntax:
+    content: public Color[] Blend()
+    return:
+      type: Microsoft.Xna.Framework.Color[]
+      description: ''
+    content.vb: Public Function Blend() As Color()
+  overload: UndyneFight_Ex.MiscUtil.TextBuilder.Blend*
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.Blend(Microsoft.Xna.Framework.Color)
+  commentId: M:UndyneFight_Ex.MiscUtil.TextBuilder.Blend(Microsoft.Xna.Framework.Color)
+  id: Blend(Microsoft.Xna.Framework.Color)
+  parent: UndyneFight_Ex.MiscUtil.TextBuilder
+  langs:
+  - csharp
+  - vb
+  name: Blend(Color)
+  nameWithType: MiscUtil.TextBuilder.Blend(Color)
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.Blend(Microsoft.Xna.Framework.Color)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Sets the default color of the text
+  example: []
+  syntax:
+    content: public MiscUtil.TextBuilder Blend(Color color)
+    parameters:
+    - id: color
+      type: Microsoft.Xna.Framework.Color
+      description: The color to set to
+    return:
+      type: UndyneFight_Ex.MiscUtil.TextBuilder
+      description: ''
+    content.vb: Public Function Blend(color As Color) As MiscUtil.TextBuilder
+  overload: UndyneFight_Ex.MiscUtil.TextBuilder.Blend*
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.Blend(Microsoft.Xna.Framework.Color[])
+  commentId: M:UndyneFight_Ex.MiscUtil.TextBuilder.Blend(Microsoft.Xna.Framework.Color[])
+  id: Blend(Microsoft.Xna.Framework.Color[])
+  parent: UndyneFight_Ex.MiscUtil.TextBuilder
+  langs:
+  - csharp
+  - vb
+  name: Blend(Color[])
+  nameWithType: MiscUtil.TextBuilder.Blend(Color[])
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.Blend(Microsoft.Xna.Framework.Color[])
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Sets the default color blend of the text
+  example: []
+  syntax:
+    content: public MiscUtil.TextBuilder Blend(Color[] color)
+    parameters:
+    - id: color
+      type: Microsoft.Xna.Framework.Color[]
+      description: The color blend to set to
+    return:
+      type: UndyneFight_Ex.MiscUtil.TextBuilder
+      description: ''
+    content.vb: Public Function Blend(color As Color()) As MiscUtil.TextBuilder
+  overload: UndyneFight_Ex.MiscUtil.TextBuilder.Blend*
+  nameWithType.vb: MiscUtil.TextBuilder.Blend(Color())
+  fullName.vb: UndyneFight_Ex.MiscUtil.TextBuilder.Blend(Microsoft.Xna.Framework.Color())
+  name.vb: Blend(Color())
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.Font(UndyneFight_Ex.GLFont)
+  commentId: M:UndyneFight_Ex.MiscUtil.TextBuilder.Font(UndyneFight_Ex.GLFont)
+  id: Font(UndyneFight_Ex.GLFont)
+  parent: UndyneFight_Ex.MiscUtil.TextBuilder
+  langs:
+  - csharp
+  - vb
+  name: Font(GLFont)
+  nameWithType: MiscUtil.TextBuilder.Font(GLFont)
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.Font(UndyneFight_Ex.GLFont)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Sets the default font of the text
+  example: []
+  syntax:
+    content: public MiscUtil.TextBuilder Font(GLFont font)
+    parameters:
+    - id: font
+      type: UndyneFight_Ex.GLFont
+      description: The font to set to
+    return:
+      type: UndyneFight_Ex.MiscUtil.TextBuilder
+      description: ''
+    content.vb: Public Function Font(font As GLFont) As MiscUtil.TextBuilder
+  overload: UndyneFight_Ex.MiscUtil.TextBuilder.Font*
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.DefineTexture(System.String,Microsoft.Xna.Framework.Graphics.Texture2D)
+  commentId: M:UndyneFight_Ex.MiscUtil.TextBuilder.DefineTexture(System.String,Microsoft.Xna.Framework.Graphics.Texture2D)
+  id: DefineTexture(System.String,Microsoft.Xna.Framework.Graphics.Texture2D)
+  parent: UndyneFight_Ex.MiscUtil.TextBuilder
+  langs:
+  - csharp
+  - vb
+  name: DefineTexture(string, Texture2D)
+  nameWithType: MiscUtil.TextBuilder.DefineTexture(string, Texture2D)
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.DefineTexture(string, Microsoft.Xna.Framework.Graphics.Texture2D)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Defines a custom texture for this <xref href="UndyneFight_Ex.MiscUtil.TextBuilder" data-throw-if-not-resolved="false"></xref> with the given name
+  example: []
+  syntax:
+    content: public MiscUtil.TextBuilder DefineTexture(string key, Texture2D texture)
+    parameters:
+    - id: key
+      type: System.String
+      description: The name of the texture to draw in-line
+    - id: texture
+      type: Microsoft.Xna.Framework.Graphics.Texture2D
+      description: The texture to draw
+    return:
+      type: UndyneFight_Ex.MiscUtil.TextBuilder
+      description: ''
+    content.vb: Public Function DefineTexture(key As String, texture As Texture2D) As MiscUtil.TextBuilder
+  overload: UndyneFight_Ex.MiscUtil.TextBuilder.DefineTexture*
+  nameWithType.vb: MiscUtil.TextBuilder.DefineTexture(String, Texture2D)
+  fullName.vb: UndyneFight_Ex.MiscUtil.TextBuilder.DefineTexture(String, Microsoft.Xna.Framework.Graphics.Texture2D)
+  name.vb: DefineTexture(String, Texture2D)
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.DefineGlobalTexture(System.String,Microsoft.Xna.Framework.Graphics.Texture2D)
+  commentId: M:UndyneFight_Ex.MiscUtil.TextBuilder.DefineGlobalTexture(System.String,Microsoft.Xna.Framework.Graphics.Texture2D)
+  id: DefineGlobalTexture(System.String,Microsoft.Xna.Framework.Graphics.Texture2D)
+  parent: UndyneFight_Ex.MiscUtil.TextBuilder
+  langs:
+  - csharp
+  - vb
+  name: DefineGlobalTexture(string, Texture2D)
+  nameWithType: MiscUtil.TextBuilder.DefineGlobalTexture(string, Texture2D)
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.DefineGlobalTexture(string, Microsoft.Xna.Framework.Graphics.Texture2D)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Defines a custom texture with the given name
+  example: []
+  syntax:
+    content: public MiscUtil.TextBuilder DefineGlobalTexture(string key, Texture2D texture)
+    parameters:
+    - id: key
+      type: System.String
+      description: The name of the texture to draw in-line
+    - id: texture
+      type: Microsoft.Xna.Framework.Graphics.Texture2D
+      description: The texture to draw
+    return:
+      type: UndyneFight_Ex.MiscUtil.TextBuilder
+      description: ''
+    content.vb: Public Function DefineGlobalTexture(key As String, texture As Texture2D) As MiscUtil.TextBuilder
+  overload: UndyneFight_Ex.MiscUtil.TextBuilder.DefineGlobalTexture*
+  nameWithType.vb: MiscUtil.TextBuilder.DefineGlobalTexture(String, Texture2D)
+  fullName.vb: UndyneFight_Ex.MiscUtil.TextBuilder.DefineGlobalTexture(String, Microsoft.Xna.Framework.Graphics.Texture2D)
+  name.vb: DefineGlobalTexture(String, Texture2D)
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.DefineFont(System.String,UndyneFight_Ex.GLFont)
+  commentId: M:UndyneFight_Ex.MiscUtil.TextBuilder.DefineFont(System.String,UndyneFight_Ex.GLFont)
+  id: DefineFont(System.String,UndyneFight_Ex.GLFont)
+  parent: UndyneFight_Ex.MiscUtil.TextBuilder
+  langs:
+  - csharp
+  - vb
+  name: DefineFont(string, GLFont)
+  nameWithType: MiscUtil.TextBuilder.DefineFont(string, GLFont)
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.DefineFont(string, UndyneFight_Ex.GLFont)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Defines a custom font for this <xref href="UndyneFight_Ex.MiscUtil.TextBuilder" data-throw-if-not-resolved="false"></xref> with the given name
+  example: []
+  syntax:
+    content: public MiscUtil.TextBuilder DefineFont(string key, GLFont font)
+    parameters:
+    - id: key
+      type: System.String
+      description: The name of the font to draw in-line
+    - id: font
+      type: UndyneFight_Ex.GLFont
+      description: The font to draw
+    return:
+      type: UndyneFight_Ex.MiscUtil.TextBuilder
+      description: ''
+    content.vb: Public Function DefineFont(key As String, font As GLFont) As MiscUtil.TextBuilder
+  overload: UndyneFight_Ex.MiscUtil.TextBuilder.DefineFont*
+  nameWithType.vb: MiscUtil.TextBuilder.DefineFont(String, GLFont)
+  fullName.vb: UndyneFight_Ex.MiscUtil.TextBuilder.DefineFont(String, UndyneFight_Ex.GLFont)
+  name.vb: DefineFont(String, GLFont)
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.DefineGlobalFont(System.String,UndyneFight_Ex.GLFont)
+  commentId: M:UndyneFight_Ex.MiscUtil.TextBuilder.DefineGlobalFont(System.String,UndyneFight_Ex.GLFont)
+  id: DefineGlobalFont(System.String,UndyneFight_Ex.GLFont)
+  parent: UndyneFight_Ex.MiscUtil.TextBuilder
+  langs:
+  - csharp
+  - vb
+  name: DefineGlobalFont(string, GLFont)
+  nameWithType: MiscUtil.TextBuilder.DefineGlobalFont(string, GLFont)
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.DefineGlobalFont(string, UndyneFight_Ex.GLFont)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Defines a custom font with the given name
+  example: []
+  syntax:
+    content: public MiscUtil.TextBuilder DefineGlobalFont(string key, GLFont font)
+    parameters:
+    - id: key
+      type: System.String
+      description: The name of the font to draw in-line
+    - id: font
+      type: UndyneFight_Ex.GLFont
+      description: The font to draw
+    return:
+      type: UndyneFight_Ex.MiscUtil.TextBuilder
+      description: ''
+    content.vb: Public Function DefineGlobalFont(key As String, font As GLFont) As MiscUtil.TextBuilder
+  overload: UndyneFight_Ex.MiscUtil.TextBuilder.DefineGlobalFont*
+  nameWithType.vb: MiscUtil.TextBuilder.DefineGlobalFont(String, GLFont)
+  fullName.vb: UndyneFight_Ex.MiscUtil.TextBuilder.DefineGlobalFont(String, UndyneFight_Ex.GLFont)
+  name.vb: DefineGlobalFont(String, GLFont)
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.Wrap(System.Single,System.Boolean)
+  commentId: M:UndyneFight_Ex.MiscUtil.TextBuilder.Wrap(System.Single,System.Boolean)
+  id: Wrap(System.Single,System.Boolean)
+  parent: UndyneFight_Ex.MiscUtil.TextBuilder
+  langs:
+  - csharp
+  - vb
+  name: Wrap(float, bool)
+  nameWithType: MiscUtil.TextBuilder.Wrap(float, bool)
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.Wrap(float, bool)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Wraps the text typer
+  example: []
+  syntax:
+    content: public MiscUtil.TextBuilder Wrap(float lineWidth, bool ignoreSpace = false)
+    parameters:
+    - id: lineWidth
+      type: System.Single
+      description: Max width the line can be
+    - id: ignoreSpace
+      type: System.Boolean
+      description: Whether spaces are ignored
+    return:
+      type: UndyneFight_Ex.MiscUtil.TextBuilder
+      description: ''
+    content.vb: Public Function Wrap(lineWidth As Single, ignoreSpace As Boolean = False) As MiscUtil.TextBuilder
+  overload: UndyneFight_Ex.MiscUtil.TextBuilder.Wrap*
+  nameWithType.vb: MiscUtil.TextBuilder.Wrap(Single, Boolean)
+  fullName.vb: UndyneFight_Ex.MiscUtil.TextBuilder.Wrap(Single, Boolean)
+  name.vb: Wrap(Single, Boolean)
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.TextTyper
+  commentId: M:UndyneFight_Ex.MiscUtil.TextBuilder.TextTyper
+  id: TextTyper
+  parent: UndyneFight_Ex.MiscUtil.TextBuilder
+  langs:
+  - csharp
+  - vb
+  name: TextTyper()
+  nameWithType: MiscUtil.TextBuilder.TextTyper()
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.TextTyper()
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Gets the <xref href="UndyneFight_Ex.MiscUtil.TextTyper" data-throw-if-not-resolved="false"></xref> of this instance
+  example: []
+  syntax:
+    content: public MiscUtil.TextTyper TextTyper()
+    return:
+      type: UndyneFight_Ex.MiscUtil.TextTyper
+      description: ''
+    content.vb: Public Function TextTyper() As MiscUtil.TextTyper
+  overload: UndyneFight_Ex.MiscUtil.TextBuilder.TextTyper*
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.TextTyper(UndyneFight_Ex.MiscUtil.TextTyper)
+  commentId: M:UndyneFight_Ex.MiscUtil.TextBuilder.TextTyper(UndyneFight_Ex.MiscUtil.TextTyper)
+  id: TextTyper(UndyneFight_Ex.MiscUtil.TextTyper)
+  parent: UndyneFight_Ex.MiscUtil.TextBuilder
+  langs:
+  - csharp
+  - vb
+  name: TextTyper(TextTyper)
+  nameWithType: MiscUtil.TextBuilder.TextTyper(MiscUtil.TextTyper)
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.TextTyper(UndyneFight_Ex.MiscUtil.TextTyper)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Sets the text typer
+  example: []
+  syntax:
+    content: public MiscUtil.TextBuilder TextTyper(MiscUtil.TextTyper typer)
+    parameters:
+    - id: typer
+      type: UndyneFight_Ex.MiscUtil.TextTyper
+      description: The typer to set to
+    return:
+      type: UndyneFight_Ex.MiscUtil.TextBuilder
+      description: ''
+    content.vb: Public Function TextTyper(typer As MiscUtil.TextTyper) As MiscUtil.TextBuilder
+  overload: UndyneFight_Ex.MiscUtil.TextBuilder.TextTyper*
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.Render
+  commentId: M:UndyneFight_Ex.MiscUtil.TextBuilder.Render
+  id: Render
+  parent: UndyneFight_Ex.MiscUtil.TextBuilder
+  langs:
+  - csharp
+  - vb
+  name: Render()
+  nameWithType: MiscUtil.TextBuilder.Render()
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.Render()
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Renders the text if <xref href="UndyneFight_Ex.MiscUtil.TextBuilder.AutoRender" data-throw-if-not-resolved="false"></xref> is false
+  example: []
+  syntax:
+    content: public void Render()
+    content.vb: Public Sub Render()
+  overload: UndyneFight_Ex.MiscUtil.TextBuilder.Render*
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.Dispose
+  commentId: M:UndyneFight_Ex.MiscUtil.TextBuilder.Dispose
+  id: Dispose
+  parent: UndyneFight_Ex.MiscUtil.TextBuilder
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: MiscUtil.TextBuilder.Dispose()
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.Dispose()
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Disposes the object
+  example: []
+  syntax:
+    content: public override void Dispose()
+    content.vb: Public Overrides Sub Dispose()
+  overridden: UndyneFight_Ex.GameObject.Dispose
+  overload: UndyneFight_Ex.MiscUtil.TextBuilder.Dispose*
+references:
+- uid: UndyneFight_Ex
+  commentId: N:UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex
+  nameWithType: UndyneFight_Ex
+  fullName: UndyneFight_Ex
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: UndyneFight_Ex.GameObject
+  commentId: T:UndyneFight_Ex.GameObject
+  parent: UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html
+  name: GameObject
+  nameWithType: GameObject
+  fullName: UndyneFight_Ex.GameObject
+- uid: UndyneFight_Ex.Entity
+  commentId: T:UndyneFight_Ex.Entity
+  parent: UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.Entity.html
+  name: Entity
+  nameWithType: Entity
+  fullName: UndyneFight_Ex.Entity
+- uid: UndyneFight_Ex.Entity.controlLayer
+  commentId: F:UndyneFight_Ex.Entity.controlLayer
+  parent: UndyneFight_Ex.Entity
+  isExternal: true
+  href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_controlLayer
+  name: controlLayer
+  nameWithType: Entity.controlLayer
+  fullName: UndyneFight_Ex.Entity.controlLayer
+- uid: UndyneFight_Ex.Entity.collidingBox
+  commentId: F:UndyneFight_Ex.Entity.collidingBox
+  parent: UndyneFight_Ex.Entity
+  isExternal: true
+  href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_collidingBox
+  name: collidingBox
+  nameWithType: Entity.collidingBox
+  fullName: UndyneFight_Ex.Entity.collidingBox
+- uid: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Vector2)
+  commentId: M:UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Vector2)
+  parent: UndyneFight_Ex.Entity
+  isExternal: true
+  href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_FormalDraw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_System_Single_Microsoft_Xna_Framework_Vector2_
+  name: FormalDraw(Texture2D, Vector2, Color, float, Vector2)
+  nameWithType: Entity.FormalDraw(Texture2D, Vector2, Color, float, Vector2)
+  fullName: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Color, float, Microsoft.Xna.Framework.Vector2)
+  nameWithType.vb: Entity.FormalDraw(Texture2D, Vector2, Color, Single, Vector2)
+  fullName.vb: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Color, Single, Microsoft.Xna.Framework.Vector2)
+  name.vb: FormalDraw(Texture2D, Vector2, Color, Single, Vector2)
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Vector2)
+    name: FormalDraw
+    isExternal: true
+    href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_FormalDraw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_System_Single_Microsoft_Xna_Framework_Vector2_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Vector2)
+    name: FormalDraw
+    isExternal: true
+    href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_FormalDraw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_System_Single_Microsoft_Xna_Framework_Vector2_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: )
+- uid: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Rectangle},Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Graphics.SpriteEffects)
+  commentId: M:UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Rectangle},Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Graphics.SpriteEffects)
+  parent: UndyneFight_Ex.Entity
+  isExternal: true
+  href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_FormalDraw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_System_Nullable_Microsoft_Xna_Framework_Rectangle__Microsoft_Xna_Framework_Color_Microsoft_Xna_Framework_Vector2_System_Single_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Graphics_SpriteEffects_
+  name: FormalDraw(Texture2D, Vector2, Rectangle?, Color, Vector2, float, Vector2, SpriteEffects)
+  nameWithType: Entity.FormalDraw(Texture2D, Vector2, Rectangle?, Color, Vector2, float, Vector2, SpriteEffects)
+  fullName: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Rectangle?, Microsoft.Xna.Framework.Color, Microsoft.Xna.Framework.Vector2, float, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Graphics.SpriteEffects)
+  nameWithType.vb: Entity.FormalDraw(Texture2D, Vector2, Rectangle?, Color, Vector2, Single, Vector2, SpriteEffects)
+  fullName.vb: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Rectangle?, Microsoft.Xna.Framework.Color, Microsoft.Xna.Framework.Vector2, Single, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Graphics.SpriteEffects)
+  name.vb: FormalDraw(Texture2D, Vector2, Rectangle?, Color, Vector2, Single, Vector2, SpriteEffects)
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Rectangle},Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Graphics.SpriteEffects)
+    name: FormalDraw
+    isExternal: true
+    href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_FormalDraw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_System_Nullable_Microsoft_Xna_Framework_Rectangle__Microsoft_Xna_Framework_Color_Microsoft_Xna_Framework_Vector2_System_Single_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Graphics_SpriteEffects_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Rectangle
+    name: Rectangle
+    isExternal: true
+  - name: '?'
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Graphics.SpriteEffects
+    name: SpriteEffects
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Rectangle},Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Graphics.SpriteEffects)
+    name: FormalDraw
+    isExternal: true
+    href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_FormalDraw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_System_Nullable_Microsoft_Xna_Framework_Rectangle__Microsoft_Xna_Framework_Color_Microsoft_Xna_Framework_Vector2_System_Single_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Graphics_SpriteEffects_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Rectangle
+    name: Rectangle
+    isExternal: true
+  - name: '?'
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Graphics.SpriteEffects
+    name: SpriteEffects
+    isExternal: true
+  - name: )
+- uid: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,UndyneFight_Ex.CollideRect,Microsoft.Xna.Framework.Color)
+  commentId: M:UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,UndyneFight_Ex.CollideRect,Microsoft.Xna.Framework.Color)
+  parent: UndyneFight_Ex.Entity
+  isExternal: true
+  href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_FormalDraw_Microsoft_Xna_Framework_Graphics_Texture2D_UndyneFight_Ex_CollideRect_Microsoft_Xna_Framework_Color_
+  name: FormalDraw(Texture2D, CollideRect, Color)
+  nameWithType: Entity.FormalDraw(Texture2D, CollideRect, Color)
+  fullName: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D, UndyneFight_Ex.CollideRect, Microsoft.Xna.Framework.Color)
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,UndyneFight_Ex.CollideRect,Microsoft.Xna.Framework.Color)
+    name: FormalDraw
+    isExternal: true
+    href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_FormalDraw_Microsoft_Xna_Framework_Graphics_Texture2D_UndyneFight_Ex_CollideRect_Microsoft_Xna_Framework_Color_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UndyneFight_Ex.CollideRect
+    name: CollideRect
+    isExternal: true
+    href: UndyneFight_Ex.CollideRect.html
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,UndyneFight_Ex.CollideRect,Microsoft.Xna.Framework.Color)
+    name: FormalDraw
+    isExternal: true
+    href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_FormalDraw_Microsoft_Xna_Framework_Graphics_Texture2D_UndyneFight_Ex_CollideRect_Microsoft_Xna_Framework_Color_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UndyneFight_Ex.CollideRect
+    name: CollideRect
+    isExternal: true
+    href: UndyneFight_Ex.CollideRect.html
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: )
+- uid: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Color)
+  commentId: M:UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Color)
+  parent: UndyneFight_Ex.Entity
+  isExternal: true
+  href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_FormalDraw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Rectangle_Microsoft_Xna_Framework_Rectangle_Microsoft_Xna_Framework_Color_
+  name: FormalDraw(Texture2D, Rectangle, Rectangle, Color)
+  nameWithType: Entity.FormalDraw(Texture2D, Rectangle, Rectangle, Color)
+  fullName: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Rectangle, Microsoft.Xna.Framework.Rectangle, Microsoft.Xna.Framework.Color)
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Color)
+    name: FormalDraw
+    isExternal: true
+    href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_FormalDraw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Rectangle_Microsoft_Xna_Framework_Rectangle_Microsoft_Xna_Framework_Color_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Rectangle
+    name: Rectangle
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Rectangle
+    name: Rectangle
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Color)
+    name: FormalDraw
+    isExternal: true
+    href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_FormalDraw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Rectangle_Microsoft_Xna_Framework_Rectangle_Microsoft_Xna_Framework_Color_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Rectangle
+    name: Rectangle
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Rectangle
+    name: Rectangle
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: )
+- uid: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single,System.Single,Microsoft.Xna.Framework.Vector2)
+  commentId: M:UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single,System.Single,Microsoft.Xna.Framework.Vector2)
+  parent: UndyneFight_Ex.Entity
+  isExternal: true
+  href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_FormalDraw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_System_Single_System_Single_Microsoft_Xna_Framework_Vector2_
+  name: FormalDraw(Texture2D, Vector2, Color, float, float, Vector2)
+  nameWithType: Entity.FormalDraw(Texture2D, Vector2, Color, float, float, Vector2)
+  fullName: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Color, float, float, Microsoft.Xna.Framework.Vector2)
+  nameWithType.vb: Entity.FormalDraw(Texture2D, Vector2, Color, Single, Single, Vector2)
+  fullName.vb: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Color, Single, Single, Microsoft.Xna.Framework.Vector2)
+  name.vb: FormalDraw(Texture2D, Vector2, Color, Single, Single, Vector2)
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single,System.Single,Microsoft.Xna.Framework.Vector2)
+    name: FormalDraw
+    isExternal: true
+    href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_FormalDraw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_System_Single_System_Single_Microsoft_Xna_Framework_Vector2_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single,System.Single,Microsoft.Xna.Framework.Vector2)
+    name: FormalDraw
+    isExternal: true
+    href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_FormalDraw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_System_Single_System_Single_Microsoft_Xna_Framework_Vector2_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: )
+- uid: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Vector2)
+  commentId: M:UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Vector2)
+  parent: UndyneFight_Ex.Entity
+  isExternal: true
+  href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_FormalDraw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_Microsoft_Xna_Framework_Vector2_System_Single_Microsoft_Xna_Framework_Vector2_
+  name: FormalDraw(Texture2D, Vector2, Color, Vector2, float, Vector2)
+  nameWithType: Entity.FormalDraw(Texture2D, Vector2, Color, Vector2, float, Vector2)
+  fullName: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Color, Microsoft.Xna.Framework.Vector2, float, Microsoft.Xna.Framework.Vector2)
+  nameWithType.vb: Entity.FormalDraw(Texture2D, Vector2, Color, Vector2, Single, Vector2)
+  fullName.vb: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Color, Microsoft.Xna.Framework.Vector2, Single, Microsoft.Xna.Framework.Vector2)
+  name.vb: FormalDraw(Texture2D, Vector2, Color, Vector2, Single, Vector2)
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Vector2)
+    name: FormalDraw
+    isExternal: true
+    href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_FormalDraw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_Microsoft_Xna_Framework_Vector2_System_Single_Microsoft_Xna_Framework_Vector2_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Vector2)
+    name: FormalDraw
+    isExternal: true
+    href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_FormalDraw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_Microsoft_Xna_Framework_Vector2_System_Single_Microsoft_Xna_Framework_Vector2_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: )
+- uid: UndyneFight_Ex.Entity.GeneralDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Vector2},System.Single,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{UndyneFight_Ex.CollideRect},System.Nullable{UndyneFight_Ex.CollideRect},System.Nullable{System.Single})
+  commentId: M:UndyneFight_Ex.Entity.GeneralDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Vector2},System.Single,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{UndyneFight_Ex.CollideRect},System.Nullable{UndyneFight_Ex.CollideRect},System.Nullable{System.Single})
+  parent: UndyneFight_Ex.Entity
+  isExternal: true
+  href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_GeneralDraw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_System_Nullable_Microsoft_Xna_Framework_Color__System_Nullable_Microsoft_Xna_Framework_Vector2__System_Single_System_Nullable_Microsoft_Xna_Framework_Vector2__System_Nullable_UndyneFight_Ex_CollideRect__System_Nullable_UndyneFight_Ex_CollideRect__System_Nullable_System_Single__
+  name: GeneralDraw(Texture2D, Vector2, Color?, Vector2?, float, Vector2?, CollideRect?, CollideRect?, float?)
+  nameWithType: Entity.GeneralDraw(Texture2D, Vector2, Color?, Vector2?, float, Vector2?, CollideRect?, CollideRect?, float?)
+  fullName: UndyneFight_Ex.Entity.GeneralDraw(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Color?, Microsoft.Xna.Framework.Vector2?, float, Microsoft.Xna.Framework.Vector2?, UndyneFight_Ex.CollideRect?, UndyneFight_Ex.CollideRect?, float?)
+  nameWithType.vb: Entity.GeneralDraw(Texture2D, Vector2, Color?, Vector2?, Single, Vector2?, CollideRect?, CollideRect?, Single?)
+  fullName.vb: UndyneFight_Ex.Entity.GeneralDraw(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Color?, Microsoft.Xna.Framework.Vector2?, Single, Microsoft.Xna.Framework.Vector2?, UndyneFight_Ex.CollideRect?, UndyneFight_Ex.CollideRect?, Single?)
+  name.vb: GeneralDraw(Texture2D, Vector2, Color?, Vector2?, Single, Vector2?, CollideRect?, CollideRect?, Single?)
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entity.GeneralDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Vector2},System.Single,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{UndyneFight_Ex.CollideRect},System.Nullable{UndyneFight_Ex.CollideRect},System.Nullable{System.Single})
+    name: GeneralDraw
+    isExternal: true
+    href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_GeneralDraw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_System_Nullable_Microsoft_Xna_Framework_Color__System_Nullable_Microsoft_Xna_Framework_Vector2__System_Single_System_Nullable_Microsoft_Xna_Framework_Vector2__System_Nullable_UndyneFight_Ex_CollideRect__System_Nullable_UndyneFight_Ex_CollideRect__System_Nullable_System_Single__
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: '?'
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: '?'
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: '?'
+  - name: ','
+  - name: " "
+  - uid: UndyneFight_Ex.CollideRect
+    name: CollideRect
+    isExternal: true
+    href: UndyneFight_Ex.CollideRect.html
+  - name: '?'
+  - name: ','
+  - name: " "
+  - uid: UndyneFight_Ex.CollideRect
+    name: CollideRect
+    isExternal: true
+    href: UndyneFight_Ex.CollideRect.html
+  - name: '?'
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: '?'
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.Entity.GeneralDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Vector2},System.Single,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{UndyneFight_Ex.CollideRect},System.Nullable{UndyneFight_Ex.CollideRect},System.Nullable{System.Single})
+    name: GeneralDraw
+    isExternal: true
+    href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_GeneralDraw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_System_Nullable_Microsoft_Xna_Framework_Color__System_Nullable_Microsoft_Xna_Framework_Vector2__System_Single_System_Nullable_Microsoft_Xna_Framework_Vector2__System_Nullable_UndyneFight_Ex_CollideRect__System_Nullable_UndyneFight_Ex_CollideRect__System_Nullable_System_Single__
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: '?'
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: '?'
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: '?'
+  - name: ','
+  - name: " "
+  - uid: UndyneFight_Ex.CollideRect
+    name: CollideRect
+    isExternal: true
+    href: UndyneFight_Ex.CollideRect.html
+  - name: '?'
+  - name: ','
+  - name: " "
+  - uid: UndyneFight_Ex.CollideRect
+    name: CollideRect
+    isExternal: true
+    href: UndyneFight_Ex.CollideRect.html
+  - name: '?'
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: '?'
+  - name: )
+- uid: UndyneFight_Ex.Entity.CreateShinyEffect(System.Nullable{Microsoft.Xna.Framework.Color},Microsoft.Xna.Framework.Graphics.Texture2D)
+  commentId: M:UndyneFight_Ex.Entity.CreateShinyEffect(System.Nullable{Microsoft.Xna.Framework.Color},Microsoft.Xna.Framework.Graphics.Texture2D)
+  parent: UndyneFight_Ex.Entity
+  isExternal: true
+  href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_CreateShinyEffect_System_Nullable_Microsoft_Xna_Framework_Color__Microsoft_Xna_Framework_Graphics_Texture2D_
+  name: CreateShinyEffect(Color?, Texture2D)
+  nameWithType: Entity.CreateShinyEffect(Color?, Texture2D)
+  fullName: UndyneFight_Ex.Entity.CreateShinyEffect(Microsoft.Xna.Framework.Color?, Microsoft.Xna.Framework.Graphics.Texture2D)
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entity.CreateShinyEffect(System.Nullable{Microsoft.Xna.Framework.Color},Microsoft.Xna.Framework.Graphics.Texture2D)
+    name: CreateShinyEffect
+    isExternal: true
+    href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_CreateShinyEffect_System_Nullable_Microsoft_Xna_Framework_Color__Microsoft_Xna_Framework_Graphics_Texture2D_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: '?'
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.Entity.CreateShinyEffect(System.Nullable{Microsoft.Xna.Framework.Color},Microsoft.Xna.Framework.Graphics.Texture2D)
+    name: CreateShinyEffect
+    isExternal: true
+    href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_CreateShinyEffect_System_Nullable_Microsoft_Xna_Framework_Color__Microsoft_Xna_Framework_Graphics_Texture2D_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: '?'
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: )
+- uid: UndyneFight_Ex.Entity.CreateRetentionEffect(System.Single,System.Nullable{Microsoft.Xna.Framework.Color})
+  commentId: M:UndyneFight_Ex.Entity.CreateRetentionEffect(System.Single,System.Nullable{Microsoft.Xna.Framework.Color})
+  parent: UndyneFight_Ex.Entity
+  isExternal: true
+  href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_CreateRetentionEffect_System_Single_System_Nullable_Microsoft_Xna_Framework_Color__
+  name: CreateRetentionEffect(float, Color?)
+  nameWithType: Entity.CreateRetentionEffect(float, Color?)
+  fullName: UndyneFight_Ex.Entity.CreateRetentionEffect(float, Microsoft.Xna.Framework.Color?)
+  nameWithType.vb: Entity.CreateRetentionEffect(Single, Color?)
+  fullName.vb: UndyneFight_Ex.Entity.CreateRetentionEffect(Single, Microsoft.Xna.Framework.Color?)
+  name.vb: CreateRetentionEffect(Single, Color?)
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entity.CreateRetentionEffect(System.Single,System.Nullable{Microsoft.Xna.Framework.Color})
+    name: CreateRetentionEffect
+    isExternal: true
+    href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_CreateRetentionEffect_System_Single_System_Nullable_Microsoft_Xna_Framework_Color__
+  - name: (
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: '?'
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.Entity.CreateRetentionEffect(System.Single,System.Nullable{Microsoft.Xna.Framework.Color})
+    name: CreateRetentionEffect
+    isExternal: true
+    href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_CreateRetentionEffect_System_Single_System_Nullable_Microsoft_Xna_Framework_Color__
+  - name: (
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: '?'
+  - name: )
+- uid: UndyneFight_Ex.Entity.Visible
+  commentId: P:UndyneFight_Ex.Entity.Visible
+  parent: UndyneFight_Ex.Entity
+  isExternal: true
+  href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_Visible
+  name: Visible
+  nameWithType: Entity.Visible
+  fullName: UndyneFight_Ex.Entity.Visible
+- uid: UndyneFight_Ex.Entity.AngleMode
+  commentId: P:UndyneFight_Ex.Entity.AngleMode
+  parent: UndyneFight_Ex.Entity
+  isExternal: true
+  href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_AngleMode
+  name: AngleMode
+  nameWithType: Entity.AngleMode
+  fullName: UndyneFight_Ex.Entity.AngleMode
+- uid: UndyneFight_Ex.Entity.SpriteBatch
+  commentId: P:UndyneFight_Ex.Entity.SpriteBatch
+  parent: UndyneFight_Ex.Entity
+  isExternal: true
+  href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_SpriteBatch
+  name: SpriteBatch
+  nameWithType: Entity.SpriteBatch
+  fullName: UndyneFight_Ex.Entity.SpriteBatch
+- uid: UndyneFight_Ex.Entity.Depth
+  commentId: P:UndyneFight_Ex.Entity.Depth
+  parent: UndyneFight_Ex.Entity
+  isExternal: true
+  href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_Depth
+  name: Depth
+  nameWithType: Entity.Depth
+  fullName: UndyneFight_Ex.Entity.Depth
+- uid: UndyneFight_Ex.Entity.ImageCentre
+  commentId: P:UndyneFight_Ex.Entity.ImageCentre
+  parent: UndyneFight_Ex.Entity
+  isExternal: true
+  href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_ImageCentre
+  name: ImageCentre
+  nameWithType: Entity.ImageCentre
+  fullName: UndyneFight_Ex.Entity.ImageCentre
+- uid: UndyneFight_Ex.Entity.Image
+  commentId: P:UndyneFight_Ex.Entity.Image
+  parent: UndyneFight_Ex.Entity
+  isExternal: true
+  href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_Image
+  name: Image
+  nameWithType: Entity.Image
+  fullName: UndyneFight_Ex.Entity.Image
+- uid: UndyneFight_Ex.Entity.Rotation
+  commentId: P:UndyneFight_Ex.Entity.Rotation
+  parent: UndyneFight_Ex.Entity
+  isExternal: true
+  href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_Rotation
+  name: Rotation
+  nameWithType: Entity.Rotation
+  fullName: UndyneFight_Ex.Entity.Rotation
+- uid: UndyneFight_Ex.Entity.CollidingBox
+  commentId: P:UndyneFight_Ex.Entity.CollidingBox
+  parent: UndyneFight_Ex.Entity
+  isExternal: true
+  href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_CollidingBox
+  name: CollidingBox
+  nameWithType: Entity.CollidingBox
+  fullName: UndyneFight_Ex.Entity.CollidingBox
+- uid: UndyneFight_Ex.Entity.Centre
+  commentId: P:UndyneFight_Ex.Entity.Centre
+  parent: UndyneFight_Ex.Entity
+  isExternal: true
+  href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_Centre
+  name: Centre
+  nameWithType: Entity.Centre
+  fullName: UndyneFight_Ex.Entity.Centre
+- uid: UndyneFight_Ex.Entity.DrawOptimize
+  commentId: P:UndyneFight_Ex.Entity.DrawOptimize
+  parent: UndyneFight_Ex.Entity
+  isExternal: true
+  href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_DrawOptimize
+  name: DrawOptimize
+  nameWithType: Entity.DrawOptimize
+  fullName: UndyneFight_Ex.Entity.DrawOptimize
+- uid: UndyneFight_Ex.GameObject.ContainTag(System.String)
+  commentId: M:UndyneFight_Ex.GameObject.ContainTag(System.String)
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_ContainTag_System_String_
+  name: ContainTag(string)
+  nameWithType: GameObject.ContainTag(string)
+  fullName: UndyneFight_Ex.GameObject.ContainTag(string)
+  nameWithType.vb: GameObject.ContainTag(String)
+  fullName.vb: UndyneFight_Ex.GameObject.ContainTag(String)
+  name.vb: ContainTag(String)
+  spec.csharp:
+  - uid: UndyneFight_Ex.GameObject.ContainTag(System.String)
+    name: ContainTag
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_ContainTag_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.GameObject.ContainTag(System.String)
+    name: ContainTag
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_ContainTag_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: UndyneFight_Ex.GameObject.Broadcast(System.String)
+  commentId: M:UndyneFight_Ex.GameObject.Broadcast(System.String)
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Broadcast_System_String_
+  name: Broadcast(string)
+  nameWithType: GameObject.Broadcast(string)
+  fullName: UndyneFight_Ex.GameObject.Broadcast(string)
+  nameWithType.vb: GameObject.Broadcast(String)
+  fullName.vb: UndyneFight_Ex.GameObject.Broadcast(String)
+  name.vb: Broadcast(String)
+  spec.csharp:
+  - uid: UndyneFight_Ex.GameObject.Broadcast(System.String)
+    name: Broadcast
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Broadcast_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.GameObject.Broadcast(System.String)
+    name: Broadcast
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Broadcast_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: UndyneFight_Ex.GameObject.TryDetect(System.String)
+  commentId: M:UndyneFight_Ex.GameObject.TryDetect(System.String)
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_TryDetect_System_String_
+  name: TryDetect(string)
+  nameWithType: GameObject.TryDetect(string)
+  fullName: UndyneFight_Ex.GameObject.TryDetect(string)
+  nameWithType.vb: GameObject.TryDetect(String)
+  fullName.vb: UndyneFight_Ex.GameObject.TryDetect(String)
+  name.vb: TryDetect(String)
+  spec.csharp:
+  - uid: UndyneFight_Ex.GameObject.TryDetect(System.String)
+    name: TryDetect
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_TryDetect_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.GameObject.TryDetect(System.String)
+    name: TryDetect
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_TryDetect_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: UndyneFight_Ex.GameObject.HasTag
+  commentId: M:UndyneFight_Ex.GameObject.HasTag
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_HasTag
+  name: HasTag()
+  nameWithType: GameObject.HasTag()
+  fullName: UndyneFight_Ex.GameObject.HasTag()
+  spec.csharp:
+  - uid: UndyneFight_Ex.GameObject.HasTag
+    name: HasTag
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_HasTag
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.GameObject.HasTag
+    name: HasTag
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_HasTag
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.GameObject.Start
+  commentId: M:UndyneFight_Ex.GameObject.Start
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Start
+  name: Start()
+  nameWithType: GameObject.Start()
+  fullName: UndyneFight_Ex.GameObject.Start()
+  spec.csharp:
+  - uid: UndyneFight_Ex.GameObject.Start
+    name: Start
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Start
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.GameObject.Start
+    name: Start
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Start
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.GameObject.TreeUpdate
+  commentId: M:UndyneFight_Ex.GameObject.TreeUpdate
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_TreeUpdate
+  name: TreeUpdate()
+  nameWithType: GameObject.TreeUpdate()
+  fullName: UndyneFight_Ex.GameObject.TreeUpdate()
+  spec.csharp:
+  - uid: UndyneFight_Ex.GameObject.TreeUpdate
+    name: TreeUpdate
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_TreeUpdate
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.GameObject.TreeUpdate
+    name: TreeUpdate
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_TreeUpdate
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.GameObject.Kill
+  commentId: M:UndyneFight_Ex.GameObject.Kill
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Kill
+  name: Kill()
+  nameWithType: GameObject.Kill()
+  fullName: UndyneFight_Ex.GameObject.Kill()
+  spec.csharp:
+  - uid: UndyneFight_Ex.GameObject.Kill
+    name: Kill
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Kill
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.GameObject.Kill
+    name: Kill
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Kill
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.GameObject.AddChild(UndyneFight_Ex.GameObject)
+  commentId: M:UndyneFight_Ex.GameObject.AddChild(UndyneFight_Ex.GameObject)
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_AddChild_UndyneFight_Ex_GameObject_
+  name: AddChild(GameObject)
+  nameWithType: GameObject.AddChild(GameObject)
+  fullName: UndyneFight_Ex.GameObject.AddChild(UndyneFight_Ex.GameObject)
+  spec.csharp:
+  - uid: UndyneFight_Ex.GameObject.AddChild(UndyneFight_Ex.GameObject)
+    name: AddChild
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_AddChild_UndyneFight_Ex_GameObject_
+  - name: (
+  - uid: UndyneFight_Ex.GameObject
+    name: GameObject
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.GameObject.AddChild(UndyneFight_Ex.GameObject)
+    name: AddChild
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_AddChild_UndyneFight_Ex_GameObject_
+  - name: (
+  - uid: UndyneFight_Ex.GameObject
+    name: GameObject
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html
+  - name: )
+- uid: UndyneFight_Ex.GameObject.Reverse
+  commentId: M:UndyneFight_Ex.GameObject.Reverse
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Reverse
+  name: Reverse()
+  nameWithType: GameObject.Reverse()
+  fullName: UndyneFight_Ex.GameObject.Reverse()
+  spec.csharp:
+  - uid: UndyneFight_Ex.GameObject.Reverse
+    name: Reverse
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Reverse
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.GameObject.Reverse
+    name: Reverse
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Reverse
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.GameObject.GetDrawableTree
+  commentId: M:UndyneFight_Ex.GameObject.GetDrawableTree
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_GetDrawableTree
+  name: GetDrawableTree()
+  nameWithType: GameObject.GetDrawableTree()
+  fullName: UndyneFight_Ex.GameObject.GetDrawableTree()
+  spec.csharp:
+  - uid: UndyneFight_Ex.GameObject.GetDrawableTree
+    name: GetDrawableTree
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_GetDrawableTree
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.GameObject.GetDrawableTree
+    name: GetDrawableTree
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_GetDrawableTree
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.GameObject.UpdateChildren
+  commentId: P:UndyneFight_Ex.GameObject.UpdateChildren
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_UpdateChildren
+  name: UpdateChildren
+  nameWithType: GameObject.UpdateChildren
+  fullName: UndyneFight_Ex.GameObject.UpdateChildren
+- uid: UndyneFight_Ex.GameObject.ChildrenUpdateFirst
+  commentId: P:UndyneFight_Ex.GameObject.ChildrenUpdateFirst
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_ChildrenUpdateFirst
+  name: ChildrenUpdateFirst
+  nameWithType: GameObject.ChildrenUpdateFirst
+  fullName: UndyneFight_Ex.GameObject.ChildrenUpdateFirst
+- uid: UndyneFight_Ex.GameObject.CurrentScene
+  commentId: P:UndyneFight_Ex.GameObject.CurrentScene
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_CurrentScene
+  name: CurrentScene
+  nameWithType: GameObject.CurrentScene
+  fullName: UndyneFight_Ex.GameObject.CurrentScene
+- uid: UndyneFight_Ex.GameObject.CurrentFightingScene
+  commentId: P:UndyneFight_Ex.GameObject.CurrentFightingScene
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_CurrentFightingScene
+  name: CurrentFightingScene
+  nameWithType: GameObject.CurrentFightingScene
+  fullName: UndyneFight_Ex.GameObject.CurrentFightingScene
+- uid: UndyneFight_Ex.GameObject.UpdateIn120
+  commentId: P:UndyneFight_Ex.GameObject.UpdateIn120
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_UpdateIn120
+  name: UpdateIn120
+  nameWithType: GameObject.UpdateIn120
+  fullName: UndyneFight_Ex.GameObject.UpdateIn120
+- uid: UndyneFight_Ex.GameObject.BeingUpdated
+  commentId: P:UndyneFight_Ex.GameObject.BeingUpdated
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_BeingUpdated
+  name: BeingUpdated
+  nameWithType: GameObject.BeingUpdated
+  fullName: UndyneFight_Ex.GameObject.BeingUpdated
+- uid: UndyneFight_Ex.GameObject.UpdateEnabled
+  commentId: P:UndyneFight_Ex.GameObject.UpdateEnabled
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_UpdateEnabled
+  name: UpdateEnabled
+  nameWithType: GameObject.UpdateEnabled
+  fullName: UndyneFight_Ex.GameObject.UpdateEnabled
+- uid: UndyneFight_Ex.GameObject.CrossScene
+  commentId: P:UndyneFight_Ex.GameObject.CrossScene
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_CrossScene
+  name: CrossScene
+  nameWithType: GameObject.CrossScene
+  fullName: UndyneFight_Ex.GameObject.CrossScene
+- uid: UndyneFight_Ex.GameObject.Tags
+  commentId: P:UndyneFight_Ex.GameObject.Tags
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Tags
+  name: Tags
+  nameWithType: GameObject.Tags
+  fullName: UndyneFight_Ex.GameObject.Tags
+- uid: UndyneFight_Ex.GameObject.Extras
+  commentId: P:UndyneFight_Ex.GameObject.Extras
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Extras
+  name: Extras
+  nameWithType: GameObject.Extras
+  fullName: UndyneFight_Ex.GameObject.Extras
+- uid: UndyneFight_Ex.GameObject.ChildObjects
+  commentId: P:UndyneFight_Ex.GameObject.ChildObjects
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_ChildObjects
+  name: ChildObjects
+  nameWithType: GameObject.ChildObjects
+  fullName: UndyneFight_Ex.GameObject.ChildObjects
+- uid: UndyneFight_Ex.GameObject.Disposed
+  commentId: P:UndyneFight_Ex.GameObject.Disposed
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Disposed
+  name: Disposed
+  nameWithType: GameObject.Disposed
+  fullName: UndyneFight_Ex.GameObject.Disposed
+- uid: UndyneFight_Ex.GameObject.FatherObject
+  commentId: P:UndyneFight_Ex.GameObject.FatherObject
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_FatherObject
+  name: FatherObject
+  nameWithType: GameObject.FatherObject
+  fullName: UndyneFight_Ex.GameObject.FatherObject
+- uid: UndyneFight_Ex.GameObject.OnDispose
+  commentId: E:UndyneFight_Ex.GameObject.OnDispose
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_OnDispose
+  name: OnDispose
+  nameWithType: GameObject.OnDispose
+  fullName: UndyneFight_Ex.GameObject.OnDispose
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.Render
+  commentId: M:UndyneFight_Ex.MiscUtil.TextBuilder.Render
+  isExternal: true
+  href: UndyneFight_Ex.MiscUtil.TextBuilder.html#UndyneFight_Ex_MiscUtil_TextBuilder_Render
+  name: Render()
+  nameWithType: MiscUtil.TextBuilder.Render()
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.Render()
+  spec.csharp:
+  - uid: UndyneFight_Ex.MiscUtil.TextBuilder.Render
+    name: Render
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.TextBuilder.html#UndyneFight_Ex_MiscUtil_TextBuilder_Render
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.MiscUtil.TextBuilder.Render
+    name: Render
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.TextBuilder.html#UndyneFight_Ex_MiscUtil_TextBuilder_Render
+  - name: (
+  - name: )
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.#ctor*
+  commentId: Overload:UndyneFight_Ex.MiscUtil.TextBuilder.#ctor
+  isExternal: true
+  href: UndyneFight_Ex.MiscUtil.TextBuilder.html#UndyneFight_Ex_MiscUtil_TextBuilder__ctor_System_String_UndyneFight_Ex_MiscUtil_TextTyper_System_Char_System_Char_
+  name: TextBuilder
+  nameWithType: MiscUtil.TextBuilder.TextBuilder
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.TextBuilder
+  nameWithType.vb: MiscUtil.TextBuilder.New
+  fullName.vb: UndyneFight_Ex.MiscUtil.TextBuilder.New
+  name.vb: New
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: UndyneFight_Ex.MiscUtil.TextTyper
+  commentId: T:UndyneFight_Ex.MiscUtil.TextTyper
+  parent: UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.MiscUtil.html
+  name: MiscUtil.TextTyper
+  nameWithType: MiscUtil.TextTyper
+  fullName: UndyneFight_Ex.MiscUtil.TextTyper
+  spec.csharp:
+  - uid: UndyneFight_Ex.MiscUtil
+    name: MiscUtil
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.html
+  - name: .
+  - uid: UndyneFight_Ex.MiscUtil.TextTyper
+    name: TextTyper
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.TextTyper.html
+  spec.vb:
+  - uid: UndyneFight_Ex.MiscUtil
+    name: MiscUtil
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.html
+  - name: .
+  - uid: UndyneFight_Ex.MiscUtil.TextTyper
+    name: TextTyper
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.TextTyper.html
+- uid: System.Char
+  commentId: T:System.Char
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.char
+  name: char
+  nameWithType: char
+  fullName: char
+  nameWithType.vb: Char
+  fullName.vb: Char
+  name.vb: Char
+- uid: UndyneFight_Ex.GameObject.Update
+  commentId: M:UndyneFight_Ex.GameObject.Update
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Update
+  name: Update()
+  nameWithType: GameObject.Update()
+  fullName: UndyneFight_Ex.GameObject.Update()
+  spec.csharp:
+  - uid: UndyneFight_Ex.GameObject.Update
+    name: Update
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Update
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.GameObject.Update
+    name: Update
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Update
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.Update*
+  commentId: Overload:UndyneFight_Ex.MiscUtil.TextBuilder.Update
+  isExternal: true
+  href: UndyneFight_Ex.MiscUtil.TextBuilder.html#UndyneFight_Ex_MiscUtil_TextBuilder_Update
+  name: Update
+  nameWithType: MiscUtil.TextBuilder.Update
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.Update
+- uid: UndyneFight_Ex.Entity.Draw
+  commentId: M:UndyneFight_Ex.Entity.Draw
+  parent: UndyneFight_Ex.Entity
+  isExternal: true
+  href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_Draw
+  name: Draw()
+  nameWithType: Entity.Draw()
+  fullName: UndyneFight_Ex.Entity.Draw()
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entity.Draw
+    name: Draw
+    isExternal: true
+    href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_Draw
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.Entity.Draw
+    name: Draw
+    isExternal: true
+    href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_Draw
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.Draw*
+  commentId: Overload:UndyneFight_Ex.MiscUtil.TextBuilder.Draw
+  isExternal: true
+  href: UndyneFight_Ex.MiscUtil.TextBuilder.html#UndyneFight_Ex_MiscUtil_TextBuilder_Draw
+  name: Draw
+  nameWithType: MiscUtil.TextBuilder.Draw
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.Draw
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.Overwrite*
+  commentId: Overload:UndyneFight_Ex.MiscUtil.TextBuilder.Overwrite
+  isExternal: true
+  href: UndyneFight_Ex.MiscUtil.TextBuilder.html#UndyneFight_Ex_MiscUtil_TextBuilder_Overwrite_System_String_
+  name: Overwrite
+  nameWithType: MiscUtil.TextBuilder.Overwrite
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.Overwrite
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder
+  commentId: T:UndyneFight_Ex.MiscUtil.TextBuilder
+  parent: UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.MiscUtil.html
+  name: MiscUtil.TextBuilder
+  nameWithType: MiscUtil.TextBuilder
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder
+  spec.csharp:
+  - uid: UndyneFight_Ex.MiscUtil
+    name: MiscUtil
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.html
+  - name: .
+  - uid: UndyneFight_Ex.MiscUtil.TextBuilder
+    name: TextBuilder
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.TextBuilder.html
+  spec.vb:
+  - uid: UndyneFight_Ex.MiscUtil
+    name: MiscUtil
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.html
+  - name: .
+  - uid: UndyneFight_Ex.MiscUtil.TextBuilder
+    name: TextBuilder
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.TextBuilder.html
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.Build*
+  commentId: Overload:UndyneFight_Ex.MiscUtil.TextBuilder.Build
+  isExternal: true
+  href: UndyneFight_Ex.MiscUtil.TextBuilder.html#UndyneFight_Ex_MiscUtil_TextBuilder_Build
+  name: Build
+  nameWithType: MiscUtil.TextBuilder.Build
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.Build
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.Position*
+  commentId: Overload:UndyneFight_Ex.MiscUtil.TextBuilder.Position
+  isExternal: true
+  href: UndyneFight_Ex.MiscUtil.TextBuilder.html#UndyneFight_Ex_MiscUtil_TextBuilder_Position
+  name: Position
+  nameWithType: MiscUtil.TextBuilder.Position
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.Position
+- uid: Microsoft.Xna.Framework.Vector2
+  commentId: T:Microsoft.Xna.Framework.Vector2
+  parent: Microsoft.Xna.Framework
+  isExternal: true
+  name: Vector2
+  nameWithType: Vector2
+  fullName: Microsoft.Xna.Framework.Vector2
+- uid: Microsoft.Xna.Framework
+  commentId: N:Microsoft.Xna.Framework
+  isExternal: true
+  name: Microsoft.Xna.Framework
+  nameWithType: Microsoft.Xna.Framework
+  fullName: Microsoft.Xna.Framework
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.Align*
+  commentId: Overload:UndyneFight_Ex.MiscUtil.TextBuilder.Align
+  isExternal: true
+  href: UndyneFight_Ex.MiscUtil.TextBuilder.html#UndyneFight_Ex_MiscUtil_TextBuilder_Align
+  name: Align
+  nameWithType: MiscUtil.TextBuilder.Align
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.Align
+- uid: System.ValueTuple{UndyneFight_Ex.MiscUtil.TextBuilder.TextHAlignment,UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment}
+  commentId: T:System.ValueTuple{UndyneFight_Ex.MiscUtil.TextBuilder.TextHAlignment,UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment}
+  parent: System
+  definition: System.ValueTuple`2
+  href: UndyneFight_Ex.MiscUtil.html
+  name: (MiscUtil.TextBuilder.TextHAlignment HAlign, MiscUtil.TextBuilder.TextVAlignment VAlign)
+  nameWithType: (MiscUtil.TextBuilder.TextHAlignment HAlign, MiscUtil.TextBuilder.TextVAlignment VAlign)
+  fullName: (UndyneFight_Ex.MiscUtil.TextBuilder.TextHAlignment HAlign, UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment VAlign)
+  nameWithType.vb: (HAlign As MiscUtil.TextBuilder.TextHAlignment, VAlign As MiscUtil.TextBuilder.TextVAlignment)
+  fullName.vb: (HAlign As UndyneFight_Ex.MiscUtil.TextBuilder.TextHAlignment, VAlign As UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment)
+  name.vb: (HAlign As MiscUtil.TextBuilder.TextHAlignment, VAlign As MiscUtil.TextBuilder.TextVAlignment)
+  spec.csharp:
+  - name: (
+  - uid: UndyneFight_Ex.MiscUtil
+    name: MiscUtil
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.html
+  - name: .
+  - uid: UndyneFight_Ex.MiscUtil.TextBuilder
+    name: TextBuilder
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.TextBuilder.html
+  - name: .
+  - uid: UndyneFight_Ex.MiscUtil.TextBuilder.TextHAlignment
+    name: TextHAlignment
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.TextBuilder.TextHAlignment.html
+  - name: " "
+  - uid: System.ValueTuple{UndyneFight_Ex.MiscUtil.TextBuilder.TextHAlignment,UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment}.HAlign
+    name: HAlign
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-undynefight_ex.miscutil.textbuilder.texthalignment,undynefight_ex.miscutil.textbuilder.textvalignment-.halign
+  - name: ','
+  - name: " "
+  - uid: UndyneFight_Ex.MiscUtil
+    name: MiscUtil
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.html
+  - name: .
+  - uid: UndyneFight_Ex.MiscUtil.TextBuilder
+    name: TextBuilder
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.TextBuilder.html
+  - name: .
+  - uid: UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment
+    name: TextVAlignment
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment.html
+  - name: " "
+  - uid: System.ValueTuple{UndyneFight_Ex.MiscUtil.TextBuilder.TextHAlignment,UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment}.VAlign
+    name: VAlign
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-undynefight_ex.miscutil.textbuilder.texthalignment,undynefight_ex.miscutil.textbuilder.textvalignment-.valign
+  - name: )
+  spec.vb:
+  - name: (
+  - uid: System.ValueTuple{UndyneFight_Ex.MiscUtil.TextBuilder.TextHAlignment,UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment}.HAlign
+    name: HAlign
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-undynefight_ex.miscutil.textbuilder.texthalignment,undynefight_ex.miscutil.textbuilder.textvalignment-.halign
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: UndyneFight_Ex.MiscUtil
+    name: MiscUtil
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.html
+  - name: .
+  - uid: UndyneFight_Ex.MiscUtil.TextBuilder
+    name: TextBuilder
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.TextBuilder.html
+  - name: .
+  - uid: UndyneFight_Ex.MiscUtil.TextBuilder.TextHAlignment
+    name: TextHAlignment
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.TextBuilder.TextHAlignment.html
+  - name: ','
+  - name: " "
+  - uid: System.ValueTuple{UndyneFight_Ex.MiscUtil.TextBuilder.TextHAlignment,UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment}.VAlign
+    name: VAlign
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-undynefight_ex.miscutil.textbuilder.texthalignment,undynefight_ex.miscutil.textbuilder.textvalignment-.valign
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: UndyneFight_Ex.MiscUtil
+    name: MiscUtil
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.html
+  - name: .
+  - uid: UndyneFight_Ex.MiscUtil.TextBuilder
+    name: TextBuilder
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.TextBuilder.html
+  - name: .
+  - uid: UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment
+    name: TextVAlignment
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment.html
+  - name: )
+- uid: System.ValueTuple`2
+  commentId: T:System.ValueTuple`2
+  name: (T1, T2)
+  nameWithType: (T1, T2)
+  fullName: (T1, T2)
+  spec.csharp:
+  - name: (
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: )
+  spec.vb:
+  - name: (
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: )
+- uid: System.Nullable{UndyneFight_Ex.MiscUtil.TextBuilder.TextHAlignment}
+  commentId: T:System.Nullable{UndyneFight_Ex.MiscUtil.TextBuilder.TextHAlignment}
+  parent: System
+  definition: System.Nullable`1
+  href: UndyneFight_Ex.MiscUtil.html
+  name: MiscUtil.TextBuilder.TextHAlignment?
+  nameWithType: MiscUtil.TextBuilder.TextHAlignment?
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.TextHAlignment?
+  spec.csharp:
+  - uid: UndyneFight_Ex.MiscUtil
+    name: MiscUtil
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.html
+  - name: .
+  - uid: UndyneFight_Ex.MiscUtil.TextBuilder
+    name: TextBuilder
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.TextBuilder.html
+  - name: .
+  - uid: UndyneFight_Ex.MiscUtil.TextBuilder.TextHAlignment
+    name: TextHAlignment
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.TextBuilder.TextHAlignment.html
+  - name: '?'
+  spec.vb:
+  - uid: UndyneFight_Ex.MiscUtil
+    name: MiscUtil
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.html
+  - name: .
+  - uid: UndyneFight_Ex.MiscUtil.TextBuilder
+    name: TextBuilder
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.TextBuilder.html
+  - name: .
+  - uid: UndyneFight_Ex.MiscUtil.TextBuilder.TextHAlignment
+    name: TextHAlignment
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.TextBuilder.TextHAlignment.html
+  - name: '?'
+- uid: System.Nullable{UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment}
+  commentId: T:System.Nullable{UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment}
+  parent: System
+  definition: System.Nullable`1
+  href: UndyneFight_Ex.MiscUtil.html
+  name: MiscUtil.TextBuilder.TextVAlignment?
+  nameWithType: MiscUtil.TextBuilder.TextVAlignment?
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment?
+  spec.csharp:
+  - uid: UndyneFight_Ex.MiscUtil
+    name: MiscUtil
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.html
+  - name: .
+  - uid: UndyneFight_Ex.MiscUtil.TextBuilder
+    name: TextBuilder
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.TextBuilder.html
+  - name: .
+  - uid: UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment
+    name: TextVAlignment
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment.html
+  - name: '?'
+  spec.vb:
+  - uid: UndyneFight_Ex.MiscUtil
+    name: MiscUtil
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.html
+  - name: .
+  - uid: UndyneFight_Ex.MiscUtil.TextBuilder
+    name: TextBuilder
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.TextBuilder.html
+  - name: .
+  - uid: UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment
+    name: TextVAlignment
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment.html
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.Scale*
+  commentId: Overload:UndyneFight_Ex.MiscUtil.TextBuilder.Scale
+  isExternal: true
+  href: UndyneFight_Ex.MiscUtil.TextBuilder.html#UndyneFight_Ex_MiscUtil_TextBuilder_Scale
+  name: Scale
+  nameWithType: MiscUtil.TextBuilder.Scale
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.Scale
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.Blend*
+  commentId: Overload:UndyneFight_Ex.MiscUtil.TextBuilder.Blend
+  isExternal: true
+  href: UndyneFight_Ex.MiscUtil.TextBuilder.html#UndyneFight_Ex_MiscUtil_TextBuilder_Blend
+  name: Blend
+  nameWithType: MiscUtil.TextBuilder.Blend
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.Blend
+- uid: Microsoft.Xna.Framework.Color[]
+  isExternal: true
+  name: Color[]
+  nameWithType: Color[]
+  fullName: Microsoft.Xna.Framework.Color[]
+  nameWithType.vb: Color()
+  fullName.vb: Microsoft.Xna.Framework.Color()
+  name.vb: Color()
+  spec.csharp:
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Microsoft.Xna.Framework.Color
+  commentId: T:Microsoft.Xna.Framework.Color
+  parent: Microsoft.Xna.Framework
+  isExternal: true
+  name: Color
+  nameWithType: Color
+  fullName: Microsoft.Xna.Framework.Color
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.Font*
+  commentId: Overload:UndyneFight_Ex.MiscUtil.TextBuilder.Font
+  isExternal: true
+  href: UndyneFight_Ex.MiscUtil.TextBuilder.html#UndyneFight_Ex_MiscUtil_TextBuilder_Font_UndyneFight_Ex_GLFont_
+  name: Font
+  nameWithType: MiscUtil.TextBuilder.Font
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.Font
+- uid: UndyneFight_Ex.GLFont
+  commentId: T:UndyneFight_Ex.GLFont
+  parent: UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.GLFont.html
+  name: GLFont
+  nameWithType: GLFont
+  fullName: UndyneFight_Ex.GLFont
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.DefineTexture*
+  commentId: Overload:UndyneFight_Ex.MiscUtil.TextBuilder.DefineTexture
+  isExternal: true
+  href: UndyneFight_Ex.MiscUtil.TextBuilder.html#UndyneFight_Ex_MiscUtil_TextBuilder_DefineTexture_System_String_Microsoft_Xna_Framework_Graphics_Texture2D_
+  name: DefineTexture
+  nameWithType: MiscUtil.TextBuilder.DefineTexture
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.DefineTexture
+- uid: Microsoft.Xna.Framework.Graphics.Texture2D
+  commentId: T:Microsoft.Xna.Framework.Graphics.Texture2D
+  parent: Microsoft.Xna.Framework.Graphics
+  isExternal: true
+  name: Texture2D
+  nameWithType: Texture2D
+  fullName: Microsoft.Xna.Framework.Graphics.Texture2D
+- uid: Microsoft.Xna.Framework.Graphics
+  commentId: N:Microsoft.Xna.Framework.Graphics
+  isExternal: true
+  name: Microsoft.Xna.Framework.Graphics
+  nameWithType: Microsoft.Xna.Framework.Graphics
+  fullName: Microsoft.Xna.Framework.Graphics
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework.Graphics
+    name: Graphics
+    isExternal: true
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework.Graphics
+    name: Graphics
+    isExternal: true
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.DefineGlobalTexture*
+  commentId: Overload:UndyneFight_Ex.MiscUtil.TextBuilder.DefineGlobalTexture
+  isExternal: true
+  href: UndyneFight_Ex.MiscUtil.TextBuilder.html#UndyneFight_Ex_MiscUtil_TextBuilder_DefineGlobalTexture_System_String_Microsoft_Xna_Framework_Graphics_Texture2D_
+  name: DefineGlobalTexture
+  nameWithType: MiscUtil.TextBuilder.DefineGlobalTexture
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.DefineGlobalTexture
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.DefineFont*
+  commentId: Overload:UndyneFight_Ex.MiscUtil.TextBuilder.DefineFont
+  isExternal: true
+  href: UndyneFight_Ex.MiscUtil.TextBuilder.html#UndyneFight_Ex_MiscUtil_TextBuilder_DefineFont_System_String_UndyneFight_Ex_GLFont_
+  name: DefineFont
+  nameWithType: MiscUtil.TextBuilder.DefineFont
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.DefineFont
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.DefineGlobalFont*
+  commentId: Overload:UndyneFight_Ex.MiscUtil.TextBuilder.DefineGlobalFont
+  isExternal: true
+  href: UndyneFight_Ex.MiscUtil.TextBuilder.html#UndyneFight_Ex_MiscUtil_TextBuilder_DefineGlobalFont_System_String_UndyneFight_Ex_GLFont_
+  name: DefineGlobalFont
+  nameWithType: MiscUtil.TextBuilder.DefineGlobalFont
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.DefineGlobalFont
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.Wrap*
+  commentId: Overload:UndyneFight_Ex.MiscUtil.TextBuilder.Wrap
+  isExternal: true
+  href: UndyneFight_Ex.MiscUtil.TextBuilder.html#UndyneFight_Ex_MiscUtil_TextBuilder_Wrap_System_Single_System_Boolean_
+  name: Wrap
+  nameWithType: MiscUtil.TextBuilder.Wrap
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.Wrap
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.TextTyper*
+  commentId: Overload:UndyneFight_Ex.MiscUtil.TextBuilder.TextTyper
+  isExternal: true
+  href: UndyneFight_Ex.MiscUtil.TextBuilder.html#UndyneFight_Ex_MiscUtil_TextBuilder_TextTyper
+  name: TextTyper
+  nameWithType: MiscUtil.TextBuilder.TextTyper
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.TextTyper
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.AutoRender
+  commentId: F:UndyneFight_Ex.MiscUtil.TextBuilder.AutoRender
+  isExternal: true
+  href: UndyneFight_Ex.MiscUtil.TextBuilder.html#UndyneFight_Ex_MiscUtil_TextBuilder_AutoRender
+  name: AutoRender
+  nameWithType: MiscUtil.TextBuilder.AutoRender
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.AutoRender
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.Render*
+  commentId: Overload:UndyneFight_Ex.MiscUtil.TextBuilder.Render
+  isExternal: true
+  href: UndyneFight_Ex.MiscUtil.TextBuilder.html#UndyneFight_Ex_MiscUtil_TextBuilder_Render
+  name: Render
+  nameWithType: MiscUtil.TextBuilder.Render
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.Render
+- uid: UndyneFight_Ex.GameObject.Dispose
+  commentId: M:UndyneFight_Ex.GameObject.Dispose
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Dispose
+  name: Dispose()
+  nameWithType: GameObject.Dispose()
+  fullName: UndyneFight_Ex.GameObject.Dispose()
+  spec.csharp:
+  - uid: UndyneFight_Ex.GameObject.Dispose
+    name: Dispose
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Dispose
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.GameObject.Dispose
+    name: Dispose
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Dispose
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.Dispose*
+  commentId: Overload:UndyneFight_Ex.MiscUtil.TextBuilder.Dispose
+  isExternal: true
+  href: UndyneFight_Ex.MiscUtil.TextBuilder.html#UndyneFight_Ex_MiscUtil_TextBuilder_Dispose
+  name: Dispose
+  nameWithType: MiscUtil.TextBuilder.Dispose
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.Dispose

@@ -1,0 +1,1378 @@
+### YamlMime:ManagedReference
+items:
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+  commentId: T:UndyneFight_Ex.Fight.Functions.ScreenDrawing
+  id: Functions.ScreenDrawing
+  parent: UndyneFight_Ex.Fight
+  children:
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.ActivateShader(UndyneFight_Ex.Shader,System.Single)
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.ActivateShaderBack(UndyneFight_Ex.Shader,System.Single)
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.BackGroundColor
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.BackGroundRendering
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.BoundColor
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.BoxBackColor
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.CreateCustomSurface(UndyneFight_Ex.Surface)
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.CreateParticles(Microsoft.Xna.Framework.Color,System.Single,System.Single,Microsoft.Xna.Framework.Vector2,System.Int32,System.Single)
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.DownBoundDistance
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.DownExtending
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.LeftBoundDistance
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.MakeFlicker(Microsoft.Xna.Framework.Color)
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.MasterAlpha
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.RemoveCustomSurface(UndyneFight_Ex.Surface)
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.RightBoundDistance
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.SceneOut(Microsoft.Xna.Framework.Color,System.Single)
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.SceneOutScale
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.SceneRendering
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.ScreenAngle
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.ScreenExtending
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.ScreenPositionDelta
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.ScreenScale
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.SpriteBatch
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.ThemeColor
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.UIColor
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.UpBoundDistance
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.UpExtending
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.WhiteOut(System.Single)
+  langs:
+  - csharp
+  - vb
+  name: Functions.ScreenDrawing
+  nameWithType: Functions.ScreenDrawing
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+  type: Class
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Functions related to drawing
+  example: []
+  syntax:
+    content: public static class Functions.ScreenDrawing
+    content.vb: Public Module Functions.ScreenDrawing
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.CreateCustomSurface(UndyneFight_Ex.Surface)
+  commentId: M:UndyneFight_Ex.Fight.Functions.ScreenDrawing.CreateCustomSurface(UndyneFight_Ex.Surface)
+  id: CreateCustomSurface(UndyneFight_Ex.Surface)
+  parent: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+  langs:
+  - csharp
+  - vb
+  name: CreateCustomSurface(Surface)
+  nameWithType: Functions.ScreenDrawing.CreateCustomSurface(Surface)
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.CreateCustomSurface(UndyneFight_Ex.Surface)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: A method for creating custom surfaces
+  example: []
+  syntax:
+    content: public static void CreateCustomSurface(Surface surf)
+    parameters:
+    - id: surf
+      type: UndyneFight_Ex.Surface
+      description: The surface to draw
+    content.vb: Public Shared Sub CreateCustomSurface(surf As Surface)
+  overload: UndyneFight_Ex.Fight.Functions.ScreenDrawing.CreateCustomSurface*
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.RemoveCustomSurface(UndyneFight_Ex.Surface)
+  commentId: M:UndyneFight_Ex.Fight.Functions.ScreenDrawing.RemoveCustomSurface(UndyneFight_Ex.Surface)
+  id: RemoveCustomSurface(UndyneFight_Ex.Surface)
+  parent: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+  langs:
+  - csharp
+  - vb
+  name: RemoveCustomSurface(Surface)
+  nameWithType: Functions.ScreenDrawing.RemoveCustomSurface(Surface)
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.RemoveCustomSurface(UndyneFight_Ex.Surface)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: A method for removing custom surfaces
+  example: []
+  syntax:
+    content: public static void RemoveCustomSurface(Surface surf)
+    parameters:
+    - id: surf
+      type: UndyneFight_Ex.Surface
+      description: The surface to draw
+    content.vb: Public Shared Sub RemoveCustomSurface(surf As Surface)
+  overload: UndyneFight_Ex.Fight.Functions.ScreenDrawing.RemoveCustomSurface*
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.SceneOut(Microsoft.Xna.Framework.Color,System.Single)
+  commentId: M:UndyneFight_Ex.Fight.Functions.ScreenDrawing.SceneOut(Microsoft.Xna.Framework.Color,System.Single)
+  id: SceneOut(Microsoft.Xna.Framework.Color,System.Single)
+  parent: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+  langs:
+  - csharp
+  - vb
+  name: SceneOut(Color, float)
+  nameWithType: Functions.ScreenDrawing.SceneOut(Color, float)
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.SceneOut(Microsoft.Xna.Framework.Color, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Fades out with the given color
+  example: []
+  syntax:
+    content: public static void SceneOut(Color col, float time)
+    parameters:
+    - id: col
+      type: Microsoft.Xna.Framework.Color
+      description: The color to fade out
+    - id: time
+      type: System.Single
+      description: The duration of the fading
+    content.vb: Public Shared Sub SceneOut(col As Color, time As Single)
+  overload: UndyneFight_Ex.Fight.Functions.ScreenDrawing.SceneOut*
+  nameWithType.vb: Functions.ScreenDrawing.SceneOut(Color, Single)
+  fullName.vb: UndyneFight_Ex.Fight.Functions.ScreenDrawing.SceneOut(Microsoft.Xna.Framework.Color, Single)
+  name.vb: SceneOut(Color, Single)
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.WhiteOut(System.Single)
+  commentId: M:UndyneFight_Ex.Fight.Functions.ScreenDrawing.WhiteOut(System.Single)
+  id: WhiteOut(System.Single)
+  parent: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+  langs:
+  - csharp
+  - vb
+  name: WhiteOut(float)
+  nameWithType: Functions.ScreenDrawing.WhiteOut(float)
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.WhiteOut(float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Fades out in white
+  example: []
+  syntax:
+    content: public static void WhiteOut(float time)
+    parameters:
+    - id: time
+      type: System.Single
+      description: The duration of the fading
+    content.vb: Public Shared Sub WhiteOut(time As Single)
+  overload: UndyneFight_Ex.Fight.Functions.ScreenDrawing.WhiteOut*
+  nameWithType.vb: Functions.ScreenDrawing.WhiteOut(Single)
+  fullName.vb: UndyneFight_Ex.Fight.Functions.ScreenDrawing.WhiteOut(Single)
+  name.vb: WhiteOut(Single)
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.MakeFlicker(Microsoft.Xna.Framework.Color)
+  commentId: M:UndyneFight_Ex.Fight.Functions.ScreenDrawing.MakeFlicker(Microsoft.Xna.Framework.Color)
+  id: MakeFlicker(Microsoft.Xna.Framework.Color)
+  parent: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+  langs:
+  - csharp
+  - vb
+  name: MakeFlicker(Color)
+  nameWithType: Functions.ScreenDrawing.MakeFlicker(Color)
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.MakeFlicker(Microsoft.Xna.Framework.Color)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Creates a flicker of the screen
+  example: []
+  syntax:
+    content: public static void MakeFlicker(Color color)
+    parameters:
+    - id: color
+      type: Microsoft.Xna.Framework.Color
+      description: The color of the flicker
+    content.vb: Public Shared Sub MakeFlicker(color As Color)
+  overload: UndyneFight_Ex.Fight.Functions.ScreenDrawing.MakeFlicker*
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.ActivateShader(UndyneFight_Ex.Shader,System.Single)
+  commentId: M:UndyneFight_Ex.Fight.Functions.ScreenDrawing.ActivateShader(UndyneFight_Ex.Shader,System.Single)
+  id: ActivateShader(UndyneFight_Ex.Shader,System.Single)
+  parent: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+  langs:
+  - csharp
+  - vb
+  name: ActivateShader(Shader, float)
+  nameWithType: Functions.ScreenDrawing.ActivateShader(Shader, float)
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.ActivateShader(UndyneFight_Ex.Shader, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Activates a shader effect on the foreground
+  example: []
+  syntax:
+    content: public static Functions.ScreenDrawing.Shaders.Filter ActivateShader(Shader shader, float depth = 0.5)
+    parameters:
+    - id: shader
+      type: UndyneFight_Ex.Shader
+      description: The shader to activate
+    - id: depth
+      type: System.Single
+      description: The depth of the shader
+    return:
+      type: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Filter
+      description: ''
+    content.vb: Public Shared Function ActivateShader(shader As Shader, depth As Single = 0.5) As Functions.ScreenDrawing.Shaders.Filter
+  overload: UndyneFight_Ex.Fight.Functions.ScreenDrawing.ActivateShader*
+  nameWithType.vb: Functions.ScreenDrawing.ActivateShader(Shader, Single)
+  fullName.vb: UndyneFight_Ex.Fight.Functions.ScreenDrawing.ActivateShader(UndyneFight_Ex.Shader, Single)
+  name.vb: ActivateShader(Shader, Single)
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.ActivateShaderBack(UndyneFight_Ex.Shader,System.Single)
+  commentId: M:UndyneFight_Ex.Fight.Functions.ScreenDrawing.ActivateShaderBack(UndyneFight_Ex.Shader,System.Single)
+  id: ActivateShaderBack(UndyneFight_Ex.Shader,System.Single)
+  parent: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+  langs:
+  - csharp
+  - vb
+  name: ActivateShaderBack(Shader, float)
+  nameWithType: Functions.ScreenDrawing.ActivateShaderBack(Shader, float)
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.ActivateShaderBack(UndyneFight_Ex.Shader, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Activates a shader effect in the background
+  example: []
+  syntax:
+    content: public static Functions.ScreenDrawing.Shaders.Filter ActivateShaderBack(Shader shader, float depth = 0.5)
+    parameters:
+    - id: shader
+      type: UndyneFight_Ex.Shader
+      description: The shader to activate
+    - id: depth
+      type: System.Single
+      description: The depth of the shader
+    return:
+      type: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Filter
+      description: ''
+    content.vb: Public Shared Function ActivateShaderBack(shader As Shader, depth As Single = 0.5) As Functions.ScreenDrawing.Shaders.Filter
+  overload: UndyneFight_Ex.Fight.Functions.ScreenDrawing.ActivateShaderBack*
+  nameWithType.vb: Functions.ScreenDrawing.ActivateShaderBack(Shader, Single)
+  fullName.vb: UndyneFight_Ex.Fight.Functions.ScreenDrawing.ActivateShaderBack(UndyneFight_Ex.Shader, Single)
+  name.vb: ActivateShaderBack(Shader, Single)
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.CreateParticles(Microsoft.Xna.Framework.Color,System.Single,System.Single,Microsoft.Xna.Framework.Vector2,System.Int32,System.Single)
+  commentId: M:UndyneFight_Ex.Fight.Functions.ScreenDrawing.CreateParticles(Microsoft.Xna.Framework.Color,System.Single,System.Single,Microsoft.Xna.Framework.Vector2,System.Int32,System.Single)
+  id: CreateParticles(Microsoft.Xna.Framework.Color,System.Single,System.Single,Microsoft.Xna.Framework.Vector2,System.Int32,System.Single)
+  parent: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+  langs:
+  - csharp
+  - vb
+  name: CreateParticles(Color, float, float, Vector2, int, float)
+  nameWithType: Functions.ScreenDrawing.CreateParticles(Color, float, float, Vector2, int, float)
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.CreateParticles(Microsoft.Xna.Framework.Color, float, float, Microsoft.Xna.Framework.Vector2, int, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Creates particles that explodes from the given location
+  example: []
+  syntax:
+    content: public static void CreateParticles(Color color, float speed, float size, Vector2 centre, int count, float darkingSpeed = 3)
+    parameters:
+    - id: color
+      type: Microsoft.Xna.Framework.Color
+      description: The color of the particles
+    - id: speed
+      type: System.Single
+      description: The average speed of the particles
+    - id: size
+      type: System.Single
+      description: The average size of the particles
+    - id: centre
+      type: Microsoft.Xna.Framework.Vector2
+      description: The centre of the particles to explode from
+    - id: count
+      type: System.Int32
+      description: The amount of particles
+    - id: darkingSpeed
+      type: System.Single
+      description: The fading speed of the particles
+    content.vb: Public Shared Sub CreateParticles(color As Color, speed As Single, size As Single, centre As Vector2, count As Integer, darkingSpeed As Single = 3)
+  overload: UndyneFight_Ex.Fight.Functions.ScreenDrawing.CreateParticles*
+  nameWithType.vb: Functions.ScreenDrawing.CreateParticles(Color, Single, Single, Vector2, Integer, Single)
+  fullName.vb: UndyneFight_Ex.Fight.Functions.ScreenDrawing.CreateParticles(Microsoft.Xna.Framework.Color, Single, Single, Microsoft.Xna.Framework.Vector2, Integer, Single)
+  name.vb: CreateParticles(Color, Single, Single, Vector2, Integer, Single)
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.UIColor
+  commentId: P:UndyneFight_Ex.Fight.Functions.ScreenDrawing.UIColor
+  id: UIColor
+  parent: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+  langs:
+  - csharp
+  - vb
+  name: UIColor
+  nameWithType: Functions.ScreenDrawing.UIColor
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.UIColor
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: The color of the UI
+  example: []
+  syntax:
+    content: public static Color UIColor { get; set; }
+    parameters: []
+    return:
+      type: Microsoft.Xna.Framework.Color
+    content.vb: Public Shared Property UIColor As Color
+  overload: UndyneFight_Ex.Fight.Functions.ScreenDrawing.UIColor*
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.BoundColor
+  commentId: P:UndyneFight_Ex.Fight.Functions.ScreenDrawing.BoundColor
+  id: BoundColor
+  parent: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+  langs:
+  - csharp
+  - vb
+  name: BoundColor
+  nameWithType: Functions.ScreenDrawing.BoundColor
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.BoundColor
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: The color of the side bounds
+  example: []
+  syntax:
+    content: public static Color BoundColor { get; set; }
+    parameters: []
+    return:
+      type: Microsoft.Xna.Framework.Color
+    content.vb: Public Shared Property BoundColor As Color
+  overload: UndyneFight_Ex.Fight.Functions.ScreenDrawing.BoundColor*
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.ThemeColor
+  commentId: P:UndyneFight_Ex.Fight.Functions.ScreenDrawing.ThemeColor
+  id: ThemeColor
+  parent: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+  langs:
+  - csharp
+  - vb
+  name: ThemeColor
+  nameWithType: Functions.ScreenDrawing.ThemeColor
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.ThemeColor
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: The theme color of the chart
+  example: []
+  syntax:
+    content: public static Color ThemeColor { get; set; }
+    parameters: []
+    return:
+      type: Microsoft.Xna.Framework.Color
+    content.vb: Public Shared Property ThemeColor As Color
+  overload: UndyneFight_Ex.Fight.Functions.ScreenDrawing.ThemeColor*
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.BoxBackColor
+  commentId: P:UndyneFight_Ex.Fight.Functions.ScreenDrawing.BoxBackColor
+  id: BoxBackColor
+  parent: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+  langs:
+  - csharp
+  - vb
+  name: BoxBackColor
+  nameWithType: Functions.ScreenDrawing.BoxBackColor
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.BoxBackColor
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: The background color of the box
+  example: []
+  syntax:
+    content: public static Color BoxBackColor { get; set; }
+    parameters: []
+    return:
+      type: Microsoft.Xna.Framework.Color
+    content.vb: Public Shared Property BoxBackColor As Color
+  overload: UndyneFight_Ex.Fight.Functions.ScreenDrawing.BoxBackColor*
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.DownBoundDistance
+  commentId: P:UndyneFight_Ex.Fight.Functions.ScreenDrawing.DownBoundDistance
+  id: DownBoundDistance
+  parent: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+  langs:
+  - csharp
+  - vb
+  name: DownBoundDistance
+  nameWithType: Functions.ScreenDrawing.DownBoundDistance
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.DownBoundDistance
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: The distance of the lower bound
+  example: []
+  syntax:
+    content: public static float DownBoundDistance { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Shared Property DownBoundDistance As Single
+  overload: UndyneFight_Ex.Fight.Functions.ScreenDrawing.DownBoundDistance*
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.LeftBoundDistance
+  commentId: P:UndyneFight_Ex.Fight.Functions.ScreenDrawing.LeftBoundDistance
+  id: LeftBoundDistance
+  parent: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+  langs:
+  - csharp
+  - vb
+  name: LeftBoundDistance
+  nameWithType: Functions.ScreenDrawing.LeftBoundDistance
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.LeftBoundDistance
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: The distance of the leftward bound
+  example: []
+  syntax:
+    content: public static float LeftBoundDistance { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Shared Property LeftBoundDistance As Single
+  overload: UndyneFight_Ex.Fight.Functions.ScreenDrawing.LeftBoundDistance*
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.UpBoundDistance
+  commentId: P:UndyneFight_Ex.Fight.Functions.ScreenDrawing.UpBoundDistance
+  id: UpBoundDistance
+  parent: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+  langs:
+  - csharp
+  - vb
+  name: UpBoundDistance
+  nameWithType: Functions.ScreenDrawing.UpBoundDistance
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.UpBoundDistance
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: The distance of the upper bound
+  example: []
+  syntax:
+    content: public static float UpBoundDistance { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Shared Property UpBoundDistance As Single
+  overload: UndyneFight_Ex.Fight.Functions.ScreenDrawing.UpBoundDistance*
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.RightBoundDistance
+  commentId: P:UndyneFight_Ex.Fight.Functions.ScreenDrawing.RightBoundDistance
+  id: RightBoundDistance
+  parent: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+  langs:
+  - csharp
+  - vb
+  name: RightBoundDistance
+  nameWithType: Functions.ScreenDrawing.RightBoundDistance
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.RightBoundDistance
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: The distance of the rightward bound
+  example: []
+  syntax:
+    content: public static float RightBoundDistance { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Shared Property RightBoundDistance As Single
+  overload: UndyneFight_Ex.Fight.Functions.ScreenDrawing.RightBoundDistance*
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.BackGroundColor
+  commentId: P:UndyneFight_Ex.Fight.Functions.ScreenDrawing.BackGroundColor
+  id: BackGroundColor
+  parent: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+  langs:
+  - csharp
+  - vb
+  name: BackGroundColor
+  nameWithType: Functions.ScreenDrawing.BackGroundColor
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.BackGroundColor
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: The background color of the chart
+  example: []
+  syntax:
+    content: public static Color BackGroundColor { get; set; }
+    parameters: []
+    return:
+      type: Microsoft.Xna.Framework.Color
+    content.vb: Public Shared Property BackGroundColor As Color
+  overload: UndyneFight_Ex.Fight.Functions.ScreenDrawing.BackGroundColor*
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.ScreenAngle
+  commentId: P:UndyneFight_Ex.Fight.Functions.ScreenDrawing.ScreenAngle
+  id: ScreenAngle
+  parent: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+  langs:
+  - csharp
+  - vb
+  name: ScreenAngle
+  nameWithType: Functions.ScreenDrawing.ScreenAngle
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.ScreenAngle
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: The rotation of the screen
+  example: []
+  syntax:
+    content: public static float ScreenAngle { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Shared Property ScreenAngle As Single
+  overload: UndyneFight_Ex.Fight.Functions.ScreenDrawing.ScreenAngle*
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.ScreenPositionDelta
+  commentId: P:UndyneFight_Ex.Fight.Functions.ScreenDrawing.ScreenPositionDelta
+  id: ScreenPositionDelta
+  parent: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+  langs:
+  - csharp
+  - vb
+  name: ScreenPositionDelta
+  nameWithType: Functions.ScreenDrawing.ScreenPositionDelta
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.ScreenPositionDelta
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: The displacement of the screen
+  example: []
+  syntax:
+    content: public static Vector2 ScreenPositionDelta { get; set; }
+    parameters: []
+    return:
+      type: Microsoft.Xna.Framework.Vector2
+    content.vb: Public Shared Property ScreenPositionDelta As Vector2
+  overload: UndyneFight_Ex.Fight.Functions.ScreenDrawing.ScreenPositionDelta*
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.ScreenScale
+  commentId: P:UndyneFight_Ex.Fight.Functions.ScreenDrawing.ScreenScale
+  id: ScreenScale
+  parent: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+  langs:
+  - csharp
+  - vb
+  name: ScreenScale
+  nameWithType: Functions.ScreenDrawing.ScreenScale
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.ScreenScale
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: The scale of the screen
+  example: []
+  syntax:
+    content: public static float ScreenScale { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Shared Property ScreenScale As Single
+  overload: UndyneFight_Ex.Fight.Functions.ScreenDrawing.ScreenScale*
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.SceneOutScale
+  commentId: P:UndyneFight_Ex.Fight.Functions.ScreenDrawing.SceneOutScale
+  id: SceneOutScale
+  parent: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+  langs:
+  - csharp
+  - vb
+  name: SceneOutScale
+  nameWithType: Functions.ScreenDrawing.SceneOutScale
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.SceneOutScale
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: The default fading speed of the color fading
+  example: []
+  syntax:
+    content: public static float SceneOutScale { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Shared Property SceneOutScale As Single
+  overload: UndyneFight_Ex.Fight.Functions.ScreenDrawing.SceneOutScale*
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.MasterAlpha
+  commentId: P:UndyneFight_Ex.Fight.Functions.ScreenDrawing.MasterAlpha
+  id: MasterAlpha
+  parent: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+  langs:
+  - csharp
+  - vb
+  name: MasterAlpha
+  nameWithType: Functions.ScreenDrawing.MasterAlpha
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.MasterAlpha
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: The overall Alpha value of the screen
+  example: []
+  syntax:
+    content: public static float MasterAlpha { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Shared Property MasterAlpha As Single
+  overload: UndyneFight_Ex.Fight.Functions.ScreenDrawing.MasterAlpha*
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.SceneRendering
+  commentId: P:UndyneFight_Ex.Fight.Functions.ScreenDrawing.SceneRendering
+  id: SceneRendering
+  parent: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+  langs:
+  - csharp
+  - vb
+  name: SceneRendering
+  nameWithType: Functions.ScreenDrawing.SceneRendering
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.SceneRendering
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: The main scene rendering manager
+  example: []
+  syntax:
+    content: public static RenderingManager SceneRendering { get; }
+    parameters: []
+    return:
+      type: UndyneFight_Ex.RenderingManager
+    content.vb: Public Shared ReadOnly Property SceneRendering As RenderingManager
+  overload: UndyneFight_Ex.Fight.Functions.ScreenDrawing.SceneRendering*
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.BackGroundRendering
+  commentId: P:UndyneFight_Ex.Fight.Functions.ScreenDrawing.BackGroundRendering
+  id: BackGroundRendering
+  parent: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+  langs:
+  - csharp
+  - vb
+  name: BackGroundRendering
+  nameWithType: Functions.ScreenDrawing.BackGroundRendering
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.BackGroundRendering
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: The background scene rendering manager
+  example: []
+  syntax:
+    content: public static RenderingManager BackGroundRendering { get; }
+    parameters: []
+    return:
+      type: UndyneFight_Ex.RenderingManager
+    content.vb: Public Shared ReadOnly Property BackGroundRendering As RenderingManager
+  overload: UndyneFight_Ex.Fight.Functions.ScreenDrawing.BackGroundRendering*
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.ScreenExtending
+  commentId: P:UndyneFight_Ex.Fight.Functions.ScreenDrawing.ScreenExtending
+  id: ScreenExtending
+  parent: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+  langs:
+  - csharp
+  - vb
+  name: ScreenExtending
+  nameWithType: Functions.ScreenDrawing.ScreenExtending
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.ScreenExtending
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: The distances of the screen bounds
+  example: []
+  syntax:
+    content: public static Vector4 ScreenExtending { get; set; }
+    parameters: []
+    return:
+      type: Microsoft.Xna.Framework.Vector4
+    content.vb: Public Shared Property ScreenExtending As Vector4
+  overload: UndyneFight_Ex.Fight.Functions.ScreenDrawing.ScreenExtending*
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.UpExtending
+  commentId: P:UndyneFight_Ex.Fight.Functions.ScreenDrawing.UpExtending
+  id: UpExtending
+  parent: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+  langs:
+  - csharp
+  - vb
+  name: UpExtending
+  nameWithType: Functions.ScreenDrawing.UpExtending
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.UpExtending
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: The distance of the upwards bound
+  example: []
+  syntax:
+    content: public static float UpExtending { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Shared Property UpExtending As Single
+  overload: UndyneFight_Ex.Fight.Functions.ScreenDrawing.UpExtending*
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.DownExtending
+  commentId: P:UndyneFight_Ex.Fight.Functions.ScreenDrawing.DownExtending
+  id: DownExtending
+  parent: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+  langs:
+  - csharp
+  - vb
+  name: DownExtending
+  nameWithType: Functions.ScreenDrawing.DownExtending
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.DownExtending
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: The distance of the downwards bound
+  example: []
+  syntax:
+    content: public static float DownExtending { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Shared Property DownExtending As Single
+  overload: UndyneFight_Ex.Fight.Functions.ScreenDrawing.DownExtending*
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.SpriteBatch
+  commentId: P:UndyneFight_Ex.Fight.Functions.ScreenDrawing.SpriteBatch
+  id: SpriteBatch
+  parent: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+  langs:
+  - csharp
+  - vb
+  name: SpriteBatch
+  nameWithType: Functions.ScreenDrawing.SpriteBatch
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.SpriteBatch
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: The sprite batch to draw sprites
+  example: []
+  syntax:
+    content: public static SpriteBatchEX SpriteBatch { get; }
+    parameters: []
+    return:
+      type: UndyneFight_Ex.SpriteBatchEX
+    content.vb: Public Shared ReadOnly Property SpriteBatch As SpriteBatchEX
+  overload: UndyneFight_Ex.Fight.Functions.ScreenDrawing.SpriteBatch*
+references:
+- uid: UndyneFight_Ex.Fight
+  commentId: N:UndyneFight_Ex.Fight
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex.Fight
+  nameWithType: UndyneFight_Ex.Fight
+  fullName: UndyneFight_Ex.Fight
+  spec.csharp:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight
+    name: Fight
+    isExternal: true
+    href: UndyneFight_Ex.Fight.html
+  spec.vb:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight
+    name: Fight
+    isExternal: true
+    href: UndyneFight_Ex.Fight.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.CreateCustomSurface*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.ScreenDrawing.CreateCustomSurface
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html#UndyneFight_Ex_Fight_Functions_ScreenDrawing_CreateCustomSurface_UndyneFight_Ex_Surface_
+  name: CreateCustomSurface
+  nameWithType: Functions.ScreenDrawing.CreateCustomSurface
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.CreateCustomSurface
+- uid: UndyneFight_Ex.Surface
+  commentId: T:UndyneFight_Ex.Surface
+  parent: UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.Surface.html
+  name: Surface
+  nameWithType: Surface
+  fullName: UndyneFight_Ex.Surface
+- uid: UndyneFight_Ex
+  commentId: N:UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex
+  nameWithType: UndyneFight_Ex
+  fullName: UndyneFight_Ex
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.RemoveCustomSurface*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.ScreenDrawing.RemoveCustomSurface
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html#UndyneFight_Ex_Fight_Functions_ScreenDrawing_RemoveCustomSurface_UndyneFight_Ex_Surface_
+  name: RemoveCustomSurface
+  nameWithType: Functions.ScreenDrawing.RemoveCustomSurface
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.RemoveCustomSurface
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.SceneOut*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.ScreenDrawing.SceneOut
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html#UndyneFight_Ex_Fight_Functions_ScreenDrawing_SceneOut_Microsoft_Xna_Framework_Color_System_Single_
+  name: SceneOut
+  nameWithType: Functions.ScreenDrawing.SceneOut
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.SceneOut
+- uid: Microsoft.Xna.Framework.Color
+  commentId: T:Microsoft.Xna.Framework.Color
+  parent: Microsoft.Xna.Framework
+  isExternal: true
+  name: Color
+  nameWithType: Color
+  fullName: Microsoft.Xna.Framework.Color
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: Microsoft.Xna.Framework
+  commentId: N:Microsoft.Xna.Framework
+  isExternal: true
+  name: Microsoft.Xna.Framework
+  nameWithType: Microsoft.Xna.Framework
+  fullName: Microsoft.Xna.Framework
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.WhiteOut*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.ScreenDrawing.WhiteOut
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html#UndyneFight_Ex_Fight_Functions_ScreenDrawing_WhiteOut_System_Single_
+  name: WhiteOut
+  nameWithType: Functions.ScreenDrawing.WhiteOut
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.WhiteOut
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.MakeFlicker*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.ScreenDrawing.MakeFlicker
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html#UndyneFight_Ex_Fight_Functions_ScreenDrawing_MakeFlicker_Microsoft_Xna_Framework_Color_
+  name: MakeFlicker
+  nameWithType: Functions.ScreenDrawing.MakeFlicker
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.MakeFlicker
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.ActivateShader*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.ScreenDrawing.ActivateShader
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html#UndyneFight_Ex_Fight_Functions_ScreenDrawing_ActivateShader_UndyneFight_Ex_Shader_System_Single_
+  name: ActivateShader
+  nameWithType: Functions.ScreenDrawing.ActivateShader
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.ActivateShader
+- uid: UndyneFight_Ex.Shader
+  commentId: T:UndyneFight_Ex.Shader
+  parent: UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.Shader.html
+  name: Shader
+  nameWithType: Shader
+  fullName: UndyneFight_Ex.Shader
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Filter
+  commentId: T:UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Filter
+  parent: UndyneFight_Ex.Fight
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html
+  name: Functions.ScreenDrawing.Shaders.Filter
+  nameWithType: Functions.ScreenDrawing.Shaders.Filter
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Filter
+  spec.csharp:
+  - uid: UndyneFight_Ex.Fight.Functions
+    name: Functions
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+    name: ScreenDrawing
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders
+    name: Shaders
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Filter
+    name: Filter
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Filter.html
+  spec.vb:
+  - uid: UndyneFight_Ex.Fight.Functions
+    name: Functions
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+    name: ScreenDrawing
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders
+    name: Shaders
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Filter
+    name: Filter
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Filter.html
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.ActivateShaderBack*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.ScreenDrawing.ActivateShaderBack
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html#UndyneFight_Ex_Fight_Functions_ScreenDrawing_ActivateShaderBack_UndyneFight_Ex_Shader_System_Single_
+  name: ActivateShaderBack
+  nameWithType: Functions.ScreenDrawing.ActivateShaderBack
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.ActivateShaderBack
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.CreateParticles*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.ScreenDrawing.CreateParticles
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html#UndyneFight_Ex_Fight_Functions_ScreenDrawing_CreateParticles_Microsoft_Xna_Framework_Color_System_Single_System_Single_Microsoft_Xna_Framework_Vector2_System_Int32_System_Single_
+  name: CreateParticles
+  nameWithType: Functions.ScreenDrawing.CreateParticles
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.CreateParticles
+- uid: Microsoft.Xna.Framework.Vector2
+  commentId: T:Microsoft.Xna.Framework.Vector2
+  parent: Microsoft.Xna.Framework
+  isExternal: true
+  name: Vector2
+  nameWithType: Vector2
+  fullName: Microsoft.Xna.Framework.Vector2
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.UIColor*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.ScreenDrawing.UIColor
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html#UndyneFight_Ex_Fight_Functions_ScreenDrawing_UIColor
+  name: UIColor
+  nameWithType: Functions.ScreenDrawing.UIColor
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.UIColor
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.BoundColor*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.ScreenDrawing.BoundColor
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html#UndyneFight_Ex_Fight_Functions_ScreenDrawing_BoundColor
+  name: BoundColor
+  nameWithType: Functions.ScreenDrawing.BoundColor
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.BoundColor
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.ThemeColor*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.ScreenDrawing.ThemeColor
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html#UndyneFight_Ex_Fight_Functions_ScreenDrawing_ThemeColor
+  name: ThemeColor
+  nameWithType: Functions.ScreenDrawing.ThemeColor
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.ThemeColor
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.BoxBackColor*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.ScreenDrawing.BoxBackColor
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html#UndyneFight_Ex_Fight_Functions_ScreenDrawing_BoxBackColor
+  name: BoxBackColor
+  nameWithType: Functions.ScreenDrawing.BoxBackColor
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.BoxBackColor
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.DownBoundDistance*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.ScreenDrawing.DownBoundDistance
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html#UndyneFight_Ex_Fight_Functions_ScreenDrawing_DownBoundDistance
+  name: DownBoundDistance
+  nameWithType: Functions.ScreenDrawing.DownBoundDistance
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.DownBoundDistance
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.LeftBoundDistance*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.ScreenDrawing.LeftBoundDistance
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html#UndyneFight_Ex_Fight_Functions_ScreenDrawing_LeftBoundDistance
+  name: LeftBoundDistance
+  nameWithType: Functions.ScreenDrawing.LeftBoundDistance
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.LeftBoundDistance
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.UpBoundDistance*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.ScreenDrawing.UpBoundDistance
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html#UndyneFight_Ex_Fight_Functions_ScreenDrawing_UpBoundDistance
+  name: UpBoundDistance
+  nameWithType: Functions.ScreenDrawing.UpBoundDistance
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.UpBoundDistance
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.RightBoundDistance*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.ScreenDrawing.RightBoundDistance
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html#UndyneFight_Ex_Fight_Functions_ScreenDrawing_RightBoundDistance
+  name: RightBoundDistance
+  nameWithType: Functions.ScreenDrawing.RightBoundDistance
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.RightBoundDistance
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.BackGroundColor*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.ScreenDrawing.BackGroundColor
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html#UndyneFight_Ex_Fight_Functions_ScreenDrawing_BackGroundColor
+  name: BackGroundColor
+  nameWithType: Functions.ScreenDrawing.BackGroundColor
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.BackGroundColor
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.ScreenAngle*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.ScreenDrawing.ScreenAngle
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html#UndyneFight_Ex_Fight_Functions_ScreenDrawing_ScreenAngle
+  name: ScreenAngle
+  nameWithType: Functions.ScreenDrawing.ScreenAngle
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.ScreenAngle
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.ScreenPositionDelta*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.ScreenDrawing.ScreenPositionDelta
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html#UndyneFight_Ex_Fight_Functions_ScreenDrawing_ScreenPositionDelta
+  name: ScreenPositionDelta
+  nameWithType: Functions.ScreenDrawing.ScreenPositionDelta
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.ScreenPositionDelta
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.ScreenScale*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.ScreenDrawing.ScreenScale
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html#UndyneFight_Ex_Fight_Functions_ScreenDrawing_ScreenScale
+  name: ScreenScale
+  nameWithType: Functions.ScreenDrawing.ScreenScale
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.ScreenScale
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.SceneOutScale*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.ScreenDrawing.SceneOutScale
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html#UndyneFight_Ex_Fight_Functions_ScreenDrawing_SceneOutScale
+  name: SceneOutScale
+  nameWithType: Functions.ScreenDrawing.SceneOutScale
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.SceneOutScale
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.MasterAlpha*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.ScreenDrawing.MasterAlpha
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html#UndyneFight_Ex_Fight_Functions_ScreenDrawing_MasterAlpha
+  name: MasterAlpha
+  nameWithType: Functions.ScreenDrawing.MasterAlpha
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.MasterAlpha
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.SceneRendering*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.ScreenDrawing.SceneRendering
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html#UndyneFight_Ex_Fight_Functions_ScreenDrawing_SceneRendering
+  name: SceneRendering
+  nameWithType: Functions.ScreenDrawing.SceneRendering
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.SceneRendering
+- uid: UndyneFight_Ex.RenderingManager
+  commentId: T:UndyneFight_Ex.RenderingManager
+  parent: UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.RenderingManager.html
+  name: RenderingManager
+  nameWithType: RenderingManager
+  fullName: UndyneFight_Ex.RenderingManager
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.BackGroundRendering*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.ScreenDrawing.BackGroundRendering
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html#UndyneFight_Ex_Fight_Functions_ScreenDrawing_BackGroundRendering
+  name: BackGroundRendering
+  nameWithType: Functions.ScreenDrawing.BackGroundRendering
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.BackGroundRendering
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.ScreenExtending*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.ScreenDrawing.ScreenExtending
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html#UndyneFight_Ex_Fight_Functions_ScreenDrawing_ScreenExtending
+  name: ScreenExtending
+  nameWithType: Functions.ScreenDrawing.ScreenExtending
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.ScreenExtending
+- uid: Microsoft.Xna.Framework.Vector4
+  commentId: T:Microsoft.Xna.Framework.Vector4
+  parent: Microsoft.Xna.Framework
+  isExternal: true
+  name: Vector4
+  nameWithType: Vector4
+  fullName: Microsoft.Xna.Framework.Vector4
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.UpExtending*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.ScreenDrawing.UpExtending
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html#UndyneFight_Ex_Fight_Functions_ScreenDrawing_UpExtending
+  name: UpExtending
+  nameWithType: Functions.ScreenDrawing.UpExtending
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.UpExtending
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.DownExtending*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.ScreenDrawing.DownExtending
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html#UndyneFight_Ex_Fight_Functions_ScreenDrawing_DownExtending
+  name: DownExtending
+  nameWithType: Functions.ScreenDrawing.DownExtending
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.DownExtending
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.SpriteBatch*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.ScreenDrawing.SpriteBatch
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html#UndyneFight_Ex_Fight_Functions_ScreenDrawing_SpriteBatch
+  name: SpriteBatch
+  nameWithType: Functions.ScreenDrawing.SpriteBatch
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.SpriteBatch
+- uid: UndyneFight_Ex.SpriteBatchEX
+  commentId: T:UndyneFight_Ex.SpriteBatchEX
+  parent: UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.SpriteBatchEX.html
+  name: SpriteBatchEX
+  nameWithType: SpriteBatchEX
+  fullName: UndyneFight_Ex.SpriteBatchEX

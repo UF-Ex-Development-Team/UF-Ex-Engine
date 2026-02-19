@@ -1,0 +1,422 @@
+### YamlMime:ManagedReference
+items:
+- uid: UndyneFight_Ex.Protected`1
+  commentId: T:UndyneFight_Ex.Protected`1
+  id: Protected`1
+  parent: UndyneFight_Ex
+  children:
+  - UndyneFight_Ex.Protected`1.Hacked
+  - UndyneFight_Ex.Protected`1.Value
+  - UndyneFight_Ex.Protected`1.op_Implicit(UndyneFight_Ex.Protected{`0})~`0
+  langs:
+  - csharp
+  - vb
+  name: Protected<T>
+  nameWithType: Protected<T>
+  fullName: UndyneFight_Ex.Protected<T>
+  type: Struct
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Protected data
+  example: []
+  syntax:
+    content: public struct Protected<T>
+    typeParameters:
+    - id: T
+      description: ''
+    content.vb: Public Structure [Protected](Of T)
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.GetType
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  nameWithType.vb: Protected(Of T)
+  fullName.vb: UndyneFight_Ex.Protected(Of T)
+  name.vb: Protected(Of T)
+- uid: UndyneFight_Ex.Protected`1.op_Implicit(UndyneFight_Ex.Protected{`0})~`0
+  commentId: M:UndyneFight_Ex.Protected`1.op_Implicit(UndyneFight_Ex.Protected{`0})~`0
+  id: op_Implicit(UndyneFight_Ex.Protected{`0})~`0
+  parent: UndyneFight_Ex.Protected`1
+  langs:
+  - csharp
+  - vb
+  name: implicit operator T(Protected<T>)
+  nameWithType: Protected<T>.implicit operator T(Protected<T>)
+  fullName: UndyneFight_Ex.Protected<T>.implicit operator T(UndyneFight_Ex.Protected<T>)
+  type: Operator
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Converts the value of the data to the desired type
+  example: []
+  syntax:
+    content: public static implicit operator T(Protected<T> val)
+    parameters:
+    - id: val
+      type: UndyneFight_Ex.Protected`1
+      description: The value to convert
+    return:
+      type: '{T}'
+    content.vb: Public Shared Widening Operator CType(val As [Protected](Of T)) As T
+  overload: UndyneFight_Ex.Protected`1.op_Implicit*
+  nameWithType.vb: Protected(Of T).CType(Protected(Of T))
+  fullName.vb: UndyneFight_Ex.Protected(Of T).CType(UndyneFight_Ex.Protected(Of T))
+  name.vb: CType(Protected(Of T))
+- uid: UndyneFight_Ex.Protected`1.Hacked
+  commentId: P:UndyneFight_Ex.Protected`1.Hacked
+  id: Hacked
+  parent: UndyneFight_Ex.Protected`1
+  langs:
+  - csharp
+  - vb
+  name: Hacked
+  nameWithType: Protected<T>.Hacked
+  fullName: UndyneFight_Ex.Protected<T>.Hacked
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Whether the data was hacked
+  example: []
+  syntax:
+    content: public readonly bool Hacked { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property Hacked As Boolean
+  overload: UndyneFight_Ex.Protected`1.Hacked*
+  nameWithType.vb: Protected(Of T).Hacked
+  fullName.vb: UndyneFight_Ex.Protected(Of T).Hacked
+- uid: UndyneFight_Ex.Protected`1.Value
+  commentId: P:UndyneFight_Ex.Protected`1.Value
+  id: Value
+  parent: UndyneFight_Ex.Protected`1
+  langs:
+  - csharp
+  - vb
+  name: Value
+  nameWithType: Protected<T>.Value
+  fullName: UndyneFight_Ex.Protected<T>.Value
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: The value of the protected data
+  example: []
+  syntax:
+    content: public T Value { get; set; }
+    parameters: []
+    return:
+      type: '{T}'
+    content.vb: Public Property Value As T
+  overload: UndyneFight_Ex.Protected`1.Value*
+  nameWithType.vb: Protected(Of T).Value
+  fullName.vb: UndyneFight_Ex.Protected(Of T).Value
+references:
+- uid: UndyneFight_Ex
+  commentId: N:UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex
+  nameWithType: UndyneFight_Ex
+  fullName: UndyneFight_Ex
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UndyneFight_Ex.Protected`1.op_Implicit*
+  commentId: Overload:UndyneFight_Ex.Protected`1.op_Implicit
+  name: implicit operator
+  nameWithType: Protected<T>.implicit operator
+  fullName: UndyneFight_Ex.Protected<T>.implicit operator
+  nameWithType.vb: Protected(Of T).CType
+  fullName.vb: UndyneFight_Ex.Protected(Of T).CType
+  name.vb: CType
+  spec.csharp:
+  - name: implicit
+  - name: " "
+  - name: operator
+- uid: UndyneFight_Ex.Protected`1
+  commentId: T:UndyneFight_Ex.Protected`1
+  parent: UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.Protected-1.html
+  name: Protected<T>
+  nameWithType: Protected<T>
+  fullName: UndyneFight_Ex.Protected<T>
+  nameWithType.vb: Protected(Of T)
+  fullName.vb: UndyneFight_Ex.Protected(Of T)
+  name.vb: Protected(Of T)
+  spec.csharp:
+  - uid: UndyneFight_Ex.Protected`1
+    name: Protected
+    isExternal: true
+    href: UndyneFight_Ex.Protected-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: UndyneFight_Ex.Protected`1
+    name: Protected
+    isExternal: true
+    href: UndyneFight_Ex.Protected-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: UndyneFight_Ex.Protected`1.Hacked*
+  commentId: Overload:UndyneFight_Ex.Protected`1.Hacked
+  isExternal: true
+  href: UndyneFight_Ex.Protected-1.html#UndyneFight_Ex_Protected_1_Hacked
+  name: Hacked
+  nameWithType: Protected<T>.Hacked
+  fullName: UndyneFight_Ex.Protected<T>.Hacked
+  nameWithType.vb: Protected(Of T).Hacked
+  fullName.vb: UndyneFight_Ex.Protected(Of T).Hacked
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: UndyneFight_Ex.Protected`1.Value*
+  commentId: Overload:UndyneFight_Ex.Protected`1.Value
+  isExternal: true
+  href: UndyneFight_Ex.Protected-1.html#UndyneFight_Ex_Protected_1_Value
+  name: Value
+  nameWithType: Protected<T>.Value
+  fullName: UndyneFight_Ex.Protected<T>.Value
+  nameWithType.vb: Protected(Of T).Value
+  fullName.vb: UndyneFight_Ex.Protected(Of T).Value

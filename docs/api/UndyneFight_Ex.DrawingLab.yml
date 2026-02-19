@@ -1,0 +1,2000 @@
+### YamlMime:ManagedReference
+items:
+- uid: UndyneFight_Ex.DrawingLab
+  commentId: T:UndyneFight_Ex.DrawingLab
+  id: DrawingLab
+  parent: UndyneFight_Ex
+  children:
+  - UndyneFight_Ex.DrawingLab.DrawCircle(Microsoft.Xna.Framework.Vector2,System.Single,System.Int32,System.Single,Microsoft.Xna.Framework.Color,System.Single)
+  - UndyneFight_Ex.DrawingLab.DrawCircleFilled(Microsoft.Xna.Framework.Vector2,System.Single,System.Int32,Microsoft.Xna.Framework.Color,System.Single)
+  - UndyneFight_Ex.DrawingLab.DrawCircleFilledSections(Microsoft.Xna.Framework.Vector2,System.Single,System.Int32,Microsoft.Xna.Framework.Color,System.Single,System.Single,System.Single)
+  - UndyneFight_Ex.DrawingLab.DrawCircleSections(Microsoft.Xna.Framework.Vector2,System.Single,System.Int32,System.Single,Microsoft.Xna.Framework.Color,System.Single,System.Single,System.Single)
+  - UndyneFight_Ex.DrawingLab.DrawLine(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Graphics.Texture2D)
+  - UndyneFight_Ex.DrawingLab.DrawLine(Microsoft.Xna.Framework.Vector2,System.Single,System.Single,System.Single,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Graphics.Texture2D)
+  - UndyneFight_Ex.DrawingLab.DrawLineColors(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Graphics.Texture2D)
+  - UndyneFight_Ex.DrawingLab.DrawLineColors(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Color[],System.Single,Microsoft.Xna.Framework.Graphics.Texture2D)
+  - UndyneFight_Ex.DrawingLab.DrawLineColors(Microsoft.Xna.Framework.Vector2,System.Single,System.Single,System.Single,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Graphics.Texture2D)
+  - UndyneFight_Ex.DrawingLab.DrawLineColors(Microsoft.Xna.Framework.Vector2,System.Single,System.Single,System.Single,Microsoft.Xna.Framework.Color[],System.Single,Microsoft.Xna.Framework.Graphics.Texture2D)
+  - UndyneFight_Ex.DrawingLab.DrawRectangle(UndyneFight_Ex.CollideRect,Microsoft.Xna.Framework.Color,System.Single,System.Single)
+  - UndyneFight_Ex.DrawingLab.DrawRoundedRectangle(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Color,System.Single)
+  - UndyneFight_Ex.DrawingLab.DrawText(UndyneFight_Ex.GLFont,System.String,Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{System.Single},System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{System.Single},UndyneFight_Ex.SpriteBatchEX)
+  - UndyneFight_Ex.DrawingLab.DrawTriangle(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single)
+  - UndyneFight_Ex.DrawingLab.DrawTriangle(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color[],System.Single)
+  - UndyneFight_Ex.DrawingLab.DrawVector(Microsoft.Xna.Framework.Vector2,System.Single)
+  - UndyneFight_Ex.DrawingLab.GetIndices(Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture[])
+  - UndyneFight_Ex.DrawingLab.GetIndices(Microsoft.Xna.Framework.Graphics.VertexPositionColor[])
+  - UndyneFight_Ex.DrawingLab.GetIndices(Microsoft.Xna.Framework.Vector2[])
+  - UndyneFight_Ex.DrawingLab.GetIndices(System.Tuple{System.Int32,Microsoft.Xna.Framework.Vector2}[])
+  - UndyneFight_Ex.DrawingLab.HsvToRgb(System.Single,System.Single,System.Single,System.Int32)
+  - UndyneFight_Ex.DrawingLab.LoadContent``1(System.String,Microsoft.Xna.Framework.Content.ContentManager)
+  - UndyneFight_Ex.DrawingLab.LoadImage(System.String)
+  - UndyneFight_Ex.DrawingLab.ToColor(Microsoft.Xna.Framework.Vector3)
+  - UndyneFight_Ex.DrawingLab.ToColor(Microsoft.Xna.Framework.Vector4)
+  - UndyneFight_Ex.DrawingLab.UVPosition(Microsoft.Xna.Framework.Vector2[],Microsoft.Xna.Framework.Vector2)
+  langs:
+  - csharp
+  - vb
+  name: DrawingLab
+  nameWithType: DrawingLab
+  fullName: UndyneFight_Ex.DrawingLab
+  type: Class
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Drawing Utilities
+  example: []
+  syntax:
+    content: public static class DrawingLab
+    content.vb: Public Module DrawingLab
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+- uid: UndyneFight_Ex.DrawingLab.GetIndices(Microsoft.Xna.Framework.Graphics.VertexPositionColor[])
+  commentId: M:UndyneFight_Ex.DrawingLab.GetIndices(Microsoft.Xna.Framework.Graphics.VertexPositionColor[])
+  id: GetIndices(Microsoft.Xna.Framework.Graphics.VertexPositionColor[])
+  parent: UndyneFight_Ex.DrawingLab
+  langs:
+  - csharp
+  - vb
+  name: GetIndices(VertexPositionColor[])
+  nameWithType: DrawingLab.GetIndices(VertexPositionColor[])
+  fullName: UndyneFight_Ex.DrawingLab.GetIndices(Microsoft.Xna.Framework.Graphics.VertexPositionColor[])
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Enter a point sequence clockwise to obtain a set of triangulations of the point sequence.
+  example: []
+  syntax:
+    content: public static int[] GetIndices(VertexPositionColor[] pointList)
+    parameters:
+    - id: pointList
+      type: Microsoft.Xna.Framework.Graphics.VertexPositionColor[]
+      description: ''
+    return:
+      type: System.Int32[]
+      description: ''
+    content.vb: Public Shared Function GetIndices(pointList As VertexPositionColor()) As Integer()
+  overload: UndyneFight_Ex.DrawingLab.GetIndices*
+  nameWithType.vb: DrawingLab.GetIndices(VertexPositionColor())
+  fullName.vb: UndyneFight_Ex.DrawingLab.GetIndices(Microsoft.Xna.Framework.Graphics.VertexPositionColor())
+  name.vb: GetIndices(VertexPositionColor())
+- uid: UndyneFight_Ex.DrawingLab.GetIndices(Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture[])
+  commentId: M:UndyneFight_Ex.DrawingLab.GetIndices(Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture[])
+  id: GetIndices(Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture[])
+  parent: UndyneFight_Ex.DrawingLab
+  langs:
+  - csharp
+  - vb
+  name: GetIndices(VertexPositionColorTexture[])
+  nameWithType: DrawingLab.GetIndices(VertexPositionColorTexture[])
+  fullName: UndyneFight_Ex.DrawingLab.GetIndices(Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture[])
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Enter a point sequence clockwise to obtain a set of triangulations of the point sequence.
+  example: []
+  syntax:
+    content: public static List<Tuple<int, int, int>> GetIndices(VertexPositionColorTexture[] pointList)
+    parameters:
+    - id: pointList
+      type: Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture[]
+    return:
+      type: System.Collections.Generic.List{System.Tuple{System.Int32,System.Int32,System.Int32}}
+    content.vb: Public Shared Function GetIndices(pointList As VertexPositionColorTexture()) As List(Of Tuple(Of Integer, Integer, Integer))
+  overload: UndyneFight_Ex.DrawingLab.GetIndices*
+  nameWithType.vb: DrawingLab.GetIndices(VertexPositionColorTexture())
+  fullName.vb: UndyneFight_Ex.DrawingLab.GetIndices(Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture())
+  name.vb: GetIndices(VertexPositionColorTexture())
+- uid: UndyneFight_Ex.DrawingLab.GetIndices(Microsoft.Xna.Framework.Vector2[])
+  commentId: M:UndyneFight_Ex.DrawingLab.GetIndices(Microsoft.Xna.Framework.Vector2[])
+  id: GetIndices(Microsoft.Xna.Framework.Vector2[])
+  parent: UndyneFight_Ex.DrawingLab
+  langs:
+  - csharp
+  - vb
+  name: GetIndices(Vector2[])
+  nameWithType: DrawingLab.GetIndices(Vector2[])
+  fullName: UndyneFight_Ex.DrawingLab.GetIndices(Microsoft.Xna.Framework.Vector2[])
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Enter a point sequence clockwise to obtain a set of triangulations of the point sequence.
+  example: []
+  syntax:
+    content: public static List<Tuple<int, int, int>> GetIndices(Vector2[] pointList)
+    parameters:
+    - id: pointList
+      type: Microsoft.Xna.Framework.Vector2[]
+    return:
+      type: System.Collections.Generic.List{System.Tuple{System.Int32,System.Int32,System.Int32}}
+    content.vb: Public Shared Function GetIndices(pointList As Vector2()) As List(Of Tuple(Of Integer, Integer, Integer))
+  overload: UndyneFight_Ex.DrawingLab.GetIndices*
+  nameWithType.vb: DrawingLab.GetIndices(Vector2())
+  fullName.vb: UndyneFight_Ex.DrawingLab.GetIndices(Microsoft.Xna.Framework.Vector2())
+  name.vb: GetIndices(Vector2())
+- uid: UndyneFight_Ex.DrawingLab.GetIndices(System.Tuple{System.Int32,Microsoft.Xna.Framework.Vector2}[])
+  commentId: M:UndyneFight_Ex.DrawingLab.GetIndices(System.Tuple{System.Int32,Microsoft.Xna.Framework.Vector2}[])
+  id: GetIndices(System.Tuple{System.Int32,Microsoft.Xna.Framework.Vector2}[])
+  parent: UndyneFight_Ex.DrawingLab
+  langs:
+  - csharp
+  - vb
+  name: GetIndices(Tuple<int, Vector2>[])
+  nameWithType: DrawingLab.GetIndices(Tuple<int, Vector2>[])
+  fullName: UndyneFight_Ex.DrawingLab.GetIndices(System.Tuple<int, Microsoft.Xna.Framework.Vector2>[])
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Enter a point sequence clockwise to obtain a set of triangulations of the point sequence.
+  example: []
+  syntax:
+    content: public static List<Tuple<int, int, int>> GetIndices(Tuple<int, Vector2>[] pointList)
+    parameters:
+    - id: pointList
+      type: System.Tuple{System.Int32,Microsoft.Xna.Framework.Vector2}[]
+    return:
+      type: System.Collections.Generic.List{System.Tuple{System.Int32,System.Int32,System.Int32}}
+    content.vb: Public Shared Function GetIndices(pointList As Tuple(Of Integer, Vector2)()) As List(Of Tuple(Of Integer, Integer, Integer))
+  overload: UndyneFight_Ex.DrawingLab.GetIndices*
+  nameWithType.vb: DrawingLab.GetIndices(Tuple(Of Integer, Vector2)())
+  fullName.vb: UndyneFight_Ex.DrawingLab.GetIndices(System.Tuple(Of Integer, Microsoft.Xna.Framework.Vector2)())
+  name.vb: GetIndices(Tuple(Of Integer, Vector2)())
+- uid: UndyneFight_Ex.DrawingLab.HsvToRgb(System.Single,System.Single,System.Single,System.Int32)
+  commentId: M:UndyneFight_Ex.DrawingLab.HsvToRgb(System.Single,System.Single,System.Single,System.Int32)
+  id: HsvToRgb(System.Single,System.Single,System.Single,System.Int32)
+  parent: UndyneFight_Ex.DrawingLab
+  langs:
+  - csharp
+  - vb
+  name: HsvToRgb(float, float, float, int)
+  nameWithType: DrawingLab.HsvToRgb(float, float, float, int)
+  fullName: UndyneFight_Ex.DrawingLab.HsvToRgb(float, float, float, int)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Converts a HSV color to RGB
+  example: []
+  syntax:
+    content: public static Vector4 HsvToRgb(float hue, float saturation, float value, int input_a)
+    parameters:
+    - id: hue
+      type: System.Single
+      description: The hue of the color
+    - id: saturation
+      type: System.Single
+      description: The saturation of the color
+    - id: value
+      type: System.Single
+      description: The value of the color
+    - id: input_a
+      type: System.Int32
+      description: The alpha of the color
+    return:
+      type: Microsoft.Xna.Framework.Vector4
+      description: The color in RGBA form
+    content.vb: Public Shared Function HsvToRgb(hue As Single, saturation As Single, value As Single, input_a As Integer) As Vector4
+  overload: UndyneFight_Ex.DrawingLab.HsvToRgb*
+  nameWithType.vb: DrawingLab.HsvToRgb(Single, Single, Single, Integer)
+  fullName.vb: UndyneFight_Ex.DrawingLab.HsvToRgb(Single, Single, Single, Integer)
+  name.vb: HsvToRgb(Single, Single, Single, Integer)
+- uid: UndyneFight_Ex.DrawingLab.UVPosition(Microsoft.Xna.Framework.Vector2[],Microsoft.Xna.Framework.Vector2)
+  commentId: M:UndyneFight_Ex.DrawingLab.UVPosition(Microsoft.Xna.Framework.Vector2[],Microsoft.Xna.Framework.Vector2)
+  id: UVPosition(Microsoft.Xna.Framework.Vector2[],Microsoft.Xna.Framework.Vector2)
+  parent: UndyneFight_Ex.DrawingLab
+  langs:
+  - csharp
+  - vb
+  name: UVPosition(Vector2[], Vector2)
+  nameWithType: DrawingLab.UVPosition(Vector2[], Vector2)
+  fullName: UndyneFight_Ex.DrawingLab.UVPosition(Microsoft.Xna.Framework.Vector2[], Microsoft.Xna.Framework.Vector2)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: ''
+  example: []
+  syntax:
+    content: public static Vector2 UVPosition(Vector2[] triangle, Vector2 cur)
+    parameters:
+    - id: triangle
+      type: Microsoft.Xna.Framework.Vector2[]
+      description: Three vertex information, first is (0, 0), second is (1, 0), third is (0, 1)
+    - id: cur
+      type: Microsoft.Xna.Framework.Vector2
+      description: ''
+    return:
+      type: Microsoft.Xna.Framework.Vector2
+      description: ''
+    content.vb: Public Shared Function UVPosition(triangle As Vector2(), cur As Vector2) As Vector2
+  overload: UndyneFight_Ex.DrawingLab.UVPosition*
+  nameWithType.vb: DrawingLab.UVPosition(Vector2(), Vector2)
+  fullName.vb: UndyneFight_Ex.DrawingLab.UVPosition(Microsoft.Xna.Framework.Vector2(), Microsoft.Xna.Framework.Vector2)
+  name.vb: UVPosition(Vector2(), Vector2)
+- uid: UndyneFight_Ex.DrawingLab.DrawLine(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Graphics.Texture2D)
+  commentId: M:UndyneFight_Ex.DrawingLab.DrawLine(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Graphics.Texture2D)
+  id: DrawLine(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Graphics.Texture2D)
+  parent: UndyneFight_Ex.DrawingLab
+  langs:
+  - csharp
+  - vb
+  name: DrawLine(Vector2, Vector2, float, Color, float, Texture2D)
+  nameWithType: DrawingLab.DrawLine(Vector2, Vector2, float, Color, float, Texture2D)
+  fullName: UndyneFight_Ex.DrawingLab.DrawLine(Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, float, Microsoft.Xna.Framework.Color, float, Microsoft.Xna.Framework.Graphics.Texture2D)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Draws a line with the given width, color and depth in the given position
+  example: []
+  syntax:
+    content: public static void DrawLine(Vector2 P1, Vector2 P2, float width, Color cl, float depth, Texture2D texture = null)
+    parameters:
+    - id: P1
+      type: Microsoft.Xna.Framework.Vector2
+      description: The first <xref href="Microsoft.Xna.Framework.Vector2" data-throw-if-not-resolved="false"></xref> point fo the line
+    - id: P2
+      type: Microsoft.Xna.Framework.Vector2
+      description: The second <xref href="Microsoft.Xna.Framework.Vector2" data-throw-if-not-resolved="false"></xref> point of the line
+    - id: width
+      type: System.Single
+      description: The width of the line
+    - id: cl
+      type: Microsoft.Xna.Framework.Color
+      description: The <xref href="Microsoft.Xna.Framework.Color" data-throw-if-not-resolved="false"></xref> of the line
+    - id: depth
+      type: System.Single
+      description: The depth of the line
+    - id: texture
+      type: Microsoft.Xna.Framework.Graphics.Texture2D
+      description: The drawing texture of the line (Default <xref href="UndyneFight_Ex.FightResources.Sprites.pixUnit" data-throw-if-not-resolved="false"></xref>)
+    content.vb: Public Shared Sub DrawLine(P1 As Vector2, P2 As Vector2, width As Single, cl As Color, depth As Single, texture As Texture2D = Nothing)
+  overload: UndyneFight_Ex.DrawingLab.DrawLine*
+  nameWithType.vb: DrawingLab.DrawLine(Vector2, Vector2, Single, Color, Single, Texture2D)
+  fullName.vb: UndyneFight_Ex.DrawingLab.DrawLine(Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, Single, Microsoft.Xna.Framework.Color, Single, Microsoft.Xna.Framework.Graphics.Texture2D)
+  name.vb: DrawLine(Vector2, Vector2, Single, Color, Single, Texture2D)
+- uid: UndyneFight_Ex.DrawingLab.DrawVector(Microsoft.Xna.Framework.Vector2,System.Single)
+  commentId: M:UndyneFight_Ex.DrawingLab.DrawVector(Microsoft.Xna.Framework.Vector2,System.Single)
+  id: DrawVector(Microsoft.Xna.Framework.Vector2,System.Single)
+  parent: UndyneFight_Ex.DrawingLab
+  langs:
+  - csharp
+  - vb
+  name: DrawVector(Vector2, float)
+  nameWithType: DrawingLab.DrawVector(Vector2, float)
+  fullName: UndyneFight_Ex.DrawingLab.DrawVector(Microsoft.Xna.Framework.Vector2, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Draws a vector arrow
+  example: []
+  syntax:
+    content: public static void DrawVector(Vector2 centre, float rotation)
+    parameters:
+    - id: centre
+      type: Microsoft.Xna.Framework.Vector2
+      description: The centre of the vector
+    - id: rotation
+      type: System.Single
+      description: The rotation of the vector
+    content.vb: Public Shared Sub DrawVector(centre As Vector2, rotation As Single)
+  overload: UndyneFight_Ex.DrawingLab.DrawVector*
+  nameWithType.vb: DrawingLab.DrawVector(Vector2, Single)
+  fullName.vb: UndyneFight_Ex.DrawingLab.DrawVector(Microsoft.Xna.Framework.Vector2, Single)
+  name.vb: DrawVector(Vector2, Single)
+- uid: UndyneFight_Ex.DrawingLab.DrawLine(Microsoft.Xna.Framework.Vector2,System.Single,System.Single,System.Single,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Graphics.Texture2D)
+  commentId: M:UndyneFight_Ex.DrawingLab.DrawLine(Microsoft.Xna.Framework.Vector2,System.Single,System.Single,System.Single,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Graphics.Texture2D)
+  id: DrawLine(Microsoft.Xna.Framework.Vector2,System.Single,System.Single,System.Single,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Graphics.Texture2D)
+  parent: UndyneFight_Ex.DrawingLab
+  langs:
+  - csharp
+  - vb
+  name: DrawLine(Vector2, float, float, float, Color, float, Texture2D)
+  nameWithType: DrawingLab.DrawLine(Vector2, float, float, float, Color, float, Texture2D)
+  fullName: UndyneFight_Ex.DrawingLab.DrawLine(Microsoft.Xna.Framework.Vector2, float, float, float, Microsoft.Xna.Framework.Color, float, Microsoft.Xna.Framework.Graphics.Texture2D)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Draws a line
+  example: []
+  syntax:
+    content: public static void DrawLine(Vector2 Centre, float angle, float length, float width, Color cl, float depth, Texture2D texture = null)
+    parameters:
+    - id: Centre
+      type: Microsoft.Xna.Framework.Vector2
+      description: The center of the line
+    - id: angle
+      type: System.Single
+      description: The rotation of the line(In radians)
+    - id: length
+      type: System.Single
+      description: The length of the line
+    - id: width
+      type: System.Single
+      description: The width of the line
+    - id: cl
+      type: Microsoft.Xna.Framework.Color
+      description: The <xref href="Microsoft.Xna.Framework.Color" data-throw-if-not-resolved="false"></xref> of the line
+    - id: depth
+      type: System.Single
+      description: The depth of the line
+    - id: texture
+      type: Microsoft.Xna.Framework.Graphics.Texture2D
+      description: The texture of the line
+    content.vb: Public Shared Sub DrawLine(Centre As Vector2, angle As Single, length As Single, width As Single, cl As Color, depth As Single, texture As Texture2D = Nothing)
+  overload: UndyneFight_Ex.DrawingLab.DrawLine*
+  nameWithType.vb: DrawingLab.DrawLine(Vector2, Single, Single, Single, Color, Single, Texture2D)
+  fullName.vb: UndyneFight_Ex.DrawingLab.DrawLine(Microsoft.Xna.Framework.Vector2, Single, Single, Single, Microsoft.Xna.Framework.Color, Single, Microsoft.Xna.Framework.Graphics.Texture2D)
+  name.vb: DrawLine(Vector2, Single, Single, Single, Color, Single, Texture2D)
+- uid: UndyneFight_Ex.DrawingLab.DrawRectangle(UndyneFight_Ex.CollideRect,Microsoft.Xna.Framework.Color,System.Single,System.Single)
+  commentId: M:UndyneFight_Ex.DrawingLab.DrawRectangle(UndyneFight_Ex.CollideRect,Microsoft.Xna.Framework.Color,System.Single,System.Single)
+  id: DrawRectangle(UndyneFight_Ex.CollideRect,Microsoft.Xna.Framework.Color,System.Single,System.Single)
+  parent: UndyneFight_Ex.DrawingLab
+  langs:
+  - csharp
+  - vb
+  name: DrawRectangle(CollideRect, Color, float, float)
+  nameWithType: DrawingLab.DrawRectangle(CollideRect, Color, float, float)
+  fullName: UndyneFight_Ex.DrawingLab.DrawRectangle(UndyneFight_Ex.CollideRect, Microsoft.Xna.Framework.Color, float, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Draws an outline of a rectangle
+  example: []
+  syntax:
+    content: public static void DrawRectangle(CollideRect rect, Color color, float width, float depth)
+    parameters:
+    - id: rect
+      type: UndyneFight_Ex.CollideRect
+      description: The perimeter of the rectangle
+    - id: color
+      type: Microsoft.Xna.Framework.Color
+      description: The color of the rectangle
+    - id: width
+      type: System.Single
+      description: The width of the outline of the rectangle
+    - id: depth
+      type: System.Single
+      description: The depth of the rectangle
+    content.vb: Public Shared Sub DrawRectangle(rect As CollideRect, color As Color, width As Single, depth As Single)
+  overload: UndyneFight_Ex.DrawingLab.DrawRectangle*
+  nameWithType.vb: DrawingLab.DrawRectangle(CollideRect, Color, Single, Single)
+  fullName.vb: UndyneFight_Ex.DrawingLab.DrawRectangle(UndyneFight_Ex.CollideRect, Microsoft.Xna.Framework.Color, Single, Single)
+  name.vb: DrawRectangle(CollideRect, Color, Single, Single)
+- uid: UndyneFight_Ex.DrawingLab.DrawCircle(Microsoft.Xna.Framework.Vector2,System.Single,System.Int32,System.Single,Microsoft.Xna.Framework.Color,System.Single)
+  commentId: M:UndyneFight_Ex.DrawingLab.DrawCircle(Microsoft.Xna.Framework.Vector2,System.Single,System.Int32,System.Single,Microsoft.Xna.Framework.Color,System.Single)
+  id: DrawCircle(Microsoft.Xna.Framework.Vector2,System.Single,System.Int32,System.Single,Microsoft.Xna.Framework.Color,System.Single)
+  parent: UndyneFight_Ex.DrawingLab
+  langs:
+  - csharp
+  - vb
+  name: DrawCircle(Vector2, float, int, float, Color, float)
+  nameWithType: DrawingLab.DrawCircle(Vector2, float, int, float, Color, float)
+  fullName: UndyneFight_Ex.DrawingLab.DrawCircle(Microsoft.Xna.Framework.Vector2, float, int, float, Microsoft.Xna.Framework.Color, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Draws a circle outline
+  example: []
+  syntax:
+    content: public static void DrawCircle(Vector2 center, float radius, int vertexnum, float thickness, Color col, float depth)
+    parameters:
+    - id: center
+      type: Microsoft.Xna.Framework.Vector2
+      description: The center of the circle
+    - id: radius
+      type: System.Single
+      description: The radius of the circle
+    - id: vertexnum
+      type: System.Int32
+      description: 'The amount of vertices used to draw the circle (Higher value would result in higher precision and more lag, range: [3, inf))'
+    - id: thickness
+      type: System.Single
+      description: The thickness of the circle outline
+    - id: col
+      type: Microsoft.Xna.Framework.Color
+      description: The <xref href="Microsoft.Xna.Framework.Color" data-throw-if-not-resolved="false"></xref> of the circle
+    - id: depth
+      type: System.Single
+      description: The depth of the circle
+    content.vb: Public Shared Sub DrawCircle(center As Vector2, radius As Single, vertexnum As Integer, thickness As Single, col As Color, depth As Single)
+  overload: UndyneFight_Ex.DrawingLab.DrawCircle*
+  nameWithType.vb: DrawingLab.DrawCircle(Vector2, Single, Integer, Single, Color, Single)
+  fullName.vb: UndyneFight_Ex.DrawingLab.DrawCircle(Microsoft.Xna.Framework.Vector2, Single, Integer, Single, Microsoft.Xna.Framework.Color, Single)
+  name.vb: DrawCircle(Vector2, Single, Integer, Single, Color, Single)
+- uid: UndyneFight_Ex.DrawingLab.DrawCircleSections(Microsoft.Xna.Framework.Vector2,System.Single,System.Int32,System.Single,Microsoft.Xna.Framework.Color,System.Single,System.Single,System.Single)
+  commentId: M:UndyneFight_Ex.DrawingLab.DrawCircleSections(Microsoft.Xna.Framework.Vector2,System.Single,System.Int32,System.Single,Microsoft.Xna.Framework.Color,System.Single,System.Single,System.Single)
+  id: DrawCircleSections(Microsoft.Xna.Framework.Vector2,System.Single,System.Int32,System.Single,Microsoft.Xna.Framework.Color,System.Single,System.Single,System.Single)
+  parent: UndyneFight_Ex.DrawingLab
+  langs:
+  - csharp
+  - vb
+  name: DrawCircleSections(Vector2, float, int, float, Color, float, float, float)
+  nameWithType: DrawingLab.DrawCircleSections(Vector2, float, int, float, Color, float, float, float)
+  fullName: UndyneFight_Ex.DrawingLab.DrawCircleSections(Microsoft.Xna.Framework.Vector2, float, int, float, Microsoft.Xna.Framework.Color, float, float, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Draws a section of a circle outline
+  example: []
+  syntax:
+    content: public static void DrawCircleSections(Vector2 center, float radius, int vertexnum, float thickness, Color col, float depth, float startang, float endang)
+    parameters:
+    - id: center
+      type: Microsoft.Xna.Framework.Vector2
+      description: The center of the circle
+    - id: radius
+      type: System.Single
+      description: The radius of the circle
+    - id: vertexnum
+      type: System.Int32
+      description: 'The amount of vertices used to draw the circle (Higher value would result in higher precision and more lag, range: [3, inf))'
+    - id: thickness
+      type: System.Single
+      description: The thickness of the circle outline
+    - id: col
+      type: Microsoft.Xna.Framework.Color
+      description: The <xref href="Microsoft.Xna.Framework.Color" data-throw-if-not-resolved="false"></xref> of the circle
+    - id: depth
+      type: System.Single
+      description: The depth of the circle
+    - id: startang
+      type: System.Single
+      description: The starting angle to draw from
+    - id: endang
+      type: System.Single
+      description: The ending angle to draw to
+    content.vb: Public Shared Sub DrawCircleSections(center As Vector2, radius As Single, vertexnum As Integer, thickness As Single, col As Color, depth As Single, startang As Single, endang As Single)
+  overload: UndyneFight_Ex.DrawingLab.DrawCircleSections*
+  nameWithType.vb: DrawingLab.DrawCircleSections(Vector2, Single, Integer, Single, Color, Single, Single, Single)
+  fullName.vb: UndyneFight_Ex.DrawingLab.DrawCircleSections(Microsoft.Xna.Framework.Vector2, Single, Integer, Single, Microsoft.Xna.Framework.Color, Single, Single, Single)
+  name.vb: DrawCircleSections(Vector2, Single, Integer, Single, Color, Single, Single, Single)
+- uid: UndyneFight_Ex.DrawingLab.DrawCircleFilled(Microsoft.Xna.Framework.Vector2,System.Single,System.Int32,Microsoft.Xna.Framework.Color,System.Single)
+  commentId: M:UndyneFight_Ex.DrawingLab.DrawCircleFilled(Microsoft.Xna.Framework.Vector2,System.Single,System.Int32,Microsoft.Xna.Framework.Color,System.Single)
+  id: DrawCircleFilled(Microsoft.Xna.Framework.Vector2,System.Single,System.Int32,Microsoft.Xna.Framework.Color,System.Single)
+  parent: UndyneFight_Ex.DrawingLab
+  langs:
+  - csharp
+  - vb
+  name: DrawCircleFilled(Vector2, float, int, Color, float)
+  nameWithType: DrawingLab.DrawCircleFilled(Vector2, float, int, Color, float)
+  fullName: UndyneFight_Ex.DrawingLab.DrawCircleFilled(Microsoft.Xna.Framework.Vector2, float, int, Microsoft.Xna.Framework.Color, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Draws a filled circle
+  example: []
+  syntax:
+    content: public static void DrawCircleFilled(Vector2 center, float radius, int vertexnum, Color col, float depth)
+    parameters:
+    - id: center
+      type: Microsoft.Xna.Framework.Vector2
+      description: The center of the circle
+    - id: radius
+      type: System.Single
+      description: The radius of the circle
+    - id: vertexnum
+      type: System.Int32
+      description: 'The amount of vertices used to draw the circle (Higher value would result in higher precision and more lag, range: [3, inf))'
+    - id: col
+      type: Microsoft.Xna.Framework.Color
+      description: The <xref href="Microsoft.Xna.Framework.Color" data-throw-if-not-resolved="false"></xref> of the circle
+    - id: depth
+      type: System.Single
+      description: The depth of the circle
+    content.vb: Public Shared Sub DrawCircleFilled(center As Vector2, radius As Single, vertexnum As Integer, col As Color, depth As Single)
+  overload: UndyneFight_Ex.DrawingLab.DrawCircleFilled*
+  nameWithType.vb: DrawingLab.DrawCircleFilled(Vector2, Single, Integer, Color, Single)
+  fullName.vb: UndyneFight_Ex.DrawingLab.DrawCircleFilled(Microsoft.Xna.Framework.Vector2, Single, Integer, Microsoft.Xna.Framework.Color, Single)
+  name.vb: DrawCircleFilled(Vector2, Single, Integer, Color, Single)
+- uid: UndyneFight_Ex.DrawingLab.DrawCircleFilledSections(Microsoft.Xna.Framework.Vector2,System.Single,System.Int32,Microsoft.Xna.Framework.Color,System.Single,System.Single,System.Single)
+  commentId: M:UndyneFight_Ex.DrawingLab.DrawCircleFilledSections(Microsoft.Xna.Framework.Vector2,System.Single,System.Int32,Microsoft.Xna.Framework.Color,System.Single,System.Single,System.Single)
+  id: DrawCircleFilledSections(Microsoft.Xna.Framework.Vector2,System.Single,System.Int32,Microsoft.Xna.Framework.Color,System.Single,System.Single,System.Single)
+  parent: UndyneFight_Ex.DrawingLab
+  langs:
+  - csharp
+  - vb
+  name: DrawCircleFilledSections(Vector2, float, int, Color, float, float, float)
+  nameWithType: DrawingLab.DrawCircleFilledSections(Vector2, float, int, Color, float, float, float)
+  fullName: UndyneFight_Ex.DrawingLab.DrawCircleFilledSections(Microsoft.Xna.Framework.Vector2, float, int, Microsoft.Xna.Framework.Color, float, float, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Draws a section of a filled circle
+  example: []
+  syntax:
+    content: public static void DrawCircleFilledSections(Vector2 center, float radius, int vertexnum, Color col, float depth, float startang, float endang)
+    parameters:
+    - id: center
+      type: Microsoft.Xna.Framework.Vector2
+      description: The center of the circle
+    - id: radius
+      type: System.Single
+      description: The radius of the circle
+    - id: vertexnum
+      type: System.Int32
+      description: 'The amount of vertices used to draw the circle (Higher value would result in higher precision and more lag, range: [3, inf))'
+    - id: col
+      type: Microsoft.Xna.Framework.Color
+      description: The <xref href="Microsoft.Xna.Framework.Color" data-throw-if-not-resolved="false"></xref> of the circle
+    - id: depth
+      type: System.Single
+      description: The depth of the circle
+    - id: startang
+      type: System.Single
+      description: The starting angle to draw from
+    - id: endang
+      type: System.Single
+      description: The ending angle to draw to
+    content.vb: Public Shared Sub DrawCircleFilledSections(center As Vector2, radius As Single, vertexnum As Integer, col As Color, depth As Single, startang As Single, endang As Single)
+  overload: UndyneFight_Ex.DrawingLab.DrawCircleFilledSections*
+  nameWithType.vb: DrawingLab.DrawCircleFilledSections(Vector2, Single, Integer, Color, Single, Single, Single)
+  fullName.vb: UndyneFight_Ex.DrawingLab.DrawCircleFilledSections(Microsoft.Xna.Framework.Vector2, Single, Integer, Microsoft.Xna.Framework.Color, Single, Single, Single)
+  name.vb: DrawCircleFilledSections(Vector2, Single, Integer, Color, Single, Single, Single)
+- uid: UndyneFight_Ex.DrawingLab.DrawTriangle(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color[],System.Single)
+  commentId: M:UndyneFight_Ex.DrawingLab.DrawTriangle(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color[],System.Single)
+  id: DrawTriangle(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color[],System.Single)
+  parent: UndyneFight_Ex.DrawingLab
+  langs:
+  - csharp
+  - vb
+  name: DrawTriangle(Vector2, Vector2, Vector2, Color[], float)
+  nameWithType: DrawingLab.DrawTriangle(Vector2, Vector2, Vector2, Color[], float)
+  fullName: UndyneFight_Ex.DrawingLab.DrawTriangle(Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Color[], float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Draws a triangle with given colors
+  example: []
+  syntax:
+    content: public static void DrawTriangle(Vector2 p1, Vector2 p2, Vector2 p3, Color[] colors, float depth)
+    parameters:
+    - id: p1
+      type: Microsoft.Xna.Framework.Vector2
+      description: The coordinate of the first vertex
+    - id: p2
+      type: Microsoft.Xna.Framework.Vector2
+      description: The coordinate of the second vertex
+    - id: p3
+      type: Microsoft.Xna.Framework.Vector2
+      description: The coordinate of the third vertex
+    - id: colors
+      type: Microsoft.Xna.Framework.Color[]
+      description: The colors for each vertex
+    - id: depth
+      type: System.Single
+      description: The depth of the triangle
+    content.vb: Public Shared Sub DrawTriangle(p1 As Vector2, p2 As Vector2, p3 As Vector2, colors As Color(), depth As Single)
+  overload: UndyneFight_Ex.DrawingLab.DrawTriangle*
+  nameWithType.vb: DrawingLab.DrawTriangle(Vector2, Vector2, Vector2, Color(), Single)
+  fullName.vb: UndyneFight_Ex.DrawingLab.DrawTriangle(Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Color(), Single)
+  name.vb: DrawTriangle(Vector2, Vector2, Vector2, Color(), Single)
+- uid: UndyneFight_Ex.DrawingLab.DrawTriangle(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single)
+  commentId: M:UndyneFight_Ex.DrawingLab.DrawTriangle(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single)
+  id: DrawTriangle(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single)
+  parent: UndyneFight_Ex.DrawingLab
+  langs:
+  - csharp
+  - vb
+  name: DrawTriangle(Vector2, Vector2, Vector2, Color, float)
+  nameWithType: DrawingLab.DrawTriangle(Vector2, Vector2, Vector2, Color, float)
+  fullName: UndyneFight_Ex.DrawingLab.DrawTriangle(Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Color, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Draws a triangle with given color
+  example: []
+  syntax:
+    content: public static void DrawTriangle(Vector2 p1, Vector2 p2, Vector2 p3, Color color, float depth)
+    parameters:
+    - id: p1
+      type: Microsoft.Xna.Framework.Vector2
+      description: The coordinate of the first vertex
+    - id: p2
+      type: Microsoft.Xna.Framework.Vector2
+      description: The coordinate of the second vertex
+    - id: p3
+      type: Microsoft.Xna.Framework.Vector2
+      description: The coordinate of the third vertex
+    - id: color
+      type: Microsoft.Xna.Framework.Color
+      description: The color of the triangle
+    - id: depth
+      type: System.Single
+      description: The depth of the triangle
+    content.vb: Public Shared Sub DrawTriangle(p1 As Vector2, p2 As Vector2, p3 As Vector2, color As Color, depth As Single)
+  overload: UndyneFight_Ex.DrawingLab.DrawTriangle*
+  nameWithType.vb: DrawingLab.DrawTriangle(Vector2, Vector2, Vector2, Color, Single)
+  fullName.vb: UndyneFight_Ex.DrawingLab.DrawTriangle(Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Color, Single)
+  name.vb: DrawTriangle(Vector2, Vector2, Vector2, Color, Single)
+- uid: UndyneFight_Ex.DrawingLab.DrawLineColors(Microsoft.Xna.Framework.Vector2,System.Single,System.Single,System.Single,Microsoft.Xna.Framework.Color[],System.Single,Microsoft.Xna.Framework.Graphics.Texture2D)
+  commentId: M:UndyneFight_Ex.DrawingLab.DrawLineColors(Microsoft.Xna.Framework.Vector2,System.Single,System.Single,System.Single,Microsoft.Xna.Framework.Color[],System.Single,Microsoft.Xna.Framework.Graphics.Texture2D)
+  id: DrawLineColors(Microsoft.Xna.Framework.Vector2,System.Single,System.Single,System.Single,Microsoft.Xna.Framework.Color[],System.Single,Microsoft.Xna.Framework.Graphics.Texture2D)
+  parent: UndyneFight_Ex.DrawingLab
+  langs:
+  - csharp
+  - vb
+  name: DrawLineColors(Vector2, float, float, float, Color[], float, Texture2D)
+  nameWithType: DrawingLab.DrawLineColors(Vector2, float, float, float, Color[], float, Texture2D)
+  fullName: UndyneFight_Ex.DrawingLab.DrawLineColors(Microsoft.Xna.Framework.Vector2, float, float, float, Microsoft.Xna.Framework.Color[], float, Microsoft.Xna.Framework.Graphics.Texture2D)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Draws a line with different colors in each corner
+  example: []
+  syntax:
+    content: public static void DrawLineColors(Vector2 Centre, float angle, float length, float width, Color[] cl, float depth, Texture2D texture = null)
+    parameters:
+    - id: Centre
+      type: Microsoft.Xna.Framework.Vector2
+      description: The center of the line
+    - id: angle
+      type: System.Single
+      description: The angle of the line
+    - id: length
+      type: System.Single
+      description: The length of the line
+    - id: width
+      type: System.Single
+      description: The width of the line
+    - id: cl
+      type: Microsoft.Xna.Framework.Color[]
+      description: The colors of the line (Top Left, Top Right, Bottom Right, Bottom Left)
+    - id: depth
+      type: System.Single
+      description: The depth of the line
+    - id: texture
+      type: Microsoft.Xna.Framework.Graphics.Texture2D
+      description: The drawing texture of the line (Default <xref href="UndyneFight_Ex.FightResources.Sprites.pixUnit" data-throw-if-not-resolved="false"></xref>)
+    content.vb: Public Shared Sub DrawLineColors(Centre As Vector2, angle As Single, length As Single, width As Single, cl As Color(), depth As Single, texture As Texture2D = Nothing)
+  overload: UndyneFight_Ex.DrawingLab.DrawLineColors*
+  nameWithType.vb: DrawingLab.DrawLineColors(Vector2, Single, Single, Single, Color(), Single, Texture2D)
+  fullName.vb: UndyneFight_Ex.DrawingLab.DrawLineColors(Microsoft.Xna.Framework.Vector2, Single, Single, Single, Microsoft.Xna.Framework.Color(), Single, Microsoft.Xna.Framework.Graphics.Texture2D)
+  name.vb: DrawLineColors(Vector2, Single, Single, Single, Color(), Single, Texture2D)
+- uid: UndyneFight_Ex.DrawingLab.DrawLineColors(Microsoft.Xna.Framework.Vector2,System.Single,System.Single,System.Single,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Graphics.Texture2D)
+  commentId: M:UndyneFight_Ex.DrawingLab.DrawLineColors(Microsoft.Xna.Framework.Vector2,System.Single,System.Single,System.Single,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Graphics.Texture2D)
+  id: DrawLineColors(Microsoft.Xna.Framework.Vector2,System.Single,System.Single,System.Single,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Graphics.Texture2D)
+  parent: UndyneFight_Ex.DrawingLab
+  langs:
+  - csharp
+  - vb
+  name: DrawLineColors(Vector2, float, float, float, Color, float, Texture2D)
+  nameWithType: DrawingLab.DrawLineColors(Vector2, float, float, float, Color, float, Texture2D)
+  fullName: UndyneFight_Ex.DrawingLab.DrawLineColors(Microsoft.Xna.Framework.Vector2, float, float, float, Microsoft.Xna.Framework.Color, float, Microsoft.Xna.Framework.Graphics.Texture2D)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Draws a line with different colors in each corner
+  example: []
+  syntax:
+    content: public static void DrawLineColors(Vector2 Centre, float angle, float length, float width, Color cl, float depth, Texture2D texture = null)
+    parameters:
+    - id: Centre
+      type: Microsoft.Xna.Framework.Vector2
+      description: The center of the line
+    - id: angle
+      type: System.Single
+      description: The angle of the line
+    - id: length
+      type: System.Single
+      description: The length of the line
+    - id: width
+      type: System.Single
+      description: The width of the line
+    - id: cl
+      type: Microsoft.Xna.Framework.Color
+      description: The colors of the line (Top Left, Top Right, Bottom Right, Bottom Left)
+    - id: depth
+      type: System.Single
+      description: The depth of the line
+    - id: texture
+      type: Microsoft.Xna.Framework.Graphics.Texture2D
+      description: The texture of the line (Default none)
+    content.vb: Public Shared Sub DrawLineColors(Centre As Vector2, angle As Single, length As Single, width As Single, cl As Color, depth As Single, texture As Texture2D = Nothing)
+  overload: UndyneFight_Ex.DrawingLab.DrawLineColors*
+  nameWithType.vb: DrawingLab.DrawLineColors(Vector2, Single, Single, Single, Color, Single, Texture2D)
+  fullName.vb: UndyneFight_Ex.DrawingLab.DrawLineColors(Microsoft.Xna.Framework.Vector2, Single, Single, Single, Microsoft.Xna.Framework.Color, Single, Microsoft.Xna.Framework.Graphics.Texture2D)
+  name.vb: DrawLineColors(Vector2, Single, Single, Single, Color, Single, Texture2D)
+- uid: UndyneFight_Ex.DrawingLab.DrawLineColors(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Color[],System.Single,Microsoft.Xna.Framework.Graphics.Texture2D)
+  commentId: M:UndyneFight_Ex.DrawingLab.DrawLineColors(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Color[],System.Single,Microsoft.Xna.Framework.Graphics.Texture2D)
+  id: DrawLineColors(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Color[],System.Single,Microsoft.Xna.Framework.Graphics.Texture2D)
+  parent: UndyneFight_Ex.DrawingLab
+  langs:
+  - csharp
+  - vb
+  name: DrawLineColors(Vector2, Vector2, float, Color[], float, Texture2D)
+  nameWithType: DrawingLab.DrawLineColors(Vector2, Vector2, float, Color[], float, Texture2D)
+  fullName: UndyneFight_Ex.DrawingLab.DrawLineColors(Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, float, Microsoft.Xna.Framework.Color[], float, Microsoft.Xna.Framework.Graphics.Texture2D)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Draws a line with different colors in each corner
+  example: []
+  syntax:
+    content: public static void DrawLineColors(Vector2 v1, Vector2 v2, float width, Color[] cl, float depth, Texture2D texture = null)
+    parameters:
+    - id: v1
+      type: Microsoft.Xna.Framework.Vector2
+      description: The first vertex
+    - id: v2
+      type: Microsoft.Xna.Framework.Vector2
+      description: The second vertex
+    - id: width
+      type: System.Single
+      description: The width of the line
+    - id: cl
+      type: Microsoft.Xna.Framework.Color[]
+      description: The colors of the line (Top Left, Top Right, Bottom Right, Bottom Left)
+    - id: depth
+      type: System.Single
+      description: The depth of the line
+    - id: texture
+      type: Microsoft.Xna.Framework.Graphics.Texture2D
+      description: The drawing texture of the line (Default <xref href="UndyneFight_Ex.FightResources.Sprites.pixUnit" data-throw-if-not-resolved="false"></xref>)
+    content.vb: Public Shared Sub DrawLineColors(v1 As Vector2, v2 As Vector2, width As Single, cl As Color(), depth As Single, texture As Texture2D = Nothing)
+  overload: UndyneFight_Ex.DrawingLab.DrawLineColors*
+  nameWithType.vb: DrawingLab.DrawLineColors(Vector2, Vector2, Single, Color(), Single, Texture2D)
+  fullName.vb: UndyneFight_Ex.DrawingLab.DrawLineColors(Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, Single, Microsoft.Xna.Framework.Color(), Single, Microsoft.Xna.Framework.Graphics.Texture2D)
+  name.vb: DrawLineColors(Vector2, Vector2, Single, Color(), Single, Texture2D)
+- uid: UndyneFight_Ex.DrawingLab.DrawLineColors(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Graphics.Texture2D)
+  commentId: M:UndyneFight_Ex.DrawingLab.DrawLineColors(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Graphics.Texture2D)
+  id: DrawLineColors(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Graphics.Texture2D)
+  parent: UndyneFight_Ex.DrawingLab
+  langs:
+  - csharp
+  - vb
+  name: DrawLineColors(Vector2, Vector2, float, Color, float, Texture2D)
+  nameWithType: DrawingLab.DrawLineColors(Vector2, Vector2, float, Color, float, Texture2D)
+  fullName: UndyneFight_Ex.DrawingLab.DrawLineColors(Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, float, Microsoft.Xna.Framework.Color, float, Microsoft.Xna.Framework.Graphics.Texture2D)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Draws a line with different colors in each corner
+  example: []
+  syntax:
+    content: public static void DrawLineColors(Vector2 v1, Vector2 v2, float width, Color cl, float depth, Texture2D texture = null)
+    parameters:
+    - id: v1
+      type: Microsoft.Xna.Framework.Vector2
+      description: The first vertex
+    - id: v2
+      type: Microsoft.Xna.Framework.Vector2
+      description: The second vertex
+    - id: width
+      type: System.Single
+      description: The width of the line
+    - id: cl
+      type: Microsoft.Xna.Framework.Color
+      description: The colors of the line (Top Left, Top Right, Bottom Right, Bottom Left)
+    - id: depth
+      type: System.Single
+      description: The depth of the line
+    - id: texture
+      type: Microsoft.Xna.Framework.Graphics.Texture2D
+      description: The texture of the line (Default none)
+    content.vb: Public Shared Sub DrawLineColors(v1 As Vector2, v2 As Vector2, width As Single, cl As Color, depth As Single, texture As Texture2D = Nothing)
+  overload: UndyneFight_Ex.DrawingLab.DrawLineColors*
+  nameWithType.vb: DrawingLab.DrawLineColors(Vector2, Vector2, Single, Color, Single, Texture2D)
+  fullName.vb: UndyneFight_Ex.DrawingLab.DrawLineColors(Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, Single, Microsoft.Xna.Framework.Color, Single, Microsoft.Xna.Framework.Graphics.Texture2D)
+  name.vb: DrawLineColors(Vector2, Vector2, Single, Color, Single, Texture2D)
+- uid: UndyneFight_Ex.DrawingLab.DrawRoundedRectangle(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Color,System.Single)
+  commentId: M:UndyneFight_Ex.DrawingLab.DrawRoundedRectangle(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Color,System.Single)
+  id: DrawRoundedRectangle(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Color,System.Single)
+  parent: UndyneFight_Ex.DrawingLab
+  langs:
+  - csharp
+  - vb
+  name: DrawRoundedRectangle(Vector2, Vector2, float, Color, float)
+  nameWithType: DrawingLab.DrawRoundedRectangle(Vector2, Vector2, float, Color, float)
+  fullName: UndyneFight_Ex.DrawingLab.DrawRoundedRectangle(Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, float, Microsoft.Xna.Framework.Color, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Draws a rectangle with rounded corners
+  example: []
+  syntax:
+    content: public static void DrawRoundedRectangle(Vector2 centre, Vector2 size, float radius, Color color, float depth)
+    parameters:
+    - id: centre
+      type: Microsoft.Xna.Framework.Vector2
+      description: The center of the rectangle
+    - id: size
+      type: Microsoft.Xna.Framework.Vector2
+      description: The size of the rectangle
+    - id: radius
+      type: System.Single
+      description: The radius of the rounded corners
+    - id: color
+      type: Microsoft.Xna.Framework.Color
+      description: The color of the rounded rectangle
+    - id: depth
+      type: System.Single
+      description: The depth of the rounded rectangle
+    content.vb: Public Shared Sub DrawRoundedRectangle(centre As Vector2, size As Vector2, radius As Single, color As Color, depth As Single)
+  overload: UndyneFight_Ex.DrawingLab.DrawRoundedRectangle*
+  nameWithType.vb: DrawingLab.DrawRoundedRectangle(Vector2, Vector2, Single, Color, Single)
+  fullName.vb: UndyneFight_Ex.DrawingLab.DrawRoundedRectangle(Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, Single, Microsoft.Xna.Framework.Color, Single)
+  name.vb: DrawRoundedRectangle(Vector2, Vector2, Single, Color, Single)
+- uid: UndyneFight_Ex.DrawingLab.LoadContent``1(System.String,Microsoft.Xna.Framework.Content.ContentManager)
+  commentId: M:UndyneFight_Ex.DrawingLab.LoadContent``1(System.String,Microsoft.Xna.Framework.Content.ContentManager)
+  id: LoadContent``1(System.String,Microsoft.Xna.Framework.Content.ContentManager)
+  parent: UndyneFight_Ex.DrawingLab
+  langs:
+  - csharp
+  - vb
+  name: LoadContent<T>(string, ContentManager)
+  nameWithType: DrawingLab.LoadContent<T>(string, ContentManager)
+  fullName: UndyneFight_Ex.DrawingLab.LoadContent<T>(string, Microsoft.Xna.Framework.Content.ContentManager)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Loads a file (Cross-platform)
+  example: []
+  syntax:
+    content: public static T LoadContent<T>(string path, ContentManager cm = null)
+    parameters:
+    - id: path
+      type: System.String
+      description: Path to file
+    - id: cm
+      type: Microsoft.Xna.Framework.Content.ContentManager
+      description: Content manager to use
+    typeParameters:
+    - id: T
+      description: Content type
+    return:
+      type: '{T}'
+      description: The loaded content
+    content.vb: Public Shared Function LoadContent(Of T)(path As String, cm As ContentManager = Nothing) As T
+  overload: UndyneFight_Ex.DrawingLab.LoadContent*
+  nameWithType.vb: DrawingLab.LoadContent(Of T)(String, ContentManager)
+  fullName.vb: UndyneFight_Ex.DrawingLab.LoadContent(Of T)(String, Microsoft.Xna.Framework.Content.ContentManager)
+  name.vb: LoadContent(Of T)(String, ContentManager)
+- uid: UndyneFight_Ex.DrawingLab.LoadImage(System.String)
+  commentId: M:UndyneFight_Ex.DrawingLab.LoadImage(System.String)
+  id: LoadImage(System.String)
+  parent: UndyneFight_Ex.DrawingLab
+  langs:
+  - csharp
+  - vb
+  name: LoadImage(string)
+  nameWithType: DrawingLab.LoadImage(string)
+  fullName: UndyneFight_Ex.DrawingLab.LoadImage(string)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Loads an image
+  example: []
+  syntax:
+    content: public static Texture2D LoadImage(string path)
+    parameters:
+    - id: path
+      type: System.String
+      description: Path of the image
+    return:
+      type: Microsoft.Xna.Framework.Graphics.Texture2D
+      description: The loaded texture
+    content.vb: Public Shared Function LoadImage(path As String) As Texture2D
+  overload: UndyneFight_Ex.DrawingLab.LoadImage*
+  nameWithType.vb: DrawingLab.LoadImage(String)
+  fullName.vb: UndyneFight_Ex.DrawingLab.LoadImage(String)
+  name.vb: LoadImage(String)
+- uid: UndyneFight_Ex.DrawingLab.DrawText(UndyneFight_Ex.GLFont,System.String,Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{System.Single},System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{System.Single},UndyneFight_Ex.SpriteBatchEX)
+  commentId: M:UndyneFight_Ex.DrawingLab.DrawText(UndyneFight_Ex.GLFont,System.String,Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{System.Single},System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{System.Single},UndyneFight_Ex.SpriteBatchEX)
+  id: DrawText(UndyneFight_Ex.GLFont,System.String,Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{System.Single},System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{System.Single},UndyneFight_Ex.SpriteBatchEX)
+  parent: UndyneFight_Ex.DrawingLab
+  langs:
+  - csharp
+  - vb
+  name: DrawText(GLFont, string, Vector2, Color?, Vector2?, float?, Vector2?, float?, SpriteBatchEX)
+  nameWithType: DrawingLab.DrawText(GLFont, string, Vector2, Color?, Vector2?, float?, Vector2?, float?, SpriteBatchEX)
+  fullName: UndyneFight_Ex.DrawingLab.DrawText(UndyneFight_Ex.GLFont, string, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Color?, Microsoft.Xna.Framework.Vector2?, float?, Microsoft.Xna.Framework.Vector2?, float?, UndyneFight_Ex.SpriteBatchEX)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Draws a text
+  example: []
+  syntax:
+    content: public static void DrawText(GLFont font, string text, Vector2 position, Color? color = null, Vector2? scale = null, float? rotation = 0, Vector2? rotateCenter = null, float? depth = null, SpriteBatchEX spriteBatch = null)
+    parameters:
+    - id: font
+      type: UndyneFight_Ex.GLFont
+      description: The font to draw in
+    - id: text
+      type: System.String
+      description: The text to draw
+    - id: position
+      type: Microsoft.Xna.Framework.Vector2
+      description: The position of the text
+    - id: color
+      type: System.Nullable{Microsoft.Xna.Framework.Color}
+      description: The color of the text (Default white)
+    - id: scale
+      type: System.Nullable{Microsoft.Xna.Framework.Vector2}
+      description: The scale of the text (Default 1)
+    - id: rotation
+      type: System.Nullable{System.Single}
+      description: The rotation of the text (Default 0)
+    - id: rotateCenter
+      type: System.Nullable{Microsoft.Xna.Framework.Vector2}
+      description: The rotation origin of the text (Default top left)
+    - id: depth
+      type: System.Nullable{System.Single}
+      description: The depth of the text (Default 1)
+    - id: spriteBatch
+      type: UndyneFight_Ex.SpriteBatchEX
+      description: The sprite batch to draw (Default <xref href="UndyneFight_Ex.GameMain.MissionSpriteBatch" data-throw-if-not-resolved="false"></xref>)
+    content.vb: Public Shared Sub DrawText(font As GLFont, text As String, position As Vector2, color As Color? = Nothing, scale As Vector2? = Nothing, rotation As Single? = 0, rotateCenter As Vector2? = Nothing, depth As Single? = Nothing, spriteBatch As SpriteBatchEX = Nothing)
+  overload: UndyneFight_Ex.DrawingLab.DrawText*
+  nameWithType.vb: DrawingLab.DrawText(GLFont, String, Vector2, Color?, Vector2?, Single?, Vector2?, Single?, SpriteBatchEX)
+  fullName.vb: UndyneFight_Ex.DrawingLab.DrawText(UndyneFight_Ex.GLFont, String, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Color?, Microsoft.Xna.Framework.Vector2?, Single?, Microsoft.Xna.Framework.Vector2?, Single?, UndyneFight_Ex.SpriteBatchEX)
+  name.vb: DrawText(GLFont, String, Vector2, Color?, Vector2?, Single?, Vector2?, Single?, SpriteBatchEX)
+- uid: UndyneFight_Ex.DrawingLab.ToColor(Microsoft.Xna.Framework.Vector3)
+  commentId: M:UndyneFight_Ex.DrawingLab.ToColor(Microsoft.Xna.Framework.Vector3)
+  id: ToColor(Microsoft.Xna.Framework.Vector3)
+  isExtensionMethod: true
+  parent: UndyneFight_Ex.DrawingLab
+  langs:
+  - csharp
+  - vb
+  name: ToColor(Vector3)
+  nameWithType: DrawingLab.ToColor(Vector3)
+  fullName: UndyneFight_Ex.DrawingLab.ToColor(Microsoft.Xna.Framework.Vector3)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Converts a <xref href="Microsoft.Xna.Framework.Vector3" data-throw-if-not-resolved="false"></xref> to a <xref href="Microsoft.Xna.Framework.Color" data-throw-if-not-resolved="false"></xref>
+  example: []
+  syntax:
+    content: public static Color ToColor(this Vector3 vec)
+    parameters:
+    - id: vec
+      type: Microsoft.Xna.Framework.Vector3
+      description: The vector to convert
+    return:
+      type: Microsoft.Xna.Framework.Color
+      description: The converted color
+    content.vb: Public Shared Function ToColor(vec As Vector3) As Color
+  overload: UndyneFight_Ex.DrawingLab.ToColor*
+- uid: UndyneFight_Ex.DrawingLab.ToColor(Microsoft.Xna.Framework.Vector4)
+  commentId: M:UndyneFight_Ex.DrawingLab.ToColor(Microsoft.Xna.Framework.Vector4)
+  id: ToColor(Microsoft.Xna.Framework.Vector4)
+  isExtensionMethod: true
+  parent: UndyneFight_Ex.DrawingLab
+  langs:
+  - csharp
+  - vb
+  name: ToColor(Vector4)
+  nameWithType: DrawingLab.ToColor(Vector4)
+  fullName: UndyneFight_Ex.DrawingLab.ToColor(Microsoft.Xna.Framework.Vector4)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Converts a <xref href="Microsoft.Xna.Framework.Vector4" data-throw-if-not-resolved="false"></xref> to a <xref href="Microsoft.Xna.Framework.Color" data-throw-if-not-resolved="false"></xref>
+  example: []
+  syntax:
+    content: public static Color ToColor(this Vector4 vec)
+    parameters:
+    - id: vec
+      type: Microsoft.Xna.Framework.Vector4
+      description: The vector to convert
+    return:
+      type: Microsoft.Xna.Framework.Color
+      description: The converted color
+    content.vb: Public Shared Function ToColor(vec As Vector4) As Color
+  overload: UndyneFight_Ex.DrawingLab.ToColor*
+references:
+- uid: UndyneFight_Ex
+  commentId: N:UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex
+  nameWithType: UndyneFight_Ex
+  fullName: UndyneFight_Ex
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UndyneFight_Ex.DrawingLab.GetIndices*
+  commentId: Overload:UndyneFight_Ex.DrawingLab.GetIndices
+  isExternal: true
+  href: UndyneFight_Ex.DrawingLab.html#UndyneFight_Ex_DrawingLab_GetIndices_Microsoft_Xna_Framework_Graphics_VertexPositionColor___
+  name: GetIndices
+  nameWithType: DrawingLab.GetIndices
+  fullName: UndyneFight_Ex.DrawingLab.GetIndices
+- uid: Microsoft.Xna.Framework.Graphics.VertexPositionColor[]
+  isExternal: true
+  name: VertexPositionColor[]
+  nameWithType: VertexPositionColor[]
+  fullName: Microsoft.Xna.Framework.Graphics.VertexPositionColor[]
+  nameWithType.vb: VertexPositionColor()
+  fullName.vb: Microsoft.Xna.Framework.Graphics.VertexPositionColor()
+  name.vb: VertexPositionColor()
+  spec.csharp:
+  - uid: Microsoft.Xna.Framework.Graphics.VertexPositionColor
+    name: VertexPositionColor
+    isExternal: true
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: Microsoft.Xna.Framework.Graphics.VertexPositionColor
+    name: VertexPositionColor
+    isExternal: true
+  - name: (
+  - name: )
+- uid: System.Int32[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int[]
+  nameWithType: int[]
+  fullName: int[]
+  nameWithType.vb: Integer()
+  fullName.vb: Integer()
+  name.vb: Integer()
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: (
+  - name: )
+- uid: Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture[]
+  isExternal: true
+  name: VertexPositionColorTexture[]
+  nameWithType: VertexPositionColorTexture[]
+  fullName: Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture[]
+  nameWithType.vb: VertexPositionColorTexture()
+  fullName.vb: Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture()
+  name.vb: VertexPositionColorTexture()
+  spec.csharp:
+  - uid: Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture
+    name: VertexPositionColorTexture
+    isExternal: true
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture
+    name: VertexPositionColorTexture
+    isExternal: true
+  - name: (
+  - name: )
+- uid: System.Collections.Generic.List{System.Tuple{System.Int32,System.Int32,System.Int32}}
+  commentId: T:System.Collections.Generic.List{System.Tuple{System.Int32,System.Int32,System.Int32}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<Tuple<int, int, int>>
+  nameWithType: List<Tuple<int, int, int>>
+  fullName: System.Collections.Generic.List<System.Tuple<int, int, int>>
+  nameWithType.vb: List(Of Tuple(Of Integer, Integer, Integer))
+  fullName.vb: System.Collections.Generic.List(Of System.Tuple(Of Integer, Integer, Integer))
+  name.vb: List(Of Tuple(Of Integer, Integer, Integer))
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.Tuple`3
+    name: Tuple
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.tuple-3
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Tuple`3
+    name: Tuple
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.tuple-3
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: Microsoft.Xna.Framework.Vector2[]
+  isExternal: true
+  name: Vector2[]
+  nameWithType: Vector2[]
+  fullName: Microsoft.Xna.Framework.Vector2[]
+  nameWithType.vb: Vector2()
+  fullName.vb: Microsoft.Xna.Framework.Vector2()
+  name.vb: Vector2()
+  spec.csharp:
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: (
+  - name: )
+- uid: System.Tuple{System.Int32,Microsoft.Xna.Framework.Vector2}[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.tuple-2
+  name: Tuple<int, Vector2>[]
+  nameWithType: Tuple<int, Vector2>[]
+  fullName: System.Tuple<int, Microsoft.Xna.Framework.Vector2>[]
+  nameWithType.vb: Tuple(Of Integer, Vector2)()
+  fullName.vb: System.Tuple(Of Integer, Microsoft.Xna.Framework.Vector2)()
+  name.vb: Tuple(Of Integer, Vector2)()
+  spec.csharp:
+  - uid: System.Tuple`2
+    name: Tuple
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.tuple-2
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: '>'
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Tuple`2
+    name: Tuple
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.tuple-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: )
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.DrawingLab.HsvToRgb*
+  commentId: Overload:UndyneFight_Ex.DrawingLab.HsvToRgb
+  isExternal: true
+  href: UndyneFight_Ex.DrawingLab.html#UndyneFight_Ex_DrawingLab_HsvToRgb_System_Single_System_Single_System_Single_System_Int32_
+  name: HsvToRgb
+  nameWithType: DrawingLab.HsvToRgb
+  fullName: UndyneFight_Ex.DrawingLab.HsvToRgb
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Microsoft.Xna.Framework.Vector4
+  commentId: T:Microsoft.Xna.Framework.Vector4
+  parent: Microsoft.Xna.Framework
+  isExternal: true
+  name: Vector4
+  nameWithType: Vector4
+  fullName: Microsoft.Xna.Framework.Vector4
+- uid: Microsoft.Xna.Framework
+  commentId: N:Microsoft.Xna.Framework
+  isExternal: true
+  name: Microsoft.Xna.Framework
+  nameWithType: Microsoft.Xna.Framework
+  fullName: Microsoft.Xna.Framework
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+- uid: UndyneFight_Ex.DrawingLab.UVPosition*
+  commentId: Overload:UndyneFight_Ex.DrawingLab.UVPosition
+  isExternal: true
+  href: UndyneFight_Ex.DrawingLab.html#UndyneFight_Ex_DrawingLab_UVPosition_Microsoft_Xna_Framework_Vector2___Microsoft_Xna_Framework_Vector2_
+  name: UVPosition
+  nameWithType: DrawingLab.UVPosition
+  fullName: UndyneFight_Ex.DrawingLab.UVPosition
+- uid: Microsoft.Xna.Framework.Vector2
+  commentId: T:Microsoft.Xna.Framework.Vector2
+  parent: Microsoft.Xna.Framework
+  isExternal: true
+  name: Vector2
+  nameWithType: Vector2
+  fullName: Microsoft.Xna.Framework.Vector2
+- uid: Microsoft.Xna.Framework.Color
+  commentId: T:Microsoft.Xna.Framework.Color
+  parent: Microsoft.Xna.Framework
+  isExternal: true
+  name: Color
+  nameWithType: Color
+  fullName: Microsoft.Xna.Framework.Color
+- uid: UndyneFight_Ex.FightResources.Sprites.pixUnit
+  commentId: F:UndyneFight_Ex.FightResources.Sprites.pixUnit
+  isExternal: true
+  href: UndyneFight_Ex.FightResources.Sprites.html#UndyneFight_Ex_FightResources_Sprites_pixUnit
+  name: pixUnit
+  nameWithType: FightResources.Sprites.pixUnit
+  fullName: UndyneFight_Ex.FightResources.Sprites.pixUnit
+- uid: UndyneFight_Ex.DrawingLab.DrawLine*
+  commentId: Overload:UndyneFight_Ex.DrawingLab.DrawLine
+  isExternal: true
+  href: UndyneFight_Ex.DrawingLab.html#UndyneFight_Ex_DrawingLab_DrawLine_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_System_Single_Microsoft_Xna_Framework_Color_System_Single_Microsoft_Xna_Framework_Graphics_Texture2D_
+  name: DrawLine
+  nameWithType: DrawingLab.DrawLine
+  fullName: UndyneFight_Ex.DrawingLab.DrawLine
+- uid: Microsoft.Xna.Framework.Graphics.Texture2D
+  commentId: T:Microsoft.Xna.Framework.Graphics.Texture2D
+  parent: Microsoft.Xna.Framework.Graphics
+  isExternal: true
+  name: Texture2D
+  nameWithType: Texture2D
+  fullName: Microsoft.Xna.Framework.Graphics.Texture2D
+- uid: Microsoft.Xna.Framework.Graphics
+  commentId: N:Microsoft.Xna.Framework.Graphics
+  isExternal: true
+  name: Microsoft.Xna.Framework.Graphics
+  nameWithType: Microsoft.Xna.Framework.Graphics
+  fullName: Microsoft.Xna.Framework.Graphics
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework.Graphics
+    name: Graphics
+    isExternal: true
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework.Graphics
+    name: Graphics
+    isExternal: true
+- uid: UndyneFight_Ex.DrawingLab.DrawVector*
+  commentId: Overload:UndyneFight_Ex.DrawingLab.DrawVector
+  isExternal: true
+  href: UndyneFight_Ex.DrawingLab.html#UndyneFight_Ex_DrawingLab_DrawVector_Microsoft_Xna_Framework_Vector2_System_Single_
+  name: DrawVector
+  nameWithType: DrawingLab.DrawVector
+  fullName: UndyneFight_Ex.DrawingLab.DrawVector
+- uid: UndyneFight_Ex.DrawingLab.DrawRectangle*
+  commentId: Overload:UndyneFight_Ex.DrawingLab.DrawRectangle
+  isExternal: true
+  href: UndyneFight_Ex.DrawingLab.html#UndyneFight_Ex_DrawingLab_DrawRectangle_UndyneFight_Ex_CollideRect_Microsoft_Xna_Framework_Color_System_Single_System_Single_
+  name: DrawRectangle
+  nameWithType: DrawingLab.DrawRectangle
+  fullName: UndyneFight_Ex.DrawingLab.DrawRectangle
+- uid: UndyneFight_Ex.CollideRect
+  commentId: T:UndyneFight_Ex.CollideRect
+  parent: UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.CollideRect.html
+  name: CollideRect
+  nameWithType: CollideRect
+  fullName: UndyneFight_Ex.CollideRect
+- uid: UndyneFight_Ex.DrawingLab.DrawCircle*
+  commentId: Overload:UndyneFight_Ex.DrawingLab.DrawCircle
+  isExternal: true
+  href: UndyneFight_Ex.DrawingLab.html#UndyneFight_Ex_DrawingLab_DrawCircle_Microsoft_Xna_Framework_Vector2_System_Single_System_Int32_System_Single_Microsoft_Xna_Framework_Color_System_Single_
+  name: DrawCircle
+  nameWithType: DrawingLab.DrawCircle
+  fullName: UndyneFight_Ex.DrawingLab.DrawCircle
+- uid: UndyneFight_Ex.DrawingLab.DrawCircleSections*
+  commentId: Overload:UndyneFight_Ex.DrawingLab.DrawCircleSections
+  isExternal: true
+  href: UndyneFight_Ex.DrawingLab.html#UndyneFight_Ex_DrawingLab_DrawCircleSections_Microsoft_Xna_Framework_Vector2_System_Single_System_Int32_System_Single_Microsoft_Xna_Framework_Color_System_Single_System_Single_System_Single_
+  name: DrawCircleSections
+  nameWithType: DrawingLab.DrawCircleSections
+  fullName: UndyneFight_Ex.DrawingLab.DrawCircleSections
+- uid: UndyneFight_Ex.DrawingLab.DrawCircleFilled*
+  commentId: Overload:UndyneFight_Ex.DrawingLab.DrawCircleFilled
+  isExternal: true
+  href: UndyneFight_Ex.DrawingLab.html#UndyneFight_Ex_DrawingLab_DrawCircleFilled_Microsoft_Xna_Framework_Vector2_System_Single_System_Int32_Microsoft_Xna_Framework_Color_System_Single_
+  name: DrawCircleFilled
+  nameWithType: DrawingLab.DrawCircleFilled
+  fullName: UndyneFight_Ex.DrawingLab.DrawCircleFilled
+- uid: UndyneFight_Ex.DrawingLab.DrawCircleFilledSections*
+  commentId: Overload:UndyneFight_Ex.DrawingLab.DrawCircleFilledSections
+  isExternal: true
+  href: UndyneFight_Ex.DrawingLab.html#UndyneFight_Ex_DrawingLab_DrawCircleFilledSections_Microsoft_Xna_Framework_Vector2_System_Single_System_Int32_Microsoft_Xna_Framework_Color_System_Single_System_Single_System_Single_
+  name: DrawCircleFilledSections
+  nameWithType: DrawingLab.DrawCircleFilledSections
+  fullName: UndyneFight_Ex.DrawingLab.DrawCircleFilledSections
+- uid: UndyneFight_Ex.DrawingLab.DrawTriangle*
+  commentId: Overload:UndyneFight_Ex.DrawingLab.DrawTriangle
+  isExternal: true
+  href: UndyneFight_Ex.DrawingLab.html#UndyneFight_Ex_DrawingLab_DrawTriangle_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color___System_Single_
+  name: DrawTriangle
+  nameWithType: DrawingLab.DrawTriangle
+  fullName: UndyneFight_Ex.DrawingLab.DrawTriangle
+- uid: Microsoft.Xna.Framework.Color[]
+  isExternal: true
+  name: Color[]
+  nameWithType: Color[]
+  fullName: Microsoft.Xna.Framework.Color[]
+  nameWithType.vb: Color()
+  fullName.vb: Microsoft.Xna.Framework.Color()
+  name.vb: Color()
+  spec.csharp:
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.DrawingLab.DrawLineColors*
+  commentId: Overload:UndyneFight_Ex.DrawingLab.DrawLineColors
+  isExternal: true
+  href: UndyneFight_Ex.DrawingLab.html#UndyneFight_Ex_DrawingLab_DrawLineColors_Microsoft_Xna_Framework_Vector2_System_Single_System_Single_System_Single_Microsoft_Xna_Framework_Color___System_Single_Microsoft_Xna_Framework_Graphics_Texture2D_
+  name: DrawLineColors
+  nameWithType: DrawingLab.DrawLineColors
+  fullName: UndyneFight_Ex.DrawingLab.DrawLineColors
+- uid: UndyneFight_Ex.DrawingLab.DrawRoundedRectangle*
+  commentId: Overload:UndyneFight_Ex.DrawingLab.DrawRoundedRectangle
+  isExternal: true
+  href: UndyneFight_Ex.DrawingLab.html#UndyneFight_Ex_DrawingLab_DrawRoundedRectangle_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_System_Single_Microsoft_Xna_Framework_Color_System_Single_
+  name: DrawRoundedRectangle
+  nameWithType: DrawingLab.DrawRoundedRectangle
+  fullName: UndyneFight_Ex.DrawingLab.DrawRoundedRectangle
+- uid: UndyneFight_Ex.DrawingLab.LoadContent*
+  commentId: Overload:UndyneFight_Ex.DrawingLab.LoadContent
+  isExternal: true
+  href: UndyneFight_Ex.DrawingLab.html#UndyneFight_Ex_DrawingLab_LoadContent__1_System_String_Microsoft_Xna_Framework_Content_ContentManager_
+  name: LoadContent
+  nameWithType: DrawingLab.LoadContent
+  fullName: UndyneFight_Ex.DrawingLab.LoadContent
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Microsoft.Xna.Framework.Content.ContentManager
+  commentId: T:Microsoft.Xna.Framework.Content.ContentManager
+  parent: Microsoft.Xna.Framework.Content
+  isExternal: true
+  name: ContentManager
+  nameWithType: ContentManager
+  fullName: Microsoft.Xna.Framework.Content.ContentManager
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: Microsoft.Xna.Framework.Content
+  commentId: N:Microsoft.Xna.Framework.Content
+  isExternal: true
+  name: Microsoft.Xna.Framework.Content
+  nameWithType: Microsoft.Xna.Framework.Content
+  fullName: Microsoft.Xna.Framework.Content
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework.Content
+    name: Content
+    isExternal: true
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework.Content
+    name: Content
+    isExternal: true
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: UndyneFight_Ex.DrawingLab.LoadImage*
+  commentId: Overload:UndyneFight_Ex.DrawingLab.LoadImage
+  isExternal: true
+  href: UndyneFight_Ex.DrawingLab.html#UndyneFight_Ex_DrawingLab_LoadImage_System_String_
+  name: LoadImage
+  nameWithType: DrawingLab.LoadImage
+  fullName: UndyneFight_Ex.DrawingLab.LoadImage
+- uid: UndyneFight_Ex.GameMain.MissionSpriteBatch
+  commentId: P:UndyneFight_Ex.GameMain.MissionSpriteBatch
+  isExternal: true
+  name: MissionSpriteBatch
+  nameWithType: GameMain.MissionSpriteBatch
+  fullName: UndyneFight_Ex.GameMain.MissionSpriteBatch
+- uid: UndyneFight_Ex.DrawingLab.DrawText*
+  commentId: Overload:UndyneFight_Ex.DrawingLab.DrawText
+  isExternal: true
+  href: UndyneFight_Ex.DrawingLab.html#UndyneFight_Ex_DrawingLab_DrawText_UndyneFight_Ex_GLFont_System_String_Microsoft_Xna_Framework_Vector2_System_Nullable_Microsoft_Xna_Framework_Color__System_Nullable_Microsoft_Xna_Framework_Vector2__System_Nullable_System_Single__System_Nullable_Microsoft_Xna_Framework_Vector2__System_Nullable_System_Single__UndyneFight_Ex_SpriteBatchEX_
+  name: DrawText
+  nameWithType: DrawingLab.DrawText
+  fullName: UndyneFight_Ex.DrawingLab.DrawText
+- uid: UndyneFight_Ex.GLFont
+  commentId: T:UndyneFight_Ex.GLFont
+  parent: UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.GLFont.html
+  name: GLFont
+  nameWithType: GLFont
+  fullName: UndyneFight_Ex.GLFont
+- uid: System.Nullable{Microsoft.Xna.Framework.Color}
+  commentId: T:System.Nullable{Microsoft.Xna.Framework.Color}
+  parent: System
+  definition: System.Nullable`1
+  name: Color?
+  nameWithType: Color?
+  fullName: Microsoft.Xna.Framework.Color?
+  spec.csharp:
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: '?'
+  spec.vb:
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: '?'
+- uid: System.Nullable{Microsoft.Xna.Framework.Vector2}
+  commentId: T:System.Nullable{Microsoft.Xna.Framework.Vector2}
+  parent: System
+  definition: System.Nullable`1
+  name: Vector2?
+  nameWithType: Vector2?
+  fullName: Microsoft.Xna.Framework.Vector2?
+  spec.csharp:
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: '?'
+  spec.vb:
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: '?'
+- uid: System.Nullable{System.Single}
+  commentId: T:System.Nullable{System.Single}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float?
+  nameWithType: float?
+  fullName: float?
+  nameWithType.vb: Single?
+  fullName.vb: Single?
+  name.vb: Single?
+  spec.csharp:
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: '?'
+  spec.vb:
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: '?'
+- uid: UndyneFight_Ex.SpriteBatchEX
+  commentId: T:UndyneFight_Ex.SpriteBatchEX
+  parent: UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.SpriteBatchEX.html
+  name: SpriteBatchEX
+  nameWithType: SpriteBatchEX
+  fullName: UndyneFight_Ex.SpriteBatchEX
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Microsoft.Xna.Framework.Vector3
+  commentId: T:Microsoft.Xna.Framework.Vector3
+  parent: Microsoft.Xna.Framework
+  isExternal: true
+  name: Vector3
+  nameWithType: Vector3
+  fullName: Microsoft.Xna.Framework.Vector3
+- uid: UndyneFight_Ex.DrawingLab.ToColor*
+  commentId: Overload:UndyneFight_Ex.DrawingLab.ToColor
+  isExternal: true
+  href: UndyneFight_Ex.DrawingLab.html#UndyneFight_Ex_DrawingLab_ToColor_Microsoft_Xna_Framework_Vector3_
+  name: ToColor
+  nameWithType: DrawingLab.ToColor
+  fullName: UndyneFight_Ex.DrawingLab.ToColor

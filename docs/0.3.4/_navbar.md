@@ -1,1 +1,0 @@
--    [Discord Server](https://discord.com/channels/1022852493903933510/1293941718584135710)

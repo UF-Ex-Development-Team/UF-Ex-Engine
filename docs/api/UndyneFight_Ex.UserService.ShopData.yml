@@ -1,0 +1,734 @@
+### YamlMime:ManagedReference
+items:
+- uid: UndyneFight_Ex.UserService.ShopData
+  commentId: T:UndyneFight_Ex.UserService.ShopData
+  id: ShopData
+  parent: UndyneFight_Ex.UserService
+  children:
+  - UndyneFight_Ex.UserService.ShopData.#ctor
+  - UndyneFight_Ex.UserService.ShopData.CashManager
+  - UndyneFight_Ex.UserService.ShopData.Children
+  - UndyneFight_Ex.UserService.ShopData.Load(UndyneFight_Ex.IO.SaveInfo)
+  - UndyneFight_Ex.UserService.ShopData.Save
+  - UndyneFight_Ex.UserService.ShopData.StoreManager
+  langs:
+  - csharp
+  - vb
+  name: ShopData
+  nameWithType: ShopData
+  fullName: UndyneFight_Ex.UserService.ShopData
+  type: Class
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.UserService
+  summary: The data of the shop as a whole
+  example: []
+  syntax:
+    content: 'public class ShopData : ISaveLoad'
+    content.vb: Public Class ShopData Implements ISaveLoad
+  inheritance:
+  - System.Object
+  implements:
+  - UndyneFight_Ex.UserService.ISaveLoad
+  inheritedMembers:
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+- uid: UndyneFight_Ex.UserService.ShopData.#ctor
+  commentId: M:UndyneFight_Ex.UserService.ShopData.#ctor
+  id: '#ctor'
+  parent: UndyneFight_Ex.UserService.ShopData
+  langs:
+  - csharp
+  - vb
+  name: ShopData()
+  nameWithType: ShopData.ShopData()
+  fullName: UndyneFight_Ex.UserService.ShopData.ShopData()
+  type: Constructor
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.UserService
+  summary: The data of the shop as a whole
+  example: []
+  syntax:
+    content: public ShopData()
+    content.vb: Public Sub New()
+  overload: UndyneFight_Ex.UserService.ShopData.#ctor*
+  nameWithType.vb: ShopData.New()
+  fullName.vb: UndyneFight_Ex.UserService.ShopData.New()
+  name.vb: New()
+- uid: UndyneFight_Ex.UserService.ShopData.Load(UndyneFight_Ex.IO.SaveInfo)
+  commentId: M:UndyneFight_Ex.UserService.ShopData.Load(UndyneFight_Ex.IO.SaveInfo)
+  id: Load(UndyneFight_Ex.IO.SaveInfo)
+  parent: UndyneFight_Ex.UserService.ShopData
+  langs:
+  - csharp
+  - vb
+  name: Load(SaveInfo)
+  nameWithType: ShopData.Load(SaveInfo)
+  fullName: UndyneFight_Ex.UserService.ShopData.Load(UndyneFight_Ex.IO.SaveInfo)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.UserService
+  summary: Loads the <xref href="UndyneFight_Ex.IO.SaveInfo" data-throw-if-not-resolved="false"></xref> data
+  example: []
+  syntax:
+    content: public void Load(SaveInfo info)
+    parameters:
+    - id: info
+      type: UndyneFight_Ex.IO.SaveInfo
+      description: The <xref href="UndyneFight_Ex.IO.SaveInfo" data-throw-if-not-resolved="false"></xref> to save
+    content.vb: Public Sub Load(info As SaveInfo)
+  overload: UndyneFight_Ex.UserService.ShopData.Load*
+  implements:
+  - UndyneFight_Ex.UserService.ISaveLoad.Load(UndyneFight_Ex.IO.SaveInfo)
+- uid: UndyneFight_Ex.UserService.ShopData.Save
+  commentId: M:UndyneFight_Ex.UserService.ShopData.Save
+  id: Save
+  parent: UndyneFight_Ex.UserService.ShopData
+  langs:
+  - csharp
+  - vb
+  name: Save()
+  nameWithType: ShopData.Save()
+  fullName: UndyneFight_Ex.UserService.ShopData.Save()
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.UserService
+  summary: Saves the <xref href="UndyneFight_Ex.IO.SaveInfo" data-throw-if-not-resolved="false"></xref> data
+  example: []
+  syntax:
+    content: public SaveInfo Save()
+    return:
+      type: UndyneFight_Ex.IO.SaveInfo
+      description: The data saved in the format of <xref href="UndyneFight_Ex.IO.SaveInfo" data-throw-if-not-resolved="false"></xref>
+    content.vb: Public Function Save() As SaveInfo
+  overload: UndyneFight_Ex.UserService.ShopData.Save*
+  implements:
+  - UndyneFight_Ex.UserService.ISaveLoad.Save
+- uid: UndyneFight_Ex.UserService.ShopData.Children
+  commentId: P:UndyneFight_Ex.UserService.ShopData.Children
+  id: Children
+  parent: UndyneFight_Ex.UserService.ShopData
+  langs:
+  - csharp
+  - vb
+  name: Children
+  nameWithType: ShopData.Children
+  fullName: UndyneFight_Ex.UserService.ShopData.Children
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.UserService
+  summary: Nested save info
+  example: []
+  syntax:
+    content: public List<ISaveLoad> Children { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{UndyneFight_Ex.UserService.ISaveLoad}
+    content.vb: Public ReadOnly Property Children As List(Of ISaveLoad)
+  overload: UndyneFight_Ex.UserService.ShopData.Children*
+  implements:
+  - UndyneFight_Ex.UserService.ISaveLoad.Children
+- uid: UndyneFight_Ex.UserService.ShopData.CashManager
+  commentId: P:UndyneFight_Ex.UserService.ShopData.CashManager
+  id: CashManager
+  parent: UndyneFight_Ex.UserService.ShopData
+  langs:
+  - csharp
+  - vb
+  name: CashManager
+  nameWithType: ShopData.CashManager
+  fullName: UndyneFight_Ex.UserService.ShopData.CashManager
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.UserService
+  summary: The data of the user's coins
+  example: []
+  syntax:
+    content: public ShopData.ShopCash CashManager { get; }
+    parameters: []
+    return:
+      type: UndyneFight_Ex.UserService.ShopData.ShopCash
+    content.vb: Public ReadOnly Property CashManager As ShopData.ShopCash
+  overload: UndyneFight_Ex.UserService.ShopData.CashManager*
+- uid: UndyneFight_Ex.UserService.ShopData.StoreManager
+  commentId: P:UndyneFight_Ex.UserService.ShopData.StoreManager
+  id: StoreManager
+  parent: UndyneFight_Ex.UserService.ShopData
+  langs:
+  - csharp
+  - vb
+  name: StoreManager
+  nameWithType: ShopData.StoreManager
+  fullName: UndyneFight_Ex.UserService.ShopData.StoreManager
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.UserService
+  summary: The data of the shop's items
+  example: []
+  syntax:
+    content: public ShopItemData StoreManager { get; }
+    parameters: []
+    return:
+      type: UndyneFight_Ex.UserService.ShopItemData
+    content.vb: Public ReadOnly Property StoreManager As ShopItemData
+  overload: UndyneFight_Ex.UserService.ShopData.StoreManager*
+references:
+- uid: UndyneFight_Ex.UserService
+  commentId: N:UndyneFight_Ex.UserService
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex.UserService
+  nameWithType: UndyneFight_Ex.UserService
+  fullName: UndyneFight_Ex.UserService
+  spec.csharp:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.UserService
+    name: UserService
+    isExternal: true
+    href: UndyneFight_Ex.UserService.html
+  spec.vb:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.UserService
+    name: UserService
+    isExternal: true
+    href: UndyneFight_Ex.UserService.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: UndyneFight_Ex.UserService.ISaveLoad
+  commentId: T:UndyneFight_Ex.UserService.ISaveLoad
+  parent: UndyneFight_Ex.UserService
+  isExternal: true
+  href: UndyneFight_Ex.UserService.ISaveLoad.html
+  name: ISaveLoad
+  nameWithType: ISaveLoad
+  fullName: UndyneFight_Ex.UserService.ISaveLoad
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UndyneFight_Ex.UserService.ShopData.#ctor*
+  commentId: Overload:UndyneFight_Ex.UserService.ShopData.#ctor
+  isExternal: true
+  href: UndyneFight_Ex.UserService.ShopData.html#UndyneFight_Ex_UserService_ShopData__ctor
+  name: ShopData
+  nameWithType: ShopData.ShopData
+  fullName: UndyneFight_Ex.UserService.ShopData.ShopData
+  nameWithType.vb: ShopData.New
+  fullName.vb: UndyneFight_Ex.UserService.ShopData.New
+  name.vb: New
+- uid: UndyneFight_Ex.IO.SaveInfo
+  commentId: T:UndyneFight_Ex.IO.SaveInfo
+  parent: UndyneFight_Ex.IO
+  isExternal: true
+  href: UndyneFight_Ex.IO.SaveInfo.html
+  name: SaveInfo
+  nameWithType: SaveInfo
+  fullName: UndyneFight_Ex.IO.SaveInfo
+- uid: UndyneFight_Ex.UserService.ShopData.Load*
+  commentId: Overload:UndyneFight_Ex.UserService.ShopData.Load
+  isExternal: true
+  href: UndyneFight_Ex.UserService.ShopData.html#UndyneFight_Ex_UserService_ShopData_Load_UndyneFight_Ex_IO_SaveInfo_
+  name: Load
+  nameWithType: ShopData.Load
+  fullName: UndyneFight_Ex.UserService.ShopData.Load
+- uid: UndyneFight_Ex.UserService.ISaveLoad.Load(UndyneFight_Ex.IO.SaveInfo)
+  commentId: M:UndyneFight_Ex.UserService.ISaveLoad.Load(UndyneFight_Ex.IO.SaveInfo)
+  parent: UndyneFight_Ex.UserService.ISaveLoad
+  isExternal: true
+  href: UndyneFight_Ex.UserService.ISaveLoad.html#UndyneFight_Ex_UserService_ISaveLoad_Load_UndyneFight_Ex_IO_SaveInfo_
+  name: Load(SaveInfo)
+  nameWithType: ISaveLoad.Load(SaveInfo)
+  fullName: UndyneFight_Ex.UserService.ISaveLoad.Load(UndyneFight_Ex.IO.SaveInfo)
+  spec.csharp:
+  - uid: UndyneFight_Ex.UserService.ISaveLoad.Load(UndyneFight_Ex.IO.SaveInfo)
+    name: Load
+    isExternal: true
+    href: UndyneFight_Ex.UserService.ISaveLoad.html#UndyneFight_Ex_UserService_ISaveLoad_Load_UndyneFight_Ex_IO_SaveInfo_
+  - name: (
+  - uid: UndyneFight_Ex.IO.SaveInfo
+    name: SaveInfo
+    isExternal: true
+    href: UndyneFight_Ex.IO.SaveInfo.html
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.UserService.ISaveLoad.Load(UndyneFight_Ex.IO.SaveInfo)
+    name: Load
+    isExternal: true
+    href: UndyneFight_Ex.UserService.ISaveLoad.html#UndyneFight_Ex_UserService_ISaveLoad_Load_UndyneFight_Ex_IO_SaveInfo_
+  - name: (
+  - uid: UndyneFight_Ex.IO.SaveInfo
+    name: SaveInfo
+    isExternal: true
+    href: UndyneFight_Ex.IO.SaveInfo.html
+  - name: )
+- uid: UndyneFight_Ex.IO
+  commentId: N:UndyneFight_Ex.IO
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex.IO
+  nameWithType: UndyneFight_Ex.IO
+  fullName: UndyneFight_Ex.IO
+  spec.csharp:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.IO
+    name: IO
+    isExternal: true
+    href: UndyneFight_Ex.IO.html
+  spec.vb:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.IO
+    name: IO
+    isExternal: true
+    href: UndyneFight_Ex.IO.html
+- uid: UndyneFight_Ex.UserService.ShopData.Save*
+  commentId: Overload:UndyneFight_Ex.UserService.ShopData.Save
+  isExternal: true
+  href: UndyneFight_Ex.UserService.ShopData.html#UndyneFight_Ex_UserService_ShopData_Save
+  name: Save
+  nameWithType: ShopData.Save
+  fullName: UndyneFight_Ex.UserService.ShopData.Save
+- uid: UndyneFight_Ex.UserService.ISaveLoad.Save
+  commentId: M:UndyneFight_Ex.UserService.ISaveLoad.Save
+  parent: UndyneFight_Ex.UserService.ISaveLoad
+  isExternal: true
+  href: UndyneFight_Ex.UserService.ISaveLoad.html#UndyneFight_Ex_UserService_ISaveLoad_Save
+  name: Save()
+  nameWithType: ISaveLoad.Save()
+  fullName: UndyneFight_Ex.UserService.ISaveLoad.Save()
+  spec.csharp:
+  - uid: UndyneFight_Ex.UserService.ISaveLoad.Save
+    name: Save
+    isExternal: true
+    href: UndyneFight_Ex.UserService.ISaveLoad.html#UndyneFight_Ex_UserService_ISaveLoad_Save
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.UserService.ISaveLoad.Save
+    name: Save
+    isExternal: true
+    href: UndyneFight_Ex.UserService.ISaveLoad.html#UndyneFight_Ex_UserService_ISaveLoad_Save
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.UserService.ShopData.Children*
+  commentId: Overload:UndyneFight_Ex.UserService.ShopData.Children
+  isExternal: true
+  href: UndyneFight_Ex.UserService.ShopData.html#UndyneFight_Ex_UserService_ShopData_Children
+  name: Children
+  nameWithType: ShopData.Children
+  fullName: UndyneFight_Ex.UserService.ShopData.Children
+- uid: UndyneFight_Ex.UserService.ISaveLoad.Children
+  commentId: P:UndyneFight_Ex.UserService.ISaveLoad.Children
+  parent: UndyneFight_Ex.UserService.ISaveLoad
+  isExternal: true
+  href: UndyneFight_Ex.UserService.ISaveLoad.html#UndyneFight_Ex_UserService_ISaveLoad_Children
+  name: Children
+  nameWithType: ISaveLoad.Children
+  fullName: UndyneFight_Ex.UserService.ISaveLoad.Children
+- uid: System.Collections.Generic.List{UndyneFight_Ex.UserService.ISaveLoad}
+  commentId: T:System.Collections.Generic.List{UndyneFight_Ex.UserService.ISaveLoad}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<ISaveLoad>
+  nameWithType: List<ISaveLoad>
+  fullName: System.Collections.Generic.List<UndyneFight_Ex.UserService.ISaveLoad>
+  nameWithType.vb: List(Of ISaveLoad)
+  fullName.vb: System.Collections.Generic.List(Of UndyneFight_Ex.UserService.ISaveLoad)
+  name.vb: List(Of ISaveLoad)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: UndyneFight_Ex.UserService.ISaveLoad
+    name: ISaveLoad
+    isExternal: true
+    href: UndyneFight_Ex.UserService.ISaveLoad.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: UndyneFight_Ex.UserService.ISaveLoad
+    name: ISaveLoad
+    isExternal: true
+    href: UndyneFight_Ex.UserService.ISaveLoad.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: UndyneFight_Ex.UserService.ShopData.CashManager*
+  commentId: Overload:UndyneFight_Ex.UserService.ShopData.CashManager
+  isExternal: true
+  href: UndyneFight_Ex.UserService.ShopData.html#UndyneFight_Ex_UserService_ShopData_CashManager
+  name: CashManager
+  nameWithType: ShopData.CashManager
+  fullName: UndyneFight_Ex.UserService.ShopData.CashManager
+- uid: UndyneFight_Ex.UserService.ShopData.ShopCash
+  commentId: T:UndyneFight_Ex.UserService.ShopData.ShopCash
+  parent: UndyneFight_Ex.UserService
+  isExternal: true
+  href: UndyneFight_Ex.UserService.ShopData.html
+  name: ShopData.ShopCash
+  nameWithType: ShopData.ShopCash
+  fullName: UndyneFight_Ex.UserService.ShopData.ShopCash
+  spec.csharp:
+  - uid: UndyneFight_Ex.UserService.ShopData
+    name: ShopData
+    isExternal: true
+    href: UndyneFight_Ex.UserService.ShopData.html
+  - name: .
+  - uid: UndyneFight_Ex.UserService.ShopData.ShopCash
+    name: ShopCash
+    isExternal: true
+    href: UndyneFight_Ex.UserService.ShopData.ShopCash.html
+  spec.vb:
+  - uid: UndyneFight_Ex.UserService.ShopData
+    name: ShopData
+    isExternal: true
+    href: UndyneFight_Ex.UserService.ShopData.html
+  - name: .
+  - uid: UndyneFight_Ex.UserService.ShopData.ShopCash
+    name: ShopCash
+    isExternal: true
+    href: UndyneFight_Ex.UserService.ShopData.ShopCash.html
+- uid: UndyneFight_Ex.UserService.ShopData.StoreManager*
+  commentId: Overload:UndyneFight_Ex.UserService.ShopData.StoreManager
+  isExternal: true
+  href: UndyneFight_Ex.UserService.ShopData.html#UndyneFight_Ex_UserService_ShopData_StoreManager
+  name: StoreManager
+  nameWithType: ShopData.StoreManager
+  fullName: UndyneFight_Ex.UserService.ShopData.StoreManager
+- uid: UndyneFight_Ex.UserService.ShopItemData
+  commentId: T:UndyneFight_Ex.UserService.ShopItemData
+  parent: UndyneFight_Ex.UserService
+  isExternal: true
+  href: UndyneFight_Ex.UserService.ShopItemData.html
+  name: ShopItemData
+  nameWithType: ShopItemData
+  fullName: UndyneFight_Ex.UserService.ShopItemData

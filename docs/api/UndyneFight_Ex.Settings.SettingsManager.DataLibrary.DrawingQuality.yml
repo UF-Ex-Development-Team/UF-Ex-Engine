@@ -1,0 +1,277 @@
+### YamlMime:ManagedReference
+items:
+- uid: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality
+  commentId: T:UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality
+  id: SettingsManager.DataLibrary.DrawingQuality
+  parent: UndyneFight_Ex.Settings
+  children:
+  - UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality.High
+  - UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality.Low
+  - UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality.Normal
+  langs:
+  - csharp
+  - vb
+  name: SettingsManager.DataLibrary.DrawingQuality
+  nameWithType: SettingsManager.DataLibrary.DrawingQuality
+  fullName: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality
+  type: Enum
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Settings
+  syntax:
+    content: public enum SettingsManager.DataLibrary.DrawingQuality
+    content.vb: Public Enum SettingsManager.DataLibrary.DrawingQuality
+  extensionMethods:
+  - UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality.UndyneFight_Ex.MathUtil.InRange``1(UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality,UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality)
+- uid: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality.Low
+  commentId: F:UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality.Low
+  id: Low
+  parent: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality
+  langs:
+  - csharp
+  - vb
+  name: Low
+  nameWithType: SettingsManager.DataLibrary.DrawingQuality.Low
+  fullName: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality.Low
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Settings
+  syntax:
+    content: Low = 0
+    return:
+      type: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality
+- uid: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality.Normal
+  commentId: F:UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality.Normal
+  id: Normal
+  parent: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality
+  langs:
+  - csharp
+  - vb
+  name: Normal
+  nameWithType: SettingsManager.DataLibrary.DrawingQuality.Normal
+  fullName: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality.Normal
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Settings
+  syntax:
+    content: Normal = 1
+    return:
+      type: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality
+- uid: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality.High
+  commentId: F:UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality.High
+  id: High
+  parent: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality
+  langs:
+  - csharp
+  - vb
+  name: High
+  nameWithType: SettingsManager.DataLibrary.DrawingQuality.High
+  fullName: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality.High
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Settings
+  syntax:
+    content: High = 2
+    return:
+      type: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality
+references:
+- uid: UndyneFight_Ex.Settings
+  commentId: N:UndyneFight_Ex.Settings
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex.Settings
+  nameWithType: UndyneFight_Ex.Settings
+  fullName: UndyneFight_Ex.Settings
+  spec.csharp:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Settings
+    name: Settings
+    isExternal: true
+    href: UndyneFight_Ex.Settings.html
+  spec.vb:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Settings
+    name: Settings
+    isExternal: true
+    href: UndyneFight_Ex.Settings.html
+- uid: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality.UndyneFight_Ex.MathUtil.InRange``1(UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality,UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality)
+  commentId: M:UndyneFight_Ex.MathUtil.InRange``1(``0,``0,``0)
+  parent: UndyneFight_Ex.MathUtil
+  definition: UndyneFight_Ex.MathUtil.InRange``1(``0,``0,``0)
+  href: UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_InRange__1___0___0___0_
+  name: InRange<DrawingQuality>(DrawingQuality, DrawingQuality, DrawingQuality)
+  nameWithType: MathUtil.InRange<SettingsManager.DataLibrary.DrawingQuality>(SettingsManager.DataLibrary.DrawingQuality, SettingsManager.DataLibrary.DrawingQuality, SettingsManager.DataLibrary.DrawingQuality)
+  fullName: UndyneFight_Ex.MathUtil.InRange<UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality>(UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality, UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality, UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality)
+  nameWithType.vb: MathUtil.InRange(Of SettingsManager.DataLibrary.DrawingQuality)(SettingsManager.DataLibrary.DrawingQuality, SettingsManager.DataLibrary.DrawingQuality, SettingsManager.DataLibrary.DrawingQuality)
+  fullName.vb: UndyneFight_Ex.MathUtil.InRange(Of UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality)(UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality, UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality, UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality)
+  name.vb: InRange(Of DrawingQuality)(DrawingQuality, DrawingQuality, DrawingQuality)
+  spec.csharp:
+  - uid: UndyneFight_Ex.MathUtil.InRange``1(UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality,UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality,UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality)
+    name: InRange
+    isExternal: true
+    href: UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_InRange__1___0___0___0_
+  - name: <
+  - uid: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality
+    name: DrawingQuality
+    isExternal: true
+    href: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality.html
+  - name: '>'
+  - name: (
+  - uid: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality
+    name: DrawingQuality
+    isExternal: true
+    href: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality.html
+  - name: ','
+  - name: " "
+  - uid: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality
+    name: DrawingQuality
+    isExternal: true
+    href: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality.html
+  - name: ','
+  - name: " "
+  - uid: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality
+    name: DrawingQuality
+    isExternal: true
+    href: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality.html
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.MathUtil.InRange``1(UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality,UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality,UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality)
+    name: InRange
+    isExternal: true
+    href: UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_InRange__1___0___0___0_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality
+    name: DrawingQuality
+    isExternal: true
+    href: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality.html
+  - name: )
+  - name: (
+  - uid: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality
+    name: DrawingQuality
+    isExternal: true
+    href: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality.html
+  - name: ','
+  - name: " "
+  - uid: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality
+    name: DrawingQuality
+    isExternal: true
+    href: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality.html
+  - name: ','
+  - name: " "
+  - uid: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality
+    name: DrawingQuality
+    isExternal: true
+    href: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality.html
+  - name: )
+- uid: UndyneFight_Ex.MathUtil.InRange``1(``0,``0,``0)
+  commentId: M:UndyneFight_Ex.MathUtil.InRange``1(``0,``0,``0)
+  isExternal: true
+  href: UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_InRange__1___0___0___0_
+  name: InRange<T>(T, T, T)
+  nameWithType: MathUtil.InRange<T>(T, T, T)
+  fullName: UndyneFight_Ex.MathUtil.InRange<T>(T, T, T)
+  nameWithType.vb: MathUtil.InRange(Of T)(T, T, T)
+  fullName.vb: UndyneFight_Ex.MathUtil.InRange(Of T)(T, T, T)
+  name.vb: InRange(Of T)(T, T, T)
+  spec.csharp:
+  - uid: UndyneFight_Ex.MathUtil.InRange``1(``0,``0,``0)
+    name: InRange
+    isExternal: true
+    href: UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_InRange__1___0___0___0_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.MathUtil.InRange``1(``0,``0,``0)
+    name: InRange
+    isExternal: true
+    href: UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_InRange__1___0___0___0_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+- uid: UndyneFight_Ex.MathUtil
+  commentId: T:UndyneFight_Ex.MathUtil
+  parent: UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.MathUtil.html
+  name: MathUtil
+  nameWithType: MathUtil
+  fullName: UndyneFight_Ex.MathUtil
+- uid: UndyneFight_Ex
+  commentId: N:UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex
+  nameWithType: UndyneFight_Ex
+  fullName: UndyneFight_Ex
+- uid: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality
+  commentId: T:UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality
+  parent: UndyneFight_Ex.Settings
+  isExternal: true
+  href: UndyneFight_Ex.Settings.SettingsManager.html
+  name: SettingsManager.DataLibrary.DrawingQuality
+  nameWithType: SettingsManager.DataLibrary.DrawingQuality
+  fullName: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality
+  spec.csharp:
+  - uid: UndyneFight_Ex.Settings.SettingsManager
+    name: SettingsManager
+    isExternal: true
+    href: UndyneFight_Ex.Settings.SettingsManager.html
+  - name: .
+  - uid: UndyneFight_Ex.Settings.SettingsManager.DataLibrary
+    name: DataLibrary
+    isExternal: true
+    href: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.html
+  - name: .
+  - uid: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality
+    name: DrawingQuality
+    isExternal: true
+    href: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality.html
+  spec.vb:
+  - uid: UndyneFight_Ex.Settings.SettingsManager
+    name: SettingsManager
+    isExternal: true
+    href: UndyneFight_Ex.Settings.SettingsManager.html
+  - name: .
+  - uid: UndyneFight_Ex.Settings.SettingsManager.DataLibrary
+    name: DataLibrary
+    isExternal: true
+    href: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.html
+  - name: .
+  - uid: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality
+    name: DrawingQuality
+    isExternal: true
+    href: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality.html

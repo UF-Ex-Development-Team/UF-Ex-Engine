@@ -1,0 +1,94 @@
+### YamlMime:ManagedReference
+items:
+- uid: UndyneFight_Ex.Achievements
+  commentId: N:UndyneFight_Ex.Achievements
+  id: UndyneFight_Ex.Achievements
+  children:
+  - UndyneFight_Ex.Achievements.Achievement
+  - UndyneFight_Ex.Achievements.AchievementUI
+  - UndyneFight_Ex.Achievements.CheckerType
+  - UndyneFight_Ex.Achievements.IAchievementCheck
+  - UndyneFight_Ex.Achievements.SongDataChecker
+  - UndyneFight_Ex.Achievements.UserDataChecker
+  langs:
+  - csharp
+  - vb
+  name: UndyneFight_Ex.Achievements
+  nameWithType: UndyneFight_Ex.Achievements
+  fullName: UndyneFight_Ex.Achievements
+  type: Namespace
+  assemblies:
+  - UndyneFight-Ex
+references:
+- uid: UndyneFight_Ex.Achievements.CheckerType
+  commentId: T:UndyneFight_Ex.Achievements.CheckerType
+  parent: UndyneFight_Ex.Achievements
+  isExternal: true
+  href: UndyneFight_Ex.Achievements.CheckerType.html
+  name: CheckerType
+  nameWithType: CheckerType
+  fullName: UndyneFight_Ex.Achievements.CheckerType
+- uid: UndyneFight_Ex.Achievements.IAchievementCheck
+  commentId: T:UndyneFight_Ex.Achievements.IAchievementCheck
+  parent: UndyneFight_Ex.Achievements
+  isExternal: true
+  href: UndyneFight_Ex.Achievements.IAchievementCheck.html
+  name: IAchievementCheck
+  nameWithType: IAchievementCheck
+  fullName: UndyneFight_Ex.Achievements.IAchievementCheck
+- uid: UndyneFight_Ex.Achievements.UserDataChecker
+  commentId: T:UndyneFight_Ex.Achievements.UserDataChecker
+  isExternal: true
+  href: UndyneFight_Ex.Achievements.UserDataChecker.html
+  name: UserDataChecker
+  nameWithType: UserDataChecker
+  fullName: UndyneFight_Ex.Achievements.UserDataChecker
+- uid: UndyneFight_Ex.Achievements.SongDataChecker
+  commentId: T:UndyneFight_Ex.Achievements.SongDataChecker
+  isExternal: true
+  href: UndyneFight_Ex.Achievements.SongDataChecker.html
+  name: SongDataChecker
+  nameWithType: SongDataChecker
+  fullName: UndyneFight_Ex.Achievements.SongDataChecker
+- uid: UndyneFight_Ex.Achievements.Achievement
+  commentId: T:UndyneFight_Ex.Achievements.Achievement
+  parent: UndyneFight_Ex.Achievements
+  isExternal: true
+  href: UndyneFight_Ex.Achievements.Achievement.html
+  name: Achievement
+  nameWithType: Achievement
+  fullName: UndyneFight_Ex.Achievements.Achievement
+- uid: UndyneFight_Ex.Achievements.AchievementUI
+  commentId: T:UndyneFight_Ex.Achievements.AchievementUI
+  isExternal: true
+  href: UndyneFight_Ex.Achievements.AchievementUI.html
+  name: AchievementUI
+  nameWithType: AchievementUI
+  fullName: UndyneFight_Ex.Achievements.AchievementUI
+- uid: UndyneFight_Ex.Achievements
+  commentId: N:UndyneFight_Ex.Achievements
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex.Achievements
+  nameWithType: UndyneFight_Ex.Achievements
+  fullName: UndyneFight_Ex.Achievements
+  spec.csharp:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Achievements
+    name: Achievements
+    isExternal: true
+    href: UndyneFight_Ex.Achievements.html
+  spec.vb:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Achievements
+    name: Achievements
+    isExternal: true
+    href: UndyneFight_Ex.Achievements.html

@@ -1,0 +1,471 @@
+### YamlMime:ManagedReference
+items:
+- uid: UndyneFight_Ex.FightResources.Font
+  commentId: T:UndyneFight_Ex.FightResources.Font
+  id: FightResources.Font
+  parent: UndyneFight_Ex
+  children:
+  - UndyneFight_Ex.FightResources.Font.Chinese
+  - UndyneFight_Ex.FightResources.Font.DamageFont
+  - UndyneFight_Ex.FightResources.Font.FightFont
+  - UndyneFight_Ex.FightResources.Font.Japanese
+  - UndyneFight_Ex.FightResources.Font.NormalFont
+  - UndyneFight_Ex.FightResources.Font.SansFont
+  langs:
+  - csharp
+  - vb
+  name: FightResources.Font
+  nameWithType: FightResources.Font
+  fullName: UndyneFight_Ex.FightResources.Font
+  type: Class
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: A list of built-in fonts
+  example: []
+  syntax:
+    content: public static class FightResources.Font
+    content.vb: Public Module FightResources.Font
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+- uid: UndyneFight_Ex.FightResources.Font.FightFont
+  commentId: P:UndyneFight_Ex.FightResources.Font.FightFont
+  id: FightFont
+  parent: UndyneFight_Ex.FightResources.Font
+  langs:
+  - csharp
+  - vb
+  name: FightFont
+  nameWithType: FightResources.Font.FightFont
+  fullName: UndyneFight_Ex.FightResources.Font.FightFont
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Mars Needs Cunnilingus
+  example: []
+  syntax:
+    content: public static GLFont FightFont { get; }
+    parameters: []
+    return:
+      type: UndyneFight_Ex.GLFont
+    content.vb: Public Shared ReadOnly Property FightFont As GLFont
+  overload: UndyneFight_Ex.FightResources.Font.FightFont*
+- uid: UndyneFight_Ex.FightResources.Font.SansFont
+  commentId: P:UndyneFight_Ex.FightResources.Font.SansFont
+  id: SansFont
+  parent: UndyneFight_Ex.FightResources.Font
+  langs:
+  - csharp
+  - vb
+  name: SansFont
+  nameWithType: FightResources.Font.SansFont
+  fullName: UndyneFight_Ex.FightResources.Font.SansFont
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Sans Undertale
+  example: []
+  syntax:
+    content: public static GLFont SansFont { get; }
+    parameters: []
+    return:
+      type: UndyneFight_Ex.GLFont
+    content.vb: Public Shared ReadOnly Property SansFont As GLFont
+  overload: UndyneFight_Ex.FightResources.Font.SansFont*
+- uid: UndyneFight_Ex.FightResources.Font.DamageFont
+  commentId: P:UndyneFight_Ex.FightResources.Font.DamageFont
+  id: DamageFont
+  parent: UndyneFight_Ex.FightResources.Font
+  langs:
+  - csharp
+  - vb
+  name: DamageFont
+  nameWithType: FightResources.Font.DamageFont
+  fullName: UndyneFight_Ex.FightResources.Font.DamageFont
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Hachicro
+  example: []
+  syntax:
+    content: public static GLFont DamageFont { get; }
+    parameters: []
+    return:
+      type: UndyneFight_Ex.GLFont
+    content.vb: Public Shared ReadOnly Property DamageFont As GLFont
+  overload: UndyneFight_Ex.FightResources.Font.DamageFont*
+- uid: UndyneFight_Ex.FightResources.Font.NormalFont
+  commentId: P:UndyneFight_Ex.FightResources.Font.NormalFont
+  id: NormalFont
+  parent: UndyneFight_Ex.FightResources.Font
+  langs:
+  - csharp
+  - vb
+  name: NormalFont
+  nameWithType: FightResources.Font.NormalFont
+  fullName: UndyneFight_Ex.FightResources.Font.NormalFont
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Determination Mono
+  example: []
+  syntax:
+    content: public static GLFont NormalFont { get; }
+    parameters: []
+    return:
+      type: UndyneFight_Ex.GLFont
+    content.vb: Public Shared ReadOnly Property NormalFont As GLFont
+  overload: UndyneFight_Ex.FightResources.Font.NormalFont*
+- uid: UndyneFight_Ex.FightResources.Font.Japanese
+  commentId: P:UndyneFight_Ex.FightResources.Font.Japanese
+  id: Japanese
+  parent: UndyneFight_Ex.FightResources.Font
+  langs:
+  - csharp
+  - vb
+  name: Japanese
+  nameWithType: FightResources.Font.Japanese
+  fullName: UndyneFight_Ex.FightResources.Font.Japanese
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: ta_pop_M
+  example: []
+  syntax:
+    content: public static GLFont Japanese { get; }
+    parameters: []
+    return:
+      type: UndyneFight_Ex.GLFont
+    content.vb: Public Shared ReadOnly Property Japanese As GLFont
+  overload: UndyneFight_Ex.FightResources.Font.Japanese*
+- uid: UndyneFight_Ex.FightResources.Font.Chinese
+  commentId: P:UndyneFight_Ex.FightResources.Font.Chinese
+  id: Chinese
+  parent: UndyneFight_Ex.FightResources.Font
+  langs:
+  - csharp
+  - vb
+  name: Chinese
+  nameWithType: FightResources.Font.Chinese
+  fullName: UndyneFight_Ex.FightResources.Font.Chinese
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: FZXS 12
+  example: []
+  syntax:
+    content: public static GLFont Chinese { get; }
+    parameters: []
+    return:
+      type: UndyneFight_Ex.GLFont
+    content.vb: Public Shared ReadOnly Property Chinese As GLFont
+  overload: UndyneFight_Ex.FightResources.Font.Chinese*
+references:
+- uid: UndyneFight_Ex
+  commentId: N:UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex
+  nameWithType: UndyneFight_Ex
+  fullName: UndyneFight_Ex
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UndyneFight_Ex.FightResources.Font.FightFont*
+  commentId: Overload:UndyneFight_Ex.FightResources.Font.FightFont
+  isExternal: true
+  href: UndyneFight_Ex.FightResources.Font.html#UndyneFight_Ex_FightResources_Font_FightFont
+  name: FightFont
+  nameWithType: FightResources.Font.FightFont
+  fullName: UndyneFight_Ex.FightResources.Font.FightFont
+- uid: UndyneFight_Ex.GLFont
+  commentId: T:UndyneFight_Ex.GLFont
+  parent: UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.GLFont.html
+  name: GLFont
+  nameWithType: GLFont
+  fullName: UndyneFight_Ex.GLFont
+- uid: UndyneFight_Ex.FightResources.Font.SansFont*
+  commentId: Overload:UndyneFight_Ex.FightResources.Font.SansFont
+  isExternal: true
+  href: UndyneFight_Ex.FightResources.Font.html#UndyneFight_Ex_FightResources_Font_SansFont
+  name: SansFont
+  nameWithType: FightResources.Font.SansFont
+  fullName: UndyneFight_Ex.FightResources.Font.SansFont
+- uid: UndyneFight_Ex.FightResources.Font.DamageFont*
+  commentId: Overload:UndyneFight_Ex.FightResources.Font.DamageFont
+  isExternal: true
+  href: UndyneFight_Ex.FightResources.Font.html#UndyneFight_Ex_FightResources_Font_DamageFont
+  name: DamageFont
+  nameWithType: FightResources.Font.DamageFont
+  fullName: UndyneFight_Ex.FightResources.Font.DamageFont
+- uid: UndyneFight_Ex.FightResources.Font.NormalFont*
+  commentId: Overload:UndyneFight_Ex.FightResources.Font.NormalFont
+  isExternal: true
+  href: UndyneFight_Ex.FightResources.Font.html#UndyneFight_Ex_FightResources_Font_NormalFont
+  name: NormalFont
+  nameWithType: FightResources.Font.NormalFont
+  fullName: UndyneFight_Ex.FightResources.Font.NormalFont
+- uid: UndyneFight_Ex.FightResources.Font.Japanese*
+  commentId: Overload:UndyneFight_Ex.FightResources.Font.Japanese
+  isExternal: true
+  href: UndyneFight_Ex.FightResources.Font.html#UndyneFight_Ex_FightResources_Font_Japanese
+  name: Japanese
+  nameWithType: FightResources.Font.Japanese
+  fullName: UndyneFight_Ex.FightResources.Font.Japanese
+- uid: UndyneFight_Ex.FightResources.Font.Chinese*
+  commentId: Overload:UndyneFight_Ex.FightResources.Font.Chinese
+  isExternal: true
+  href: UndyneFight_Ex.FightResources.Font.html#UndyneFight_Ex_FightResources_Font_Chinese
+  name: Chinese
+  nameWithType: FightResources.Font.Chinese
+  fullName: UndyneFight_Ex.FightResources.Font.Chinese

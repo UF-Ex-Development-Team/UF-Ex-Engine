@@ -1,0 +1,299 @@
+### YamlMime:ManagedReference
+items:
+- uid: UndyneFight_Ex.Entities.ICustomLength
+  commentId: T:UndyneFight_Ex.Entities.ICustomLength
+  id: ICustomLength
+  parent: UndyneFight_Ex.Entities
+  children:
+  - UndyneFight_Ex.Entities.ICustomLength.AppearTime
+  - UndyneFight_Ex.Entities.ICustomLength.LengthRoute
+  - UndyneFight_Ex.Entities.ICustomLength.LengthRouteParam
+  langs:
+  - csharp
+  - vb
+  name: ICustomLength
+  nameWithType: ICustomLength
+  fullName: UndyneFight_Ex.Entities.ICustomLength
+  type: Interface
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Interface for entities that has length control (Bones)
+  example: []
+  syntax:
+    content: public interface ICustomLength
+    content.vb: Public Interface ICustomLength
+- uid: UndyneFight_Ex.Entities.ICustomLength.AppearTime
+  commentId: P:UndyneFight_Ex.Entities.ICustomLength.AppearTime
+  id: AppearTime
+  parent: UndyneFight_Ex.Entities.ICustomLength
+  langs:
+  - csharp
+  - vb
+  name: AppearTime
+  nameWithType: ICustomLength.AppearTime
+  fullName: UndyneFight_Ex.Entities.ICustomLength.AppearTime
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: The frames elapsed after being created
+  example: []
+  syntax:
+    content: float AppearTime { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: ReadOnly Property AppearTime As Single
+  overload: UndyneFight_Ex.Entities.ICustomLength.AppearTime*
+- uid: UndyneFight_Ex.Entities.ICustomLength.LengthRoute
+  commentId: P:UndyneFight_Ex.Entities.ICustomLength.LengthRoute
+  id: LengthRoute
+  parent: UndyneFight_Ex.Entities.ICustomLength
+  langs:
+  - csharp
+  - vb
+  name: LengthRoute
+  nameWithType: ICustomLength.LengthRoute
+  fullName: UndyneFight_Ex.Entities.ICustomLength.LengthRoute
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: The length easing function of the entity, use <xref href="UndyneFight_Ex.Entities.Motions.LengthRoute" data-throw-if-not-resolved="false"></xref> or <xref href="UndyneFight_Ex.Entities.SimplifiedEasing" data-throw-if-not-resolved="false"></xref>
+  example: []
+  syntax:
+    content: Func<ICustomLength, float> LengthRoute { get; set; }
+    parameters: []
+    return:
+      type: System.Func{UndyneFight_Ex.Entities.ICustomLength,System.Single}
+    content.vb: Property LengthRoute As Func(Of ICustomLength, Single)
+  overload: UndyneFight_Ex.Entities.ICustomLength.LengthRoute*
+- uid: UndyneFight_Ex.Entities.ICustomLength.LengthRouteParam
+  commentId: P:UndyneFight_Ex.Entities.ICustomLength.LengthRouteParam
+  id: LengthRouteParam
+  parent: UndyneFight_Ex.Entities.ICustomLength
+  langs:
+  - csharp
+  - vb
+  name: LengthRouteParam
+  nameWithType: ICustomLength.LengthRouteParam
+  fullName: UndyneFight_Ex.Entities.ICustomLength.LengthRouteParam
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: The parameters for the length route
+  example: []
+  syntax:
+    content: float[] LengthRouteParam { get; set; }
+    parameters: []
+    return:
+      type: System.Single[]
+    content.vb: Property LengthRouteParam As Single()
+  overload: UndyneFight_Ex.Entities.ICustomLength.LengthRouteParam*
+references:
+- uid: UndyneFight_Ex.Entities
+  commentId: N:UndyneFight_Ex.Entities
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex.Entities
+  nameWithType: UndyneFight_Ex.Entities
+  fullName: UndyneFight_Ex.Entities
+  spec.csharp:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities
+    name: Entities
+    isExternal: true
+    href: UndyneFight_Ex.Entities.html
+  spec.vb:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities
+    name: Entities
+    isExternal: true
+    href: UndyneFight_Ex.Entities.html
+- uid: UndyneFight_Ex.Entities.ICustomLength.AppearTime*
+  commentId: Overload:UndyneFight_Ex.Entities.ICustomLength.AppearTime
+  isExternal: true
+  href: UndyneFight_Ex.Entities.ICustomLength.html#UndyneFight_Ex_Entities_ICustomLength_AppearTime
+  name: AppearTime
+  nameWithType: ICustomLength.AppearTime
+  fullName: UndyneFight_Ex.Entities.ICustomLength.AppearTime
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UndyneFight_Ex.Entities.Motions.LengthRoute
+  commentId: T:UndyneFight_Ex.Entities.Motions.LengthRoute
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Motions.html
+  name: Motions.LengthRoute
+  nameWithType: Motions.LengthRoute
+  fullName: UndyneFight_Ex.Entities.Motions.LengthRoute
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entities.Motions
+    name: Motions
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Motions.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities.Motions.LengthRoute
+    name: LengthRoute
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Motions.LengthRoute.html
+  spec.vb:
+  - uid: UndyneFight_Ex.Entities.Motions
+    name: Motions
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Motions.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities.Motions.LengthRoute
+    name: LengthRoute
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Motions.LengthRoute.html
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing
+  commentId: T:UndyneFight_Ex.Entities.SimplifiedEasing
+  isExternal: true
+  href: UndyneFight_Ex.Entities.SimplifiedEasing.html
+  name: SimplifiedEasing
+  nameWithType: SimplifiedEasing
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing
+- uid: UndyneFight_Ex.Entities.ICustomLength.LengthRoute*
+  commentId: Overload:UndyneFight_Ex.Entities.ICustomLength.LengthRoute
+  isExternal: true
+  href: UndyneFight_Ex.Entities.ICustomLength.html#UndyneFight_Ex_Entities_ICustomLength_LengthRoute
+  name: LengthRoute
+  nameWithType: ICustomLength.LengthRoute
+  fullName: UndyneFight_Ex.Entities.ICustomLength.LengthRoute
+- uid: System.Func{UndyneFight_Ex.Entities.ICustomLength,System.Single}
+  commentId: T:System.Func{UndyneFight_Ex.Entities.ICustomLength,System.Single}
+  parent: System
+  definition: System.Func`2
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<ICustomLength, float>
+  nameWithType: Func<ICustomLength, float>
+  fullName: System.Func<UndyneFight_Ex.Entities.ICustomLength, float>
+  nameWithType.vb: Func(Of ICustomLength, Single)
+  fullName.vb: System.Func(Of UndyneFight_Ex.Entities.ICustomLength, Single)
+  name.vb: Func(Of ICustomLength, Single)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - uid: UndyneFight_Ex.Entities.ICustomLength
+    name: ICustomLength
+    isExternal: true
+    href: UndyneFight_Ex.Entities.ICustomLength.html
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: UndyneFight_Ex.Entities.ICustomLength
+    name: ICustomLength
+    isExternal: true
+    href: UndyneFight_Ex.Entities.ICustomLength.html
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: System.Func`2
+  commentId: T:System.Func`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: UndyneFight_Ex.Entities.ICustomLength.LengthRouteParam*
+  commentId: Overload:UndyneFight_Ex.Entities.ICustomLength.LengthRouteParam
+  isExternal: true
+  href: UndyneFight_Ex.Entities.ICustomLength.html#UndyneFight_Ex_Entities_ICustomLength_LengthRouteParam
+  name: LengthRouteParam
+  nameWithType: ICustomLength.LengthRouteParam
+  fullName: UndyneFight_Ex.Entities.ICustomLength.LengthRouteParam
+- uid: System.Single[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float[]
+  nameWithType: float[]
+  fullName: float[]
+  nameWithType.vb: Single()
+  fullName.vb: Single()
+  name.vb: Single()
+  spec.csharp:
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: (
+  - name: )

@@ -1,0 +1,296 @@
+### YamlMime:ManagedReference
+items:
+- uid: UndyneFight_Ex.SongSystem.IWaveSetS
+  commentId: T:UndyneFight_Ex.SongSystem.IWaveSetS
+  id: IWaveSetS
+  parent: UndyneFight_Ex.SongSystem
+  children:
+  - UndyneFight_Ex.SongSystem.IWaveSetS.Chart
+  langs:
+  - csharp
+  - vb
+  name: IWaveSetS
+  nameWithType: IWaveSetS
+  fullName: UndyneFight_Ex.SongSystem.IWaveSetS
+  type: Interface
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.SongSystem
+  summary: Simplified version of <xref href="UndyneFight_Ex.SongSystem.IWaveSet" data-throw-if-not-resolved="false"></xref>, note that all functions in <xref href="UndyneFight_Ex.SongSystem.IWaveSet" data-throw-if-not-resolved="false"></xref> will be overwritten by <xref href="UndyneFight_Ex.SongSystem.IWaveSetS.Chart" data-throw-if-not-resolved="false"></xref>
+  example: []
+  syntax:
+    content: 'public interface IWaveSetS : IWaveSet'
+    content.vb: Public Interface IWaveSetS Inherits IWaveSet
+  inheritedMembers:
+  - UndyneFight_Ex.SongSystem.IWaveSet.Start
+  - UndyneFight_Ex.SongSystem.IWaveSet.Noob
+  - UndyneFight_Ex.SongSystem.IWaveSet.Easy
+  - UndyneFight_Ex.SongSystem.IWaveSet.Normal
+  - UndyneFight_Ex.SongSystem.IWaveSet.Hard
+  - UndyneFight_Ex.SongSystem.IWaveSet.Extreme
+  - UndyneFight_Ex.SongSystem.IWaveSet.ExtremePlus
+  - UndyneFight_Ex.SongSystem.IWaveSet.Music
+  - UndyneFight_Ex.SongSystem.IWaveSet.FightName
+  - UndyneFight_Ex.SongSystem.IWaveSet.Attributes
+- uid: UndyneFight_Ex.SongSystem.IWaveSetS.Chart
+  commentId: M:UndyneFight_Ex.SongSystem.IWaveSetS.Chart
+  id: Chart
+  parent: UndyneFight_Ex.SongSystem.IWaveSetS
+  langs:
+  - csharp
+  - vb
+  name: Chart()
+  nameWithType: IWaveSetS.Chart()
+  fullName: UndyneFight_Ex.SongSystem.IWaveSetS.Chart()
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.SongSystem
+  summary: The chart function, contains all difficulties
+  example: []
+  syntax:
+    content: void Chart()
+    content.vb: Sub Chart()
+  overload: UndyneFight_Ex.SongSystem.IWaveSetS.Chart*
+references:
+- uid: UndyneFight_Ex.SongSystem.IWaveSet
+  commentId: T:UndyneFight_Ex.SongSystem.IWaveSet
+  parent: UndyneFight_Ex.SongSystem
+  isExternal: true
+  href: UndyneFight_Ex.SongSystem.IWaveSet.html
+  name: IWaveSet
+  nameWithType: IWaveSet
+  fullName: UndyneFight_Ex.SongSystem.IWaveSet
+- uid: UndyneFight_Ex.SongSystem.IWaveSetS.Chart
+  commentId: M:UndyneFight_Ex.SongSystem.IWaveSetS.Chart
+  isExternal: true
+  href: UndyneFight_Ex.SongSystem.IWaveSetS.html#UndyneFight_Ex_SongSystem_IWaveSetS_Chart
+  name: Chart()
+  nameWithType: IWaveSetS.Chart()
+  fullName: UndyneFight_Ex.SongSystem.IWaveSetS.Chart()
+  spec.csharp:
+  - uid: UndyneFight_Ex.SongSystem.IWaveSetS.Chart
+    name: Chart
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.IWaveSetS.html#UndyneFight_Ex_SongSystem_IWaveSetS_Chart
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.SongSystem.IWaveSetS.Chart
+    name: Chart
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.IWaveSetS.html#UndyneFight_Ex_SongSystem_IWaveSetS_Chart
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.SongSystem
+  commentId: N:UndyneFight_Ex.SongSystem
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex.SongSystem
+  nameWithType: UndyneFight_Ex.SongSystem
+  fullName: UndyneFight_Ex.SongSystem
+  spec.csharp:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.SongSystem
+    name: SongSystem
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.html
+  spec.vb:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.SongSystem
+    name: SongSystem
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.html
+- uid: UndyneFight_Ex.SongSystem.IWaveSet.Start
+  commentId: M:UndyneFight_Ex.SongSystem.IWaveSet.Start
+  parent: UndyneFight_Ex.SongSystem.IWaveSet
+  isExternal: true
+  href: UndyneFight_Ex.SongSystem.IWaveSet.html#UndyneFight_Ex_SongSystem_IWaveSet_Start
+  name: Start()
+  nameWithType: IWaveSet.Start()
+  fullName: UndyneFight_Ex.SongSystem.IWaveSet.Start()
+  spec.csharp:
+  - uid: UndyneFight_Ex.SongSystem.IWaveSet.Start
+    name: Start
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.IWaveSet.html#UndyneFight_Ex_SongSystem_IWaveSet_Start
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.SongSystem.IWaveSet.Start
+    name: Start
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.IWaveSet.html#UndyneFight_Ex_SongSystem_IWaveSet_Start
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.SongSystem.IWaveSet.Noob
+  commentId: M:UndyneFight_Ex.SongSystem.IWaveSet.Noob
+  parent: UndyneFight_Ex.SongSystem.IWaveSet
+  isExternal: true
+  href: UndyneFight_Ex.SongSystem.IWaveSet.html#UndyneFight_Ex_SongSystem_IWaveSet_Noob
+  name: Noob()
+  nameWithType: IWaveSet.Noob()
+  fullName: UndyneFight_Ex.SongSystem.IWaveSet.Noob()
+  spec.csharp:
+  - uid: UndyneFight_Ex.SongSystem.IWaveSet.Noob
+    name: Noob
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.IWaveSet.html#UndyneFight_Ex_SongSystem_IWaveSet_Noob
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.SongSystem.IWaveSet.Noob
+    name: Noob
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.IWaveSet.html#UndyneFight_Ex_SongSystem_IWaveSet_Noob
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.SongSystem.IWaveSet.Easy
+  commentId: M:UndyneFight_Ex.SongSystem.IWaveSet.Easy
+  parent: UndyneFight_Ex.SongSystem.IWaveSet
+  isExternal: true
+  href: UndyneFight_Ex.SongSystem.IWaveSet.html#UndyneFight_Ex_SongSystem_IWaveSet_Easy
+  name: Easy()
+  nameWithType: IWaveSet.Easy()
+  fullName: UndyneFight_Ex.SongSystem.IWaveSet.Easy()
+  spec.csharp:
+  - uid: UndyneFight_Ex.SongSystem.IWaveSet.Easy
+    name: Easy
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.IWaveSet.html#UndyneFight_Ex_SongSystem_IWaveSet_Easy
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.SongSystem.IWaveSet.Easy
+    name: Easy
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.IWaveSet.html#UndyneFight_Ex_SongSystem_IWaveSet_Easy
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.SongSystem.IWaveSet.Normal
+  commentId: M:UndyneFight_Ex.SongSystem.IWaveSet.Normal
+  parent: UndyneFight_Ex.SongSystem.IWaveSet
+  isExternal: true
+  href: UndyneFight_Ex.SongSystem.IWaveSet.html#UndyneFight_Ex_SongSystem_IWaveSet_Normal
+  name: Normal()
+  nameWithType: IWaveSet.Normal()
+  fullName: UndyneFight_Ex.SongSystem.IWaveSet.Normal()
+  spec.csharp:
+  - uid: UndyneFight_Ex.SongSystem.IWaveSet.Normal
+    name: Normal
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.IWaveSet.html#UndyneFight_Ex_SongSystem_IWaveSet_Normal
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.SongSystem.IWaveSet.Normal
+    name: Normal
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.IWaveSet.html#UndyneFight_Ex_SongSystem_IWaveSet_Normal
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.SongSystem.IWaveSet.Hard
+  commentId: M:UndyneFight_Ex.SongSystem.IWaveSet.Hard
+  parent: UndyneFight_Ex.SongSystem.IWaveSet
+  isExternal: true
+  href: UndyneFight_Ex.SongSystem.IWaveSet.html#UndyneFight_Ex_SongSystem_IWaveSet_Hard
+  name: Hard()
+  nameWithType: IWaveSet.Hard()
+  fullName: UndyneFight_Ex.SongSystem.IWaveSet.Hard()
+  spec.csharp:
+  - uid: UndyneFight_Ex.SongSystem.IWaveSet.Hard
+    name: Hard
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.IWaveSet.html#UndyneFight_Ex_SongSystem_IWaveSet_Hard
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.SongSystem.IWaveSet.Hard
+    name: Hard
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.IWaveSet.html#UndyneFight_Ex_SongSystem_IWaveSet_Hard
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.SongSystem.IWaveSet.Extreme
+  commentId: M:UndyneFight_Ex.SongSystem.IWaveSet.Extreme
+  parent: UndyneFight_Ex.SongSystem.IWaveSet
+  isExternal: true
+  href: UndyneFight_Ex.SongSystem.IWaveSet.html#UndyneFight_Ex_SongSystem_IWaveSet_Extreme
+  name: Extreme()
+  nameWithType: IWaveSet.Extreme()
+  fullName: UndyneFight_Ex.SongSystem.IWaveSet.Extreme()
+  spec.csharp:
+  - uid: UndyneFight_Ex.SongSystem.IWaveSet.Extreme
+    name: Extreme
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.IWaveSet.html#UndyneFight_Ex_SongSystem_IWaveSet_Extreme
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.SongSystem.IWaveSet.Extreme
+    name: Extreme
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.IWaveSet.html#UndyneFight_Ex_SongSystem_IWaveSet_Extreme
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.SongSystem.IWaveSet.ExtremePlus
+  commentId: M:UndyneFight_Ex.SongSystem.IWaveSet.ExtremePlus
+  parent: UndyneFight_Ex.SongSystem.IWaveSet
+  isExternal: true
+  href: UndyneFight_Ex.SongSystem.IWaveSet.html#UndyneFight_Ex_SongSystem_IWaveSet_ExtremePlus
+  name: ExtremePlus()
+  nameWithType: IWaveSet.ExtremePlus()
+  fullName: UndyneFight_Ex.SongSystem.IWaveSet.ExtremePlus()
+  spec.csharp:
+  - uid: UndyneFight_Ex.SongSystem.IWaveSet.ExtremePlus
+    name: ExtremePlus
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.IWaveSet.html#UndyneFight_Ex_SongSystem_IWaveSet_ExtremePlus
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.SongSystem.IWaveSet.ExtremePlus
+    name: ExtremePlus
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.IWaveSet.html#UndyneFight_Ex_SongSystem_IWaveSet_ExtremePlus
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.SongSystem.IWaveSet.Music
+  commentId: P:UndyneFight_Ex.SongSystem.IWaveSet.Music
+  parent: UndyneFight_Ex.SongSystem.IWaveSet
+  isExternal: true
+  href: UndyneFight_Ex.SongSystem.IWaveSet.html#UndyneFight_Ex_SongSystem_IWaveSet_Music
+  name: Music
+  nameWithType: IWaveSet.Music
+  fullName: UndyneFight_Ex.SongSystem.IWaveSet.Music
+- uid: UndyneFight_Ex.SongSystem.IWaveSet.FightName
+  commentId: P:UndyneFight_Ex.SongSystem.IWaveSet.FightName
+  parent: UndyneFight_Ex.SongSystem.IWaveSet
+  isExternal: true
+  href: UndyneFight_Ex.SongSystem.IWaveSet.html#UndyneFight_Ex_SongSystem_IWaveSet_FightName
+  name: FightName
+  nameWithType: IWaveSet.FightName
+  fullName: UndyneFight_Ex.SongSystem.IWaveSet.FightName
+- uid: UndyneFight_Ex.SongSystem.IWaveSet.Attributes
+  commentId: P:UndyneFight_Ex.SongSystem.IWaveSet.Attributes
+  parent: UndyneFight_Ex.SongSystem.IWaveSet
+  isExternal: true
+  href: UndyneFight_Ex.SongSystem.IWaveSet.html#UndyneFight_Ex_SongSystem_IWaveSet_Attributes
+  name: Attributes
+  nameWithType: IWaveSet.Attributes
+  fullName: UndyneFight_Ex.SongSystem.IWaveSet.Attributes
+- uid: UndyneFight_Ex.SongSystem.IWaveSetS.Chart*
+  commentId: Overload:UndyneFight_Ex.SongSystem.IWaveSetS.Chart
+  isExternal: true
+  href: UndyneFight_Ex.SongSystem.IWaveSetS.html#UndyneFight_Ex_SongSystem_IWaveSetS_Chart
+  name: Chart
+  nameWithType: IWaveSetS.Chart
+  fullName: UndyneFight_Ex.SongSystem.IWaveSetS.Chart

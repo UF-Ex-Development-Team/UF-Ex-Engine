@@ -1,0 +1,485 @@
+### YamlMime:ManagedReference
+items:
+- uid: Extends.ShadowLibrary
+  commentId: T:Extends.ShadowLibrary
+  id: ShadowLibrary
+  parent: Extends
+  children:
+  - Extends.ShadowLibrary.LineShadow(System.Int32,UndyneFight_Ex.Entities.Line)
+  - Extends.ShadowLibrary.LineShadow(System.Single,System.Single,System.Int32,UndyneFight_Ex.Entities.Line)
+  - Extends.ShadowLibrary.SetOffset(UndyneFight_Ex.Entities.Arrow,System.Single)
+  - Extends.ShadowLibrary.SetOffset2(UndyneFight_Ex.Entities.Arrow,System.Single)
+  langs:
+  - csharp
+  - vb
+  name: ShadowLibrary
+  nameWithType: ShadowLibrary
+  fullName: Extends.ShadowLibrary
+  type: Class
+  assemblies:
+  - UndyneFight-Ex
+  namespace: Extends
+  syntax:
+    content: >-
+      [Obsolete("ShadowLibrary is overhauled by Line")]
+
+      public static class ShadowLibrary
+    content.vb: >-
+      <Obsolete("ShadowLibrary is overhauled by Line")>
+
+      Public Module ShadowLibrary
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  attributes:
+  - type: System.ObsoleteAttribute
+    ctor: System.ObsoleteAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: ShadowLibrary is overhauled by Line
+- uid: Extends.ShadowLibrary.LineShadow(System.Int32,UndyneFight_Ex.Entities.Line)
+  commentId: M:Extends.ShadowLibrary.LineShadow(System.Int32,UndyneFight_Ex.Entities.Line)
+  id: LineShadow(System.Int32,UndyneFight_Ex.Entities.Line)
+  parent: Extends.ShadowLibrary
+  langs:
+  - csharp
+  - vb
+  name: LineShadow(int, Line)
+  nameWithType: ShadowLibrary.LineShadow(int, Line)
+  fullName: Extends.ShadowLibrary.LineShadow(int, UndyneFight_Ex.Entities.Line)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: Extends
+  syntax:
+    content: public static void LineShadow(int times, Line line)
+    parameters:
+    - id: times
+      type: System.Int32
+    - id: line
+      type: UndyneFight_Ex.Entities.Line
+    content.vb: Public Shared Sub LineShadow(times As Integer, line As Line)
+  overload: Extends.ShadowLibrary.LineShadow*
+  nameWithType.vb: ShadowLibrary.LineShadow(Integer, Line)
+  fullName.vb: Extends.ShadowLibrary.LineShadow(Integer, UndyneFight_Ex.Entities.Line)
+  name.vb: LineShadow(Integer, Line)
+- uid: Extends.ShadowLibrary.LineShadow(System.Single,System.Single,System.Int32,UndyneFight_Ex.Entities.Line)
+  commentId: M:Extends.ShadowLibrary.LineShadow(System.Single,System.Single,System.Int32,UndyneFight_Ex.Entities.Line)
+  id: LineShadow(System.Single,System.Single,System.Int32,UndyneFight_Ex.Entities.Line)
+  parent: Extends.ShadowLibrary
+  langs:
+  - csharp
+  - vb
+  name: LineShadow(float, float, int, Line)
+  nameWithType: ShadowLibrary.LineShadow(float, float, int, Line)
+  fullName: Extends.ShadowLibrary.LineShadow(float, float, int, UndyneFight_Ex.Entities.Line)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: Extends
+  syntax:
+    content: public static void LineShadow(float delay, float deep, int times, Line line)
+    parameters:
+    - id: delay
+      type: System.Single
+    - id: deep
+      type: System.Single
+    - id: times
+      type: System.Int32
+    - id: line
+      type: UndyneFight_Ex.Entities.Line
+    content.vb: Public Shared Sub LineShadow(delay As Single, deep As Single, times As Integer, line As Line)
+  overload: Extends.ShadowLibrary.LineShadow*
+  nameWithType.vb: ShadowLibrary.LineShadow(Single, Single, Integer, Line)
+  fullName.vb: Extends.ShadowLibrary.LineShadow(Single, Single, Integer, UndyneFight_Ex.Entities.Line)
+  name.vb: LineShadow(Single, Single, Integer, Line)
+- uid: Extends.ShadowLibrary.SetOffset(UndyneFight_Ex.Entities.Arrow,System.Single)
+  commentId: M:Extends.ShadowLibrary.SetOffset(UndyneFight_Ex.Entities.Arrow,System.Single)
+  id: SetOffset(UndyneFight_Ex.Entities.Arrow,System.Single)
+  parent: Extends.ShadowLibrary
+  langs:
+  - csharp
+  - vb
+  name: SetOffset(Arrow, float)
+  nameWithType: ShadowLibrary.SetOffset(Arrow, float)
+  fullName: Extends.ShadowLibrary.SetOffset(UndyneFight_Ex.Entities.Arrow, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: Extends
+  syntax:
+    content: public static void SetOffset(Arrow arrow, float offset)
+    parameters:
+    - id: arrow
+      type: UndyneFight_Ex.Entities.Arrow
+    - id: offset
+      type: System.Single
+    content.vb: Public Shared Sub SetOffset(arrow As Arrow, offset As Single)
+  overload: Extends.ShadowLibrary.SetOffset*
+  nameWithType.vb: ShadowLibrary.SetOffset(Arrow, Single)
+  fullName.vb: Extends.ShadowLibrary.SetOffset(UndyneFight_Ex.Entities.Arrow, Single)
+  name.vb: SetOffset(Arrow, Single)
+- uid: Extends.ShadowLibrary.SetOffset2(UndyneFight_Ex.Entities.Arrow,System.Single)
+  commentId: M:Extends.ShadowLibrary.SetOffset2(UndyneFight_Ex.Entities.Arrow,System.Single)
+  id: SetOffset2(UndyneFight_Ex.Entities.Arrow,System.Single)
+  parent: Extends.ShadowLibrary
+  langs:
+  - csharp
+  - vb
+  name: SetOffset2(Arrow, float)
+  nameWithType: ShadowLibrary.SetOffset2(Arrow, float)
+  fullName: Extends.ShadowLibrary.SetOffset2(UndyneFight_Ex.Entities.Arrow, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: Extends
+  syntax:
+    content: public static void SetOffset2(Arrow arrow, float offset)
+    parameters:
+    - id: arrow
+      type: UndyneFight_Ex.Entities.Arrow
+    - id: offset
+      type: System.Single
+    content.vb: Public Shared Sub SetOffset2(arrow As Arrow, offset As Single)
+  overload: Extends.ShadowLibrary.SetOffset2*
+  nameWithType.vb: ShadowLibrary.SetOffset2(Arrow, Single)
+  fullName.vb: Extends.ShadowLibrary.SetOffset2(UndyneFight_Ex.Entities.Arrow, Single)
+  name.vb: SetOffset2(Arrow, Single)
+references:
+- uid: Extends
+  commentId: N:Extends
+  isExternal: true
+  href: Extends.html
+  name: Extends
+  nameWithType: Extends
+  fullName: Extends
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Extends.ShadowLibrary.LineShadow*
+  commentId: Overload:Extends.ShadowLibrary.LineShadow
+  isExternal: true
+  href: Extends.ShadowLibrary.html#Extends_ShadowLibrary_LineShadow_System_Int32_UndyneFight_Ex_Entities_Line_
+  name: LineShadow
+  nameWithType: ShadowLibrary.LineShadow
+  fullName: Extends.ShadowLibrary.LineShadow
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: UndyneFight_Ex.Entities.Line
+  commentId: T:UndyneFight_Ex.Entities.Line
+  parent: UndyneFight_Ex.Entities
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Line.html
+  name: Line
+  nameWithType: Line
+  fullName: UndyneFight_Ex.Entities.Line
+- uid: UndyneFight_Ex.Entities
+  commentId: N:UndyneFight_Ex.Entities
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex.Entities
+  nameWithType: UndyneFight_Ex.Entities
+  fullName: UndyneFight_Ex.Entities
+  spec.csharp:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities
+    name: Entities
+    isExternal: true
+    href: UndyneFight_Ex.Entities.html
+  spec.vb:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities
+    name: Entities
+    isExternal: true
+    href: UndyneFight_Ex.Entities.html
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: Extends.ShadowLibrary.SetOffset*
+  commentId: Overload:Extends.ShadowLibrary.SetOffset
+  isExternal: true
+  href: Extends.ShadowLibrary.html#Extends_ShadowLibrary_SetOffset_UndyneFight_Ex_Entities_Arrow_System_Single_
+  name: SetOffset
+  nameWithType: ShadowLibrary.SetOffset
+  fullName: Extends.ShadowLibrary.SetOffset
+- uid: UndyneFight_Ex.Entities.Arrow
+  commentId: T:UndyneFight_Ex.Entities.Arrow
+  parent: UndyneFight_Ex.Entities
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Arrow.html
+  name: Arrow
+  nameWithType: Arrow
+  fullName: UndyneFight_Ex.Entities.Arrow
+- uid: Extends.ShadowLibrary.SetOffset2*
+  commentId: Overload:Extends.ShadowLibrary.SetOffset2
+  isExternal: true
+  href: Extends.ShadowLibrary.html#Extends_ShadowLibrary_SetOffset2_UndyneFight_Ex_Entities_Arrow_System_Single_
+  name: SetOffset2
+  nameWithType: ShadowLibrary.SetOffset2
+  fullName: Extends.ShadowLibrary.SetOffset2

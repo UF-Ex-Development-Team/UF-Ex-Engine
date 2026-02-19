@@ -1,0 +1,522 @@
+### YamlMime:ManagedReference
+items:
+- uid: UndyneFight_Ex.FightResources.FightSprites
+  commentId: T:UndyneFight_Ex.FightResources.FightSprites
+  id: FightResources.FightSprites
+  parent: UndyneFight_Ex
+  children:
+  - UndyneFight_Ex.FightResources.FightSprites.act
+  - UndyneFight_Ex.FightResources.FightSprites.aimer
+  - UndyneFight_Ex.FightResources.FightSprites.dialogBox
+  - UndyneFight_Ex.FightResources.FightSprites.fight
+  - UndyneFight_Ex.FightResources.FightSprites.item
+  - UndyneFight_Ex.FightResources.FightSprites.mercy
+  - UndyneFight_Ex.FightResources.FightSprites.movingBar
+  - UndyneFight_Ex.FightResources.FightSprites.slides
+  - UndyneFight_Ex.FightResources.FightSprites.stopBar
+  langs:
+  - csharp
+  - vb
+  name: FightResources.FightSprites
+  nameWithType: FightResources.FightSprites
+  fullName: UndyneFight_Ex.FightResources.FightSprites
+  type: Class
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: A list of sprites used in fighting
+  example: []
+  syntax:
+    content: public static class FightResources.FightSprites
+    content.vb: Public Module FightResources.FightSprites
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+- uid: UndyneFight_Ex.FightResources.FightSprites.fight
+  commentId: F:UndyneFight_Ex.FightResources.FightSprites.fight
+  id: fight
+  parent: UndyneFight_Ex.FightResources.FightSprites
+  langs:
+  - csharp
+  - vb
+  name: fight
+  nameWithType: FightResources.FightSprites.fight
+  fullName: UndyneFight_Ex.FightResources.FightSprites.fight
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  syntax:
+    content: public static Texture2D[] fight
+    return:
+      type: Microsoft.Xna.Framework.Graphics.Texture2D[]
+    content.vb: Public Shared fight As Texture2D()
+- uid: UndyneFight_Ex.FightResources.FightSprites.act
+  commentId: F:UndyneFight_Ex.FightResources.FightSprites.act
+  id: act
+  parent: UndyneFight_Ex.FightResources.FightSprites
+  langs:
+  - csharp
+  - vb
+  name: act
+  nameWithType: FightResources.FightSprites.act
+  fullName: UndyneFight_Ex.FightResources.FightSprites.act
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  syntax:
+    content: public static Texture2D[] act
+    return:
+      type: Microsoft.Xna.Framework.Graphics.Texture2D[]
+    content.vb: Public Shared act As Texture2D()
+- uid: UndyneFight_Ex.FightResources.FightSprites.item
+  commentId: F:UndyneFight_Ex.FightResources.FightSprites.item
+  id: item
+  parent: UndyneFight_Ex.FightResources.FightSprites
+  langs:
+  - csharp
+  - vb
+  name: item
+  nameWithType: FightResources.FightSprites.item
+  fullName: UndyneFight_Ex.FightResources.FightSprites.item
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  syntax:
+    content: public static Texture2D[] item
+    return:
+      type: Microsoft.Xna.Framework.Graphics.Texture2D[]
+    content.vb: Public Shared item As Texture2D()
+- uid: UndyneFight_Ex.FightResources.FightSprites.mercy
+  commentId: F:UndyneFight_Ex.FightResources.FightSprites.mercy
+  id: mercy
+  parent: UndyneFight_Ex.FightResources.FightSprites
+  langs:
+  - csharp
+  - vb
+  name: mercy
+  nameWithType: FightResources.FightSprites.mercy
+  fullName: UndyneFight_Ex.FightResources.FightSprites.mercy
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  syntax:
+    content: public static Texture2D[] mercy
+    return:
+      type: Microsoft.Xna.Framework.Graphics.Texture2D[]
+    content.vb: Public Shared mercy As Texture2D()
+- uid: UndyneFight_Ex.FightResources.FightSprites.aimer
+  commentId: F:UndyneFight_Ex.FightResources.FightSprites.aimer
+  id: aimer
+  parent: UndyneFight_Ex.FightResources.FightSprites
+  langs:
+  - csharp
+  - vb
+  name: aimer
+  nameWithType: FightResources.FightSprites.aimer
+  fullName: UndyneFight_Ex.FightResources.FightSprites.aimer
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  syntax:
+    content: public static Texture2D aimer
+    return:
+      type: Microsoft.Xna.Framework.Graphics.Texture2D
+    content.vb: Public Shared aimer As Texture2D
+- uid: UndyneFight_Ex.FightResources.FightSprites.stopBar
+  commentId: F:UndyneFight_Ex.FightResources.FightSprites.stopBar
+  id: stopBar
+  parent: UndyneFight_Ex.FightResources.FightSprites
+  langs:
+  - csharp
+  - vb
+  name: stopBar
+  nameWithType: FightResources.FightSprites.stopBar
+  fullName: UndyneFight_Ex.FightResources.FightSprites.stopBar
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  syntax:
+    content: public static Texture2D stopBar
+    return:
+      type: Microsoft.Xna.Framework.Graphics.Texture2D
+    content.vb: Public Shared stopBar As Texture2D
+- uid: UndyneFight_Ex.FightResources.FightSprites.movingBar
+  commentId: F:UndyneFight_Ex.FightResources.FightSprites.movingBar
+  id: movingBar
+  parent: UndyneFight_Ex.FightResources.FightSprites
+  langs:
+  - csharp
+  - vb
+  name: movingBar
+  nameWithType: FightResources.FightSprites.movingBar
+  fullName: UndyneFight_Ex.FightResources.FightSprites.movingBar
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  syntax:
+    content: public static Texture2D movingBar
+    return:
+      type: Microsoft.Xna.Framework.Graphics.Texture2D
+    content.vb: Public Shared movingBar As Texture2D
+- uid: UndyneFight_Ex.FightResources.FightSprites.slides
+  commentId: F:UndyneFight_Ex.FightResources.FightSprites.slides
+  id: slides
+  parent: UndyneFight_Ex.FightResources.FightSprites
+  langs:
+  - csharp
+  - vb
+  name: slides
+  nameWithType: FightResources.FightSprites.slides
+  fullName: UndyneFight_Ex.FightResources.FightSprites.slides
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  syntax:
+    content: public static Texture2D[] slides
+    return:
+      type: Microsoft.Xna.Framework.Graphics.Texture2D[]
+    content.vb: Public Shared slides As Texture2D()
+- uid: UndyneFight_Ex.FightResources.FightSprites.dialogBox
+  commentId: F:UndyneFight_Ex.FightResources.FightSprites.dialogBox
+  id: dialogBox
+  parent: UndyneFight_Ex.FightResources.FightSprites
+  langs:
+  - csharp
+  - vb
+  name: dialogBox
+  nameWithType: FightResources.FightSprites.dialogBox
+  fullName: UndyneFight_Ex.FightResources.FightSprites.dialogBox
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  syntax:
+    content: public static Texture2D dialogBox
+    return:
+      type: Microsoft.Xna.Framework.Graphics.Texture2D
+    content.vb: Public Shared dialogBox As Texture2D
+references:
+- uid: UndyneFight_Ex
+  commentId: N:UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex
+  nameWithType: UndyneFight_Ex
+  fullName: UndyneFight_Ex
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.Xna.Framework.Graphics.Texture2D[]
+  isExternal: true
+  name: Texture2D[]
+  nameWithType: Texture2D[]
+  fullName: Microsoft.Xna.Framework.Graphics.Texture2D[]
+  nameWithType.vb: Texture2D()
+  fullName.vb: Microsoft.Xna.Framework.Graphics.Texture2D()
+  name.vb: Texture2D()
+  spec.csharp:
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Microsoft.Xna.Framework.Graphics.Texture2D
+  commentId: T:Microsoft.Xna.Framework.Graphics.Texture2D
+  parent: Microsoft.Xna.Framework.Graphics
+  isExternal: true
+  name: Texture2D
+  nameWithType: Texture2D
+  fullName: Microsoft.Xna.Framework.Graphics.Texture2D
+- uid: Microsoft.Xna.Framework.Graphics
+  commentId: N:Microsoft.Xna.Framework.Graphics
+  isExternal: true
+  name: Microsoft.Xna.Framework.Graphics
+  nameWithType: Microsoft.Xna.Framework.Graphics
+  fullName: Microsoft.Xna.Framework.Graphics
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework.Graphics
+    name: Graphics
+    isExternal: true
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework.Graphics
+    name: Graphics
+    isExternal: true

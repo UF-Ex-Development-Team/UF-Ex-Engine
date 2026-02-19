@@ -1,0 +1,2482 @@
+### YamlMime:ManagedReference
+items:
+- uid: UndyneFight_Ex.Entities.Boneslab
+  commentId: T:UndyneFight_Ex.Entities.Boneslab
+  id: Boneslab
+  parent: UndyneFight_Ex.Entities
+  children:
+  - UndyneFight_Ex.Entities.Boneslab.#ctor(System.Single,System.Int32,System.Int32,System.Func{UndyneFight_Ex.Entities.ICustomLength,System.Single},System.Single[])
+  - UndyneFight_Ex.Entities.Boneslab.#ctor(System.Single,System.Single,System.Single,System.Single)
+  - UndyneFight_Ex.Entities.Boneslab.AppearTime
+  - UndyneFight_Ex.Entities.Boneslab.BoneProtruded
+  - UndyneFight_Ex.Entities.Boneslab.ColorType
+  - UndyneFight_Ex.Entities.Boneslab.ControllingBox
+  - UndyneFight_Ex.Entities.Boneslab.Dispose
+  - UndyneFight_Ex.Entities.Boneslab.Draw
+  - UndyneFight_Ex.Entities.Boneslab.GetCollide(UndyneFight_Ex.Entities.Player.Heart)
+  - UndyneFight_Ex.Entities.Boneslab.LengthRoute
+  - UndyneFight_Ex.Entities.Boneslab.LengthRouteParam
+  - UndyneFight_Ex.Entities.Boneslab.Update
+  langs:
+  - csharp
+  - vb
+  name: Boneslab
+  nameWithType: Boneslab
+  fullName: UndyneFight_Ex.Entities.Boneslab
+  type: Class
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: A boneslab (The bones on the side of the box)
+  example: []
+  syntax:
+    content: 'public class Boneslab : Barrage, ICollideAble, ICustomMotion, ICustomLength'
+    content.vb: Public Class Boneslab Inherits Barrage Implements ICollideAble, ICustomMotion, ICustomLength
+  inheritance:
+  - System.Object
+  - UndyneFight_Ex.GameObject
+  - UndyneFight_Ex.Entity
+  - UndyneFight_Ex.Entities.Barrage
+  implements:
+  - UndyneFight_Ex.Entities.ICollideAble
+  - UndyneFight_Ex.Entities.ICustomMotion
+  - UndyneFight_Ex.Entities.ICustomLength
+  inheritedMembers:
+  - UndyneFight_Ex.Entities.Barrage.Alpha
+  - UndyneFight_Ex.Entities.Barrage.NiceCollision
+  - UndyneFight_Ex.Entities.Barrage.OkayCollision
+  - UndyneFight_Ex.Entities.Barrage.MissCollision(UndyneFight_Ex.Entities.Player.Heart)
+  - UndyneFight_Ex.Entities.Barrage.CreateShinyEffect
+  - UndyneFight_Ex.Entities.Barrage.MarkScore
+  - UndyneFight_Ex.Entities.Barrage.ShieldColorTypes
+  - UndyneFight_Ex.Entities.Barrage.BarrageColorTypes
+  - UndyneFight_Ex.Entities.Barrage.AutoDispose
+  - UndyneFight_Ex.Entities.Barrage.Hidden
+  - UndyneFight_Ex.Entities.Barrage.JudgeState
+  - UndyneFight_Ex.Entities.Barrage.PositionRoute
+  - UndyneFight_Ex.Entities.Barrage.RotationRoute
+  - UndyneFight_Ex.Entities.Barrage.RotationRouteParam
+  - UndyneFight_Ex.Entities.Barrage.PositionRouteParam
+  - UndyneFight_Ex.Entities.Barrage.CentrePosition
+  - UndyneFight_Ex.Entity.controlLayer
+  - UndyneFight_Ex.Entity.collidingBox
+  - UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Vector2)
+  - UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Rectangle},Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Graphics.SpriteEffects)
+  - UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,UndyneFight_Ex.CollideRect,Microsoft.Xna.Framework.Color)
+  - UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Color)
+  - UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single,System.Single,Microsoft.Xna.Framework.Vector2)
+  - UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Vector2)
+  - UndyneFight_Ex.Entity.GeneralDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Vector2},System.Single,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{UndyneFight_Ex.CollideRect},System.Nullable{UndyneFight_Ex.CollideRect},System.Nullable{System.Single})
+  - UndyneFight_Ex.Entity.CreateShinyEffect(System.Nullable{Microsoft.Xna.Framework.Color},Microsoft.Xna.Framework.Graphics.Texture2D)
+  - UndyneFight_Ex.Entity.CreateRetentionEffect(System.Single,System.Nullable{Microsoft.Xna.Framework.Color})
+  - UndyneFight_Ex.Entity.Visible
+  - UndyneFight_Ex.Entity.AngleMode
+  - UndyneFight_Ex.Entity.SpriteBatch
+  - UndyneFight_Ex.Entity.Depth
+  - UndyneFight_Ex.Entity.ImageCentre
+  - UndyneFight_Ex.Entity.Image
+  - UndyneFight_Ex.Entity.Rotation
+  - UndyneFight_Ex.Entity.Scale
+  - UndyneFight_Ex.Entity.CollidingBox
+  - UndyneFight_Ex.Entity.Centre
+  - UndyneFight_Ex.Entity.DrawOptimize
+  - UndyneFight_Ex.GameObject.ContainTag(System.String)
+  - UndyneFight_Ex.GameObject.Broadcast(System.String)
+  - UndyneFight_Ex.GameObject.TryDetect(System.String)
+  - UndyneFight_Ex.GameObject.HasTag
+  - UndyneFight_Ex.GameObject.Start
+  - UndyneFight_Ex.GameObject.TreeUpdate
+  - UndyneFight_Ex.GameObject.Kill
+  - UndyneFight_Ex.GameObject.AddChild(UndyneFight_Ex.GameObject)
+  - UndyneFight_Ex.GameObject.Reverse
+  - UndyneFight_Ex.GameObject.GetDrawableTree
+  - UndyneFight_Ex.GameObject.UpdateChildren
+  - UndyneFight_Ex.GameObject.ChildrenUpdateFirst
+  - UndyneFight_Ex.GameObject.CurrentScene
+  - UndyneFight_Ex.GameObject.CurrentFightingScene
+  - UndyneFight_Ex.GameObject.UpdateIn120
+  - UndyneFight_Ex.GameObject.BeingUpdated
+  - UndyneFight_Ex.GameObject.UpdateEnabled
+  - UndyneFight_Ex.GameObject.CrossScene
+  - UndyneFight_Ex.GameObject.Tags
+  - UndyneFight_Ex.GameObject.Extras
+  - UndyneFight_Ex.GameObject.ChildObjects
+  - UndyneFight_Ex.GameObject.Disposed
+  - UndyneFight_Ex.GameObject.FatherObject
+  - UndyneFight_Ex.GameObject.OnDispose
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+- uid: UndyneFight_Ex.Entities.Boneslab.Dispose
+  commentId: M:UndyneFight_Ex.Entities.Boneslab.Dispose
+  id: Dispose
+  parent: UndyneFight_Ex.Entities.Boneslab
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: Boneslab.Dispose()
+  fullName: UndyneFight_Ex.Entities.Boneslab.Dispose()
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Disposes the object
+  example: []
+  syntax:
+    content: public override void Dispose()
+    content.vb: Public Overrides Sub Dispose()
+  overridden: UndyneFight_Ex.Entities.Barrage.Dispose
+  overload: UndyneFight_Ex.Entities.Boneslab.Dispose*
+- uid: UndyneFight_Ex.Entities.Boneslab.#ctor(System.Single,System.Int32,System.Int32,System.Func{UndyneFight_Ex.Entities.ICustomLength,System.Single},System.Single[])
+  commentId: M:UndyneFight_Ex.Entities.Boneslab.#ctor(System.Single,System.Int32,System.Int32,System.Func{UndyneFight_Ex.Entities.ICustomLength,System.Single},System.Single[])
+  id: '#ctor(System.Single,System.Int32,System.Int32,System.Func{UndyneFight_Ex.Entities.ICustomLength,System.Single},System.Single[])'
+  parent: UndyneFight_Ex.Entities.Boneslab
+  langs:
+  - csharp
+  - vb
+  name: Boneslab(float, int, int, Func<ICustomLength, float>, float[])
+  nameWithType: Boneslab.Boneslab(float, int, int, Func<ICustomLength, float>, float[])
+  fullName: UndyneFight_Ex.Entities.Boneslab.Boneslab(float, int, int, System.Func<UndyneFight_Ex.Entities.ICustomLength, float>, float[])
+  type: Constructor
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Creates a boneslab
+  example: []
+  syntax:
+    content: public Boneslab(float rotation, int appearDelay, int totalTime, Func<ICustomLength, float> lengthRoute, float[] lengthRouteParam)
+    parameters:
+    - id: rotation
+      type: System.Single
+      description: The rotation of the wall (Must be a multiple of 90)
+    - id: appearDelay
+      type: System.Int32
+      description: The duration of the warning before spawning
+    - id: totalTime
+      type: System.Int32
+      description: The duration of the boneslab
+    - id: lengthRoute
+      type: System.Func{UndyneFight_Ex.Entities.ICustomLength,System.Single}
+      description: The route of the height of the boneslab
+    - id: lengthRouteParam
+      type: System.Single[]
+      description: The parameters of the route
+    content.vb: Public Sub New(rotation As Single, appearDelay As Integer, totalTime As Integer, lengthRoute As Func(Of ICustomLength, Single), lengthRouteParam As Single())
+  overload: UndyneFight_Ex.Entities.Boneslab.#ctor*
+  nameWithType.vb: Boneslab.New(Single, Integer, Integer, Func(Of ICustomLength, Single), Single())
+  fullName.vb: UndyneFight_Ex.Entities.Boneslab.New(Single, Integer, Integer, System.Func(Of UndyneFight_Ex.Entities.ICustomLength, Single), Single())
+  name.vb: New(Single, Integer, Integer, Func(Of ICustomLength, Single), Single())
+- uid: UndyneFight_Ex.Entities.Boneslab.#ctor(System.Single,System.Single,System.Single,System.Single)
+  commentId: M:UndyneFight_Ex.Entities.Boneslab.#ctor(System.Single,System.Single,System.Single,System.Single)
+  id: '#ctor(System.Single,System.Single,System.Single,System.Single)'
+  parent: UndyneFight_Ex.Entities.Boneslab
+  langs:
+  - csharp
+  - vb
+  name: Boneslab(float, float, float, float)
+  nameWithType: Boneslab.Boneslab(float, float, float, float)
+  fullName: UndyneFight_Ex.Entities.Boneslab.Boneslab(float, float, float, float)
+  type: Constructor
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Creates a boneslab
+  example: []
+  syntax:
+    content: public Boneslab(float rotation, float height, float appearDelay, float totalTime)
+    parameters:
+    - id: rotation
+      type: System.Single
+      description: The rotation of the wall (Must be a multiple of 90)
+    - id: height
+      type: System.Single
+      description: The height of the boneslab
+    - id: appearDelay
+      type: System.Single
+      description: The duration of the warning before spawning
+    - id: totalTime
+      type: System.Single
+      description: The duration of the boneslab
+    content.vb: Public Sub New(rotation As Single, height As Single, appearDelay As Single, totalTime As Single)
+  overload: UndyneFight_Ex.Entities.Boneslab.#ctor*
+  nameWithType.vb: Boneslab.New(Single, Single, Single, Single)
+  fullName.vb: UndyneFight_Ex.Entities.Boneslab.New(Single, Single, Single, Single)
+  name.vb: New(Single, Single, Single, Single)
+- uid: UndyneFight_Ex.Entities.Boneslab.Draw
+  commentId: M:UndyneFight_Ex.Entities.Boneslab.Draw
+  id: Draw
+  parent: UndyneFight_Ex.Entities.Boneslab
+  langs:
+  - csharp
+  - vb
+  name: Draw()
+  nameWithType: Boneslab.Draw()
+  fullName: UndyneFight_Ex.Entities.Boneslab.Draw()
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: The rendering logic of the entity
+  example: []
+  syntax:
+    content: public override void Draw()
+    content.vb: Public Overrides Sub Draw()
+  overridden: UndyneFight_Ex.Entities.Barrage.Draw
+  overload: UndyneFight_Ex.Entities.Boneslab.Draw*
+- uid: UndyneFight_Ex.Entities.Boneslab.Update
+  commentId: M:UndyneFight_Ex.Entities.Boneslab.Update
+  id: Update
+  parent: UndyneFight_Ex.Entities.Boneslab
+  langs:
+  - csharp
+  - vb
+  name: Update()
+  nameWithType: Boneslab.Update()
+  fullName: UndyneFight_Ex.Entities.Boneslab.Update()
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: The logic to run each frame
+  example: []
+  syntax:
+    content: public override void Update()
+    content.vb: Public Overrides Sub Update()
+  overridden: UndyneFight_Ex.Entities.Barrage.Update
+  overload: UndyneFight_Ex.Entities.Boneslab.Update*
+- uid: UndyneFight_Ex.Entities.Boneslab.GetCollide(UndyneFight_Ex.Entities.Player.Heart)
+  commentId: M:UndyneFight_Ex.Entities.Boneslab.GetCollide(UndyneFight_Ex.Entities.Player.Heart)
+  id: GetCollide(UndyneFight_Ex.Entities.Player.Heart)
+  parent: UndyneFight_Ex.Entities.Boneslab
+  langs:
+  - csharp
+  - vb
+  name: GetCollide(Heart)
+  nameWithType: Boneslab.GetCollide(Player.Heart)
+  fullName: UndyneFight_Ex.Entities.Boneslab.GetCollide(UndyneFight_Ex.Entities.Player.Heart)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: The function to check collision with the player
+  example: []
+  syntax:
+    content: public override void GetCollide(Player.Heart heart)
+    parameters:
+    - id: heart
+      type: UndyneFight_Ex.Entities.Player.Heart
+    content.vb: Public Overrides Sub GetCollide(heart As Player.Heart)
+  overridden: UndyneFight_Ex.Entities.Barrage.GetCollide(UndyneFight_Ex.Entities.Player.Heart)
+  overload: UndyneFight_Ex.Entities.Boneslab.GetCollide*
+- uid: UndyneFight_Ex.Entities.Boneslab.BoneProtruded
+  commentId: P:UndyneFight_Ex.Entities.Boneslab.BoneProtruded
+  id: BoneProtruded
+  parent: UndyneFight_Ex.Entities.Boneslab
+  langs:
+  - csharp
+  - vb
+  name: BoneProtruded
+  nameWithType: Boneslab.BoneProtruded
+  fullName: UndyneFight_Ex.Entities.Boneslab.BoneProtruded
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: The <xref href="System.Action" data-throw-if-not-resolved="false"></xref> to execute when the boneslab is created (When the warning ends)
+  example: []
+  syntax:
+    content: public Action BoneProtruded { get; set; }
+    parameters: []
+    return:
+      type: System.Action
+    content.vb: Public Property BoneProtruded As Action
+  overload: UndyneFight_Ex.Entities.Boneslab.BoneProtruded*
+- uid: UndyneFight_Ex.Entities.Boneslab.ColorType
+  commentId: P:UndyneFight_Ex.Entities.Boneslab.ColorType
+  id: ColorType
+  parent: UndyneFight_Ex.Entities.Boneslab
+  langs:
+  - csharp
+  - vb
+  name: ColorType
+  nameWithType: Boneslab.ColorType
+  fullName: UndyneFight_Ex.Entities.Boneslab.ColorType
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: The color of the boneslab, 0-&gt; White, 1-&gt; Blue (Aqua), 2-&gt; Orange
+  example: []
+  syntax:
+    content: public int ColorType { set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public WriteOnly Property ColorType As Integer
+  overload: UndyneFight_Ex.Entities.Boneslab.ColorType*
+- uid: UndyneFight_Ex.Entities.Boneslab.AppearTime
+  commentId: P:UndyneFight_Ex.Entities.Boneslab.AppearTime
+  id: AppearTime
+  parent: UndyneFight_Ex.Entities.Boneslab
+  langs:
+  - csharp
+  - vb
+  name: AppearTime
+  nameWithType: Boneslab.AppearTime
+  fullName: UndyneFight_Ex.Entities.Boneslab.AppearTime
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: The frames elapsed after being created
+  example: []
+  syntax:
+    content: public float AppearTime { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public ReadOnly Property AppearTime As Single
+  overload: UndyneFight_Ex.Entities.Boneslab.AppearTime*
+  implements:
+  - UndyneFight_Ex.Entities.ICustomLength.AppearTime
+- uid: UndyneFight_Ex.Entities.Boneslab.ControllingBox
+  commentId: P:UndyneFight_Ex.Entities.Boneslab.ControllingBox
+  id: ControllingBox
+  parent: UndyneFight_Ex.Entities.Boneslab
+  langs:
+  - csharp
+  - vb
+  name: ControllingBox
+  nameWithType: Boneslab.ControllingBox
+  fullName: UndyneFight_Ex.Entities.Boneslab.ControllingBox
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: The box assigned to the boneslab
+  example: []
+  syntax:
+    content: public FightBox ControllingBox { set; }
+    parameters: []
+    return:
+      type: UndyneFight_Ex.Entities.FightBox
+    content.vb: Public WriteOnly Property ControllingBox As FightBox
+  overload: UndyneFight_Ex.Entities.Boneslab.ControllingBox*
+- uid: UndyneFight_Ex.Entities.Boneslab.LengthRoute
+  commentId: P:UndyneFight_Ex.Entities.Boneslab.LengthRoute
+  id: LengthRoute
+  parent: UndyneFight_Ex.Entities.Boneslab
+  langs:
+  - csharp
+  - vb
+  name: LengthRoute
+  nameWithType: Boneslab.LengthRoute
+  fullName: UndyneFight_Ex.Entities.Boneslab.LengthRoute
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: The length easing function of the entity, use <xref href="UndyneFight_Ex.Entities.Motions.LengthRoute" data-throw-if-not-resolved="false"></xref> or <xref href="UndyneFight_Ex.Entities.SimplifiedEasing" data-throw-if-not-resolved="false"></xref>
+  example: []
+  syntax:
+    content: public Func<ICustomLength, float> LengthRoute { get; set; }
+    parameters: []
+    return:
+      type: System.Func{UndyneFight_Ex.Entities.ICustomLength,System.Single}
+    content.vb: Public Property LengthRoute As Func(Of ICustomLength, Single)
+  overload: UndyneFight_Ex.Entities.Boneslab.LengthRoute*
+  implements:
+  - UndyneFight_Ex.Entities.ICustomLength.LengthRoute
+- uid: UndyneFight_Ex.Entities.Boneslab.LengthRouteParam
+  commentId: P:UndyneFight_Ex.Entities.Boneslab.LengthRouteParam
+  id: LengthRouteParam
+  parent: UndyneFight_Ex.Entities.Boneslab
+  langs:
+  - csharp
+  - vb
+  name: LengthRouteParam
+  nameWithType: Boneslab.LengthRouteParam
+  fullName: UndyneFight_Ex.Entities.Boneslab.LengthRouteParam
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: The parameters for the length route
+  example: []
+  syntax:
+    content: public float[] LengthRouteParam { get; set; }
+    parameters: []
+    return:
+      type: System.Single[]
+    content.vb: Public Property LengthRouteParam As Single()
+  overload: UndyneFight_Ex.Entities.Boneslab.LengthRouteParam*
+  implements:
+  - UndyneFight_Ex.Entities.ICustomLength.LengthRouteParam
+references:
+- uid: UndyneFight_Ex.Entities
+  commentId: N:UndyneFight_Ex.Entities
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex.Entities
+  nameWithType: UndyneFight_Ex.Entities
+  fullName: UndyneFight_Ex.Entities
+  spec.csharp:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities
+    name: Entities
+    isExternal: true
+    href: UndyneFight_Ex.Entities.html
+  spec.vb:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities
+    name: Entities
+    isExternal: true
+    href: UndyneFight_Ex.Entities.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: UndyneFight_Ex.GameObject
+  commentId: T:UndyneFight_Ex.GameObject
+  parent: UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html
+  name: GameObject
+  nameWithType: GameObject
+  fullName: UndyneFight_Ex.GameObject
+- uid: UndyneFight_Ex.Entity
+  commentId: T:UndyneFight_Ex.Entity
+  parent: UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.Entity.html
+  name: Entity
+  nameWithType: Entity
+  fullName: UndyneFight_Ex.Entity
+- uid: UndyneFight_Ex.Entities.Barrage
+  commentId: T:UndyneFight_Ex.Entities.Barrage
+  parent: UndyneFight_Ex.Entities
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Barrage.html
+  name: Barrage
+  nameWithType: Barrage
+  fullName: UndyneFight_Ex.Entities.Barrage
+- uid: UndyneFight_Ex.Entities.ICollideAble
+  commentId: T:UndyneFight_Ex.Entities.ICollideAble
+  parent: UndyneFight_Ex.Entities
+  isExternal: true
+  href: UndyneFight_Ex.Entities.ICollideAble.html
+  name: ICollideAble
+  nameWithType: ICollideAble
+  fullName: UndyneFight_Ex.Entities.ICollideAble
+- uid: UndyneFight_Ex.Entities.ICustomMotion
+  commentId: T:UndyneFight_Ex.Entities.ICustomMotion
+  parent: UndyneFight_Ex.Entities
+  isExternal: true
+  href: UndyneFight_Ex.Entities.ICustomMotion.html
+  name: ICustomMotion
+  nameWithType: ICustomMotion
+  fullName: UndyneFight_Ex.Entities.ICustomMotion
+- uid: UndyneFight_Ex.Entities.ICustomLength
+  commentId: T:UndyneFight_Ex.Entities.ICustomLength
+  parent: UndyneFight_Ex.Entities
+  isExternal: true
+  href: UndyneFight_Ex.Entities.ICustomLength.html
+  name: ICustomLength
+  nameWithType: ICustomLength
+  fullName: UndyneFight_Ex.Entities.ICustomLength
+- uid: UndyneFight_Ex.Entities.Barrage.Alpha
+  commentId: F:UndyneFight_Ex.Entities.Barrage.Alpha
+  parent: UndyneFight_Ex.Entities.Barrage
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Barrage.html#UndyneFight_Ex_Entities_Barrage_Alpha
+  name: Alpha
+  nameWithType: Barrage.Alpha
+  fullName: UndyneFight_Ex.Entities.Barrage.Alpha
+- uid: UndyneFight_Ex.Entities.Barrage.NiceCollision
+  commentId: M:UndyneFight_Ex.Entities.Barrage.NiceCollision
+  parent: UndyneFight_Ex.Entities.Barrage
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Barrage.html#UndyneFight_Ex_Entities_Barrage_NiceCollision
+  name: NiceCollision()
+  nameWithType: Barrage.NiceCollision()
+  fullName: UndyneFight_Ex.Entities.Barrage.NiceCollision()
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entities.Barrage.NiceCollision
+    name: NiceCollision
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Barrage.html#UndyneFight_Ex_Entities_Barrage_NiceCollision
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.Entities.Barrage.NiceCollision
+    name: NiceCollision
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Barrage.html#UndyneFight_Ex_Entities_Barrage_NiceCollision
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.Entities.Barrage.OkayCollision
+  commentId: M:UndyneFight_Ex.Entities.Barrage.OkayCollision
+  parent: UndyneFight_Ex.Entities.Barrage
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Barrage.html#UndyneFight_Ex_Entities_Barrage_OkayCollision
+  name: OkayCollision()
+  nameWithType: Barrage.OkayCollision()
+  fullName: UndyneFight_Ex.Entities.Barrage.OkayCollision()
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entities.Barrage.OkayCollision
+    name: OkayCollision
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Barrage.html#UndyneFight_Ex_Entities_Barrage_OkayCollision
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.Entities.Barrage.OkayCollision
+    name: OkayCollision
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Barrage.html#UndyneFight_Ex_Entities_Barrage_OkayCollision
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.Entities.Barrage.MissCollision(UndyneFight_Ex.Entities.Player.Heart)
+  commentId: M:UndyneFight_Ex.Entities.Barrage.MissCollision(UndyneFight_Ex.Entities.Player.Heart)
+  parent: UndyneFight_Ex.Entities.Barrage
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Barrage.html#UndyneFight_Ex_Entities_Barrage_MissCollision_UndyneFight_Ex_Entities_Player_Heart_
+  name: MissCollision(Heart)
+  nameWithType: Barrage.MissCollision(Player.Heart)
+  fullName: UndyneFight_Ex.Entities.Barrage.MissCollision(UndyneFight_Ex.Entities.Player.Heart)
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entities.Barrage.MissCollision(UndyneFight_Ex.Entities.Player.Heart)
+    name: MissCollision
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Barrage.html#UndyneFight_Ex_Entities_Barrage_MissCollision_UndyneFight_Ex_Entities_Player_Heart_
+  - name: (
+  - uid: UndyneFight_Ex.Entities.Player.Heart
+    name: Heart
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Player.Heart.html
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.Entities.Barrage.MissCollision(UndyneFight_Ex.Entities.Player.Heart)
+    name: MissCollision
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Barrage.html#UndyneFight_Ex_Entities_Barrage_MissCollision_UndyneFight_Ex_Entities_Player_Heart_
+  - name: (
+  - uid: UndyneFight_Ex.Entities.Player.Heart
+    name: Heart
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Player.Heart.html
+  - name: )
+- uid: UndyneFight_Ex.Entities.Barrage.CreateShinyEffect
+  commentId: M:UndyneFight_Ex.Entities.Barrage.CreateShinyEffect
+  parent: UndyneFight_Ex.Entities.Barrage
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Barrage.html#UndyneFight_Ex_Entities_Barrage_CreateShinyEffect
+  name: CreateShinyEffect()
+  nameWithType: Barrage.CreateShinyEffect()
+  fullName: UndyneFight_Ex.Entities.Barrage.CreateShinyEffect()
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entities.Barrage.CreateShinyEffect
+    name: CreateShinyEffect
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Barrage.html#UndyneFight_Ex_Entities_Barrage_CreateShinyEffect
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.Entities.Barrage.CreateShinyEffect
+    name: CreateShinyEffect
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Barrage.html#UndyneFight_Ex_Entities_Barrage_CreateShinyEffect
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.Entities.Barrage.MarkScore
+  commentId: P:UndyneFight_Ex.Entities.Barrage.MarkScore
+  parent: UndyneFight_Ex.Entities.Barrage
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Barrage.html#UndyneFight_Ex_Entities_Barrage_MarkScore
+  name: MarkScore
+  nameWithType: Barrage.MarkScore
+  fullName: UndyneFight_Ex.Entities.Barrage.MarkScore
+- uid: UndyneFight_Ex.Entities.Barrage.ShieldColorTypes
+  commentId: P:UndyneFight_Ex.Entities.Barrage.ShieldColorTypes
+  parent: UndyneFight_Ex.Entities.Barrage
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Barrage.html#UndyneFight_Ex_Entities_Barrage_ShieldColorTypes
+  name: ShieldColorTypes
+  nameWithType: Barrage.ShieldColorTypes
+  fullName: UndyneFight_Ex.Entities.Barrage.ShieldColorTypes
+- uid: UndyneFight_Ex.Entities.Barrage.BarrageColorTypes
+  commentId: P:UndyneFight_Ex.Entities.Barrage.BarrageColorTypes
+  parent: UndyneFight_Ex.Entities.Barrage
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Barrage.html#UndyneFight_Ex_Entities_Barrage_BarrageColorTypes
+  name: BarrageColorTypes
+  nameWithType: Barrage.BarrageColorTypes
+  fullName: UndyneFight_Ex.Entities.Barrage.BarrageColorTypes
+- uid: UndyneFight_Ex.Entities.Barrage.AutoDispose
+  commentId: P:UndyneFight_Ex.Entities.Barrage.AutoDispose
+  parent: UndyneFight_Ex.Entities.Barrage
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Barrage.html#UndyneFight_Ex_Entities_Barrage_AutoDispose
+  name: AutoDispose
+  nameWithType: Barrage.AutoDispose
+  fullName: UndyneFight_Ex.Entities.Barrage.AutoDispose
+- uid: UndyneFight_Ex.Entities.Barrage.Hidden
+  commentId: P:UndyneFight_Ex.Entities.Barrage.Hidden
+  parent: UndyneFight_Ex.Entities.Barrage
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Barrage.html#UndyneFight_Ex_Entities_Barrage_Hidden
+  name: Hidden
+  nameWithType: Barrage.Hidden
+  fullName: UndyneFight_Ex.Entities.Barrage.Hidden
+- uid: UndyneFight_Ex.Entities.Barrage.JudgeState
+  commentId: P:UndyneFight_Ex.Entities.Barrage.JudgeState
+  parent: UndyneFight_Ex.Entities.Barrage
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Barrage.html#UndyneFight_Ex_Entities_Barrage_JudgeState
+  name: JudgeState
+  nameWithType: Barrage.JudgeState
+  fullName: UndyneFight_Ex.Entities.Barrage.JudgeState
+- uid: UndyneFight_Ex.Entities.Barrage.PositionRoute
+  commentId: P:UndyneFight_Ex.Entities.Barrage.PositionRoute
+  parent: UndyneFight_Ex.Entities.Barrage
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Barrage.html#UndyneFight_Ex_Entities_Barrage_PositionRoute
+  name: PositionRoute
+  nameWithType: Barrage.PositionRoute
+  fullName: UndyneFight_Ex.Entities.Barrage.PositionRoute
+- uid: UndyneFight_Ex.Entities.Barrage.RotationRoute
+  commentId: P:UndyneFight_Ex.Entities.Barrage.RotationRoute
+  parent: UndyneFight_Ex.Entities.Barrage
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Barrage.html#UndyneFight_Ex_Entities_Barrage_RotationRoute
+  name: RotationRoute
+  nameWithType: Barrage.RotationRoute
+  fullName: UndyneFight_Ex.Entities.Barrage.RotationRoute
+- uid: UndyneFight_Ex.Entities.Barrage.RotationRouteParam
+  commentId: P:UndyneFight_Ex.Entities.Barrage.RotationRouteParam
+  parent: UndyneFight_Ex.Entities.Barrage
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Barrage.html#UndyneFight_Ex_Entities_Barrage_RotationRouteParam
+  name: RotationRouteParam
+  nameWithType: Barrage.RotationRouteParam
+  fullName: UndyneFight_Ex.Entities.Barrage.RotationRouteParam
+- uid: UndyneFight_Ex.Entities.Barrage.PositionRouteParam
+  commentId: P:UndyneFight_Ex.Entities.Barrage.PositionRouteParam
+  parent: UndyneFight_Ex.Entities.Barrage
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Barrage.html#UndyneFight_Ex_Entities_Barrage_PositionRouteParam
+  name: PositionRouteParam
+  nameWithType: Barrage.PositionRouteParam
+  fullName: UndyneFight_Ex.Entities.Barrage.PositionRouteParam
+- uid: UndyneFight_Ex.Entities.Barrage.CentrePosition
+  commentId: P:UndyneFight_Ex.Entities.Barrage.CentrePosition
+  parent: UndyneFight_Ex.Entities.Barrage
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Barrage.html#UndyneFight_Ex_Entities_Barrage_CentrePosition
+  name: CentrePosition
+  nameWithType: Barrage.CentrePosition
+  fullName: UndyneFight_Ex.Entities.Barrage.CentrePosition
+- uid: UndyneFight_Ex.Entity.controlLayer
+  commentId: F:UndyneFight_Ex.Entity.controlLayer
+  parent: UndyneFight_Ex.Entity
+  isExternal: true
+  href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_controlLayer
+  name: controlLayer
+  nameWithType: Entity.controlLayer
+  fullName: UndyneFight_Ex.Entity.controlLayer
+- uid: UndyneFight_Ex.Entity.collidingBox
+  commentId: F:UndyneFight_Ex.Entity.collidingBox
+  parent: UndyneFight_Ex.Entity
+  isExternal: true
+  href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_collidingBox
+  name: collidingBox
+  nameWithType: Entity.collidingBox
+  fullName: UndyneFight_Ex.Entity.collidingBox
+- uid: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Vector2)
+  commentId: M:UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Vector2)
+  parent: UndyneFight_Ex.Entity
+  isExternal: true
+  href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_FormalDraw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_System_Single_Microsoft_Xna_Framework_Vector2_
+  name: FormalDraw(Texture2D, Vector2, Color, float, Vector2)
+  nameWithType: Entity.FormalDraw(Texture2D, Vector2, Color, float, Vector2)
+  fullName: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Color, float, Microsoft.Xna.Framework.Vector2)
+  nameWithType.vb: Entity.FormalDraw(Texture2D, Vector2, Color, Single, Vector2)
+  fullName.vb: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Color, Single, Microsoft.Xna.Framework.Vector2)
+  name.vb: FormalDraw(Texture2D, Vector2, Color, Single, Vector2)
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Vector2)
+    name: FormalDraw
+    isExternal: true
+    href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_FormalDraw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_System_Single_Microsoft_Xna_Framework_Vector2_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Vector2)
+    name: FormalDraw
+    isExternal: true
+    href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_FormalDraw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_System_Single_Microsoft_Xna_Framework_Vector2_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: )
+- uid: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Rectangle},Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Graphics.SpriteEffects)
+  commentId: M:UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Rectangle},Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Graphics.SpriteEffects)
+  parent: UndyneFight_Ex.Entity
+  isExternal: true
+  href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_FormalDraw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_System_Nullable_Microsoft_Xna_Framework_Rectangle__Microsoft_Xna_Framework_Color_Microsoft_Xna_Framework_Vector2_System_Single_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Graphics_SpriteEffects_
+  name: FormalDraw(Texture2D, Vector2, Rectangle?, Color, Vector2, float, Vector2, SpriteEffects)
+  nameWithType: Entity.FormalDraw(Texture2D, Vector2, Rectangle?, Color, Vector2, float, Vector2, SpriteEffects)
+  fullName: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Rectangle?, Microsoft.Xna.Framework.Color, Microsoft.Xna.Framework.Vector2, float, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Graphics.SpriteEffects)
+  nameWithType.vb: Entity.FormalDraw(Texture2D, Vector2, Rectangle?, Color, Vector2, Single, Vector2, SpriteEffects)
+  fullName.vb: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Rectangle?, Microsoft.Xna.Framework.Color, Microsoft.Xna.Framework.Vector2, Single, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Graphics.SpriteEffects)
+  name.vb: FormalDraw(Texture2D, Vector2, Rectangle?, Color, Vector2, Single, Vector2, SpriteEffects)
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Rectangle},Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Graphics.SpriteEffects)
+    name: FormalDraw
+    isExternal: true
+    href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_FormalDraw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_System_Nullable_Microsoft_Xna_Framework_Rectangle__Microsoft_Xna_Framework_Color_Microsoft_Xna_Framework_Vector2_System_Single_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Graphics_SpriteEffects_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Rectangle
+    name: Rectangle
+    isExternal: true
+  - name: '?'
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Graphics.SpriteEffects
+    name: SpriteEffects
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Rectangle},Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Graphics.SpriteEffects)
+    name: FormalDraw
+    isExternal: true
+    href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_FormalDraw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_System_Nullable_Microsoft_Xna_Framework_Rectangle__Microsoft_Xna_Framework_Color_Microsoft_Xna_Framework_Vector2_System_Single_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Graphics_SpriteEffects_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Rectangle
+    name: Rectangle
+    isExternal: true
+  - name: '?'
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Graphics.SpriteEffects
+    name: SpriteEffects
+    isExternal: true
+  - name: )
+- uid: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,UndyneFight_Ex.CollideRect,Microsoft.Xna.Framework.Color)
+  commentId: M:UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,UndyneFight_Ex.CollideRect,Microsoft.Xna.Framework.Color)
+  parent: UndyneFight_Ex.Entity
+  isExternal: true
+  href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_FormalDraw_Microsoft_Xna_Framework_Graphics_Texture2D_UndyneFight_Ex_CollideRect_Microsoft_Xna_Framework_Color_
+  name: FormalDraw(Texture2D, CollideRect, Color)
+  nameWithType: Entity.FormalDraw(Texture2D, CollideRect, Color)
+  fullName: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D, UndyneFight_Ex.CollideRect, Microsoft.Xna.Framework.Color)
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,UndyneFight_Ex.CollideRect,Microsoft.Xna.Framework.Color)
+    name: FormalDraw
+    isExternal: true
+    href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_FormalDraw_Microsoft_Xna_Framework_Graphics_Texture2D_UndyneFight_Ex_CollideRect_Microsoft_Xna_Framework_Color_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UndyneFight_Ex.CollideRect
+    name: CollideRect
+    isExternal: true
+    href: UndyneFight_Ex.CollideRect.html
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,UndyneFight_Ex.CollideRect,Microsoft.Xna.Framework.Color)
+    name: FormalDraw
+    isExternal: true
+    href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_FormalDraw_Microsoft_Xna_Framework_Graphics_Texture2D_UndyneFight_Ex_CollideRect_Microsoft_Xna_Framework_Color_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UndyneFight_Ex.CollideRect
+    name: CollideRect
+    isExternal: true
+    href: UndyneFight_Ex.CollideRect.html
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: )
+- uid: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Color)
+  commentId: M:UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Color)
+  parent: UndyneFight_Ex.Entity
+  isExternal: true
+  href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_FormalDraw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Rectangle_Microsoft_Xna_Framework_Rectangle_Microsoft_Xna_Framework_Color_
+  name: FormalDraw(Texture2D, Rectangle, Rectangle, Color)
+  nameWithType: Entity.FormalDraw(Texture2D, Rectangle, Rectangle, Color)
+  fullName: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Rectangle, Microsoft.Xna.Framework.Rectangle, Microsoft.Xna.Framework.Color)
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Color)
+    name: FormalDraw
+    isExternal: true
+    href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_FormalDraw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Rectangle_Microsoft_Xna_Framework_Rectangle_Microsoft_Xna_Framework_Color_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Rectangle
+    name: Rectangle
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Rectangle
+    name: Rectangle
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Color)
+    name: FormalDraw
+    isExternal: true
+    href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_FormalDraw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Rectangle_Microsoft_Xna_Framework_Rectangle_Microsoft_Xna_Framework_Color_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Rectangle
+    name: Rectangle
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Rectangle
+    name: Rectangle
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: )
+- uid: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single,System.Single,Microsoft.Xna.Framework.Vector2)
+  commentId: M:UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single,System.Single,Microsoft.Xna.Framework.Vector2)
+  parent: UndyneFight_Ex.Entity
+  isExternal: true
+  href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_FormalDraw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_System_Single_System_Single_Microsoft_Xna_Framework_Vector2_
+  name: FormalDraw(Texture2D, Vector2, Color, float, float, Vector2)
+  nameWithType: Entity.FormalDraw(Texture2D, Vector2, Color, float, float, Vector2)
+  fullName: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Color, float, float, Microsoft.Xna.Framework.Vector2)
+  nameWithType.vb: Entity.FormalDraw(Texture2D, Vector2, Color, Single, Single, Vector2)
+  fullName.vb: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Color, Single, Single, Microsoft.Xna.Framework.Vector2)
+  name.vb: FormalDraw(Texture2D, Vector2, Color, Single, Single, Vector2)
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single,System.Single,Microsoft.Xna.Framework.Vector2)
+    name: FormalDraw
+    isExternal: true
+    href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_FormalDraw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_System_Single_System_Single_Microsoft_Xna_Framework_Vector2_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single,System.Single,Microsoft.Xna.Framework.Vector2)
+    name: FormalDraw
+    isExternal: true
+    href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_FormalDraw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_System_Single_System_Single_Microsoft_Xna_Framework_Vector2_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: )
+- uid: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Vector2)
+  commentId: M:UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Vector2)
+  parent: UndyneFight_Ex.Entity
+  isExternal: true
+  href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_FormalDraw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_Microsoft_Xna_Framework_Vector2_System_Single_Microsoft_Xna_Framework_Vector2_
+  name: FormalDraw(Texture2D, Vector2, Color, Vector2, float, Vector2)
+  nameWithType: Entity.FormalDraw(Texture2D, Vector2, Color, Vector2, float, Vector2)
+  fullName: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Color, Microsoft.Xna.Framework.Vector2, float, Microsoft.Xna.Framework.Vector2)
+  nameWithType.vb: Entity.FormalDraw(Texture2D, Vector2, Color, Vector2, Single, Vector2)
+  fullName.vb: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Color, Microsoft.Xna.Framework.Vector2, Single, Microsoft.Xna.Framework.Vector2)
+  name.vb: FormalDraw(Texture2D, Vector2, Color, Vector2, Single, Vector2)
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Vector2)
+    name: FormalDraw
+    isExternal: true
+    href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_FormalDraw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_Microsoft_Xna_Framework_Vector2_System_Single_Microsoft_Xna_Framework_Vector2_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Vector2)
+    name: FormalDraw
+    isExternal: true
+    href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_FormalDraw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_Microsoft_Xna_Framework_Vector2_System_Single_Microsoft_Xna_Framework_Vector2_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: )
+- uid: UndyneFight_Ex.Entity.GeneralDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Vector2},System.Single,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{UndyneFight_Ex.CollideRect},System.Nullable{UndyneFight_Ex.CollideRect},System.Nullable{System.Single})
+  commentId: M:UndyneFight_Ex.Entity.GeneralDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Vector2},System.Single,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{UndyneFight_Ex.CollideRect},System.Nullable{UndyneFight_Ex.CollideRect},System.Nullable{System.Single})
+  parent: UndyneFight_Ex.Entity
+  isExternal: true
+  href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_GeneralDraw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_System_Nullable_Microsoft_Xna_Framework_Color__System_Nullable_Microsoft_Xna_Framework_Vector2__System_Single_System_Nullable_Microsoft_Xna_Framework_Vector2__System_Nullable_UndyneFight_Ex_CollideRect__System_Nullable_UndyneFight_Ex_CollideRect__System_Nullable_System_Single__
+  name: GeneralDraw(Texture2D, Vector2, Color?, Vector2?, float, Vector2?, CollideRect?, CollideRect?, float?)
+  nameWithType: Entity.GeneralDraw(Texture2D, Vector2, Color?, Vector2?, float, Vector2?, CollideRect?, CollideRect?, float?)
+  fullName: UndyneFight_Ex.Entity.GeneralDraw(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Color?, Microsoft.Xna.Framework.Vector2?, float, Microsoft.Xna.Framework.Vector2?, UndyneFight_Ex.CollideRect?, UndyneFight_Ex.CollideRect?, float?)
+  nameWithType.vb: Entity.GeneralDraw(Texture2D, Vector2, Color?, Vector2?, Single, Vector2?, CollideRect?, CollideRect?, Single?)
+  fullName.vb: UndyneFight_Ex.Entity.GeneralDraw(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Color?, Microsoft.Xna.Framework.Vector2?, Single, Microsoft.Xna.Framework.Vector2?, UndyneFight_Ex.CollideRect?, UndyneFight_Ex.CollideRect?, Single?)
+  name.vb: GeneralDraw(Texture2D, Vector2, Color?, Vector2?, Single, Vector2?, CollideRect?, CollideRect?, Single?)
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entity.GeneralDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Vector2},System.Single,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{UndyneFight_Ex.CollideRect},System.Nullable{UndyneFight_Ex.CollideRect},System.Nullable{System.Single})
+    name: GeneralDraw
+    isExternal: true
+    href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_GeneralDraw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_System_Nullable_Microsoft_Xna_Framework_Color__System_Nullable_Microsoft_Xna_Framework_Vector2__System_Single_System_Nullable_Microsoft_Xna_Framework_Vector2__System_Nullable_UndyneFight_Ex_CollideRect__System_Nullable_UndyneFight_Ex_CollideRect__System_Nullable_System_Single__
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: '?'
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: '?'
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: '?'
+  - name: ','
+  - name: " "
+  - uid: UndyneFight_Ex.CollideRect
+    name: CollideRect
+    isExternal: true
+    href: UndyneFight_Ex.CollideRect.html
+  - name: '?'
+  - name: ','
+  - name: " "
+  - uid: UndyneFight_Ex.CollideRect
+    name: CollideRect
+    isExternal: true
+    href: UndyneFight_Ex.CollideRect.html
+  - name: '?'
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: '?'
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.Entity.GeneralDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Vector2},System.Single,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{UndyneFight_Ex.CollideRect},System.Nullable{UndyneFight_Ex.CollideRect},System.Nullable{System.Single})
+    name: GeneralDraw
+    isExternal: true
+    href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_GeneralDraw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_System_Nullable_Microsoft_Xna_Framework_Color__System_Nullable_Microsoft_Xna_Framework_Vector2__System_Single_System_Nullable_Microsoft_Xna_Framework_Vector2__System_Nullable_UndyneFight_Ex_CollideRect__System_Nullable_UndyneFight_Ex_CollideRect__System_Nullable_System_Single__
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: '?'
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: '?'
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: '?'
+  - name: ','
+  - name: " "
+  - uid: UndyneFight_Ex.CollideRect
+    name: CollideRect
+    isExternal: true
+    href: UndyneFight_Ex.CollideRect.html
+  - name: '?'
+  - name: ','
+  - name: " "
+  - uid: UndyneFight_Ex.CollideRect
+    name: CollideRect
+    isExternal: true
+    href: UndyneFight_Ex.CollideRect.html
+  - name: '?'
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: '?'
+  - name: )
+- uid: UndyneFight_Ex.Entity.CreateShinyEffect(System.Nullable{Microsoft.Xna.Framework.Color},Microsoft.Xna.Framework.Graphics.Texture2D)
+  commentId: M:UndyneFight_Ex.Entity.CreateShinyEffect(System.Nullable{Microsoft.Xna.Framework.Color},Microsoft.Xna.Framework.Graphics.Texture2D)
+  parent: UndyneFight_Ex.Entity
+  isExternal: true
+  href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_CreateShinyEffect_System_Nullable_Microsoft_Xna_Framework_Color__Microsoft_Xna_Framework_Graphics_Texture2D_
+  name: CreateShinyEffect(Color?, Texture2D)
+  nameWithType: Entity.CreateShinyEffect(Color?, Texture2D)
+  fullName: UndyneFight_Ex.Entity.CreateShinyEffect(Microsoft.Xna.Framework.Color?, Microsoft.Xna.Framework.Graphics.Texture2D)
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entity.CreateShinyEffect(System.Nullable{Microsoft.Xna.Framework.Color},Microsoft.Xna.Framework.Graphics.Texture2D)
+    name: CreateShinyEffect
+    isExternal: true
+    href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_CreateShinyEffect_System_Nullable_Microsoft_Xna_Framework_Color__Microsoft_Xna_Framework_Graphics_Texture2D_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: '?'
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.Entity.CreateShinyEffect(System.Nullable{Microsoft.Xna.Framework.Color},Microsoft.Xna.Framework.Graphics.Texture2D)
+    name: CreateShinyEffect
+    isExternal: true
+    href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_CreateShinyEffect_System_Nullable_Microsoft_Xna_Framework_Color__Microsoft_Xna_Framework_Graphics_Texture2D_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: '?'
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: )
+- uid: UndyneFight_Ex.Entity.CreateRetentionEffect(System.Single,System.Nullable{Microsoft.Xna.Framework.Color})
+  commentId: M:UndyneFight_Ex.Entity.CreateRetentionEffect(System.Single,System.Nullable{Microsoft.Xna.Framework.Color})
+  parent: UndyneFight_Ex.Entity
+  isExternal: true
+  href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_CreateRetentionEffect_System_Single_System_Nullable_Microsoft_Xna_Framework_Color__
+  name: CreateRetentionEffect(float, Color?)
+  nameWithType: Entity.CreateRetentionEffect(float, Color?)
+  fullName: UndyneFight_Ex.Entity.CreateRetentionEffect(float, Microsoft.Xna.Framework.Color?)
+  nameWithType.vb: Entity.CreateRetentionEffect(Single, Color?)
+  fullName.vb: UndyneFight_Ex.Entity.CreateRetentionEffect(Single, Microsoft.Xna.Framework.Color?)
+  name.vb: CreateRetentionEffect(Single, Color?)
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entity.CreateRetentionEffect(System.Single,System.Nullable{Microsoft.Xna.Framework.Color})
+    name: CreateRetentionEffect
+    isExternal: true
+    href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_CreateRetentionEffect_System_Single_System_Nullable_Microsoft_Xna_Framework_Color__
+  - name: (
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: '?'
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.Entity.CreateRetentionEffect(System.Single,System.Nullable{Microsoft.Xna.Framework.Color})
+    name: CreateRetentionEffect
+    isExternal: true
+    href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_CreateRetentionEffect_System_Single_System_Nullable_Microsoft_Xna_Framework_Color__
+  - name: (
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: '?'
+  - name: )
+- uid: UndyneFight_Ex.Entity.Visible
+  commentId: P:UndyneFight_Ex.Entity.Visible
+  parent: UndyneFight_Ex.Entity
+  isExternal: true
+  href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_Visible
+  name: Visible
+  nameWithType: Entity.Visible
+  fullName: UndyneFight_Ex.Entity.Visible
+- uid: UndyneFight_Ex.Entity.AngleMode
+  commentId: P:UndyneFight_Ex.Entity.AngleMode
+  parent: UndyneFight_Ex.Entity
+  isExternal: true
+  href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_AngleMode
+  name: AngleMode
+  nameWithType: Entity.AngleMode
+  fullName: UndyneFight_Ex.Entity.AngleMode
+- uid: UndyneFight_Ex.Entity.SpriteBatch
+  commentId: P:UndyneFight_Ex.Entity.SpriteBatch
+  parent: UndyneFight_Ex.Entity
+  isExternal: true
+  href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_SpriteBatch
+  name: SpriteBatch
+  nameWithType: Entity.SpriteBatch
+  fullName: UndyneFight_Ex.Entity.SpriteBatch
+- uid: UndyneFight_Ex.Entity.Depth
+  commentId: P:UndyneFight_Ex.Entity.Depth
+  parent: UndyneFight_Ex.Entity
+  isExternal: true
+  href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_Depth
+  name: Depth
+  nameWithType: Entity.Depth
+  fullName: UndyneFight_Ex.Entity.Depth
+- uid: UndyneFight_Ex.Entity.ImageCentre
+  commentId: P:UndyneFight_Ex.Entity.ImageCentre
+  parent: UndyneFight_Ex.Entity
+  isExternal: true
+  href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_ImageCentre
+  name: ImageCentre
+  nameWithType: Entity.ImageCentre
+  fullName: UndyneFight_Ex.Entity.ImageCentre
+- uid: UndyneFight_Ex.Entity.Image
+  commentId: P:UndyneFight_Ex.Entity.Image
+  parent: UndyneFight_Ex.Entity
+  isExternal: true
+  href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_Image
+  name: Image
+  nameWithType: Entity.Image
+  fullName: UndyneFight_Ex.Entity.Image
+- uid: UndyneFight_Ex.Entity.Rotation
+  commentId: P:UndyneFight_Ex.Entity.Rotation
+  parent: UndyneFight_Ex.Entity
+  isExternal: true
+  href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_Rotation
+  name: Rotation
+  nameWithType: Entity.Rotation
+  fullName: UndyneFight_Ex.Entity.Rotation
+- uid: UndyneFight_Ex.Entity.Scale
+  commentId: P:UndyneFight_Ex.Entity.Scale
+  parent: UndyneFight_Ex.Entity
+  isExternal: true
+  href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_Scale
+  name: Scale
+  nameWithType: Entity.Scale
+  fullName: UndyneFight_Ex.Entity.Scale
+- uid: UndyneFight_Ex.Entity.CollidingBox
+  commentId: P:UndyneFight_Ex.Entity.CollidingBox
+  parent: UndyneFight_Ex.Entity
+  isExternal: true
+  href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_CollidingBox
+  name: CollidingBox
+  nameWithType: Entity.CollidingBox
+  fullName: UndyneFight_Ex.Entity.CollidingBox
+- uid: UndyneFight_Ex.Entity.Centre
+  commentId: P:UndyneFight_Ex.Entity.Centre
+  parent: UndyneFight_Ex.Entity
+  isExternal: true
+  href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_Centre
+  name: Centre
+  nameWithType: Entity.Centre
+  fullName: UndyneFight_Ex.Entity.Centre
+- uid: UndyneFight_Ex.Entity.DrawOptimize
+  commentId: P:UndyneFight_Ex.Entity.DrawOptimize
+  parent: UndyneFight_Ex.Entity
+  isExternal: true
+  href: UndyneFight_Ex.Entity.html#UndyneFight_Ex_Entity_DrawOptimize
+  name: DrawOptimize
+  nameWithType: Entity.DrawOptimize
+  fullName: UndyneFight_Ex.Entity.DrawOptimize
+- uid: UndyneFight_Ex.GameObject.ContainTag(System.String)
+  commentId: M:UndyneFight_Ex.GameObject.ContainTag(System.String)
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_ContainTag_System_String_
+  name: ContainTag(string)
+  nameWithType: GameObject.ContainTag(string)
+  fullName: UndyneFight_Ex.GameObject.ContainTag(string)
+  nameWithType.vb: GameObject.ContainTag(String)
+  fullName.vb: UndyneFight_Ex.GameObject.ContainTag(String)
+  name.vb: ContainTag(String)
+  spec.csharp:
+  - uid: UndyneFight_Ex.GameObject.ContainTag(System.String)
+    name: ContainTag
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_ContainTag_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.GameObject.ContainTag(System.String)
+    name: ContainTag
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_ContainTag_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: UndyneFight_Ex.GameObject.Broadcast(System.String)
+  commentId: M:UndyneFight_Ex.GameObject.Broadcast(System.String)
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Broadcast_System_String_
+  name: Broadcast(string)
+  nameWithType: GameObject.Broadcast(string)
+  fullName: UndyneFight_Ex.GameObject.Broadcast(string)
+  nameWithType.vb: GameObject.Broadcast(String)
+  fullName.vb: UndyneFight_Ex.GameObject.Broadcast(String)
+  name.vb: Broadcast(String)
+  spec.csharp:
+  - uid: UndyneFight_Ex.GameObject.Broadcast(System.String)
+    name: Broadcast
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Broadcast_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.GameObject.Broadcast(System.String)
+    name: Broadcast
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Broadcast_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: UndyneFight_Ex.GameObject.TryDetect(System.String)
+  commentId: M:UndyneFight_Ex.GameObject.TryDetect(System.String)
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_TryDetect_System_String_
+  name: TryDetect(string)
+  nameWithType: GameObject.TryDetect(string)
+  fullName: UndyneFight_Ex.GameObject.TryDetect(string)
+  nameWithType.vb: GameObject.TryDetect(String)
+  fullName.vb: UndyneFight_Ex.GameObject.TryDetect(String)
+  name.vb: TryDetect(String)
+  spec.csharp:
+  - uid: UndyneFight_Ex.GameObject.TryDetect(System.String)
+    name: TryDetect
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_TryDetect_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.GameObject.TryDetect(System.String)
+    name: TryDetect
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_TryDetect_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: UndyneFight_Ex.GameObject.HasTag
+  commentId: M:UndyneFight_Ex.GameObject.HasTag
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_HasTag
+  name: HasTag()
+  nameWithType: GameObject.HasTag()
+  fullName: UndyneFight_Ex.GameObject.HasTag()
+  spec.csharp:
+  - uid: UndyneFight_Ex.GameObject.HasTag
+    name: HasTag
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_HasTag
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.GameObject.HasTag
+    name: HasTag
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_HasTag
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.GameObject.Start
+  commentId: M:UndyneFight_Ex.GameObject.Start
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Start
+  name: Start()
+  nameWithType: GameObject.Start()
+  fullName: UndyneFight_Ex.GameObject.Start()
+  spec.csharp:
+  - uid: UndyneFight_Ex.GameObject.Start
+    name: Start
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Start
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.GameObject.Start
+    name: Start
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Start
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.GameObject.TreeUpdate
+  commentId: M:UndyneFight_Ex.GameObject.TreeUpdate
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_TreeUpdate
+  name: TreeUpdate()
+  nameWithType: GameObject.TreeUpdate()
+  fullName: UndyneFight_Ex.GameObject.TreeUpdate()
+  spec.csharp:
+  - uid: UndyneFight_Ex.GameObject.TreeUpdate
+    name: TreeUpdate
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_TreeUpdate
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.GameObject.TreeUpdate
+    name: TreeUpdate
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_TreeUpdate
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.GameObject.Kill
+  commentId: M:UndyneFight_Ex.GameObject.Kill
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Kill
+  name: Kill()
+  nameWithType: GameObject.Kill()
+  fullName: UndyneFight_Ex.GameObject.Kill()
+  spec.csharp:
+  - uid: UndyneFight_Ex.GameObject.Kill
+    name: Kill
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Kill
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.GameObject.Kill
+    name: Kill
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Kill
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.GameObject.AddChild(UndyneFight_Ex.GameObject)
+  commentId: M:UndyneFight_Ex.GameObject.AddChild(UndyneFight_Ex.GameObject)
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_AddChild_UndyneFight_Ex_GameObject_
+  name: AddChild(GameObject)
+  nameWithType: GameObject.AddChild(GameObject)
+  fullName: UndyneFight_Ex.GameObject.AddChild(UndyneFight_Ex.GameObject)
+  spec.csharp:
+  - uid: UndyneFight_Ex.GameObject.AddChild(UndyneFight_Ex.GameObject)
+    name: AddChild
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_AddChild_UndyneFight_Ex_GameObject_
+  - name: (
+  - uid: UndyneFight_Ex.GameObject
+    name: GameObject
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.GameObject.AddChild(UndyneFight_Ex.GameObject)
+    name: AddChild
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_AddChild_UndyneFight_Ex_GameObject_
+  - name: (
+  - uid: UndyneFight_Ex.GameObject
+    name: GameObject
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html
+  - name: )
+- uid: UndyneFight_Ex.GameObject.Reverse
+  commentId: M:UndyneFight_Ex.GameObject.Reverse
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Reverse
+  name: Reverse()
+  nameWithType: GameObject.Reverse()
+  fullName: UndyneFight_Ex.GameObject.Reverse()
+  spec.csharp:
+  - uid: UndyneFight_Ex.GameObject.Reverse
+    name: Reverse
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Reverse
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.GameObject.Reverse
+    name: Reverse
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Reverse
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.GameObject.GetDrawableTree
+  commentId: M:UndyneFight_Ex.GameObject.GetDrawableTree
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_GetDrawableTree
+  name: GetDrawableTree()
+  nameWithType: GameObject.GetDrawableTree()
+  fullName: UndyneFight_Ex.GameObject.GetDrawableTree()
+  spec.csharp:
+  - uid: UndyneFight_Ex.GameObject.GetDrawableTree
+    name: GetDrawableTree
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_GetDrawableTree
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.GameObject.GetDrawableTree
+    name: GetDrawableTree
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_GetDrawableTree
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.GameObject.UpdateChildren
+  commentId: P:UndyneFight_Ex.GameObject.UpdateChildren
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_UpdateChildren
+  name: UpdateChildren
+  nameWithType: GameObject.UpdateChildren
+  fullName: UndyneFight_Ex.GameObject.UpdateChildren
+- uid: UndyneFight_Ex.GameObject.ChildrenUpdateFirst
+  commentId: P:UndyneFight_Ex.GameObject.ChildrenUpdateFirst
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_ChildrenUpdateFirst
+  name: ChildrenUpdateFirst
+  nameWithType: GameObject.ChildrenUpdateFirst
+  fullName: UndyneFight_Ex.GameObject.ChildrenUpdateFirst
+- uid: UndyneFight_Ex.GameObject.CurrentScene
+  commentId: P:UndyneFight_Ex.GameObject.CurrentScene
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_CurrentScene
+  name: CurrentScene
+  nameWithType: GameObject.CurrentScene
+  fullName: UndyneFight_Ex.GameObject.CurrentScene
+- uid: UndyneFight_Ex.GameObject.CurrentFightingScene
+  commentId: P:UndyneFight_Ex.GameObject.CurrentFightingScene
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_CurrentFightingScene
+  name: CurrentFightingScene
+  nameWithType: GameObject.CurrentFightingScene
+  fullName: UndyneFight_Ex.GameObject.CurrentFightingScene
+- uid: UndyneFight_Ex.GameObject.UpdateIn120
+  commentId: P:UndyneFight_Ex.GameObject.UpdateIn120
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_UpdateIn120
+  name: UpdateIn120
+  nameWithType: GameObject.UpdateIn120
+  fullName: UndyneFight_Ex.GameObject.UpdateIn120
+- uid: UndyneFight_Ex.GameObject.BeingUpdated
+  commentId: P:UndyneFight_Ex.GameObject.BeingUpdated
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_BeingUpdated
+  name: BeingUpdated
+  nameWithType: GameObject.BeingUpdated
+  fullName: UndyneFight_Ex.GameObject.BeingUpdated
+- uid: UndyneFight_Ex.GameObject.UpdateEnabled
+  commentId: P:UndyneFight_Ex.GameObject.UpdateEnabled
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_UpdateEnabled
+  name: UpdateEnabled
+  nameWithType: GameObject.UpdateEnabled
+  fullName: UndyneFight_Ex.GameObject.UpdateEnabled
+- uid: UndyneFight_Ex.GameObject.CrossScene
+  commentId: P:UndyneFight_Ex.GameObject.CrossScene
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_CrossScene
+  name: CrossScene
+  nameWithType: GameObject.CrossScene
+  fullName: UndyneFight_Ex.GameObject.CrossScene
+- uid: UndyneFight_Ex.GameObject.Tags
+  commentId: P:UndyneFight_Ex.GameObject.Tags
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Tags
+  name: Tags
+  nameWithType: GameObject.Tags
+  fullName: UndyneFight_Ex.GameObject.Tags
+- uid: UndyneFight_Ex.GameObject.Extras
+  commentId: P:UndyneFight_Ex.GameObject.Extras
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Extras
+  name: Extras
+  nameWithType: GameObject.Extras
+  fullName: UndyneFight_Ex.GameObject.Extras
+- uid: UndyneFight_Ex.GameObject.ChildObjects
+  commentId: P:UndyneFight_Ex.GameObject.ChildObjects
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_ChildObjects
+  name: ChildObjects
+  nameWithType: GameObject.ChildObjects
+  fullName: UndyneFight_Ex.GameObject.ChildObjects
+- uid: UndyneFight_Ex.GameObject.Disposed
+  commentId: P:UndyneFight_Ex.GameObject.Disposed
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Disposed
+  name: Disposed
+  nameWithType: GameObject.Disposed
+  fullName: UndyneFight_Ex.GameObject.Disposed
+- uid: UndyneFight_Ex.GameObject.FatherObject
+  commentId: P:UndyneFight_Ex.GameObject.FatherObject
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_FatherObject
+  name: FatherObject
+  nameWithType: GameObject.FatherObject
+  fullName: UndyneFight_Ex.GameObject.FatherObject
+- uid: UndyneFight_Ex.GameObject.OnDispose
+  commentId: E:UndyneFight_Ex.GameObject.OnDispose
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_OnDispose
+  name: OnDispose
+  nameWithType: GameObject.OnDispose
+  fullName: UndyneFight_Ex.GameObject.OnDispose
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UndyneFight_Ex
+  commentId: N:UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex
+  nameWithType: UndyneFight_Ex
+  fullName: UndyneFight_Ex
+- uid: UndyneFight_Ex.Entities.Barrage.Dispose
+  commentId: M:UndyneFight_Ex.Entities.Barrage.Dispose
+  parent: UndyneFight_Ex.Entities.Barrage
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Barrage.html#UndyneFight_Ex_Entities_Barrage_Dispose
+  name: Dispose()
+  nameWithType: Barrage.Dispose()
+  fullName: UndyneFight_Ex.Entities.Barrage.Dispose()
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entities.Barrage.Dispose
+    name: Dispose
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Barrage.html#UndyneFight_Ex_Entities_Barrage_Dispose
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.Entities.Barrage.Dispose
+    name: Dispose
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Barrage.html#UndyneFight_Ex_Entities_Barrage_Dispose
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.Entities.Boneslab.Dispose*
+  commentId: Overload:UndyneFight_Ex.Entities.Boneslab.Dispose
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Boneslab.html#UndyneFight_Ex_Entities_Boneslab_Dispose
+  name: Dispose
+  nameWithType: Boneslab.Dispose
+  fullName: UndyneFight_Ex.Entities.Boneslab.Dispose
+- uid: UndyneFight_Ex.Entities.Boneslab.#ctor*
+  commentId: Overload:UndyneFight_Ex.Entities.Boneslab.#ctor
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Boneslab.html#UndyneFight_Ex_Entities_Boneslab__ctor_System_Single_System_Int32_System_Int32_System_Func_UndyneFight_Ex_Entities_ICustomLength_System_Single__System_Single___
+  name: Boneslab
+  nameWithType: Boneslab.Boneslab
+  fullName: UndyneFight_Ex.Entities.Boneslab.Boneslab
+  nameWithType.vb: Boneslab.New
+  fullName.vb: UndyneFight_Ex.Entities.Boneslab.New
+  name.vb: New
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Func{UndyneFight_Ex.Entities.ICustomLength,System.Single}
+  commentId: T:System.Func{UndyneFight_Ex.Entities.ICustomLength,System.Single}
+  parent: System
+  definition: System.Func`2
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<ICustomLength, float>
+  nameWithType: Func<ICustomLength, float>
+  fullName: System.Func<UndyneFight_Ex.Entities.ICustomLength, float>
+  nameWithType.vb: Func(Of ICustomLength, Single)
+  fullName.vb: System.Func(Of UndyneFight_Ex.Entities.ICustomLength, Single)
+  name.vb: Func(Of ICustomLength, Single)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - uid: UndyneFight_Ex.Entities.ICustomLength
+    name: ICustomLength
+    isExternal: true
+    href: UndyneFight_Ex.Entities.ICustomLength.html
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: UndyneFight_Ex.Entities.ICustomLength
+    name: ICustomLength
+    isExternal: true
+    href: UndyneFight_Ex.Entities.ICustomLength.html
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: System.Single[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float[]
+  nameWithType: float[]
+  fullName: float[]
+  nameWithType.vb: Single()
+  fullName.vb: Single()
+  name.vb: Single()
+  spec.csharp:
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: (
+  - name: )
+- uid: System.Func`2
+  commentId: T:System.Func`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: UndyneFight_Ex.Entities.Barrage.Draw
+  commentId: M:UndyneFight_Ex.Entities.Barrage.Draw
+  parent: UndyneFight_Ex.Entities.Barrage
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Barrage.html#UndyneFight_Ex_Entities_Barrage_Draw
+  name: Draw()
+  nameWithType: Barrage.Draw()
+  fullName: UndyneFight_Ex.Entities.Barrage.Draw()
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entities.Barrage.Draw
+    name: Draw
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Barrage.html#UndyneFight_Ex_Entities_Barrage_Draw
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.Entities.Barrage.Draw
+    name: Draw
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Barrage.html#UndyneFight_Ex_Entities_Barrage_Draw
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.Entities.Boneslab.Draw*
+  commentId: Overload:UndyneFight_Ex.Entities.Boneslab.Draw
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Boneslab.html#UndyneFight_Ex_Entities_Boneslab_Draw
+  name: Draw
+  nameWithType: Boneslab.Draw
+  fullName: UndyneFight_Ex.Entities.Boneslab.Draw
+- uid: UndyneFight_Ex.Entities.Barrage.Update
+  commentId: M:UndyneFight_Ex.Entities.Barrage.Update
+  parent: UndyneFight_Ex.Entities.Barrage
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Barrage.html#UndyneFight_Ex_Entities_Barrage_Update
+  name: Update()
+  nameWithType: Barrage.Update()
+  fullName: UndyneFight_Ex.Entities.Barrage.Update()
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entities.Barrage.Update
+    name: Update
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Barrage.html#UndyneFight_Ex_Entities_Barrage_Update
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.Entities.Barrage.Update
+    name: Update
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Barrage.html#UndyneFight_Ex_Entities_Barrage_Update
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.Entities.Boneslab.Update*
+  commentId: Overload:UndyneFight_Ex.Entities.Boneslab.Update
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Boneslab.html#UndyneFight_Ex_Entities_Boneslab_Update
+  name: Update
+  nameWithType: Boneslab.Update
+  fullName: UndyneFight_Ex.Entities.Boneslab.Update
+- uid: UndyneFight_Ex.Entities.Barrage.GetCollide(UndyneFight_Ex.Entities.Player.Heart)
+  commentId: M:UndyneFight_Ex.Entities.Barrage.GetCollide(UndyneFight_Ex.Entities.Player.Heart)
+  parent: UndyneFight_Ex.Entities.Barrage
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Barrage.html#UndyneFight_Ex_Entities_Barrage_GetCollide_UndyneFight_Ex_Entities_Player_Heart_
+  name: GetCollide(Heart)
+  nameWithType: Barrage.GetCollide(Player.Heart)
+  fullName: UndyneFight_Ex.Entities.Barrage.GetCollide(UndyneFight_Ex.Entities.Player.Heart)
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entities.Barrage.GetCollide(UndyneFight_Ex.Entities.Player.Heart)
+    name: GetCollide
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Barrage.html#UndyneFight_Ex_Entities_Barrage_GetCollide_UndyneFight_Ex_Entities_Player_Heart_
+  - name: (
+  - uid: UndyneFight_Ex.Entities.Player.Heart
+    name: Heart
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Player.Heart.html
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.Entities.Barrage.GetCollide(UndyneFight_Ex.Entities.Player.Heart)
+    name: GetCollide
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Barrage.html#UndyneFight_Ex_Entities_Barrage_GetCollide_UndyneFight_Ex_Entities_Player_Heart_
+  - name: (
+  - uid: UndyneFight_Ex.Entities.Player.Heart
+    name: Heart
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Player.Heart.html
+  - name: )
+- uid: UndyneFight_Ex.Entities.Boneslab.GetCollide*
+  commentId: Overload:UndyneFight_Ex.Entities.Boneslab.GetCollide
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Boneslab.html#UndyneFight_Ex_Entities_Boneslab_GetCollide_UndyneFight_Ex_Entities_Player_Heart_
+  name: GetCollide
+  nameWithType: Boneslab.GetCollide
+  fullName: UndyneFight_Ex.Entities.Boneslab.GetCollide
+- uid: UndyneFight_Ex.Entities.Player.Heart
+  commentId: T:UndyneFight_Ex.Entities.Player.Heart
+  parent: UndyneFight_Ex.Entities
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Player.html
+  name: Player.Heart
+  nameWithType: Player.Heart
+  fullName: UndyneFight_Ex.Entities.Player.Heart
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entities.Player
+    name: Player
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Player.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities.Player.Heart
+    name: Heart
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Player.Heart.html
+  spec.vb:
+  - uid: UndyneFight_Ex.Entities.Player
+    name: Player
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Player.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities.Player.Heart
+    name: Heart
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Player.Heart.html
+- uid: System.Action
+  commentId: T:System.Action
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action
+  name: Action
+  nameWithType: Action
+  fullName: System.Action
+- uid: UndyneFight_Ex.Entities.Boneslab.BoneProtruded*
+  commentId: Overload:UndyneFight_Ex.Entities.Boneslab.BoneProtruded
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Boneslab.html#UndyneFight_Ex_Entities_Boneslab_BoneProtruded
+  name: BoneProtruded
+  nameWithType: Boneslab.BoneProtruded
+  fullName: UndyneFight_Ex.Entities.Boneslab.BoneProtruded
+- uid: UndyneFight_Ex.Entities.Boneslab.ColorType*
+  commentId: Overload:UndyneFight_Ex.Entities.Boneslab.ColorType
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Boneslab.html#UndyneFight_Ex_Entities_Boneslab_ColorType
+  name: ColorType
+  nameWithType: Boneslab.ColorType
+  fullName: UndyneFight_Ex.Entities.Boneslab.ColorType
+- uid: UndyneFight_Ex.Entities.Boneslab.AppearTime*
+  commentId: Overload:UndyneFight_Ex.Entities.Boneslab.AppearTime
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Boneslab.html#UndyneFight_Ex_Entities_Boneslab_AppearTime
+  name: AppearTime
+  nameWithType: Boneslab.AppearTime
+  fullName: UndyneFight_Ex.Entities.Boneslab.AppearTime
+- uid: UndyneFight_Ex.Entities.ICustomLength.AppearTime
+  commentId: P:UndyneFight_Ex.Entities.ICustomLength.AppearTime
+  parent: UndyneFight_Ex.Entities.ICustomLength
+  isExternal: true
+  href: UndyneFight_Ex.Entities.ICustomLength.html#UndyneFight_Ex_Entities_ICustomLength_AppearTime
+  name: AppearTime
+  nameWithType: ICustomLength.AppearTime
+  fullName: UndyneFight_Ex.Entities.ICustomLength.AppearTime
+- uid: UndyneFight_Ex.Entities.Boneslab.ControllingBox*
+  commentId: Overload:UndyneFight_Ex.Entities.Boneslab.ControllingBox
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Boneslab.html#UndyneFight_Ex_Entities_Boneslab_ControllingBox
+  name: ControllingBox
+  nameWithType: Boneslab.ControllingBox
+  fullName: UndyneFight_Ex.Entities.Boneslab.ControllingBox
+- uid: UndyneFight_Ex.Entities.FightBox
+  commentId: T:UndyneFight_Ex.Entities.FightBox
+  parent: UndyneFight_Ex.Entities
+  isExternal: true
+  href: UndyneFight_Ex.Entities.FightBox.html
+  name: FightBox
+  nameWithType: FightBox
+  fullName: UndyneFight_Ex.Entities.FightBox
+- uid: UndyneFight_Ex.Entities.Motions.LengthRoute
+  commentId: T:UndyneFight_Ex.Entities.Motions.LengthRoute
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Motions.html
+  name: Motions.LengthRoute
+  nameWithType: Motions.LengthRoute
+  fullName: UndyneFight_Ex.Entities.Motions.LengthRoute
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entities.Motions
+    name: Motions
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Motions.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities.Motions.LengthRoute
+    name: LengthRoute
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Motions.LengthRoute.html
+  spec.vb:
+  - uid: UndyneFight_Ex.Entities.Motions
+    name: Motions
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Motions.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities.Motions.LengthRoute
+    name: LengthRoute
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Motions.LengthRoute.html
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing
+  commentId: T:UndyneFight_Ex.Entities.SimplifiedEasing
+  isExternal: true
+  href: UndyneFight_Ex.Entities.SimplifiedEasing.html
+  name: SimplifiedEasing
+  nameWithType: SimplifiedEasing
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing
+- uid: UndyneFight_Ex.Entities.Boneslab.LengthRoute*
+  commentId: Overload:UndyneFight_Ex.Entities.Boneslab.LengthRoute
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Boneslab.html#UndyneFight_Ex_Entities_Boneslab_LengthRoute
+  name: LengthRoute
+  nameWithType: Boneslab.LengthRoute
+  fullName: UndyneFight_Ex.Entities.Boneslab.LengthRoute
+- uid: UndyneFight_Ex.Entities.ICustomLength.LengthRoute
+  commentId: P:UndyneFight_Ex.Entities.ICustomLength.LengthRoute
+  parent: UndyneFight_Ex.Entities.ICustomLength
+  isExternal: true
+  href: UndyneFight_Ex.Entities.ICustomLength.html#UndyneFight_Ex_Entities_ICustomLength_LengthRoute
+  name: LengthRoute
+  nameWithType: ICustomLength.LengthRoute
+  fullName: UndyneFight_Ex.Entities.ICustomLength.LengthRoute
+- uid: UndyneFight_Ex.Entities.Boneslab.LengthRouteParam*
+  commentId: Overload:UndyneFight_Ex.Entities.Boneslab.LengthRouteParam
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Boneslab.html#UndyneFight_Ex_Entities_Boneslab_LengthRouteParam
+  name: LengthRouteParam
+  nameWithType: Boneslab.LengthRouteParam
+  fullName: UndyneFight_Ex.Entities.Boneslab.LengthRouteParam
+- uid: UndyneFight_Ex.Entities.ICustomLength.LengthRouteParam
+  commentId: P:UndyneFight_Ex.Entities.ICustomLength.LengthRouteParam
+  parent: UndyneFight_Ex.Entities.ICustomLength
+  isExternal: true
+  href: UndyneFight_Ex.Entities.ICustomLength.html#UndyneFight_Ex_Entities_ICustomLength_LengthRouteParam
+  name: LengthRouteParam
+  nameWithType: ICustomLength.LengthRouteParam
+  fullName: UndyneFight_Ex.Entities.ICustomLength.LengthRouteParam

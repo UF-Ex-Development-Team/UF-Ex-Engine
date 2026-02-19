@@ -1,0 +1,2063 @@
+### YamlMime:ManagedReference
+items:
+- uid: UndyneFight_Ex.GameStates
+  commentId: T:UndyneFight_Ex.GameStates
+  id: GameStates
+  parent: UndyneFight_Ex
+  children:
+  - UndyneFight_Ex.GameStates.Aspect
+  - UndyneFight_Ex.GameStates.AudioCache
+  - UndyneFight_Ex.GameStates.Broadcast(UndyneFight_Ex.GameEventArgs)
+  - UndyneFight_Ex.GameStates.ChangeSpeedScale(System.Single)
+  - UndyneFight_Ex.GameStates.CharInput
+  - UndyneFight_Ex.GameStates.CurrentScene
+  - UndyneFight_Ex.GameStates.CurrentWindow
+  - UndyneFight_Ex.GameStates.DetectEvent(System.String)
+  - UndyneFight_Ex.GameStates.EndFight
+  - UndyneFight_Ex.GameStates.FileWriteText(System.String,System.String)
+  - UndyneFight_Ex.GameStates.ForceDisableTimeTips
+  - UndyneFight_Ex.GameStates.GameModeMemory
+  - UndyneFight_Ex.GameStates.GameName
+  - UndyneFight_Ex.GameStates.GameOnFocus
+  - UndyneFight_Ex.GameStates.GameWindow
+  - UndyneFight_Ex.GameStates.InstanceCreate(UndyneFight_Ex.GameObject)
+  - UndyneFight_Ex.GameStates.InstanceDestroy(System.Type)
+  - UndyneFight_Ex.GameStates.InstanceExists(System.Type)
+  - UndyneFight_Ex.GameStates.IsKeyDown(Microsoft.Xna.Framework.Input.Keys)
+  - UndyneFight_Ex.GameStates.IsKeyDown(UndyneFight_Ex.InputIdentity)
+  - UndyneFight_Ex.GameStates.IsKeyPressed(UndyneFight_Ex.InputIdentity)
+  - UndyneFight_Ex.GameStates.IsKeyPressed120f(Microsoft.Xna.Framework.Input.Keys)
+  - UndyneFight_Ex.GameStates.IsKeyPressed120f(UndyneFight_Ex.InputIdentity)
+  - UndyneFight_Ex.GameStates.LoadSongPreviews
+  - UndyneFight_Ex.GameStates.ResetFightState
+  - UndyneFight_Ex.GameStates.ResetRendering
+  - UndyneFight_Ex.GameStates.ResetScene(UndyneFight_Ex.Scene)
+  - UndyneFight_Ex.GameStates.ResetTime
+  - UndyneFight_Ex.GameStates.ResizeMatrix
+  - UndyneFight_Ex.GameStates.SavePath
+  - UndyneFight_Ex.GameStates.SelectBattle(UndyneFight_Ex.Fight.IClassicFight,UndyneFight_Ex.SongSystem.GameMode)
+  - UndyneFight_Ex.GameStates.SpriteBatch
+  - UndyneFight_Ex.GameStates.StartSong(UndyneFight_Ex.Entities.SongFightingScene.SceneParams)
+  - UndyneFight_Ex.GameStates.StartSong(UndyneFight_Ex.SongSystem.IWaveSet,Microsoft.Xna.Framework.Graphics.Texture2D,System.String,System.Int32,UndyneFight_Ex.SongSystem.JudgementState,UndyneFight_Ex.SongSystem.GameMode)
+  - UndyneFight_Ex.GameStates.SurfaceScale
+  - UndyneFight_Ex.GameStates.WordsChanged
+  - UndyneFight_Ex.GameStates.difficulty
+  langs:
+  - csharp
+  - vb
+  name: GameStates
+  nameWithType: GameStates
+  fullName: UndyneFight_Ex.GameStates
+  type: Class
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  syntax:
+    content: public static class GameStates
+    content.vb: Public Module GameStates
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+- uid: UndyneFight_Ex.GameStates.GameName
+  commentId: F:UndyneFight_Ex.GameStates.GameName
+  id: GameName
+  parent: UndyneFight_Ex.GameStates
+  langs:
+  - csharp
+  - vb
+  name: GameName
+  nameWithType: GameStates.GameName
+  fullName: UndyneFight_Ex.GameStates.GameName
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: The name of your game, the same name will be used in the save folder
+  example: []
+  syntax:
+    content: public static string GameName
+    return:
+      type: System.String
+    content.vb: Public Shared GameName As String
+- uid: UndyneFight_Ex.GameStates.AudioCache
+  commentId: F:UndyneFight_Ex.GameStates.AudioCache
+  id: AudioCache
+  parent: UndyneFight_Ex.GameStates
+  langs:
+  - csharp
+  - vb
+  name: AudioCache
+  nameWithType: GameStates.AudioCache
+  fullName: UndyneFight_Ex.GameStates.AudioCache
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: The audio caches for song previews
+  example: []
+  syntax:
+    content: public static readonly Dictionary<string, Audio> AudioCache
+    return:
+      type: System.Collections.Generic.Dictionary{System.String,UndyneFight_Ex.Audio}
+    content.vb: Public Shared ReadOnly AudioCache As Dictionary(Of String, Audio)
+- uid: UndyneFight_Ex.GameStates.IsKeyPressed(UndyneFight_Ex.InputIdentity)
+  commentId: M:UndyneFight_Ex.GameStates.IsKeyPressed(UndyneFight_Ex.InputIdentity)
+  id: IsKeyPressed(UndyneFight_Ex.InputIdentity)
+  parent: UndyneFight_Ex.GameStates
+  langs:
+  - csharp
+  - vb
+  name: IsKeyPressed(InputIdentity)
+  nameWithType: GameStates.IsKeyPressed(InputIdentity)
+  fullName: UndyneFight_Ex.GameStates.IsKeyPressed(UndyneFight_Ex.InputIdentity)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Check if a key is pressed (Used when <xref href="UndyneFight_Ex.GameObject.UpdateIn120" data-throw-if-not-resolved="false"></xref> is false)
+  example: []
+  syntax:
+    content: public static bool IsKeyPressed(InputIdentity key)
+    parameters:
+    - id: key
+      type: UndyneFight_Ex.InputIdentity
+      description: The key to check
+    return:
+      type: System.Boolean
+      description: Whether the key is pressed
+    content.vb: Public Shared Function IsKeyPressed(key As InputIdentity) As Boolean
+  overload: UndyneFight_Ex.GameStates.IsKeyPressed*
+- uid: UndyneFight_Ex.GameStates.IsKeyPressed120f(UndyneFight_Ex.InputIdentity)
+  commentId: M:UndyneFight_Ex.GameStates.IsKeyPressed120f(UndyneFight_Ex.InputIdentity)
+  id: IsKeyPressed120f(UndyneFight_Ex.InputIdentity)
+  parent: UndyneFight_Ex.GameStates
+  langs:
+  - csharp
+  - vb
+  name: IsKeyPressed120f(InputIdentity)
+  nameWithType: GameStates.IsKeyPressed120f(InputIdentity)
+  fullName: UndyneFight_Ex.GameStates.IsKeyPressed120f(UndyneFight_Ex.InputIdentity)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Check if a key is pressed (Used when <xref href="UndyneFight_Ex.GameObject.UpdateIn120" data-throw-if-not-resolved="false"></xref> is true)
+  example: []
+  syntax:
+    content: public static bool IsKeyPressed120f(InputIdentity key)
+    parameters:
+    - id: key
+      type: UndyneFight_Ex.InputIdentity
+      description: The key to check
+    return:
+      type: System.Boolean
+      description: Whether the key is pressed
+    content.vb: Public Shared Function IsKeyPressed120f(key As InputIdentity) As Boolean
+  overload: UndyneFight_Ex.GameStates.IsKeyPressed120f*
+- uid: UndyneFight_Ex.GameStates.IsKeyDown(UndyneFight_Ex.InputIdentity)
+  commentId: M:UndyneFight_Ex.GameStates.IsKeyDown(UndyneFight_Ex.InputIdentity)
+  id: IsKeyDown(UndyneFight_Ex.InputIdentity)
+  parent: UndyneFight_Ex.GameStates
+  langs:
+  - csharp
+  - vb
+  name: IsKeyDown(InputIdentity)
+  nameWithType: GameStates.IsKeyDown(InputIdentity)
+  fullName: UndyneFight_Ex.GameStates.IsKeyDown(UndyneFight_Ex.InputIdentity)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Check if a key is being held
+  example: []
+  syntax:
+    content: public static bool IsKeyDown(InputIdentity key)
+    parameters:
+    - id: key
+      type: UndyneFight_Ex.InputIdentity
+      description: The key to check
+    return:
+      type: System.Boolean
+      description: Whether the key is held
+    content.vb: Public Shared Function IsKeyDown(key As InputIdentity) As Boolean
+  overload: UndyneFight_Ex.GameStates.IsKeyDown*
+- uid: UndyneFight_Ex.GameStates.IsKeyPressed120f(Microsoft.Xna.Framework.Input.Keys)
+  commentId: M:UndyneFight_Ex.GameStates.IsKeyPressed120f(Microsoft.Xna.Framework.Input.Keys)
+  id: IsKeyPressed120f(Microsoft.Xna.Framework.Input.Keys)
+  parent: UndyneFight_Ex.GameStates
+  langs:
+  - csharp
+  - vb
+  name: IsKeyPressed120f(Keys)
+  nameWithType: GameStates.IsKeyPressed120f(Keys)
+  fullName: UndyneFight_Ex.GameStates.IsKeyPressed120f(Microsoft.Xna.Framework.Input.Keys)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Check if a key is pressed (Used when <xref href="UndyneFight_Ex.GameObject.UpdateIn120" data-throw-if-not-resolved="false"></xref> is true)
+  example: []
+  syntax:
+    content: public static bool IsKeyPressed120f(Keys key)
+    parameters:
+    - id: key
+      type: Microsoft.Xna.Framework.Input.Keys
+      description: The key to check
+    return:
+      type: System.Boolean
+      description: Whether the key is pressed
+    content.vb: Public Shared Function IsKeyPressed120f(key As Keys) As Boolean
+  overload: UndyneFight_Ex.GameStates.IsKeyPressed120f*
+- uid: UndyneFight_Ex.GameStates.IsKeyDown(Microsoft.Xna.Framework.Input.Keys)
+  commentId: M:UndyneFight_Ex.GameStates.IsKeyDown(Microsoft.Xna.Framework.Input.Keys)
+  id: IsKeyDown(Microsoft.Xna.Framework.Input.Keys)
+  parent: UndyneFight_Ex.GameStates
+  langs:
+  - csharp
+  - vb
+  name: IsKeyDown(Keys)
+  nameWithType: GameStates.IsKeyDown(Keys)
+  fullName: UndyneFight_Ex.GameStates.IsKeyDown(Microsoft.Xna.Framework.Input.Keys)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Check if a key is being held
+  example: []
+  syntax:
+    content: public static bool IsKeyDown(Keys key)
+    parameters:
+    - id: key
+      type: Microsoft.Xna.Framework.Input.Keys
+      description: The key to check
+    return:
+      type: System.Boolean
+      description: Whether the key is held
+    content.vb: Public Shared Function IsKeyDown(key As Keys) As Boolean
+  overload: UndyneFight_Ex.GameStates.IsKeyDown*
+- uid: UndyneFight_Ex.GameStates.InstanceCreate(UndyneFight_Ex.GameObject)
+  commentId: M:UndyneFight_Ex.GameStates.InstanceCreate(UndyneFight_Ex.GameObject)
+  id: InstanceCreate(UndyneFight_Ex.GameObject)
+  parent: UndyneFight_Ex.GameStates
+  langs:
+  - csharp
+  - vb
+  name: InstanceCreate(GameObject)
+  nameWithType: GameStates.InstanceCreate(GameObject)
+  fullName: UndyneFight_Ex.GameStates.InstanceCreate(UndyneFight_Ex.GameObject)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Creates an instance
+  example: []
+  syntax:
+    content: public static void InstanceCreate(GameObject e)
+    parameters:
+    - id: e
+      type: UndyneFight_Ex.GameObject
+      description: The <xref href="UndyneFight_Ex.GameObject" data-throw-if-not-resolved="false"></xref> to create
+    content.vb: Public Shared Sub InstanceCreate(e As GameObject)
+  overload: UndyneFight_Ex.GameStates.InstanceCreate*
+- uid: UndyneFight_Ex.GameStates.InstanceExists(System.Type)
+  commentId: M:UndyneFight_Ex.GameStates.InstanceExists(System.Type)
+  id: InstanceExists(System.Type)
+  parent: UndyneFight_Ex.GameStates
+  langs:
+  - csharp
+  - vb
+  name: InstanceExists(Type)
+  nameWithType: GameStates.InstanceExists(Type)
+  fullName: UndyneFight_Ex.GameStates.InstanceExists(System.Type)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Whether an instance already exists
+  example: []
+  syntax:
+    content: public static bool InstanceExists(Type e)
+    parameters:
+    - id: e
+      type: System.Type
+      description: The game object to check
+    return:
+      type: System.Boolean
+      description: ''
+    content.vb: Public Shared Function InstanceExists(e As Type) As Boolean
+  overload: UndyneFight_Ex.GameStates.InstanceExists*
+- uid: UndyneFight_Ex.GameStates.InstanceDestroy(System.Type)
+  commentId: M:UndyneFight_Ex.GameStates.InstanceDestroy(System.Type)
+  id: InstanceDestroy(System.Type)
+  parent: UndyneFight_Ex.GameStates
+  langs:
+  - csharp
+  - vb
+  name: InstanceDestroy(Type)
+  nameWithType: GameStates.InstanceDestroy(Type)
+  fullName: UndyneFight_Ex.GameStates.InstanceDestroy(System.Type)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Destroy all instances of the given type
+  example: []
+  syntax:
+    content: public static void InstanceDestroy(Type e)
+    parameters:
+    - id: e
+      type: System.Type
+      description: The object to dispose
+    content.vb: Public Shared Sub InstanceDestroy(e As Type)
+  overload: UndyneFight_Ex.GameStates.InstanceDestroy*
+- uid: UndyneFight_Ex.GameStates.ResetTime
+  commentId: M:UndyneFight_Ex.GameStates.ResetTime
+  id: ResetTime
+  parent: UndyneFight_Ex.GameStates
+  langs:
+  - csharp
+  - vb
+  name: ResetTime()
+  nameWithType: GameStates.ResetTime()
+  fullName: UndyneFight_Ex.GameStates.ResetTime()
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Reset <xref href="UndyneFight_Ex.GameMain.gameTime" data-throw-if-not-resolved="false"></xref> to 0
+  example: []
+  syntax:
+    content: public static void ResetTime()
+    content.vb: Public Shared Sub ResetTime()
+  overload: UndyneFight_Ex.GameStates.ResetTime*
+- uid: UndyneFight_Ex.GameStates.SelectBattle(UndyneFight_Ex.Fight.IClassicFight,UndyneFight_Ex.SongSystem.GameMode)
+  commentId: M:UndyneFight_Ex.GameStates.SelectBattle(UndyneFight_Ex.Fight.IClassicFight,UndyneFight_Ex.SongSystem.GameMode)
+  id: SelectBattle(UndyneFight_Ex.Fight.IClassicFight,UndyneFight_Ex.SongSystem.GameMode)
+  parent: UndyneFight_Ex.GameStates
+  langs:
+  - csharp
+  - vb
+  name: SelectBattle(IClassicFight, GameMode)
+  nameWithType: GameStates.SelectBattle(IClassicFight, GameMode)
+  fullName: UndyneFight_Ex.GameStates.SelectBattle(UndyneFight_Ex.Fight.IClassicFight, UndyneFight_Ex.SongSystem.GameMode)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Selects a fight
+  example: []
+  syntax:
+    content: public static void SelectBattle(IClassicFight fightSet, GameMode mode)
+    parameters:
+    - id: fightSet
+      type: UndyneFight_Ex.Fight.IClassicFight
+      description: The fight to select
+    - id: mode
+      type: UndyneFight_Ex.SongSystem.GameMode
+      description: The gamemode of the fight
+    content.vb: Public Shared Sub SelectBattle(fightSet As IClassicFight, mode As GameMode)
+  overload: UndyneFight_Ex.GameStates.SelectBattle*
+- uid: UndyneFight_Ex.GameStates.StartSong(UndyneFight_Ex.SongSystem.IWaveSet,Microsoft.Xna.Framework.Graphics.Texture2D,System.String,System.Int32,UndyneFight_Ex.SongSystem.JudgementState,UndyneFight_Ex.SongSystem.GameMode)
+  commentId: M:UndyneFight_Ex.GameStates.StartSong(UndyneFight_Ex.SongSystem.IWaveSet,Microsoft.Xna.Framework.Graphics.Texture2D,System.String,System.Int32,UndyneFight_Ex.SongSystem.JudgementState,UndyneFight_Ex.SongSystem.GameMode)
+  id: StartSong(UndyneFight_Ex.SongSystem.IWaveSet,Microsoft.Xna.Framework.Graphics.Texture2D,System.String,System.Int32,UndyneFight_Ex.SongSystem.JudgementState,UndyneFight_Ex.SongSystem.GameMode)
+  parent: UndyneFight_Ex.GameStates
+  langs:
+  - csharp
+  - vb
+  name: StartSong(IWaveSet, Texture2D, string, int, JudgementState, GameMode)
+  nameWithType: GameStates.StartSong(IWaveSet, Texture2D, string, int, JudgementState, GameMode)
+  fullName: UndyneFight_Ex.GameStates.StartSong(UndyneFight_Ex.SongSystem.IWaveSet, Microsoft.Xna.Framework.Graphics.Texture2D, string, int, UndyneFight_Ex.SongSystem.JudgementState, UndyneFight_Ex.SongSystem.GameMode)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Starts a chart
+  example: []
+  syntax:
+    content: public static void StartSong(IWaveSet wave, Texture2D songIllustration, string path, int dif, JudgementState judgeState, GameMode mode)
+    parameters:
+    - id: wave
+      type: UndyneFight_Ex.SongSystem.IWaveSet
+      description: The chart wave
+    - id: songIllustration
+      type: Microsoft.Xna.Framework.Graphics.Texture2D
+      description: The chart cover
+    - id: path
+      type: System.String
+      description: The path to the music file
+    - id: dif
+      type: System.Int32
+      description: The difficulty of the chart
+    - id: judgeState
+      type: UndyneFight_Ex.SongSystem.JudgementState
+      description: The judgement state of the chart
+    - id: mode
+      type: UndyneFight_Ex.SongSystem.GameMode
+      description: The gamemode of the chart
+    content.vb: Public Shared Sub StartSong(wave As IWaveSet, songIllustration As Texture2D, path As String, dif As Integer, judgeState As JudgementState, mode As GameMode)
+  overload: UndyneFight_Ex.GameStates.StartSong*
+  nameWithType.vb: GameStates.StartSong(IWaveSet, Texture2D, String, Integer, JudgementState, GameMode)
+  fullName.vb: UndyneFight_Ex.GameStates.StartSong(UndyneFight_Ex.SongSystem.IWaveSet, Microsoft.Xna.Framework.Graphics.Texture2D, String, Integer, UndyneFight_Ex.SongSystem.JudgementState, UndyneFight_Ex.SongSystem.GameMode)
+  name.vb: StartSong(IWaveSet, Texture2D, String, Integer, JudgementState, GameMode)
+- uid: UndyneFight_Ex.GameStates.StartSong(UndyneFight_Ex.Entities.SongFightingScene.SceneParams)
+  commentId: M:UndyneFight_Ex.GameStates.StartSong(UndyneFight_Ex.Entities.SongFightingScene.SceneParams)
+  id: StartSong(UndyneFight_Ex.Entities.SongFightingScene.SceneParams)
+  parent: UndyneFight_Ex.GameStates
+  langs:
+  - csharp
+  - vb
+  name: StartSong(SceneParams)
+  nameWithType: GameStates.StartSong(SongFightingScene.SceneParams)
+  fullName: UndyneFight_Ex.GameStates.StartSong(UndyneFight_Ex.Entities.SongFightingScene.SceneParams)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Starts a chart
+  example: []
+  syntax:
+    content: public static void StartSong(SongFightingScene.SceneParams @params)
+    parameters:
+    - id: params
+      type: UndyneFight_Ex.Entities.SongFightingScene.SceneParams
+      description: The parameters of the chart
+    content.vb: Public Shared Sub StartSong(params As SongFightingScene.SceneParams)
+  overload: UndyneFight_Ex.GameStates.StartSong*
+- uid: UndyneFight_Ex.GameStates.ResetScene(UndyneFight_Ex.Scene)
+  commentId: M:UndyneFight_Ex.GameStates.ResetScene(UndyneFight_Ex.Scene)
+  id: ResetScene(UndyneFight_Ex.Scene)
+  parent: UndyneFight_Ex.GameStates
+  langs:
+  - csharp
+  - vb
+  name: ResetScene(Scene)
+  nameWithType: GameStates.ResetScene(Scene)
+  fullName: UndyneFight_Ex.GameStates.ResetScene(UndyneFight_Ex.Scene)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Sets the current scene into a new one
+  example: []
+  syntax:
+    content: public static void ResetScene(Scene scene)
+    parameters:
+    - id: scene
+      type: UndyneFight_Ex.Scene
+      description: The target scene to set to
+    content.vb: Public Shared Sub ResetScene(scene As Scene)
+  overload: UndyneFight_Ex.GameStates.ResetScene*
+- uid: UndyneFight_Ex.GameStates.ResetFightState
+  commentId: M:UndyneFight_Ex.GameStates.ResetFightState
+  id: ResetFightState
+  parent: UndyneFight_Ex.GameStates
+  langs:
+  - csharp
+  - vb
+  name: ResetFightState()
+  nameWithType: GameStates.ResetFightState()
+  fullName: UndyneFight_Ex.GameStates.ResetFightState()
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Resets the fight state
+  example: []
+  syntax:
+    content: public static void ResetFightState()
+    content.vb: Public Shared Sub ResetFightState()
+  overload: UndyneFight_Ex.GameStates.ResetFightState*
+- uid: UndyneFight_Ex.GameStates.EndFight
+  commentId: M:UndyneFight_Ex.GameStates.EndFight
+  id: EndFight
+  parent: UndyneFight_Ex.GameStates
+  langs:
+  - csharp
+  - vb
+  name: EndFight()
+  nameWithType: GameStates.EndFight()
+  fullName: UndyneFight_Ex.GameStates.EndFight()
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Ends the current fight/chart
+  example: []
+  syntax:
+    content: public static void EndFight()
+    content.vb: Public Shared Sub EndFight()
+  overload: UndyneFight_Ex.GameStates.EndFight*
+- uid: UndyneFight_Ex.GameStates.ChangeSpeedScale(System.Single)
+  commentId: M:UndyneFight_Ex.GameStates.ChangeSpeedScale(System.Single)
+  id: ChangeSpeedScale(System.Single)
+  parent: UndyneFight_Ex.GameStates
+  langs:
+  - csharp
+  - vb
+  name: ChangeSpeedScale(float)
+  nameWithType: GameStates.ChangeSpeedScale(float)
+  fullName: UndyneFight_Ex.GameStates.ChangeSpeedScale(float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Changes the speed of the game
+  example: []
+  syntax:
+    content: public static void ChangeSpeedScale(float SpeedScale)
+    parameters:
+    - id: SpeedScale
+      type: System.Single
+      description: ''
+    content.vb: Public Shared Sub ChangeSpeedScale(SpeedScale As Single)
+  overload: UndyneFight_Ex.GameStates.ChangeSpeedScale*
+  nameWithType.vb: GameStates.ChangeSpeedScale(Single)
+  fullName.vb: UndyneFight_Ex.GameStates.ChangeSpeedScale(Single)
+  name.vb: ChangeSpeedScale(Single)
+- uid: UndyneFight_Ex.GameStates.FileWriteText(System.String,System.String)
+  commentId: M:UndyneFight_Ex.GameStates.FileWriteText(System.String,System.String)
+  id: FileWriteText(System.String,System.String)
+  parent: UndyneFight_Ex.GameStates
+  langs:
+  - csharp
+  - vb
+  name: FileWriteText(string, string)
+  nameWithType: GameStates.FileWriteText(string, string)
+  fullName: UndyneFight_Ex.GameStates.FileWriteText(string, string)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Writes text onto an external file
+  example: []
+  syntax:
+    content: public static void FileWriteText(string name, string data = "")
+    parameters:
+    - id: name
+      type: System.String
+      description: The name of the file
+    - id: data
+      type: System.String
+      description: The text to write
+    content.vb: Public Shared Sub FileWriteText(name As String, data As String = "")
+  overload: UndyneFight_Ex.GameStates.FileWriteText*
+  nameWithType.vb: GameStates.FileWriteText(String, String)
+  fullName.vb: UndyneFight_Ex.GameStates.FileWriteText(String, String)
+  name.vb: FileWriteText(String, String)
+- uid: UndyneFight_Ex.GameStates.Broadcast(UndyneFight_Ex.GameEventArgs)
+  commentId: M:UndyneFight_Ex.GameStates.Broadcast(UndyneFight_Ex.GameEventArgs)
+  id: Broadcast(UndyneFight_Ex.GameEventArgs)
+  parent: UndyneFight_Ex.GameStates
+  langs:
+  - csharp
+  - vb
+  name: Broadcast(GameEventArgs)
+  nameWithType: GameStates.Broadcast(GameEventArgs)
+  fullName: UndyneFight_Ex.GameStates.Broadcast(UndyneFight_Ex.GameEventArgs)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Broadcast an event globally
+  example: []
+  syntax:
+    content: public static void Broadcast(GameEventArgs gameEventArgs)
+    parameters:
+    - id: gameEventArgs
+      type: UndyneFight_Ex.GameEventArgs
+      description: The event to broadcast
+    content.vb: Public Shared Sub Broadcast(gameEventArgs As GameEventArgs)
+  overload: UndyneFight_Ex.GameStates.Broadcast*
+- uid: UndyneFight_Ex.GameStates.DetectEvent(System.String)
+  commentId: M:UndyneFight_Ex.GameStates.DetectEvent(System.String)
+  id: DetectEvent(System.String)
+  parent: UndyneFight_Ex.GameStates
+  langs:
+  - csharp
+  - vb
+  name: DetectEvent(string)
+  nameWithType: GameStates.DetectEvent(string)
+  fullName: UndyneFight_Ex.GameStates.DetectEvent(string)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Detect whether an event (Made from <xref href="UndyneFight_Ex.GameStates.Broadcast(UndyneFight_Ex.GameEventArgs)" data-throw-if-not-resolved="false"></xref>) has been called
+  example: []
+  syntax:
+    content: public static List<GameEventArgs> DetectEvent(string ActionName)
+    parameters:
+    - id: ActionName
+      type: System.String
+      description: The name of the event to detect
+    return:
+      type: System.Collections.Generic.List{UndyneFight_Ex.GameEventArgs}
+      description: ''
+    content.vb: Public Shared Function DetectEvent(ActionName As String) As List(Of GameEventArgs)
+  overload: UndyneFight_Ex.GameStates.DetectEvent*
+  nameWithType.vb: GameStates.DetectEvent(String)
+  fullName.vb: UndyneFight_Ex.GameStates.DetectEvent(String)
+  name.vb: DetectEvent(String)
+- uid: UndyneFight_Ex.GameStates.LoadSongPreviews
+  commentId: M:UndyneFight_Ex.GameStates.LoadSongPreviews
+  id: LoadSongPreviews
+  parent: UndyneFight_Ex.GameStates
+  langs:
+  - csharp
+  - vb
+  name: LoadSongPreviews()
+  nameWithType: GameStates.LoadSongPreviews()
+  fullName: UndyneFight_Ex.GameStates.LoadSongPreviews()
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Loads the song previews of the charts
+  example: []
+  syntax:
+    content: public static void LoadSongPreviews()
+    content.vb: Public Shared Sub LoadSongPreviews()
+  overload: UndyneFight_Ex.GameStates.LoadSongPreviews*
+- uid: UndyneFight_Ex.GameStates.ResetRendering
+  commentId: M:UndyneFight_Ex.GameStates.ResetRendering
+  id: ResetRendering
+  parent: UndyneFight_Ex.GameStates
+  langs:
+  - csharp
+  - vb
+  name: ResetRendering()
+  nameWithType: GameStates.ResetRendering()
+  fullName: UndyneFight_Ex.GameStates.ResetRendering()
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Resets rendering settings
+  example: []
+  syntax:
+    content: public static void ResetRendering()
+    content.vb: Public Shared Sub ResetRendering()
+  overload: UndyneFight_Ex.GameStates.ResetRendering*
+- uid: UndyneFight_Ex.GameStates.WordsChanged
+  commentId: P:UndyneFight_Ex.GameStates.WordsChanged
+  id: WordsChanged
+  parent: UndyneFight_Ex.GameStates
+  langs:
+  - csharp
+  - vb
+  name: WordsChanged
+  nameWithType: GameStates.WordsChanged
+  fullName: UndyneFight_Ex.GameStates.WordsChanged
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Player has typed
+  example: []
+  syntax:
+    content: public static bool WordsChanged { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Shared ReadOnly Property WordsChanged As Boolean
+  overload: UndyneFight_Ex.GameStates.WordsChanged*
+- uid: UndyneFight_Ex.GameStates.CharInput
+  commentId: P:UndyneFight_Ex.GameStates.CharInput
+  id: CharInput
+  parent: UndyneFight_Ex.GameStates
+  langs:
+  - csharp
+  - vb
+  name: CharInput
+  nameWithType: GameStates.CharInput
+  fullName: UndyneFight_Ex.GameStates.CharInput
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: The character the player has inputted
+  example: []
+  syntax:
+    content: public static char CharInput { get; }
+    parameters: []
+    return:
+      type: System.Char
+    content.vb: Public Shared ReadOnly Property CharInput As Char
+  overload: UndyneFight_Ex.GameStates.CharInput*
+- uid: UndyneFight_Ex.GameStates.SavePath
+  commentId: P:UndyneFight_Ex.GameStates.SavePath
+  id: SavePath
+  parent: UndyneFight_Ex.GameStates
+  langs:
+  - csharp
+  - vb
+  name: SavePath
+  nameWithType: GameStates.SavePath
+  fullName: UndyneFight_Ex.GameStates.SavePath
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: The save path to your game
+  example: []
+  syntax:
+    content: public static string SavePath { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Shared ReadOnly Property SavePath As String
+  overload: UndyneFight_Ex.GameStates.SavePath*
+- uid: UndyneFight_Ex.GameStates.SpriteBatch
+  commentId: P:UndyneFight_Ex.GameStates.SpriteBatch
+  id: SpriteBatch
+  parent: UndyneFight_Ex.GameStates
+  langs:
+  - csharp
+  - vb
+  name: SpriteBatch
+  nameWithType: GameStates.SpriteBatch
+  fullName: UndyneFight_Ex.GameStates.SpriteBatch
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: The sprite batch of the game
+  example: []
+  syntax:
+    content: public static SpriteBatchEX SpriteBatch { get; }
+    parameters: []
+    return:
+      type: UndyneFight_Ex.SpriteBatchEX
+    content.vb: Public Shared ReadOnly Property SpriteBatch As SpriteBatchEX
+  overload: UndyneFight_Ex.GameStates.SpriteBatch*
+- uid: UndyneFight_Ex.GameStates.GameWindow
+  commentId: P:UndyneFight_Ex.GameStates.GameWindow
+  id: GameWindow
+  parent: UndyneFight_Ex.GameStates
+  langs:
+  - csharp
+  - vb
+  name: GameWindow
+  nameWithType: GameStates.GameWindow
+  fullName: UndyneFight_Ex.GameStates.GameWindow
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: The graphics device manager of the game
+  example: []
+  syntax:
+    content: public static GraphicsDeviceManager GameWindow { get; }
+    parameters: []
+    return:
+      type: Microsoft.Xna.Framework.GraphicsDeviceManager
+    content.vb: Public Shared ReadOnly Property GameWindow As GraphicsDeviceManager
+  overload: UndyneFight_Ex.GameStates.GameWindow*
+- uid: UndyneFight_Ex.GameStates.CurrentScene
+  commentId: P:UndyneFight_Ex.GameStates.CurrentScene
+  id: CurrentScene
+  parent: UndyneFight_Ex.GameStates
+  langs:
+  - csharp
+  - vb
+  name: CurrentScene
+  nameWithType: GameStates.CurrentScene
+  fullName: UndyneFight_Ex.GameStates.CurrentScene
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: The current scene of the game, i.e. <xref href="UndyneFight_Ex.Entities.SongFightingScene" data-throw-if-not-resolved="false"></xref>
+  example: []
+  syntax:
+    content: public static Scene CurrentScene { get; }
+    parameters: []
+    return:
+      type: UndyneFight_Ex.Scene
+    content.vb: Public Shared ReadOnly Property CurrentScene As Scene
+  overload: UndyneFight_Ex.GameStates.CurrentScene*
+- uid: UndyneFight_Ex.GameStates.difficulty
+  commentId: P:UndyneFight_Ex.GameStates.difficulty
+  id: difficulty
+  parent: UndyneFight_Ex.GameStates
+  langs:
+  - csharp
+  - vb
+  name: difficulty
+  nameWithType: GameStates.difficulty
+  fullName: UndyneFight_Ex.GameStates.difficulty
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: The difficulty of the current chart in <xref href="System.Int32" data-throw-if-not-resolved="false"></xref>, you can convert it back to <xref href="UndyneFight_Ex.SongSystem.Difficulty" data-throw-if-not-resolved="false"></xref>
+  example: []
+  syntax:
+    content: public static int difficulty { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Shared Property difficulty As Integer
+  overload: UndyneFight_Ex.GameStates.difficulty*
+- uid: UndyneFight_Ex.GameStates.ForceDisableTimeTips
+  commentId: P:UndyneFight_Ex.GameStates.ForceDisableTimeTips
+  id: ForceDisableTimeTips
+  parent: UndyneFight_Ex.GameStates
+  langs:
+  - csharp
+  - vb
+  name: ForceDisableTimeTips
+  nameWithType: GameStates.ForceDisableTimeTips
+  fullName: UndyneFight_Ex.GameStates.ForceDisableTimeTips
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Whether the time tips (Early, Late) are forcefully disabled
+  example: []
+  syntax:
+    content: public static bool ForceDisableTimeTips { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Property ForceDisableTimeTips As Boolean
+  overload: UndyneFight_Ex.GameStates.ForceDisableTimeTips*
+- uid: UndyneFight_Ex.GameStates.GameModeMemory
+  commentId: P:UndyneFight_Ex.GameStates.GameModeMemory
+  id: GameModeMemory
+  parent: UndyneFight_Ex.GameStates
+  langs:
+  - csharp
+  - vb
+  name: GameModeMemory
+  nameWithType: GameStates.GameModeMemory
+  fullName: UndyneFight_Ex.GameStates.GameModeMemory
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: The GameMode used in the previous chart
+  example: []
+  syntax:
+    content: public static GameMode GameModeMemory { get; set; }
+    parameters: []
+    return:
+      type: UndyneFight_Ex.SongSystem.GameMode
+    content.vb: Public Shared Property GameModeMemory As GameMode
+  overload: UndyneFight_Ex.GameStates.GameModeMemory*
+- uid: UndyneFight_Ex.GameStates.Aspect
+  commentId: P:UndyneFight_Ex.GameStates.Aspect
+  id: Aspect
+  parent: UndyneFight_Ex.GameStates
+  langs:
+  - csharp
+  - vb
+  name: Aspect
+  nameWithType: GameStates.Aspect
+  fullName: UndyneFight_Ex.GameStates.Aspect
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Aspect ratio of the game
+  example: []
+  syntax:
+    content: public static float Aspect { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Shared ReadOnly Property Aspect As Single
+  overload: UndyneFight_Ex.GameStates.Aspect*
+- uid: UndyneFight_Ex.GameStates.SurfaceScale
+  commentId: P:UndyneFight_Ex.GameStates.SurfaceScale
+  id: SurfaceScale
+  parent: UndyneFight_Ex.GameStates
+  langs:
+  - csharp
+  - vb
+  name: SurfaceScale
+  nameWithType: GameStates.SurfaceScale
+  fullName: UndyneFight_Ex.GameStates.SurfaceScale
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: The surface scale of the game
+  example: []
+  syntax:
+    content: public static float SurfaceScale { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Shared ReadOnly Property SurfaceScale As Single
+  overload: UndyneFight_Ex.GameStates.SurfaceScale*
+- uid: UndyneFight_Ex.GameStates.ResizeMatrix
+  commentId: P:UndyneFight_Ex.GameStates.ResizeMatrix
+  id: ResizeMatrix
+  parent: UndyneFight_Ex.GameStates
+  langs:
+  - csharp
+  - vb
+  name: ResizeMatrix
+  nameWithType: GameStates.ResizeMatrix
+  fullName: UndyneFight_Ex.GameStates.ResizeMatrix
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: The world matrix
+  example: []
+  syntax:
+    content: public static Matrix ResizeMatrix { get; }
+    parameters: []
+    return:
+      type: Microsoft.Xna.Framework.Matrix
+    content.vb: Public Shared ReadOnly Property ResizeMatrix As Matrix
+  overload: UndyneFight_Ex.GameStates.ResizeMatrix*
+- uid: UndyneFight_Ex.GameStates.CurrentWindow
+  commentId: P:UndyneFight_Ex.GameStates.CurrentWindow
+  id: CurrentWindow
+  parent: UndyneFight_Ex.GameStates
+  langs:
+  - csharp
+  - vb
+  name: CurrentWindow
+  nameWithType: GameStates.CurrentWindow
+  fullName: UndyneFight_Ex.GameStates.CurrentWindow
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: The current game window
+  example: []
+  syntax:
+    content: public static GameWindow CurrentWindow { get; }
+    parameters: []
+    return:
+      type: Microsoft.Xna.Framework.GameWindow
+    content.vb: Public Shared ReadOnly Property CurrentWindow As GameWindow
+  overload: UndyneFight_Ex.GameStates.CurrentWindow*
+- uid: UndyneFight_Ex.GameStates.GameOnFocus
+  commentId: P:UndyneFight_Ex.GameStates.GameOnFocus
+  id: GameOnFocus
+  parent: UndyneFight_Ex.GameStates
+  langs:
+  - csharp
+  - vb
+  name: GameOnFocus
+  nameWithType: GameStates.GameOnFocus
+  fullName: UndyneFight_Ex.GameStates.GameOnFocus
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Whether the game window is focused (Not tabbed out)
+  example: []
+  syntax:
+    content: public static bool GameOnFocus { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Shared ReadOnly Property GameOnFocus As Boolean
+  overload: UndyneFight_Ex.GameStates.GameOnFocus*
+references:
+- uid: UndyneFight_Ex
+  commentId: N:UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex
+  nameWithType: UndyneFight_Ex
+  fullName: UndyneFight_Ex
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Collections.Generic.Dictionary{System.String,UndyneFight_Ex.Audio}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,UndyneFight_Ex.Audio}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<string, Audio>
+  nameWithType: Dictionary<string, Audio>
+  fullName: System.Collections.Generic.Dictionary<string, UndyneFight_Ex.Audio>
+  nameWithType.vb: Dictionary(Of String, Audio)
+  fullName.vb: System.Collections.Generic.Dictionary(Of String, UndyneFight_Ex.Audio)
+  name.vb: Dictionary(Of String, Audio)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: UndyneFight_Ex.Audio
+    name: Audio
+    isExternal: true
+    href: UndyneFight_Ex.Audio.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: UndyneFight_Ex.Audio
+    name: Audio
+    isExternal: true
+    href: UndyneFight_Ex.Audio.html
+  - name: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: UndyneFight_Ex.GameObject.UpdateIn120
+  commentId: P:UndyneFight_Ex.GameObject.UpdateIn120
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_UpdateIn120
+  name: UpdateIn120
+  nameWithType: GameObject.UpdateIn120
+  fullName: UndyneFight_Ex.GameObject.UpdateIn120
+- uid: UndyneFight_Ex.GameStates.IsKeyPressed*
+  commentId: Overload:UndyneFight_Ex.GameStates.IsKeyPressed
+  isExternal: true
+  href: UndyneFight_Ex.GameStates.html#UndyneFight_Ex_GameStates_IsKeyPressed_UndyneFight_Ex_InputIdentity_
+  name: IsKeyPressed
+  nameWithType: GameStates.IsKeyPressed
+  fullName: UndyneFight_Ex.GameStates.IsKeyPressed
+- uid: UndyneFight_Ex.InputIdentity
+  commentId: T:UndyneFight_Ex.InputIdentity
+  parent: UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.InputIdentity.html
+  name: InputIdentity
+  nameWithType: InputIdentity
+  fullName: UndyneFight_Ex.InputIdentity
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: UndyneFight_Ex.GameObject
+  commentId: T:UndyneFight_Ex.GameObject
+  parent: UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html
+  name: GameObject
+  nameWithType: GameObject
+  fullName: UndyneFight_Ex.GameObject
+- uid: UndyneFight_Ex.GameStates.IsKeyPressed120f*
+  commentId: Overload:UndyneFight_Ex.GameStates.IsKeyPressed120f
+  isExternal: true
+  href: UndyneFight_Ex.GameStates.html#UndyneFight_Ex_GameStates_IsKeyPressed120f_UndyneFight_Ex_InputIdentity_
+  name: IsKeyPressed120f
+  nameWithType: GameStates.IsKeyPressed120f
+  fullName: UndyneFight_Ex.GameStates.IsKeyPressed120f
+- uid: UndyneFight_Ex.GameStates.IsKeyDown*
+  commentId: Overload:UndyneFight_Ex.GameStates.IsKeyDown
+  isExternal: true
+  href: UndyneFight_Ex.GameStates.html#UndyneFight_Ex_GameStates_IsKeyDown_UndyneFight_Ex_InputIdentity_
+  name: IsKeyDown
+  nameWithType: GameStates.IsKeyDown
+  fullName: UndyneFight_Ex.GameStates.IsKeyDown
+- uid: Microsoft.Xna.Framework.Input.Keys
+  commentId: T:Microsoft.Xna.Framework.Input.Keys
+  parent: Microsoft.Xna.Framework.Input
+  isExternal: true
+  name: Keys
+  nameWithType: Keys
+  fullName: Microsoft.Xna.Framework.Input.Keys
+- uid: Microsoft.Xna.Framework.Input
+  commentId: N:Microsoft.Xna.Framework.Input
+  isExternal: true
+  name: Microsoft.Xna.Framework.Input
+  nameWithType: Microsoft.Xna.Framework.Input
+  fullName: Microsoft.Xna.Framework.Input
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework.Input
+    name: Input
+    isExternal: true
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework.Input
+    name: Input
+    isExternal: true
+- uid: UndyneFight_Ex.GameStates.InstanceCreate*
+  commentId: Overload:UndyneFight_Ex.GameStates.InstanceCreate
+  isExternal: true
+  href: UndyneFight_Ex.GameStates.html#UndyneFight_Ex_GameStates_InstanceCreate_UndyneFight_Ex_GameObject_
+  name: InstanceCreate
+  nameWithType: GameStates.InstanceCreate
+  fullName: UndyneFight_Ex.GameStates.InstanceCreate
+- uid: UndyneFight_Ex.GameStates.InstanceExists*
+  commentId: Overload:UndyneFight_Ex.GameStates.InstanceExists
+  isExternal: true
+  href: UndyneFight_Ex.GameStates.html#UndyneFight_Ex_GameStates_InstanceExists_System_Type_
+  name: InstanceExists
+  nameWithType: GameStates.InstanceExists
+  fullName: UndyneFight_Ex.GameStates.InstanceExists
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: UndyneFight_Ex.GameStates.InstanceDestroy*
+  commentId: Overload:UndyneFight_Ex.GameStates.InstanceDestroy
+  isExternal: true
+  href: UndyneFight_Ex.GameStates.html#UndyneFight_Ex_GameStates_InstanceDestroy_System_Type_
+  name: InstanceDestroy
+  nameWithType: GameStates.InstanceDestroy
+  fullName: UndyneFight_Ex.GameStates.InstanceDestroy
+- uid: UndyneFight_Ex.GameMain.gameTime
+  commentId: F:UndyneFight_Ex.GameMain.gameTime
+  isExternal: true
+  name: gameTime
+  nameWithType: GameMain.gameTime
+  fullName: UndyneFight_Ex.GameMain.gameTime
+- uid: UndyneFight_Ex.GameStates.ResetTime*
+  commentId: Overload:UndyneFight_Ex.GameStates.ResetTime
+  isExternal: true
+  href: UndyneFight_Ex.GameStates.html#UndyneFight_Ex_GameStates_ResetTime
+  name: ResetTime
+  nameWithType: GameStates.ResetTime
+  fullName: UndyneFight_Ex.GameStates.ResetTime
+- uid: UndyneFight_Ex.GameStates.SelectBattle*
+  commentId: Overload:UndyneFight_Ex.GameStates.SelectBattle
+  isExternal: true
+  href: UndyneFight_Ex.GameStates.html#UndyneFight_Ex_GameStates_SelectBattle_UndyneFight_Ex_Fight_IClassicFight_UndyneFight_Ex_SongSystem_GameMode_
+  name: SelectBattle
+  nameWithType: GameStates.SelectBattle
+  fullName: UndyneFight_Ex.GameStates.SelectBattle
+- uid: UndyneFight_Ex.Fight.IClassicFight
+  commentId: T:UndyneFight_Ex.Fight.IClassicFight
+  parent: UndyneFight_Ex.Fight
+  isExternal: true
+  href: UndyneFight_Ex.Fight.IClassicFight.html
+  name: IClassicFight
+  nameWithType: IClassicFight
+  fullName: UndyneFight_Ex.Fight.IClassicFight
+- uid: UndyneFight_Ex.SongSystem.GameMode
+  commentId: T:UndyneFight_Ex.SongSystem.GameMode
+  parent: UndyneFight_Ex.SongSystem
+  isExternal: true
+  href: UndyneFight_Ex.SongSystem.GameMode.html
+  name: GameMode
+  nameWithType: GameMode
+  fullName: UndyneFight_Ex.SongSystem.GameMode
+- uid: UndyneFight_Ex.Fight
+  commentId: N:UndyneFight_Ex.Fight
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex.Fight
+  nameWithType: UndyneFight_Ex.Fight
+  fullName: UndyneFight_Ex.Fight
+  spec.csharp:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight
+    name: Fight
+    isExternal: true
+    href: UndyneFight_Ex.Fight.html
+  spec.vb:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight
+    name: Fight
+    isExternal: true
+    href: UndyneFight_Ex.Fight.html
+- uid: UndyneFight_Ex.SongSystem
+  commentId: N:UndyneFight_Ex.SongSystem
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex.SongSystem
+  nameWithType: UndyneFight_Ex.SongSystem
+  fullName: UndyneFight_Ex.SongSystem
+  spec.csharp:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.SongSystem
+    name: SongSystem
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.html
+  spec.vb:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.SongSystem
+    name: SongSystem
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.html
+- uid: UndyneFight_Ex.GameStates.StartSong*
+  commentId: Overload:UndyneFight_Ex.GameStates.StartSong
+  isExternal: true
+  href: UndyneFight_Ex.GameStates.html#UndyneFight_Ex_GameStates_StartSong_UndyneFight_Ex_SongSystem_IWaveSet_Microsoft_Xna_Framework_Graphics_Texture2D_System_String_System_Int32_UndyneFight_Ex_SongSystem_JudgementState_UndyneFight_Ex_SongSystem_GameMode_
+  name: StartSong
+  nameWithType: GameStates.StartSong
+  fullName: UndyneFight_Ex.GameStates.StartSong
+- uid: UndyneFight_Ex.SongSystem.IWaveSet
+  commentId: T:UndyneFight_Ex.SongSystem.IWaveSet
+  parent: UndyneFight_Ex.SongSystem
+  isExternal: true
+  href: UndyneFight_Ex.SongSystem.IWaveSet.html
+  name: IWaveSet
+  nameWithType: IWaveSet
+  fullName: UndyneFight_Ex.SongSystem.IWaveSet
+- uid: Microsoft.Xna.Framework.Graphics.Texture2D
+  commentId: T:Microsoft.Xna.Framework.Graphics.Texture2D
+  parent: Microsoft.Xna.Framework.Graphics
+  isExternal: true
+  name: Texture2D
+  nameWithType: Texture2D
+  fullName: Microsoft.Xna.Framework.Graphics.Texture2D
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: UndyneFight_Ex.SongSystem.JudgementState
+  commentId: T:UndyneFight_Ex.SongSystem.JudgementState
+  parent: UndyneFight_Ex.SongSystem
+  isExternal: true
+  href: UndyneFight_Ex.SongSystem.JudgementState.html
+  name: JudgementState
+  nameWithType: JudgementState
+  fullName: UndyneFight_Ex.SongSystem.JudgementState
+- uid: Microsoft.Xna.Framework.Graphics
+  commentId: N:Microsoft.Xna.Framework.Graphics
+  isExternal: true
+  name: Microsoft.Xna.Framework.Graphics
+  nameWithType: Microsoft.Xna.Framework.Graphics
+  fullName: Microsoft.Xna.Framework.Graphics
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework.Graphics
+    name: Graphics
+    isExternal: true
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework.Graphics
+    name: Graphics
+    isExternal: true
+- uid: UndyneFight_Ex.Entities.SongFightingScene.SceneParams
+  commentId: T:UndyneFight_Ex.Entities.SongFightingScene.SceneParams
+  parent: UndyneFight_Ex.Entities
+  isExternal: true
+  href: UndyneFight_Ex.Entities.SongFightingScene.html
+  name: SongFightingScene.SceneParams
+  nameWithType: SongFightingScene.SceneParams
+  fullName: UndyneFight_Ex.Entities.SongFightingScene.SceneParams
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entities.SongFightingScene
+    name: SongFightingScene
+    isExternal: true
+    href: UndyneFight_Ex.Entities.SongFightingScene.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities.SongFightingScene.SceneParams
+    name: SceneParams
+    isExternal: true
+    href: UndyneFight_Ex.Entities.SongFightingScene.SceneParams.html
+  spec.vb:
+  - uid: UndyneFight_Ex.Entities.SongFightingScene
+    name: SongFightingScene
+    isExternal: true
+    href: UndyneFight_Ex.Entities.SongFightingScene.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities.SongFightingScene.SceneParams
+    name: SceneParams
+    isExternal: true
+    href: UndyneFight_Ex.Entities.SongFightingScene.SceneParams.html
+- uid: UndyneFight_Ex.Entities
+  commentId: N:UndyneFight_Ex.Entities
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex.Entities
+  nameWithType: UndyneFight_Ex.Entities
+  fullName: UndyneFight_Ex.Entities
+  spec.csharp:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities
+    name: Entities
+    isExternal: true
+    href: UndyneFight_Ex.Entities.html
+  spec.vb:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities
+    name: Entities
+    isExternal: true
+    href: UndyneFight_Ex.Entities.html
+- uid: UndyneFight_Ex.GameStates.ResetScene*
+  commentId: Overload:UndyneFight_Ex.GameStates.ResetScene
+  isExternal: true
+  href: UndyneFight_Ex.GameStates.html#UndyneFight_Ex_GameStates_ResetScene_UndyneFight_Ex_Scene_
+  name: ResetScene
+  nameWithType: GameStates.ResetScene
+  fullName: UndyneFight_Ex.GameStates.ResetScene
+- uid: UndyneFight_Ex.Scene
+  commentId: T:UndyneFight_Ex.Scene
+  parent: UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.Scene.html
+  name: Scene
+  nameWithType: Scene
+  fullName: UndyneFight_Ex.Scene
+- uid: UndyneFight_Ex.GameStates.ResetFightState*
+  commentId: Overload:UndyneFight_Ex.GameStates.ResetFightState
+  isExternal: true
+  href: UndyneFight_Ex.GameStates.html#UndyneFight_Ex_GameStates_ResetFightState
+  name: ResetFightState
+  nameWithType: GameStates.ResetFightState
+  fullName: UndyneFight_Ex.GameStates.ResetFightState
+- uid: UndyneFight_Ex.GameStates.EndFight*
+  commentId: Overload:UndyneFight_Ex.GameStates.EndFight
+  isExternal: true
+  href: UndyneFight_Ex.GameStates.html#UndyneFight_Ex_GameStates_EndFight
+  name: EndFight
+  nameWithType: GameStates.EndFight
+  fullName: UndyneFight_Ex.GameStates.EndFight
+- uid: UndyneFight_Ex.GameStates.ChangeSpeedScale*
+  commentId: Overload:UndyneFight_Ex.GameStates.ChangeSpeedScale
+  isExternal: true
+  href: UndyneFight_Ex.GameStates.html#UndyneFight_Ex_GameStates_ChangeSpeedScale_System_Single_
+  name: ChangeSpeedScale
+  nameWithType: GameStates.ChangeSpeedScale
+  fullName: UndyneFight_Ex.GameStates.ChangeSpeedScale
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: UndyneFight_Ex.GameStates.FileWriteText*
+  commentId: Overload:UndyneFight_Ex.GameStates.FileWriteText
+  isExternal: true
+  href: UndyneFight_Ex.GameStates.html#UndyneFight_Ex_GameStates_FileWriteText_System_String_System_String_
+  name: FileWriteText
+  nameWithType: GameStates.FileWriteText
+  fullName: UndyneFight_Ex.GameStates.FileWriteText
+- uid: UndyneFight_Ex.GameStates.Broadcast*
+  commentId: Overload:UndyneFight_Ex.GameStates.Broadcast
+  isExternal: true
+  href: UndyneFight_Ex.GameStates.html#UndyneFight_Ex_GameStates_Broadcast_UndyneFight_Ex_GameEventArgs_
+  name: Broadcast
+  nameWithType: GameStates.Broadcast
+  fullName: UndyneFight_Ex.GameStates.Broadcast
+- uid: UndyneFight_Ex.GameEventArgs
+  commentId: T:UndyneFight_Ex.GameEventArgs
+  parent: UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.GameEventArgs.html
+  name: GameEventArgs
+  nameWithType: GameEventArgs
+  fullName: UndyneFight_Ex.GameEventArgs
+- uid: UndyneFight_Ex.GameStates.Broadcast(UndyneFight_Ex.GameEventArgs)
+  commentId: M:UndyneFight_Ex.GameStates.Broadcast(UndyneFight_Ex.GameEventArgs)
+  isExternal: true
+  href: UndyneFight_Ex.GameStates.html#UndyneFight_Ex_GameStates_Broadcast_UndyneFight_Ex_GameEventArgs_
+  name: Broadcast(GameEventArgs)
+  nameWithType: GameStates.Broadcast(GameEventArgs)
+  fullName: UndyneFight_Ex.GameStates.Broadcast(UndyneFight_Ex.GameEventArgs)
+  spec.csharp:
+  - uid: UndyneFight_Ex.GameStates.Broadcast(UndyneFight_Ex.GameEventArgs)
+    name: Broadcast
+    isExternal: true
+    href: UndyneFight_Ex.GameStates.html#UndyneFight_Ex_GameStates_Broadcast_UndyneFight_Ex_GameEventArgs_
+  - name: (
+  - uid: UndyneFight_Ex.GameEventArgs
+    name: GameEventArgs
+    isExternal: true
+    href: UndyneFight_Ex.GameEventArgs.html
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.GameStates.Broadcast(UndyneFight_Ex.GameEventArgs)
+    name: Broadcast
+    isExternal: true
+    href: UndyneFight_Ex.GameStates.html#UndyneFight_Ex_GameStates_Broadcast_UndyneFight_Ex_GameEventArgs_
+  - name: (
+  - uid: UndyneFight_Ex.GameEventArgs
+    name: GameEventArgs
+    isExternal: true
+    href: UndyneFight_Ex.GameEventArgs.html
+  - name: )
+- uid: UndyneFight_Ex.GameStates.DetectEvent*
+  commentId: Overload:UndyneFight_Ex.GameStates.DetectEvent
+  isExternal: true
+  href: UndyneFight_Ex.GameStates.html#UndyneFight_Ex_GameStates_DetectEvent_System_String_
+  name: DetectEvent
+  nameWithType: GameStates.DetectEvent
+  fullName: UndyneFight_Ex.GameStates.DetectEvent
+- uid: System.Collections.Generic.List{UndyneFight_Ex.GameEventArgs}
+  commentId: T:System.Collections.Generic.List{UndyneFight_Ex.GameEventArgs}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<GameEventArgs>
+  nameWithType: List<GameEventArgs>
+  fullName: System.Collections.Generic.List<UndyneFight_Ex.GameEventArgs>
+  nameWithType.vb: List(Of GameEventArgs)
+  fullName.vb: System.Collections.Generic.List(Of UndyneFight_Ex.GameEventArgs)
+  name.vb: List(Of GameEventArgs)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: UndyneFight_Ex.GameEventArgs
+    name: GameEventArgs
+    isExternal: true
+    href: UndyneFight_Ex.GameEventArgs.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: UndyneFight_Ex.GameEventArgs
+    name: GameEventArgs
+    isExternal: true
+    href: UndyneFight_Ex.GameEventArgs.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: UndyneFight_Ex.GameStates.LoadSongPreviews*
+  commentId: Overload:UndyneFight_Ex.GameStates.LoadSongPreviews
+  isExternal: true
+  href: UndyneFight_Ex.GameStates.html#UndyneFight_Ex_GameStates_LoadSongPreviews
+  name: LoadSongPreviews
+  nameWithType: GameStates.LoadSongPreviews
+  fullName: UndyneFight_Ex.GameStates.LoadSongPreviews
+- uid: UndyneFight_Ex.GameStates.ResetRendering*
+  commentId: Overload:UndyneFight_Ex.GameStates.ResetRendering
+  isExternal: true
+  href: UndyneFight_Ex.GameStates.html#UndyneFight_Ex_GameStates_ResetRendering
+  name: ResetRendering
+  nameWithType: GameStates.ResetRendering
+  fullName: UndyneFight_Ex.GameStates.ResetRendering
+- uid: UndyneFight_Ex.GameStates.WordsChanged*
+  commentId: Overload:UndyneFight_Ex.GameStates.WordsChanged
+  isExternal: true
+  href: UndyneFight_Ex.GameStates.html#UndyneFight_Ex_GameStates_WordsChanged
+  name: WordsChanged
+  nameWithType: GameStates.WordsChanged
+  fullName: UndyneFight_Ex.GameStates.WordsChanged
+- uid: UndyneFight_Ex.GameStates.CharInput*
+  commentId: Overload:UndyneFight_Ex.GameStates.CharInput
+  isExternal: true
+  href: UndyneFight_Ex.GameStates.html#UndyneFight_Ex_GameStates_CharInput
+  name: CharInput
+  nameWithType: GameStates.CharInput
+  fullName: UndyneFight_Ex.GameStates.CharInput
+- uid: System.Char
+  commentId: T:System.Char
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.char
+  name: char
+  nameWithType: char
+  fullName: char
+  nameWithType.vb: Char
+  fullName.vb: Char
+  name.vb: Char
+- uid: UndyneFight_Ex.GameStates.SavePath*
+  commentId: Overload:UndyneFight_Ex.GameStates.SavePath
+  isExternal: true
+  href: UndyneFight_Ex.GameStates.html#UndyneFight_Ex_GameStates_SavePath
+  name: SavePath
+  nameWithType: GameStates.SavePath
+  fullName: UndyneFight_Ex.GameStates.SavePath
+- uid: UndyneFight_Ex.GameStates.SpriteBatch*
+  commentId: Overload:UndyneFight_Ex.GameStates.SpriteBatch
+  isExternal: true
+  href: UndyneFight_Ex.GameStates.html#UndyneFight_Ex_GameStates_SpriteBatch
+  name: SpriteBatch
+  nameWithType: GameStates.SpriteBatch
+  fullName: UndyneFight_Ex.GameStates.SpriteBatch
+- uid: UndyneFight_Ex.SpriteBatchEX
+  commentId: T:UndyneFight_Ex.SpriteBatchEX
+  parent: UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.SpriteBatchEX.html
+  name: SpriteBatchEX
+  nameWithType: SpriteBatchEX
+  fullName: UndyneFight_Ex.SpriteBatchEX
+- uid: UndyneFight_Ex.GameStates.GameWindow*
+  commentId: Overload:UndyneFight_Ex.GameStates.GameWindow
+  isExternal: true
+  href: UndyneFight_Ex.GameStates.html#UndyneFight_Ex_GameStates_GameWindow
+  name: GameWindow
+  nameWithType: GameStates.GameWindow
+  fullName: UndyneFight_Ex.GameStates.GameWindow
+- uid: Microsoft.Xna.Framework.GraphicsDeviceManager
+  commentId: T:Microsoft.Xna.Framework.GraphicsDeviceManager
+  parent: Microsoft.Xna.Framework
+  isExternal: true
+  name: GraphicsDeviceManager
+  nameWithType: GraphicsDeviceManager
+  fullName: Microsoft.Xna.Framework.GraphicsDeviceManager
+- uid: Microsoft.Xna.Framework
+  commentId: N:Microsoft.Xna.Framework
+  isExternal: true
+  name: Microsoft.Xna.Framework
+  nameWithType: Microsoft.Xna.Framework
+  fullName: Microsoft.Xna.Framework
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+- uid: UndyneFight_Ex.Entities.SongFightingScene
+  commentId: T:UndyneFight_Ex.Entities.SongFightingScene
+  parent: UndyneFight_Ex.Entities
+  isExternal: true
+  href: UndyneFight_Ex.Entities.SongFightingScene.html
+  name: SongFightingScene
+  nameWithType: SongFightingScene
+  fullName: UndyneFight_Ex.Entities.SongFightingScene
+- uid: UndyneFight_Ex.GameStates.CurrentScene*
+  commentId: Overload:UndyneFight_Ex.GameStates.CurrentScene
+  isExternal: true
+  href: UndyneFight_Ex.GameStates.html#UndyneFight_Ex_GameStates_CurrentScene
+  name: CurrentScene
+  nameWithType: GameStates.CurrentScene
+  fullName: UndyneFight_Ex.GameStates.CurrentScene
+- uid: UndyneFight_Ex.SongSystem.Difficulty
+  commentId: T:UndyneFight_Ex.SongSystem.Difficulty
+  parent: UndyneFight_Ex.SongSystem
+  isExternal: true
+  href: UndyneFight_Ex.SongSystem.Difficulty.html
+  name: Difficulty
+  nameWithType: Difficulty
+  fullName: UndyneFight_Ex.SongSystem.Difficulty
+- uid: UndyneFight_Ex.GameStates.difficulty*
+  commentId: Overload:UndyneFight_Ex.GameStates.difficulty
+  isExternal: true
+  href: UndyneFight_Ex.GameStates.html#UndyneFight_Ex_GameStates_difficulty
+  name: difficulty
+  nameWithType: GameStates.difficulty
+  fullName: UndyneFight_Ex.GameStates.difficulty
+- uid: UndyneFight_Ex.GameStates.ForceDisableTimeTips*
+  commentId: Overload:UndyneFight_Ex.GameStates.ForceDisableTimeTips
+  isExternal: true
+  href: UndyneFight_Ex.GameStates.html#UndyneFight_Ex_GameStates_ForceDisableTimeTips
+  name: ForceDisableTimeTips
+  nameWithType: GameStates.ForceDisableTimeTips
+  fullName: UndyneFight_Ex.GameStates.ForceDisableTimeTips
+- uid: UndyneFight_Ex.GameStates.GameModeMemory*
+  commentId: Overload:UndyneFight_Ex.GameStates.GameModeMemory
+  isExternal: true
+  href: UndyneFight_Ex.GameStates.html#UndyneFight_Ex_GameStates_GameModeMemory
+  name: GameModeMemory
+  nameWithType: GameStates.GameModeMemory
+  fullName: UndyneFight_Ex.GameStates.GameModeMemory
+- uid: UndyneFight_Ex.GameStates.Aspect*
+  commentId: Overload:UndyneFight_Ex.GameStates.Aspect
+  isExternal: true
+  href: UndyneFight_Ex.GameStates.html#UndyneFight_Ex_GameStates_Aspect
+  name: Aspect
+  nameWithType: GameStates.Aspect
+  fullName: UndyneFight_Ex.GameStates.Aspect
+- uid: UndyneFight_Ex.GameStates.SurfaceScale*
+  commentId: Overload:UndyneFight_Ex.GameStates.SurfaceScale
+  isExternal: true
+  href: UndyneFight_Ex.GameStates.html#UndyneFight_Ex_GameStates_SurfaceScale
+  name: SurfaceScale
+  nameWithType: GameStates.SurfaceScale
+  fullName: UndyneFight_Ex.GameStates.SurfaceScale
+- uid: UndyneFight_Ex.GameStates.ResizeMatrix*
+  commentId: Overload:UndyneFight_Ex.GameStates.ResizeMatrix
+  isExternal: true
+  href: UndyneFight_Ex.GameStates.html#UndyneFight_Ex_GameStates_ResizeMatrix
+  name: ResizeMatrix
+  nameWithType: GameStates.ResizeMatrix
+  fullName: UndyneFight_Ex.GameStates.ResizeMatrix
+- uid: Microsoft.Xna.Framework.Matrix
+  commentId: T:Microsoft.Xna.Framework.Matrix
+  parent: Microsoft.Xna.Framework
+  isExternal: true
+  name: Matrix
+  nameWithType: Matrix
+  fullName: Microsoft.Xna.Framework.Matrix
+- uid: UndyneFight_Ex.GameStates.CurrentWindow*
+  commentId: Overload:UndyneFight_Ex.GameStates.CurrentWindow
+  isExternal: true
+  href: UndyneFight_Ex.GameStates.html#UndyneFight_Ex_GameStates_CurrentWindow
+  name: CurrentWindow
+  nameWithType: GameStates.CurrentWindow
+  fullName: UndyneFight_Ex.GameStates.CurrentWindow
+- uid: Microsoft.Xna.Framework.GameWindow
+  commentId: T:Microsoft.Xna.Framework.GameWindow
+  parent: Microsoft.Xna.Framework
+  isExternal: true
+  name: GameWindow
+  nameWithType: GameWindow
+  fullName: Microsoft.Xna.Framework.GameWindow
+- uid: UndyneFight_Ex.GameStates.GameOnFocus*
+  commentId: Overload:UndyneFight_Ex.GameStates.GameOnFocus
+  isExternal: true
+  href: UndyneFight_Ex.GameStates.html#UndyneFight_Ex_GameStates_GameOnFocus
+  name: GameOnFocus
+  nameWithType: GameStates.GameOnFocus
+  fullName: UndyneFight_Ex.GameStates.GameOnFocus

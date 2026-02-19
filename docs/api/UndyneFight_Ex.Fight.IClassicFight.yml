@@ -1,0 +1,199 @@
+### YamlMime:ManagedReference
+items:
+- uid: UndyneFight_Ex.Fight.IClassicFight
+  commentId: T:UndyneFight_Ex.Fight.IClassicFight
+  id: IClassicFight
+  parent: UndyneFight_Ex.Fight
+  children:
+  - UndyneFight_Ex.Fight.IClassicFight.FightName
+  - UndyneFight_Ex.Fight.IClassicFight.GameEnd
+  - UndyneFight_Ex.Fight.IClassicFight.RoundChanged
+  - UndyneFight_Ex.Fight.IClassicFight.Start
+  - UndyneFight_Ex.Fight.IClassicFight.Update
+  langs:
+  - csharp
+  - vb
+  name: IClassicFight
+  nameWithType: IClassicFight
+  fullName: UndyneFight_Ex.Fight.IClassicFight
+  type: Interface
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  syntax:
+    content: public interface IClassicFight
+    content.vb: Public Interface IClassicFight
+- uid: UndyneFight_Ex.Fight.IClassicFight.Start
+  commentId: M:UndyneFight_Ex.Fight.IClassicFight.Start
+  id: Start
+  parent: UndyneFight_Ex.Fight.IClassicFight
+  langs:
+  - csharp
+  - vb
+  name: Start()
+  nameWithType: IClassicFight.Start()
+  fullName: UndyneFight_Ex.Fight.IClassicFight.Start()
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  syntax:
+    content: void Start()
+    content.vb: Sub Start()
+  overload: UndyneFight_Ex.Fight.IClassicFight.Start*
+- uid: UndyneFight_Ex.Fight.IClassicFight.RoundChanged
+  commentId: M:UndyneFight_Ex.Fight.IClassicFight.RoundChanged
+  id: RoundChanged
+  parent: UndyneFight_Ex.Fight.IClassicFight
+  langs:
+  - csharp
+  - vb
+  name: RoundChanged()
+  nameWithType: IClassicFight.RoundChanged()
+  fullName: UndyneFight_Ex.Fight.IClassicFight.RoundChanged()
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  syntax:
+    content: void RoundChanged()
+    content.vb: Sub RoundChanged()
+  overload: UndyneFight_Ex.Fight.IClassicFight.RoundChanged*
+- uid: UndyneFight_Ex.Fight.IClassicFight.Update
+  commentId: M:UndyneFight_Ex.Fight.IClassicFight.Update
+  id: Update
+  parent: UndyneFight_Ex.Fight.IClassicFight
+  langs:
+  - csharp
+  - vb
+  name: Update()
+  nameWithType: IClassicFight.Update()
+  fullName: UndyneFight_Ex.Fight.IClassicFight.Update()
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  syntax:
+    content: void Update()
+    content.vb: Sub Update()
+  overload: UndyneFight_Ex.Fight.IClassicFight.Update*
+- uid: UndyneFight_Ex.Fight.IClassicFight.GameEnd
+  commentId: M:UndyneFight_Ex.Fight.IClassicFight.GameEnd
+  id: GameEnd
+  parent: UndyneFight_Ex.Fight.IClassicFight
+  langs:
+  - csharp
+  - vb
+  name: GameEnd()
+  nameWithType: IClassicFight.GameEnd()
+  fullName: UndyneFight_Ex.Fight.IClassicFight.GameEnd()
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  syntax:
+    content: void GameEnd()
+    content.vb: Sub GameEnd()
+  overload: UndyneFight_Ex.Fight.IClassicFight.GameEnd*
+- uid: UndyneFight_Ex.Fight.IClassicFight.FightName
+  commentId: P:UndyneFight_Ex.Fight.IClassicFight.FightName
+  id: FightName
+  parent: UndyneFight_Ex.Fight.IClassicFight
+  langs:
+  - csharp
+  - vb
+  name: FightName
+  nameWithType: IClassicFight.FightName
+  fullName: UndyneFight_Ex.Fight.IClassicFight.FightName
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  syntax:
+    content: string FightName { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: ReadOnly Property FightName As String
+  overload: UndyneFight_Ex.Fight.IClassicFight.FightName*
+references:
+- uid: UndyneFight_Ex.Fight
+  commentId: N:UndyneFight_Ex.Fight
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex.Fight
+  nameWithType: UndyneFight_Ex.Fight
+  fullName: UndyneFight_Ex.Fight
+  spec.csharp:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight
+    name: Fight
+    isExternal: true
+    href: UndyneFight_Ex.Fight.html
+  spec.vb:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight
+    name: Fight
+    isExternal: true
+    href: UndyneFight_Ex.Fight.html
+- uid: UndyneFight_Ex.Fight.IClassicFight.Start*
+  commentId: Overload:UndyneFight_Ex.Fight.IClassicFight.Start
+  isExternal: true
+  href: UndyneFight_Ex.Fight.IClassicFight.html#UndyneFight_Ex_Fight_IClassicFight_Start
+  name: Start
+  nameWithType: IClassicFight.Start
+  fullName: UndyneFight_Ex.Fight.IClassicFight.Start
+- uid: UndyneFight_Ex.Fight.IClassicFight.RoundChanged*
+  commentId: Overload:UndyneFight_Ex.Fight.IClassicFight.RoundChanged
+  isExternal: true
+  href: UndyneFight_Ex.Fight.IClassicFight.html#UndyneFight_Ex_Fight_IClassicFight_RoundChanged
+  name: RoundChanged
+  nameWithType: IClassicFight.RoundChanged
+  fullName: UndyneFight_Ex.Fight.IClassicFight.RoundChanged
+- uid: UndyneFight_Ex.Fight.IClassicFight.Update*
+  commentId: Overload:UndyneFight_Ex.Fight.IClassicFight.Update
+  isExternal: true
+  href: UndyneFight_Ex.Fight.IClassicFight.html#UndyneFight_Ex_Fight_IClassicFight_Update
+  name: Update
+  nameWithType: IClassicFight.Update
+  fullName: UndyneFight_Ex.Fight.IClassicFight.Update
+- uid: UndyneFight_Ex.Fight.IClassicFight.GameEnd*
+  commentId: Overload:UndyneFight_Ex.Fight.IClassicFight.GameEnd
+  isExternal: true
+  href: UndyneFight_Ex.Fight.IClassicFight.html#UndyneFight_Ex_Fight_IClassicFight_GameEnd
+  name: GameEnd
+  nameWithType: IClassicFight.GameEnd
+  fullName: UndyneFight_Ex.Fight.IClassicFight.GameEnd
+- uid: UndyneFight_Ex.Fight.IClassicFight.FightName*
+  commentId: Overload:UndyneFight_Ex.Fight.IClassicFight.FightName
+  isExternal: true
+  href: UndyneFight_Ex.Fight.IClassicFight.html#UndyneFight_Ex_Fight_IClassicFight_FightName
+  name: FightName
+  nameWithType: IClassicFight.FightName
+  fullName: UndyneFight_Ex.Fight.IClassicFight.FightName
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

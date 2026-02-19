@@ -1,0 +1,247 @@
+### YamlMime:ManagedReference
+items:
+- uid: UndyneFight_Ex.SongSystem.JudgementState
+  commentId: T:UndyneFight_Ex.SongSystem.JudgementState
+  id: JudgementState
+  parent: UndyneFight_Ex.SongSystem
+  children:
+  - UndyneFight_Ex.SongSystem.JudgementState.Balanced
+  - UndyneFight_Ex.SongSystem.JudgementState.Lenient
+  - UndyneFight_Ex.SongSystem.JudgementState.Strict
+  langs:
+  - csharp
+  - vb
+  name: JudgementState
+  nameWithType: JudgementState
+  fullName: UndyneFight_Ex.SongSystem.JudgementState
+  type: Enum
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.SongSystem
+  syntax:
+    content: public enum JudgementState
+    content.vb: Public Enum JudgementState
+  extensionMethods:
+  - UndyneFight_Ex.SongSystem.JudgementState.UndyneFight_Ex.MathUtil.InRange``1(UndyneFight_Ex.SongSystem.JudgementState,UndyneFight_Ex.SongSystem.JudgementState)
+- uid: UndyneFight_Ex.SongSystem.JudgementState.Lenient
+  commentId: F:UndyneFight_Ex.SongSystem.JudgementState.Lenient
+  id: Lenient
+  parent: UndyneFight_Ex.SongSystem.JudgementState
+  langs:
+  - csharp
+  - vb
+  name: Lenient
+  nameWithType: JudgementState.Lenient
+  fullName: UndyneFight_Ex.SongSystem.JudgementState.Lenient
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.SongSystem
+  syntax:
+    content: Lenient = 1
+    return:
+      type: UndyneFight_Ex.SongSystem.JudgementState
+- uid: UndyneFight_Ex.SongSystem.JudgementState.Balanced
+  commentId: F:UndyneFight_Ex.SongSystem.JudgementState.Balanced
+  id: Balanced
+  parent: UndyneFight_Ex.SongSystem.JudgementState
+  langs:
+  - csharp
+  - vb
+  name: Balanced
+  nameWithType: JudgementState.Balanced
+  fullName: UndyneFight_Ex.SongSystem.JudgementState.Balanced
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.SongSystem
+  syntax:
+    content: Balanced = 2
+    return:
+      type: UndyneFight_Ex.SongSystem.JudgementState
+- uid: UndyneFight_Ex.SongSystem.JudgementState.Strict
+  commentId: F:UndyneFight_Ex.SongSystem.JudgementState.Strict
+  id: Strict
+  parent: UndyneFight_Ex.SongSystem.JudgementState
+  langs:
+  - csharp
+  - vb
+  name: Strict
+  nameWithType: JudgementState.Strict
+  fullName: UndyneFight_Ex.SongSystem.JudgementState.Strict
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.SongSystem
+  syntax:
+    content: Strict = 3
+    return:
+      type: UndyneFight_Ex.SongSystem.JudgementState
+references:
+- uid: UndyneFight_Ex.SongSystem
+  commentId: N:UndyneFight_Ex.SongSystem
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex.SongSystem
+  nameWithType: UndyneFight_Ex.SongSystem
+  fullName: UndyneFight_Ex.SongSystem
+  spec.csharp:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.SongSystem
+    name: SongSystem
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.html
+  spec.vb:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.SongSystem
+    name: SongSystem
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.html
+- uid: UndyneFight_Ex.SongSystem.JudgementState.UndyneFight_Ex.MathUtil.InRange``1(UndyneFight_Ex.SongSystem.JudgementState,UndyneFight_Ex.SongSystem.JudgementState)
+  commentId: M:UndyneFight_Ex.MathUtil.InRange``1(``0,``0,``0)
+  parent: UndyneFight_Ex.MathUtil
+  definition: UndyneFight_Ex.MathUtil.InRange``1(``0,``0,``0)
+  href: UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_InRange__1___0___0___0_
+  name: InRange<JudgementState>(JudgementState, JudgementState, JudgementState)
+  nameWithType: MathUtil.InRange<JudgementState>(JudgementState, JudgementState, JudgementState)
+  fullName: UndyneFight_Ex.MathUtil.InRange<UndyneFight_Ex.SongSystem.JudgementState>(UndyneFight_Ex.SongSystem.JudgementState, UndyneFight_Ex.SongSystem.JudgementState, UndyneFight_Ex.SongSystem.JudgementState)
+  nameWithType.vb: MathUtil.InRange(Of JudgementState)(JudgementState, JudgementState, JudgementState)
+  fullName.vb: UndyneFight_Ex.MathUtil.InRange(Of UndyneFight_Ex.SongSystem.JudgementState)(UndyneFight_Ex.SongSystem.JudgementState, UndyneFight_Ex.SongSystem.JudgementState, UndyneFight_Ex.SongSystem.JudgementState)
+  name.vb: InRange(Of JudgementState)(JudgementState, JudgementState, JudgementState)
+  spec.csharp:
+  - uid: UndyneFight_Ex.MathUtil.InRange``1(UndyneFight_Ex.SongSystem.JudgementState,UndyneFight_Ex.SongSystem.JudgementState,UndyneFight_Ex.SongSystem.JudgementState)
+    name: InRange
+    isExternal: true
+    href: UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_InRange__1___0___0___0_
+  - name: <
+  - uid: UndyneFight_Ex.SongSystem.JudgementState
+    name: JudgementState
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.JudgementState.html
+  - name: '>'
+  - name: (
+  - uid: UndyneFight_Ex.SongSystem.JudgementState
+    name: JudgementState
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.JudgementState.html
+  - name: ','
+  - name: " "
+  - uid: UndyneFight_Ex.SongSystem.JudgementState
+    name: JudgementState
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.JudgementState.html
+  - name: ','
+  - name: " "
+  - uid: UndyneFight_Ex.SongSystem.JudgementState
+    name: JudgementState
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.JudgementState.html
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.MathUtil.InRange``1(UndyneFight_Ex.SongSystem.JudgementState,UndyneFight_Ex.SongSystem.JudgementState,UndyneFight_Ex.SongSystem.JudgementState)
+    name: InRange
+    isExternal: true
+    href: UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_InRange__1___0___0___0_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: UndyneFight_Ex.SongSystem.JudgementState
+    name: JudgementState
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.JudgementState.html
+  - name: )
+  - name: (
+  - uid: UndyneFight_Ex.SongSystem.JudgementState
+    name: JudgementState
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.JudgementState.html
+  - name: ','
+  - name: " "
+  - uid: UndyneFight_Ex.SongSystem.JudgementState
+    name: JudgementState
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.JudgementState.html
+  - name: ','
+  - name: " "
+  - uid: UndyneFight_Ex.SongSystem.JudgementState
+    name: JudgementState
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.JudgementState.html
+  - name: )
+- uid: UndyneFight_Ex.MathUtil.InRange``1(``0,``0,``0)
+  commentId: M:UndyneFight_Ex.MathUtil.InRange``1(``0,``0,``0)
+  isExternal: true
+  href: UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_InRange__1___0___0___0_
+  name: InRange<T>(T, T, T)
+  nameWithType: MathUtil.InRange<T>(T, T, T)
+  fullName: UndyneFight_Ex.MathUtil.InRange<T>(T, T, T)
+  nameWithType.vb: MathUtil.InRange(Of T)(T, T, T)
+  fullName.vb: UndyneFight_Ex.MathUtil.InRange(Of T)(T, T, T)
+  name.vb: InRange(Of T)(T, T, T)
+  spec.csharp:
+  - uid: UndyneFight_Ex.MathUtil.InRange``1(``0,``0,``0)
+    name: InRange
+    isExternal: true
+    href: UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_InRange__1___0___0___0_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.MathUtil.InRange``1(``0,``0,``0)
+    name: InRange
+    isExternal: true
+    href: UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_InRange__1___0___0___0_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+- uid: UndyneFight_Ex.MathUtil
+  commentId: T:UndyneFight_Ex.MathUtil
+  parent: UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.MathUtil.html
+  name: MathUtil
+  nameWithType: MathUtil
+  fullName: UndyneFight_Ex.MathUtil
+- uid: UndyneFight_Ex
+  commentId: N:UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex
+  nameWithType: UndyneFight_Ex
+  fullName: UndyneFight_Ex
+- uid: UndyneFight_Ex.SongSystem.JudgementState
+  commentId: T:UndyneFight_Ex.SongSystem.JudgementState
+  parent: UndyneFight_Ex.SongSystem
+  isExternal: true
+  href: UndyneFight_Ex.SongSystem.JudgementState.html
+  name: JudgementState
+  nameWithType: JudgementState
+  fullName: UndyneFight_Ex.SongSystem.JudgementState

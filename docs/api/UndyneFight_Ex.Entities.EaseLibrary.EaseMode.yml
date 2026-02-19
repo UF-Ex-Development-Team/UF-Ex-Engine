@@ -1,0 +1,296 @@
+### YamlMime:ManagedReference
+items:
+- uid: UndyneFight_Ex.Entities.EaseLibrary.EaseMode
+  commentId: T:UndyneFight_Ex.Entities.EaseLibrary.EaseMode
+  id: EaseLibrary.EaseMode
+  parent: UndyneFight_Ex.Entities
+  children:
+  - UndyneFight_Ex.Entities.EaseLibrary.EaseMode.In
+  - UndyneFight_Ex.Entities.EaseLibrary.EaseMode.InOut
+  - UndyneFight_Ex.Entities.EaseLibrary.EaseMode.Out
+  - UndyneFight_Ex.Entities.EaseLibrary.EaseMode.OutIn
+  langs:
+  - csharp
+  - vb
+  name: EaseLibrary.EaseMode
+  nameWithType: EaseLibrary.EaseMode
+  fullName: UndyneFight_Ex.Entities.EaseLibrary.EaseMode
+  type: Enum
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Modes of easing
+  example: []
+  syntax:
+    content: public enum EaseLibrary.EaseMode
+    content.vb: Public Enum EaseLibrary.EaseMode
+  extensionMethods:
+  - UndyneFight_Ex.Entities.EaseLibrary.EaseMode.UndyneFight_Ex.MathUtil.InRange``1(UndyneFight_Ex.Entities.EaseLibrary.EaseMode,UndyneFight_Ex.Entities.EaseLibrary.EaseMode)
+- uid: UndyneFight_Ex.Entities.EaseLibrary.EaseMode.In
+  commentId: F:UndyneFight_Ex.Entities.EaseLibrary.EaseMode.In
+  id: In
+  parent: UndyneFight_Ex.Entities.EaseLibrary.EaseMode
+  langs:
+  - csharp
+  - vb
+  name: In
+  nameWithType: EaseLibrary.EaseMode.In
+  fullName: UndyneFight_Ex.Entities.EaseLibrary.EaseMode.In
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: The easing is slower at the start and faster at the end
+  example: []
+  syntax:
+    content: In = 0
+    return:
+      type: UndyneFight_Ex.Entities.EaseLibrary.EaseMode
+- uid: UndyneFight_Ex.Entities.EaseLibrary.EaseMode.Out
+  commentId: F:UndyneFight_Ex.Entities.EaseLibrary.EaseMode.Out
+  id: Out
+  parent: UndyneFight_Ex.Entities.EaseLibrary.EaseMode
+  langs:
+  - csharp
+  - vb
+  name: Out
+  nameWithType: EaseLibrary.EaseMode.Out
+  fullName: UndyneFight_Ex.Entities.EaseLibrary.EaseMode.Out
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: The easing is faster at the start and slower at the end
+  example: []
+  syntax:
+    content: Out = 1
+    return:
+      type: UndyneFight_Ex.Entities.EaseLibrary.EaseMode
+- uid: UndyneFight_Ex.Entities.EaseLibrary.EaseMode.InOut
+  commentId: F:UndyneFight_Ex.Entities.EaseLibrary.EaseMode.InOut
+  id: InOut
+  parent: UndyneFight_Ex.Entities.EaseLibrary.EaseMode
+  langs:
+  - csharp
+  - vb
+  name: InOut
+  nameWithType: EaseLibrary.EaseMode.InOut
+  fullName: UndyneFight_Ex.Entities.EaseLibrary.EaseMode.InOut
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: The easing is slower at the start and end, and faster in the middle
+  example: []
+  syntax:
+    content: InOut = 2
+    return:
+      type: UndyneFight_Ex.Entities.EaseLibrary.EaseMode
+- uid: UndyneFight_Ex.Entities.EaseLibrary.EaseMode.OutIn
+  commentId: F:UndyneFight_Ex.Entities.EaseLibrary.EaseMode.OutIn
+  id: OutIn
+  parent: UndyneFight_Ex.Entities.EaseLibrary.EaseMode
+  langs:
+  - csharp
+  - vb
+  name: OutIn
+  nameWithType: EaseLibrary.EaseMode.OutIn
+  fullName: UndyneFight_Ex.Entities.EaseLibrary.EaseMode.OutIn
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: The easing is faster at the start and end, and slower in the middle
+  example: []
+  syntax:
+    content: OutIn = 3
+    return:
+      type: UndyneFight_Ex.Entities.EaseLibrary.EaseMode
+references:
+- uid: UndyneFight_Ex.Entities
+  commentId: N:UndyneFight_Ex.Entities
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex.Entities
+  nameWithType: UndyneFight_Ex.Entities
+  fullName: UndyneFight_Ex.Entities
+  spec.csharp:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities
+    name: Entities
+    isExternal: true
+    href: UndyneFight_Ex.Entities.html
+  spec.vb:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities
+    name: Entities
+    isExternal: true
+    href: UndyneFight_Ex.Entities.html
+- uid: UndyneFight_Ex.Entities.EaseLibrary.EaseMode.UndyneFight_Ex.MathUtil.InRange``1(UndyneFight_Ex.Entities.EaseLibrary.EaseMode,UndyneFight_Ex.Entities.EaseLibrary.EaseMode)
+  commentId: M:UndyneFight_Ex.MathUtil.InRange``1(``0,``0,``0)
+  parent: UndyneFight_Ex.MathUtil
+  definition: UndyneFight_Ex.MathUtil.InRange``1(``0,``0,``0)
+  href: UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_InRange__1___0___0___0_
+  name: InRange<EaseMode>(EaseMode, EaseMode, EaseMode)
+  nameWithType: MathUtil.InRange<EaseLibrary.EaseMode>(EaseLibrary.EaseMode, EaseLibrary.EaseMode, EaseLibrary.EaseMode)
+  fullName: UndyneFight_Ex.MathUtil.InRange<UndyneFight_Ex.Entities.EaseLibrary.EaseMode>(UndyneFight_Ex.Entities.EaseLibrary.EaseMode, UndyneFight_Ex.Entities.EaseLibrary.EaseMode, UndyneFight_Ex.Entities.EaseLibrary.EaseMode)
+  nameWithType.vb: MathUtil.InRange(Of EaseLibrary.EaseMode)(EaseLibrary.EaseMode, EaseLibrary.EaseMode, EaseLibrary.EaseMode)
+  fullName.vb: UndyneFight_Ex.MathUtil.InRange(Of UndyneFight_Ex.Entities.EaseLibrary.EaseMode)(UndyneFight_Ex.Entities.EaseLibrary.EaseMode, UndyneFight_Ex.Entities.EaseLibrary.EaseMode, UndyneFight_Ex.Entities.EaseLibrary.EaseMode)
+  name.vb: InRange(Of EaseMode)(EaseMode, EaseMode, EaseMode)
+  spec.csharp:
+  - uid: UndyneFight_Ex.MathUtil.InRange``1(UndyneFight_Ex.Entities.EaseLibrary.EaseMode,UndyneFight_Ex.Entities.EaseLibrary.EaseMode,UndyneFight_Ex.Entities.EaseLibrary.EaseMode)
+    name: InRange
+    isExternal: true
+    href: UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_InRange__1___0___0___0_
+  - name: <
+  - uid: UndyneFight_Ex.Entities.EaseLibrary.EaseMode
+    name: EaseMode
+    isExternal: true
+    href: UndyneFight_Ex.Entities.EaseLibrary.EaseMode.html
+  - name: '>'
+  - name: (
+  - uid: UndyneFight_Ex.Entities.EaseLibrary.EaseMode
+    name: EaseMode
+    isExternal: true
+    href: UndyneFight_Ex.Entities.EaseLibrary.EaseMode.html
+  - name: ','
+  - name: " "
+  - uid: UndyneFight_Ex.Entities.EaseLibrary.EaseMode
+    name: EaseMode
+    isExternal: true
+    href: UndyneFight_Ex.Entities.EaseLibrary.EaseMode.html
+  - name: ','
+  - name: " "
+  - uid: UndyneFight_Ex.Entities.EaseLibrary.EaseMode
+    name: EaseMode
+    isExternal: true
+    href: UndyneFight_Ex.Entities.EaseLibrary.EaseMode.html
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.MathUtil.InRange``1(UndyneFight_Ex.Entities.EaseLibrary.EaseMode,UndyneFight_Ex.Entities.EaseLibrary.EaseMode,UndyneFight_Ex.Entities.EaseLibrary.EaseMode)
+    name: InRange
+    isExternal: true
+    href: UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_InRange__1___0___0___0_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: UndyneFight_Ex.Entities.EaseLibrary.EaseMode
+    name: EaseMode
+    isExternal: true
+    href: UndyneFight_Ex.Entities.EaseLibrary.EaseMode.html
+  - name: )
+  - name: (
+  - uid: UndyneFight_Ex.Entities.EaseLibrary.EaseMode
+    name: EaseMode
+    isExternal: true
+    href: UndyneFight_Ex.Entities.EaseLibrary.EaseMode.html
+  - name: ','
+  - name: " "
+  - uid: UndyneFight_Ex.Entities.EaseLibrary.EaseMode
+    name: EaseMode
+    isExternal: true
+    href: UndyneFight_Ex.Entities.EaseLibrary.EaseMode.html
+  - name: ','
+  - name: " "
+  - uid: UndyneFight_Ex.Entities.EaseLibrary.EaseMode
+    name: EaseMode
+    isExternal: true
+    href: UndyneFight_Ex.Entities.EaseLibrary.EaseMode.html
+  - name: )
+- uid: UndyneFight_Ex.MathUtil.InRange``1(``0,``0,``0)
+  commentId: M:UndyneFight_Ex.MathUtil.InRange``1(``0,``0,``0)
+  isExternal: true
+  href: UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_InRange__1___0___0___0_
+  name: InRange<T>(T, T, T)
+  nameWithType: MathUtil.InRange<T>(T, T, T)
+  fullName: UndyneFight_Ex.MathUtil.InRange<T>(T, T, T)
+  nameWithType.vb: MathUtil.InRange(Of T)(T, T, T)
+  fullName.vb: UndyneFight_Ex.MathUtil.InRange(Of T)(T, T, T)
+  name.vb: InRange(Of T)(T, T, T)
+  spec.csharp:
+  - uid: UndyneFight_Ex.MathUtil.InRange``1(``0,``0,``0)
+    name: InRange
+    isExternal: true
+    href: UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_InRange__1___0___0___0_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.MathUtil.InRange``1(``0,``0,``0)
+    name: InRange
+    isExternal: true
+    href: UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_InRange__1___0___0___0_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+- uid: UndyneFight_Ex.MathUtil
+  commentId: T:UndyneFight_Ex.MathUtil
+  parent: UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.MathUtil.html
+  name: MathUtil
+  nameWithType: MathUtil
+  fullName: UndyneFight_Ex.MathUtil
+- uid: UndyneFight_Ex
+  commentId: N:UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex
+  nameWithType: UndyneFight_Ex
+  fullName: UndyneFight_Ex
+- uid: UndyneFight_Ex.Entities.EaseLibrary.EaseMode
+  commentId: T:UndyneFight_Ex.Entities.EaseLibrary.EaseMode
+  parent: UndyneFight_Ex.Entities
+  isExternal: true
+  href: UndyneFight_Ex.Entities.EaseLibrary.html
+  name: EaseLibrary.EaseMode
+  nameWithType: EaseLibrary.EaseMode
+  fullName: UndyneFight_Ex.Entities.EaseLibrary.EaseMode
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entities.EaseLibrary
+    name: EaseLibrary
+    isExternal: true
+    href: UndyneFight_Ex.Entities.EaseLibrary.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities.EaseLibrary.EaseMode
+    name: EaseMode
+    isExternal: true
+    href: UndyneFight_Ex.Entities.EaseLibrary.EaseMode.html
+  spec.vb:
+  - uid: UndyneFight_Ex.Entities.EaseLibrary
+    name: EaseLibrary
+    isExternal: true
+    href: UndyneFight_Ex.Entities.EaseLibrary.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities.EaseLibrary.EaseMode
+    name: EaseMode
+    isExternal: true
+    href: UndyneFight_Ex.Entities.EaseLibrary.EaseMode.html

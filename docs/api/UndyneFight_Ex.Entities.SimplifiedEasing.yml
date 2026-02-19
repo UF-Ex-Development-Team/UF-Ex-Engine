@@ -1,0 +1,3054 @@
+### YamlMime:ManagedReference
+items:
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing
+  commentId: T:UndyneFight_Ex.Entities.SimplifiedEasing
+  id: SimplifiedEasing
+  parent: UndyneFight_Ex.Entities
+  children:
+  - UndyneFight_Ex.Entities.SimplifiedEasing.Accelerating(System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  - UndyneFight_Ex.Entities.SimplifiedEasing.Accelerating(System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  - UndyneFight_Ex.Entities.SimplifiedEasing.Accelerating(System.Single,System.Single,System.Single)
+  - UndyneFight_Ex.Entities.SimplifiedEasing.Accelerating(System.Single,System.Single,System.Single,System.Single)
+  - UndyneFight_Ex.Entities.SimplifiedEasing.Add(UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2},Microsoft.Xna.Framework.Vector2)
+  - UndyneFight_Ex.Entities.SimplifiedEasing.Add(UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2},UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2})
+  - UndyneFight_Ex.Entities.SimplifiedEasing.Add(UndyneFight_Ex.Entities.EaseUnit{System.Single},System.Single)
+  - UndyneFight_Ex.Entities.SimplifiedEasing.Add(UndyneFight_Ex.Entities.EaseUnit{System.Single},UndyneFight_Ex.Entities.EaseUnit{System.Single})
+  - UndyneFight_Ex.Entities.SimplifiedEasing.Alternate(System.Single,UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2},UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}[])
+  - UndyneFight_Ex.Entities.SimplifiedEasing.Alternate(System.Single,UndyneFight_Ex.Entities.EaseUnit{System.Single},UndyneFight_Ex.Entities.EaseUnit{System.Single}[])
+  - UndyneFight_Ex.Entities.SimplifiedEasing.Combine(UndyneFight_Ex.Entities.EaseUnit{System.Single},UndyneFight_Ex.Entities.EaseUnit{System.Single})
+  - UndyneFight_Ex.Entities.SimplifiedEasing.Copy(UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2},System.Int32)
+  - UndyneFight_Ex.Entities.SimplifiedEasing.Copy(UndyneFight_Ex.Entities.EaseUnit{System.Single},System.Int32)
+  - UndyneFight_Ex.Entities.SimplifiedEasing.EaseIn(System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  - UndyneFight_Ex.Entities.SimplifiedEasing.EaseIn(System.Single,Microsoft.Xna.Framework.Vector2,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  - UndyneFight_Ex.Entities.SimplifiedEasing.EaseIn(System.Single,System.Single,System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  - UndyneFight_Ex.Entities.SimplifiedEasing.EaseIn(System.Single,System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  - UndyneFight_Ex.Entities.SimplifiedEasing.EaseInOut(System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState,System.Nullable{UndyneFight_Ex.Entities.SimplifiedEasing.EaseState})
+  - UndyneFight_Ex.Entities.SimplifiedEasing.EaseInOut(System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  - UndyneFight_Ex.Entities.SimplifiedEasing.EaseInOut(System.Single,System.Single,System.Single,System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState,System.Nullable{UndyneFight_Ex.Entities.SimplifiedEasing.EaseState})
+  - UndyneFight_Ex.Entities.SimplifiedEasing.EaseInOut(System.Single,System.Single,System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  - UndyneFight_Ex.Entities.SimplifiedEasing.EaseOut(System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  - UndyneFight_Ex.Entities.SimplifiedEasing.EaseOut(System.Single,Microsoft.Xna.Framework.Vector2,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  - UndyneFight_Ex.Entities.SimplifiedEasing.EaseOut(System.Single,System.Single,System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  - UndyneFight_Ex.Entities.SimplifiedEasing.EaseOut(System.Single,System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  - UndyneFight_Ex.Entities.SimplifiedEasing.EaseOutIn(System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState,System.Nullable{UndyneFight_Ex.Entities.SimplifiedEasing.EaseState})
+  - UndyneFight_Ex.Entities.SimplifiedEasing.EaseOutIn(System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  - UndyneFight_Ex.Entities.SimplifiedEasing.EaseOutIn(System.Single,System.Single,System.Single,System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState,System.Nullable{UndyneFight_Ex.Entities.SimplifiedEasing.EaseState})
+  - UndyneFight_Ex.Entities.SimplifiedEasing.EaseOutIn(System.Single,System.Single,System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  - UndyneFight_Ex.Entities.SimplifiedEasing.InfLinear(Microsoft.Xna.Framework.Vector2)
+  - UndyneFight_Ex.Entities.SimplifiedEasing.InfLinear(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  - UndyneFight_Ex.Entities.SimplifiedEasing.InfLinear(System.Single,System.Single)
+  - UndyneFight_Ex.Entities.SimplifiedEasing.Linear(System.Single,Microsoft.Xna.Framework.Vector2)
+  - UndyneFight_Ex.Entities.SimplifiedEasing.Linear(System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  - UndyneFight_Ex.Entities.SimplifiedEasing.Linear(System.Single,System.Single)
+  - UndyneFight_Ex.Entities.SimplifiedEasing.Linear(System.Single,System.Single,System.Single)
+  - UndyneFight_Ex.Entities.SimplifiedEasing.LinkEase(System.Boolean,UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}[])
+  - UndyneFight_Ex.Entities.SimplifiedEasing.LinkEase(System.Boolean,UndyneFight_Ex.Entities.EaseUnit{System.Single}[])
+  - UndyneFight_Ex.Entities.SimplifiedEasing.LinkEase(UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}[])
+  - UndyneFight_Ex.Entities.SimplifiedEasing.LinkEase(UndyneFight_Ex.Entities.EaseUnit{System.Single}[])
+  - UndyneFight_Ex.Entities.SimplifiedEasing.Polar(UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2},System.Single)
+  - UndyneFight_Ex.Entities.SimplifiedEasing.Polar(UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2},UndyneFight_Ex.Entities.EaseUnit{System.Single})
+  - UndyneFight_Ex.Entities.SimplifiedEasing.Polar(UndyneFight_Ex.Entities.EaseUnit{System.Single},UndyneFight_Ex.Entities.EaseUnit{System.Single})
+  - UndyneFight_Ex.Entities.SimplifiedEasing.RunEase(System.Action{Microsoft.Xna.Framework.Vector2},System.Boolean,UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}[])
+  - UndyneFight_Ex.Entities.SimplifiedEasing.RunEase(System.Action{Microsoft.Xna.Framework.Vector2},UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}[])
+  - UndyneFight_Ex.Entities.SimplifiedEasing.RunEase(System.Action{System.Single},System.Boolean,UndyneFight_Ex.Entities.EaseUnit{System.Single}[])
+  - UndyneFight_Ex.Entities.SimplifiedEasing.RunEase(System.Action{System.Single},UndyneFight_Ex.Entities.EaseUnit{System.Single}[])
+  - UndyneFight_Ex.Entities.SimplifiedEasing.Scale(UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2},System.Single)
+  - UndyneFight_Ex.Entities.SimplifiedEasing.Scale(UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2},UndyneFight_Ex.Entities.EaseUnit{System.Single})
+  - UndyneFight_Ex.Entities.SimplifiedEasing.Scale(UndyneFight_Ex.Entities.EaseUnit{System.Single},System.Single)
+  - UndyneFight_Ex.Entities.SimplifiedEasing.Scale(UndyneFight_Ex.Entities.EaseUnit{System.Single},UndyneFight_Ex.Entities.EaseUnit{System.Single})
+  - UndyneFight_Ex.Entities.SimplifiedEasing.SineWave(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,System.Single,System.Single)
+  - UndyneFight_Ex.Entities.SimplifiedEasing.SineWave(Microsoft.Xna.Framework.Vector2,System.Single,System.Single,System.Single)
+  - UndyneFight_Ex.Entities.SimplifiedEasing.SineWave(System.Single,System.Single,System.Single,System.Single)
+  - UndyneFight_Ex.Entities.SimplifiedEasing.Stable(System.Single)
+  - UndyneFight_Ex.Entities.SimplifiedEasing.Stable(System.Single,Microsoft.Xna.Framework.Vector2)
+  - UndyneFight_Ex.Entities.SimplifiedEasing.Stable(System.Single,System.Single)
+  - UndyneFight_Ex.Entities.SimplifiedEasing.Stable(System.Single,System.Single,System.Single)
+  langs:
+  - csharp
+  - vb
+  name: SimplifiedEasing
+  nameWithType: SimplifiedEasing
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing
+  type: Class
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Simplified easing functions
+  example: []
+  syntax:
+    content: public static class SimplifiedEasing
+    content.vb: Public Module SimplifiedEasing
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.RunEase(System.Action{Microsoft.Xna.Framework.Vector2},System.Boolean,UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}[])
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.RunEase(System.Action{Microsoft.Xna.Framework.Vector2},System.Boolean,UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}[])
+  id: RunEase(System.Action{Microsoft.Xna.Framework.Vector2},System.Boolean,UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}[])
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: RunEase(Action<Vector2>, bool, params EaseUnit<Vector2>[])
+  nameWithType: SimplifiedEasing.RunEase(Action<Vector2>, bool, params EaseUnit<Vector2>[])
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.RunEase(System.Action<Microsoft.Xna.Framework.Vector2>, bool, params UndyneFight_Ex.Entities.EaseUnit<Microsoft.Xna.Framework.Vector2>[])
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Runs an action with a <xref href="Microsoft.Xna.Framework.Vector2" data-throw-if-not-resolved="false"></xref> as it's variable with the given easing functions
+  example: []
+  syntax:
+    content: public static void RunEase(Action<Vector2> action, bool isAdjust, params EaseUnit<Vector2>[] funcs)
+    parameters:
+    - id: action
+      type: System.Action{Microsoft.Xna.Framework.Vector2}
+      description: The action to apply the easing to
+    - id: isAdjust
+      type: System.Boolean
+      description: Whether the value will automatically start from the previous easing result
+    - id: funcs
+      type: UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}[]
+      description: The easing functions
+    content.vb: Public Shared Sub RunEase(action As Action(Of Vector2), isAdjust As Boolean, ParamArray funcs As EaseUnit(Of Vector2)())
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.RunEase*
+  nameWithType.vb: SimplifiedEasing.RunEase(Action(Of Vector2), Boolean, ParamArray EaseUnit(Of Vector2)())
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.RunEase(System.Action(Of Microsoft.Xna.Framework.Vector2), Boolean, ParamArray UndyneFight_Ex.Entities.EaseUnit(Of Microsoft.Xna.Framework.Vector2)())
+  name.vb: RunEase(Action(Of Vector2), Boolean, ParamArray EaseUnit(Of Vector2)())
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.RunEase(System.Action{Microsoft.Xna.Framework.Vector2},UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}[])
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.RunEase(System.Action{Microsoft.Xna.Framework.Vector2},UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}[])
+  id: RunEase(System.Action{Microsoft.Xna.Framework.Vector2},UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}[])
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: RunEase(Action<Vector2>, params EaseUnit<Vector2>[])
+  nameWithType: SimplifiedEasing.RunEase(Action<Vector2>, params EaseUnit<Vector2>[])
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.RunEase(System.Action<Microsoft.Xna.Framework.Vector2>, params UndyneFight_Ex.Entities.EaseUnit<Microsoft.Xna.Framework.Vector2>[])
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Runs an action with a <xref href="Microsoft.Xna.Framework.Vector2" data-throw-if-not-resolved="false"></xref> as it's variable with the given easing functions
+  example: []
+  syntax:
+    content: public static void RunEase(Action<Vector2> action, params EaseUnit<Vector2>[] funcs)
+    parameters:
+    - id: action
+      type: System.Action{Microsoft.Xna.Framework.Vector2}
+      description: The action to apply the easing to
+    - id: funcs
+      type: UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}[]
+      description: The easing functions
+    content.vb: Public Shared Sub RunEase(action As Action(Of Vector2), ParamArray funcs As EaseUnit(Of Vector2)())
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.RunEase*
+  nameWithType.vb: SimplifiedEasing.RunEase(Action(Of Vector2), ParamArray EaseUnit(Of Vector2)())
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.RunEase(System.Action(Of Microsoft.Xna.Framework.Vector2), ParamArray UndyneFight_Ex.Entities.EaseUnit(Of Microsoft.Xna.Framework.Vector2)())
+  name.vb: RunEase(Action(Of Vector2), ParamArray EaseUnit(Of Vector2)())
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.RunEase(System.Action{System.Single},System.Boolean,UndyneFight_Ex.Entities.EaseUnit{System.Single}[])
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.RunEase(System.Action{System.Single},System.Boolean,UndyneFight_Ex.Entities.EaseUnit{System.Single}[])
+  id: RunEase(System.Action{System.Single},System.Boolean,UndyneFight_Ex.Entities.EaseUnit{System.Single}[])
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: RunEase(Action<float>, bool, params EaseUnit<float>[])
+  nameWithType: SimplifiedEasing.RunEase(Action<float>, bool, params EaseUnit<float>[])
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.RunEase(System.Action<float>, bool, params UndyneFight_Ex.Entities.EaseUnit<float>[])
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Runs an action with a <xref href="System.Single" data-throw-if-not-resolved="false"></xref> as it's variable with the given easing functions
+  example: []
+  syntax:
+    content: public static void RunEase(Action<float> action, bool isAdjust, params EaseUnit<float>[] funcs)
+    parameters:
+    - id: action
+      type: System.Action{System.Single}
+      description: The action to apply the easing to
+    - id: isAdjust
+      type: System.Boolean
+      description: Whether the value will automatically start from the previous easing result
+    - id: funcs
+      type: UndyneFight_Ex.Entities.EaseUnit{System.Single}[]
+      description: The easing functions
+    content.vb: Public Shared Sub RunEase(action As Action(Of Single), isAdjust As Boolean, ParamArray funcs As EaseUnit(Of Single)())
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.RunEase*
+  nameWithType.vb: SimplifiedEasing.RunEase(Action(Of Single), Boolean, ParamArray EaseUnit(Of Single)())
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.RunEase(System.Action(Of Single), Boolean, ParamArray UndyneFight_Ex.Entities.EaseUnit(Of Single)())
+  name.vb: RunEase(Action(Of Single), Boolean, ParamArray EaseUnit(Of Single)())
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.RunEase(System.Action{System.Single},UndyneFight_Ex.Entities.EaseUnit{System.Single}[])
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.RunEase(System.Action{System.Single},UndyneFight_Ex.Entities.EaseUnit{System.Single}[])
+  id: RunEase(System.Action{System.Single},UndyneFight_Ex.Entities.EaseUnit{System.Single}[])
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: RunEase(Action<float>, params EaseUnit<float>[])
+  nameWithType: SimplifiedEasing.RunEase(Action<float>, params EaseUnit<float>[])
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.RunEase(System.Action<float>, params UndyneFight_Ex.Entities.EaseUnit<float>[])
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Runs an action with a <xref href="System.Single" data-throw-if-not-resolved="false"></xref> as it's variable with the given easing functions
+  example: []
+  syntax:
+    content: public static void RunEase(Action<float> action, params EaseUnit<float>[] funcs)
+    parameters:
+    - id: action
+      type: System.Action{System.Single}
+      description: The action to apply the easing to
+    - id: funcs
+      type: UndyneFight_Ex.Entities.EaseUnit{System.Single}[]
+      description: The easing functions
+    content.vb: Public Shared Sub RunEase(action As Action(Of Single), ParamArray funcs As EaseUnit(Of Single)())
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.RunEase*
+  nameWithType.vb: SimplifiedEasing.RunEase(Action(Of Single), ParamArray EaseUnit(Of Single)())
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.RunEase(System.Action(Of Single), ParamArray UndyneFight_Ex.Entities.EaseUnit(Of Single)())
+  name.vb: RunEase(Action(Of Single), ParamArray EaseUnit(Of Single)())
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.LinkEase(System.Boolean,UndyneFight_Ex.Entities.EaseUnit{System.Single}[])
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.LinkEase(System.Boolean,UndyneFight_Ex.Entities.EaseUnit{System.Single}[])
+  id: LinkEase(System.Boolean,UndyneFight_Ex.Entities.EaseUnit{System.Single}[])
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: LinkEase(bool, params EaseUnit<float>[])
+  nameWithType: SimplifiedEasing.LinkEase(bool, params EaseUnit<float>[])
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.LinkEase(bool, params UndyneFight_Ex.Entities.EaseUnit<float>[])
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Links multiple easing functions into an <xref href="UndyneFight_Ex.Entities.EaseUnit%601" data-throw-if-not-resolved="false"></xref> where T is float
+  example: []
+  syntax:
+    content: public static EaseUnit<float> LinkEase(bool isAdjust, params EaseUnit<float>[] funcs)
+    parameters:
+    - id: isAdjust
+      type: System.Boolean
+      description: Whether the value will automatically start from the previous easing result
+    - id: funcs
+      type: UndyneFight_Ex.Entities.EaseUnit{System.Single}[]
+      description: The easing functions to link
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{System.Single}
+      description: The linked easing functions
+    content.vb: Public Shared Function LinkEase(isAdjust As Boolean, ParamArray funcs As EaseUnit(Of Single)()) As EaseUnit(Of Single)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.LinkEase*
+  nameWithType.vb: SimplifiedEasing.LinkEase(Boolean, ParamArray EaseUnit(Of Single)())
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.LinkEase(Boolean, ParamArray UndyneFight_Ex.Entities.EaseUnit(Of Single)())
+  name.vb: LinkEase(Boolean, ParamArray EaseUnit(Of Single)())
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.LinkEase(UndyneFight_Ex.Entities.EaseUnit{System.Single}[])
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.LinkEase(UndyneFight_Ex.Entities.EaseUnit{System.Single}[])
+  id: LinkEase(UndyneFight_Ex.Entities.EaseUnit{System.Single}[])
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: LinkEase(params EaseUnit<float>[])
+  nameWithType: SimplifiedEasing.LinkEase(params EaseUnit<float>[])
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.LinkEase(params UndyneFight_Ex.Entities.EaseUnit<float>[])
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Links multiple easing functions into an <xref href="UndyneFight_Ex.Entities.EaseUnit%601" data-throw-if-not-resolved="false"></xref> where T is float
+  example: []
+  syntax:
+    content: public static EaseUnit<float> LinkEase(params EaseUnit<float>[] funcs)
+    parameters:
+    - id: funcs
+      type: UndyneFight_Ex.Entities.EaseUnit{System.Single}[]
+      description: The easing functions to link
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{System.Single}
+      description: The linked easing functions
+    content.vb: Public Shared Function LinkEase(ParamArray funcs As EaseUnit(Of Single)()) As EaseUnit(Of Single)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.LinkEase*
+  nameWithType.vb: SimplifiedEasing.LinkEase(ParamArray EaseUnit(Of Single)())
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.LinkEase(ParamArray UndyneFight_Ex.Entities.EaseUnit(Of Single)())
+  name.vb: LinkEase(ParamArray EaseUnit(Of Single)())
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.LinkEase(System.Boolean,UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}[])
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.LinkEase(System.Boolean,UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}[])
+  id: LinkEase(System.Boolean,UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}[])
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: LinkEase(bool, params EaseUnit<Vector2>[])
+  nameWithType: SimplifiedEasing.LinkEase(bool, params EaseUnit<Vector2>[])
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.LinkEase(bool, params UndyneFight_Ex.Entities.EaseUnit<Microsoft.Xna.Framework.Vector2>[])
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Links multiple easing functions into an <xref href="UndyneFight_Ex.Entities.EaseUnit%601" data-throw-if-not-resolved="false"></xref>
+  example: []
+  syntax:
+    content: public static EaseUnit<Vector2> LinkEase(bool isAdjust = true, params EaseUnit<Vector2>[] funcs)
+    parameters:
+    - id: isAdjust
+      type: System.Boolean
+      description: Whether the value will automatically start from the previous easing result
+    - id: funcs
+      type: UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}[]
+      description: The easing functions to link
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}
+      description: The linked easing functions
+    content.vb: Public Shared Function LinkEase(isAdjust As Boolean = True, ParamArray funcs As EaseUnit(Of Vector2)()) As EaseUnit(Of Vector2)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.LinkEase*
+  nameWithType.vb: SimplifiedEasing.LinkEase(Boolean, ParamArray EaseUnit(Of Vector2)())
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.LinkEase(Boolean, ParamArray UndyneFight_Ex.Entities.EaseUnit(Of Microsoft.Xna.Framework.Vector2)())
+  name.vb: LinkEase(Boolean, ParamArray EaseUnit(Of Vector2)())
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.LinkEase(UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}[])
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.LinkEase(UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}[])
+  id: LinkEase(UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}[])
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: LinkEase(params EaseUnit<Vector2>[])
+  nameWithType: SimplifiedEasing.LinkEase(params EaseUnit<Vector2>[])
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.LinkEase(params UndyneFight_Ex.Entities.EaseUnit<Microsoft.Xna.Framework.Vector2>[])
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Links multiple easing functions into an <xref href="UndyneFight_Ex.Entities.EaseUnit%601" data-throw-if-not-resolved="false"></xref>
+  example: []
+  syntax:
+    content: public static EaseUnit<Vector2> LinkEase(params EaseUnit<Vector2>[] funcs)
+    parameters:
+    - id: funcs
+      type: UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}[]
+      description: The easing functions to link
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}
+      description: The linked easing functions
+    content.vb: Public Shared Function LinkEase(ParamArray funcs As EaseUnit(Of Vector2)()) As EaseUnit(Of Vector2)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.LinkEase*
+  nameWithType.vb: SimplifiedEasing.LinkEase(ParamArray EaseUnit(Of Vector2)())
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.LinkEase(ParamArray UndyneFight_Ex.Entities.EaseUnit(Of Microsoft.Xna.Framework.Vector2)())
+  name.vb: LinkEase(ParamArray EaseUnit(Of Vector2)())
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.InfLinear(System.Single,System.Single)
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.InfLinear(System.Single,System.Single)
+  id: InfLinear(System.Single,System.Single)
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: InfLinear(float, float)
+  nameWithType: SimplifiedEasing.InfLinear(float, float)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.InfLinear(float, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Returns an infinite linear movement
+  example: []
+  syntax:
+    content: public static EaseUnit<float> InfLinear(float start, float speed)
+    parameters:
+    - id: start
+      type: System.Single
+      description: The initial value
+    - id: speed
+      type: System.Single
+      description: The speed of the increment of the value
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{System.Single}
+      description: The easing result
+    content.vb: Public Shared Function InfLinear(start As Single, speed As Single) As EaseUnit(Of Single)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.InfLinear*
+  nameWithType.vb: SimplifiedEasing.InfLinear(Single, Single)
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.InfLinear(Single, Single)
+  name.vb: InfLinear(Single, Single)
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.InfLinear(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.InfLinear(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  id: InfLinear(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: InfLinear(Vector2, Vector2)
+  nameWithType: SimplifiedEasing.InfLinear(Vector2, Vector2)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.InfLinear(Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Returns an infinite linear movement
+  example: []
+  syntax:
+    content: public static EaseUnit<Vector2> InfLinear(Vector2 start, Vector2 speed)
+    parameters:
+    - id: start
+      type: Microsoft.Xna.Framework.Vector2
+      description: The initial position
+    - id: speed
+      type: Microsoft.Xna.Framework.Vector2
+      description: The speed of the movement
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}
+      description: The easing result
+    content.vb: Public Shared Function InfLinear(start As Vector2, speed As Vector2) As EaseUnit(Of Vector2)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.InfLinear*
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.InfLinear(Microsoft.Xna.Framework.Vector2)
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.InfLinear(Microsoft.Xna.Framework.Vector2)
+  id: InfLinear(Microsoft.Xna.Framework.Vector2)
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: InfLinear(Vector2)
+  nameWithType: SimplifiedEasing.InfLinear(Vector2)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.InfLinear(Microsoft.Xna.Framework.Vector2)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Returns an infinite linear movement (Default position (0, 0))
+  example: []
+  syntax:
+    content: public static EaseUnit<Vector2> InfLinear(Vector2 speed)
+    parameters:
+    - id: speed
+      type: Microsoft.Xna.Framework.Vector2
+      description: The speed of the movement
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}
+      description: The easing result
+    content.vb: Public Shared Function InfLinear(speed As Vector2) As EaseUnit(Of Vector2)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.InfLinear*
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.Linear(System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.Linear(System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  id: Linear(System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: Linear(float, Vector2, Vector2)
+  nameWithType: SimplifiedEasing.Linear(float, Vector2, Vector2)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.Linear(float, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Returns a linear motion
+  example: []
+  syntax:
+    content: public static EaseUnit<Vector2> Linear(float time, Vector2 start, Vector2 end)
+    parameters:
+    - id: time
+      type: System.Single
+      description: The duration of the linear movement
+    - id: start
+      type: Microsoft.Xna.Framework.Vector2
+      description: The initial position of the movement
+    - id: end
+      type: Microsoft.Xna.Framework.Vector2
+      description: The target position of the movement
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}
+      description: The result of the easing
+    content.vb: Public Shared Function Linear(time As Single, start As Vector2, [end] As Vector2) As EaseUnit(Of Vector2)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.Linear*
+  nameWithType.vb: SimplifiedEasing.Linear(Single, Vector2, Vector2)
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.Linear(Single, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2)
+  name.vb: Linear(Single, Vector2, Vector2)
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.Linear(System.Single,Microsoft.Xna.Framework.Vector2)
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.Linear(System.Single,Microsoft.Xna.Framework.Vector2)
+  id: Linear(System.Single,Microsoft.Xna.Framework.Vector2)
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: Linear(float, Vector2)
+  nameWithType: SimplifiedEasing.Linear(float, Vector2)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.Linear(float, Microsoft.Xna.Framework.Vector2)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: >-
+    Returns a linear motion <br />
+
+    Note that this will increment <code class="paramref">end</code> based on the previous easing
+  example: []
+  syntax:
+    content: public static EaseUnit<Vector2> Linear(float time, Vector2 end)
+    parameters:
+    - id: time
+      type: System.Single
+      description: The duration of the linear movement
+    - id: end
+      type: Microsoft.Xna.Framework.Vector2
+      description: The target position of the movement
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}
+      description: The easing result
+    content.vb: Public Shared Function Linear(time As Single, [end] As Vector2) As EaseUnit(Of Vector2)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.Linear*
+  nameWithType.vb: SimplifiedEasing.Linear(Single, Vector2)
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.Linear(Single, Microsoft.Xna.Framework.Vector2)
+  name.vb: Linear(Single, Vector2)
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.Linear(System.Single,System.Single,System.Single)
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.Linear(System.Single,System.Single,System.Single)
+  id: Linear(System.Single,System.Single,System.Single)
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: Linear(float, float, float)
+  nameWithType: SimplifiedEasing.Linear(float, float, float)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.Linear(float, float, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Returns a linear easing
+  example: []
+  syntax:
+    content: public static EaseUnit<float> Linear(float time, float start, float end)
+    parameters:
+    - id: time
+      type: System.Single
+      description: The duration of the linear easing
+    - id: start
+      type: System.Single
+      description: The initial value of the easing
+    - id: end
+      type: System.Single
+      description: The target value of the easing
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{System.Single}
+      description: The result of the easing
+    content.vb: Public Shared Function Linear(time As Single, start As Single, [end] As Single) As EaseUnit(Of Single)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.Linear*
+  nameWithType.vb: SimplifiedEasing.Linear(Single, Single, Single)
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.Linear(Single, Single, Single)
+  name.vb: Linear(Single, Single, Single)
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.Linear(System.Single,System.Single)
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.Linear(System.Single,System.Single)
+  id: Linear(System.Single,System.Single)
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: Linear(float, float)
+  nameWithType: SimplifiedEasing.Linear(float, float)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.Linear(float, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: >-
+    Returns a linear easing <br />
+
+    Note that this will increment <code class="paramref">end</code> based on the previous easing
+  example: []
+  syntax:
+    content: public static EaseUnit<float> Linear(float time, float end)
+    parameters:
+    - id: time
+      type: System.Single
+      description: The duration of the linear easing
+    - id: end
+      type: System.Single
+      description: The target value of the easing
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{System.Single}
+      description: The result of the easing
+    content.vb: Public Shared Function Linear(time As Single, [end] As Single) As EaseUnit(Of Single)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.Linear*
+  nameWithType.vb: SimplifiedEasing.Linear(Single, Single)
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.Linear(Single, Single)
+  name.vb: Linear(Single, Single)
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.EaseIn(System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.EaseIn(System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  id: EaseIn(System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: EaseIn(float, Vector2, Vector2, EaseState)
+  nameWithType: SimplifiedEasing.EaseIn(float, Vector2, Vector2, SimplifiedEasing.EaseState)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.EaseIn(float, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Returns an easing function that starts slow and ends fast
+  example: []
+  syntax:
+    content: public static EaseUnit<Vector2> EaseIn(float time, Vector2 start, Vector2 end, SimplifiedEasing.EaseState state)
+    parameters:
+    - id: time
+      type: System.Single
+      description: The duration of the easing
+    - id: start
+      type: Microsoft.Xna.Framework.Vector2
+      description: The initial value of the easing
+    - id: end
+      type: Microsoft.Xna.Framework.Vector2
+      description: The target value of the easing
+    - id: state
+      type: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+      description: The type of easing used for the easing function
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}
+      description: The result of the easing
+    content.vb: Public Shared Function EaseIn(time As Single, start As Vector2, [end] As Vector2, state As SimplifiedEasing.EaseState) As EaseUnit(Of Vector2)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.EaseIn*
+  nameWithType.vb: SimplifiedEasing.EaseIn(Single, Vector2, Vector2, SimplifiedEasing.EaseState)
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.EaseIn(Single, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  name.vb: EaseIn(Single, Vector2, Vector2, EaseState)
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.EaseOut(System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.EaseOut(System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  id: EaseOut(System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: EaseOut(float, Vector2, Vector2, EaseState)
+  nameWithType: SimplifiedEasing.EaseOut(float, Vector2, Vector2, SimplifiedEasing.EaseState)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.EaseOut(float, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Returns an easing function that starts fast and ends slow
+  example: []
+  syntax:
+    content: public static EaseUnit<Vector2> EaseOut(float time, Vector2 start, Vector2 end, SimplifiedEasing.EaseState state)
+    parameters:
+    - id: time
+      type: System.Single
+      description: The duration of the easing
+    - id: start
+      type: Microsoft.Xna.Framework.Vector2
+      description: The initial value of the easing
+    - id: end
+      type: Microsoft.Xna.Framework.Vector2
+      description: The target value of the easing
+    - id: state
+      type: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+      description: The type of easing used for the easing function
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}
+      description: The result of the easing
+    content.vb: Public Shared Function EaseOut(time As Single, start As Vector2, [end] As Vector2, state As SimplifiedEasing.EaseState) As EaseUnit(Of Vector2)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.EaseOut*
+  nameWithType.vb: SimplifiedEasing.EaseOut(Single, Vector2, Vector2, SimplifiedEasing.EaseState)
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.EaseOut(Single, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  name.vb: EaseOut(Single, Vector2, Vector2, EaseState)
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.EaseIn(System.Single,Microsoft.Xna.Framework.Vector2,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.EaseIn(System.Single,Microsoft.Xna.Framework.Vector2,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  id: EaseIn(System.Single,Microsoft.Xna.Framework.Vector2,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: EaseIn(float, Vector2, EaseState)
+  nameWithType: SimplifiedEasing.EaseIn(float, Vector2, SimplifiedEasing.EaseState)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.EaseIn(float, Microsoft.Xna.Framework.Vector2, UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: >-
+    Returns an easing function that starts slow and ends fast <br />
+
+    Note that this will increment <code class="paramref">end</code> based on the previous easing
+  example: []
+  syntax:
+    content: public static EaseUnit<Vector2> EaseIn(float time, Vector2 end, SimplifiedEasing.EaseState state)
+    parameters:
+    - id: time
+      type: System.Single
+      description: The duration of the easing
+    - id: end
+      type: Microsoft.Xna.Framework.Vector2
+      description: The target value of the easing
+    - id: state
+      type: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+      description: The type of easing used for the easing function
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}
+      description: The result of the easing
+    content.vb: Public Shared Function EaseIn(time As Single, [end] As Vector2, state As SimplifiedEasing.EaseState) As EaseUnit(Of Vector2)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.EaseIn*
+  nameWithType.vb: SimplifiedEasing.EaseIn(Single, Vector2, SimplifiedEasing.EaseState)
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.EaseIn(Single, Microsoft.Xna.Framework.Vector2, UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  name.vb: EaseIn(Single, Vector2, EaseState)
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.EaseOut(System.Single,Microsoft.Xna.Framework.Vector2,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.EaseOut(System.Single,Microsoft.Xna.Framework.Vector2,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  id: EaseOut(System.Single,Microsoft.Xna.Framework.Vector2,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: EaseOut(float, Vector2, EaseState)
+  nameWithType: SimplifiedEasing.EaseOut(float, Vector2, SimplifiedEasing.EaseState)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.EaseOut(float, Microsoft.Xna.Framework.Vector2, UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: >-
+    Returns an easing function that starts fast and ends slow <br />
+
+    Note that this will increment <code class="paramref">end</code> based on the previous easing
+  example: []
+  syntax:
+    content: public static EaseUnit<Vector2> EaseOut(float time, Vector2 end, SimplifiedEasing.EaseState state)
+    parameters:
+    - id: time
+      type: System.Single
+      description: The duration of the easing
+    - id: end
+      type: Microsoft.Xna.Framework.Vector2
+      description: The target value of the easing
+    - id: state
+      type: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+      description: The type of easing used for the easing function
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}
+      description: The result of the easing
+    content.vb: Public Shared Function EaseOut(time As Single, [end] As Vector2, state As SimplifiedEasing.EaseState) As EaseUnit(Of Vector2)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.EaseOut*
+  nameWithType.vb: SimplifiedEasing.EaseOut(Single, Vector2, SimplifiedEasing.EaseState)
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.EaseOut(Single, Microsoft.Xna.Framework.Vector2, UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  name.vb: EaseOut(Single, Vector2, EaseState)
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.EaseInOut(System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState,System.Nullable{UndyneFight_Ex.Entities.SimplifiedEasing.EaseState})
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.EaseInOut(System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState,System.Nullable{UndyneFight_Ex.Entities.SimplifiedEasing.EaseState})
+  id: EaseInOut(System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState,System.Nullable{UndyneFight_Ex.Entities.SimplifiedEasing.EaseState})
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: EaseInOut(float, Vector2, Vector2, float, EaseState, EaseState?)
+  nameWithType: SimplifiedEasing.EaseInOut(float, Vector2, Vector2, float, SimplifiedEasing.EaseState, SimplifiedEasing.EaseState?)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.EaseInOut(float, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, float, UndyneFight_Ex.Entities.SimplifiedEasing.EaseState, UndyneFight_Ex.Entities.SimplifiedEasing.EaseState?)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Returns an easing function that starts slow, increases in speed, then becomes slow again
+  example: []
+  syntax:
+    content: public static EaseUnit<Vector2> EaseInOut(float time, Vector2 start, Vector2 end, float amount, SimplifiedEasing.EaseState Astate, SimplifiedEasing.EaseState? Bstate = null)
+    parameters:
+    - id: time
+      type: System.Single
+      description: The duration of the easing
+    - id: start
+      type: Microsoft.Xna.Framework.Vector2
+      description: The initial value of the easing
+    - id: end
+      type: Microsoft.Xna.Framework.Vector2
+      description: The target value of the easing
+    - id: amount
+      type: System.Single
+      description: 'The proportion of the distance between the starting point and the midpoint<br />For example: 0.4f means that the starting point easing distance accounts for 40% and the midpoint easing distance accounts for 60%<br />But the easing time ratio is still 1:1'
+    - id: Astate
+      type: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+      description: Initial easing type
+    - id: Bstate
+      type: System.Nullable{UndyneFight_Ex.Entities.SimplifiedEasing.EaseState}
+      description: Ending easing type (Default <code class="paramref">Astate</code>)
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}
+      description: The result of the easing
+    content.vb: Public Shared Function EaseInOut(time As Single, start As Vector2, [end] As Vector2, amount As Single, Astate As SimplifiedEasing.EaseState, Bstate As SimplifiedEasing.EaseState? = Nothing) As EaseUnit(Of Vector2)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.EaseInOut*
+  nameWithType.vb: SimplifiedEasing.EaseInOut(Single, Vector2, Vector2, Single, SimplifiedEasing.EaseState, SimplifiedEasing.EaseState?)
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.EaseInOut(Single, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, Single, UndyneFight_Ex.Entities.SimplifiedEasing.EaseState, UndyneFight_Ex.Entities.SimplifiedEasing.EaseState?)
+  name.vb: EaseInOut(Single, Vector2, Vector2, Single, EaseState, EaseState?)
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.EaseOutIn(System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState,System.Nullable{UndyneFight_Ex.Entities.SimplifiedEasing.EaseState})
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.EaseOutIn(System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState,System.Nullable{UndyneFight_Ex.Entities.SimplifiedEasing.EaseState})
+  id: EaseOutIn(System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState,System.Nullable{UndyneFight_Ex.Entities.SimplifiedEasing.EaseState})
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: EaseOutIn(float, Vector2, Vector2, float, EaseState, EaseState?)
+  nameWithType: SimplifiedEasing.EaseOutIn(float, Vector2, Vector2, float, SimplifiedEasing.EaseState, SimplifiedEasing.EaseState?)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.EaseOutIn(float, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, float, UndyneFight_Ex.Entities.SimplifiedEasing.EaseState, UndyneFight_Ex.Entities.SimplifiedEasing.EaseState?)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Returns an easing function that starts fast, decreases in speed, then becomes fast again
+  example: []
+  syntax:
+    content: public static EaseUnit<Vector2> EaseOutIn(float time, Vector2 start, Vector2 end, float amount, SimplifiedEasing.EaseState Astate, SimplifiedEasing.EaseState? Bstate = null)
+    parameters:
+    - id: time
+      type: System.Single
+      description: The duration of the easing
+    - id: start
+      type: Microsoft.Xna.Framework.Vector2
+      description: The initial value of the easing
+    - id: end
+      type: Microsoft.Xna.Framework.Vector2
+      description: The target value of the easing
+    - id: amount
+      type: System.Single
+      description: 'The proportion of the distance between the starting point and the midpoint<br />For example: 0.4f means that the starting point easing distance accounts for 40% and the midpoint easing distance accounts for 60%<br />But the easing time ratio is still 1:1'
+    - id: Astate
+      type: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+      description: Initial easing type
+    - id: Bstate
+      type: System.Nullable{UndyneFight_Ex.Entities.SimplifiedEasing.EaseState}
+      description: Ending easing type (Default <code class="paramref">Astate</code>)
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}
+      description: The result of the easing
+    content.vb: Public Shared Function EaseOutIn(time As Single, start As Vector2, [end] As Vector2, amount As Single, Astate As SimplifiedEasing.EaseState, Bstate As SimplifiedEasing.EaseState? = Nothing) As EaseUnit(Of Vector2)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.EaseOutIn*
+  nameWithType.vb: SimplifiedEasing.EaseOutIn(Single, Vector2, Vector2, Single, SimplifiedEasing.EaseState, SimplifiedEasing.EaseState?)
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.EaseOutIn(Single, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, Single, UndyneFight_Ex.Entities.SimplifiedEasing.EaseState, UndyneFight_Ex.Entities.SimplifiedEasing.EaseState?)
+  name.vb: EaseOutIn(Single, Vector2, Vector2, Single, EaseState, EaseState?)
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.EaseInOut(System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.EaseInOut(System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  id: EaseInOut(System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: EaseInOut(float, Vector2, Vector2, EaseState)
+  nameWithType: SimplifiedEasing.EaseInOut(float, Vector2, Vector2, SimplifiedEasing.EaseState)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.EaseInOut(float, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Returns an easing function that starts slow, increases in speed, then becomes slow again
+  example: []
+  syntax:
+    content: public static EaseUnit<Vector2> EaseInOut(float time, Vector2 start, Vector2 end, SimplifiedEasing.EaseState state)
+    parameters:
+    - id: time
+      type: System.Single
+      description: The duration of the easing
+    - id: start
+      type: Microsoft.Xna.Framework.Vector2
+      description: The initial value of the easing
+    - id: end
+      type: Microsoft.Xna.Framework.Vector2
+      description: The target value of the easing
+    - id: state
+      type: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+      description: The type of easing used in the easing function
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}
+      description: The result of the easing
+    content.vb: Public Shared Function EaseInOut(time As Single, start As Vector2, [end] As Vector2, state As SimplifiedEasing.EaseState) As EaseUnit(Of Vector2)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.EaseInOut*
+  nameWithType.vb: SimplifiedEasing.EaseInOut(Single, Vector2, Vector2, SimplifiedEasing.EaseState)
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.EaseInOut(Single, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  name.vb: EaseInOut(Single, Vector2, Vector2, EaseState)
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.EaseOutIn(System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.EaseOutIn(System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  id: EaseOutIn(System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: EaseOutIn(float, Vector2, Vector2, EaseState)
+  nameWithType: SimplifiedEasing.EaseOutIn(float, Vector2, Vector2, SimplifiedEasing.EaseState)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.EaseOutIn(float, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Returns an easing function that starts fast, decreases in speed, then becomes fast again
+  example: []
+  syntax:
+    content: public static EaseUnit<Vector2> EaseOutIn(float time, Vector2 start, Vector2 end, SimplifiedEasing.EaseState state)
+    parameters:
+    - id: time
+      type: System.Single
+      description: The duration of the easing
+    - id: start
+      type: Microsoft.Xna.Framework.Vector2
+      description: The initial value of the easing
+    - id: end
+      type: Microsoft.Xna.Framework.Vector2
+      description: The target value of the easing
+    - id: state
+      type: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+      description: The type of easing used in the easing function
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}
+      description: The result of the easing
+    content.vb: Public Shared Function EaseOutIn(time As Single, start As Vector2, [end] As Vector2, state As SimplifiedEasing.EaseState) As EaseUnit(Of Vector2)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.EaseOutIn*
+  nameWithType.vb: SimplifiedEasing.EaseOutIn(Single, Vector2, Vector2, SimplifiedEasing.EaseState)
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.EaseOutIn(Single, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  name.vb: EaseOutIn(Single, Vector2, Vector2, EaseState)
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.EaseIn(System.Single,System.Single,System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.EaseIn(System.Single,System.Single,System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  id: EaseIn(System.Single,System.Single,System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: EaseIn(float, float, float, EaseState)
+  nameWithType: SimplifiedEasing.EaseIn(float, float, float, SimplifiedEasing.EaseState)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.EaseIn(float, float, float, UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Returns an easing function that starts slow and ends fast
+  example: []
+  syntax:
+    content: public static EaseUnit<float> EaseIn(float time, float start, float end, SimplifiedEasing.EaseState state)
+    parameters:
+    - id: time
+      type: System.Single
+      description: The duration of the easing
+    - id: start
+      type: System.Single
+      description: The initial value of the easing
+    - id: end
+      type: System.Single
+      description: The target value of the easing
+    - id: state
+      type: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+      description: The type of easing used for the easing function
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{System.Single}
+      description: The result of the easing
+    content.vb: Public Shared Function EaseIn(time As Single, start As Single, [end] As Single, state As SimplifiedEasing.EaseState) As EaseUnit(Of Single)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.EaseIn*
+  nameWithType.vb: SimplifiedEasing.EaseIn(Single, Single, Single, SimplifiedEasing.EaseState)
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.EaseIn(Single, Single, Single, UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  name.vb: EaseIn(Single, Single, Single, EaseState)
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.EaseOut(System.Single,System.Single,System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.EaseOut(System.Single,System.Single,System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  id: EaseOut(System.Single,System.Single,System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: EaseOut(float, float, float, EaseState)
+  nameWithType: SimplifiedEasing.EaseOut(float, float, float, SimplifiedEasing.EaseState)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.EaseOut(float, float, float, UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Returns an easing function that starts fast and ends slow
+  example: []
+  syntax:
+    content: public static EaseUnit<float> EaseOut(float time, float start, float end, SimplifiedEasing.EaseState state)
+    parameters:
+    - id: time
+      type: System.Single
+      description: The duration of the easing
+    - id: start
+      type: System.Single
+      description: The initial value of the easing
+    - id: end
+      type: System.Single
+      description: The target value of the easing
+    - id: state
+      type: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+      description: The type of easing used for the easing function
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{System.Single}
+      description: The result of the easing
+    content.vb: Public Shared Function EaseOut(time As Single, start As Single, [end] As Single, state As SimplifiedEasing.EaseState) As EaseUnit(Of Single)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.EaseOut*
+  nameWithType.vb: SimplifiedEasing.EaseOut(Single, Single, Single, SimplifiedEasing.EaseState)
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.EaseOut(Single, Single, Single, UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  name.vb: EaseOut(Single, Single, Single, EaseState)
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.EaseIn(System.Single,System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.EaseIn(System.Single,System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  id: EaseIn(System.Single,System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: EaseIn(float, float, EaseState)
+  nameWithType: SimplifiedEasing.EaseIn(float, float, SimplifiedEasing.EaseState)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.EaseIn(float, float, UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: >-
+    Returns an easing function that starts slow and ends fast <br />
+
+    Note that this will increment <code class="paramref">end</code> based on the previous easing
+  example: []
+  syntax:
+    content: public static EaseUnit<float> EaseIn(float time, float end, SimplifiedEasing.EaseState state)
+    parameters:
+    - id: time
+      type: System.Single
+      description: The duration of the easing
+    - id: end
+      type: System.Single
+      description: The target value of the easing
+    - id: state
+      type: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+      description: The type of easing used for the easing function
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{System.Single}
+      description: The result of the easing
+    content.vb: Public Shared Function EaseIn(time As Single, [end] As Single, state As SimplifiedEasing.EaseState) As EaseUnit(Of Single)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.EaseIn*
+  nameWithType.vb: SimplifiedEasing.EaseIn(Single, Single, SimplifiedEasing.EaseState)
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.EaseIn(Single, Single, UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  name.vb: EaseIn(Single, Single, EaseState)
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.EaseOut(System.Single,System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.EaseOut(System.Single,System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  id: EaseOut(System.Single,System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: EaseOut(float, float, EaseState)
+  nameWithType: SimplifiedEasing.EaseOut(float, float, SimplifiedEasing.EaseState)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.EaseOut(float, float, UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: >-
+    Returns an easing function that starts fast and ends slow <br />
+
+    Note that this will increment <code class="paramref">end</code> based on the previous easing
+  example: []
+  syntax:
+    content: public static EaseUnit<float> EaseOut(float time, float end, SimplifiedEasing.EaseState state)
+    parameters:
+    - id: time
+      type: System.Single
+      description: The duration of the easing
+    - id: end
+      type: System.Single
+      description: The target value of the easing
+    - id: state
+      type: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+      description: The type of easing used for the easing function
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{System.Single}
+      description: The result of the easing
+    content.vb: Public Shared Function EaseOut(time As Single, [end] As Single, state As SimplifiedEasing.EaseState) As EaseUnit(Of Single)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.EaseOut*
+  nameWithType.vb: SimplifiedEasing.EaseOut(Single, Single, SimplifiedEasing.EaseState)
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.EaseOut(Single, Single, UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  name.vb: EaseOut(Single, Single, EaseState)
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.EaseInOut(System.Single,System.Single,System.Single,System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState,System.Nullable{UndyneFight_Ex.Entities.SimplifiedEasing.EaseState})
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.EaseInOut(System.Single,System.Single,System.Single,System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState,System.Nullable{UndyneFight_Ex.Entities.SimplifiedEasing.EaseState})
+  id: EaseInOut(System.Single,System.Single,System.Single,System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState,System.Nullable{UndyneFight_Ex.Entities.SimplifiedEasing.EaseState})
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: EaseInOut(float, float, float, float, EaseState, EaseState?)
+  nameWithType: SimplifiedEasing.EaseInOut(float, float, float, float, SimplifiedEasing.EaseState, SimplifiedEasing.EaseState?)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.EaseInOut(float, float, float, float, UndyneFight_Ex.Entities.SimplifiedEasing.EaseState, UndyneFight_Ex.Entities.SimplifiedEasing.EaseState?)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Returns an easing function that starts slow, increases in speed, then becomes slow again
+  example: []
+  syntax:
+    content: public static EaseUnit<float> EaseInOut(float time, float start, float end, float amount, SimplifiedEasing.EaseState Astate, SimplifiedEasing.EaseState? Bstate = null)
+    parameters:
+    - id: time
+      type: System.Single
+      description: The duration of the easing
+    - id: start
+      type: System.Single
+      description: The initial value of the easing
+    - id: end
+      type: System.Single
+      description: The target value of the easing
+    - id: amount
+      type: System.Single
+      description: 'The proportion of the distance between the starting point and the midpoint<br />For example: 0.4f means that the starting point easing distance accounts for 40% and the midpoint easing distance accounts for 60%<br />But the easing time ratio is still 1:1'
+    - id: Astate
+      type: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+      description: Initial easing type
+    - id: Bstate
+      type: System.Nullable{UndyneFight_Ex.Entities.SimplifiedEasing.EaseState}
+      description: Ending easing type (Default <code class="paramref">Astate</code>)
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{System.Single}
+      description: The result of the easing
+    content.vb: Public Shared Function EaseInOut(time As Single, start As Single, [end] As Single, amount As Single, Astate As SimplifiedEasing.EaseState, Bstate As SimplifiedEasing.EaseState? = Nothing) As EaseUnit(Of Single)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.EaseInOut*
+  nameWithType.vb: SimplifiedEasing.EaseInOut(Single, Single, Single, Single, SimplifiedEasing.EaseState, SimplifiedEasing.EaseState?)
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.EaseInOut(Single, Single, Single, Single, UndyneFight_Ex.Entities.SimplifiedEasing.EaseState, UndyneFight_Ex.Entities.SimplifiedEasing.EaseState?)
+  name.vb: EaseInOut(Single, Single, Single, Single, EaseState, EaseState?)
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.EaseOutIn(System.Single,System.Single,System.Single,System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState,System.Nullable{UndyneFight_Ex.Entities.SimplifiedEasing.EaseState})
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.EaseOutIn(System.Single,System.Single,System.Single,System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState,System.Nullable{UndyneFight_Ex.Entities.SimplifiedEasing.EaseState})
+  id: EaseOutIn(System.Single,System.Single,System.Single,System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState,System.Nullable{UndyneFight_Ex.Entities.SimplifiedEasing.EaseState})
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: EaseOutIn(float, float, float, float, EaseState, EaseState?)
+  nameWithType: SimplifiedEasing.EaseOutIn(float, float, float, float, SimplifiedEasing.EaseState, SimplifiedEasing.EaseState?)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.EaseOutIn(float, float, float, float, UndyneFight_Ex.Entities.SimplifiedEasing.EaseState, UndyneFight_Ex.Entities.SimplifiedEasing.EaseState?)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Returns an easing function that starts fast, decreases in speed, then becomes fast again
+  example: []
+  syntax:
+    content: public static EaseUnit<float> EaseOutIn(float time, float start, float end, float amount, SimplifiedEasing.EaseState Astate, SimplifiedEasing.EaseState? Bstate = null)
+    parameters:
+    - id: time
+      type: System.Single
+      description: The duration of the easing
+    - id: start
+      type: System.Single
+      description: The initial value of the easing
+    - id: end
+      type: System.Single
+      description: The target value of the easing
+    - id: amount
+      type: System.Single
+      description: 'The proportion of the distance between the starting point and the midpoint<br />For example: 0.4f means that the starting point easing distance accounts for 40% and the midpoint easing distance accounts for 60%<br />But the easing time ratio is still 1:1'
+    - id: Astate
+      type: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+      description: Initial easing type
+    - id: Bstate
+      type: System.Nullable{UndyneFight_Ex.Entities.SimplifiedEasing.EaseState}
+      description: Ending easing type (Default <code class="paramref">Astate</code>)
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{System.Single}
+      description: The result of the easing
+    content.vb: Public Shared Function EaseOutIn(time As Single, start As Single, [end] As Single, amount As Single, Astate As SimplifiedEasing.EaseState, Bstate As SimplifiedEasing.EaseState? = Nothing) As EaseUnit(Of Single)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.EaseOutIn*
+  nameWithType.vb: SimplifiedEasing.EaseOutIn(Single, Single, Single, Single, SimplifiedEasing.EaseState, SimplifiedEasing.EaseState?)
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.EaseOutIn(Single, Single, Single, Single, UndyneFight_Ex.Entities.SimplifiedEasing.EaseState, UndyneFight_Ex.Entities.SimplifiedEasing.EaseState?)
+  name.vb: EaseOutIn(Single, Single, Single, Single, EaseState, EaseState?)
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.EaseInOut(System.Single,System.Single,System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.EaseInOut(System.Single,System.Single,System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  id: EaseInOut(System.Single,System.Single,System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: EaseInOut(float, float, float, EaseState)
+  nameWithType: SimplifiedEasing.EaseInOut(float, float, float, SimplifiedEasing.EaseState)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.EaseInOut(float, float, float, UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Returns an easing function that starts slow, increases in speed, then becomes slow again
+  example: []
+  syntax:
+    content: public static EaseUnit<float> EaseInOut(float time, float start, float end, SimplifiedEasing.EaseState state)
+    parameters:
+    - id: time
+      type: System.Single
+      description: The duration of the easing
+    - id: start
+      type: System.Single
+      description: The initial value of the easing
+    - id: end
+      type: System.Single
+      description: The target value of the easing
+    - id: state
+      type: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+      description: The type of easing used for the easing function
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{System.Single}
+      description: The result of the easing
+    content.vb: Public Shared Function EaseInOut(time As Single, start As Single, [end] As Single, state As SimplifiedEasing.EaseState) As EaseUnit(Of Single)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.EaseInOut*
+  nameWithType.vb: SimplifiedEasing.EaseInOut(Single, Single, Single, SimplifiedEasing.EaseState)
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.EaseInOut(Single, Single, Single, UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  name.vb: EaseInOut(Single, Single, Single, EaseState)
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.EaseOutIn(System.Single,System.Single,System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.EaseOutIn(System.Single,System.Single,System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  id: EaseOutIn(System.Single,System.Single,System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: EaseOutIn(float, float, float, EaseState)
+  nameWithType: SimplifiedEasing.EaseOutIn(float, float, float, SimplifiedEasing.EaseState)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.EaseOutIn(float, float, float, UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Returns an easing function that starts fast, decreases in speed, then becomes fast again
+  example: []
+  syntax:
+    content: public static EaseUnit<float> EaseOutIn(float time, float start, float end, SimplifiedEasing.EaseState state)
+    parameters:
+    - id: time
+      type: System.Single
+      description: The duration of the easing
+    - id: start
+      type: System.Single
+      description: The initial value of the easing
+    - id: end
+      type: System.Single
+      description: The target value of the easing
+    - id: state
+      type: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+      description: The type of easing used for the easing function
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{System.Single}
+      description: The result of the easing
+    content.vb: Public Shared Function EaseOutIn(time As Single, start As Single, [end] As Single, state As SimplifiedEasing.EaseState) As EaseUnit(Of Single)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.EaseOutIn*
+  nameWithType.vb: SimplifiedEasing.EaseOutIn(Single, Single, Single, SimplifiedEasing.EaseState)
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.EaseOutIn(Single, Single, Single, UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  name.vb: EaseOutIn(Single, Single, Single, EaseState)
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.Stable(System.Single,Microsoft.Xna.Framework.Vector2)
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.Stable(System.Single,Microsoft.Xna.Framework.Vector2)
+  id: Stable(System.Single,Microsoft.Xna.Framework.Vector2)
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: Stable(float, Vector2)
+  nameWithType: SimplifiedEasing.Stable(float, Vector2)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.Stable(float, Microsoft.Xna.Framework.Vector2)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Returns a stable value for the specified amount of time
+  example: []
+  syntax:
+    content: public static EaseUnit<Vector2> Stable(float time, Vector2 value)
+    parameters:
+    - id: time
+      type: System.Single
+      description: The duration of the stability of the value (Use 0 for instantly setting the value)
+    - id: value
+      type: Microsoft.Xna.Framework.Vector2
+      description: The value to set to
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}
+      description: The result of the easing
+    content.vb: Public Shared Function Stable(time As Single, value As Vector2) As EaseUnit(Of Vector2)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.Stable*
+  nameWithType.vb: SimplifiedEasing.Stable(Single, Vector2)
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.Stable(Single, Microsoft.Xna.Framework.Vector2)
+  name.vb: Stable(Single, Vector2)
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.Stable(System.Single,System.Single,System.Single)
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.Stable(System.Single,System.Single,System.Single)
+  id: Stable(System.Single,System.Single,System.Single)
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: Stable(float, float, float)
+  nameWithType: SimplifiedEasing.Stable(float, float, float)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.Stable(float, float, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Returns a stable value for the specified amount of time, essentially the same with <xref href="UndyneFight_Ex.Entities.SimplifiedEasing.Stable(System.Single%2cMicrosoft.Xna.Framework.Vector2)" data-throw-if-not-resolved="false"></xref>
+  example: []
+  syntax:
+    content: public static EaseUnit<Vector2> Stable(float time, float xvalue, float yvalue)
+    parameters:
+    - id: time
+      type: System.Single
+      description: The duration of the stability of the value (Use 0 for instantly setting the value)
+    - id: xvalue
+      type: System.Single
+      description: The first value to set to
+    - id: yvalue
+      type: System.Single
+      description: The second value to set to
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}
+      description: The result of the easing
+    content.vb: Public Shared Function Stable(time As Single, xvalue As Single, yvalue As Single) As EaseUnit(Of Vector2)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.Stable*
+  nameWithType.vb: SimplifiedEasing.Stable(Single, Single, Single)
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.Stable(Single, Single, Single)
+  name.vb: Stable(Single, Single, Single)
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.Stable(System.Single,System.Single)
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.Stable(System.Single,System.Single)
+  id: Stable(System.Single,System.Single)
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: Stable(float, float)
+  nameWithType: SimplifiedEasing.Stable(float, float)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.Stable(float, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Returns a stable value for the specified amount of time
+  example: []
+  syntax:
+    content: public static EaseUnit<float> Stable(float time, float value)
+    parameters:
+    - id: time
+      type: System.Single
+      description: The duration of the stability of the value (Use 0 for instantly setting the value)
+    - id: value
+      type: System.Single
+      description: The value to set to
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{System.Single}
+      description: The result of the easing
+    content.vb: Public Shared Function Stable(time As Single, value As Single) As EaseUnit(Of Single)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.Stable*
+  nameWithType.vb: SimplifiedEasing.Stable(Single, Single)
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.Stable(Single, Single)
+  name.vb: Stable(Single, Single)
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.Stable(System.Single)
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.Stable(System.Single)
+  id: Stable(System.Single)
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: Stable(float)
+  nameWithType: SimplifiedEasing.Stable(float)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.Stable(float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: >-
+    Returns a stable value for the specified amount of time <br />
+
+    If there is no previous easing, the value will be zero, or else it will be the result fo the previous easing
+  example: []
+  syntax:
+    content: public static EaseUnit<float> Stable(float time)
+    parameters:
+    - id: time
+      type: System.Single
+      description: The duration of the stability of the value (Use 0 for instantly setting the value)
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{System.Single}
+      description: The result of the easing
+    content.vb: Public Shared Function Stable(time As Single) As EaseUnit(Of Single)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.Stable*
+  nameWithType.vb: SimplifiedEasing.Stable(Single)
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.Stable(Single)
+  name.vb: Stable(Single)
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.Copy(UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2},System.Int32)
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.Copy(UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2},System.Int32)
+  id: Copy(UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2},System.Int32)
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: Copy(EaseUnit<Vector2>, int)
+  nameWithType: SimplifiedEasing.Copy(EaseUnit<Vector2>, int)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.Copy(UndyneFight_Ex.Entities.EaseUnit<Microsoft.Xna.Framework.Vector2>, int)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Returns a copy of the specified easing for the given amount of times
+  example: []
+  syntax:
+    content: public static EaseUnit<Vector2> Copy(EaseUnit<Vector2> ease, int times)
+    parameters:
+    - id: ease
+      type: UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}
+      description: The easing function to copy
+    - id: times
+      type: System.Int32
+      description: The amount of times needed to copy
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}
+      description: The result of the easing
+    content.vb: Public Shared Function Copy(ease As EaseUnit(Of Vector2), times As Integer) As EaseUnit(Of Vector2)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.Copy*
+  nameWithType.vb: SimplifiedEasing.Copy(EaseUnit(Of Vector2), Integer)
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.Copy(UndyneFight_Ex.Entities.EaseUnit(Of Microsoft.Xna.Framework.Vector2), Integer)
+  name.vb: Copy(EaseUnit(Of Vector2), Integer)
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.Copy(UndyneFight_Ex.Entities.EaseUnit{System.Single},System.Int32)
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.Copy(UndyneFight_Ex.Entities.EaseUnit{System.Single},System.Int32)
+  id: Copy(UndyneFight_Ex.Entities.EaseUnit{System.Single},System.Int32)
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: Copy(EaseUnit<float>, int)
+  nameWithType: SimplifiedEasing.Copy(EaseUnit<float>, int)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.Copy(UndyneFight_Ex.Entities.EaseUnit<float>, int)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Returns a copy of the specified easing for the given amount of times
+  example: []
+  syntax:
+    content: public static EaseUnit<float> Copy(EaseUnit<float> ease, int times)
+    parameters:
+    - id: ease
+      type: UndyneFight_Ex.Entities.EaseUnit{System.Single}
+      description: The easing function to copy
+    - id: times
+      type: System.Int32
+      description: The amount of times needed to copy
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{System.Single}
+      description: The result of the easing
+    content.vb: Public Shared Function Copy(ease As EaseUnit(Of Single), times As Integer) As EaseUnit(Of Single)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.Copy*
+  nameWithType.vb: SimplifiedEasing.Copy(EaseUnit(Of Single), Integer)
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.Copy(UndyneFight_Ex.Entities.EaseUnit(Of Single), Integer)
+  name.vb: Copy(EaseUnit(Of Single), Integer)
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.Alternate(System.Single,UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2},UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}[])
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.Alternate(System.Single,UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2},UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}[])
+  id: Alternate(System.Single,UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2},UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}[])
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: Alternate(float, EaseUnit<Vector2>, params EaseUnit<Vector2>[])
+  nameWithType: SimplifiedEasing.Alternate(float, EaseUnit<Vector2>, params EaseUnit<Vector2>[])
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.Alternate(float, UndyneFight_Ex.Entities.EaseUnit<Microsoft.Xna.Framework.Vector2>, params UndyneFight_Ex.Entities.EaseUnit<Microsoft.Xna.Framework.Vector2>[])
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Alternates between the given easing functions
+  example: []
+  syntax:
+    content: public static EaseUnit<Vector2> Alternate(float interval, EaseUnit<Vector2> main, params EaseUnit<Vector2>[] addons)
+    parameters:
+    - id: interval
+      type: System.Single
+      description: The interval between each easing function
+    - id: main
+      type: UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}
+      description: The main easing function
+    - id: addons
+      type: UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}[]
+      description: The additional easing functions to alternate
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}
+      description: The result of the easing
+    content.vb: Public Shared Function Alternate(interval As Single, main As EaseUnit(Of Vector2), ParamArray addons As EaseUnit(Of Vector2)()) As EaseUnit(Of Vector2)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.Alternate*
+  nameWithType.vb: SimplifiedEasing.Alternate(Single, EaseUnit(Of Vector2), ParamArray EaseUnit(Of Vector2)())
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.Alternate(Single, UndyneFight_Ex.Entities.EaseUnit(Of Microsoft.Xna.Framework.Vector2), ParamArray UndyneFight_Ex.Entities.EaseUnit(Of Microsoft.Xna.Framework.Vector2)())
+  name.vb: Alternate(Single, EaseUnit(Of Vector2), ParamArray EaseUnit(Of Vector2)())
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.Alternate(System.Single,UndyneFight_Ex.Entities.EaseUnit{System.Single},UndyneFight_Ex.Entities.EaseUnit{System.Single}[])
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.Alternate(System.Single,UndyneFight_Ex.Entities.EaseUnit{System.Single},UndyneFight_Ex.Entities.EaseUnit{System.Single}[])
+  id: Alternate(System.Single,UndyneFight_Ex.Entities.EaseUnit{System.Single},UndyneFight_Ex.Entities.EaseUnit{System.Single}[])
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: Alternate(float, EaseUnit<float>, params EaseUnit<float>[])
+  nameWithType: SimplifiedEasing.Alternate(float, EaseUnit<float>, params EaseUnit<float>[])
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.Alternate(float, UndyneFight_Ex.Entities.EaseUnit<float>, params UndyneFight_Ex.Entities.EaseUnit<float>[])
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Alternates between the given easing functions
+  example: []
+  syntax:
+    content: public static EaseUnit<float> Alternate(float interval, EaseUnit<float> main, params EaseUnit<float>[] addons)
+    parameters:
+    - id: interval
+      type: System.Single
+      description: The interval between each easing function
+    - id: main
+      type: UndyneFight_Ex.Entities.EaseUnit{System.Single}
+      description: The main easing function
+    - id: addons
+      type: UndyneFight_Ex.Entities.EaseUnit{System.Single}[]
+      description: The additional easing functions to alternate
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{System.Single}
+      description: The result of the easing
+    content.vb: Public Shared Function Alternate(interval As Single, main As EaseUnit(Of Single), ParamArray addons As EaseUnit(Of Single)()) As EaseUnit(Of Single)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.Alternate*
+  nameWithType.vb: SimplifiedEasing.Alternate(Single, EaseUnit(Of Single), ParamArray EaseUnit(Of Single)())
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.Alternate(Single, UndyneFight_Ex.Entities.EaseUnit(Of Single), ParamArray UndyneFight_Ex.Entities.EaseUnit(Of Single)())
+  name.vb: Alternate(Single, EaseUnit(Of Single), ParamArray EaseUnit(Of Single)())
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.Add(UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2},UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2})
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.Add(UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2},UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2})
+  id: Add(UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2},UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2})
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: Add(EaseUnit<Vector2>, EaseUnit<Vector2>)
+  nameWithType: SimplifiedEasing.Add(EaseUnit<Vector2>, EaseUnit<Vector2>)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.Add(UndyneFight_Ex.Entities.EaseUnit<Microsoft.Xna.Framework.Vector2>, UndyneFight_Ex.Entities.EaseUnit<Microsoft.Xna.Framework.Vector2>)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Returns the result of two <xref href="Microsoft.Xna.Framework.Vector2" data-throw-if-not-resolved="false"></xref> easing functions
+  example: []
+  syntax:
+    content: public static EaseUnit<Vector2> Add(EaseUnit<Vector2> main, EaseUnit<Vector2> addon)
+    parameters:
+    - id: main
+      type: UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}
+      description: The original easing function
+    - id: addon
+      type: UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}
+      description: The easing function to add
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}
+      description: The sum of the two easing functions
+    content.vb: Public Shared Function Add(main As EaseUnit(Of Vector2), addon As EaseUnit(Of Vector2)) As EaseUnit(Of Vector2)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.Add*
+  nameWithType.vb: SimplifiedEasing.Add(EaseUnit(Of Vector2), EaseUnit(Of Vector2))
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.Add(UndyneFight_Ex.Entities.EaseUnit(Of Microsoft.Xna.Framework.Vector2), UndyneFight_Ex.Entities.EaseUnit(Of Microsoft.Xna.Framework.Vector2))
+  name.vb: Add(EaseUnit(Of Vector2), EaseUnit(Of Vector2))
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.Add(UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2},Microsoft.Xna.Framework.Vector2)
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.Add(UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2},Microsoft.Xna.Framework.Vector2)
+  id: Add(UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2},Microsoft.Xna.Framework.Vector2)
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: Add(EaseUnit<Vector2>, Vector2)
+  nameWithType: SimplifiedEasing.Add(EaseUnit<Vector2>, Vector2)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.Add(UndyneFight_Ex.Entities.EaseUnit<Microsoft.Xna.Framework.Vector2>, Microsoft.Xna.Framework.Vector2)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Returns the result of a <xref href="Microsoft.Xna.Framework.Vector2" data-throw-if-not-resolved="false"></xref> easing function and a <xref href="Microsoft.Xna.Framework.Vector2" data-throw-if-not-resolved="false"></xref>
+  example: []
+  syntax:
+    content: public static EaseUnit<Vector2> Add(EaseUnit<Vector2> main, Vector2 addon)
+    parameters:
+    - id: main
+      type: UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}
+      description: The original easing function
+    - id: addon
+      type: Microsoft.Xna.Framework.Vector2
+      description: The displacement to add
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}
+      description: The sum of the easing function and vector
+    content.vb: Public Shared Function Add(main As EaseUnit(Of Vector2), addon As Vector2) As EaseUnit(Of Vector2)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.Add*
+  nameWithType.vb: SimplifiedEasing.Add(EaseUnit(Of Vector2), Vector2)
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.Add(UndyneFight_Ex.Entities.EaseUnit(Of Microsoft.Xna.Framework.Vector2), Microsoft.Xna.Framework.Vector2)
+  name.vb: Add(EaseUnit(Of Vector2), Vector2)
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.Scale(UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2},UndyneFight_Ex.Entities.EaseUnit{System.Single})
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.Scale(UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2},UndyneFight_Ex.Entities.EaseUnit{System.Single})
+  id: Scale(UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2},UndyneFight_Ex.Entities.EaseUnit{System.Single})
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: Scale(EaseUnit<Vector2>, EaseUnit<float>)
+  nameWithType: SimplifiedEasing.Scale(EaseUnit<Vector2>, EaseUnit<float>)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.Scale(UndyneFight_Ex.Entities.EaseUnit<Microsoft.Xna.Framework.Vector2>, UndyneFight_Ex.Entities.EaseUnit<float>)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Scales the <xref href="Microsoft.Xna.Framework.Vector2" data-throw-if-not-resolved="false"></xref> easing by a <xref href="System.Single" data-throw-if-not-resolved="false"></xref> easing function
+  example: []
+  syntax:
+    content: public static EaseUnit<Vector2> Scale(EaseUnit<Vector2> origin, EaseUnit<float> scalar)
+    parameters:
+    - id: origin
+      type: UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}
+      description: The vector easing to scale to
+    - id: scalar
+      type: UndyneFight_Ex.Entities.EaseUnit{System.Single}
+      description: The float easing to scale
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}
+      description: The result of the easing functions
+    content.vb: Public Shared Function Scale(origin As EaseUnit(Of Vector2), scalar As EaseUnit(Of Single)) As EaseUnit(Of Vector2)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.Scale*
+  nameWithType.vb: SimplifiedEasing.Scale(EaseUnit(Of Vector2), EaseUnit(Of Single))
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.Scale(UndyneFight_Ex.Entities.EaseUnit(Of Microsoft.Xna.Framework.Vector2), UndyneFight_Ex.Entities.EaseUnit(Of Single))
+  name.vb: Scale(EaseUnit(Of Vector2), EaseUnit(Of Single))
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.Scale(UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2},System.Single)
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.Scale(UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2},System.Single)
+  id: Scale(UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2},System.Single)
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: Scale(EaseUnit<Vector2>, float)
+  nameWithType: SimplifiedEasing.Scale(EaseUnit<Vector2>, float)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.Scale(UndyneFight_Ex.Entities.EaseUnit<Microsoft.Xna.Framework.Vector2>, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Scales the <xref href="Microsoft.Xna.Framework.Vector2" data-throw-if-not-resolved="false"></xref> easing by a scalar float value
+  example: []
+  syntax:
+    content: public static EaseUnit<Vector2> Scale(EaseUnit<Vector2> origin, float scalar)
+    parameters:
+    - id: origin
+      type: UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}
+      description: The vector easing to scale to
+    - id: scalar
+      type: System.Single
+      description: The float to scale
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}
+      description: The result of the scaled easing function
+    content.vb: Public Shared Function Scale(origin As EaseUnit(Of Vector2), scalar As Single) As EaseUnit(Of Vector2)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.Scale*
+  nameWithType.vb: SimplifiedEasing.Scale(EaseUnit(Of Vector2), Single)
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.Scale(UndyneFight_Ex.Entities.EaseUnit(Of Microsoft.Xna.Framework.Vector2), Single)
+  name.vb: Scale(EaseUnit(Of Vector2), Single)
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.Scale(UndyneFight_Ex.Entities.EaseUnit{System.Single},UndyneFight_Ex.Entities.EaseUnit{System.Single})
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.Scale(UndyneFight_Ex.Entities.EaseUnit{System.Single},UndyneFight_Ex.Entities.EaseUnit{System.Single})
+  id: Scale(UndyneFight_Ex.Entities.EaseUnit{System.Single},UndyneFight_Ex.Entities.EaseUnit{System.Single})
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: Scale(EaseUnit<float>, EaseUnit<float>)
+  nameWithType: SimplifiedEasing.Scale(EaseUnit<float>, EaseUnit<float>)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.Scale(UndyneFight_Ex.Entities.EaseUnit<float>, UndyneFight_Ex.Entities.EaseUnit<float>)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Scales the <xref href="System.Single" data-throw-if-not-resolved="false"></xref> easing by a <xref href="System.Single" data-throw-if-not-resolved="false"></xref> easing function
+  example: []
+  syntax:
+    content: public static EaseUnit<float> Scale(EaseUnit<float> origin, EaseUnit<float> scalar)
+    parameters:
+    - id: origin
+      type: UndyneFight_Ex.Entities.EaseUnit{System.Single}
+      description: The float easing to scale to
+    - id: scalar
+      type: UndyneFight_Ex.Entities.EaseUnit{System.Single}
+      description: The float easing to scale
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{System.Single}
+      description: The result of the easing functions
+    content.vb: Public Shared Function Scale(origin As EaseUnit(Of Single), scalar As EaseUnit(Of Single)) As EaseUnit(Of Single)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.Scale*
+  nameWithType.vb: SimplifiedEasing.Scale(EaseUnit(Of Single), EaseUnit(Of Single))
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.Scale(UndyneFight_Ex.Entities.EaseUnit(Of Single), UndyneFight_Ex.Entities.EaseUnit(Of Single))
+  name.vb: Scale(EaseUnit(Of Single), EaseUnit(Of Single))
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.Scale(UndyneFight_Ex.Entities.EaseUnit{System.Single},System.Single)
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.Scale(UndyneFight_Ex.Entities.EaseUnit{System.Single},System.Single)
+  id: Scale(UndyneFight_Ex.Entities.EaseUnit{System.Single},System.Single)
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: Scale(EaseUnit<float>, float)
+  nameWithType: SimplifiedEasing.Scale(EaseUnit<float>, float)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.Scale(UndyneFight_Ex.Entities.EaseUnit<float>, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Scales the <xref href="System.Single" data-throw-if-not-resolved="false"></xref> easing by a scalar float value
+  example: []
+  syntax:
+    content: public static EaseUnit<float> Scale(EaseUnit<float> origin, float scalar)
+    parameters:
+    - id: origin
+      type: UndyneFight_Ex.Entities.EaseUnit{System.Single}
+      description: The float easing to scale to
+    - id: scalar
+      type: System.Single
+      description: The float to scale
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{System.Single}
+      description: The result of the scaled easing function
+    content.vb: Public Shared Function Scale(origin As EaseUnit(Of Single), scalar As Single) As EaseUnit(Of Single)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.Scale*
+  nameWithType.vb: SimplifiedEasing.Scale(EaseUnit(Of Single), Single)
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.Scale(UndyneFight_Ex.Entities.EaseUnit(Of Single), Single)
+  name.vb: Scale(EaseUnit(Of Single), Single)
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.Polar(UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2},UndyneFight_Ex.Entities.EaseUnit{System.Single})
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.Polar(UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2},UndyneFight_Ex.Entities.EaseUnit{System.Single})
+  id: Polar(UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2},UndyneFight_Ex.Entities.EaseUnit{System.Single})
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: Polar(EaseUnit<Vector2>, EaseUnit<float>)
+  nameWithType: SimplifiedEasing.Polar(EaseUnit<Vector2>, EaseUnit<float>)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.Polar(UndyneFight_Ex.Entities.EaseUnit<Microsoft.Xna.Framework.Vector2>, UndyneFight_Ex.Entities.EaseUnit<float>)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Returns a easing of a rotating <xref href="Microsoft.Xna.Framework.Vector2" data-throw-if-not-resolved="false"></xref> easing
+  example: []
+  syntax:
+    content: public static EaseUnit<Vector2> Polar(EaseUnit<Vector2> main, EaseUnit<float> rotate)
+    parameters:
+    - id: main
+      type: UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}
+      description: The vector easing to rotate
+    - id: rotate
+      type: UndyneFight_Ex.Entities.EaseUnit{System.Single}
+      description: The easing of the rotation
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}
+      description: The result of the easing function
+    content.vb: Public Shared Function Polar(main As EaseUnit(Of Vector2), rotate As EaseUnit(Of Single)) As EaseUnit(Of Vector2)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.Polar*
+  nameWithType.vb: SimplifiedEasing.Polar(EaseUnit(Of Vector2), EaseUnit(Of Single))
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.Polar(UndyneFight_Ex.Entities.EaseUnit(Of Microsoft.Xna.Framework.Vector2), UndyneFight_Ex.Entities.EaseUnit(Of Single))
+  name.vb: Polar(EaseUnit(Of Vector2), EaseUnit(Of Single))
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.Polar(UndyneFight_Ex.Entities.EaseUnit{System.Single},UndyneFight_Ex.Entities.EaseUnit{System.Single})
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.Polar(UndyneFight_Ex.Entities.EaseUnit{System.Single},UndyneFight_Ex.Entities.EaseUnit{System.Single})
+  id: Polar(UndyneFight_Ex.Entities.EaseUnit{System.Single},UndyneFight_Ex.Entities.EaseUnit{System.Single})
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: Polar(EaseUnit<float>, EaseUnit<float>)
+  nameWithType: SimplifiedEasing.Polar(EaseUnit<float>, EaseUnit<float>)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.Polar(UndyneFight_Ex.Entities.EaseUnit<float>, UndyneFight_Ex.Entities.EaseUnit<float>)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Returns a easing of a rotating <xref href="System.Single" data-throw-if-not-resolved="false"></xref> easing
+  example: []
+  syntax:
+    content: public static EaseUnit<Vector2> Polar(EaseUnit<float> main, EaseUnit<float> rotate)
+    parameters:
+    - id: main
+      type: UndyneFight_Ex.Entities.EaseUnit{System.Single}
+      description: The float easing to rotate
+    - id: rotate
+      type: UndyneFight_Ex.Entities.EaseUnit{System.Single}
+      description: The easing of the rotation
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}
+      description: The result of the easing function
+    content.vb: Public Shared Function Polar(main As EaseUnit(Of Single), rotate As EaseUnit(Of Single)) As EaseUnit(Of Vector2)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.Polar*
+  nameWithType.vb: SimplifiedEasing.Polar(EaseUnit(Of Single), EaseUnit(Of Single))
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.Polar(UndyneFight_Ex.Entities.EaseUnit(Of Single), UndyneFight_Ex.Entities.EaseUnit(Of Single))
+  name.vb: Polar(EaseUnit(Of Single), EaseUnit(Of Single))
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.Polar(UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2},System.Single)
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.Polar(UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2},System.Single)
+  id: Polar(UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2},System.Single)
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: Polar(EaseUnit<Vector2>, float)
+  nameWithType: SimplifiedEasing.Polar(EaseUnit<Vector2>, float)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.Polar(UndyneFight_Ex.Entities.EaseUnit<Microsoft.Xna.Framework.Vector2>, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Returns a easing of a rotating <xref href="Microsoft.Xna.Framework.Vector2" data-throw-if-not-resolved="false"></xref> easing
+  example: []
+  syntax:
+    content: public static EaseUnit<Vector2> Polar(EaseUnit<Vector2> main, float rotate)
+    parameters:
+    - id: main
+      type: UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}
+      description: The vector easing to rotate
+    - id: rotate
+      type: System.Single
+      description: The rotation to set to
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}
+      description: The result of the easing function
+    content.vb: Public Shared Function Polar(main As EaseUnit(Of Vector2), rotate As Single) As EaseUnit(Of Vector2)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.Polar*
+  nameWithType.vb: SimplifiedEasing.Polar(EaseUnit(Of Vector2), Single)
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.Polar(UndyneFight_Ex.Entities.EaseUnit(Of Microsoft.Xna.Framework.Vector2), Single)
+  name.vb: Polar(EaseUnit(Of Vector2), Single)
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.Add(UndyneFight_Ex.Entities.EaseUnit{System.Single},UndyneFight_Ex.Entities.EaseUnit{System.Single})
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.Add(UndyneFight_Ex.Entities.EaseUnit{System.Single},UndyneFight_Ex.Entities.EaseUnit{System.Single})
+  id: Add(UndyneFight_Ex.Entities.EaseUnit{System.Single},UndyneFight_Ex.Entities.EaseUnit{System.Single})
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: Add(EaseUnit<float>, EaseUnit<float>)
+  nameWithType: SimplifiedEasing.Add(EaseUnit<float>, EaseUnit<float>)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.Add(UndyneFight_Ex.Entities.EaseUnit<float>, UndyneFight_Ex.Entities.EaseUnit<float>)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Returns the result of two <xref href="System.Single" data-throw-if-not-resolved="false"></xref> easing functions
+  example: []
+  syntax:
+    content: public static EaseUnit<float> Add(EaseUnit<float> main, EaseUnit<float> addon)
+    parameters:
+    - id: main
+      type: UndyneFight_Ex.Entities.EaseUnit{System.Single}
+      description: The original easing function
+    - id: addon
+      type: UndyneFight_Ex.Entities.EaseUnit{System.Single}
+      description: The easing function to add
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{System.Single}
+      description: The sum of the two easing functions
+    content.vb: Public Shared Function Add(main As EaseUnit(Of Single), addon As EaseUnit(Of Single)) As EaseUnit(Of Single)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.Add*
+  nameWithType.vb: SimplifiedEasing.Add(EaseUnit(Of Single), EaseUnit(Of Single))
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.Add(UndyneFight_Ex.Entities.EaseUnit(Of Single), UndyneFight_Ex.Entities.EaseUnit(Of Single))
+  name.vb: Add(EaseUnit(Of Single), EaseUnit(Of Single))
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.Add(UndyneFight_Ex.Entities.EaseUnit{System.Single},System.Single)
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.Add(UndyneFight_Ex.Entities.EaseUnit{System.Single},System.Single)
+  id: Add(UndyneFight_Ex.Entities.EaseUnit{System.Single},System.Single)
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: Add(EaseUnit<float>, float)
+  nameWithType: SimplifiedEasing.Add(EaseUnit<float>, float)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.Add(UndyneFight_Ex.Entities.EaseUnit<float>, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Returns the result of a <xref href="System.Single" data-throw-if-not-resolved="false"></xref> easing function and a float value
+  example: []
+  syntax:
+    content: public static EaseUnit<float> Add(EaseUnit<float> main, float addon)
+    parameters:
+    - id: main
+      type: UndyneFight_Ex.Entities.EaseUnit{System.Single}
+      description: The original easing function
+    - id: addon
+      type: System.Single
+      description: The float value to add
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{System.Single}
+      description: The sum of the easing function and the float value
+    content.vb: Public Shared Function Add(main As EaseUnit(Of Single), addon As Single) As EaseUnit(Of Single)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.Add*
+  nameWithType.vb: SimplifiedEasing.Add(EaseUnit(Of Single), Single)
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.Add(UndyneFight_Ex.Entities.EaseUnit(Of Single), Single)
+  name.vb: Add(EaseUnit(Of Single), Single)
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.Combine(UndyneFight_Ex.Entities.EaseUnit{System.Single},UndyneFight_Ex.Entities.EaseUnit{System.Single})
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.Combine(UndyneFight_Ex.Entities.EaseUnit{System.Single},UndyneFight_Ex.Entities.EaseUnit{System.Single})
+  id: Combine(UndyneFight_Ex.Entities.EaseUnit{System.Single},UndyneFight_Ex.Entities.EaseUnit{System.Single})
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: Combine(EaseUnit<float>, EaseUnit<float>)
+  nameWithType: SimplifiedEasing.Combine(EaseUnit<float>, EaseUnit<float>)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.Combine(UndyneFight_Ex.Entities.EaseUnit<float>, UndyneFight_Ex.Entities.EaseUnit<float>)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Returns a <xref href="Microsoft.Xna.Framework.Vector2" data-throw-if-not-resolved="false"></xref> easing with the given <code class="paramref">xEase</code> and <code class="paramref">yEase</code> as the x and y components of the <xref href="Microsoft.Xna.Framework.Vector2" data-throw-if-not-resolved="false"></xref> easing function
+  example: []
+  syntax:
+    content: public static EaseUnit<Vector2> Combine(EaseUnit<float> xEase, EaseUnit<float> yEase)
+    parameters:
+    - id: xEase
+      type: UndyneFight_Ex.Entities.EaseUnit{System.Single}
+      description: The easing of the x value (Use <xref href="UndyneFight_Ex.Entities.SimplifiedEasing.Stable(System.Single%2cSystem.Single)" data-throw-if-not-resolved="false"></xref> for stable value
+    - id: yEase
+      type: UndyneFight_Ex.Entities.EaseUnit{System.Single}
+      description: The easing of the y value (Use <xref href="UndyneFight_Ex.Entities.SimplifiedEasing.Stable(System.Single%2cSystem.Single)" data-throw-if-not-resolved="false"></xref> for stable value
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}
+      description: The combined easing function
+    content.vb: Public Shared Function Combine(xEase As EaseUnit(Of Single), yEase As EaseUnit(Of Single)) As EaseUnit(Of Vector2)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.Combine*
+  nameWithType.vb: SimplifiedEasing.Combine(EaseUnit(Of Single), EaseUnit(Of Single))
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.Combine(UndyneFight_Ex.Entities.EaseUnit(Of Single), UndyneFight_Ex.Entities.EaseUnit(Of Single))
+  name.vb: Combine(EaseUnit(Of Single), EaseUnit(Of Single))
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.SineWave(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,System.Single,System.Single)
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.SineWave(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,System.Single,System.Single)
+  id: SineWave(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,System.Single,System.Single)
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: SineWave(Vector2, Vector2, float, float, float)
+  nameWithType: SimplifiedEasing.SineWave(Vector2, Vector2, float, float, float)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.SineWave(Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, float, float, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Returns a sine wave easing
+  example: []
+  syntax:
+    content: public static EaseUnit<Vector2> SineWave(Vector2 start, Vector2 end, float T, float waveCount = 99999, float phase = 0)
+    parameters:
+    - id: start
+      type: Microsoft.Xna.Framework.Vector2
+      description: The minimal value of the wave
+    - id: end
+      type: Microsoft.Xna.Framework.Vector2
+      description: The maximum value of the wave
+    - id: T
+      type: System.Single
+      description: The period of the wave
+    - id: waveCount
+      type: System.Single
+      description: The amount of times the wave will run (Default 99999)
+    - id: phase
+      type: System.Single
+      description: The initial position (Default 0)
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}
+      description: The result of the easing
+    content.vb: Public Shared Function SineWave(start As Vector2, [end] As Vector2, T As Single, waveCount As Single = 99999, phase As Single = 0) As EaseUnit(Of Vector2)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.SineWave*
+  nameWithType.vb: SimplifiedEasing.SineWave(Vector2, Vector2, Single, Single, Single)
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.SineWave(Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, Single, Single, Single)
+  name.vb: SineWave(Vector2, Vector2, Single, Single, Single)
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.SineWave(Microsoft.Xna.Framework.Vector2,System.Single,System.Single,System.Single)
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.SineWave(Microsoft.Xna.Framework.Vector2,System.Single,System.Single,System.Single)
+  id: SineWave(Microsoft.Xna.Framework.Vector2,System.Single,System.Single,System.Single)
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: SineWave(Vector2, float, float, float)
+  nameWithType: SimplifiedEasing.SineWave(Vector2, float, float, float)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.SineWave(Microsoft.Xna.Framework.Vector2, float, float, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Returns a sine wave easing
+  example: []
+  syntax:
+    content: public static EaseUnit<Vector2> SineWave(Vector2 impact, float period, float waveCount = 99999, float phase = 0)
+    parameters:
+    - id: impact
+      type: Microsoft.Xna.Framework.Vector2
+      description: The magnitude of the wave
+    - id: period
+      type: System.Single
+      description: The period of the wave
+    - id: waveCount
+      type: System.Single
+      description: The amount of times the wave will run (Default 99999)
+    - id: phase
+      type: System.Single
+      description: The initial position (Default 0)
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}
+      description: The result of the easing
+    content.vb: Public Shared Function SineWave(impact As Vector2, period As Single, waveCount As Single = 99999, phase As Single = 0) As EaseUnit(Of Vector2)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.SineWave*
+  nameWithType.vb: SimplifiedEasing.SineWave(Vector2, Single, Single, Single)
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.SineWave(Microsoft.Xna.Framework.Vector2, Single, Single, Single)
+  name.vb: SineWave(Vector2, Single, Single, Single)
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.SineWave(System.Single,System.Single,System.Single,System.Single)
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.SineWave(System.Single,System.Single,System.Single,System.Single)
+  id: SineWave(System.Single,System.Single,System.Single,System.Single)
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: SineWave(float, float, float, float)
+  nameWithType: SimplifiedEasing.SineWave(float, float, float, float)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.SineWave(float, float, float, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Returns a sine wave easing
+  example: []
+  syntax:
+    content: public static EaseUnit<float> SineWave(float amplitude, float period, float waveCount = 99999, float phase = 0)
+    parameters:
+    - id: amplitude
+      type: System.Single
+      description: The amplitude of the wave
+    - id: period
+      type: System.Single
+      description: The period of the wave
+    - id: waveCount
+      type: System.Single
+      description: The amount of times the wave will run (Default 99999)
+    - id: phase
+      type: System.Single
+      description: The initial position (Default 0)
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{System.Single}
+      description: The result of the easing
+    content.vb: Public Shared Function SineWave(amplitude As Single, period As Single, waveCount As Single = 99999, phase As Single = 0) As EaseUnit(Of Single)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.SineWave*
+  nameWithType.vb: SimplifiedEasing.SineWave(Single, Single, Single, Single)
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.SineWave(Single, Single, Single, Single)
+  name.vb: SineWave(Single, Single, Single, Single)
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.Accelerating(System.Single,System.Single,System.Single)
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.Accelerating(System.Single,System.Single,System.Single)
+  id: Accelerating(System.Single,System.Single,System.Single)
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: Accelerating(float, float, float)
+  nameWithType: SimplifiedEasing.Accelerating(float, float, float)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.Accelerating(float, float, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: An accelerating easing
+  example: []
+  syntax:
+    content: public static EaseUnit<float> Accelerating(float time, float speed, float acceleration)
+    parameters:
+    - id: time
+      type: System.Single
+      description: The time of the acceleration
+    - id: speed
+      type: System.Single
+      description: The speed of the value change
+    - id: acceleration
+      type: System.Single
+      description: The acceleration of the speed
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{System.Single}
+      description: The result of the easing
+    content.vb: Public Shared Function Accelerating(time As Single, speed As Single, acceleration As Single) As EaseUnit(Of Single)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.Accelerating*
+  nameWithType.vb: SimplifiedEasing.Accelerating(Single, Single, Single)
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.Accelerating(Single, Single, Single)
+  name.vb: Accelerating(Single, Single, Single)
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.Accelerating(System.Single,System.Single,System.Single,System.Single)
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.Accelerating(System.Single,System.Single,System.Single,System.Single)
+  id: Accelerating(System.Single,System.Single,System.Single,System.Single)
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: Accelerating(float, float, float, float)
+  nameWithType: SimplifiedEasing.Accelerating(float, float, float, float)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.Accelerating(float, float, float, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: An accelerating easing
+  example: []
+  syntax:
+    content: public static EaseUnit<float> Accelerating(float time, float start, float speed, float acceleration)
+    parameters:
+    - id: time
+      type: System.Single
+      description: The time of the acceleration
+    - id: start
+      type: System.Single
+      description: The initial value
+    - id: speed
+      type: System.Single
+      description: The speed of the value change
+    - id: acceleration
+      type: System.Single
+      description: The acceleration of the speed
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{System.Single}
+      description: The result of the easing
+    content.vb: Public Shared Function Accelerating(time As Single, start As Single, speed As Single, acceleration As Single) As EaseUnit(Of Single)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.Accelerating*
+  nameWithType.vb: SimplifiedEasing.Accelerating(Single, Single, Single, Single)
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.Accelerating(Single, Single, Single, Single)
+  name.vb: Accelerating(Single, Single, Single, Single)
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.Accelerating(System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.Accelerating(System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  id: Accelerating(System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: Accelerating(float, Vector2, Vector2)
+  nameWithType: SimplifiedEasing.Accelerating(float, Vector2, Vector2)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.Accelerating(float, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: An accelerating easing
+  example: []
+  syntax:
+    content: public static EaseUnit<Vector2> Accelerating(float time, Vector2 speed, Vector2 acceleration)
+    parameters:
+    - id: time
+      type: System.Single
+      description: The time of the acceleration
+    - id: speed
+      type: Microsoft.Xna.Framework.Vector2
+      description: The speed of the value change
+    - id: acceleration
+      type: Microsoft.Xna.Framework.Vector2
+      description: The acceleration of the speed
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}
+      description: The result of the easing
+    content.vb: Public Shared Function Accelerating(time As Single, speed As Vector2, acceleration As Vector2) As EaseUnit(Of Vector2)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.Accelerating*
+  nameWithType.vb: SimplifiedEasing.Accelerating(Single, Vector2, Vector2)
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.Accelerating(Single, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2)
+  name.vb: Accelerating(Single, Vector2, Vector2)
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.Accelerating(System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.Accelerating(System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  id: Accelerating(System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing
+  langs:
+  - csharp
+  - vb
+  name: Accelerating(float, Vector2, Vector2, Vector2)
+  nameWithType: SimplifiedEasing.Accelerating(float, Vector2, Vector2, Vector2)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.Accelerating(float, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: An accelerating easing
+  example: []
+  syntax:
+    content: public static EaseUnit<Vector2> Accelerating(float time, Vector2 start, Vector2 speed, Vector2 acceleration)
+    parameters:
+    - id: time
+      type: System.Single
+      description: The time of the acceleration
+    - id: start
+      type: Microsoft.Xna.Framework.Vector2
+      description: The initial value
+    - id: speed
+      type: Microsoft.Xna.Framework.Vector2
+      description: The speed of the value change
+    - id: acceleration
+      type: Microsoft.Xna.Framework.Vector2
+      description: The acceleration of the speed
+    return:
+      type: UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}
+      description: The result of the easing
+    content.vb: Public Shared Function Accelerating(time As Single, start As Vector2, speed As Vector2, acceleration As Vector2) As EaseUnit(Of Vector2)
+  overload: UndyneFight_Ex.Entities.SimplifiedEasing.Accelerating*
+  nameWithType.vb: SimplifiedEasing.Accelerating(Single, Vector2, Vector2, Vector2)
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.Accelerating(Single, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2)
+  name.vb: Accelerating(Single, Vector2, Vector2, Vector2)
+references:
+- uid: UndyneFight_Ex.Entities
+  commentId: N:UndyneFight_Ex.Entities
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex.Entities
+  nameWithType: UndyneFight_Ex.Entities
+  fullName: UndyneFight_Ex.Entities
+  spec.csharp:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities
+    name: Entities
+    isExternal: true
+    href: UndyneFight_Ex.Entities.html
+  spec.vb:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities
+    name: Entities
+    isExternal: true
+    href: UndyneFight_Ex.Entities.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.Xna.Framework.Vector2
+  commentId: T:Microsoft.Xna.Framework.Vector2
+  parent: Microsoft.Xna.Framework
+  isExternal: true
+  name: Vector2
+  nameWithType: Vector2
+  fullName: Microsoft.Xna.Framework.Vector2
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.RunEase*
+  commentId: Overload:UndyneFight_Ex.Entities.SimplifiedEasing.RunEase
+  isExternal: true
+  href: UndyneFight_Ex.Entities.SimplifiedEasing.html#UndyneFight_Ex_Entities_SimplifiedEasing_RunEase_System_Action_Microsoft_Xna_Framework_Vector2__System_Boolean_UndyneFight_Ex_Entities_EaseUnit_Microsoft_Xna_Framework_Vector2____
+  name: RunEase
+  nameWithType: SimplifiedEasing.RunEase
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.RunEase
+- uid: System.Action{Microsoft.Xna.Framework.Vector2}
+  commentId: T:System.Action{Microsoft.Xna.Framework.Vector2}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<Vector2>
+  nameWithType: Action<Vector2>
+  fullName: System.Action<Microsoft.Xna.Framework.Vector2>
+  nameWithType.vb: Action(Of Vector2)
+  fullName.vb: System.Action(Of Microsoft.Xna.Framework.Vector2)
+  name.vb: Action(Of Vector2)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: )
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}[]
+  isExternal: true
+  href: UndyneFight_Ex.Entities.EaseUnit-1.html
+  name: EaseUnit<Vector2>[]
+  nameWithType: EaseUnit<Vector2>[]
+  fullName: UndyneFight_Ex.Entities.EaseUnit<Microsoft.Xna.Framework.Vector2>[]
+  nameWithType.vb: EaseUnit(Of Vector2)()
+  fullName.vb: UndyneFight_Ex.Entities.EaseUnit(Of Microsoft.Xna.Framework.Vector2)()
+  name.vb: EaseUnit(Of Vector2)()
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entities.EaseUnit`1
+    name: EaseUnit
+    isExternal: true
+    href: UndyneFight_Ex.Entities.EaseUnit-1.html
+  - name: <
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: '>'
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: UndyneFight_Ex.Entities.EaseUnit`1
+    name: EaseUnit
+    isExternal: true
+    href: UndyneFight_Ex.Entities.EaseUnit-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: )
+  - name: (
+  - name: )
+- uid: Microsoft.Xna.Framework
+  commentId: N:Microsoft.Xna.Framework
+  isExternal: true
+  name: Microsoft.Xna.Framework
+  nameWithType: Microsoft.Xna.Framework
+  fullName: Microsoft.Xna.Framework
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+- uid: System.Action`1
+  commentId: T:System.Action`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: System.Action{System.Single}
+  commentId: T:System.Action{System.Single}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<float>
+  nameWithType: Action<float>
+  fullName: System.Action<float>
+  nameWithType.vb: Action(Of Single)
+  fullName.vb: System.Action(Of Single)
+  name.vb: Action(Of Single)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: UndyneFight_Ex.Entities.EaseUnit{System.Single}[]
+  isExternal: true
+  href: UndyneFight_Ex.Entities.EaseUnit-1.html
+  name: EaseUnit<float>[]
+  nameWithType: EaseUnit<float>[]
+  fullName: UndyneFight_Ex.Entities.EaseUnit<float>[]
+  nameWithType.vb: EaseUnit(Of Single)()
+  fullName.vb: UndyneFight_Ex.Entities.EaseUnit(Of Single)()
+  name.vb: EaseUnit(Of Single)()
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entities.EaseUnit`1
+    name: EaseUnit
+    isExternal: true
+    href: UndyneFight_Ex.Entities.EaseUnit-1.html
+  - name: <
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: '>'
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: UndyneFight_Ex.Entities.EaseUnit`1
+    name: EaseUnit
+    isExternal: true
+    href: UndyneFight_Ex.Entities.EaseUnit-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.Entities.EaseUnit`1
+  commentId: T:UndyneFight_Ex.Entities.EaseUnit`1
+  parent: UndyneFight_Ex.Entities
+  isExternal: true
+  href: UndyneFight_Ex.Entities.EaseUnit-1.html
+  name: EaseUnit<T>
+  nameWithType: EaseUnit<T>
+  fullName: UndyneFight_Ex.Entities.EaseUnit<T>
+  nameWithType.vb: EaseUnit(Of T)
+  fullName.vb: UndyneFight_Ex.Entities.EaseUnit(Of T)
+  name.vb: EaseUnit(Of T)
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entities.EaseUnit`1
+    name: EaseUnit
+    isExternal: true
+    href: UndyneFight_Ex.Entities.EaseUnit-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: UndyneFight_Ex.Entities.EaseUnit`1
+    name: EaseUnit
+    isExternal: true
+    href: UndyneFight_Ex.Entities.EaseUnit-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.LinkEase*
+  commentId: Overload:UndyneFight_Ex.Entities.SimplifiedEasing.LinkEase
+  isExternal: true
+  href: UndyneFight_Ex.Entities.SimplifiedEasing.html#UndyneFight_Ex_Entities_SimplifiedEasing_LinkEase_System_Boolean_UndyneFight_Ex_Entities_EaseUnit_System_Single____
+  name: LinkEase
+  nameWithType: SimplifiedEasing.LinkEase
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.LinkEase
+- uid: UndyneFight_Ex.Entities.EaseUnit{System.Single}
+  commentId: T:UndyneFight_Ex.Entities.EaseUnit{System.Single}
+  parent: UndyneFight_Ex.Entities
+  definition: UndyneFight_Ex.Entities.EaseUnit`1
+  href: UndyneFight_Ex.Entities.EaseUnit-1.html
+  name: EaseUnit<float>
+  nameWithType: EaseUnit<float>
+  fullName: UndyneFight_Ex.Entities.EaseUnit<float>
+  nameWithType.vb: EaseUnit(Of Single)
+  fullName.vb: UndyneFight_Ex.Entities.EaseUnit(Of Single)
+  name.vb: EaseUnit(Of Single)
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entities.EaseUnit`1
+    name: EaseUnit
+    isExternal: true
+    href: UndyneFight_Ex.Entities.EaseUnit-1.html
+  - name: <
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: '>'
+  spec.vb:
+  - uid: UndyneFight_Ex.Entities.EaseUnit`1
+    name: EaseUnit
+    isExternal: true
+    href: UndyneFight_Ex.Entities.EaseUnit-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}
+  commentId: T:UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2}
+  parent: UndyneFight_Ex.Entities
+  definition: UndyneFight_Ex.Entities.EaseUnit`1
+  href: UndyneFight_Ex.Entities.EaseUnit-1.html
+  name: EaseUnit<Vector2>
+  nameWithType: EaseUnit<Vector2>
+  fullName: UndyneFight_Ex.Entities.EaseUnit<Microsoft.Xna.Framework.Vector2>
+  nameWithType.vb: EaseUnit(Of Vector2)
+  fullName.vb: UndyneFight_Ex.Entities.EaseUnit(Of Microsoft.Xna.Framework.Vector2)
+  name.vb: EaseUnit(Of Vector2)
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entities.EaseUnit`1
+    name: EaseUnit
+    isExternal: true
+    href: UndyneFight_Ex.Entities.EaseUnit-1.html
+  - name: <
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: UndyneFight_Ex.Entities.EaseUnit`1
+    name: EaseUnit
+    isExternal: true
+    href: UndyneFight_Ex.Entities.EaseUnit-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: )
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.InfLinear*
+  commentId: Overload:UndyneFight_Ex.Entities.SimplifiedEasing.InfLinear
+  isExternal: true
+  href: UndyneFight_Ex.Entities.SimplifiedEasing.html#UndyneFight_Ex_Entities_SimplifiedEasing_InfLinear_System_Single_System_Single_
+  name: InfLinear
+  nameWithType: SimplifiedEasing.InfLinear
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.InfLinear
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.Linear*
+  commentId: Overload:UndyneFight_Ex.Entities.SimplifiedEasing.Linear
+  isExternal: true
+  href: UndyneFight_Ex.Entities.SimplifiedEasing.html#UndyneFight_Ex_Entities_SimplifiedEasing_Linear_System_Single_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_
+  name: Linear
+  nameWithType: SimplifiedEasing.Linear
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.Linear
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.EaseIn*
+  commentId: Overload:UndyneFight_Ex.Entities.SimplifiedEasing.EaseIn
+  isExternal: true
+  href: UndyneFight_Ex.Entities.SimplifiedEasing.html#UndyneFight_Ex_Entities_SimplifiedEasing_EaseIn_System_Single_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_UndyneFight_Ex_Entities_SimplifiedEasing_EaseState_
+  name: EaseIn
+  nameWithType: SimplifiedEasing.EaseIn
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.EaseIn
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+  commentId: T:UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+  parent: UndyneFight_Ex.Entities
+  isExternal: true
+  href: UndyneFight_Ex.Entities.SimplifiedEasing.html
+  name: SimplifiedEasing.EaseState
+  nameWithType: SimplifiedEasing.EaseState
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entities.SimplifiedEasing
+    name: SimplifiedEasing
+    isExternal: true
+    href: UndyneFight_Ex.Entities.SimplifiedEasing.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+    name: EaseState
+    isExternal: true
+    href: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.html
+  spec.vb:
+  - uid: UndyneFight_Ex.Entities.SimplifiedEasing
+    name: SimplifiedEasing
+    isExternal: true
+    href: UndyneFight_Ex.Entities.SimplifiedEasing.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+    name: EaseState
+    isExternal: true
+    href: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.html
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.EaseOut*
+  commentId: Overload:UndyneFight_Ex.Entities.SimplifiedEasing.EaseOut
+  isExternal: true
+  href: UndyneFight_Ex.Entities.SimplifiedEasing.html#UndyneFight_Ex_Entities_SimplifiedEasing_EaseOut_System_Single_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_UndyneFight_Ex_Entities_SimplifiedEasing_EaseState_
+  name: EaseOut
+  nameWithType: SimplifiedEasing.EaseOut
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.EaseOut
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.EaseInOut*
+  commentId: Overload:UndyneFight_Ex.Entities.SimplifiedEasing.EaseInOut
+  isExternal: true
+  href: UndyneFight_Ex.Entities.SimplifiedEasing.html#UndyneFight_Ex_Entities_SimplifiedEasing_EaseInOut_System_Single_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_System_Single_UndyneFight_Ex_Entities_SimplifiedEasing_EaseState_System_Nullable_UndyneFight_Ex_Entities_SimplifiedEasing_EaseState__
+  name: EaseInOut
+  nameWithType: SimplifiedEasing.EaseInOut
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.EaseInOut
+- uid: System.Nullable{UndyneFight_Ex.Entities.SimplifiedEasing.EaseState}
+  commentId: T:System.Nullable{UndyneFight_Ex.Entities.SimplifiedEasing.EaseState}
+  parent: System
+  definition: System.Nullable`1
+  href: UndyneFight_Ex.Entities.SimplifiedEasing.html
+  name: SimplifiedEasing.EaseState?
+  nameWithType: SimplifiedEasing.EaseState?
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState?
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entities.SimplifiedEasing
+    name: SimplifiedEasing
+    isExternal: true
+    href: UndyneFight_Ex.Entities.SimplifiedEasing.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+    name: EaseState
+    isExternal: true
+    href: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.html
+  - name: '?'
+  spec.vb:
+  - uid: UndyneFight_Ex.Entities.SimplifiedEasing
+    name: SimplifiedEasing
+    isExternal: true
+    href: UndyneFight_Ex.Entities.SimplifiedEasing.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+    name: EaseState
+    isExternal: true
+    href: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.html
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.EaseOutIn*
+  commentId: Overload:UndyneFight_Ex.Entities.SimplifiedEasing.EaseOutIn
+  isExternal: true
+  href: UndyneFight_Ex.Entities.SimplifiedEasing.html#UndyneFight_Ex_Entities_SimplifiedEasing_EaseOutIn_System_Single_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_System_Single_UndyneFight_Ex_Entities_SimplifiedEasing_EaseState_System_Nullable_UndyneFight_Ex_Entities_SimplifiedEasing_EaseState__
+  name: EaseOutIn
+  nameWithType: SimplifiedEasing.EaseOutIn
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.EaseOutIn
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.Stable*
+  commentId: Overload:UndyneFight_Ex.Entities.SimplifiedEasing.Stable
+  isExternal: true
+  href: UndyneFight_Ex.Entities.SimplifiedEasing.html#UndyneFight_Ex_Entities_SimplifiedEasing_Stable_System_Single_Microsoft_Xna_Framework_Vector2_
+  name: Stable
+  nameWithType: SimplifiedEasing.Stable
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.Stable
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.Stable(System.Single,Microsoft.Xna.Framework.Vector2)
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.Stable(System.Single,Microsoft.Xna.Framework.Vector2)
+  isExternal: true
+  href: UndyneFight_Ex.Entities.SimplifiedEasing.html#UndyneFight_Ex_Entities_SimplifiedEasing_Stable_System_Single_Microsoft_Xna_Framework_Vector2_
+  name: Stable(float, Vector2)
+  nameWithType: SimplifiedEasing.Stable(float, Vector2)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.Stable(float, Microsoft.Xna.Framework.Vector2)
+  nameWithType.vb: SimplifiedEasing.Stable(Single, Vector2)
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.Stable(Single, Microsoft.Xna.Framework.Vector2)
+  name.vb: Stable(Single, Vector2)
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entities.SimplifiedEasing.Stable(System.Single,Microsoft.Xna.Framework.Vector2)
+    name: Stable
+    isExternal: true
+    href: UndyneFight_Ex.Entities.SimplifiedEasing.html#UndyneFight_Ex_Entities_SimplifiedEasing_Stable_System_Single_Microsoft_Xna_Framework_Vector2_
+  - name: (
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.Entities.SimplifiedEasing.Stable(System.Single,Microsoft.Xna.Framework.Vector2)
+    name: Stable
+    isExternal: true
+    href: UndyneFight_Ex.Entities.SimplifiedEasing.html#UndyneFight_Ex_Entities_SimplifiedEasing_Stable_System_Single_Microsoft_Xna_Framework_Vector2_
+  - name: (
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: )
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.Copy*
+  commentId: Overload:UndyneFight_Ex.Entities.SimplifiedEasing.Copy
+  isExternal: true
+  href: UndyneFight_Ex.Entities.SimplifiedEasing.html#UndyneFight_Ex_Entities_SimplifiedEasing_Copy_UndyneFight_Ex_Entities_EaseUnit_Microsoft_Xna_Framework_Vector2__System_Int32_
+  name: Copy
+  nameWithType: SimplifiedEasing.Copy
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.Copy
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.Alternate*
+  commentId: Overload:UndyneFight_Ex.Entities.SimplifiedEasing.Alternate
+  isExternal: true
+  href: UndyneFight_Ex.Entities.SimplifiedEasing.html#UndyneFight_Ex_Entities_SimplifiedEasing_Alternate_System_Single_UndyneFight_Ex_Entities_EaseUnit_Microsoft_Xna_Framework_Vector2__UndyneFight_Ex_Entities_EaseUnit_Microsoft_Xna_Framework_Vector2____
+  name: Alternate
+  nameWithType: SimplifiedEasing.Alternate
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.Alternate
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.Add*
+  commentId: Overload:UndyneFight_Ex.Entities.SimplifiedEasing.Add
+  isExternal: true
+  href: UndyneFight_Ex.Entities.SimplifiedEasing.html#UndyneFight_Ex_Entities_SimplifiedEasing_Add_UndyneFight_Ex_Entities_EaseUnit_Microsoft_Xna_Framework_Vector2__UndyneFight_Ex_Entities_EaseUnit_Microsoft_Xna_Framework_Vector2__
+  name: Add
+  nameWithType: SimplifiedEasing.Add
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.Add
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.Scale*
+  commentId: Overload:UndyneFight_Ex.Entities.SimplifiedEasing.Scale
+  isExternal: true
+  href: UndyneFight_Ex.Entities.SimplifiedEasing.html#UndyneFight_Ex_Entities_SimplifiedEasing_Scale_UndyneFight_Ex_Entities_EaseUnit_Microsoft_Xna_Framework_Vector2__UndyneFight_Ex_Entities_EaseUnit_System_Single__
+  name: Scale
+  nameWithType: SimplifiedEasing.Scale
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.Scale
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.Polar*
+  commentId: Overload:UndyneFight_Ex.Entities.SimplifiedEasing.Polar
+  isExternal: true
+  href: UndyneFight_Ex.Entities.SimplifiedEasing.html#UndyneFight_Ex_Entities_SimplifiedEasing_Polar_UndyneFight_Ex_Entities_EaseUnit_Microsoft_Xna_Framework_Vector2__UndyneFight_Ex_Entities_EaseUnit_System_Single__
+  name: Polar
+  nameWithType: SimplifiedEasing.Polar
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.Polar
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.Stable(System.Single,System.Single)
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.Stable(System.Single,System.Single)
+  isExternal: true
+  href: UndyneFight_Ex.Entities.SimplifiedEasing.html#UndyneFight_Ex_Entities_SimplifiedEasing_Stable_System_Single_System_Single_
+  name: Stable(float, float)
+  nameWithType: SimplifiedEasing.Stable(float, float)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.Stable(float, float)
+  nameWithType.vb: SimplifiedEasing.Stable(Single, Single)
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.Stable(Single, Single)
+  name.vb: Stable(Single, Single)
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entities.SimplifiedEasing.Stable(System.Single,System.Single)
+    name: Stable
+    isExternal: true
+    href: UndyneFight_Ex.Entities.SimplifiedEasing.html#UndyneFight_Ex_Entities_SimplifiedEasing_Stable_System_Single_System_Single_
+  - name: (
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.Entities.SimplifiedEasing.Stable(System.Single,System.Single)
+    name: Stable
+    isExternal: true
+    href: UndyneFight_Ex.Entities.SimplifiedEasing.html#UndyneFight_Ex_Entities_SimplifiedEasing_Stable_System_Single_System_Single_
+  - name: (
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.Combine*
+  commentId: Overload:UndyneFight_Ex.Entities.SimplifiedEasing.Combine
+  isExternal: true
+  href: UndyneFight_Ex.Entities.SimplifiedEasing.html#UndyneFight_Ex_Entities_SimplifiedEasing_Combine_UndyneFight_Ex_Entities_EaseUnit_System_Single__UndyneFight_Ex_Entities_EaseUnit_System_Single__
+  name: Combine
+  nameWithType: SimplifiedEasing.Combine
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.Combine
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.SineWave*
+  commentId: Overload:UndyneFight_Ex.Entities.SimplifiedEasing.SineWave
+  isExternal: true
+  href: UndyneFight_Ex.Entities.SimplifiedEasing.html#UndyneFight_Ex_Entities_SimplifiedEasing_SineWave_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_System_Single_System_Single_System_Single_
+  name: SineWave
+  nameWithType: SimplifiedEasing.SineWave
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.SineWave
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.Accelerating*
+  commentId: Overload:UndyneFight_Ex.Entities.SimplifiedEasing.Accelerating
+  isExternal: true
+  href: UndyneFight_Ex.Entities.SimplifiedEasing.html#UndyneFight_Ex_Entities_SimplifiedEasing_Accelerating_System_Single_System_Single_System_Single_
+  name: Accelerating
+  nameWithType: SimplifiedEasing.Accelerating
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.Accelerating

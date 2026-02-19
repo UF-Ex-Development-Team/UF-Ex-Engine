@@ -1,0 +1,258 @@
+### YamlMime:ManagedReference
+items:
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment
+  commentId: T:UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment
+  id: MiscUtil.TextBuilder.TextVAlignment
+  parent: UndyneFight_Ex
+  children:
+  - UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment.Bottom
+  - UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment.Center
+  - UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment.Top
+  langs:
+  - csharp
+  - vb
+  name: MiscUtil.TextBuilder.TextVAlignment
+  nameWithType: MiscUtil.TextBuilder.TextVAlignment
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment
+  type: Enum
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: The vertical text alignment
+  example: []
+  syntax:
+    content: public enum MiscUtil.TextBuilder.TextVAlignment
+    content.vb: Public Enum MiscUtil.TextBuilder.TextVAlignment
+  extensionMethods:
+  - UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment.UndyneFight_Ex.MathUtil.InRange``1(UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment,UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment)
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment.Top
+  commentId: F:UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment.Top
+  id: Top
+  parent: UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment
+  langs:
+  - csharp
+  - vb
+  name: Top
+  nameWithType: MiscUtil.TextBuilder.TextVAlignment.Top
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment.Top
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Aligns the text at the top
+  example: []
+  syntax:
+    content: Top = 0
+    return:
+      type: UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment.Center
+  commentId: F:UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment.Center
+  id: Center
+  parent: UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment
+  langs:
+  - csharp
+  - vb
+  name: Center
+  nameWithType: MiscUtil.TextBuilder.TextVAlignment.Center
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment.Center
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Aligns the text vertically at the center
+  example: []
+  syntax:
+    content: Center = 1
+    return:
+      type: UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment.Bottom
+  commentId: F:UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment.Bottom
+  id: Bottom
+  parent: UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment
+  langs:
+  - csharp
+  - vb
+  name: Bottom
+  nameWithType: MiscUtil.TextBuilder.TextVAlignment.Bottom
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment.Bottom
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Aligns the text at the bottom (It is normal to have a small displacement)
+  example: []
+  syntax:
+    content: Bottom = 2
+    return:
+      type: UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment
+references:
+- uid: UndyneFight_Ex
+  commentId: N:UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex
+  nameWithType: UndyneFight_Ex
+  fullName: UndyneFight_Ex
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment.UndyneFight_Ex.MathUtil.InRange``1(UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment,UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment)
+  commentId: M:UndyneFight_Ex.MathUtil.InRange``1(``0,``0,``0)
+  parent: UndyneFight_Ex.MathUtil
+  definition: UndyneFight_Ex.MathUtil.InRange``1(``0,``0,``0)
+  href: UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_InRange__1___0___0___0_
+  name: InRange<TextVAlignment>(TextVAlignment, TextVAlignment, TextVAlignment)
+  nameWithType: MathUtil.InRange<MiscUtil.TextBuilder.TextVAlignment>(MiscUtil.TextBuilder.TextVAlignment, MiscUtil.TextBuilder.TextVAlignment, MiscUtil.TextBuilder.TextVAlignment)
+  fullName: UndyneFight_Ex.MathUtil.InRange<UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment>(UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment, UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment, UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment)
+  nameWithType.vb: MathUtil.InRange(Of MiscUtil.TextBuilder.TextVAlignment)(MiscUtil.TextBuilder.TextVAlignment, MiscUtil.TextBuilder.TextVAlignment, MiscUtil.TextBuilder.TextVAlignment)
+  fullName.vb: UndyneFight_Ex.MathUtil.InRange(Of UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment)(UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment, UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment, UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment)
+  name.vb: InRange(Of TextVAlignment)(TextVAlignment, TextVAlignment, TextVAlignment)
+  spec.csharp:
+  - uid: UndyneFight_Ex.MathUtil.InRange``1(UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment,UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment,UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment)
+    name: InRange
+    isExternal: true
+    href: UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_InRange__1___0___0___0_
+  - name: <
+  - uid: UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment
+    name: TextVAlignment
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment.html
+  - name: '>'
+  - name: (
+  - uid: UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment
+    name: TextVAlignment
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment.html
+  - name: ','
+  - name: " "
+  - uid: UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment
+    name: TextVAlignment
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment.html
+  - name: ','
+  - name: " "
+  - uid: UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment
+    name: TextVAlignment
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment.html
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.MathUtil.InRange``1(UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment,UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment,UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment)
+    name: InRange
+    isExternal: true
+    href: UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_InRange__1___0___0___0_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment
+    name: TextVAlignment
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment.html
+  - name: )
+  - name: (
+  - uid: UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment
+    name: TextVAlignment
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment.html
+  - name: ','
+  - name: " "
+  - uid: UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment
+    name: TextVAlignment
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment.html
+  - name: ','
+  - name: " "
+  - uid: UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment
+    name: TextVAlignment
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment.html
+  - name: )
+- uid: UndyneFight_Ex.MathUtil.InRange``1(``0,``0,``0)
+  commentId: M:UndyneFight_Ex.MathUtil.InRange``1(``0,``0,``0)
+  isExternal: true
+  href: UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_InRange__1___0___0___0_
+  name: InRange<T>(T, T, T)
+  nameWithType: MathUtil.InRange<T>(T, T, T)
+  fullName: UndyneFight_Ex.MathUtil.InRange<T>(T, T, T)
+  nameWithType.vb: MathUtil.InRange(Of T)(T, T, T)
+  fullName.vb: UndyneFight_Ex.MathUtil.InRange(Of T)(T, T, T)
+  name.vb: InRange(Of T)(T, T, T)
+  spec.csharp:
+  - uid: UndyneFight_Ex.MathUtil.InRange``1(``0,``0,``0)
+    name: InRange
+    isExternal: true
+    href: UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_InRange__1___0___0___0_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.MathUtil.InRange``1(``0,``0,``0)
+    name: InRange
+    isExternal: true
+    href: UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_InRange__1___0___0___0_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+- uid: UndyneFight_Ex.MathUtil
+  commentId: T:UndyneFight_Ex.MathUtil
+  parent: UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.MathUtil.html
+  name: MathUtil
+  nameWithType: MathUtil
+  fullName: UndyneFight_Ex.MathUtil
+- uid: UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment
+  commentId: T:UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment
+  parent: UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.MiscUtil.html
+  name: MiscUtil.TextBuilder.TextVAlignment
+  nameWithType: MiscUtil.TextBuilder.TextVAlignment
+  fullName: UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment
+  spec.csharp:
+  - uid: UndyneFight_Ex.MiscUtil
+    name: MiscUtil
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.html
+  - name: .
+  - uid: UndyneFight_Ex.MiscUtil.TextBuilder
+    name: TextBuilder
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.TextBuilder.html
+  - name: .
+  - uid: UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment
+    name: TextVAlignment
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment.html
+  spec.vb:
+  - uid: UndyneFight_Ex.MiscUtil
+    name: MiscUtil
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.html
+  - name: .
+  - uid: UndyneFight_Ex.MiscUtil.TextBuilder
+    name: TextBuilder
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.TextBuilder.html
+  - name: .
+  - uid: UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment
+    name: TextVAlignment
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment.html

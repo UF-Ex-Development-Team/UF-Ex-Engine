@@ -1,0 +1,117 @@
+### YamlMime:ManagedReference
+items:
+- uid: UndyneFight_Ex.Shapes
+  commentId: N:UndyneFight_Ex.Shapes
+  id: UndyneFight_Ex.Shapes
+  children:
+  - UndyneFight_Ex.Shapes.Circle
+  - UndyneFight_Ex.Shapes.DrawingData
+  - UndyneFight_Ex.Shapes.DrawingData.DrawMode
+  - UndyneFight_Ex.Shapes.IShape
+  - UndyneFight_Ex.Shapes.Rectangle
+  - UndyneFight_Ex.Shapes.Triangle
+  langs:
+  - csharp
+  - vb
+  name: UndyneFight_Ex.Shapes
+  nameWithType: UndyneFight_Ex.Shapes
+  fullName: UndyneFight_Ex.Shapes
+  type: Namespace
+  assemblies:
+  - UndyneFight-Ex
+references:
+- uid: UndyneFight_Ex.Shapes.IShape
+  commentId: T:UndyneFight_Ex.Shapes.IShape
+  parent: UndyneFight_Ex.Shapes
+  isExternal: true
+  href: UndyneFight_Ex.Shapes.IShape.html
+  name: IShape
+  nameWithType: IShape
+  fullName: UndyneFight_Ex.Shapes.IShape
+- uid: UndyneFight_Ex.Shapes.DrawingData
+  commentId: T:UndyneFight_Ex.Shapes.DrawingData
+  parent: UndyneFight_Ex.Shapes
+  isExternal: true
+  href: UndyneFight_Ex.Shapes.DrawingData.html
+  name: DrawingData
+  nameWithType: DrawingData
+  fullName: UndyneFight_Ex.Shapes.DrawingData
+- uid: UndyneFight_Ex.Shapes.DrawingData.DrawMode
+  commentId: T:UndyneFight_Ex.Shapes.DrawingData.DrawMode
+  parent: UndyneFight_Ex.Shapes
+  isExternal: true
+  href: UndyneFight_Ex.Shapes.DrawingData.html
+  name: DrawingData.DrawMode
+  nameWithType: DrawingData.DrawMode
+  fullName: UndyneFight_Ex.Shapes.DrawingData.DrawMode
+  spec.csharp:
+  - uid: UndyneFight_Ex.Shapes.DrawingData
+    name: DrawingData
+    isExternal: true
+    href: UndyneFight_Ex.Shapes.DrawingData.html
+  - name: .
+  - uid: UndyneFight_Ex.Shapes.DrawingData.DrawMode
+    name: DrawMode
+    isExternal: true
+    href: UndyneFight_Ex.Shapes.DrawingData.DrawMode.html
+  spec.vb:
+  - uid: UndyneFight_Ex.Shapes.DrawingData
+    name: DrawingData
+    isExternal: true
+    href: UndyneFight_Ex.Shapes.DrawingData.html
+  - name: .
+  - uid: UndyneFight_Ex.Shapes.DrawingData.DrawMode
+    name: DrawMode
+    isExternal: true
+    href: UndyneFight_Ex.Shapes.DrawingData.DrawMode.html
+- uid: UndyneFight_Ex.Shapes.Triangle
+  commentId: T:UndyneFight_Ex.Shapes.Triangle
+  parent: UndyneFight_Ex.Shapes
+  isExternal: true
+  href: UndyneFight_Ex.Shapes.Triangle.html
+  name: Triangle
+  nameWithType: Triangle
+  fullName: UndyneFight_Ex.Shapes.Triangle
+- uid: UndyneFight_Ex.Shapes.Rectangle
+  commentId: T:UndyneFight_Ex.Shapes.Rectangle
+  parent: UndyneFight_Ex.Shapes
+  isExternal: true
+  href: UndyneFight_Ex.Shapes.Rectangle.html
+  name: Rectangle
+  nameWithType: Rectangle
+  fullName: UndyneFight_Ex.Shapes.Rectangle
+- uid: UndyneFight_Ex.Shapes.Circle
+  commentId: T:UndyneFight_Ex.Shapes.Circle
+  parent: UndyneFight_Ex.Shapes
+  isExternal: true
+  href: UndyneFight_Ex.Shapes.Circle.html
+  name: Circle
+  nameWithType: Circle
+  fullName: UndyneFight_Ex.Shapes.Circle
+- uid: UndyneFight_Ex.Shapes
+  commentId: N:UndyneFight_Ex.Shapes
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex.Shapes
+  nameWithType: UndyneFight_Ex.Shapes
+  fullName: UndyneFight_Ex.Shapes
+  spec.csharp:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Shapes
+    name: Shapes
+    isExternal: true
+    href: UndyneFight_Ex.Shapes.html
+  spec.vb:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Shapes
+    name: Shapes
+    isExternal: true
+    href: UndyneFight_Ex.Shapes.html

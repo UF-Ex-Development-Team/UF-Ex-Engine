@@ -1,0 +1,443 @@
+### YamlMime:ManagedReference
+items:
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+  commentId: T:UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+  id: SimplifiedEasing.EaseState
+  parent: UndyneFight_Ex.Entities
+  children:
+  - UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.Back
+  - UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.Bounce
+  - UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.Circ
+  - UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.Cubic
+  - UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.Elastic
+  - UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.Expo
+  - UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.Linear
+  - UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.Quad
+  - UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.Quart
+  - UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.Quint
+  - UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.Sine
+  langs:
+  - csharp
+  - vb
+  name: SimplifiedEasing.EaseState
+  nameWithType: SimplifiedEasing.EaseState
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+  type: Enum
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Modes of easing to apply on easing functions, see <a href="https://easings.net/">https://easings.net/</a> for more information
+  example: []
+  syntax:
+    content: public enum SimplifiedEasing.EaseState
+    content.vb: Public Enum SimplifiedEasing.EaseState
+  extensionMethods:
+  - UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.UndyneFight_Ex.MathUtil.InRange``1(UndyneFight_Ex.Entities.SimplifiedEasing.EaseState,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.Linear
+  commentId: F:UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.Linear
+  id: Linear
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+  langs:
+  - csharp
+  - vb
+  name: Linear
+  nameWithType: SimplifiedEasing.EaseState.Linear
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.Linear
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Linear easing
+  example: []
+  syntax:
+    content: Linear = 0
+    return:
+      type: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.Quad
+  commentId: F:UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.Quad
+  id: Quad
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+  langs:
+  - csharp
+  - vb
+  name: Quad
+  nameWithType: SimplifiedEasing.EaseState.Quad
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.Quad
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Quadratic easing
+  example: []
+  syntax:
+    content: Quad = 1
+    return:
+      type: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.Cubic
+  commentId: F:UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.Cubic
+  id: Cubic
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+  langs:
+  - csharp
+  - vb
+  name: Cubic
+  nameWithType: SimplifiedEasing.EaseState.Cubic
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.Cubic
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Cubic easing
+  example: []
+  syntax:
+    content: Cubic = 2
+    return:
+      type: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.Quart
+  commentId: F:UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.Quart
+  id: Quart
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+  langs:
+  - csharp
+  - vb
+  name: Quart
+  nameWithType: SimplifiedEasing.EaseState.Quart
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.Quart
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Quartic easing
+  example: []
+  syntax:
+    content: Quart = 3
+    return:
+      type: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.Quint
+  commentId: F:UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.Quint
+  id: Quint
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+  langs:
+  - csharp
+  - vb
+  name: Quint
+  nameWithType: SimplifiedEasing.EaseState.Quint
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.Quint
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Quintic easing
+  example: []
+  syntax:
+    content: Quint = 4
+    return:
+      type: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.Circ
+  commentId: F:UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.Circ
+  id: Circ
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+  langs:
+  - csharp
+  - vb
+  name: Circ
+  nameWithType: SimplifiedEasing.EaseState.Circ
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.Circ
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Circular easing
+  example: []
+  syntax:
+    content: Circ = 5
+    return:
+      type: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.Sine
+  commentId: F:UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.Sine
+  id: Sine
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+  langs:
+  - csharp
+  - vb
+  name: Sine
+  nameWithType: SimplifiedEasing.EaseState.Sine
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.Sine
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Sine easing
+  example: []
+  syntax:
+    content: Sine = 6
+    return:
+      type: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.Elastic
+  commentId: F:UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.Elastic
+  id: Elastic
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+  langs:
+  - csharp
+  - vb
+  name: Elastic
+  nameWithType: SimplifiedEasing.EaseState.Elastic
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.Elastic
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Oscillation-like easing
+  example: []
+  syntax:
+    content: Elastic = 7
+    return:
+      type: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.Expo
+  commentId: F:UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.Expo
+  id: Expo
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+  langs:
+  - csharp
+  - vb
+  name: Expo
+  nameWithType: SimplifiedEasing.EaseState.Expo
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.Expo
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Exponential easing
+  example: []
+  syntax:
+    content: Expo = 8
+    return:
+      type: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.Back
+  commentId: F:UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.Back
+  id: Back
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+  langs:
+  - csharp
+  - vb
+  name: Back
+  nameWithType: SimplifiedEasing.EaseState.Back
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.Back
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Easing where it sightly retracts before moving to the target
+  example: []
+  syntax:
+    content: Back = 9
+    return:
+      type: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.Bounce
+  commentId: F:UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.Bounce
+  id: Bounce
+  parent: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+  langs:
+  - csharp
+  - vb
+  name: Bounce
+  nameWithType: SimplifiedEasing.EaseState.Bounce
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.Bounce
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Easing where it bounces near the end of the easing
+  example: []
+  syntax:
+    content: Bounce = 10
+    return:
+      type: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+references:
+- uid: UndyneFight_Ex.Entities
+  commentId: N:UndyneFight_Ex.Entities
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex.Entities
+  nameWithType: UndyneFight_Ex.Entities
+  fullName: UndyneFight_Ex.Entities
+  spec.csharp:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities
+    name: Entities
+    isExternal: true
+    href: UndyneFight_Ex.Entities.html
+  spec.vb:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities
+    name: Entities
+    isExternal: true
+    href: UndyneFight_Ex.Entities.html
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.UndyneFight_Ex.MathUtil.InRange``1(UndyneFight_Ex.Entities.SimplifiedEasing.EaseState,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  commentId: M:UndyneFight_Ex.MathUtil.InRange``1(``0,``0,``0)
+  parent: UndyneFight_Ex.MathUtil
+  definition: UndyneFight_Ex.MathUtil.InRange``1(``0,``0,``0)
+  href: UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_InRange__1___0___0___0_
+  name: InRange<EaseState>(EaseState, EaseState, EaseState)
+  nameWithType: MathUtil.InRange<SimplifiedEasing.EaseState>(SimplifiedEasing.EaseState, SimplifiedEasing.EaseState, SimplifiedEasing.EaseState)
+  fullName: UndyneFight_Ex.MathUtil.InRange<UndyneFight_Ex.Entities.SimplifiedEasing.EaseState>(UndyneFight_Ex.Entities.SimplifiedEasing.EaseState, UndyneFight_Ex.Entities.SimplifiedEasing.EaseState, UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  nameWithType.vb: MathUtil.InRange(Of SimplifiedEasing.EaseState)(SimplifiedEasing.EaseState, SimplifiedEasing.EaseState, SimplifiedEasing.EaseState)
+  fullName.vb: UndyneFight_Ex.MathUtil.InRange(Of UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)(UndyneFight_Ex.Entities.SimplifiedEasing.EaseState, UndyneFight_Ex.Entities.SimplifiedEasing.EaseState, UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+  name.vb: InRange(Of EaseState)(EaseState, EaseState, EaseState)
+  spec.csharp:
+  - uid: UndyneFight_Ex.MathUtil.InRange``1(UndyneFight_Ex.Entities.SimplifiedEasing.EaseState,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+    name: InRange
+    isExternal: true
+    href: UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_InRange__1___0___0___0_
+  - name: <
+  - uid: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+    name: EaseState
+    isExternal: true
+    href: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.html
+  - name: '>'
+  - name: (
+  - uid: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+    name: EaseState
+    isExternal: true
+    href: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.html
+  - name: ','
+  - name: " "
+  - uid: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+    name: EaseState
+    isExternal: true
+    href: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.html
+  - name: ','
+  - name: " "
+  - uid: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+    name: EaseState
+    isExternal: true
+    href: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.html
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.MathUtil.InRange``1(UndyneFight_Ex.Entities.SimplifiedEasing.EaseState,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState)
+    name: InRange
+    isExternal: true
+    href: UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_InRange__1___0___0___0_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+    name: EaseState
+    isExternal: true
+    href: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.html
+  - name: )
+  - name: (
+  - uid: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+    name: EaseState
+    isExternal: true
+    href: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.html
+  - name: ','
+  - name: " "
+  - uid: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+    name: EaseState
+    isExternal: true
+    href: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.html
+  - name: ','
+  - name: " "
+  - uid: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+    name: EaseState
+    isExternal: true
+    href: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.html
+  - name: )
+- uid: UndyneFight_Ex.MathUtil.InRange``1(``0,``0,``0)
+  commentId: M:UndyneFight_Ex.MathUtil.InRange``1(``0,``0,``0)
+  isExternal: true
+  href: UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_InRange__1___0___0___0_
+  name: InRange<T>(T, T, T)
+  nameWithType: MathUtil.InRange<T>(T, T, T)
+  fullName: UndyneFight_Ex.MathUtil.InRange<T>(T, T, T)
+  nameWithType.vb: MathUtil.InRange(Of T)(T, T, T)
+  fullName.vb: UndyneFight_Ex.MathUtil.InRange(Of T)(T, T, T)
+  name.vb: InRange(Of T)(T, T, T)
+  spec.csharp:
+  - uid: UndyneFight_Ex.MathUtil.InRange``1(``0,``0,``0)
+    name: InRange
+    isExternal: true
+    href: UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_InRange__1___0___0___0_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.MathUtil.InRange``1(``0,``0,``0)
+    name: InRange
+    isExternal: true
+    href: UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_InRange__1___0___0___0_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+- uid: UndyneFight_Ex.MathUtil
+  commentId: T:UndyneFight_Ex.MathUtil
+  parent: UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.MathUtil.html
+  name: MathUtil
+  nameWithType: MathUtil
+  fullName: UndyneFight_Ex.MathUtil
+- uid: UndyneFight_Ex
+  commentId: N:UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex
+  nameWithType: UndyneFight_Ex
+  fullName: UndyneFight_Ex
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+  commentId: T:UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+  parent: UndyneFight_Ex.Entities
+  isExternal: true
+  href: UndyneFight_Ex.Entities.SimplifiedEasing.html
+  name: SimplifiedEasing.EaseState
+  nameWithType: SimplifiedEasing.EaseState
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entities.SimplifiedEasing
+    name: SimplifiedEasing
+    isExternal: true
+    href: UndyneFight_Ex.Entities.SimplifiedEasing.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+    name: EaseState
+    isExternal: true
+    href: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.html
+  spec.vb:
+  - uid: UndyneFight_Ex.Entities.SimplifiedEasing
+    name: SimplifiedEasing
+    isExternal: true
+    href: UndyneFight_Ex.Entities.SimplifiedEasing.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState
+    name: EaseState
+    isExternal: true
+    href: UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.html

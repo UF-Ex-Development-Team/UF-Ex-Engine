@@ -1,0 +1,888 @@
+### YamlMime:ManagedReference
+items:
+- uid: UndyneFight_Ex.Fight.Functions.HeartAttribute
+  commentId: T:UndyneFight_Ex.Fight.Functions.HeartAttribute
+  id: Functions.HeartAttribute
+  parent: UndyneFight_Ex.Fight
+  children:
+  - UndyneFight_Ex.Fight.Functions.HeartAttribute.ArrowFixed
+  - UndyneFight_Ex.Fight.Functions.HeartAttribute.BuffedLevel
+  - UndyneFight_Ex.Fight.Functions.HeartAttribute.DamageTaken
+  - UndyneFight_Ex.Fight.Functions.HeartAttribute.Gravity
+  - UndyneFight_Ex.Fight.Functions.HeartAttribute.HP
+  - UndyneFight_Ex.Fight.Functions.HeartAttribute.InvincibleToPhysics
+  - UndyneFight_Ex.Fight.Functions.HeartAttribute.IsFullHP
+  - UndyneFight_Ex.Fight.Functions.HeartAttribute.JumpSpeed
+  - UndyneFight_Ex.Fight.Functions.HeartAttribute.JumpTimeLimit
+  - UndyneFight_Ex.Fight.Functions.HeartAttribute.KR
+  - UndyneFight_Ex.Fight.Functions.HeartAttribute.KRDamage
+  - UndyneFight_Ex.Fight.Functions.HeartAttribute.KRHP
+  - UndyneFight_Ex.Fight.Functions.HeartAttribute.MaxHP
+  - UndyneFight_Ex.Fight.Functions.HeartAttribute.PurpleLineCount
+  - UndyneFight_Ex.Fight.Functions.HeartAttribute.SoftFalling
+  - UndyneFight_Ex.Fight.Functions.HeartAttribute.Speed
+  - UndyneFight_Ex.Fight.Functions.HeartAttribute.UmbrellaAvailable
+  - UndyneFight_Ex.Fight.Functions.HeartAttribute.UmbrellaSpeed
+  langs:
+  - csharp
+  - vb
+  name: Functions.HeartAttribute
+  nameWithType: Functions.HeartAttribute
+  fullName: UndyneFight_Ex.Fight.Functions.HeartAttribute
+  type: Class
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Use this static class to access some attributes of the Heart
+  example: []
+  syntax:
+    content: public static class Functions.HeartAttribute
+    content.vb: Public Module Functions.HeartAttribute
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+- uid: UndyneFight_Ex.Fight.Functions.HeartAttribute.SoftFalling
+  commentId: P:UndyneFight_Ex.Fight.Functions.HeartAttribute.SoftFalling
+  id: SoftFalling
+  parent: UndyneFight_Ex.Fight.Functions.HeartAttribute
+  langs:
+  - csharp
+  - vb
+  name: SoftFalling
+  nameWithType: Functions.HeartAttribute.SoftFalling
+  fullName: UndyneFight_Ex.Fight.Functions.HeartAttribute.SoftFalling
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Sets whether the blue soul will have a softer falling (Smoother but longer)
+  example: []
+  syntax:
+    content: public static bool SoftFalling { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Property SoftFalling As Boolean
+  overload: UndyneFight_Ex.Fight.Functions.HeartAttribute.SoftFalling*
+- uid: UndyneFight_Ex.Fight.Functions.HeartAttribute.ArrowFixed
+  commentId: P:UndyneFight_Ex.Fight.Functions.HeartAttribute.ArrowFixed
+  id: ArrowFixed
+  parent: UndyneFight_Ex.Fight.Functions.HeartAttribute
+  langs:
+  - csharp
+  - vb
+  name: ArrowFixed
+  nameWithType: Functions.HeartAttribute.ArrowFixed
+  fullName: UndyneFight_Ex.Fight.Functions.HeartAttribute.ArrowFixed
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Determine whether the arrows rotate along the soul
+  example: []
+  syntax:
+    content: public static bool ArrowFixed { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Property ArrowFixed As Boolean
+  overload: UndyneFight_Ex.Fight.Functions.HeartAttribute.ArrowFixed*
+- uid: UndyneFight_Ex.Fight.Functions.HeartAttribute.IsFullHP
+  commentId: P:UndyneFight_Ex.Fight.Functions.HeartAttribute.IsFullHP
+  id: IsFullHP
+  parent: UndyneFight_Ex.Fight.Functions.HeartAttribute
+  langs:
+  - csharp
+  - vb
+  name: IsFullHP
+  nameWithType: Functions.HeartAttribute.IsFullHP
+  fullName: UndyneFight_Ex.Fight.Functions.HeartAttribute.IsFullHP
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Is the player at full HP
+  example: []
+  syntax:
+    content: public static bool IsFullHP { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Shared ReadOnly Property IsFullHP As Boolean
+  overload: UndyneFight_Ex.Fight.Functions.HeartAttribute.IsFullHP*
+- uid: UndyneFight_Ex.Fight.Functions.HeartAttribute.DamageTaken
+  commentId: P:UndyneFight_Ex.Fight.Functions.HeartAttribute.DamageTaken
+  id: DamageTaken
+  parent: UndyneFight_Ex.Fight.Functions.HeartAttribute
+  langs:
+  - csharp
+  - vb
+  name: DamageTaken
+  nameWithType: Functions.HeartAttribute.DamageTaken
+  fullName: UndyneFight_Ex.Fight.Functions.HeartAttribute.DamageTaken
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Damage taken by the player per hit
+  example: []
+  syntax:
+    content: public static int DamageTaken { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Shared Property DamageTaken As Integer
+  overload: UndyneFight_Ex.Fight.Functions.HeartAttribute.DamageTaken*
+- uid: UndyneFight_Ex.Fight.Functions.HeartAttribute.BuffedLevel
+  commentId: P:UndyneFight_Ex.Fight.Functions.HeartAttribute.BuffedLevel
+  id: BuffedLevel
+  parent: UndyneFight_Ex.Fight.Functions.HeartAttribute
+  langs:
+  - csharp
+  - vb
+  name: BuffedLevel
+  nameWithType: Functions.HeartAttribute.BuffedLevel
+  fullName: UndyneFight_Ex.Fight.Functions.HeartAttribute.BuffedLevel
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Level of HP drain of the player
+  example: []
+  syntax:
+    content: public static float BuffedLevel { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Shared Property BuffedLevel As Single
+  overload: UndyneFight_Ex.Fight.Functions.HeartAttribute.BuffedLevel*
+- uid: UndyneFight_Ex.Fight.Functions.HeartAttribute.PurpleLineCount
+  commentId: P:UndyneFight_Ex.Fight.Functions.HeartAttribute.PurpleLineCount
+  id: PurpleLineCount
+  parent: UndyneFight_Ex.Fight.Functions.HeartAttribute
+  langs:
+  - csharp
+  - vb
+  name: PurpleLineCount
+  nameWithType: Functions.HeartAttribute.PurpleLineCount
+  fullName: UndyneFight_Ex.Fight.Functions.HeartAttribute.PurpleLineCount
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: The amount of purple lines in purple soul mode
+  example: []
+  syntax:
+    content: public static int PurpleLineCount { set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Shared WriteOnly Property PurpleLineCount As Integer
+  overload: UndyneFight_Ex.Fight.Functions.HeartAttribute.PurpleLineCount*
+- uid: UndyneFight_Ex.Fight.Functions.HeartAttribute.Gravity
+  commentId: P:UndyneFight_Ex.Fight.Functions.HeartAttribute.Gravity
+  id: Gravity
+  parent: UndyneFight_Ex.Fight.Functions.HeartAttribute
+  langs:
+  - csharp
+  - vb
+  name: Gravity
+  nameWithType: Functions.HeartAttribute.Gravity
+  fullName: UndyneFight_Ex.Fight.Functions.HeartAttribute.Gravity
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Gravity of the blue soul (Default 9.8f)
+  example: []
+  syntax:
+    content: public static float Gravity { set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Shared WriteOnly Property Gravity As Single
+  overload: UndyneFight_Ex.Fight.Functions.HeartAttribute.Gravity*
+- uid: UndyneFight_Ex.Fight.Functions.HeartAttribute.JumpSpeed
+  commentId: P:UndyneFight_Ex.Fight.Functions.HeartAttribute.JumpSpeed
+  id: JumpSpeed
+  parent: UndyneFight_Ex.Fight.Functions.HeartAttribute
+  langs:
+  - csharp
+  - vb
+  name: JumpSpeed
+  nameWithType: Functions.HeartAttribute.JumpSpeed
+  fullName: UndyneFight_Ex.Fight.Functions.HeartAttribute.JumpSpeed
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Initial jump speed of blue soul (Default 6)
+  example: []
+  syntax:
+    content: public static float JumpSpeed { set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Shared WriteOnly Property JumpSpeed As Single
+  overload: UndyneFight_Ex.Fight.Functions.HeartAttribute.JumpSpeed*
+- uid: UndyneFight_Ex.Fight.Functions.HeartAttribute.JumpTimeLimit
+  commentId: P:UndyneFight_Ex.Fight.Functions.HeartAttribute.JumpTimeLimit
+  id: JumpTimeLimit
+  parent: UndyneFight_Ex.Fight.Functions.HeartAttribute
+  langs:
+  - csharp
+  - vb
+  name: JumpTimeLimit
+  nameWithType: Functions.HeartAttribute.JumpTimeLimit
+  fullName: UndyneFight_Ex.Fight.Functions.HeartAttribute.JumpTimeLimit
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Amount of times a player can jump (Default 2)
+  example: []
+  syntax:
+    content: public static int JumpTimeLimit { set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Shared WriteOnly Property JumpTimeLimit As Integer
+  overload: UndyneFight_Ex.Fight.Functions.HeartAttribute.JumpTimeLimit*
+- uid: UndyneFight_Ex.Fight.Functions.HeartAttribute.KR
+  commentId: P:UndyneFight_Ex.Fight.Functions.HeartAttribute.KR
+  id: KR
+  parent: UndyneFight_Ex.Fight.Functions.HeartAttribute
+  langs:
+  - csharp
+  - vb
+  name: KR
+  nameWithType: Functions.HeartAttribute.KR
+  fullName: UndyneFight_Ex.Fight.Functions.HeartAttribute.KR
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Whether to enable KR
+  example: []
+  syntax:
+    content: public static bool KR { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Property KR As Boolean
+  overload: UndyneFight_Ex.Fight.Functions.HeartAttribute.KR*
+- uid: UndyneFight_Ex.Fight.Functions.HeartAttribute.KRDamage
+  commentId: P:UndyneFight_Ex.Fight.Functions.HeartAttribute.KRDamage
+  id: KRDamage
+  parent: UndyneFight_Ex.Fight.Functions.HeartAttribute
+  langs:
+  - csharp
+  - vb
+  name: KRDamage
+  nameWithType: Functions.HeartAttribute.KRDamage
+  fullName: UndyneFight_Ex.Fight.Functions.HeartAttribute.KRDamage
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: The damage the KR deals (Default 4)
+  example: []
+  syntax:
+    content: public static float KRDamage { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Shared Property KRDamage As Single
+  overload: UndyneFight_Ex.Fight.Functions.HeartAttribute.KRDamage*
+- uid: UndyneFight_Ex.Fight.Functions.HeartAttribute.Speed
+  commentId: P:UndyneFight_Ex.Fight.Functions.HeartAttribute.Speed
+  id: Speed
+  parent: UndyneFight_Ex.Fight.Functions.HeartAttribute
+  langs:
+  - csharp
+  - vb
+  name: Speed
+  nameWithType: Functions.HeartAttribute.Speed
+  fullName: UndyneFight_Ex.Fight.Functions.HeartAttribute.Speed
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Speed of the player (Default 2.5f)
+  example: []
+  syntax:
+    content: public static float Speed { set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Shared WriteOnly Property Speed As Single
+  overload: UndyneFight_Ex.Fight.Functions.HeartAttribute.Speed*
+- uid: UndyneFight_Ex.Fight.Functions.HeartAttribute.MaxHP
+  commentId: P:UndyneFight_Ex.Fight.Functions.HeartAttribute.MaxHP
+  id: MaxHP
+  parent: UndyneFight_Ex.Fight.Functions.HeartAttribute
+  langs:
+  - csharp
+  - vb
+  name: MaxHP
+  nameWithType: Functions.HeartAttribute.MaxHP
+  fullName: UndyneFight_Ex.Fight.Functions.HeartAttribute.MaxHP
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: The max HP of the player (Also automatically sets the current HP of the player)
+  example: []
+  syntax:
+    content: public static float MaxHP { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Shared Property MaxHP As Single
+  overload: UndyneFight_Ex.Fight.Functions.HeartAttribute.MaxHP*
+- uid: UndyneFight_Ex.Fight.Functions.HeartAttribute.InvincibleToPhysics
+  commentId: P:UndyneFight_Ex.Fight.Functions.HeartAttribute.InvincibleToPhysics
+  id: InvincibleToPhysics
+  parent: UndyneFight_Ex.Fight.Functions.HeartAttribute
+  langs:
+  - csharp
+  - vb
+  name: InvincibleToPhysics
+  nameWithType: Functions.HeartAttribute.InvincibleToPhysics
+  fullName: UndyneFight_Ex.Fight.Functions.HeartAttribute.InvincibleToPhysics
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Whether the player is immune to physical damage
+  example: []
+  syntax:
+    content: public static bool InvincibleToPhysics { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Property InvincibleToPhysics As Boolean
+  overload: UndyneFight_Ex.Fight.Functions.HeartAttribute.InvincibleToPhysics*
+- uid: UndyneFight_Ex.Fight.Functions.HeartAttribute.HP
+  commentId: P:UndyneFight_Ex.Fight.Functions.HeartAttribute.HP
+  id: HP
+  parent: UndyneFight_Ex.Fight.Functions.HeartAttribute
+  langs:
+  - csharp
+  - vb
+  name: HP
+  nameWithType: Functions.HeartAttribute.HP
+  fullName: UndyneFight_Ex.Fight.Functions.HeartAttribute.HP
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: The current HP of the player
+  example: []
+  syntax:
+    content: public static float HP { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Shared Property HP As Single
+  overload: UndyneFight_Ex.Fight.Functions.HeartAttribute.HP*
+- uid: UndyneFight_Ex.Fight.Functions.HeartAttribute.KRHP
+  commentId: P:UndyneFight_Ex.Fight.Functions.HeartAttribute.KRHP
+  id: KRHP
+  parent: UndyneFight_Ex.Fight.Functions.HeartAttribute
+  langs:
+  - csharp
+  - vb
+  name: KRHP
+  nameWithType: Functions.HeartAttribute.KRHP
+  fullName: UndyneFight_Ex.Fight.Functions.HeartAttribute.KRHP
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: The current KR of the player
+  example: []
+  syntax:
+    content: public static float KRHP { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Shared Property KRHP As Single
+  overload: UndyneFight_Ex.Fight.Functions.HeartAttribute.KRHP*
+- uid: UndyneFight_Ex.Fight.Functions.HeartAttribute.UmbrellaAvailable
+  commentId: P:UndyneFight_Ex.Fight.Functions.HeartAttribute.UmbrellaAvailable
+  id: UmbrellaAvailable
+  parent: UndyneFight_Ex.Fight.Functions.HeartAttribute
+  langs:
+  - csharp
+  - vb
+  name: UmbrellaAvailable
+  nameWithType: Functions.HeartAttribute.UmbrellaAvailable
+  fullName: UndyneFight_Ex.Fight.Functions.HeartAttribute.UmbrellaAvailable
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Whether the blue soul can descend slower by holding spacebar (Default false)
+  example: []
+  syntax:
+    content: public static bool UmbrellaAvailable { set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Shared WriteOnly Property UmbrellaAvailable As Boolean
+  overload: UndyneFight_Ex.Fight.Functions.HeartAttribute.UmbrellaAvailable*
+- uid: UndyneFight_Ex.Fight.Functions.HeartAttribute.UmbrellaSpeed
+  commentId: P:UndyneFight_Ex.Fight.Functions.HeartAttribute.UmbrellaSpeed
+  id: UmbrellaSpeed
+  parent: UndyneFight_Ex.Fight.Functions.HeartAttribute
+  langs:
+  - csharp
+  - vb
+  name: UmbrellaSpeed
+  nameWithType: Functions.HeartAttribute.UmbrellaSpeed
+  fullName: UndyneFight_Ex.Fight.Functions.HeartAttribute.UmbrellaSpeed
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: The falling speed of the player when descending using umbrella (Default 2/3f)
+  example: []
+  syntax:
+    content: public static float UmbrellaSpeed { set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Shared WriteOnly Property UmbrellaSpeed As Single
+  overload: UndyneFight_Ex.Fight.Functions.HeartAttribute.UmbrellaSpeed*
+references:
+- uid: UndyneFight_Ex.Fight
+  commentId: N:UndyneFight_Ex.Fight
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex.Fight
+  nameWithType: UndyneFight_Ex.Fight
+  fullName: UndyneFight_Ex.Fight
+  spec.csharp:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight
+    name: Fight
+    isExternal: true
+    href: UndyneFight_Ex.Fight.html
+  spec.vb:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight
+    name: Fight
+    isExternal: true
+    href: UndyneFight_Ex.Fight.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UndyneFight_Ex.Fight.Functions.HeartAttribute.SoftFalling*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.HeartAttribute.SoftFalling
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.HeartAttribute.html#UndyneFight_Ex_Fight_Functions_HeartAttribute_SoftFalling
+  name: SoftFalling
+  nameWithType: Functions.HeartAttribute.SoftFalling
+  fullName: UndyneFight_Ex.Fight.Functions.HeartAttribute.SoftFalling
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: UndyneFight_Ex.Fight.Functions.HeartAttribute.ArrowFixed*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.HeartAttribute.ArrowFixed
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.HeartAttribute.html#UndyneFight_Ex_Fight_Functions_HeartAttribute_ArrowFixed
+  name: ArrowFixed
+  nameWithType: Functions.HeartAttribute.ArrowFixed
+  fullName: UndyneFight_Ex.Fight.Functions.HeartAttribute.ArrowFixed
+- uid: UndyneFight_Ex.Fight.Functions.HeartAttribute.IsFullHP*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.HeartAttribute.IsFullHP
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.HeartAttribute.html#UndyneFight_Ex_Fight_Functions_HeartAttribute_IsFullHP
+  name: IsFullHP
+  nameWithType: Functions.HeartAttribute.IsFullHP
+  fullName: UndyneFight_Ex.Fight.Functions.HeartAttribute.IsFullHP
+- uid: UndyneFight_Ex.Fight.Functions.HeartAttribute.DamageTaken*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.HeartAttribute.DamageTaken
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.HeartAttribute.html#UndyneFight_Ex_Fight_Functions_HeartAttribute_DamageTaken
+  name: DamageTaken
+  nameWithType: Functions.HeartAttribute.DamageTaken
+  fullName: UndyneFight_Ex.Fight.Functions.HeartAttribute.DamageTaken
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: UndyneFight_Ex.Fight.Functions.HeartAttribute.BuffedLevel*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.HeartAttribute.BuffedLevel
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.HeartAttribute.html#UndyneFight_Ex_Fight_Functions_HeartAttribute_BuffedLevel
+  name: BuffedLevel
+  nameWithType: Functions.HeartAttribute.BuffedLevel
+  fullName: UndyneFight_Ex.Fight.Functions.HeartAttribute.BuffedLevel
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: UndyneFight_Ex.Fight.Functions.HeartAttribute.PurpleLineCount*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.HeartAttribute.PurpleLineCount
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.HeartAttribute.html#UndyneFight_Ex_Fight_Functions_HeartAttribute_PurpleLineCount
+  name: PurpleLineCount
+  nameWithType: Functions.HeartAttribute.PurpleLineCount
+  fullName: UndyneFight_Ex.Fight.Functions.HeartAttribute.PurpleLineCount
+- uid: UndyneFight_Ex.Fight.Functions.HeartAttribute.Gravity*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.HeartAttribute.Gravity
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.HeartAttribute.html#UndyneFight_Ex_Fight_Functions_HeartAttribute_Gravity
+  name: Gravity
+  nameWithType: Functions.HeartAttribute.Gravity
+  fullName: UndyneFight_Ex.Fight.Functions.HeartAttribute.Gravity
+- uid: UndyneFight_Ex.Fight.Functions.HeartAttribute.JumpSpeed*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.HeartAttribute.JumpSpeed
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.HeartAttribute.html#UndyneFight_Ex_Fight_Functions_HeartAttribute_JumpSpeed
+  name: JumpSpeed
+  nameWithType: Functions.HeartAttribute.JumpSpeed
+  fullName: UndyneFight_Ex.Fight.Functions.HeartAttribute.JumpSpeed
+- uid: UndyneFight_Ex.Fight.Functions.HeartAttribute.JumpTimeLimit*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.HeartAttribute.JumpTimeLimit
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.HeartAttribute.html#UndyneFight_Ex_Fight_Functions_HeartAttribute_JumpTimeLimit
+  name: JumpTimeLimit
+  nameWithType: Functions.HeartAttribute.JumpTimeLimit
+  fullName: UndyneFight_Ex.Fight.Functions.HeartAttribute.JumpTimeLimit
+- uid: UndyneFight_Ex.Fight.Functions.HeartAttribute.KR*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.HeartAttribute.KR
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.HeartAttribute.html#UndyneFight_Ex_Fight_Functions_HeartAttribute_KR
+  name: KR
+  nameWithType: Functions.HeartAttribute.KR
+  fullName: UndyneFight_Ex.Fight.Functions.HeartAttribute.KR
+- uid: UndyneFight_Ex.Fight.Functions.HeartAttribute.KRDamage*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.HeartAttribute.KRDamage
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.HeartAttribute.html#UndyneFight_Ex_Fight_Functions_HeartAttribute_KRDamage
+  name: KRDamage
+  nameWithType: Functions.HeartAttribute.KRDamage
+  fullName: UndyneFight_Ex.Fight.Functions.HeartAttribute.KRDamage
+- uid: UndyneFight_Ex.Fight.Functions.HeartAttribute.Speed*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.HeartAttribute.Speed
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.HeartAttribute.html#UndyneFight_Ex_Fight_Functions_HeartAttribute_Speed
+  name: Speed
+  nameWithType: Functions.HeartAttribute.Speed
+  fullName: UndyneFight_Ex.Fight.Functions.HeartAttribute.Speed
+- uid: UndyneFight_Ex.Fight.Functions.HeartAttribute.MaxHP*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.HeartAttribute.MaxHP
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.HeartAttribute.html#UndyneFight_Ex_Fight_Functions_HeartAttribute_MaxHP
+  name: MaxHP
+  nameWithType: Functions.HeartAttribute.MaxHP
+  fullName: UndyneFight_Ex.Fight.Functions.HeartAttribute.MaxHP
+- uid: UndyneFight_Ex.Fight.Functions.HeartAttribute.InvincibleToPhysics*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.HeartAttribute.InvincibleToPhysics
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.HeartAttribute.html#UndyneFight_Ex_Fight_Functions_HeartAttribute_InvincibleToPhysics
+  name: InvincibleToPhysics
+  nameWithType: Functions.HeartAttribute.InvincibleToPhysics
+  fullName: UndyneFight_Ex.Fight.Functions.HeartAttribute.InvincibleToPhysics
+- uid: UndyneFight_Ex.Fight.Functions.HeartAttribute.HP*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.HeartAttribute.HP
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.HeartAttribute.html#UndyneFight_Ex_Fight_Functions_HeartAttribute_HP
+  name: HP
+  nameWithType: Functions.HeartAttribute.HP
+  fullName: UndyneFight_Ex.Fight.Functions.HeartAttribute.HP
+- uid: UndyneFight_Ex.Fight.Functions.HeartAttribute.KRHP*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.HeartAttribute.KRHP
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.HeartAttribute.html#UndyneFight_Ex_Fight_Functions_HeartAttribute_KRHP
+  name: KRHP
+  nameWithType: Functions.HeartAttribute.KRHP
+  fullName: UndyneFight_Ex.Fight.Functions.HeartAttribute.KRHP
+- uid: UndyneFight_Ex.Fight.Functions.HeartAttribute.UmbrellaAvailable*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.HeartAttribute.UmbrellaAvailable
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.HeartAttribute.html#UndyneFight_Ex_Fight_Functions_HeartAttribute_UmbrellaAvailable
+  name: UmbrellaAvailable
+  nameWithType: Functions.HeartAttribute.UmbrellaAvailable
+  fullName: UndyneFight_Ex.Fight.Functions.HeartAttribute.UmbrellaAvailable
+- uid: UndyneFight_Ex.Fight.Functions.HeartAttribute.UmbrellaSpeed*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.HeartAttribute.UmbrellaSpeed
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.HeartAttribute.html#UndyneFight_Ex_Fight_Functions_HeartAttribute_UmbrellaSpeed
+  name: UmbrellaSpeed
+  nameWithType: Functions.HeartAttribute.UmbrellaSpeed
+  fullName: UndyneFight_Ex.Fight.Functions.HeartAttribute.UmbrellaSpeed

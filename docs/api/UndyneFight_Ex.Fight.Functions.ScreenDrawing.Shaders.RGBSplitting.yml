@@ -1,0 +1,1894 @@
+### YamlMime:ManagedReference
+items:
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting
+  commentId: T:UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting
+  id: Functions.ScreenDrawing.Shaders.RGBSplitting
+  parent: UndyneFight_Ex.Fight
+  children:
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.#ctor(System.Single)
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.DisturbShader
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.Disturbance
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.Draw(Microsoft.Xna.Framework.Graphics.RenderTarget2D)
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.Intensity
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.MainColor
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.RandomDisturb
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.SplitColor1
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.SplitColor2
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.WindowSizeChanged(Microsoft.Xna.Framework.Vector2)
+  langs:
+  - csharp
+  - vb
+  name: Functions.ScreenDrawing.Shaders.RGBSplitting
+  nameWithType: Functions.ScreenDrawing.Shaders.RGBSplitting
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting
+  type: Class
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: A RGB splitting effect
+  example: []
+  syntax:
+    content: 'public class Functions.ScreenDrawing.Shaders.RGBSplitting : RenderProduction, IComparable<RenderProduction>'
+    content.vb: Public Class Functions.ScreenDrawing.Shaders.RGBSplitting Inherits RenderProduction Implements IComparable(Of RenderProduction)
+  inheritance:
+  - System.Object
+  - UndyneFight_Ex.RenderProduction
+  implements:
+  - System.IComparable{UndyneFight_Ex.RenderProduction}
+  inheritedMembers:
+  - UndyneFight_Ex.RenderProduction.Dispose
+  - UndyneFight_Ex.RenderProduction.Update
+  - UndyneFight_Ex.RenderProduction.CompareTo(UndyneFight_Ex.RenderProduction)
+  - UndyneFight_Ex.RenderProduction.ResetTargetColor(Microsoft.Xna.Framework.Color)
+  - UndyneFight_Ex.RenderProduction.DrawPrimitives(Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture[],Microsoft.Xna.Framework.Graphics.Texture2D)
+  - UndyneFight_Ex.RenderProduction.DrawEntities(UndyneFight_Ex.Entity[])
+  - UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Rectangle,System.Nullable{Microsoft.Xna.Framework.Rectangle},Microsoft.Xna.Framework.Color)
+  - UndyneFight_Ex.RenderProduction.DrawTextures(Microsoft.Xna.Framework.Graphics.Texture2D[],Microsoft.Xna.Framework.Rectangle,System.Nullable{Microsoft.Xna.Framework.Rectangle},Microsoft.Xna.Framework.Color[])
+  - UndyneFight_Ex.RenderProduction.DrawTextures(Microsoft.Xna.Framework.Graphics.Texture2D[],Microsoft.Xna.Framework.Rectangle,System.Nullable{Microsoft.Xna.Framework.Rectangle},Microsoft.Xna.Framework.Color)
+  - UndyneFight_Ex.RenderProduction.DrawTextures(Microsoft.Xna.Framework.Graphics.Texture2D[],Microsoft.Xna.Framework.Rectangle)
+  - UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  - UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single)
+  - UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Vector2)
+  - UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Rectangle)
+  - UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Color)
+  - UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2)
+  - UndyneFight_Ex.RenderProduction.UpdateBase(Microsoft.Xna.Framework.Vector2)
+  - UndyneFight_Ex.RenderProduction.CopyRenderTarget(Microsoft.Xna.Framework.Graphics.RenderTarget2D,Microsoft.Xna.Framework.Graphics.Texture2D)
+  - UndyneFight_Ex.RenderProduction.AddHelperTarget
+  - UndyneFight_Ex.RenderProduction.RemoveHelperTarget(Microsoft.Xna.Framework.Graphics.RenderTarget2D)
+  - UndyneFight_Ex.RenderProduction.AdaptingScale
+  - UndyneFight_Ex.RenderProduction.ScreenSize
+  - UndyneFight_Ex.RenderProduction.WindowDevice
+  - UndyneFight_Ex.RenderProduction.SpriteBatch
+  - UndyneFight_Ex.RenderProduction.AdaptedSize
+  - UndyneFight_Ex.RenderProduction.MissionTarget
+  - UndyneFight_Ex.RenderProduction.SpriteSortMode
+  - UndyneFight_Ex.RenderProduction.BlendState
+  - UndyneFight_Ex.RenderProduction.Transform
+  - UndyneFight_Ex.RenderProduction.Shader
+  - UndyneFight_Ex.RenderProduction.SamplerState
+  - UndyneFight_Ex.RenderProduction.HelperTarget
+  - UndyneFight_Ex.RenderProduction.HelperTargets
+  - UndyneFight_Ex.RenderProduction.Enabled
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.#ctor(System.Single)
+  commentId: M:UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.#ctor(System.Single)
+  id: '#ctor(System.Single)'
+  parent: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting
+  langs:
+  - csharp
+  - vb
+  name: RGBSplitting(float)
+  nameWithType: Functions.ScreenDrawing.Shaders.RGBSplitting.RGBSplitting(float)
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.RGBSplitting(float)
+  type: Constructor
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: A RGB splitting effect
+  example: []
+  syntax:
+    content: public RGBSplitting(float dep = 0.5)
+    parameters:
+    - id: dep
+      type: System.Single
+      description: The depth of the RGB splitting effect (Default 0.5f)
+    content.vb: Public Sub New(dep As Single = 0.5)
+  overload: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.#ctor*
+  nameWithType.vb: Functions.ScreenDrawing.Shaders.RGBSplitting.New(Single)
+  fullName.vb: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.New(Single)
+  name.vb: New(Single)
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.WindowSizeChanged(Microsoft.Xna.Framework.Vector2)
+  commentId: M:UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.WindowSizeChanged(Microsoft.Xna.Framework.Vector2)
+  id: WindowSizeChanged(Microsoft.Xna.Framework.Vector2)
+  parent: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting
+  langs:
+  - csharp
+  - vb
+  name: WindowSizeChanged(Vector2)
+  nameWithType: Functions.ScreenDrawing.Shaders.RGBSplitting.WindowSizeChanged(Vector2)
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.WindowSizeChanged(Microsoft.Xna.Framework.Vector2)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Event to occur when the window size changed
+  example: []
+  syntax:
+    content: public override void WindowSizeChanged(Vector2 vec)
+    parameters:
+    - id: vec
+      type: Microsoft.Xna.Framework.Vector2
+      description: The new window size
+    content.vb: Public Overrides Sub WindowSizeChanged(vec As Vector2)
+  overridden: UndyneFight_Ex.RenderProduction.WindowSizeChanged(Microsoft.Xna.Framework.Vector2)
+  overload: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.WindowSizeChanged*
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.Draw(Microsoft.Xna.Framework.Graphics.RenderTarget2D)
+  commentId: M:UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.Draw(Microsoft.Xna.Framework.Graphics.RenderTarget2D)
+  id: Draw(Microsoft.Xna.Framework.Graphics.RenderTarget2D)
+  parent: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting
+  langs:
+  - csharp
+  - vb
+  name: Draw(RenderTarget2D)
+  nameWithType: Functions.ScreenDrawing.Shaders.RGBSplitting.Draw(RenderTarget2D)
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.Draw(Microsoft.Xna.Framework.Graphics.RenderTarget2D)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: How the render production is drawn
+  example: []
+  syntax:
+    content: public override RenderTarget2D Draw(RenderTarget2D obj)
+    parameters:
+    - id: obj
+      type: Microsoft.Xna.Framework.Graphics.RenderTarget2D
+      description: The rendered texture
+    return:
+      type: Microsoft.Xna.Framework.Graphics.RenderTarget2D
+      description: ''
+    content.vb: Public Overrides Function Draw(obj As RenderTarget2D) As RenderTarget2D
+  overridden: UndyneFight_Ex.RenderProduction.Draw(Microsoft.Xna.Framework.Graphics.RenderTarget2D)
+  overload: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.Draw*
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.Intensity
+  commentId: P:UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.Intensity
+  id: Intensity
+  parent: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting
+  langs:
+  - csharp
+  - vb
+  name: Intensity
+  nameWithType: Functions.ScreenDrawing.Shaders.RGBSplitting.Intensity
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.Intensity
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: The intensity of the effect
+  example: []
+  syntax:
+    content: public float Intensity { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property Intensity As Single
+  overload: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.Intensity*
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.RandomDisturb
+  commentId: P:UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.RandomDisturb
+  id: RandomDisturb
+  parent: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting
+  langs:
+  - csharp
+  - vb
+  name: RandomDisturb
+  nameWithType: Functions.ScreenDrawing.Shaders.RGBSplitting.RandomDisturb
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.RandomDisturb
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: >-
+    The range of the random disturbance of the RGB channel<br />
+
+    Make sure <xref href="UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.Disturbance" data-throw-if-not-resolved="false"></xref> is set to true
+  example: []
+  syntax:
+    content: public float RandomDisturb { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property RandomDisturb As Single
+  overload: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.RandomDisturb*
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.Disturbance
+  commentId: P:UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.Disturbance
+  id: Disturbance
+  parent: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting
+  langs:
+  - csharp
+  - vb
+  name: Disturbance
+  nameWithType: Functions.ScreenDrawing.Shaders.RGBSplitting.Disturbance
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.Disturbance
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Whether to enable the disturbance or not
+  example: []
+  syntax:
+    content: public bool Disturbance { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property Disturbance As Boolean
+  overload: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.Disturbance*
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.DisturbShader
+  commentId: P:UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.DisturbShader
+  id: DisturbShader
+  parent: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting
+  langs:
+  - csharp
+  - vb
+  name: DisturbShader
+  nameWithType: Functions.ScreenDrawing.Shaders.RGBSplitting.DisturbShader
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.DisturbShader
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: The shader used for the disturbance effect (Default <xref href="UndyneFight_Ex.FightResources.Shaders.Sinwave" data-throw-if-not-resolved="false"></xref>)
+  example: []
+  syntax:
+    content: public Shader DisturbShader { get; set; }
+    parameters: []
+    return:
+      type: UndyneFight_Ex.Shader
+    content.vb: Public Property DisturbShader As Shader
+  overload: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.DisturbShader*
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.SplitColor1
+  commentId: P:UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.SplitColor1
+  id: SplitColor1
+  parent: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting
+  langs:
+  - csharp
+  - vb
+  name: SplitColor1
+  nameWithType: Functions.ScreenDrawing.Shaders.RGBSplitting.SplitColor1
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.SplitColor1
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: The first color of the color splitting (Default <xref href="Microsoft.Xna.Framework.Color.Red" data-throw-if-not-resolved="false"></xref>)
+  example: []
+  syntax:
+    content: public Color SplitColor1 { get; set; }
+    parameters: []
+    return:
+      type: Microsoft.Xna.Framework.Color
+    content.vb: Public Property SplitColor1 As Color
+  overload: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.SplitColor1*
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.SplitColor2
+  commentId: P:UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.SplitColor2
+  id: SplitColor2
+  parent: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting
+  langs:
+  - csharp
+  - vb
+  name: SplitColor2
+  nameWithType: Functions.ScreenDrawing.Shaders.RGBSplitting.SplitColor2
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.SplitColor2
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: The second color of the color splitting (Default <xref href="Microsoft.Xna.Framework.Color.Blue" data-throw-if-not-resolved="false"></xref>)
+  example: []
+  syntax:
+    content: public Color SplitColor2 { get; set; }
+    parameters: []
+    return:
+      type: Microsoft.Xna.Framework.Color
+    content.vb: Public Property SplitColor2 As Color
+  overload: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.SplitColor2*
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.MainColor
+  commentId: P:UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.MainColor
+  id: MainColor
+  parent: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting
+  langs:
+  - csharp
+  - vb
+  name: MainColor
+  nameWithType: Functions.ScreenDrawing.Shaders.RGBSplitting.MainColor
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.MainColor
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: The color drawn without the shader disturbance (Default <xref href="Microsoft.Xna.Framework.Color.Lime" data-throw-if-not-resolved="false"></xref>)
+  example: []
+  syntax:
+    content: public Color MainColor { get; set; }
+    parameters: []
+    return:
+      type: Microsoft.Xna.Framework.Color
+    content.vb: Public Property MainColor As Color
+  overload: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.MainColor*
+references:
+- uid: UndyneFight_Ex.Fight
+  commentId: N:UndyneFight_Ex.Fight
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex.Fight
+  nameWithType: UndyneFight_Ex.Fight
+  fullName: UndyneFight_Ex.Fight
+  spec.csharp:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight
+    name: Fight
+    isExternal: true
+    href: UndyneFight_Ex.Fight.html
+  spec.vb:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight
+    name: Fight
+    isExternal: true
+    href: UndyneFight_Ex.Fight.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: UndyneFight_Ex.RenderProduction
+  commentId: T:UndyneFight_Ex.RenderProduction
+  parent: UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.RenderProduction.html
+  name: RenderProduction
+  nameWithType: RenderProduction
+  fullName: UndyneFight_Ex.RenderProduction
+- uid: System.IComparable{UndyneFight_Ex.RenderProduction}
+  commentId: T:System.IComparable{UndyneFight_Ex.RenderProduction}
+  parent: System
+  definition: System.IComparable`1
+  href: https://learn.microsoft.com/dotnet/api/system.icomparable-1
+  name: IComparable<RenderProduction>
+  nameWithType: IComparable<RenderProduction>
+  fullName: System.IComparable<UndyneFight_Ex.RenderProduction>
+  nameWithType.vb: IComparable(Of RenderProduction)
+  fullName.vb: System.IComparable(Of UndyneFight_Ex.RenderProduction)
+  name.vb: IComparable(Of RenderProduction)
+  spec.csharp:
+  - uid: System.IComparable`1
+    name: IComparable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.icomparable-1
+  - name: <
+  - uid: UndyneFight_Ex.RenderProduction
+    name: RenderProduction
+    isExternal: true
+    href: UndyneFight_Ex.RenderProduction.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IComparable`1
+    name: IComparable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.icomparable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: UndyneFight_Ex.RenderProduction
+    name: RenderProduction
+    isExternal: true
+    href: UndyneFight_Ex.RenderProduction.html
+  - name: )
+- uid: UndyneFight_Ex.RenderProduction.Dispose
+  commentId: M:UndyneFight_Ex.RenderProduction.Dispose
+  parent: UndyneFight_Ex.RenderProduction
+  isExternal: true
+  href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_Dispose
+  name: Dispose()
+  nameWithType: RenderProduction.Dispose()
+  fullName: UndyneFight_Ex.RenderProduction.Dispose()
+  spec.csharp:
+  - uid: UndyneFight_Ex.RenderProduction.Dispose
+    name: Dispose
+    isExternal: true
+    href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_Dispose
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.RenderProduction.Dispose
+    name: Dispose
+    isExternal: true
+    href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_Dispose
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.RenderProduction.Update
+  commentId: M:UndyneFight_Ex.RenderProduction.Update
+  parent: UndyneFight_Ex.RenderProduction
+  isExternal: true
+  href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_Update
+  name: Update()
+  nameWithType: RenderProduction.Update()
+  fullName: UndyneFight_Ex.RenderProduction.Update()
+  spec.csharp:
+  - uid: UndyneFight_Ex.RenderProduction.Update
+    name: Update
+    isExternal: true
+    href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_Update
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.RenderProduction.Update
+    name: Update
+    isExternal: true
+    href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_Update
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.RenderProduction.CompareTo(UndyneFight_Ex.RenderProduction)
+  commentId: M:UndyneFight_Ex.RenderProduction.CompareTo(UndyneFight_Ex.RenderProduction)
+  parent: UndyneFight_Ex.RenderProduction
+  isExternal: true
+  href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_CompareTo_UndyneFight_Ex_RenderProduction_
+  name: CompareTo(RenderProduction)
+  nameWithType: RenderProduction.CompareTo(RenderProduction)
+  fullName: UndyneFight_Ex.RenderProduction.CompareTo(UndyneFight_Ex.RenderProduction)
+  spec.csharp:
+  - uid: UndyneFight_Ex.RenderProduction.CompareTo(UndyneFight_Ex.RenderProduction)
+    name: CompareTo
+    isExternal: true
+    href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_CompareTo_UndyneFight_Ex_RenderProduction_
+  - name: (
+  - uid: UndyneFight_Ex.RenderProduction
+    name: RenderProduction
+    isExternal: true
+    href: UndyneFight_Ex.RenderProduction.html
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.RenderProduction.CompareTo(UndyneFight_Ex.RenderProduction)
+    name: CompareTo
+    isExternal: true
+    href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_CompareTo_UndyneFight_Ex_RenderProduction_
+  - name: (
+  - uid: UndyneFight_Ex.RenderProduction
+    name: RenderProduction
+    isExternal: true
+    href: UndyneFight_Ex.RenderProduction.html
+  - name: )
+- uid: UndyneFight_Ex.RenderProduction.ResetTargetColor(Microsoft.Xna.Framework.Color)
+  commentId: M:UndyneFight_Ex.RenderProduction.ResetTargetColor(Microsoft.Xna.Framework.Color)
+  parent: UndyneFight_Ex.RenderProduction
+  isExternal: true
+  href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_ResetTargetColor_Microsoft_Xna_Framework_Color_
+  name: ResetTargetColor(Color)
+  nameWithType: RenderProduction.ResetTargetColor(Color)
+  fullName: UndyneFight_Ex.RenderProduction.ResetTargetColor(Microsoft.Xna.Framework.Color)
+  spec.csharp:
+  - uid: UndyneFight_Ex.RenderProduction.ResetTargetColor(Microsoft.Xna.Framework.Color)
+    name: ResetTargetColor
+    isExternal: true
+    href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_ResetTargetColor_Microsoft_Xna_Framework_Color_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.RenderProduction.ResetTargetColor(Microsoft.Xna.Framework.Color)
+    name: ResetTargetColor
+    isExternal: true
+    href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_ResetTargetColor_Microsoft_Xna_Framework_Color_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: )
+- uid: UndyneFight_Ex.RenderProduction.DrawPrimitives(Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture[],Microsoft.Xna.Framework.Graphics.Texture2D)
+  commentId: M:UndyneFight_Ex.RenderProduction.DrawPrimitives(Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture[],Microsoft.Xna.Framework.Graphics.Texture2D)
+  parent: UndyneFight_Ex.RenderProduction
+  isExternal: true
+  href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_DrawPrimitives_Microsoft_Xna_Framework_Graphics_VertexPositionColorTexture___Microsoft_Xna_Framework_Graphics_Texture2D_
+  name: DrawPrimitives(VertexPositionColorTexture[], Texture2D)
+  nameWithType: RenderProduction.DrawPrimitives(VertexPositionColorTexture[], Texture2D)
+  fullName: UndyneFight_Ex.RenderProduction.DrawPrimitives(Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture[], Microsoft.Xna.Framework.Graphics.Texture2D)
+  nameWithType.vb: RenderProduction.DrawPrimitives(VertexPositionColorTexture(), Texture2D)
+  fullName.vb: UndyneFight_Ex.RenderProduction.DrawPrimitives(Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture(), Microsoft.Xna.Framework.Graphics.Texture2D)
+  name.vb: DrawPrimitives(VertexPositionColorTexture(), Texture2D)
+  spec.csharp:
+  - uid: UndyneFight_Ex.RenderProduction.DrawPrimitives(Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture[],Microsoft.Xna.Framework.Graphics.Texture2D)
+    name: DrawPrimitives
+    isExternal: true
+    href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_DrawPrimitives_Microsoft_Xna_Framework_Graphics_VertexPositionColorTexture___Microsoft_Xna_Framework_Graphics_Texture2D_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture
+    name: VertexPositionColorTexture
+    isExternal: true
+  - name: '['
+  - name: ']'
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.RenderProduction.DrawPrimitives(Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture[],Microsoft.Xna.Framework.Graphics.Texture2D)
+    name: DrawPrimitives
+    isExternal: true
+    href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_DrawPrimitives_Microsoft_Xna_Framework_Graphics_VertexPositionColorTexture___Microsoft_Xna_Framework_Graphics_Texture2D_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture
+    name: VertexPositionColorTexture
+    isExternal: true
+  - name: (
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: )
+- uid: UndyneFight_Ex.RenderProduction.DrawEntities(UndyneFight_Ex.Entity[])
+  commentId: M:UndyneFight_Ex.RenderProduction.DrawEntities(UndyneFight_Ex.Entity[])
+  parent: UndyneFight_Ex.RenderProduction
+  isExternal: true
+  href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_DrawEntities_UndyneFight_Ex_Entity___
+  name: DrawEntities(Entity[])
+  nameWithType: RenderProduction.DrawEntities(Entity[])
+  fullName: UndyneFight_Ex.RenderProduction.DrawEntities(UndyneFight_Ex.Entity[])
+  nameWithType.vb: RenderProduction.DrawEntities(Entity())
+  fullName.vb: UndyneFight_Ex.RenderProduction.DrawEntities(UndyneFight_Ex.Entity())
+  name.vb: DrawEntities(Entity())
+  spec.csharp:
+  - uid: UndyneFight_Ex.RenderProduction.DrawEntities(UndyneFight_Ex.Entity[])
+    name: DrawEntities
+    isExternal: true
+    href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_DrawEntities_UndyneFight_Ex_Entity___
+  - name: (
+  - uid: UndyneFight_Ex.Entity
+    name: Entity
+    isExternal: true
+    href: UndyneFight_Ex.Entity.html
+  - name: '['
+  - name: ']'
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.RenderProduction.DrawEntities(UndyneFight_Ex.Entity[])
+    name: DrawEntities
+    isExternal: true
+    href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_DrawEntities_UndyneFight_Ex_Entity___
+  - name: (
+  - uid: UndyneFight_Ex.Entity
+    name: Entity
+    isExternal: true
+    href: UndyneFight_Ex.Entity.html
+  - name: (
+  - name: )
+  - name: )
+- uid: UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Rectangle,System.Nullable{Microsoft.Xna.Framework.Rectangle},Microsoft.Xna.Framework.Color)
+  commentId: M:UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Rectangle,System.Nullable{Microsoft.Xna.Framework.Rectangle},Microsoft.Xna.Framework.Color)
+  parent: UndyneFight_Ex.RenderProduction
+  isExternal: true
+  href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_DrawTexture_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Rectangle_System_Nullable_Microsoft_Xna_Framework_Rectangle__Microsoft_Xna_Framework_Color_
+  name: DrawTexture(Texture2D, Rectangle, Rectangle?, Color)
+  nameWithType: RenderProduction.DrawTexture(Texture2D, Rectangle, Rectangle?, Color)
+  fullName: UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Rectangle, Microsoft.Xna.Framework.Rectangle?, Microsoft.Xna.Framework.Color)
+  spec.csharp:
+  - uid: UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Rectangle,System.Nullable{Microsoft.Xna.Framework.Rectangle},Microsoft.Xna.Framework.Color)
+    name: DrawTexture
+    isExternal: true
+    href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_DrawTexture_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Rectangle_System_Nullable_Microsoft_Xna_Framework_Rectangle__Microsoft_Xna_Framework_Color_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Rectangle
+    name: Rectangle
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Rectangle
+    name: Rectangle
+    isExternal: true
+  - name: '?'
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Rectangle,System.Nullable{Microsoft.Xna.Framework.Rectangle},Microsoft.Xna.Framework.Color)
+    name: DrawTexture
+    isExternal: true
+    href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_DrawTexture_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Rectangle_System_Nullable_Microsoft_Xna_Framework_Rectangle__Microsoft_Xna_Framework_Color_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Rectangle
+    name: Rectangle
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Rectangle
+    name: Rectangle
+    isExternal: true
+  - name: '?'
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: )
+- uid: UndyneFight_Ex.RenderProduction.DrawTextures(Microsoft.Xna.Framework.Graphics.Texture2D[],Microsoft.Xna.Framework.Rectangle,System.Nullable{Microsoft.Xna.Framework.Rectangle},Microsoft.Xna.Framework.Color[])
+  commentId: M:UndyneFight_Ex.RenderProduction.DrawTextures(Microsoft.Xna.Framework.Graphics.Texture2D[],Microsoft.Xna.Framework.Rectangle,System.Nullable{Microsoft.Xna.Framework.Rectangle},Microsoft.Xna.Framework.Color[])
+  parent: UndyneFight_Ex.RenderProduction
+  isExternal: true
+  href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_DrawTextures_Microsoft_Xna_Framework_Graphics_Texture2D___Microsoft_Xna_Framework_Rectangle_System_Nullable_Microsoft_Xna_Framework_Rectangle__Microsoft_Xna_Framework_Color___
+  name: DrawTextures(Texture2D[], Rectangle, Rectangle?, Color[])
+  nameWithType: RenderProduction.DrawTextures(Texture2D[], Rectangle, Rectangle?, Color[])
+  fullName: UndyneFight_Ex.RenderProduction.DrawTextures(Microsoft.Xna.Framework.Graphics.Texture2D[], Microsoft.Xna.Framework.Rectangle, Microsoft.Xna.Framework.Rectangle?, Microsoft.Xna.Framework.Color[])
+  nameWithType.vb: RenderProduction.DrawTextures(Texture2D(), Rectangle, Rectangle?, Color())
+  fullName.vb: UndyneFight_Ex.RenderProduction.DrawTextures(Microsoft.Xna.Framework.Graphics.Texture2D(), Microsoft.Xna.Framework.Rectangle, Microsoft.Xna.Framework.Rectangle?, Microsoft.Xna.Framework.Color())
+  name.vb: DrawTextures(Texture2D(), Rectangle, Rectangle?, Color())
+  spec.csharp:
+  - uid: UndyneFight_Ex.RenderProduction.DrawTextures(Microsoft.Xna.Framework.Graphics.Texture2D[],Microsoft.Xna.Framework.Rectangle,System.Nullable{Microsoft.Xna.Framework.Rectangle},Microsoft.Xna.Framework.Color[])
+    name: DrawTextures
+    isExternal: true
+    href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_DrawTextures_Microsoft_Xna_Framework_Graphics_Texture2D___Microsoft_Xna_Framework_Rectangle_System_Nullable_Microsoft_Xna_Framework_Rectangle__Microsoft_Xna_Framework_Color___
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: '['
+  - name: ']'
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Rectangle
+    name: Rectangle
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Rectangle
+    name: Rectangle
+    isExternal: true
+  - name: '?'
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: '['
+  - name: ']'
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.RenderProduction.DrawTextures(Microsoft.Xna.Framework.Graphics.Texture2D[],Microsoft.Xna.Framework.Rectangle,System.Nullable{Microsoft.Xna.Framework.Rectangle},Microsoft.Xna.Framework.Color[])
+    name: DrawTextures
+    isExternal: true
+    href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_DrawTextures_Microsoft_Xna_Framework_Graphics_Texture2D___Microsoft_Xna_Framework_Rectangle_System_Nullable_Microsoft_Xna_Framework_Rectangle__Microsoft_Xna_Framework_Color___
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: (
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Rectangle
+    name: Rectangle
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Rectangle
+    name: Rectangle
+    isExternal: true
+  - name: '?'
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: (
+  - name: )
+  - name: )
+- uid: UndyneFight_Ex.RenderProduction.DrawTextures(Microsoft.Xna.Framework.Graphics.Texture2D[],Microsoft.Xna.Framework.Rectangle,System.Nullable{Microsoft.Xna.Framework.Rectangle},Microsoft.Xna.Framework.Color)
+  commentId: M:UndyneFight_Ex.RenderProduction.DrawTextures(Microsoft.Xna.Framework.Graphics.Texture2D[],Microsoft.Xna.Framework.Rectangle,System.Nullable{Microsoft.Xna.Framework.Rectangle},Microsoft.Xna.Framework.Color)
+  parent: UndyneFight_Ex.RenderProduction
+  isExternal: true
+  href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_DrawTextures_Microsoft_Xna_Framework_Graphics_Texture2D___Microsoft_Xna_Framework_Rectangle_System_Nullable_Microsoft_Xna_Framework_Rectangle__Microsoft_Xna_Framework_Color_
+  name: DrawTextures(Texture2D[], Rectangle, Rectangle?, Color)
+  nameWithType: RenderProduction.DrawTextures(Texture2D[], Rectangle, Rectangle?, Color)
+  fullName: UndyneFight_Ex.RenderProduction.DrawTextures(Microsoft.Xna.Framework.Graphics.Texture2D[], Microsoft.Xna.Framework.Rectangle, Microsoft.Xna.Framework.Rectangle?, Microsoft.Xna.Framework.Color)
+  nameWithType.vb: RenderProduction.DrawTextures(Texture2D(), Rectangle, Rectangle?, Color)
+  fullName.vb: UndyneFight_Ex.RenderProduction.DrawTextures(Microsoft.Xna.Framework.Graphics.Texture2D(), Microsoft.Xna.Framework.Rectangle, Microsoft.Xna.Framework.Rectangle?, Microsoft.Xna.Framework.Color)
+  name.vb: DrawTextures(Texture2D(), Rectangle, Rectangle?, Color)
+  spec.csharp:
+  - uid: UndyneFight_Ex.RenderProduction.DrawTextures(Microsoft.Xna.Framework.Graphics.Texture2D[],Microsoft.Xna.Framework.Rectangle,System.Nullable{Microsoft.Xna.Framework.Rectangle},Microsoft.Xna.Framework.Color)
+    name: DrawTextures
+    isExternal: true
+    href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_DrawTextures_Microsoft_Xna_Framework_Graphics_Texture2D___Microsoft_Xna_Framework_Rectangle_System_Nullable_Microsoft_Xna_Framework_Rectangle__Microsoft_Xna_Framework_Color_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: '['
+  - name: ']'
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Rectangle
+    name: Rectangle
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Rectangle
+    name: Rectangle
+    isExternal: true
+  - name: '?'
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.RenderProduction.DrawTextures(Microsoft.Xna.Framework.Graphics.Texture2D[],Microsoft.Xna.Framework.Rectangle,System.Nullable{Microsoft.Xna.Framework.Rectangle},Microsoft.Xna.Framework.Color)
+    name: DrawTextures
+    isExternal: true
+    href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_DrawTextures_Microsoft_Xna_Framework_Graphics_Texture2D___Microsoft_Xna_Framework_Rectangle_System_Nullable_Microsoft_Xna_Framework_Rectangle__Microsoft_Xna_Framework_Color_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: (
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Rectangle
+    name: Rectangle
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Rectangle
+    name: Rectangle
+    isExternal: true
+  - name: '?'
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: )
+- uid: UndyneFight_Ex.RenderProduction.DrawTextures(Microsoft.Xna.Framework.Graphics.Texture2D[],Microsoft.Xna.Framework.Rectangle)
+  commentId: M:UndyneFight_Ex.RenderProduction.DrawTextures(Microsoft.Xna.Framework.Graphics.Texture2D[],Microsoft.Xna.Framework.Rectangle)
+  parent: UndyneFight_Ex.RenderProduction
+  isExternal: true
+  href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_DrawTextures_Microsoft_Xna_Framework_Graphics_Texture2D___Microsoft_Xna_Framework_Rectangle_
+  name: DrawTextures(Texture2D[], Rectangle)
+  nameWithType: RenderProduction.DrawTextures(Texture2D[], Rectangle)
+  fullName: UndyneFight_Ex.RenderProduction.DrawTextures(Microsoft.Xna.Framework.Graphics.Texture2D[], Microsoft.Xna.Framework.Rectangle)
+  nameWithType.vb: RenderProduction.DrawTextures(Texture2D(), Rectangle)
+  fullName.vb: UndyneFight_Ex.RenderProduction.DrawTextures(Microsoft.Xna.Framework.Graphics.Texture2D(), Microsoft.Xna.Framework.Rectangle)
+  name.vb: DrawTextures(Texture2D(), Rectangle)
+  spec.csharp:
+  - uid: UndyneFight_Ex.RenderProduction.DrawTextures(Microsoft.Xna.Framework.Graphics.Texture2D[],Microsoft.Xna.Framework.Rectangle)
+    name: DrawTextures
+    isExternal: true
+    href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_DrawTextures_Microsoft_Xna_Framework_Graphics_Texture2D___Microsoft_Xna_Framework_Rectangle_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: '['
+  - name: ']'
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Rectangle
+    name: Rectangle
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.RenderProduction.DrawTextures(Microsoft.Xna.Framework.Graphics.Texture2D[],Microsoft.Xna.Framework.Rectangle)
+    name: DrawTextures
+    isExternal: true
+    href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_DrawTextures_Microsoft_Xna_Framework_Graphics_Texture2D___Microsoft_Xna_Framework_Rectangle_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: (
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Rectangle
+    name: Rectangle
+    isExternal: true
+  - name: )
+- uid: UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  commentId: M:UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  parent: UndyneFight_Ex.RenderProduction
+  isExternal: true
+  href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_DrawTexture_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_
+  name: DrawTexture(Texture2D, Vector2, Color)
+  nameWithType: RenderProduction.DrawTexture(Texture2D, Vector2, Color)
+  fullName: UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Color)
+  spec.csharp:
+  - uid: UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+    name: DrawTexture
+    isExternal: true
+    href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_DrawTexture_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+    name: DrawTexture
+    isExternal: true
+    href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_DrawTexture_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: )
+- uid: UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single)
+  commentId: M:UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single)
+  parent: UndyneFight_Ex.RenderProduction
+  isExternal: true
+  href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_DrawTexture_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_System_Single_
+  name: DrawTexture(Texture2D, Vector2, Color, float)
+  nameWithType: RenderProduction.DrawTexture(Texture2D, Vector2, Color, float)
+  fullName: UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Color, float)
+  nameWithType.vb: RenderProduction.DrawTexture(Texture2D, Vector2, Color, Single)
+  fullName.vb: UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Color, Single)
+  name.vb: DrawTexture(Texture2D, Vector2, Color, Single)
+  spec.csharp:
+  - uid: UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single)
+    name: DrawTexture
+    isExternal: true
+    href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_DrawTexture_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_System_Single_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single)
+    name: DrawTexture
+    isExternal: true
+    href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_DrawTexture_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_System_Single_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Vector2)
+  commentId: M:UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Vector2)
+  parent: UndyneFight_Ex.RenderProduction
+  isExternal: true
+  href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_DrawTexture_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_Microsoft_Xna_Framework_Vector2_
+  name: DrawTexture(Texture2D, Vector2, Color, Vector2)
+  nameWithType: RenderProduction.DrawTexture(Texture2D, Vector2, Color, Vector2)
+  fullName: UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Color, Microsoft.Xna.Framework.Vector2)
+  spec.csharp:
+  - uid: UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Vector2)
+    name: DrawTexture
+    isExternal: true
+    href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_DrawTexture_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_Microsoft_Xna_Framework_Vector2_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Vector2)
+    name: DrawTexture
+    isExternal: true
+    href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_DrawTexture_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_Microsoft_Xna_Framework_Vector2_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: )
+- uid: UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Rectangle)
+  commentId: M:UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Rectangle)
+  parent: UndyneFight_Ex.RenderProduction
+  isExternal: true
+  href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_DrawTexture_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Rectangle_
+  name: DrawTexture(Texture2D, Rectangle)
+  nameWithType: RenderProduction.DrawTexture(Texture2D, Rectangle)
+  fullName: UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Rectangle)
+  spec.csharp:
+  - uid: UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Rectangle)
+    name: DrawTexture
+    isExternal: true
+    href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_DrawTexture_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Rectangle_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Rectangle
+    name: Rectangle
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Rectangle)
+    name: DrawTexture
+    isExternal: true
+    href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_DrawTexture_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Rectangle_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Rectangle
+    name: Rectangle
+    isExternal: true
+  - name: )
+- uid: UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Color)
+  commentId: M:UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Color)
+  parent: UndyneFight_Ex.RenderProduction
+  isExternal: true
+  href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_DrawTexture_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Rectangle_Microsoft_Xna_Framework_Color_
+  name: DrawTexture(Texture2D, Rectangle, Color)
+  nameWithType: RenderProduction.DrawTexture(Texture2D, Rectangle, Color)
+  fullName: UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Rectangle, Microsoft.Xna.Framework.Color)
+  spec.csharp:
+  - uid: UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Color)
+    name: DrawTexture
+    isExternal: true
+    href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_DrawTexture_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Rectangle_Microsoft_Xna_Framework_Color_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Rectangle
+    name: Rectangle
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Color)
+    name: DrawTexture
+    isExternal: true
+    href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_DrawTexture_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Rectangle_Microsoft_Xna_Framework_Color_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Rectangle
+    name: Rectangle
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: )
+- uid: UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2)
+  commentId: M:UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2)
+  parent: UndyneFight_Ex.RenderProduction
+  isExternal: true
+  href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_DrawTexture_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_
+  name: DrawTexture(Texture2D, Vector2)
+  nameWithType: RenderProduction.DrawTexture(Texture2D, Vector2)
+  fullName: UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Vector2)
+  spec.csharp:
+  - uid: UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2)
+    name: DrawTexture
+    isExternal: true
+    href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_DrawTexture_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2)
+    name: DrawTexture
+    isExternal: true
+    href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_DrawTexture_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: )
+- uid: UndyneFight_Ex.RenderProduction.UpdateBase(Microsoft.Xna.Framework.Vector2)
+  commentId: M:UndyneFight_Ex.RenderProduction.UpdateBase(Microsoft.Xna.Framework.Vector2)
+  parent: UndyneFight_Ex.RenderProduction
+  isExternal: true
+  href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_UpdateBase_Microsoft_Xna_Framework_Vector2_
+  name: UpdateBase(Vector2)
+  nameWithType: RenderProduction.UpdateBase(Vector2)
+  fullName: UndyneFight_Ex.RenderProduction.UpdateBase(Microsoft.Xna.Framework.Vector2)
+  spec.csharp:
+  - uid: UndyneFight_Ex.RenderProduction.UpdateBase(Microsoft.Xna.Framework.Vector2)
+    name: UpdateBase
+    isExternal: true
+    href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_UpdateBase_Microsoft_Xna_Framework_Vector2_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.RenderProduction.UpdateBase(Microsoft.Xna.Framework.Vector2)
+    name: UpdateBase
+    isExternal: true
+    href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_UpdateBase_Microsoft_Xna_Framework_Vector2_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: )
+- uid: UndyneFight_Ex.RenderProduction.CopyRenderTarget(Microsoft.Xna.Framework.Graphics.RenderTarget2D,Microsoft.Xna.Framework.Graphics.Texture2D)
+  commentId: M:UndyneFight_Ex.RenderProduction.CopyRenderTarget(Microsoft.Xna.Framework.Graphics.RenderTarget2D,Microsoft.Xna.Framework.Graphics.Texture2D)
+  parent: UndyneFight_Ex.RenderProduction
+  isExternal: true
+  href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_CopyRenderTarget_Microsoft_Xna_Framework_Graphics_RenderTarget2D_Microsoft_Xna_Framework_Graphics_Texture2D_
+  name: CopyRenderTarget(RenderTarget2D, Texture2D)
+  nameWithType: RenderProduction.CopyRenderTarget(RenderTarget2D, Texture2D)
+  fullName: UndyneFight_Ex.RenderProduction.CopyRenderTarget(Microsoft.Xna.Framework.Graphics.RenderTarget2D, Microsoft.Xna.Framework.Graphics.Texture2D)
+  spec.csharp:
+  - uid: UndyneFight_Ex.RenderProduction.CopyRenderTarget(Microsoft.Xna.Framework.Graphics.RenderTarget2D,Microsoft.Xna.Framework.Graphics.Texture2D)
+    name: CopyRenderTarget
+    isExternal: true
+    href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_CopyRenderTarget_Microsoft_Xna_Framework_Graphics_RenderTarget2D_Microsoft_Xna_Framework_Graphics_Texture2D_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.RenderTarget2D
+    name: RenderTarget2D
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.RenderProduction.CopyRenderTarget(Microsoft.Xna.Framework.Graphics.RenderTarget2D,Microsoft.Xna.Framework.Graphics.Texture2D)
+    name: CopyRenderTarget
+    isExternal: true
+    href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_CopyRenderTarget_Microsoft_Xna_Framework_Graphics_RenderTarget2D_Microsoft_Xna_Framework_Graphics_Texture2D_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.RenderTarget2D
+    name: RenderTarget2D
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Graphics.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: )
+- uid: UndyneFight_Ex.RenderProduction.AddHelperTarget
+  commentId: M:UndyneFight_Ex.RenderProduction.AddHelperTarget
+  parent: UndyneFight_Ex.RenderProduction
+  isExternal: true
+  href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_AddHelperTarget
+  name: AddHelperTarget()
+  nameWithType: RenderProduction.AddHelperTarget()
+  fullName: UndyneFight_Ex.RenderProduction.AddHelperTarget()
+  spec.csharp:
+  - uid: UndyneFight_Ex.RenderProduction.AddHelperTarget
+    name: AddHelperTarget
+    isExternal: true
+    href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_AddHelperTarget
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.RenderProduction.AddHelperTarget
+    name: AddHelperTarget
+    isExternal: true
+    href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_AddHelperTarget
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.RenderProduction.RemoveHelperTarget(Microsoft.Xna.Framework.Graphics.RenderTarget2D)
+  commentId: M:UndyneFight_Ex.RenderProduction.RemoveHelperTarget(Microsoft.Xna.Framework.Graphics.RenderTarget2D)
+  parent: UndyneFight_Ex.RenderProduction
+  isExternal: true
+  href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_RemoveHelperTarget_Microsoft_Xna_Framework_Graphics_RenderTarget2D_
+  name: RemoveHelperTarget(RenderTarget2D)
+  nameWithType: RenderProduction.RemoveHelperTarget(RenderTarget2D)
+  fullName: UndyneFight_Ex.RenderProduction.RemoveHelperTarget(Microsoft.Xna.Framework.Graphics.RenderTarget2D)
+  spec.csharp:
+  - uid: UndyneFight_Ex.RenderProduction.RemoveHelperTarget(Microsoft.Xna.Framework.Graphics.RenderTarget2D)
+    name: RemoveHelperTarget
+    isExternal: true
+    href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_RemoveHelperTarget_Microsoft_Xna_Framework_Graphics_RenderTarget2D_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.RenderTarget2D
+    name: RenderTarget2D
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.RenderProduction.RemoveHelperTarget(Microsoft.Xna.Framework.Graphics.RenderTarget2D)
+    name: RemoveHelperTarget
+    isExternal: true
+    href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_RemoveHelperTarget_Microsoft_Xna_Framework_Graphics_RenderTarget2D_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.RenderTarget2D
+    name: RenderTarget2D
+    isExternal: true
+  - name: )
+- uid: UndyneFight_Ex.RenderProduction.AdaptingScale
+  commentId: P:UndyneFight_Ex.RenderProduction.AdaptingScale
+  parent: UndyneFight_Ex.RenderProduction
+  isExternal: true
+  href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_AdaptingScale
+  name: AdaptingScale
+  nameWithType: RenderProduction.AdaptingScale
+  fullName: UndyneFight_Ex.RenderProduction.AdaptingScale
+- uid: UndyneFight_Ex.RenderProduction.ScreenSize
+  commentId: P:UndyneFight_Ex.RenderProduction.ScreenSize
+  parent: UndyneFight_Ex.RenderProduction
+  isExternal: true
+  href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_ScreenSize
+  name: ScreenSize
+  nameWithType: RenderProduction.ScreenSize
+  fullName: UndyneFight_Ex.RenderProduction.ScreenSize
+- uid: UndyneFight_Ex.RenderProduction.WindowDevice
+  commentId: P:UndyneFight_Ex.RenderProduction.WindowDevice
+  parent: UndyneFight_Ex.RenderProduction
+  isExternal: true
+  href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_WindowDevice
+  name: WindowDevice
+  nameWithType: RenderProduction.WindowDevice
+  fullName: UndyneFight_Ex.RenderProduction.WindowDevice
+- uid: UndyneFight_Ex.RenderProduction.SpriteBatch
+  commentId: P:UndyneFight_Ex.RenderProduction.SpriteBatch
+  parent: UndyneFight_Ex.RenderProduction
+  isExternal: true
+  href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_SpriteBatch
+  name: SpriteBatch
+  nameWithType: RenderProduction.SpriteBatch
+  fullName: UndyneFight_Ex.RenderProduction.SpriteBatch
+- uid: UndyneFight_Ex.RenderProduction.AdaptedSize
+  commentId: P:UndyneFight_Ex.RenderProduction.AdaptedSize
+  parent: UndyneFight_Ex.RenderProduction
+  isExternal: true
+  href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_AdaptedSize
+  name: AdaptedSize
+  nameWithType: RenderProduction.AdaptedSize
+  fullName: UndyneFight_Ex.RenderProduction.AdaptedSize
+- uid: UndyneFight_Ex.RenderProduction.MissionTarget
+  commentId: P:UndyneFight_Ex.RenderProduction.MissionTarget
+  parent: UndyneFight_Ex.RenderProduction
+  isExternal: true
+  href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_MissionTarget
+  name: MissionTarget
+  nameWithType: RenderProduction.MissionTarget
+  fullName: UndyneFight_Ex.RenderProduction.MissionTarget
+- uid: UndyneFight_Ex.RenderProduction.SpriteSortMode
+  commentId: P:UndyneFight_Ex.RenderProduction.SpriteSortMode
+  parent: UndyneFight_Ex.RenderProduction
+  isExternal: true
+  href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_SpriteSortMode
+  name: SpriteSortMode
+  nameWithType: RenderProduction.SpriteSortMode
+  fullName: UndyneFight_Ex.RenderProduction.SpriteSortMode
+- uid: UndyneFight_Ex.RenderProduction.BlendState
+  commentId: P:UndyneFight_Ex.RenderProduction.BlendState
+  parent: UndyneFight_Ex.RenderProduction
+  isExternal: true
+  href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_BlendState
+  name: BlendState
+  nameWithType: RenderProduction.BlendState
+  fullName: UndyneFight_Ex.RenderProduction.BlendState
+- uid: UndyneFight_Ex.RenderProduction.Transform
+  commentId: P:UndyneFight_Ex.RenderProduction.Transform
+  parent: UndyneFight_Ex.RenderProduction
+  isExternal: true
+  href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_Transform
+  name: Transform
+  nameWithType: RenderProduction.Transform
+  fullName: UndyneFight_Ex.RenderProduction.Transform
+- uid: UndyneFight_Ex.RenderProduction.Shader
+  commentId: P:UndyneFight_Ex.RenderProduction.Shader
+  parent: UndyneFight_Ex.RenderProduction
+  isExternal: true
+  href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_Shader
+  name: Shader
+  nameWithType: RenderProduction.Shader
+  fullName: UndyneFight_Ex.RenderProduction.Shader
+- uid: UndyneFight_Ex.RenderProduction.SamplerState
+  commentId: P:UndyneFight_Ex.RenderProduction.SamplerState
+  parent: UndyneFight_Ex.RenderProduction
+  isExternal: true
+  href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_SamplerState
+  name: SamplerState
+  nameWithType: RenderProduction.SamplerState
+  fullName: UndyneFight_Ex.RenderProduction.SamplerState
+- uid: UndyneFight_Ex.RenderProduction.HelperTarget
+  commentId: P:UndyneFight_Ex.RenderProduction.HelperTarget
+  parent: UndyneFight_Ex.RenderProduction
+  isExternal: true
+  href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_HelperTarget
+  name: HelperTarget
+  nameWithType: RenderProduction.HelperTarget
+  fullName: UndyneFight_Ex.RenderProduction.HelperTarget
+- uid: UndyneFight_Ex.RenderProduction.HelperTargets
+  commentId: P:UndyneFight_Ex.RenderProduction.HelperTargets
+  parent: UndyneFight_Ex.RenderProduction
+  isExternal: true
+  href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_HelperTargets
+  name: HelperTargets
+  nameWithType: RenderProduction.HelperTargets
+  fullName: UndyneFight_Ex.RenderProduction.HelperTargets
+- uid: UndyneFight_Ex.RenderProduction.Enabled
+  commentId: P:UndyneFight_Ex.RenderProduction.Enabled
+  parent: UndyneFight_Ex.RenderProduction
+  isExternal: true
+  href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_Enabled
+  name: Enabled
+  nameWithType: RenderProduction.Enabled
+  fullName: UndyneFight_Ex.RenderProduction.Enabled
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UndyneFight_Ex
+  commentId: N:UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex
+  nameWithType: UndyneFight_Ex
+  fullName: UndyneFight_Ex
+- uid: System.IComparable`1
+  commentId: T:System.IComparable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.icomparable-1
+  name: IComparable<T>
+  nameWithType: IComparable<T>
+  fullName: System.IComparable<T>
+  nameWithType.vb: IComparable(Of T)
+  fullName.vb: System.IComparable(Of T)
+  name.vb: IComparable(Of T)
+  spec.csharp:
+  - uid: System.IComparable`1
+    name: IComparable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.icomparable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IComparable`1
+    name: IComparable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.icomparable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.#ctor*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.#ctor
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.html#UndyneFight_Ex_Fight_Functions_ScreenDrawing_Shaders_RGBSplitting__ctor_System_Single_
+  name: RGBSplitting
+  nameWithType: Functions.ScreenDrawing.Shaders.RGBSplitting.RGBSplitting
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.RGBSplitting
+  nameWithType.vb: Functions.ScreenDrawing.Shaders.RGBSplitting.New
+  fullName.vb: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.New
+  name.vb: New
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: UndyneFight_Ex.RenderProduction.WindowSizeChanged(Microsoft.Xna.Framework.Vector2)
+  commentId: M:UndyneFight_Ex.RenderProduction.WindowSizeChanged(Microsoft.Xna.Framework.Vector2)
+  parent: UndyneFight_Ex.RenderProduction
+  isExternal: true
+  href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_WindowSizeChanged_Microsoft_Xna_Framework_Vector2_
+  name: WindowSizeChanged(Vector2)
+  nameWithType: RenderProduction.WindowSizeChanged(Vector2)
+  fullName: UndyneFight_Ex.RenderProduction.WindowSizeChanged(Microsoft.Xna.Framework.Vector2)
+  spec.csharp:
+  - uid: UndyneFight_Ex.RenderProduction.WindowSizeChanged(Microsoft.Xna.Framework.Vector2)
+    name: WindowSizeChanged
+    isExternal: true
+    href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_WindowSizeChanged_Microsoft_Xna_Framework_Vector2_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.RenderProduction.WindowSizeChanged(Microsoft.Xna.Framework.Vector2)
+    name: WindowSizeChanged
+    isExternal: true
+    href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_WindowSizeChanged_Microsoft_Xna_Framework_Vector2_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: )
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.WindowSizeChanged*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.WindowSizeChanged
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.html#UndyneFight_Ex_Fight_Functions_ScreenDrawing_Shaders_RGBSplitting_WindowSizeChanged_Microsoft_Xna_Framework_Vector2_
+  name: WindowSizeChanged
+  nameWithType: Functions.ScreenDrawing.Shaders.RGBSplitting.WindowSizeChanged
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.WindowSizeChanged
+- uid: Microsoft.Xna.Framework.Vector2
+  commentId: T:Microsoft.Xna.Framework.Vector2
+  parent: Microsoft.Xna.Framework
+  isExternal: true
+  name: Vector2
+  nameWithType: Vector2
+  fullName: Microsoft.Xna.Framework.Vector2
+- uid: Microsoft.Xna.Framework
+  commentId: N:Microsoft.Xna.Framework
+  isExternal: true
+  name: Microsoft.Xna.Framework
+  nameWithType: Microsoft.Xna.Framework
+  fullName: Microsoft.Xna.Framework
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+- uid: UndyneFight_Ex.RenderProduction.Draw(Microsoft.Xna.Framework.Graphics.RenderTarget2D)
+  commentId: M:UndyneFight_Ex.RenderProduction.Draw(Microsoft.Xna.Framework.Graphics.RenderTarget2D)
+  parent: UndyneFight_Ex.RenderProduction
+  isExternal: true
+  href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_Draw_Microsoft_Xna_Framework_Graphics_RenderTarget2D_
+  name: Draw(RenderTarget2D)
+  nameWithType: RenderProduction.Draw(RenderTarget2D)
+  fullName: UndyneFight_Ex.RenderProduction.Draw(Microsoft.Xna.Framework.Graphics.RenderTarget2D)
+  spec.csharp:
+  - uid: UndyneFight_Ex.RenderProduction.Draw(Microsoft.Xna.Framework.Graphics.RenderTarget2D)
+    name: Draw
+    isExternal: true
+    href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_Draw_Microsoft_Xna_Framework_Graphics_RenderTarget2D_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.RenderTarget2D
+    name: RenderTarget2D
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.RenderProduction.Draw(Microsoft.Xna.Framework.Graphics.RenderTarget2D)
+    name: Draw
+    isExternal: true
+    href: UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_Draw_Microsoft_Xna_Framework_Graphics_RenderTarget2D_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Graphics.RenderTarget2D
+    name: RenderTarget2D
+    isExternal: true
+  - name: )
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.Draw*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.Draw
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.html#UndyneFight_Ex_Fight_Functions_ScreenDrawing_Shaders_RGBSplitting_Draw_Microsoft_Xna_Framework_Graphics_RenderTarget2D_
+  name: Draw
+  nameWithType: Functions.ScreenDrawing.Shaders.RGBSplitting.Draw
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.Draw
+- uid: Microsoft.Xna.Framework.Graphics.RenderTarget2D
+  commentId: T:Microsoft.Xna.Framework.Graphics.RenderTarget2D
+  parent: Microsoft.Xna.Framework.Graphics
+  isExternal: true
+  name: RenderTarget2D
+  nameWithType: RenderTarget2D
+  fullName: Microsoft.Xna.Framework.Graphics.RenderTarget2D
+- uid: Microsoft.Xna.Framework.Graphics
+  commentId: N:Microsoft.Xna.Framework.Graphics
+  isExternal: true
+  name: Microsoft.Xna.Framework.Graphics
+  nameWithType: Microsoft.Xna.Framework.Graphics
+  fullName: Microsoft.Xna.Framework.Graphics
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework.Graphics
+    name: Graphics
+    isExternal: true
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework.Graphics
+    name: Graphics
+    isExternal: true
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.Intensity*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.Intensity
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.html#UndyneFight_Ex_Fight_Functions_ScreenDrawing_Shaders_RGBSplitting_Intensity
+  name: Intensity
+  nameWithType: Functions.ScreenDrawing.Shaders.RGBSplitting.Intensity
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.Intensity
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.Disturbance
+  commentId: P:UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.Disturbance
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.html#UndyneFight_Ex_Fight_Functions_ScreenDrawing_Shaders_RGBSplitting_Disturbance
+  name: Disturbance
+  nameWithType: Functions.ScreenDrawing.Shaders.RGBSplitting.Disturbance
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.Disturbance
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.RandomDisturb*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.RandomDisturb
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.html#UndyneFight_Ex_Fight_Functions_ScreenDrawing_Shaders_RGBSplitting_RandomDisturb
+  name: RandomDisturb
+  nameWithType: Functions.ScreenDrawing.Shaders.RGBSplitting.RandomDisturb
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.RandomDisturb
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.Disturbance*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.Disturbance
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.html#UndyneFight_Ex_Fight_Functions_ScreenDrawing_Shaders_RGBSplitting_Disturbance
+  name: Disturbance
+  nameWithType: Functions.ScreenDrawing.Shaders.RGBSplitting.Disturbance
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.Disturbance
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: UndyneFight_Ex.FightResources.Shaders.Sinwave
+  commentId: P:UndyneFight_Ex.FightResources.Shaders.Sinwave
+  isExternal: true
+  href: UndyneFight_Ex.FightResources.Shaders.html#UndyneFight_Ex_FightResources_Shaders_Sinwave
+  name: Sinwave
+  nameWithType: FightResources.Shaders.Sinwave
+  fullName: UndyneFight_Ex.FightResources.Shaders.Sinwave
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.DisturbShader*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.DisturbShader
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.html#UndyneFight_Ex_Fight_Functions_ScreenDrawing_Shaders_RGBSplitting_DisturbShader
+  name: DisturbShader
+  nameWithType: Functions.ScreenDrawing.Shaders.RGBSplitting.DisturbShader
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.DisturbShader
+- uid: UndyneFight_Ex.Shader
+  commentId: T:UndyneFight_Ex.Shader
+  parent: UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.Shader.html
+  name: Shader
+  nameWithType: Shader
+  fullName: UndyneFight_Ex.Shader
+- uid: Microsoft.Xna.Framework.Color.Red
+  commentId: P:Microsoft.Xna.Framework.Color.Red
+  isExternal: true
+  name: Red
+  nameWithType: Color.Red
+  fullName: Microsoft.Xna.Framework.Color.Red
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.SplitColor1*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.SplitColor1
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.html#UndyneFight_Ex_Fight_Functions_ScreenDrawing_Shaders_RGBSplitting_SplitColor1
+  name: SplitColor1
+  nameWithType: Functions.ScreenDrawing.Shaders.RGBSplitting.SplitColor1
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.SplitColor1
+- uid: Microsoft.Xna.Framework.Color
+  commentId: T:Microsoft.Xna.Framework.Color
+  parent: Microsoft.Xna.Framework
+  isExternal: true
+  name: Color
+  nameWithType: Color
+  fullName: Microsoft.Xna.Framework.Color
+- uid: Microsoft.Xna.Framework.Color.Blue
+  commentId: P:Microsoft.Xna.Framework.Color.Blue
+  isExternal: true
+  name: Blue
+  nameWithType: Color.Blue
+  fullName: Microsoft.Xna.Framework.Color.Blue
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.SplitColor2*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.SplitColor2
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.html#UndyneFight_Ex_Fight_Functions_ScreenDrawing_Shaders_RGBSplitting_SplitColor2
+  name: SplitColor2
+  nameWithType: Functions.ScreenDrawing.Shaders.RGBSplitting.SplitColor2
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.SplitColor2
+- uid: Microsoft.Xna.Framework.Color.Lime
+  commentId: P:Microsoft.Xna.Framework.Color.Lime
+  isExternal: true
+  name: Lime
+  nameWithType: Color.Lime
+  fullName: Microsoft.Xna.Framework.Color.Lime
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.MainColor*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.MainColor
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.html#UndyneFight_Ex_Fight_Functions_ScreenDrawing_Shaders_RGBSplitting_MainColor
+  name: MainColor
+  nameWithType: Functions.ScreenDrawing.Shaders.RGBSplitting.MainColor
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.MainColor

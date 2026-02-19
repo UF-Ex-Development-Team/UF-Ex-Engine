@@ -1,0 +1,3566 @@
+### YamlMime:ManagedReference
+items:
+- uid: UndyneFight_Ex.Fight.Functions
+  commentId: T:UndyneFight_Ex.Fight.Functions
+  id: Functions
+  parent: UndyneFight_Ex.Fight
+  children:
+  - UndyneFight_Ex.Fight.Functions.AddInstance(UndyneFight_Ex.GameObject)
+  - UndyneFight_Ex.Fight.Functions.AddInstances(UndyneFight_Ex.GameObject[])
+  - UndyneFight_Ex.Fight.Functions.ArrowApply(System.String,System.Action{UndyneFight_Ex.Entities.Arrow})
+  - UndyneFight_Ex.Fight.Functions.AutoEnd
+  - UndyneFight_Ex.Fight.Functions.BlackScreen(System.Single)
+  - UndyneFight_Ex.Fight.Functions.Cos(System.Single)
+  - UndyneFight_Ex.Fight.Functions.CreateArrow(System.Single,System.Int32,System.Single,System.Int32,System.Int32,UndyneFight_Ex.Fight.Functions.ArrowAttribute)
+  - UndyneFight_Ex.Fight.Functions.CreateArrow(System.Single,System.String,System.Single,System.Int32,System.Int32,UndyneFight_Ex.Fight.Functions.ArrowAttribute)
+  - UndyneFight_Ex.Fight.Functions.CreateBone(UndyneFight_Ex.Entities.Bone)
+  - UndyneFight_Ex.Fight.Functions.CreateEntity(UndyneFight_Ex.Entity)
+  - UndyneFight_Ex.Fight.Functions.CreateEntity(UndyneFight_Ex.Entity[])
+  - UndyneFight_Ex.Fight.Functions.CreateGB(UndyneFight_Ex.Entities.GasterBlaster)
+  - UndyneFight_Ex.Fight.Functions.CreateHeart(System.Single,System.Single,System.Single)
+  - UndyneFight_Ex.Fight.Functions.CreateHeart(UndyneFight_Ex.CollideRect)
+  - UndyneFight_Ex.Fight.Functions.CreatePlatform(UndyneFight_Ex.Entities.Platform)
+  - UndyneFight_Ex.Fight.Functions.CreateSpear(UndyneFight_Ex.Entities.Spear)
+  - UndyneFight_Ex.Fight.Functions.CurrentDifficulty
+  - UndyneFight_Ex.Fight.Functions.CustomAnalyzer
+  - UndyneFight_Ex.Fight.Functions.DirectionAllocate
+  - UndyneFight_Ex.Fight.Functions.EndSong
+  - UndyneFight_Ex.Fight.Functions.Fortimes(System.Int32,System.Action)
+  - UndyneFight_Ex.Fight.Functions.Fortimes(System.Int32,System.Action{System.Int32})
+  - UndyneFight_Ex.Fight.Functions.Gametime
+  - UndyneFight_Ex.Fight.Functions.GametimeDelta
+  - UndyneFight_Ex.Fight.Functions.GametimeF
+  - UndyneFight_Ex.Fight.Functions.GetAll``1
+  - UndyneFight_Ex.Fight.Functions.GetAll``1(System.String)
+  - UndyneFight_Ex.Fight.Functions.GetWayFromTag(System.String)
+  - UndyneFight_Ex.Fight.Functions.GiveKR(System.Single)
+  - UndyneFight_Ex.Fight.Functions.Heart
+  - UndyneFight_Ex.Fight.Functions.InstantSetBox(Microsoft.Xna.Framework.Vector2,System.Single,System.Single)
+  - UndyneFight_Ex.Fight.Functions.InstantSetBox(System.Single,System.Single,System.Single)
+  - UndyneFight_Ex.Fight.Functions.InstantSetBox(System.Single,System.Single,System.Single,System.Single)
+  - UndyneFight_Ex.Fight.Functions.InstantSetGreenBox
+  - UndyneFight_Ex.Fight.Functions.InstantTP(Microsoft.Xna.Framework.Vector2)
+  - UndyneFight_Ex.Fight.Functions.InstantTP(System.Single,System.Single)
+  - UndyneFight_Ex.Fight.Functions.LastRand
+  - UndyneFight_Ex.Fight.Functions.LastRandFloat
+  - UndyneFight_Ex.Fight.Functions.Loader
+  - UndyneFight_Ex.Fight.Functions.LoseHP(UndyneFight_Ex.Entities.Player.Heart)
+  - UndyneFight_Ex.Fight.Functions.MakeArrow(System.Single,System.Int32,System.Single,System.Int32,System.Int32,UndyneFight_Ex.Fight.Functions.ArrowAttribute)
+  - UndyneFight_Ex.Fight.Functions.MakeArrow(System.Single,System.String,System.Single,System.Int32,System.Int32,UndyneFight_Ex.Fight.Functions.ArrowAttribute)
+  - UndyneFight_Ex.Fight.Functions.OneElementArrows
+  - UndyneFight_Ex.Fight.Functions.PlayOffset
+  - UndyneFight_Ex.Fight.Functions.PlaySound(Microsoft.Xna.Framework.Audio.SoundEffect,System.Single)
+  - UndyneFight_Ex.Fight.Functions.PlaySound(Microsoft.Xna.Framework.Audio.SoundEffect[])
+  - UndyneFight_Ex.Fight.Functions.PlayerInstance
+  - UndyneFight_Ex.Fight.Functions.Rand(System.Int32,System.Int32)
+  - UndyneFight_Ex.Fight.Functions.Rand(System.Single,System.Single)
+  - UndyneFight_Ex.Fight.Functions.RandBool
+  - UndyneFight_Ex.Fight.Functions.RandSignal
+  - UndyneFight_Ex.Fight.Functions.Regenerate
+  - UndyneFight_Ex.Fight.Functions.Regenerate(System.Int32)
+  - UndyneFight_Ex.Fight.Functions.Reset
+  - UndyneFight_Ex.Fight.Functions.ResetBarrage
+  - UndyneFight_Ex.Fight.Functions.SetBox(Microsoft.Xna.Framework.Vector2,System.Single,System.Single)
+  - UndyneFight_Ex.Fight.Functions.SetBox(System.Single,System.Single,System.Single)
+  - UndyneFight_Ex.Fight.Functions.SetBox(System.Single,System.Single,System.Single,System.Single)
+  - UndyneFight_Ex.Fight.Functions.SetBoxMission(System.Int32)
+  - UndyneFight_Ex.Fight.Functions.SetBoxMission(UndyneFight_Ex.Entities.FightBox)
+  - UndyneFight_Ex.Fight.Functions.SetGreenBox
+  - UndyneFight_Ex.Fight.Functions.SetPlayerBoxMission(System.Int32)
+  - UndyneFight_Ex.Fight.Functions.SetPlayerBoxMission(UndyneFight_Ex.Entities.Player.Heart)
+  - UndyneFight_Ex.Fight.Functions.SetPlayerMission(System.Int32)
+  - UndyneFight_Ex.Fight.Functions.SetPlayerMission(UndyneFight_Ex.Entities.Player.Heart)
+  - UndyneFight_Ex.Fight.Functions.SetSoul(System.Int32,System.Boolean)
+  - UndyneFight_Ex.Fight.Functions.SetSoul(UndyneFight_Ex.Entities.Player.MoveState)
+  - UndyneFight_Ex.Fight.Functions.Sin(System.Single)
+  - UndyneFight_Ex.Fight.Functions.SongIllustration
+  - UndyneFight_Ex.Fight.Functions.TP(Microsoft.Xna.Framework.Vector2)
+  - UndyneFight_Ex.Fight.Functions.TP(System.Single,System.Single)
+  - UndyneFight_Ex.Fight.Functions.Tan(System.Single)
+  langs:
+  - csharp
+  - vb
+  name: Functions
+  nameWithType: Functions
+  fullName: UndyneFight_Ex.Fight.Functions
+  type: Class
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: General charting functions
+  example: []
+  syntax:
+    content: public static class Functions
+    content.vb: Public Module Functions
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+- uid: UndyneFight_Ex.Fight.Functions.SetPlayerMission(System.Int32)
+  commentId: M:UndyneFight_Ex.Fight.Functions.SetPlayerMission(System.Int32)
+  id: SetPlayerMission(System.Int32)
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: SetPlayerMission(int)
+  nameWithType: Functions.SetPlayerMission(int)
+  fullName: UndyneFight_Ex.Fight.Functions.SetPlayerMission(int)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Sets which player you are currently controlling
+  example: []
+  syntax:
+    content: public static void SetPlayerMission(int val)
+    parameters:
+    - id: val
+      type: System.Int32
+      description: The ID of the player (Default 0)
+    content.vb: Public Shared Sub SetPlayerMission(val As Integer)
+  overload: UndyneFight_Ex.Fight.Functions.SetPlayerMission*
+  nameWithType.vb: Functions.SetPlayerMission(Integer)
+  fullName.vb: UndyneFight_Ex.Fight.Functions.SetPlayerMission(Integer)
+  name.vb: SetPlayerMission(Integer)
+- uid: UndyneFight_Ex.Fight.Functions.SetPlayerMission(UndyneFight_Ex.Entities.Player.Heart)
+  commentId: M:UndyneFight_Ex.Fight.Functions.SetPlayerMission(UndyneFight_Ex.Entities.Player.Heart)
+  id: SetPlayerMission(UndyneFight_Ex.Entities.Player.Heart)
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: SetPlayerMission(Heart)
+  nameWithType: Functions.SetPlayerMission(Player.Heart)
+  fullName: UndyneFight_Ex.Fight.Functions.SetPlayerMission(UndyneFight_Ex.Entities.Player.Heart)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Sets which player you are currently controlling
+  example: []
+  syntax:
+    content: public static void SetPlayerMission(Player.Heart p)
+    parameters:
+    - id: p
+      type: UndyneFight_Ex.Entities.Player.Heart
+      description: The player to control
+    content.vb: Public Shared Sub SetPlayerMission(p As Player.Heart)
+  overload: UndyneFight_Ex.Fight.Functions.SetPlayerMission*
+- uid: UndyneFight_Ex.Fight.Functions.SetPlayerBoxMission(UndyneFight_Ex.Entities.Player.Heart)
+  commentId: M:UndyneFight_Ex.Fight.Functions.SetPlayerBoxMission(UndyneFight_Ex.Entities.Player.Heart)
+  id: SetPlayerBoxMission(UndyneFight_Ex.Entities.Player.Heart)
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: SetPlayerBoxMission(Heart)
+  nameWithType: Functions.SetPlayerBoxMission(Player.Heart)
+  fullName: UndyneFight_Ex.Fight.Functions.SetPlayerBoxMission(UndyneFight_Ex.Entities.Player.Heart)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Sets which player and box you are currently controlling
+  example: []
+  syntax:
+    content: public static void SetPlayerBoxMission(Player.Heart p)
+    parameters:
+    - id: p
+      type: UndyneFight_Ex.Entities.Player.Heart
+      description: The player to control
+    content.vb: Public Shared Sub SetPlayerBoxMission(p As Player.Heart)
+  overload: UndyneFight_Ex.Fight.Functions.SetPlayerBoxMission*
+- uid: UndyneFight_Ex.Fight.Functions.SetPlayerBoxMission(System.Int32)
+  commentId: M:UndyneFight_Ex.Fight.Functions.SetPlayerBoxMission(System.Int32)
+  id: SetPlayerBoxMission(System.Int32)
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: SetPlayerBoxMission(int)
+  nameWithType: Functions.SetPlayerBoxMission(int)
+  fullName: UndyneFight_Ex.Fight.Functions.SetPlayerBoxMission(int)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Sets which player and box you are currently controlling
+  example: []
+  syntax:
+    content: public static void SetPlayerBoxMission(int val)
+    parameters:
+    - id: val
+      type: System.Int32
+      description: The ID of the player and box
+    content.vb: Public Shared Sub SetPlayerBoxMission(val As Integer)
+  overload: UndyneFight_Ex.Fight.Functions.SetPlayerBoxMission*
+  nameWithType.vb: Functions.SetPlayerBoxMission(Integer)
+  fullName.vb: UndyneFight_Ex.Fight.Functions.SetPlayerBoxMission(Integer)
+  name.vb: SetPlayerBoxMission(Integer)
+- uid: UndyneFight_Ex.Fight.Functions.SetBoxMission(System.Int32)
+  commentId: M:UndyneFight_Ex.Fight.Functions.SetBoxMission(System.Int32)
+  id: SetBoxMission(System.Int32)
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: SetBoxMission(int)
+  nameWithType: Functions.SetBoxMission(int)
+  fullName: UndyneFight_Ex.Fight.Functions.SetBoxMission(int)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Sets which box you are currently controlling
+  example: []
+  syntax:
+    content: public static void SetBoxMission(int val)
+    parameters:
+    - id: val
+      type: System.Int32
+      description: The ID of the box
+    content.vb: Public Shared Sub SetBoxMission(val As Integer)
+  overload: UndyneFight_Ex.Fight.Functions.SetBoxMission*
+  nameWithType.vb: Functions.SetBoxMission(Integer)
+  fullName.vb: UndyneFight_Ex.Fight.Functions.SetBoxMission(Integer)
+  name.vb: SetBoxMission(Integer)
+- uid: UndyneFight_Ex.Fight.Functions.SetBoxMission(UndyneFight_Ex.Entities.FightBox)
+  commentId: M:UndyneFight_Ex.Fight.Functions.SetBoxMission(UndyneFight_Ex.Entities.FightBox)
+  id: SetBoxMission(UndyneFight_Ex.Entities.FightBox)
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: SetBoxMission(FightBox)
+  nameWithType: Functions.SetBoxMission(FightBox)
+  fullName: UndyneFight_Ex.Fight.Functions.SetBoxMission(UndyneFight_Ex.Entities.FightBox)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Sets the box you are currently controlling
+  example: []
+  syntax:
+    content: public static void SetBoxMission(FightBox box)
+    parameters:
+    - id: box
+      type: UndyneFight_Ex.Entities.FightBox
+      description: The ID of the box
+    content.vb: Public Shared Sub SetBoxMission(box As FightBox)
+  overload: UndyneFight_Ex.Fight.Functions.SetBoxMission*
+- uid: UndyneFight_Ex.Fight.Functions.TP(Microsoft.Xna.Framework.Vector2)
+  commentId: M:UndyneFight_Ex.Fight.Functions.TP(Microsoft.Xna.Framework.Vector2)
+  id: TP(Microsoft.Xna.Framework.Vector2)
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: TP(Vector2)
+  nameWithType: Functions.TP(Vector2)
+  fullName: UndyneFight_Ex.Fight.Functions.TP(Microsoft.Xna.Framework.Vector2)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Moves the player to the target location
+  example: []
+  syntax:
+    content: public static void TP(Vector2 vect)
+    parameters:
+    - id: vect
+      type: Microsoft.Xna.Framework.Vector2
+      description: The target position
+    content.vb: Public Shared Sub TP(vect As Vector2)
+  overload: UndyneFight_Ex.Fight.Functions.TP*
+- uid: UndyneFight_Ex.Fight.Functions.TP(System.Single,System.Single)
+  commentId: M:UndyneFight_Ex.Fight.Functions.TP(System.Single,System.Single)
+  id: TP(System.Single,System.Single)
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: TP(float, float)
+  nameWithType: Functions.TP(float, float)
+  fullName: UndyneFight_Ex.Fight.Functions.TP(float, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Moves the player to the target position
+  example: []
+  syntax:
+    content: public static void TP(float x = 320, float y = 240)
+    parameters:
+    - id: x
+      type: System.Single
+      description: The x-coordinate to teleport to
+    - id: y
+      type: System.Single
+      description: The y-coordinate to teleport to
+    content.vb: Public Shared Sub TP(x As Single = 320, y As Single = 240)
+  overload: UndyneFight_Ex.Fight.Functions.TP*
+  nameWithType.vb: Functions.TP(Single, Single)
+  fullName.vb: UndyneFight_Ex.Fight.Functions.TP(Single, Single)
+  name.vb: TP(Single, Single)
+- uid: UndyneFight_Ex.Fight.Functions.InstantTP(Microsoft.Xna.Framework.Vector2)
+  commentId: M:UndyneFight_Ex.Fight.Functions.InstantTP(Microsoft.Xna.Framework.Vector2)
+  id: InstantTP(Microsoft.Xna.Framework.Vector2)
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: InstantTP(Vector2)
+  nameWithType: Functions.InstantTP(Vector2)
+  fullName: UndyneFight_Ex.Fight.Functions.InstantTP(Microsoft.Xna.Framework.Vector2)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Moves the player to the target position
+  example: []
+  syntax:
+    content: public static void InstantTP(Vector2 vec)
+    parameters:
+    - id: vec
+      type: Microsoft.Xna.Framework.Vector2
+      description: The vector location to teleport the box to
+    content.vb: Public Shared Sub InstantTP(vec As Vector2)
+  overload: UndyneFight_Ex.Fight.Functions.InstantTP*
+- uid: UndyneFight_Ex.Fight.Functions.InstantTP(System.Single,System.Single)
+  commentId: M:UndyneFight_Ex.Fight.Functions.InstantTP(System.Single,System.Single)
+  id: InstantTP(System.Single,System.Single)
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: InstantTP(float, float)
+  nameWithType: Functions.InstantTP(float, float)
+  fullName: UndyneFight_Ex.Fight.Functions.InstantTP(float, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Moves the player to the target position
+  example: []
+  syntax:
+    content: public static void InstantTP(float x, float y)
+    parameters:
+    - id: x
+      type: System.Single
+      description: The x-coordinate to teleport to
+    - id: y
+      type: System.Single
+      description: The y-coordinate to teleport to
+    content.vb: Public Shared Sub InstantTP(x As Single, y As Single)
+  overload: UndyneFight_Ex.Fight.Functions.InstantTP*
+  nameWithType.vb: Functions.InstantTP(Single, Single)
+  fullName.vb: UndyneFight_Ex.Fight.Functions.InstantTP(Single, Single)
+  name.vb: InstantTP(Single, Single)
+- uid: UndyneFight_Ex.Fight.Functions.Regenerate(System.Int32)
+  commentId: M:UndyneFight_Ex.Fight.Functions.Regenerate(System.Int32)
+  id: Regenerate(System.Int32)
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: Regenerate(int)
+  nameWithType: Functions.Regenerate(int)
+  fullName: UndyneFight_Ex.Fight.Functions.Regenerate(int)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Recovers HP
+  example: []
+  syntax:
+    content: public static void Regenerate(int HP)
+    parameters:
+    - id: HP
+      type: System.Int32
+      description: The amount of HP to recover
+    content.vb: Public Shared Sub Regenerate(HP As Integer)
+  overload: UndyneFight_Ex.Fight.Functions.Regenerate*
+  nameWithType.vb: Functions.Regenerate(Integer)
+  fullName.vb: UndyneFight_Ex.Fight.Functions.Regenerate(Integer)
+  name.vb: Regenerate(Integer)
+- uid: UndyneFight_Ex.Fight.Functions.Regenerate
+  commentId: M:UndyneFight_Ex.Fight.Functions.Regenerate
+  id: Regenerate
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: Regenerate()
+  nameWithType: Functions.Regenerate()
+  fullName: UndyneFight_Ex.Fight.Functions.Regenerate()
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Recovers full HP
+  example: []
+  syntax:
+    content: public static void Regenerate()
+    content.vb: Public Shared Sub Regenerate()
+  overload: UndyneFight_Ex.Fight.Functions.Regenerate*
+- uid: UndyneFight_Ex.Fight.Functions.LoseHP(UndyneFight_Ex.Entities.Player.Heart)
+  commentId: M:UndyneFight_Ex.Fight.Functions.LoseHP(UndyneFight_Ex.Entities.Player.Heart)
+  id: LoseHP(UndyneFight_Ex.Entities.Player.Heart)
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: LoseHP(Heart)
+  nameWithType: Functions.LoseHP(Player.Heart)
+  fullName: UndyneFight_Ex.Fight.Functions.LoseHP(UndyneFight_Ex.Entities.Player.Heart)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Reduces HP from the given heart
+  example: []
+  syntax:
+    content: public static void LoseHP(Player.Heart heart)
+    parameters:
+    - id: heart
+      type: UndyneFight_Ex.Entities.Player.Heart
+      description: The heart to apply the damage to (For particle effect)
+    content.vb: Public Shared Sub LoseHP(heart As Player.Heart)
+  overload: UndyneFight_Ex.Fight.Functions.LoseHP*
+- uid: UndyneFight_Ex.Fight.Functions.GiveKR(System.Single)
+  commentId: M:UndyneFight_Ex.Fight.Functions.GiveKR(System.Single)
+  id: GiveKR(System.Single)
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: GiveKR(float)
+  nameWithType: Functions.GiveKR(float)
+  fullName: UndyneFight_Ex.Fight.Functions.GiveKR(float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Applies KR damage to the player
+  example: []
+  syntax:
+    content: public static void GiveKR(float scale)
+    parameters:
+    - id: scale
+      type: System.Single
+      description: The scale of the KR damage (X times <xref href="UndyneFight_Ex.Fight.Functions.HeartAttribute.KRDamage" data-throw-if-not-resolved="false"></xref>)
+    content.vb: Public Shared Sub GiveKR(scale As Single)
+  overload: UndyneFight_Ex.Fight.Functions.GiveKR*
+  nameWithType.vb: Functions.GiveKR(Single)
+  fullName.vb: UndyneFight_Ex.Fight.Functions.GiveKR(Single)
+  name.vb: GiveKR(Single)
+- uid: UndyneFight_Ex.Fight.Functions.GetAll``1(System.String)
+  commentId: M:UndyneFight_Ex.Fight.Functions.GetAll``1(System.String)
+  id: GetAll``1(System.String)
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: GetAll<T>(string)
+  nameWithType: Functions.GetAll<T>(string)
+  fullName: UndyneFight_Ex.Fight.Functions.GetAll<T>(string)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Gets all the objects of the given type with the given tag
+  example: []
+  syntax:
+    content: 'public static T[] GetAll<T>(string tag) where T : GameObject'
+    parameters:
+    - id: tag
+      type: System.String
+      description: The tag to contain
+    typeParameters:
+    - id: T
+      description: The type to check
+    return:
+      type: '{T}[]'
+      description: The array of objects of the type <code class="typeparamref">T</code> that contains the <code class="paramref">tag</code>
+    content.vb: Public Shared Function GetAll(Of T As GameObject)(tag As String) As T()
+  overload: UndyneFight_Ex.Fight.Functions.GetAll*
+  nameWithType.vb: Functions.GetAll(Of T)(String)
+  fullName.vb: UndyneFight_Ex.Fight.Functions.GetAll(Of T)(String)
+  name.vb: GetAll(Of T)(String)
+- uid: UndyneFight_Ex.Fight.Functions.GetAll``1
+  commentId: M:UndyneFight_Ex.Fight.Functions.GetAll``1
+  id: GetAll``1
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: GetAll<T>()
+  nameWithType: Functions.GetAll<T>()
+  fullName: UndyneFight_Ex.Fight.Functions.GetAll<T>()
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Gets all the objects of the given type
+  example: []
+  syntax:
+    content: 'public static T[] GetAll<T>() where T : GameObject'
+    typeParameters:
+    - id: T
+      description: The type to check
+    return:
+      type: '{T}[]'
+      description: The array of objects of the type <code class="typeparamref">T</code>
+    content.vb: Public Shared Function GetAll(Of T As GameObject)() As T()
+  overload: UndyneFight_Ex.Fight.Functions.GetAll*
+  nameWithType.vb: Functions.GetAll(Of T)()
+  fullName.vb: UndyneFight_Ex.Fight.Functions.GetAll(Of T)()
+  name.vb: GetAll(Of T)()
+- uid: UndyneFight_Ex.Fight.Functions.SetSoul(System.Int32,System.Boolean)
+  commentId: M:UndyneFight_Ex.Fight.Functions.SetSoul(System.Int32,System.Boolean)
+  id: SetSoul(System.Int32,System.Boolean)
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: SetSoul(int, bool)
+  nameWithType: Functions.SetSoul(int, bool)
+  fullName: UndyneFight_Ex.Fight.Functions.SetSoul(int, bool)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Change the soul state
+  example: []
+  syntax:
+    content: public static void SetSoul(int type, bool resetGravSpd = false)
+    parameters:
+    - id: type
+      type: System.Int32
+      description: '0: Red, 1: Green, 2: Blue, 3: Orange, 4: Purple, 5: Gray'
+    - id: resetGravSpd
+      type: System.Boolean
+      description: Whether the gravity speed will be reset to 0 to prevent bugs (Default false)
+    content.vb: Public Shared Sub SetSoul(type As Integer, resetGravSpd As Boolean = False)
+  overload: UndyneFight_Ex.Fight.Functions.SetSoul*
+  nameWithType.vb: Functions.SetSoul(Integer, Boolean)
+  fullName.vb: UndyneFight_Ex.Fight.Functions.SetSoul(Integer, Boolean)
+  name.vb: SetSoul(Integer, Boolean)
+- uid: UndyneFight_Ex.Fight.Functions.SetSoul(UndyneFight_Ex.Entities.Player.MoveState)
+  commentId: M:UndyneFight_Ex.Fight.Functions.SetSoul(UndyneFight_Ex.Entities.Player.MoveState)
+  id: SetSoul(UndyneFight_Ex.Entities.Player.MoveState)
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: SetSoul(MoveState)
+  nameWithType: Functions.SetSoul(Player.MoveState)
+  fullName: UndyneFight_Ex.Fight.Functions.SetSoul(UndyneFight_Ex.Entities.Player.MoveState)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Change the soul state of the player
+  example: []
+  syntax:
+    content: public static void SetSoul(Player.MoveState state)
+    parameters:
+    - id: state
+      type: UndyneFight_Ex.Entities.Player.MoveState
+      description: The moving state of the player (Mostly for custom souls)
+    content.vb: Public Shared Sub SetSoul(state As Player.MoveState)
+  overload: UndyneFight_Ex.Fight.Functions.SetSoul*
+- uid: UndyneFight_Ex.Fight.Functions.CreateArrow(System.Single,System.Int32,System.Single,System.Int32,System.Int32,UndyneFight_Ex.Fight.Functions.ArrowAttribute)
+  commentId: M:UndyneFight_Ex.Fight.Functions.CreateArrow(System.Single,System.Int32,System.Single,System.Int32,System.Int32,UndyneFight_Ex.Fight.Functions.ArrowAttribute)
+  id: CreateArrow(System.Single,System.Int32,System.Single,System.Int32,System.Int32,UndyneFight_Ex.Fight.Functions.ArrowAttribute)
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: CreateArrow(float, int, float, int, int, ArrowAttribute)
+  nameWithType: Functions.CreateArrow(float, int, float, int, int, Functions.ArrowAttribute)
+  fullName: UndyneFight_Ex.Fight.Functions.CreateArrow(float, int, float, int, int, UndyneFight_Ex.Fight.Functions.ArrowAttribute)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Creates an arrow
+  example: []
+  syntax:
+    content: public static void CreateArrow(float shootShieldTime, int way, float speed, int color, int rotatingType, Functions.ArrowAttribute attribute = ArrowAttribute.None)
+    parameters:
+    - id: shootShieldTime
+      type: System.Single
+      description: Time taken to reach the shield
+    - id: way
+      type: System.Int32
+      description: Direction of arrow, 0-&gt; Right, 1-&gt; Down, 2-&gt; Left, 3-&gt; Up
+    - id: speed
+      type: System.Single
+      description: Speed of arrow
+    - id: color
+      type: System.Int32
+      description: Color of arrow, 0-&gt; Blue, 1-&gt; Red
+    - id: rotatingType
+      type: System.Int32
+      description: Rotation Type, 0-&gt; None, 1-&gt; Reverse, 2-&gt; Diagonal
+    - id: attribute
+      type: UndyneFight_Ex.Fight.Functions.ArrowAttribute
+      description: Arrow attributes (Default <xref href="UndyneFight_Ex.Fight.Functions.ArrowAttribute.None" data-throw-if-not-resolved="false"></xref>)
+    content.vb: Public Shared Sub CreateArrow(shootShieldTime As Single, way As Integer, speed As Single, color As Integer, rotatingType As Integer, attribute As Functions.ArrowAttribute = ArrowAttribute.None)
+  overload: UndyneFight_Ex.Fight.Functions.CreateArrow*
+  nameWithType.vb: Functions.CreateArrow(Single, Integer, Single, Integer, Integer, Functions.ArrowAttribute)
+  fullName.vb: UndyneFight_Ex.Fight.Functions.CreateArrow(Single, Integer, Single, Integer, Integer, UndyneFight_Ex.Fight.Functions.ArrowAttribute)
+  name.vb: CreateArrow(Single, Integer, Single, Integer, Integer, ArrowAttribute)
+- uid: UndyneFight_Ex.Fight.Functions.MakeArrow(System.Single,System.Int32,System.Single,System.Int32,System.Int32,UndyneFight_Ex.Fight.Functions.ArrowAttribute)
+  commentId: M:UndyneFight_Ex.Fight.Functions.MakeArrow(System.Single,System.Int32,System.Single,System.Int32,System.Int32,UndyneFight_Ex.Fight.Functions.ArrowAttribute)
+  id: MakeArrow(System.Single,System.Int32,System.Single,System.Int32,System.Int32,UndyneFight_Ex.Fight.Functions.ArrowAttribute)
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: MakeArrow(float, int, float, int, int, ArrowAttribute)
+  nameWithType: Functions.MakeArrow(float, int, float, int, int, Functions.ArrowAttribute)
+  fullName: UndyneFight_Ex.Fight.Functions.MakeArrow(float, int, float, int, int, UndyneFight_Ex.Fight.Functions.ArrowAttribute)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Creates an arrow type but DOES NOT create it to the current game
+  example: []
+  syntax:
+    content: public static Arrow MakeArrow(float shootShieldTime, int way, float speed, int color, int rotatingType, Functions.ArrowAttribute attribute = ArrowAttribute.None)
+    parameters:
+    - id: shootShieldTime
+      type: System.Single
+      description: Time taken to reach the shield
+    - id: way
+      type: System.Int32
+      description: Direction of arrow, 0-&gt; Right, 1-&gt; Down, 2-&gt; Left, 3-&gt; Up
+    - id: speed
+      type: System.Single
+      description: Speed of arrow
+    - id: color
+      type: System.Int32
+      description: Color of arrow, 0-&gt; Blue, 1-&gt; Red
+    - id: rotatingType
+      type: System.Int32
+      description: Rotation Type, 0-&gt; None, 1-&gt; Reverse, 2-&gt; Diagonal
+    - id: attribute
+      type: UndyneFight_Ex.Fight.Functions.ArrowAttribute
+      description: Arrow attributes (Default <xref href="UndyneFight_Ex.Fight.Functions.ArrowAttribute.None" data-throw-if-not-resolved="false"></xref>)
+    return:
+      type: UndyneFight_Ex.Entities.Arrow
+    content.vb: Public Shared Function MakeArrow(shootShieldTime As Single, way As Integer, speed As Single, color As Integer, rotatingType As Integer, attribute As Functions.ArrowAttribute = ArrowAttribute.None) As Arrow
+  overload: UndyneFight_Ex.Fight.Functions.MakeArrow*
+  nameWithType.vb: Functions.MakeArrow(Single, Integer, Single, Integer, Integer, Functions.ArrowAttribute)
+  fullName.vb: UndyneFight_Ex.Fight.Functions.MakeArrow(Single, Integer, Single, Integer, Integer, UndyneFight_Ex.Fight.Functions.ArrowAttribute)
+  name.vb: MakeArrow(Single, Integer, Single, Integer, Integer, ArrowAttribute)
+- uid: UndyneFight_Ex.Fight.Functions.GetWayFromTag(System.String)
+  commentId: M:UndyneFight_Ex.Fight.Functions.GetWayFromTag(System.String)
+  id: GetWayFromTag(System.String)
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: GetWayFromTag(string)
+  nameWithType: Functions.GetWayFromTag(string)
+  fullName: UndyneFight_Ex.Fight.Functions.GetWayFromTag(string)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  syntax:
+    content: public static int GetWayFromTag(string wayTag)
+    parameters:
+    - id: wayTag
+      type: System.String
+    return:
+      type: System.Int32
+    content.vb: Public Shared Function GetWayFromTag(wayTag As String) As Integer
+  overload: UndyneFight_Ex.Fight.Functions.GetWayFromTag*
+  nameWithType.vb: Functions.GetWayFromTag(String)
+  fullName.vb: UndyneFight_Ex.Fight.Functions.GetWayFromTag(String)
+  name.vb: GetWayFromTag(String)
+- uid: UndyneFight_Ex.Fight.Functions.MakeArrow(System.Single,System.String,System.Single,System.Int32,System.Int32,UndyneFight_Ex.Fight.Functions.ArrowAttribute)
+  commentId: M:UndyneFight_Ex.Fight.Functions.MakeArrow(System.Single,System.String,System.Single,System.Int32,System.Int32,UndyneFight_Ex.Fight.Functions.ArrowAttribute)
+  id: MakeArrow(System.Single,System.String,System.Single,System.Int32,System.Int32,UndyneFight_Ex.Fight.Functions.ArrowAttribute)
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: MakeArrow(float, string, float, int, int, ArrowAttribute)
+  nameWithType: Functions.MakeArrow(float, string, float, int, int, Functions.ArrowAttribute)
+  fullName: UndyneFight_Ex.Fight.Functions.MakeArrow(float, string, float, int, int, UndyneFight_Ex.Fight.Functions.ArrowAttribute)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Creates an arrow with a string as it's tag
+  example: []
+  syntax:
+    content: public static Arrow MakeArrow(float shootShieldTime, string wayTag, float speed, int color, int rotatingType, Functions.ArrowAttribute arrowattribute = ArrowAttribute.None)
+    parameters:
+    - id: shootShieldTime
+      type: System.Single
+      description: Time taken to reach the shield
+    - id: wayTag
+      type: System.String
+      description: String tag of the way of the arrow
+    - id: speed
+      type: System.Single
+      description: Moving speed of the arrow
+    - id: color
+      type: System.Int32
+      description: 'The color of the arrow, 0: Blue, 1: Red, 2: Green, 3: Purple'
+    - id: rotatingType
+      type: System.Int32
+      description: 'Rotation mode, 0: Normal, 1: Reverse, 2: Diagonal'
+    - id: arrowattribute
+      type: UndyneFight_Ex.Fight.Functions.ArrowAttribute
+      description: The arrow attribute of the arrow (Default none), use <xref href="UndyneFight_Ex.Fight.Functions.ArrowAttribute" data-throw-if-not-resolved="false"></xref>, to combine multiple, use 'attr1 | attr2'
+    return:
+      type: UndyneFight_Ex.Entities.Arrow
+      description: The created <xref href="UndyneFight_Ex.Entities.Arrow" data-throw-if-not-resolved="false"></xref>
+    content.vb: Public Shared Function MakeArrow(shootShieldTime As Single, wayTag As String, speed As Single, color As Integer, rotatingType As Integer, arrowattribute As Functions.ArrowAttribute = ArrowAttribute.None) As Arrow
+  overload: UndyneFight_Ex.Fight.Functions.MakeArrow*
+  nameWithType.vb: Functions.MakeArrow(Single, String, Single, Integer, Integer, Functions.ArrowAttribute)
+  fullName.vb: UndyneFight_Ex.Fight.Functions.MakeArrow(Single, String, Single, Integer, Integer, UndyneFight_Ex.Fight.Functions.ArrowAttribute)
+  name.vb: MakeArrow(Single, String, Single, Integer, Integer, ArrowAttribute)
+- uid: UndyneFight_Ex.Fight.Functions.CreateArrow(System.Single,System.String,System.Single,System.Int32,System.Int32,UndyneFight_Ex.Fight.Functions.ArrowAttribute)
+  commentId: M:UndyneFight_Ex.Fight.Functions.CreateArrow(System.Single,System.String,System.Single,System.Int32,System.Int32,UndyneFight_Ex.Fight.Functions.ArrowAttribute)
+  id: CreateArrow(System.Single,System.String,System.Single,System.Int32,System.Int32,UndyneFight_Ex.Fight.Functions.ArrowAttribute)
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: CreateArrow(float, string, float, int, int, ArrowAttribute)
+  nameWithType: Functions.CreateArrow(float, string, float, int, int, Functions.ArrowAttribute)
+  fullName: UndyneFight_Ex.Fight.Functions.CreateArrow(float, string, float, int, int, UndyneFight_Ex.Fight.Functions.ArrowAttribute)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Creates an arrow with a string as it's tag
+  example: []
+  syntax:
+    content: public static void CreateArrow(float shootShieldTime, string wayTag, float speed, int color, int rotatingType, Functions.ArrowAttribute attribute = ArrowAttribute.None)
+    parameters:
+    - id: shootShieldTime
+      type: System.Single
+      description: Time taken to reach the shield
+    - id: wayTag
+      type: System.String
+      description: String tag of the way of the arrow
+    - id: speed
+      type: System.Single
+      description: Moving speed of the arrow
+    - id: color
+      type: System.Int32
+      description: 'The color of the arrow, 0: Blue, 1: Red, 2: Green, 3: Purple'
+    - id: rotatingType
+      type: System.Int32
+      description: 'Rotation mode, 0: Normal, 1: Reverse, 2: Diagonal'
+    - id: attribute
+      type: UndyneFight_Ex.Fight.Functions.ArrowAttribute
+      description: The arrow attribute of the arrow (Default none), use <xref href="UndyneFight_Ex.Fight.Functions.ArrowAttribute" data-throw-if-not-resolved="false"></xref>, to combine multiple, use 'attr1 | attr2'
+    content.vb: Public Shared Sub CreateArrow(shootShieldTime As Single, wayTag As String, speed As Single, color As Integer, rotatingType As Integer, attribute As Functions.ArrowAttribute = ArrowAttribute.None)
+  overload: UndyneFight_Ex.Fight.Functions.CreateArrow*
+  nameWithType.vb: Functions.CreateArrow(Single, String, Single, Integer, Integer, Functions.ArrowAttribute)
+  fullName.vb: UndyneFight_Ex.Fight.Functions.CreateArrow(Single, String, Single, Integer, Integer, UndyneFight_Ex.Fight.Functions.ArrowAttribute)
+  name.vb: CreateArrow(Single, String, Single, Integer, Integer, ArrowAttribute)
+- uid: UndyneFight_Ex.Fight.Functions.CreateSpear(UndyneFight_Ex.Entities.Spear)
+  commentId: M:UndyneFight_Ex.Fight.Functions.CreateSpear(UndyneFight_Ex.Entities.Spear)
+  id: CreateSpear(UndyneFight_Ex.Entities.Spear)
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: CreateSpear(Spear)
+  nameWithType: Functions.CreateSpear(Spear)
+  fullName: UndyneFight_Ex.Fight.Functions.CreateSpear(UndyneFight_Ex.Entities.Spear)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Create a spear
+  example: []
+  syntax:
+    content: public static void CreateSpear(Spear spear)
+    parameters:
+    - id: spear
+      type: UndyneFight_Ex.Entities.Spear
+      description: The spear to create
+    content.vb: Public Shared Sub CreateSpear(spear As Spear)
+  overload: UndyneFight_Ex.Fight.Functions.CreateSpear*
+- uid: UndyneFight_Ex.Fight.Functions.CreateBone(UndyneFight_Ex.Entities.Bone)
+  commentId: M:UndyneFight_Ex.Fight.Functions.CreateBone(UndyneFight_Ex.Entities.Bone)
+  id: CreateBone(UndyneFight_Ex.Entities.Bone)
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: CreateBone(Bone)
+  nameWithType: Functions.CreateBone(Bone)
+  fullName: UndyneFight_Ex.Fight.Functions.CreateBone(UndyneFight_Ex.Entities.Bone)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Create a bone
+  example: []
+  syntax:
+    content: public static void CreateBone(Bone bone)
+    parameters:
+    - id: bone
+      type: UndyneFight_Ex.Entities.Bone
+      description: The bone to create
+    content.vb: Public Shared Sub CreateBone(bone As Bone)
+  overload: UndyneFight_Ex.Fight.Functions.CreateBone*
+- uid: UndyneFight_Ex.Fight.Functions.CreateGB(UndyneFight_Ex.Entities.GasterBlaster)
+  commentId: M:UndyneFight_Ex.Fight.Functions.CreateGB(UndyneFight_Ex.Entities.GasterBlaster)
+  id: CreateGB(UndyneFight_Ex.Entities.GasterBlaster)
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: CreateGB(GasterBlaster)
+  nameWithType: Functions.CreateGB(GasterBlaster)
+  fullName: UndyneFight_Ex.Fight.Functions.CreateGB(UndyneFight_Ex.Entities.GasterBlaster)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Create a blaster
+  example: []
+  syntax:
+    content: public static void CreateGB(GasterBlaster gb)
+    parameters:
+    - id: gb
+      type: UndyneFight_Ex.Entities.GasterBlaster
+      description: The blaster to create
+    content.vb: Public Shared Sub CreateGB(gb As GasterBlaster)
+  overload: UndyneFight_Ex.Fight.Functions.CreateGB*
+- uid: UndyneFight_Ex.Fight.Functions.CreatePlatform(UndyneFight_Ex.Entities.Platform)
+  commentId: M:UndyneFight_Ex.Fight.Functions.CreatePlatform(UndyneFight_Ex.Entities.Platform)
+  id: CreatePlatform(UndyneFight_Ex.Entities.Platform)
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: CreatePlatform(Platform)
+  nameWithType: Functions.CreatePlatform(Platform)
+  fullName: UndyneFight_Ex.Fight.Functions.CreatePlatform(UndyneFight_Ex.Entities.Platform)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Create a platform
+  example: []
+  syntax:
+    content: public static void CreatePlatform(Platform plt)
+    parameters:
+    - id: plt
+      type: UndyneFight_Ex.Entities.Platform
+      description: The platform to create
+    content.vb: Public Shared Sub CreatePlatform(plt As Platform)
+  overload: UndyneFight_Ex.Fight.Functions.CreatePlatform*
+- uid: UndyneFight_Ex.Fight.Functions.CreateEntity(UndyneFight_Ex.Entity)
+  commentId: M:UndyneFight_Ex.Fight.Functions.CreateEntity(UndyneFight_Ex.Entity)
+  id: CreateEntity(UndyneFight_Ex.Entity)
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: CreateEntity(Entity)
+  nameWithType: Functions.CreateEntity(Entity)
+  fullName: UndyneFight_Ex.Fight.Functions.CreateEntity(UndyneFight_Ex.Entity)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Create an <xref href="UndyneFight_Ex.Entity" data-throw-if-not-resolved="false"></xref>
+  example: []
+  syntax:
+    content: public static void CreateEntity(Entity et)
+    parameters:
+    - id: et
+      type: UndyneFight_Ex.Entity
+      description: The entity to create
+    content.vb: Public Shared Sub CreateEntity(et As Entity)
+  overload: UndyneFight_Ex.Fight.Functions.CreateEntity*
+- uid: UndyneFight_Ex.Fight.Functions.CreateEntity(UndyneFight_Ex.Entity[])
+  commentId: M:UndyneFight_Ex.Fight.Functions.CreateEntity(UndyneFight_Ex.Entity[])
+  id: CreateEntity(UndyneFight_Ex.Entity[])
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: CreateEntity(params Entity[])
+  nameWithType: Functions.CreateEntity(params Entity[])
+  fullName: UndyneFight_Ex.Fight.Functions.CreateEntity(params UndyneFight_Ex.Entity[])
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Create multiple <xref href="UndyneFight_Ex.Entity" data-throw-if-not-resolved="false"></xref>
+  example: []
+  syntax:
+    content: public static void CreateEntity(params Entity[] et)
+    parameters:
+    - id: et
+      type: UndyneFight_Ex.Entity[]
+      description: The entities to create
+    content.vb: Public Shared Sub CreateEntity(ParamArray et As Entity())
+  overload: UndyneFight_Ex.Fight.Functions.CreateEntity*
+  nameWithType.vb: Functions.CreateEntity(ParamArray Entity())
+  fullName.vb: UndyneFight_Ex.Fight.Functions.CreateEntity(ParamArray UndyneFight_Ex.Entity())
+  name.vb: CreateEntity(ParamArray Entity())
+- uid: UndyneFight_Ex.Fight.Functions.AddInstance(UndyneFight_Ex.GameObject)
+  commentId: M:UndyneFight_Ex.Fight.Functions.AddInstance(UndyneFight_Ex.GameObject)
+  id: AddInstance(UndyneFight_Ex.GameObject)
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: AddInstance(GameObject)
+  nameWithType: Functions.AddInstance(GameObject)
+  fullName: UndyneFight_Ex.Fight.Functions.AddInstance(UndyneFight_Ex.GameObject)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Create an instance of <xref href="UndyneFight_Ex.GameObject" data-throw-if-not-resolved="false"></xref>
+  example: []
+  syntax:
+    content: public static void AddInstance(GameObject go)
+    parameters:
+    - id: go
+      type: UndyneFight_Ex.GameObject
+      description: The object to create
+    content.vb: Public Shared Sub AddInstance(go As GameObject)
+  overload: UndyneFight_Ex.Fight.Functions.AddInstance*
+- uid: UndyneFight_Ex.Fight.Functions.AddInstances(UndyneFight_Ex.GameObject[])
+  commentId: M:UndyneFight_Ex.Fight.Functions.AddInstances(UndyneFight_Ex.GameObject[])
+  id: AddInstances(UndyneFight_Ex.GameObject[])
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: AddInstances(params GameObject[])
+  nameWithType: Functions.AddInstances(params GameObject[])
+  fullName: UndyneFight_Ex.Fight.Functions.AddInstances(params UndyneFight_Ex.GameObject[])
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Create instances of <xref href="UndyneFight_Ex.GameObject" data-throw-if-not-resolved="false"></xref>
+  example: []
+  syntax:
+    content: public static void AddInstances(params GameObject[] go)
+    parameters:
+    - id: go
+      type: UndyneFight_Ex.GameObject[]
+      description: The objects to create
+    content.vb: Public Shared Sub AddInstances(ParamArray go As GameObject())
+  overload: UndyneFight_Ex.Fight.Functions.AddInstances*
+  nameWithType.vb: Functions.AddInstances(ParamArray GameObject())
+  fullName.vb: UndyneFight_Ex.Fight.Functions.AddInstances(ParamArray UndyneFight_Ex.GameObject())
+  name.vb: AddInstances(ParamArray GameObject())
+- uid: UndyneFight_Ex.Fight.Functions.ArrowApply(System.String,System.Action{UndyneFight_Ex.Entities.Arrow})
+  commentId: M:UndyneFight_Ex.Fight.Functions.ArrowApply(System.String,System.Action{UndyneFight_Ex.Entities.Arrow})
+  id: ArrowApply(System.String,System.Action{UndyneFight_Ex.Entities.Arrow})
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: ArrowApply(string, Action<Arrow>)
+  nameWithType: Functions.ArrowApply(string, Action<Arrow>)
+  fullName: UndyneFight_Ex.Fight.Functions.ArrowApply(string, System.Action<UndyneFight_Ex.Entities.Arrow>)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Applies behavior to all arrows marked with the tag with the given <xref href="System.Action" data-throw-if-not-resolved="false"></xref>
+  example: []
+  syntax:
+    content: public static void ArrowApply(string tag, Action<Arrow> action)
+    parameters:
+    - id: tag
+      type: System.String
+      description: The tag of the arrows to apply to
+    - id: action
+      type: System.Action{UndyneFight_Ex.Entities.Arrow}
+      description: The action applied to the arrows
+    content.vb: Public Shared Sub ArrowApply(tag As String, action As Action(Of Arrow))
+  overload: UndyneFight_Ex.Fight.Functions.ArrowApply*
+  nameWithType.vb: Functions.ArrowApply(String, Action(Of Arrow))
+  fullName.vb: UndyneFight_Ex.Fight.Functions.ArrowApply(String, System.Action(Of UndyneFight_Ex.Entities.Arrow))
+  name.vb: ArrowApply(String, Action(Of Arrow))
+- uid: UndyneFight_Ex.Fight.Functions.SetBox(System.Single,System.Single,System.Single,System.Single)
+  commentId: M:UndyneFight_Ex.Fight.Functions.SetBox(System.Single,System.Single,System.Single,System.Single)
+  id: SetBox(System.Single,System.Single,System.Single,System.Single)
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: SetBox(float, float, float, float)
+  nameWithType: Functions.SetBox(float, float, float, float)
+  fullName: UndyneFight_Ex.Fight.Functions.SetBox(float, float, float, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Lerps the position of the box to the given location
+  example: []
+  syntax:
+    content: public static void SetBox(float x1, float x2, float y1, float y2)
+    parameters:
+    - id: x1
+      type: System.Single
+      description: x-coordinate of the left side of the box
+    - id: x2
+      type: System.Single
+      description: x-coordinate of the right side of the box
+    - id: y1
+      type: System.Single
+      description: y-coordinate of the top side of the box
+    - id: y2
+      type: System.Single
+      description: y-coordinate of the bottom side of the box
+    content.vb: Public Shared Sub SetBox(x1 As Single, x2 As Single, y1 As Single, y2 As Single)
+  overload: UndyneFight_Ex.Fight.Functions.SetBox*
+  nameWithType.vb: Functions.SetBox(Single, Single, Single, Single)
+  fullName.vb: UndyneFight_Ex.Fight.Functions.SetBox(Single, Single, Single, Single)
+  name.vb: SetBox(Single, Single, Single, Single)
+- uid: UndyneFight_Ex.Fight.Functions.SetBox(Microsoft.Xna.Framework.Vector2,System.Single,System.Single)
+  commentId: M:UndyneFight_Ex.Fight.Functions.SetBox(Microsoft.Xna.Framework.Vector2,System.Single,System.Single)
+  id: SetBox(Microsoft.Xna.Framework.Vector2,System.Single,System.Single)
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: SetBox(Vector2, float, float)
+  nameWithType: Functions.SetBox(Vector2, float, float)
+  fullName: UndyneFight_Ex.Fight.Functions.SetBox(Microsoft.Xna.Framework.Vector2, float, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Lerps the position of the box to the given location
+  example: []
+  syntax:
+    content: public static void SetBox(Vector2 centre, float width, float height)
+    parameters:
+    - id: centre
+      type: Microsoft.Xna.Framework.Vector2
+      description: The centre of the box to move to
+    - id: width
+      type: System.Single
+      description: The width of the box
+    - id: height
+      type: System.Single
+      description: The height of the box
+    content.vb: Public Shared Sub SetBox(centre As Vector2, width As Single, height As Single)
+  overload: UndyneFight_Ex.Fight.Functions.SetBox*
+  nameWithType.vb: Functions.SetBox(Vector2, Single, Single)
+  fullName.vb: UndyneFight_Ex.Fight.Functions.SetBox(Microsoft.Xna.Framework.Vector2, Single, Single)
+  name.vb: SetBox(Vector2, Single, Single)
+- uid: UndyneFight_Ex.Fight.Functions.SetBox(System.Single,System.Single,System.Single)
+  commentId: M:UndyneFight_Ex.Fight.Functions.SetBox(System.Single,System.Single,System.Single)
+  id: SetBox(System.Single,System.Single,System.Single)
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: SetBox(float, float, float)
+  nameWithType: Functions.SetBox(float, float, float)
+  fullName: UndyneFight_Ex.Fight.Functions.SetBox(float, float, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Lerps the position of the box to the given location (X is forced to be 320)
+  example: []
+  syntax:
+    content: public static void SetBox(float YCentre, float width, float height)
+    parameters:
+    - id: YCentre
+      type: System.Single
+      description: The y-coordinate of the box to move to
+    - id: width
+      type: System.Single
+      description: The width of the box
+    - id: height
+      type: System.Single
+      description: The height of the box
+    content.vb: Public Shared Sub SetBox(YCentre As Single, width As Single, height As Single)
+  overload: UndyneFight_Ex.Fight.Functions.SetBox*
+  nameWithType.vb: Functions.SetBox(Single, Single, Single)
+  fullName.vb: UndyneFight_Ex.Fight.Functions.SetBox(Single, Single, Single)
+  name.vb: SetBox(Single, Single, Single)
+- uid: UndyneFight_Ex.Fight.Functions.InstantSetBox(Microsoft.Xna.Framework.Vector2,System.Single,System.Single)
+  commentId: M:UndyneFight_Ex.Fight.Functions.InstantSetBox(Microsoft.Xna.Framework.Vector2,System.Single,System.Single)
+  id: InstantSetBox(Microsoft.Xna.Framework.Vector2,System.Single,System.Single)
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: InstantSetBox(Vector2, float, float)
+  nameWithType: Functions.InstantSetBox(Vector2, float, float)
+  fullName: UndyneFight_Ex.Fight.Functions.InstantSetBox(Microsoft.Xna.Framework.Vector2, float, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Sets the position of the box instantly
+  example: []
+  syntax:
+    content: public static void InstantSetBox(Vector2 centre, float width, float height)
+    parameters:
+    - id: centre
+      type: Microsoft.Xna.Framework.Vector2
+      description: The centre of the box to move to
+    - id: width
+      type: System.Single
+      description: The width of the box
+    - id: height
+      type: System.Single
+      description: The height of the box
+    content.vb: Public Shared Sub InstantSetBox(centre As Vector2, width As Single, height As Single)
+  overload: UndyneFight_Ex.Fight.Functions.InstantSetBox*
+  nameWithType.vb: Functions.InstantSetBox(Vector2, Single, Single)
+  fullName.vb: UndyneFight_Ex.Fight.Functions.InstantSetBox(Microsoft.Xna.Framework.Vector2, Single, Single)
+  name.vb: InstantSetBox(Vector2, Single, Single)
+- uid: UndyneFight_Ex.Fight.Functions.InstantSetBox(System.Single,System.Single,System.Single,System.Single)
+  commentId: M:UndyneFight_Ex.Fight.Functions.InstantSetBox(System.Single,System.Single,System.Single,System.Single)
+  id: InstantSetBox(System.Single,System.Single,System.Single,System.Single)
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: InstantSetBox(float, float, float, float)
+  nameWithType: Functions.InstantSetBox(float, float, float, float)
+  fullName: UndyneFight_Ex.Fight.Functions.InstantSetBox(float, float, float, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Sets the position of the box instantly
+  example: []
+  syntax:
+    content: public static void InstantSetBox(float x1, float x2, float y1, float y2)
+    parameters:
+    - id: x1
+      type: System.Single
+      description: x-coordinate of the left side of the box
+    - id: x2
+      type: System.Single
+      description: x-coordinate of the right side of the box
+    - id: y1
+      type: System.Single
+      description: y-coordinate of the top side of the box
+    - id: y2
+      type: System.Single
+      description: y-coordinate of the bottom side of the box
+    content.vb: Public Shared Sub InstantSetBox(x1 As Single, x2 As Single, y1 As Single, y2 As Single)
+  overload: UndyneFight_Ex.Fight.Functions.InstantSetBox*
+  nameWithType.vb: Functions.InstantSetBox(Single, Single, Single, Single)
+  fullName.vb: UndyneFight_Ex.Fight.Functions.InstantSetBox(Single, Single, Single, Single)
+  name.vb: InstantSetBox(Single, Single, Single, Single)
+- uid: UndyneFight_Ex.Fight.Functions.InstantSetBox(System.Single,System.Single,System.Single)
+  commentId: M:UndyneFight_Ex.Fight.Functions.InstantSetBox(System.Single,System.Single,System.Single)
+  id: InstantSetBox(System.Single,System.Single,System.Single)
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: InstantSetBox(float, float, float)
+  nameWithType: Functions.InstantSetBox(float, float, float)
+  fullName: UndyneFight_Ex.Fight.Functions.InstantSetBox(float, float, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Sets the position of the box instantly
+  example: []
+  syntax:
+    content: public static void InstantSetBox(float YCentre, float width, float height)
+    parameters:
+    - id: YCentre
+      type: System.Single
+      description: The y-coordinate of the box to move to
+    - id: width
+      type: System.Single
+      description: The width of the box
+    - id: height
+      type: System.Single
+      description: The height of the box
+    content.vb: Public Shared Sub InstantSetBox(YCentre As Single, width As Single, height As Single)
+  overload: UndyneFight_Ex.Fight.Functions.InstantSetBox*
+  nameWithType.vb: Functions.InstantSetBox(Single, Single, Single)
+  fullName.vb: UndyneFight_Ex.Fight.Functions.InstantSetBox(Single, Single, Single)
+  name.vb: InstantSetBox(Single, Single, Single)
+- uid: UndyneFight_Ex.Fight.Functions.SetGreenBox
+  commentId: M:UndyneFight_Ex.Fight.Functions.SetGreenBox
+  id: SetGreenBox
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: SetGreenBox()
+  nameWithType: Functions.SetGreenBox()
+  fullName: UndyneFight_Ex.Fight.Functions.SetGreenBox()
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Lerps the box to the position and size for green soul
+  example: []
+  syntax:
+    content: public static void SetGreenBox()
+    content.vb: Public Shared Sub SetGreenBox()
+  overload: UndyneFight_Ex.Fight.Functions.SetGreenBox*
+- uid: UndyneFight_Ex.Fight.Functions.InstantSetGreenBox
+  commentId: M:UndyneFight_Ex.Fight.Functions.InstantSetGreenBox
+  id: InstantSetGreenBox
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: InstantSetGreenBox()
+  nameWithType: Functions.InstantSetGreenBox()
+  fullName: UndyneFight_Ex.Fight.Functions.InstantSetGreenBox()
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Sets the box to the position and size for green soul instantly
+  example: []
+  syntax:
+    content: public static void InstantSetGreenBox()
+    content.vb: Public Shared Sub InstantSetGreenBox()
+  overload: UndyneFight_Ex.Fight.Functions.InstantSetGreenBox*
+- uid: UndyneFight_Ex.Fight.Functions.Fortimes(System.Int32,System.Action)
+  commentId: M:UndyneFight_Ex.Fight.Functions.Fortimes(System.Int32,System.Action)
+  id: Fortimes(System.Int32,System.Action)
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: Fortimes(int, Action)
+  nameWithType: Functions.Fortimes(int, Action)
+  fullName: UndyneFight_Ex.Fight.Functions.Fortimes(int, System.Action)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Carry an action with the given times
+  example: []
+  syntax:
+    content: public static void Fortimes(int times, Action action)
+    parameters:
+    - id: times
+      type: System.Int32
+      description: Times to invoke the action with
+    - id: action
+      type: System.Action
+      description: The <xref href="System.Action" data-throw-if-not-resolved="false"></xref> to invoke
+    content.vb: Public Shared Sub Fortimes(times As Integer, action As Action)
+  overload: UndyneFight_Ex.Fight.Functions.Fortimes*
+  nameWithType.vb: Functions.Fortimes(Integer, Action)
+  fullName.vb: UndyneFight_Ex.Fight.Functions.Fortimes(Integer, System.Action)
+  name.vb: Fortimes(Integer, Action)
+- uid: UndyneFight_Ex.Fight.Functions.Fortimes(System.Int32,System.Action{System.Int32})
+  commentId: M:UndyneFight_Ex.Fight.Functions.Fortimes(System.Int32,System.Action{System.Int32})
+  id: Fortimes(System.Int32,System.Action{System.Int32})
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: Fortimes(int, Action<int>)
+  nameWithType: Functions.Fortimes(int, Action<int>)
+  fullName: UndyneFight_Ex.Fight.Functions.Fortimes(int, System.Action<int>)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Carry an action with the given times
+  example: []
+  syntax:
+    content: public static void Fortimes(int times, Action<int> action)
+    parameters:
+    - id: times
+      type: System.Int32
+      description: Times to invoke the action with
+    - id: action
+      type: System.Action{System.Int32}
+      description: The <xref href="System.Action" data-throw-if-not-resolved="false"></xref> to invoke, with an integer parameter
+    content.vb: Public Shared Sub Fortimes(times As Integer, action As Action(Of Integer))
+  overload: UndyneFight_Ex.Fight.Functions.Fortimes*
+  nameWithType.vb: Functions.Fortimes(Integer, Action(Of Integer))
+  fullName.vb: UndyneFight_Ex.Fight.Functions.Fortimes(Integer, System.Action(Of Integer))
+  name.vb: Fortimes(Integer, Action(Of Integer))
+- uid: UndyneFight_Ex.Fight.Functions.Rand(System.Int32,System.Int32)
+  commentId: M:UndyneFight_Ex.Fight.Functions.Rand(System.Int32,System.Int32)
+  id: Rand(System.Int32,System.Int32)
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: Rand(int, int)
+  nameWithType: Functions.Rand(int, int)
+  fullName: UndyneFight_Ex.Fight.Functions.Rand(int, int)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Creates a random integer
+  example: []
+  syntax:
+    content: public static int Rand(int s, int e)
+    parameters:
+    - id: s
+      type: System.Int32
+      description: The lower bound of the integer
+    - id: e
+      type: System.Int32
+      description: The upper bound of the integer
+    return:
+      type: System.Int32
+      description: The random integer
+    content.vb: Public Shared Function Rand(s As Integer, e As Integer) As Integer
+  overload: UndyneFight_Ex.Fight.Functions.Rand*
+  nameWithType.vb: Functions.Rand(Integer, Integer)
+  fullName.vb: UndyneFight_Ex.Fight.Functions.Rand(Integer, Integer)
+  name.vb: Rand(Integer, Integer)
+- uid: UndyneFight_Ex.Fight.Functions.Rand(System.Single,System.Single)
+  commentId: M:UndyneFight_Ex.Fight.Functions.Rand(System.Single,System.Single)
+  id: Rand(System.Single,System.Single)
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: Rand(float, float)
+  nameWithType: Functions.Rand(float, float)
+  fullName: UndyneFight_Ex.Fight.Functions.Rand(float, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Creates a random <xref href="System.Single" data-throw-if-not-resolved="false"></xref>
+  example: []
+  syntax:
+    content: public static float Rand(float s, float e)
+    parameters:
+    - id: s
+      type: System.Single
+      description: The lower bound of the float
+    - id: e
+      type: System.Single
+      description: The upper bound of the float
+    return:
+      type: System.Single
+      description: The random float
+    content.vb: Public Shared Function Rand(s As Single, e As Single) As Single
+  overload: UndyneFight_Ex.Fight.Functions.Rand*
+  nameWithType.vb: Functions.Rand(Single, Single)
+  fullName.vb: UndyneFight_Ex.Fight.Functions.Rand(Single, Single)
+  name.vb: Rand(Single, Single)
+- uid: UndyneFight_Ex.Fight.Functions.RandSignal
+  commentId: M:UndyneFight_Ex.Fight.Functions.RandSignal
+  id: RandSignal
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: RandSignal()
+  nameWithType: Functions.RandSignal()
+  fullName: UndyneFight_Ex.Fight.Functions.RandSignal()
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Gets a random sign
+  example: []
+  syntax:
+    content: public static int RandSignal()
+    return:
+      type: System.Int32
+      description: 1 or -1
+    content.vb: Public Shared Function RandSignal() As Integer
+  overload: UndyneFight_Ex.Fight.Functions.RandSignal*
+- uid: UndyneFight_Ex.Fight.Functions.RandBool
+  commentId: M:UndyneFight_Ex.Fight.Functions.RandBool
+  id: RandBool
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: RandBool()
+  nameWithType: Functions.RandBool()
+  fullName: UndyneFight_Ex.Fight.Functions.RandBool()
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Returns a random boolean
+  example: []
+  syntax:
+    content: public static bool RandBool()
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function RandBool() As Boolean
+  overload: UndyneFight_Ex.Fight.Functions.RandBool*
+- uid: UndyneFight_Ex.Fight.Functions.Tan(System.Single)
+  commentId: M:UndyneFight_Ex.Fight.Functions.Tan(System.Single)
+  id: Tan(System.Single)
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: Tan(float)
+  nameWithType: Functions.Tan(float)
+  fullName: UndyneFight_Ex.Fight.Functions.Tan(float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Returns the tangent of the specified angle in degrees
+  example: []
+  syntax:
+    content: public static float Tan(float rot)
+    parameters:
+    - id: rot
+      type: System.Single
+      description: The angle (In degrees)
+    return:
+      type: System.Single
+      description: The tangent value
+    content.vb: Public Shared Function Tan(rot As Single) As Single
+  overload: UndyneFight_Ex.Fight.Functions.Tan*
+  nameWithType.vb: Functions.Tan(Single)
+  fullName.vb: UndyneFight_Ex.Fight.Functions.Tan(Single)
+  name.vb: Tan(Single)
+- uid: UndyneFight_Ex.Fight.Functions.Cos(System.Single)
+  commentId: M:UndyneFight_Ex.Fight.Functions.Cos(System.Single)
+  id: Cos(System.Single)
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: Cos(float)
+  nameWithType: Functions.Cos(float)
+  fullName: UndyneFight_Ex.Fight.Functions.Cos(float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Returns the cosine of the specified angles in degrees
+  example: []
+  syntax:
+    content: public static float Cos(float rot)
+    parameters:
+    - id: rot
+      type: System.Single
+      description: The angle (In degrees)
+    return:
+      type: System.Single
+      description: 'The cosine value, range: [-1, 1] and <xref href="System.Single.NaN" data-throw-if-not-resolved="false"></xref>'
+    content.vb: Public Shared Function Cos(rot As Single) As Single
+  overload: UndyneFight_Ex.Fight.Functions.Cos*
+  nameWithType.vb: Functions.Cos(Single)
+  fullName.vb: UndyneFight_Ex.Fight.Functions.Cos(Single)
+  name.vb: Cos(Single)
+- uid: UndyneFight_Ex.Fight.Functions.Sin(System.Single)
+  commentId: M:UndyneFight_Ex.Fight.Functions.Sin(System.Single)
+  id: Sin(System.Single)
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: Sin(float)
+  nameWithType: Functions.Sin(float)
+  fullName: UndyneFight_Ex.Fight.Functions.Sin(float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Returns the sine value of the angle in degrees
+  example: []
+  syntax:
+    content: public static float Sin(float rot)
+    parameters:
+    - id: rot
+      type: System.Single
+      description: The angle in degrees
+    return:
+      type: System.Single
+      description: 'The sin value, range: [-1, 1] and <xref href="System.Single.NaN" data-throw-if-not-resolved="false"></xref>'
+    content.vb: Public Shared Function Sin(rot As Single) As Single
+  overload: UndyneFight_Ex.Fight.Functions.Sin*
+  nameWithType.vb: Functions.Sin(Single)
+  fullName.vb: UndyneFight_Ex.Fight.Functions.Sin(Single)
+  name.vb: Sin(Single)
+- uid: UndyneFight_Ex.Fight.Functions.PlaySound(Microsoft.Xna.Framework.Audio.SoundEffect,System.Single)
+  commentId: M:UndyneFight_Ex.Fight.Functions.PlaySound(Microsoft.Xna.Framework.Audio.SoundEffect,System.Single)
+  id: PlaySound(Microsoft.Xna.Framework.Audio.SoundEffect,System.Single)
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: PlaySound(SoundEffect, float)
+  nameWithType: Functions.PlaySound(SoundEffect, float)
+  fullName: UndyneFight_Ex.Fight.Functions.PlaySound(Microsoft.Xna.Framework.Audio.SoundEffect, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Play a sound effect, you should play multiple sounds for volume that is larger than 1
+  example: []
+  syntax:
+    content: public static void PlaySound(SoundEffect effect, float soundVolume = 1)
+    parameters:
+    - id: effect
+      type: Microsoft.Xna.Framework.Audio.SoundEffect
+      description: The sfx to play
+    - id: soundVolume
+      type: System.Single
+      description: 'The volume of the sound, range: [0, 1]'
+    content.vb: Public Shared Sub PlaySound(effect As SoundEffect, soundVolume As Single = 1)
+  overload: UndyneFight_Ex.Fight.Functions.PlaySound*
+  nameWithType.vb: Functions.PlaySound(SoundEffect, Single)
+  fullName.vb: UndyneFight_Ex.Fight.Functions.PlaySound(Microsoft.Xna.Framework.Audio.SoundEffect, Single)
+  name.vb: PlaySound(SoundEffect, Single)
+- uid: UndyneFight_Ex.Fight.Functions.PlaySound(Microsoft.Xna.Framework.Audio.SoundEffect[])
+  commentId: M:UndyneFight_Ex.Fight.Functions.PlaySound(Microsoft.Xna.Framework.Audio.SoundEffect[])
+  id: PlaySound(Microsoft.Xna.Framework.Audio.SoundEffect[])
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: PlaySound(params SoundEffect[])
+  nameWithType: Functions.PlaySound(params SoundEffect[])
+  fullName: UndyneFight_Ex.Fight.Functions.PlaySound(params Microsoft.Xna.Framework.Audio.SoundEffect[])
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Play multiple sound effects
+  example: []
+  syntax:
+    content: public static void PlaySound(params SoundEffect[] effect)
+    parameters:
+    - id: effect
+      type: Microsoft.Xna.Framework.Audio.SoundEffect[]
+      description: ''
+    content.vb: Public Shared Sub PlaySound(ParamArray effect As SoundEffect())
+  overload: UndyneFight_Ex.Fight.Functions.PlaySound*
+  nameWithType.vb: Functions.PlaySound(ParamArray SoundEffect())
+  fullName.vb: UndyneFight_Ex.Fight.Functions.PlaySound(ParamArray Microsoft.Xna.Framework.Audio.SoundEffect())
+  name.vb: PlaySound(ParamArray SoundEffect())
+- uid: UndyneFight_Ex.Fight.Functions.BlackScreen(System.Single)
+  commentId: M:UndyneFight_Ex.Fight.Functions.BlackScreen(System.Single)
+  id: BlackScreen(System.Single)
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: BlackScreen(float)
+  nameWithType: Functions.BlackScreen(float)
+  fullName: UndyneFight_Ex.Fight.Functions.BlackScreen(float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Creates a black screen
+  example: []
+  syntax:
+    content: public static void BlackScreen(float time)
+    parameters:
+    - id: time
+      type: System.Single
+      description: The duration of the black screen
+    content.vb: Public Shared Sub BlackScreen(time As Single)
+  overload: UndyneFight_Ex.Fight.Functions.BlackScreen*
+  nameWithType.vb: Functions.BlackScreen(Single)
+  fullName.vb: UndyneFight_Ex.Fight.Functions.BlackScreen(Single)
+  name.vb: BlackScreen(Single)
+- uid: UndyneFight_Ex.Fight.Functions.ResetBarrage
+  commentId: M:UndyneFight_Ex.Fight.Functions.ResetBarrage
+  id: ResetBarrage
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: ResetBarrage()
+  nameWithType: Functions.ResetBarrage()
+  fullName: UndyneFight_Ex.Fight.Functions.ResetBarrage()
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Kills all barrages on screen (Does not invoke their .Dispose() event)
+  example: []
+  syntax:
+    content: public static void ResetBarrage()
+    content.vb: Public Shared Sub ResetBarrage()
+  overload: UndyneFight_Ex.Fight.Functions.ResetBarrage*
+- uid: UndyneFight_Ex.Fight.Functions.EndSong
+  commentId: M:UndyneFight_Ex.Fight.Functions.EndSong
+  id: EndSong
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: EndSong()
+  nameWithType: Functions.EndSong()
+  fullName: UndyneFight_Ex.Fight.Functions.EndSong()
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: End the current song
+  example: []
+  syntax:
+    content: public static void EndSong()
+    content.vb: Public Shared Sub EndSong()
+  overload: UndyneFight_Ex.Fight.Functions.EndSong*
+- uid: UndyneFight_Ex.Fight.Functions.CreateHeart(UndyneFight_Ex.CollideRect)
+  commentId: M:UndyneFight_Ex.Fight.Functions.CreateHeart(UndyneFight_Ex.CollideRect)
+  id: CreateHeart(UndyneFight_Ex.CollideRect)
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: CreateHeart(CollideRect)
+  nameWithType: Functions.CreateHeart(CollideRect)
+  fullName: UndyneFight_Ex.Fight.Functions.CreateHeart(UndyneFight_Ex.CollideRect)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Creates a heart with the new box in the given position
+  example: []
+  syntax:
+    content: public static Player.Heart CreateHeart(CollideRect startingBoxPos)
+    parameters:
+    - id: startingBoxPos
+      type: UndyneFight_Ex.CollideRect
+      description: The position of the box of the new heart to create
+    return:
+      type: UndyneFight_Ex.Entities.Player.Heart
+      description: The created heart
+    content.vb: Public Shared Function CreateHeart(startingBoxPos As CollideRect) As Player.Heart
+  overload: UndyneFight_Ex.Fight.Functions.CreateHeart*
+- uid: UndyneFight_Ex.Fight.Functions.CreateHeart(System.Single,System.Single,System.Single)
+  commentId: M:UndyneFight_Ex.Fight.Functions.CreateHeart(System.Single,System.Single,System.Single)
+  id: CreateHeart(System.Single,System.Single,System.Single)
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: CreateHeart(float, float, float)
+  nameWithType: Functions.CreateHeart(float, float, float)
+  fullName: UndyneFight_Ex.Fight.Functions.CreateHeart(float, float, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Creates a heart with the new box in the given position
+  example: []
+  syntax:
+    content: public static Player.Heart CreateHeart(float yCentre, float width, float height)
+    parameters:
+    - id: yCentre
+      type: System.Single
+      description: THe y-coordinate of the box to create
+    - id: width
+      type: System.Single
+      description: The width of the box to create
+    - id: height
+      type: System.Single
+      description: The height of the box to create
+    return:
+      type: UndyneFight_Ex.Entities.Player.Heart
+      description: The created heart
+    content.vb: Public Shared Function CreateHeart(yCentre As Single, width As Single, height As Single) As Player.Heart
+  overload: UndyneFight_Ex.Fight.Functions.CreateHeart*
+  nameWithType.vb: Functions.CreateHeart(Single, Single, Single)
+  fullName.vb: UndyneFight_Ex.Fight.Functions.CreateHeart(Single, Single, Single)
+  name.vb: CreateHeart(Single, Single, Single)
+- uid: UndyneFight_Ex.Fight.Functions.Reset
+  commentId: M:UndyneFight_Ex.Fight.Functions.Reset
+  id: Reset
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: Reset()
+  nameWithType: Functions.Reset()
+  fullName: UndyneFight_Ex.Fight.Functions.Reset()
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Resets charting data
+  example: []
+  syntax:
+    content: public static void Reset()
+    content.vb: Public Shared Sub Reset()
+  overload: UndyneFight_Ex.Fight.Functions.Reset*
+- uid: UndyneFight_Ex.Fight.Functions.Loader
+  commentId: P:UndyneFight_Ex.Fight.Functions.Loader
+  id: Loader
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: Loader
+  nameWithType: Functions.Loader
+  fullName: UndyneFight_Ex.Fight.Functions.Loader
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: The content loader, you can use this to load dynamic assets
+  example: []
+  syntax:
+    content: public static ContentManager Loader { get; }
+    parameters: []
+    return:
+      type: Microsoft.Xna.Framework.Content.ContentManager
+    content.vb: Public Shared ReadOnly Property Loader As ContentManager
+  overload: UndyneFight_Ex.Fight.Functions.Loader*
+- uid: UndyneFight_Ex.Fight.Functions.SongIllustration
+  commentId: P:UndyneFight_Ex.Fight.Functions.SongIllustration
+  id: SongIllustration
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: SongIllustration
+  nameWithType: Functions.SongIllustration
+  fullName: UndyneFight_Ex.Fight.Functions.SongIllustration
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: The cover of the current chart (If any)
+  example: []
+  syntax:
+    content: public static Texture2D SongIllustration { get; }
+    parameters: []
+    return:
+      type: Microsoft.Xna.Framework.Graphics.Texture2D
+    content.vb: Public Shared ReadOnly Property SongIllustration As Texture2D
+  overload: UndyneFight_Ex.Fight.Functions.SongIllustration*
+- uid: UndyneFight_Ex.Fight.Functions.AutoEnd
+  commentId: P:UndyneFight_Ex.Fight.Functions.AutoEnd
+  id: AutoEnd
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: AutoEnd
+  nameWithType: Functions.AutoEnd
+  fullName: UndyneFight_Ex.Fight.Functions.AutoEnd
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Whether the chart automatically switch to the result screen after ending
+  example: []
+  syntax:
+    content: public static bool AutoEnd { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Property AutoEnd As Boolean
+  overload: UndyneFight_Ex.Fight.Functions.AutoEnd*
+- uid: UndyneFight_Ex.Fight.Functions.PlayOffset
+  commentId: P:UndyneFight_Ex.Fight.Functions.PlayOffset
+  id: PlayOffset
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: PlayOffset
+  nameWithType: Functions.PlayOffset
+  fullName: UndyneFight_Ex.Fight.Functions.PlayOffset
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: When the song will begin playing (If the value is negative, <xref href="UndyneFight_Ex.SongSystem.SongInformation.MusicOptimized" data-throw-if-not-resolved="false"></xref> MUST be false)
+  example: []
+  syntax:
+    content: public static float PlayOffset { set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Shared WriteOnly Property PlayOffset As Single
+  overload: UndyneFight_Ex.Fight.Functions.PlayOffset*
+- uid: UndyneFight_Ex.Fight.Functions.GametimeDelta
+  commentId: P:UndyneFight_Ex.Fight.Functions.GametimeDelta
+  id: GametimeDelta
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: GametimeDelta
+  nameWithType: Functions.GametimeDelta
+  fullName: UndyneFight_Ex.Fight.Functions.GametimeDelta
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Gametime displacement of the chart
+  example: []
+  syntax:
+    content: public static float GametimeDelta { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Shared Property GametimeDelta As Single
+  overload: UndyneFight_Ex.Fight.Functions.GametimeDelta*
+- uid: UndyneFight_Ex.Fight.Functions.Gametime
+  commentId: P:UndyneFight_Ex.Fight.Functions.Gametime
+  id: Gametime
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: Gametime
+  nameWithType: Functions.Gametime
+  fullName: UndyneFight_Ex.Fight.Functions.Gametime
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Frames elapsed in integers (Readonly, Not recommended to use)
+  example: []
+  syntax:
+    content: public static int Gametime { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Shared ReadOnly Property Gametime As Integer
+  overload: UndyneFight_Ex.Fight.Functions.Gametime*
+- uid: UndyneFight_Ex.Fight.Functions.GametimeF
+  commentId: P:UndyneFight_Ex.Fight.Functions.GametimeF
+  id: GametimeF
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: GametimeF
+  nameWithType: Functions.GametimeF
+  fullName: UndyneFight_Ex.Fight.Functions.GametimeF
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Frames elapsed in float (Recommended)
+  example: []
+  syntax:
+    content: public static float GametimeF { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Shared ReadOnly Property GametimeF As Single
+  overload: UndyneFight_Ex.Fight.Functions.GametimeF*
+- uid: UndyneFight_Ex.Fight.Functions.CurrentDifficulty
+  commentId: P:UndyneFight_Ex.Fight.Functions.CurrentDifficulty
+  id: CurrentDifficulty
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: CurrentDifficulty
+  nameWithType: Functions.CurrentDifficulty
+  fullName: UndyneFight_Ex.Fight.Functions.CurrentDifficulty
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: The current difficulty of the chart
+  example: []
+  syntax:
+    content: public static Difficulty CurrentDifficulty { get; }
+    parameters: []
+    return:
+      type: UndyneFight_Ex.SongSystem.Difficulty
+    content.vb: Public Shared ReadOnly Property CurrentDifficulty As Difficulty
+  overload: UndyneFight_Ex.Fight.Functions.CurrentDifficulty*
+- uid: UndyneFight_Ex.Fight.Functions.Heart
+  commentId: P:UndyneFight_Ex.Fight.Functions.Heart
+  id: Heart
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: Heart
+  nameWithType: Functions.Heart
+  fullName: UndyneFight_Ex.Fight.Functions.Heart
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: The soul you are currently controlling
+  example: []
+  syntax:
+    content: public static Player.Heart Heart { get; }
+    parameters: []
+    return:
+      type: UndyneFight_Ex.Entities.Player.Heart
+    content.vb: Public Shared ReadOnly Property Heart As Player.Heart
+  overload: UndyneFight_Ex.Fight.Functions.Heart*
+- uid: UndyneFight_Ex.Fight.Functions.PlayerInstance
+  commentId: P:UndyneFight_Ex.Fight.Functions.PlayerInstance
+  id: PlayerInstance
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: PlayerInstance
+  nameWithType: Functions.PlayerInstance
+  fullName: UndyneFight_Ex.Fight.Functions.PlayerInstance
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: The player you are currently controlling
+  example: []
+  syntax:
+    content: public static Player PlayerInstance { get; }
+    parameters: []
+    return:
+      type: UndyneFight_Ex.Entities.Player
+    content.vb: Public Shared ReadOnly Property PlayerInstance As Player
+  overload: UndyneFight_Ex.Fight.Functions.PlayerInstance*
+- uid: UndyneFight_Ex.Fight.Functions.DirectionAllocate
+  commentId: P:UndyneFight_Ex.Fight.Functions.DirectionAllocate
+  id: DirectionAllocate
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: DirectionAllocate
+  nameWithType: Functions.DirectionAllocate
+  fullName: UndyneFight_Ex.Fight.Functions.DirectionAllocate
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: The allocated direction for arrows, use 'A' to access
+  example: []
+  syntax:
+    content: public static int[] DirectionAllocate { get; set; }
+    parameters: []
+    return:
+      type: System.Int32[]
+    content.vb: Public Shared Property DirectionAllocate As Integer()
+  overload: UndyneFight_Ex.Fight.Functions.DirectionAllocate*
+- uid: UndyneFight_Ex.Fight.Functions.OneElementArrows
+  commentId: P:UndyneFight_Ex.Fight.Functions.OneElementArrows
+  id: OneElementArrows
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: OneElementArrows
+  nameWithType: Functions.OneElementArrows
+  fullName: UndyneFight_Ex.Fight.Functions.OneElementArrows
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  syntax:
+    content: public static HashSet<char> OneElementArrows { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.HashSet{System.Char}
+    content.vb: Public Shared Property OneElementArrows As HashSet(Of Char)
+  overload: UndyneFight_Ex.Fight.Functions.OneElementArrows*
+- uid: UndyneFight_Ex.Fight.Functions.CustomAnalyzer
+  commentId: P:UndyneFight_Ex.Fight.Functions.CustomAnalyzer
+  id: CustomAnalyzer
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: CustomAnalyzer
+  nameWithType: Functions.CustomAnalyzer
+  fullName: UndyneFight_Ex.Fight.Functions.CustomAnalyzer
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  syntax:
+    content: public static Func<char, int> CustomAnalyzer { set; }
+    parameters: []
+    return:
+      type: System.Func{System.Char,System.Int32}
+    content.vb: Public Shared WriteOnly Property CustomAnalyzer As Func(Of Char, Integer)
+  overload: UndyneFight_Ex.Fight.Functions.CustomAnalyzer*
+- uid: UndyneFight_Ex.Fight.Functions.LastRand
+  commentId: P:UndyneFight_Ex.Fight.Functions.LastRand
+  id: LastRand
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: LastRand
+  nameWithType: Functions.LastRand
+  fullName: UndyneFight_Ex.Fight.Functions.LastRand
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: The last random integer generated
+  example: []
+  syntax:
+    content: public static int LastRand { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Shared Property LastRand As Integer
+  overload: UndyneFight_Ex.Fight.Functions.LastRand*
+- uid: UndyneFight_Ex.Fight.Functions.LastRandFloat
+  commentId: P:UndyneFight_Ex.Fight.Functions.LastRandFloat
+  id: LastRandFloat
+  parent: UndyneFight_Ex.Fight.Functions
+  langs:
+  - csharp
+  - vb
+  name: LastRandFloat
+  nameWithType: Functions.LastRandFloat
+  fullName: UndyneFight_Ex.Fight.Functions.LastRandFloat
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: The last random float generated
+  example: []
+  syntax:
+    content: public static float LastRandFloat { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Shared Property LastRandFloat As Single
+  overload: UndyneFight_Ex.Fight.Functions.LastRandFloat*
+references:
+- uid: UndyneFight_Ex.Fight
+  commentId: N:UndyneFight_Ex.Fight
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex.Fight
+  nameWithType: UndyneFight_Ex.Fight
+  fullName: UndyneFight_Ex.Fight
+  spec.csharp:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight
+    name: Fight
+    isExternal: true
+    href: UndyneFight_Ex.Fight.html
+  spec.vb:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight
+    name: Fight
+    isExternal: true
+    href: UndyneFight_Ex.Fight.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UndyneFight_Ex.Fight.Functions.SetPlayerMission*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.SetPlayerMission
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_SetPlayerMission_System_Int32_
+  name: SetPlayerMission
+  nameWithType: Functions.SetPlayerMission
+  fullName: UndyneFight_Ex.Fight.Functions.SetPlayerMission
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: UndyneFight_Ex.Entities.Player.Heart
+  commentId: T:UndyneFight_Ex.Entities.Player.Heart
+  parent: UndyneFight_Ex.Entities
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Player.html
+  name: Player.Heart
+  nameWithType: Player.Heart
+  fullName: UndyneFight_Ex.Entities.Player.Heart
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entities.Player
+    name: Player
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Player.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities.Player.Heart
+    name: Heart
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Player.Heart.html
+  spec.vb:
+  - uid: UndyneFight_Ex.Entities.Player
+    name: Player
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Player.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities.Player.Heart
+    name: Heart
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Player.Heart.html
+- uid: UndyneFight_Ex.Entities
+  commentId: N:UndyneFight_Ex.Entities
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex.Entities
+  nameWithType: UndyneFight_Ex.Entities
+  fullName: UndyneFight_Ex.Entities
+  spec.csharp:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities
+    name: Entities
+    isExternal: true
+    href: UndyneFight_Ex.Entities.html
+  spec.vb:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities
+    name: Entities
+    isExternal: true
+    href: UndyneFight_Ex.Entities.html
+- uid: UndyneFight_Ex.Fight.Functions.SetPlayerBoxMission*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.SetPlayerBoxMission
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_SetPlayerBoxMission_UndyneFight_Ex_Entities_Player_Heart_
+  name: SetPlayerBoxMission
+  nameWithType: Functions.SetPlayerBoxMission
+  fullName: UndyneFight_Ex.Fight.Functions.SetPlayerBoxMission
+- uid: UndyneFight_Ex.Fight.Functions.SetBoxMission*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.SetBoxMission
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_SetBoxMission_System_Int32_
+  name: SetBoxMission
+  nameWithType: Functions.SetBoxMission
+  fullName: UndyneFight_Ex.Fight.Functions.SetBoxMission
+- uid: UndyneFight_Ex.Entities.FightBox
+  commentId: T:UndyneFight_Ex.Entities.FightBox
+  parent: UndyneFight_Ex.Entities
+  isExternal: true
+  href: UndyneFight_Ex.Entities.FightBox.html
+  name: FightBox
+  nameWithType: FightBox
+  fullName: UndyneFight_Ex.Entities.FightBox
+- uid: UndyneFight_Ex.Fight.Functions.TP*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.TP
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_TP_Microsoft_Xna_Framework_Vector2_
+  name: TP
+  nameWithType: Functions.TP
+  fullName: UndyneFight_Ex.Fight.Functions.TP
+- uid: Microsoft.Xna.Framework.Vector2
+  commentId: T:Microsoft.Xna.Framework.Vector2
+  parent: Microsoft.Xna.Framework
+  isExternal: true
+  name: Vector2
+  nameWithType: Vector2
+  fullName: Microsoft.Xna.Framework.Vector2
+- uid: Microsoft.Xna.Framework
+  commentId: N:Microsoft.Xna.Framework
+  isExternal: true
+  name: Microsoft.Xna.Framework
+  nameWithType: Microsoft.Xna.Framework
+  fullName: Microsoft.Xna.Framework
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: UndyneFight_Ex.Fight.Functions.InstantTP*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.InstantTP
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_InstantTP_Microsoft_Xna_Framework_Vector2_
+  name: InstantTP
+  nameWithType: Functions.InstantTP
+  fullName: UndyneFight_Ex.Fight.Functions.InstantTP
+- uid: UndyneFight_Ex.Fight.Functions.Regenerate*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.Regenerate
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_Regenerate_System_Int32_
+  name: Regenerate
+  nameWithType: Functions.Regenerate
+  fullName: UndyneFight_Ex.Fight.Functions.Regenerate
+- uid: UndyneFight_Ex.Fight.Functions.LoseHP*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.LoseHP
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_LoseHP_UndyneFight_Ex_Entities_Player_Heart_
+  name: LoseHP
+  nameWithType: Functions.LoseHP
+  fullName: UndyneFight_Ex.Fight.Functions.LoseHP
+- uid: UndyneFight_Ex.Fight.Functions.HeartAttribute.KRDamage
+  commentId: P:UndyneFight_Ex.Fight.Functions.HeartAttribute.KRDamage
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.HeartAttribute.html#UndyneFight_Ex_Fight_Functions_HeartAttribute_KRDamage
+  name: KRDamage
+  nameWithType: Functions.HeartAttribute.KRDamage
+  fullName: UndyneFight_Ex.Fight.Functions.HeartAttribute.KRDamage
+- uid: UndyneFight_Ex.Fight.Functions.GiveKR*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.GiveKR
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_GiveKR_System_Single_
+  name: GiveKR
+  nameWithType: Functions.GiveKR
+  fullName: UndyneFight_Ex.Fight.Functions.GiveKR
+- uid: UndyneFight_Ex.Fight.Functions.GetAll*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.GetAll
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_GetAll__1_System_String_
+  name: GetAll
+  nameWithType: Functions.GetAll
+  fullName: UndyneFight_Ex.Fight.Functions.GetAll
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: '{T}[]'
+  isExternal: true
+  name: T[]
+  nameWithType: T[]
+  fullName: T[]
+  nameWithType.vb: T()
+  fullName.vb: T()
+  name.vb: T()
+  spec.csharp:
+  - name: T
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - name: T
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.Fight.Functions.SetSoul*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.SetSoul
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_SetSoul_System_Int32_System_Boolean_
+  name: SetSoul
+  nameWithType: Functions.SetSoul
+  fullName: UndyneFight_Ex.Fight.Functions.SetSoul
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: UndyneFight_Ex.Entities.Player.MoveState
+  commentId: T:UndyneFight_Ex.Entities.Player.MoveState
+  parent: UndyneFight_Ex.Entities
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Player.html
+  name: Player.MoveState
+  nameWithType: Player.MoveState
+  fullName: UndyneFight_Ex.Entities.Player.MoveState
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entities.Player
+    name: Player
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Player.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities.Player.MoveState
+    name: MoveState
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Player.MoveState.html
+  spec.vb:
+  - uid: UndyneFight_Ex.Entities.Player
+    name: Player
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Player.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities.Player.MoveState
+    name: MoveState
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Player.MoveState.html
+- uid: UndyneFight_Ex.Fight.Functions.ArrowAttribute.None
+  commentId: F:UndyneFight_Ex.Fight.Functions.ArrowAttribute.None
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.ArrowAttribute.html#UndyneFight_Ex_Fight_Functions_ArrowAttribute_None
+  name: None
+  nameWithType: Functions.ArrowAttribute.None
+  fullName: UndyneFight_Ex.Fight.Functions.ArrowAttribute.None
+- uid: UndyneFight_Ex.Fight.Functions.CreateArrow*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.CreateArrow
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_CreateArrow_System_Single_System_Int32_System_Single_System_Int32_System_Int32_UndyneFight_Ex_Fight_Functions_ArrowAttribute_
+  name: CreateArrow
+  nameWithType: Functions.CreateArrow
+  fullName: UndyneFight_Ex.Fight.Functions.CreateArrow
+- uid: UndyneFight_Ex.Fight.Functions.ArrowAttribute
+  commentId: T:UndyneFight_Ex.Fight.Functions.ArrowAttribute
+  parent: UndyneFight_Ex.Fight
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html
+  name: Functions.ArrowAttribute
+  nameWithType: Functions.ArrowAttribute
+  fullName: UndyneFight_Ex.Fight.Functions.ArrowAttribute
+  spec.csharp:
+  - uid: UndyneFight_Ex.Fight.Functions
+    name: Functions
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ArrowAttribute
+    name: ArrowAttribute
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ArrowAttribute.html
+  spec.vb:
+  - uid: UndyneFight_Ex.Fight.Functions
+    name: Functions
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ArrowAttribute
+    name: ArrowAttribute
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ArrowAttribute.html
+- uid: UndyneFight_Ex.Fight.Functions.MakeArrow*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.MakeArrow
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_MakeArrow_System_Single_System_Int32_System_Single_System_Int32_System_Int32_UndyneFight_Ex_Fight_Functions_ArrowAttribute_
+  name: MakeArrow
+  nameWithType: Functions.MakeArrow
+  fullName: UndyneFight_Ex.Fight.Functions.MakeArrow
+- uid: UndyneFight_Ex.Entities.Arrow
+  commentId: T:UndyneFight_Ex.Entities.Arrow
+  parent: UndyneFight_Ex.Entities
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Arrow.html
+  name: Arrow
+  nameWithType: Arrow
+  fullName: UndyneFight_Ex.Entities.Arrow
+- uid: UndyneFight_Ex.Fight.Functions.GetWayFromTag*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.GetWayFromTag
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_GetWayFromTag_System_String_
+  name: GetWayFromTag
+  nameWithType: Functions.GetWayFromTag
+  fullName: UndyneFight_Ex.Fight.Functions.GetWayFromTag
+- uid: UndyneFight_Ex.Fight.Functions.CreateSpear*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.CreateSpear
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_CreateSpear_UndyneFight_Ex_Entities_Spear_
+  name: CreateSpear
+  nameWithType: Functions.CreateSpear
+  fullName: UndyneFight_Ex.Fight.Functions.CreateSpear
+- uid: UndyneFight_Ex.Entities.Spear
+  commentId: T:UndyneFight_Ex.Entities.Spear
+  parent: UndyneFight_Ex.Entities
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Spear.html
+  name: Spear
+  nameWithType: Spear
+  fullName: UndyneFight_Ex.Entities.Spear
+- uid: UndyneFight_Ex.Fight.Functions.CreateBone*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.CreateBone
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_CreateBone_UndyneFight_Ex_Entities_Bone_
+  name: CreateBone
+  nameWithType: Functions.CreateBone
+  fullName: UndyneFight_Ex.Fight.Functions.CreateBone
+- uid: UndyneFight_Ex.Entities.Bone
+  commentId: T:UndyneFight_Ex.Entities.Bone
+  parent: UndyneFight_Ex.Entities
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Bone.html
+  name: Bone
+  nameWithType: Bone
+  fullName: UndyneFight_Ex.Entities.Bone
+- uid: UndyneFight_Ex.Fight.Functions.CreateGB*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.CreateGB
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_CreateGB_UndyneFight_Ex_Entities_GasterBlaster_
+  name: CreateGB
+  nameWithType: Functions.CreateGB
+  fullName: UndyneFight_Ex.Fight.Functions.CreateGB
+- uid: UndyneFight_Ex.Entities.GasterBlaster
+  commentId: T:UndyneFight_Ex.Entities.GasterBlaster
+  parent: UndyneFight_Ex.Entities
+  isExternal: true
+  href: UndyneFight_Ex.Entities.GasterBlaster.html
+  name: GasterBlaster
+  nameWithType: GasterBlaster
+  fullName: UndyneFight_Ex.Entities.GasterBlaster
+- uid: UndyneFight_Ex.Fight.Functions.CreatePlatform*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.CreatePlatform
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_CreatePlatform_UndyneFight_Ex_Entities_Platform_
+  name: CreatePlatform
+  nameWithType: Functions.CreatePlatform
+  fullName: UndyneFight_Ex.Fight.Functions.CreatePlatform
+- uid: UndyneFight_Ex.Entities.Platform
+  commentId: T:UndyneFight_Ex.Entities.Platform
+  parent: UndyneFight_Ex.Entities
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Platform.html
+  name: Platform
+  nameWithType: Platform
+  fullName: UndyneFight_Ex.Entities.Platform
+- uid: UndyneFight_Ex.Entity
+  commentId: T:UndyneFight_Ex.Entity
+  parent: UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.Entity.html
+  name: Entity
+  nameWithType: Entity
+  fullName: UndyneFight_Ex.Entity
+- uid: UndyneFight_Ex.Fight.Functions.CreateEntity*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.CreateEntity
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_CreateEntity_UndyneFight_Ex_Entity_
+  name: CreateEntity
+  nameWithType: Functions.CreateEntity
+  fullName: UndyneFight_Ex.Fight.Functions.CreateEntity
+- uid: UndyneFight_Ex
+  commentId: N:UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex
+  nameWithType: UndyneFight_Ex
+  fullName: UndyneFight_Ex
+- uid: UndyneFight_Ex.Entity[]
+  isExternal: true
+  href: UndyneFight_Ex.Entity.html
+  name: Entity[]
+  nameWithType: Entity[]
+  fullName: UndyneFight_Ex.Entity[]
+  nameWithType.vb: Entity()
+  fullName.vb: UndyneFight_Ex.Entity()
+  name.vb: Entity()
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entity
+    name: Entity
+    isExternal: true
+    href: UndyneFight_Ex.Entity.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: UndyneFight_Ex.Entity
+    name: Entity
+    isExternal: true
+    href: UndyneFight_Ex.Entity.html
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.GameObject
+  commentId: T:UndyneFight_Ex.GameObject
+  parent: UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html
+  name: GameObject
+  nameWithType: GameObject
+  fullName: UndyneFight_Ex.GameObject
+- uid: UndyneFight_Ex.Fight.Functions.AddInstance*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.AddInstance
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_AddInstance_UndyneFight_Ex_GameObject_
+  name: AddInstance
+  nameWithType: Functions.AddInstance
+  fullName: UndyneFight_Ex.Fight.Functions.AddInstance
+- uid: UndyneFight_Ex.Fight.Functions.AddInstances*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.AddInstances
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_AddInstances_UndyneFight_Ex_GameObject___
+  name: AddInstances
+  nameWithType: Functions.AddInstances
+  fullName: UndyneFight_Ex.Fight.Functions.AddInstances
+- uid: UndyneFight_Ex.GameObject[]
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html
+  name: GameObject[]
+  nameWithType: GameObject[]
+  fullName: UndyneFight_Ex.GameObject[]
+  nameWithType.vb: GameObject()
+  fullName.vb: UndyneFight_Ex.GameObject()
+  name.vb: GameObject()
+  spec.csharp:
+  - uid: UndyneFight_Ex.GameObject
+    name: GameObject
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: UndyneFight_Ex.GameObject
+    name: GameObject
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html
+  - name: (
+  - name: )
+- uid: System.Action
+  commentId: T:System.Action
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action
+  name: Action
+  nameWithType: Action
+  fullName: System.Action
+- uid: UndyneFight_Ex.Fight.Functions.ArrowApply*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.ArrowApply
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_ArrowApply_System_String_System_Action_UndyneFight_Ex_Entities_Arrow__
+  name: ArrowApply
+  nameWithType: Functions.ArrowApply
+  fullName: UndyneFight_Ex.Fight.Functions.ArrowApply
+- uid: System.Action{UndyneFight_Ex.Entities.Arrow}
+  commentId: T:System.Action{UndyneFight_Ex.Entities.Arrow}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<Arrow>
+  nameWithType: Action<Arrow>
+  fullName: System.Action<UndyneFight_Ex.Entities.Arrow>
+  nameWithType.vb: Action(Of Arrow)
+  fullName.vb: System.Action(Of UndyneFight_Ex.Entities.Arrow)
+  name.vb: Action(Of Arrow)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: UndyneFight_Ex.Entities.Arrow
+    name: Arrow
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Arrow.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: UndyneFight_Ex.Entities.Arrow
+    name: Arrow
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Arrow.html
+  - name: )
+- uid: System.Action`1
+  commentId: T:System.Action`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: UndyneFight_Ex.Fight.Functions.SetBox*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.SetBox
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_SetBox_System_Single_System_Single_System_Single_System_Single_
+  name: SetBox
+  nameWithType: Functions.SetBox
+  fullName: UndyneFight_Ex.Fight.Functions.SetBox
+- uid: UndyneFight_Ex.Fight.Functions.InstantSetBox*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.InstantSetBox
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_InstantSetBox_Microsoft_Xna_Framework_Vector2_System_Single_System_Single_
+  name: InstantSetBox
+  nameWithType: Functions.InstantSetBox
+  fullName: UndyneFight_Ex.Fight.Functions.InstantSetBox
+- uid: UndyneFight_Ex.Fight.Functions.SetGreenBox*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.SetGreenBox
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_SetGreenBox
+  name: SetGreenBox
+  nameWithType: Functions.SetGreenBox
+  fullName: UndyneFight_Ex.Fight.Functions.SetGreenBox
+- uid: UndyneFight_Ex.Fight.Functions.InstantSetGreenBox*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.InstantSetGreenBox
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_InstantSetGreenBox
+  name: InstantSetGreenBox
+  nameWithType: Functions.InstantSetGreenBox
+  fullName: UndyneFight_Ex.Fight.Functions.InstantSetGreenBox
+- uid: UndyneFight_Ex.Fight.Functions.Fortimes*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.Fortimes
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_Fortimes_System_Int32_System_Action_
+  name: Fortimes
+  nameWithType: Functions.Fortimes
+  fullName: UndyneFight_Ex.Fight.Functions.Fortimes
+- uid: System.Action{System.Int32}
+  commentId: T:System.Action{System.Int32}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<int>
+  nameWithType: Action<int>
+  fullName: System.Action<int>
+  nameWithType.vb: Action(Of Integer)
+  fullName.vb: System.Action(Of Integer)
+  name.vb: Action(Of Integer)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: UndyneFight_Ex.Fight.Functions.Rand*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.Rand
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_Rand_System_Int32_System_Int32_
+  name: Rand
+  nameWithType: Functions.Rand
+  fullName: UndyneFight_Ex.Fight.Functions.Rand
+- uid: UndyneFight_Ex.Fight.Functions.RandSignal*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.RandSignal
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_RandSignal
+  name: RandSignal
+  nameWithType: Functions.RandSignal
+  fullName: UndyneFight_Ex.Fight.Functions.RandSignal
+- uid: UndyneFight_Ex.Fight.Functions.RandBool*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.RandBool
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_RandBool
+  name: RandBool
+  nameWithType: Functions.RandBool
+  fullName: UndyneFight_Ex.Fight.Functions.RandBool
+- uid: UndyneFight_Ex.Fight.Functions.Tan*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.Tan
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_Tan_System_Single_
+  name: Tan
+  nameWithType: Functions.Tan
+  fullName: UndyneFight_Ex.Fight.Functions.Tan
+- uid: System.Single.NaN
+  commentId: F:System.Single.NaN
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single.nan
+  name: NaN
+  nameWithType: float.NaN
+  fullName: float.NaN
+  nameWithType.vb: Single.NaN
+  fullName.vb: Single.NaN
+- uid: UndyneFight_Ex.Fight.Functions.Cos*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.Cos
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_Cos_System_Single_
+  name: Cos
+  nameWithType: Functions.Cos
+  fullName: UndyneFight_Ex.Fight.Functions.Cos
+- uid: UndyneFight_Ex.Fight.Functions.Sin*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.Sin
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_Sin_System_Single_
+  name: Sin
+  nameWithType: Functions.Sin
+  fullName: UndyneFight_Ex.Fight.Functions.Sin
+- uid: UndyneFight_Ex.Fight.Functions.PlaySound*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.PlaySound
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_PlaySound_Microsoft_Xna_Framework_Audio_SoundEffect_System_Single_
+  name: PlaySound
+  nameWithType: Functions.PlaySound
+  fullName: UndyneFight_Ex.Fight.Functions.PlaySound
+- uid: Microsoft.Xna.Framework.Audio.SoundEffect
+  commentId: T:Microsoft.Xna.Framework.Audio.SoundEffect
+  parent: Microsoft.Xna.Framework.Audio
+  isExternal: true
+  name: SoundEffect
+  nameWithType: SoundEffect
+  fullName: Microsoft.Xna.Framework.Audio.SoundEffect
+- uid: Microsoft.Xna.Framework.Audio
+  commentId: N:Microsoft.Xna.Framework.Audio
+  isExternal: true
+  name: Microsoft.Xna.Framework.Audio
+  nameWithType: Microsoft.Xna.Framework.Audio
+  fullName: Microsoft.Xna.Framework.Audio
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework.Audio
+    name: Audio
+    isExternal: true
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework.Audio
+    name: Audio
+    isExternal: true
+- uid: Microsoft.Xna.Framework.Audio.SoundEffect[]
+  isExternal: true
+  name: SoundEffect[]
+  nameWithType: SoundEffect[]
+  fullName: Microsoft.Xna.Framework.Audio.SoundEffect[]
+  nameWithType.vb: SoundEffect()
+  fullName.vb: Microsoft.Xna.Framework.Audio.SoundEffect()
+  name.vb: SoundEffect()
+  spec.csharp:
+  - uid: Microsoft.Xna.Framework.Audio.SoundEffect
+    name: SoundEffect
+    isExternal: true
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: Microsoft.Xna.Framework.Audio.SoundEffect
+    name: SoundEffect
+    isExternal: true
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.Fight.Functions.BlackScreen*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.BlackScreen
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_BlackScreen_System_Single_
+  name: BlackScreen
+  nameWithType: Functions.BlackScreen
+  fullName: UndyneFight_Ex.Fight.Functions.BlackScreen
+- uid: UndyneFight_Ex.Fight.Functions.ResetBarrage*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.ResetBarrage
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_ResetBarrage
+  name: ResetBarrage
+  nameWithType: Functions.ResetBarrage
+  fullName: UndyneFight_Ex.Fight.Functions.ResetBarrage
+- uid: UndyneFight_Ex.Fight.Functions.EndSong*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.EndSong
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_EndSong
+  name: EndSong
+  nameWithType: Functions.EndSong
+  fullName: UndyneFight_Ex.Fight.Functions.EndSong
+- uid: UndyneFight_Ex.Fight.Functions.CreateHeart*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.CreateHeart
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_CreateHeart_UndyneFight_Ex_CollideRect_
+  name: CreateHeart
+  nameWithType: Functions.CreateHeart
+  fullName: UndyneFight_Ex.Fight.Functions.CreateHeart
+- uid: UndyneFight_Ex.CollideRect
+  commentId: T:UndyneFight_Ex.CollideRect
+  parent: UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.CollideRect.html
+  name: CollideRect
+  nameWithType: CollideRect
+  fullName: UndyneFight_Ex.CollideRect
+- uid: UndyneFight_Ex.Fight.Functions.Reset*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.Reset
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_Reset
+  name: Reset
+  nameWithType: Functions.Reset
+  fullName: UndyneFight_Ex.Fight.Functions.Reset
+- uid: UndyneFight_Ex.Fight.Functions.Loader*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.Loader
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_Loader
+  name: Loader
+  nameWithType: Functions.Loader
+  fullName: UndyneFight_Ex.Fight.Functions.Loader
+- uid: Microsoft.Xna.Framework.Content.ContentManager
+  commentId: T:Microsoft.Xna.Framework.Content.ContentManager
+  parent: Microsoft.Xna.Framework.Content
+  isExternal: true
+  name: ContentManager
+  nameWithType: ContentManager
+  fullName: Microsoft.Xna.Framework.Content.ContentManager
+- uid: Microsoft.Xna.Framework.Content
+  commentId: N:Microsoft.Xna.Framework.Content
+  isExternal: true
+  name: Microsoft.Xna.Framework.Content
+  nameWithType: Microsoft.Xna.Framework.Content
+  fullName: Microsoft.Xna.Framework.Content
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework.Content
+    name: Content
+    isExternal: true
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework.Content
+    name: Content
+    isExternal: true
+- uid: UndyneFight_Ex.Fight.Functions.SongIllustration*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.SongIllustration
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_SongIllustration
+  name: SongIllustration
+  nameWithType: Functions.SongIllustration
+  fullName: UndyneFight_Ex.Fight.Functions.SongIllustration
+- uid: Microsoft.Xna.Framework.Graphics.Texture2D
+  commentId: T:Microsoft.Xna.Framework.Graphics.Texture2D
+  parent: Microsoft.Xna.Framework.Graphics
+  isExternal: true
+  name: Texture2D
+  nameWithType: Texture2D
+  fullName: Microsoft.Xna.Framework.Graphics.Texture2D
+- uid: Microsoft.Xna.Framework.Graphics
+  commentId: N:Microsoft.Xna.Framework.Graphics
+  isExternal: true
+  name: Microsoft.Xna.Framework.Graphics
+  nameWithType: Microsoft.Xna.Framework.Graphics
+  fullName: Microsoft.Xna.Framework.Graphics
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework.Graphics
+    name: Graphics
+    isExternal: true
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework.Graphics
+    name: Graphics
+    isExternal: true
+- uid: UndyneFight_Ex.Fight.Functions.AutoEnd*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.AutoEnd
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_AutoEnd
+  name: AutoEnd
+  nameWithType: Functions.AutoEnd
+  fullName: UndyneFight_Ex.Fight.Functions.AutoEnd
+- uid: UndyneFight_Ex.SongSystem.SongInformation.MusicOptimized
+  commentId: P:UndyneFight_Ex.SongSystem.SongInformation.MusicOptimized
+  isExternal: true
+  href: UndyneFight_Ex.SongSystem.SongInformation.html#UndyneFight_Ex_SongSystem_SongInformation_MusicOptimized
+  name: MusicOptimized
+  nameWithType: SongInformation.MusicOptimized
+  fullName: UndyneFight_Ex.SongSystem.SongInformation.MusicOptimized
+- uid: UndyneFight_Ex.Fight.Functions.PlayOffset*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.PlayOffset
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_PlayOffset
+  name: PlayOffset
+  nameWithType: Functions.PlayOffset
+  fullName: UndyneFight_Ex.Fight.Functions.PlayOffset
+- uid: UndyneFight_Ex.Fight.Functions.GametimeDelta*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.GametimeDelta
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_GametimeDelta
+  name: GametimeDelta
+  nameWithType: Functions.GametimeDelta
+  fullName: UndyneFight_Ex.Fight.Functions.GametimeDelta
+- uid: UndyneFight_Ex.Fight.Functions.Gametime*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.Gametime
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_Gametime
+  name: Gametime
+  nameWithType: Functions.Gametime
+  fullName: UndyneFight_Ex.Fight.Functions.Gametime
+- uid: UndyneFight_Ex.Fight.Functions.GametimeF*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.GametimeF
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_GametimeF
+  name: GametimeF
+  nameWithType: Functions.GametimeF
+  fullName: UndyneFight_Ex.Fight.Functions.GametimeF
+- uid: UndyneFight_Ex.Fight.Functions.CurrentDifficulty*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.CurrentDifficulty
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_CurrentDifficulty
+  name: CurrentDifficulty
+  nameWithType: Functions.CurrentDifficulty
+  fullName: UndyneFight_Ex.Fight.Functions.CurrentDifficulty
+- uid: UndyneFight_Ex.SongSystem.Difficulty
+  commentId: T:UndyneFight_Ex.SongSystem.Difficulty
+  parent: UndyneFight_Ex.SongSystem
+  isExternal: true
+  href: UndyneFight_Ex.SongSystem.Difficulty.html
+  name: Difficulty
+  nameWithType: Difficulty
+  fullName: UndyneFight_Ex.SongSystem.Difficulty
+- uid: UndyneFight_Ex.SongSystem
+  commentId: N:UndyneFight_Ex.SongSystem
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex.SongSystem
+  nameWithType: UndyneFight_Ex.SongSystem
+  fullName: UndyneFight_Ex.SongSystem
+  spec.csharp:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.SongSystem
+    name: SongSystem
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.html
+  spec.vb:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.SongSystem
+    name: SongSystem
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.html
+- uid: UndyneFight_Ex.Fight.Functions.Heart*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.Heart
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_Heart
+  name: Heart
+  nameWithType: Functions.Heart
+  fullName: UndyneFight_Ex.Fight.Functions.Heart
+- uid: UndyneFight_Ex.Fight.Functions.PlayerInstance*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.PlayerInstance
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_PlayerInstance
+  name: PlayerInstance
+  nameWithType: Functions.PlayerInstance
+  fullName: UndyneFight_Ex.Fight.Functions.PlayerInstance
+- uid: UndyneFight_Ex.Entities.Player
+  commentId: T:UndyneFight_Ex.Entities.Player
+  parent: UndyneFight_Ex.Entities
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Player.html
+  name: Player
+  nameWithType: Player
+  fullName: UndyneFight_Ex.Entities.Player
+- uid: UndyneFight_Ex.Fight.Functions.DirectionAllocate*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.DirectionAllocate
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_DirectionAllocate
+  name: DirectionAllocate
+  nameWithType: Functions.DirectionAllocate
+  fullName: UndyneFight_Ex.Fight.Functions.DirectionAllocate
+- uid: System.Int32[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int[]
+  nameWithType: int[]
+  fullName: int[]
+  nameWithType.vb: Integer()
+  fullName.vb: Integer()
+  name.vb: Integer()
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.Fight.Functions.OneElementArrows*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.OneElementArrows
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_OneElementArrows
+  name: OneElementArrows
+  nameWithType: Functions.OneElementArrows
+  fullName: UndyneFight_Ex.Fight.Functions.OneElementArrows
+- uid: System.Collections.Generic.HashSet{System.Char}
+  commentId: T:System.Collections.Generic.HashSet{System.Char}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.HashSet`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  name: HashSet<char>
+  nameWithType: HashSet<char>
+  fullName: System.Collections.Generic.HashSet<char>
+  nameWithType.vb: HashSet(Of Char)
+  fullName.vb: System.Collections.Generic.HashSet(Of Char)
+  name.vb: HashSet(Of Char)
+  spec.csharp:
+  - uid: System.Collections.Generic.HashSet`1
+    name: HashSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  - name: <
+  - uid: System.Char
+    name: char
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.char
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.HashSet`1
+    name: HashSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Char
+    name: Char
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.char
+  - name: )
+- uid: System.Collections.Generic.HashSet`1
+  commentId: T:System.Collections.Generic.HashSet`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  name: HashSet<T>
+  nameWithType: HashSet<T>
+  fullName: System.Collections.Generic.HashSet<T>
+  nameWithType.vb: HashSet(Of T)
+  fullName.vb: System.Collections.Generic.HashSet(Of T)
+  name.vb: HashSet(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.HashSet`1
+    name: HashSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.HashSet`1
+    name: HashSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: UndyneFight_Ex.Fight.Functions.CustomAnalyzer*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.CustomAnalyzer
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_CustomAnalyzer
+  name: CustomAnalyzer
+  nameWithType: Functions.CustomAnalyzer
+  fullName: UndyneFight_Ex.Fight.Functions.CustomAnalyzer
+- uid: System.Func{System.Char,System.Int32}
+  commentId: T:System.Func{System.Char,System.Int32}
+  parent: System
+  definition: System.Func`2
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<char, int>
+  nameWithType: Func<char, int>
+  fullName: System.Func<char, int>
+  nameWithType.vb: Func(Of Char, Integer)
+  fullName.vb: System.Func(Of Char, Integer)
+  name.vb: Func(Of Char, Integer)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - uid: System.Char
+    name: char
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.char
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Char
+    name: Char
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.char
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: System.Func`2
+  commentId: T:System.Func`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: UndyneFight_Ex.Fight.Functions.LastRand*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.LastRand
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_LastRand
+  name: LastRand
+  nameWithType: Functions.LastRand
+  fullName: UndyneFight_Ex.Fight.Functions.LastRand
+- uid: UndyneFight_Ex.Fight.Functions.LastRandFloat*
+  commentId: Overload:UndyneFight_Ex.Fight.Functions.LastRandFloat
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html#UndyneFight_Ex_Fight_Functions_LastRandFloat
+  name: LastRandFloat
+  nameWithType: Functions.LastRandFloat
+  fullName: UndyneFight_Ex.Fight.Functions.LastRandFloat

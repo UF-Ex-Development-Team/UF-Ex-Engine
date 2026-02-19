@@ -1,0 +1,1047 @@
+### YamlMime:ManagedReference
+items:
+- uid: UndyneFight_Ex.Entities.Arrow.ClassicApplier
+  commentId: T:UndyneFight_Ex.Entities.Arrow.ClassicApplier
+  id: Arrow.ClassicApplier
+  parent: UndyneFight_Ex.Entities
+  children:
+  - UndyneFight_Ex.Entities.Arrow.ClassicApplier.#ctor
+  - UndyneFight_Ex.Entities.Arrow.ClassicApplier.ApplyArrowEasing(UndyneFight_Ex.Entities.Arrow)
+  - UndyneFight_Ex.Entities.Arrow.ClassicApplier.ApplyDelay(System.Single)
+  - UndyneFight_Ex.Entities.Arrow.ClassicApplier.ApplyStop(System.Single)
+  - UndyneFight_Ex.Entities.Arrow.ClassicApplier.Update
+  langs:
+  - csharp
+  - vb
+  name: Arrow.ClassicApplier
+  nameWithType: Arrow.ClassicApplier
+  fullName: UndyneFight_Ex.Entities.Arrow.ClassicApplier
+  type: Class
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  syntax:
+    content: 'public class Arrow.ClassicApplier : Arrow.ArrowEasing'
+    content.vb: Public Class Arrow.ClassicApplier Inherits Arrow.ArrowEasing
+  inheritance:
+  - System.Object
+  - UndyneFight_Ex.GameObject
+  - UndyneFight_Ex.Entities.Arrow.ArrowEasing
+  inheritedMembers:
+  - UndyneFight_Ex.Entities.Arrow.ArrowEasing.TagApply(System.String)
+  - UndyneFight_Ex.Entities.Arrow.ArrowEasing.RotateOffset
+  - UndyneFight_Ex.Entities.Arrow.ArrowEasing.Intensity
+  - UndyneFight_Ex.GameObject.ContainTag(System.String)
+  - UndyneFight_Ex.GameObject.Broadcast(System.String)
+  - UndyneFight_Ex.GameObject.TryDetect(System.String)
+  - UndyneFight_Ex.GameObject.HasTag
+  - UndyneFight_Ex.GameObject.Start
+  - UndyneFight_Ex.GameObject.TreeUpdate
+  - UndyneFight_Ex.GameObject.Dispose
+  - UndyneFight_Ex.GameObject.Kill
+  - UndyneFight_Ex.GameObject.AddChild(UndyneFight_Ex.GameObject)
+  - UndyneFight_Ex.GameObject.Reverse
+  - UndyneFight_Ex.GameObject.GetDrawableTree
+  - UndyneFight_Ex.GameObject.UpdateChildren
+  - UndyneFight_Ex.GameObject.ChildrenUpdateFirst
+  - UndyneFight_Ex.GameObject.CurrentScene
+  - UndyneFight_Ex.GameObject.CurrentFightingScene
+  - UndyneFight_Ex.GameObject.UpdateIn120
+  - UndyneFight_Ex.GameObject.BeingUpdated
+  - UndyneFight_Ex.GameObject.UpdateEnabled
+  - UndyneFight_Ex.GameObject.CrossScene
+  - UndyneFight_Ex.GameObject.Tags
+  - UndyneFight_Ex.GameObject.Extras
+  - UndyneFight_Ex.GameObject.ChildObjects
+  - UndyneFight_Ex.GameObject.Disposed
+  - UndyneFight_Ex.GameObject.FatherObject
+  - UndyneFight_Ex.GameObject.OnDispose
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+- uid: UndyneFight_Ex.Entities.Arrow.ClassicApplier.ApplyDelay(System.Single)
+  commentId: M:UndyneFight_Ex.Entities.Arrow.ClassicApplier.ApplyDelay(System.Single)
+  id: ApplyDelay(System.Single)
+  parent: UndyneFight_Ex.Entities.Arrow.ClassicApplier
+  langs:
+  - csharp
+  - vb
+  name: ApplyDelay(float)
+  nameWithType: Arrow.ClassicApplier.ApplyDelay(float)
+  fullName: UndyneFight_Ex.Entities.Arrow.ClassicApplier.ApplyDelay(float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Applies an arrow delay effect
+  example: []
+  syntax:
+    content: public void ApplyDelay(float delay)
+    parameters:
+    - id: delay
+      type: System.Single
+      description: The amount to delay
+    content.vb: Public Sub ApplyDelay(delay As Single)
+  overload: UndyneFight_Ex.Entities.Arrow.ClassicApplier.ApplyDelay*
+  nameWithType.vb: Arrow.ClassicApplier.ApplyDelay(Single)
+  fullName.vb: UndyneFight_Ex.Entities.Arrow.ClassicApplier.ApplyDelay(Single)
+  name.vb: ApplyDelay(Single)
+- uid: UndyneFight_Ex.Entities.Arrow.ClassicApplier.ApplyStop(System.Single)
+  commentId: M:UndyneFight_Ex.Entities.Arrow.ClassicApplier.ApplyStop(System.Single)
+  id: ApplyStop(System.Single)
+  parent: UndyneFight_Ex.Entities.Arrow.ClassicApplier
+  langs:
+  - csharp
+  - vb
+  name: ApplyStop(float)
+  nameWithType: Arrow.ClassicApplier.ApplyStop(float)
+  fullName: UndyneFight_Ex.Entities.Arrow.ClassicApplier.ApplyStop(float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Applies an arrow stop effect
+  example: []
+  syntax:
+    content: public void ApplyStop(float stopTime)
+    parameters:
+    - id: stopTime
+      type: System.Single
+      description: The duration of time to stop
+    content.vb: Public Sub ApplyStop(stopTime As Single)
+  overload: UndyneFight_Ex.Entities.Arrow.ClassicApplier.ApplyStop*
+  nameWithType.vb: Arrow.ClassicApplier.ApplyStop(Single)
+  fullName.vb: UndyneFight_Ex.Entities.Arrow.ClassicApplier.ApplyStop(Single)
+  name.vb: ApplyStop(Single)
+- uid: UndyneFight_Ex.Entities.Arrow.ClassicApplier.ApplyArrowEasing(UndyneFight_Ex.Entities.Arrow)
+  commentId: M:UndyneFight_Ex.Entities.Arrow.ClassicApplier.ApplyArrowEasing(UndyneFight_Ex.Entities.Arrow)
+  id: ApplyArrowEasing(UndyneFight_Ex.Entities.Arrow)
+  parent: UndyneFight_Ex.Entities.Arrow.ClassicApplier
+  langs:
+  - csharp
+  - vb
+  name: ApplyArrowEasing(Arrow)
+  nameWithType: Arrow.ClassicApplier.ApplyArrowEasing(Arrow)
+  fullName: UndyneFight_Ex.Entities.Arrow.ClassicApplier.ApplyArrowEasing(UndyneFight_Ex.Entities.Arrow)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Applies the easing for the arrows
+  example: []
+  syntax:
+    content: protected override void ApplyArrowEasing(Arrow arr)
+    parameters:
+    - id: arr
+      type: UndyneFight_Ex.Entities.Arrow
+      description: ''
+    content.vb: Protected Overrides Sub ApplyArrowEasing(arr As Arrow)
+  overridden: UndyneFight_Ex.Entities.Arrow.ArrowEasing.ApplyArrowEasing(UndyneFight_Ex.Entities.Arrow)
+  overload: UndyneFight_Ex.Entities.Arrow.ClassicApplier.ApplyArrowEasing*
+- uid: UndyneFight_Ex.Entities.Arrow.ClassicApplier.Update
+  commentId: M:UndyneFight_Ex.Entities.Arrow.ClassicApplier.Update
+  id: Update
+  parent: UndyneFight_Ex.Entities.Arrow.ClassicApplier
+  langs:
+  - csharp
+  - vb
+  name: Update()
+  nameWithType: Arrow.ClassicApplier.Update()
+  fullName: UndyneFight_Ex.Entities.Arrow.ClassicApplier.Update()
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: The logic to run each frame
+  example: []
+  syntax:
+    content: public override void Update()
+    content.vb: Public Overrides Sub Update()
+  overridden: UndyneFight_Ex.Entities.Arrow.ArrowEasing.Update
+  overload: UndyneFight_Ex.Entities.Arrow.ClassicApplier.Update*
+- uid: UndyneFight_Ex.Entities.Arrow.ClassicApplier.#ctor
+  commentId: M:UndyneFight_Ex.Entities.Arrow.ClassicApplier.#ctor
+  id: '#ctor'
+  parent: UndyneFight_Ex.Entities.Arrow.ClassicApplier
+  langs:
+  - csharp
+  - vb
+  name: ClassicApplier()
+  nameWithType: Arrow.ClassicApplier.ClassicApplier()
+  fullName: UndyneFight_Ex.Entities.Arrow.ClassicApplier.ClassicApplier()
+  type: Constructor
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  syntax:
+    content: public ClassicApplier()
+    content.vb: Public Sub New()
+  overload: UndyneFight_Ex.Entities.Arrow.ClassicApplier.#ctor*
+  nameWithType.vb: Arrow.ClassicApplier.New()
+  fullName.vb: UndyneFight_Ex.Entities.Arrow.ClassicApplier.New()
+  name.vb: New()
+references:
+- uid: UndyneFight_Ex.Entities
+  commentId: N:UndyneFight_Ex.Entities
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex.Entities
+  nameWithType: UndyneFight_Ex.Entities
+  fullName: UndyneFight_Ex.Entities
+  spec.csharp:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities
+    name: Entities
+    isExternal: true
+    href: UndyneFight_Ex.Entities.html
+  spec.vb:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities
+    name: Entities
+    isExternal: true
+    href: UndyneFight_Ex.Entities.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: UndyneFight_Ex.GameObject
+  commentId: T:UndyneFight_Ex.GameObject
+  parent: UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html
+  name: GameObject
+  nameWithType: GameObject
+  fullName: UndyneFight_Ex.GameObject
+- uid: UndyneFight_Ex.Entities.Arrow.ArrowEasing
+  commentId: T:UndyneFight_Ex.Entities.Arrow.ArrowEasing
+  parent: UndyneFight_Ex.Entities
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Arrow.html
+  name: Arrow.ArrowEasing
+  nameWithType: Arrow.ArrowEasing
+  fullName: UndyneFight_Ex.Entities.Arrow.ArrowEasing
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entities.Arrow
+    name: Arrow
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Arrow.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities.Arrow.ArrowEasing
+    name: ArrowEasing
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Arrow.ArrowEasing.html
+  spec.vb:
+  - uid: UndyneFight_Ex.Entities.Arrow
+    name: Arrow
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Arrow.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities.Arrow.ArrowEasing
+    name: ArrowEasing
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Arrow.ArrowEasing.html
+- uid: UndyneFight_Ex.Entities.Arrow.ArrowEasing.TagApply(System.String)
+  commentId: M:UndyneFight_Ex.Entities.Arrow.ArrowEasing.TagApply(System.String)
+  parent: UndyneFight_Ex.Entities.Arrow.ArrowEasing
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Arrow.ArrowEasing.html#UndyneFight_Ex_Entities_Arrow_ArrowEasing_TagApply_System_String_
+  name: TagApply(string)
+  nameWithType: Arrow.ArrowEasing.TagApply(string)
+  fullName: UndyneFight_Ex.Entities.Arrow.ArrowEasing.TagApply(string)
+  nameWithType.vb: Arrow.ArrowEasing.TagApply(String)
+  fullName.vb: UndyneFight_Ex.Entities.Arrow.ArrowEasing.TagApply(String)
+  name.vb: TagApply(String)
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entities.Arrow.ArrowEasing.TagApply(System.String)
+    name: TagApply
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Arrow.ArrowEasing.html#UndyneFight_Ex_Entities_Arrow_ArrowEasing_TagApply_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.Entities.Arrow.ArrowEasing.TagApply(System.String)
+    name: TagApply
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Arrow.ArrowEasing.html#UndyneFight_Ex_Entities_Arrow_ArrowEasing_TagApply_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: UndyneFight_Ex.Entities.Arrow.ArrowEasing.RotateOffset
+  commentId: P:UndyneFight_Ex.Entities.Arrow.ArrowEasing.RotateOffset
+  parent: UndyneFight_Ex.Entities.Arrow.ArrowEasing
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Arrow.ArrowEasing.html#UndyneFight_Ex_Entities_Arrow_ArrowEasing_RotateOffset
+  name: RotateOffset
+  nameWithType: Arrow.ArrowEasing.RotateOffset
+  fullName: UndyneFight_Ex.Entities.Arrow.ArrowEasing.RotateOffset
+- uid: UndyneFight_Ex.Entities.Arrow.ArrowEasing.Intensity
+  commentId: P:UndyneFight_Ex.Entities.Arrow.ArrowEasing.Intensity
+  parent: UndyneFight_Ex.Entities.Arrow.ArrowEasing
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Arrow.ArrowEasing.html#UndyneFight_Ex_Entities_Arrow_ArrowEasing_Intensity
+  name: Intensity
+  nameWithType: Arrow.ArrowEasing.Intensity
+  fullName: UndyneFight_Ex.Entities.Arrow.ArrowEasing.Intensity
+- uid: UndyneFight_Ex.GameObject.ContainTag(System.String)
+  commentId: M:UndyneFight_Ex.GameObject.ContainTag(System.String)
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_ContainTag_System_String_
+  name: ContainTag(string)
+  nameWithType: GameObject.ContainTag(string)
+  fullName: UndyneFight_Ex.GameObject.ContainTag(string)
+  nameWithType.vb: GameObject.ContainTag(String)
+  fullName.vb: UndyneFight_Ex.GameObject.ContainTag(String)
+  name.vb: ContainTag(String)
+  spec.csharp:
+  - uid: UndyneFight_Ex.GameObject.ContainTag(System.String)
+    name: ContainTag
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_ContainTag_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.GameObject.ContainTag(System.String)
+    name: ContainTag
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_ContainTag_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: UndyneFight_Ex.GameObject.Broadcast(System.String)
+  commentId: M:UndyneFight_Ex.GameObject.Broadcast(System.String)
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Broadcast_System_String_
+  name: Broadcast(string)
+  nameWithType: GameObject.Broadcast(string)
+  fullName: UndyneFight_Ex.GameObject.Broadcast(string)
+  nameWithType.vb: GameObject.Broadcast(String)
+  fullName.vb: UndyneFight_Ex.GameObject.Broadcast(String)
+  name.vb: Broadcast(String)
+  spec.csharp:
+  - uid: UndyneFight_Ex.GameObject.Broadcast(System.String)
+    name: Broadcast
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Broadcast_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.GameObject.Broadcast(System.String)
+    name: Broadcast
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Broadcast_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: UndyneFight_Ex.GameObject.TryDetect(System.String)
+  commentId: M:UndyneFight_Ex.GameObject.TryDetect(System.String)
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_TryDetect_System_String_
+  name: TryDetect(string)
+  nameWithType: GameObject.TryDetect(string)
+  fullName: UndyneFight_Ex.GameObject.TryDetect(string)
+  nameWithType.vb: GameObject.TryDetect(String)
+  fullName.vb: UndyneFight_Ex.GameObject.TryDetect(String)
+  name.vb: TryDetect(String)
+  spec.csharp:
+  - uid: UndyneFight_Ex.GameObject.TryDetect(System.String)
+    name: TryDetect
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_TryDetect_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.GameObject.TryDetect(System.String)
+    name: TryDetect
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_TryDetect_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: UndyneFight_Ex.GameObject.HasTag
+  commentId: M:UndyneFight_Ex.GameObject.HasTag
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_HasTag
+  name: HasTag()
+  nameWithType: GameObject.HasTag()
+  fullName: UndyneFight_Ex.GameObject.HasTag()
+  spec.csharp:
+  - uid: UndyneFight_Ex.GameObject.HasTag
+    name: HasTag
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_HasTag
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.GameObject.HasTag
+    name: HasTag
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_HasTag
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.GameObject.Start
+  commentId: M:UndyneFight_Ex.GameObject.Start
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Start
+  name: Start()
+  nameWithType: GameObject.Start()
+  fullName: UndyneFight_Ex.GameObject.Start()
+  spec.csharp:
+  - uid: UndyneFight_Ex.GameObject.Start
+    name: Start
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Start
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.GameObject.Start
+    name: Start
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Start
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.GameObject.TreeUpdate
+  commentId: M:UndyneFight_Ex.GameObject.TreeUpdate
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_TreeUpdate
+  name: TreeUpdate()
+  nameWithType: GameObject.TreeUpdate()
+  fullName: UndyneFight_Ex.GameObject.TreeUpdate()
+  spec.csharp:
+  - uid: UndyneFight_Ex.GameObject.TreeUpdate
+    name: TreeUpdate
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_TreeUpdate
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.GameObject.TreeUpdate
+    name: TreeUpdate
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_TreeUpdate
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.GameObject.Dispose
+  commentId: M:UndyneFight_Ex.GameObject.Dispose
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Dispose
+  name: Dispose()
+  nameWithType: GameObject.Dispose()
+  fullName: UndyneFight_Ex.GameObject.Dispose()
+  spec.csharp:
+  - uid: UndyneFight_Ex.GameObject.Dispose
+    name: Dispose
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Dispose
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.GameObject.Dispose
+    name: Dispose
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Dispose
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.GameObject.Kill
+  commentId: M:UndyneFight_Ex.GameObject.Kill
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Kill
+  name: Kill()
+  nameWithType: GameObject.Kill()
+  fullName: UndyneFight_Ex.GameObject.Kill()
+  spec.csharp:
+  - uid: UndyneFight_Ex.GameObject.Kill
+    name: Kill
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Kill
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.GameObject.Kill
+    name: Kill
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Kill
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.GameObject.AddChild(UndyneFight_Ex.GameObject)
+  commentId: M:UndyneFight_Ex.GameObject.AddChild(UndyneFight_Ex.GameObject)
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_AddChild_UndyneFight_Ex_GameObject_
+  name: AddChild(GameObject)
+  nameWithType: GameObject.AddChild(GameObject)
+  fullName: UndyneFight_Ex.GameObject.AddChild(UndyneFight_Ex.GameObject)
+  spec.csharp:
+  - uid: UndyneFight_Ex.GameObject.AddChild(UndyneFight_Ex.GameObject)
+    name: AddChild
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_AddChild_UndyneFight_Ex_GameObject_
+  - name: (
+  - uid: UndyneFight_Ex.GameObject
+    name: GameObject
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.GameObject.AddChild(UndyneFight_Ex.GameObject)
+    name: AddChild
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_AddChild_UndyneFight_Ex_GameObject_
+  - name: (
+  - uid: UndyneFight_Ex.GameObject
+    name: GameObject
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html
+  - name: )
+- uid: UndyneFight_Ex.GameObject.Reverse
+  commentId: M:UndyneFight_Ex.GameObject.Reverse
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Reverse
+  name: Reverse()
+  nameWithType: GameObject.Reverse()
+  fullName: UndyneFight_Ex.GameObject.Reverse()
+  spec.csharp:
+  - uid: UndyneFight_Ex.GameObject.Reverse
+    name: Reverse
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Reverse
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.GameObject.Reverse
+    name: Reverse
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Reverse
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.GameObject.GetDrawableTree
+  commentId: M:UndyneFight_Ex.GameObject.GetDrawableTree
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_GetDrawableTree
+  name: GetDrawableTree()
+  nameWithType: GameObject.GetDrawableTree()
+  fullName: UndyneFight_Ex.GameObject.GetDrawableTree()
+  spec.csharp:
+  - uid: UndyneFight_Ex.GameObject.GetDrawableTree
+    name: GetDrawableTree
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_GetDrawableTree
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.GameObject.GetDrawableTree
+    name: GetDrawableTree
+    isExternal: true
+    href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_GetDrawableTree
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.GameObject.UpdateChildren
+  commentId: P:UndyneFight_Ex.GameObject.UpdateChildren
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_UpdateChildren
+  name: UpdateChildren
+  nameWithType: GameObject.UpdateChildren
+  fullName: UndyneFight_Ex.GameObject.UpdateChildren
+- uid: UndyneFight_Ex.GameObject.ChildrenUpdateFirst
+  commentId: P:UndyneFight_Ex.GameObject.ChildrenUpdateFirst
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_ChildrenUpdateFirst
+  name: ChildrenUpdateFirst
+  nameWithType: GameObject.ChildrenUpdateFirst
+  fullName: UndyneFight_Ex.GameObject.ChildrenUpdateFirst
+- uid: UndyneFight_Ex.GameObject.CurrentScene
+  commentId: P:UndyneFight_Ex.GameObject.CurrentScene
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_CurrentScene
+  name: CurrentScene
+  nameWithType: GameObject.CurrentScene
+  fullName: UndyneFight_Ex.GameObject.CurrentScene
+- uid: UndyneFight_Ex.GameObject.CurrentFightingScene
+  commentId: P:UndyneFight_Ex.GameObject.CurrentFightingScene
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_CurrentFightingScene
+  name: CurrentFightingScene
+  nameWithType: GameObject.CurrentFightingScene
+  fullName: UndyneFight_Ex.GameObject.CurrentFightingScene
+- uid: UndyneFight_Ex.GameObject.UpdateIn120
+  commentId: P:UndyneFight_Ex.GameObject.UpdateIn120
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_UpdateIn120
+  name: UpdateIn120
+  nameWithType: GameObject.UpdateIn120
+  fullName: UndyneFight_Ex.GameObject.UpdateIn120
+- uid: UndyneFight_Ex.GameObject.BeingUpdated
+  commentId: P:UndyneFight_Ex.GameObject.BeingUpdated
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_BeingUpdated
+  name: BeingUpdated
+  nameWithType: GameObject.BeingUpdated
+  fullName: UndyneFight_Ex.GameObject.BeingUpdated
+- uid: UndyneFight_Ex.GameObject.UpdateEnabled
+  commentId: P:UndyneFight_Ex.GameObject.UpdateEnabled
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_UpdateEnabled
+  name: UpdateEnabled
+  nameWithType: GameObject.UpdateEnabled
+  fullName: UndyneFight_Ex.GameObject.UpdateEnabled
+- uid: UndyneFight_Ex.GameObject.CrossScene
+  commentId: P:UndyneFight_Ex.GameObject.CrossScene
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_CrossScene
+  name: CrossScene
+  nameWithType: GameObject.CrossScene
+  fullName: UndyneFight_Ex.GameObject.CrossScene
+- uid: UndyneFight_Ex.GameObject.Tags
+  commentId: P:UndyneFight_Ex.GameObject.Tags
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Tags
+  name: Tags
+  nameWithType: GameObject.Tags
+  fullName: UndyneFight_Ex.GameObject.Tags
+- uid: UndyneFight_Ex.GameObject.Extras
+  commentId: P:UndyneFight_Ex.GameObject.Extras
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Extras
+  name: Extras
+  nameWithType: GameObject.Extras
+  fullName: UndyneFight_Ex.GameObject.Extras
+- uid: UndyneFight_Ex.GameObject.ChildObjects
+  commentId: P:UndyneFight_Ex.GameObject.ChildObjects
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_ChildObjects
+  name: ChildObjects
+  nameWithType: GameObject.ChildObjects
+  fullName: UndyneFight_Ex.GameObject.ChildObjects
+- uid: UndyneFight_Ex.GameObject.Disposed
+  commentId: P:UndyneFight_Ex.GameObject.Disposed
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Disposed
+  name: Disposed
+  nameWithType: GameObject.Disposed
+  fullName: UndyneFight_Ex.GameObject.Disposed
+- uid: UndyneFight_Ex.GameObject.FatherObject
+  commentId: P:UndyneFight_Ex.GameObject.FatherObject
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_FatherObject
+  name: FatherObject
+  nameWithType: GameObject.FatherObject
+  fullName: UndyneFight_Ex.GameObject.FatherObject
+- uid: UndyneFight_Ex.GameObject.OnDispose
+  commentId: E:UndyneFight_Ex.GameObject.OnDispose
+  parent: UndyneFight_Ex.GameObject
+  isExternal: true
+  href: UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_OnDispose
+  name: OnDispose
+  nameWithType: GameObject.OnDispose
+  fullName: UndyneFight_Ex.GameObject.OnDispose
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UndyneFight_Ex
+  commentId: N:UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex
+  nameWithType: UndyneFight_Ex
+  fullName: UndyneFight_Ex
+- uid: UndyneFight_Ex.Entities.Arrow.ClassicApplier.ApplyDelay*
+  commentId: Overload:UndyneFight_Ex.Entities.Arrow.ClassicApplier.ApplyDelay
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Arrow.ClassicApplier.html#UndyneFight_Ex_Entities_Arrow_ClassicApplier_ApplyDelay_System_Single_
+  name: ApplyDelay
+  nameWithType: Arrow.ClassicApplier.ApplyDelay
+  fullName: UndyneFight_Ex.Entities.Arrow.ClassicApplier.ApplyDelay
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: UndyneFight_Ex.Entities.Arrow.ClassicApplier.ApplyStop*
+  commentId: Overload:UndyneFight_Ex.Entities.Arrow.ClassicApplier.ApplyStop
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Arrow.ClassicApplier.html#UndyneFight_Ex_Entities_Arrow_ClassicApplier_ApplyStop_System_Single_
+  name: ApplyStop
+  nameWithType: Arrow.ClassicApplier.ApplyStop
+  fullName: UndyneFight_Ex.Entities.Arrow.ClassicApplier.ApplyStop
+- uid: UndyneFight_Ex.Entities.Arrow.ArrowEasing.ApplyArrowEasing(UndyneFight_Ex.Entities.Arrow)
+  commentId: M:UndyneFight_Ex.Entities.Arrow.ArrowEasing.ApplyArrowEasing(UndyneFight_Ex.Entities.Arrow)
+  parent: UndyneFight_Ex.Entities.Arrow.ArrowEasing
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Arrow.ArrowEasing.html#UndyneFight_Ex_Entities_Arrow_ArrowEasing_ApplyArrowEasing_UndyneFight_Ex_Entities_Arrow_
+  name: ApplyArrowEasing(Arrow)
+  nameWithType: Arrow.ArrowEasing.ApplyArrowEasing(Arrow)
+  fullName: UndyneFight_Ex.Entities.Arrow.ArrowEasing.ApplyArrowEasing(UndyneFight_Ex.Entities.Arrow)
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entities.Arrow.ArrowEasing.ApplyArrowEasing(UndyneFight_Ex.Entities.Arrow)
+    name: ApplyArrowEasing
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Arrow.ArrowEasing.html#UndyneFight_Ex_Entities_Arrow_ArrowEasing_ApplyArrowEasing_UndyneFight_Ex_Entities_Arrow_
+  - name: (
+  - uid: UndyneFight_Ex.Entities.Arrow
+    name: Arrow
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Arrow.html
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.Entities.Arrow.ArrowEasing.ApplyArrowEasing(UndyneFight_Ex.Entities.Arrow)
+    name: ApplyArrowEasing
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Arrow.ArrowEasing.html#UndyneFight_Ex_Entities_Arrow_ArrowEasing_ApplyArrowEasing_UndyneFight_Ex_Entities_Arrow_
+  - name: (
+  - uid: UndyneFight_Ex.Entities.Arrow
+    name: Arrow
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Arrow.html
+  - name: )
+- uid: UndyneFight_Ex.Entities.Arrow.ClassicApplier.ApplyArrowEasing*
+  commentId: Overload:UndyneFight_Ex.Entities.Arrow.ClassicApplier.ApplyArrowEasing
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Arrow.ClassicApplier.html#UndyneFight_Ex_Entities_Arrow_ClassicApplier_ApplyArrowEasing_UndyneFight_Ex_Entities_Arrow_
+  name: ApplyArrowEasing
+  nameWithType: Arrow.ClassicApplier.ApplyArrowEasing
+  fullName: UndyneFight_Ex.Entities.Arrow.ClassicApplier.ApplyArrowEasing
+- uid: UndyneFight_Ex.Entities.Arrow
+  commentId: T:UndyneFight_Ex.Entities.Arrow
+  parent: UndyneFight_Ex.Entities
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Arrow.html
+  name: Arrow
+  nameWithType: Arrow
+  fullName: UndyneFight_Ex.Entities.Arrow
+- uid: UndyneFight_Ex.Entities.Arrow.ArrowEasing.Update
+  commentId: M:UndyneFight_Ex.Entities.Arrow.ArrowEasing.Update
+  parent: UndyneFight_Ex.Entities.Arrow.ArrowEasing
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Arrow.ArrowEasing.html#UndyneFight_Ex_Entities_Arrow_ArrowEasing_Update
+  name: Update()
+  nameWithType: Arrow.ArrowEasing.Update()
+  fullName: UndyneFight_Ex.Entities.Arrow.ArrowEasing.Update()
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entities.Arrow.ArrowEasing.Update
+    name: Update
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Arrow.ArrowEasing.html#UndyneFight_Ex_Entities_Arrow_ArrowEasing_Update
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.Entities.Arrow.ArrowEasing.Update
+    name: Update
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Arrow.ArrowEasing.html#UndyneFight_Ex_Entities_Arrow_ArrowEasing_Update
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.Entities.Arrow.ClassicApplier.Update*
+  commentId: Overload:UndyneFight_Ex.Entities.Arrow.ClassicApplier.Update
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Arrow.ClassicApplier.html#UndyneFight_Ex_Entities_Arrow_ClassicApplier_Update
+  name: Update
+  nameWithType: Arrow.ClassicApplier.Update
+  fullName: UndyneFight_Ex.Entities.Arrow.ClassicApplier.Update
+- uid: UndyneFight_Ex.Entities.Arrow.ClassicApplier.#ctor*
+  commentId: Overload:UndyneFight_Ex.Entities.Arrow.ClassicApplier.#ctor
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Arrow.ClassicApplier.html#UndyneFight_Ex_Entities_Arrow_ClassicApplier__ctor
+  name: ClassicApplier
+  nameWithType: Arrow.ClassicApplier.ClassicApplier
+  fullName: UndyneFight_Ex.Entities.Arrow.ClassicApplier.ClassicApplier
+  nameWithType.vb: Arrow.ClassicApplier.New
+  fullName.vb: UndyneFight_Ex.Entities.Arrow.ClassicApplier.New
+  name.vb: New

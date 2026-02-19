@@ -1,0 +1,110 @@
+### YamlMime:ManagedReference
+items:
+- uid: UndyneFight_Ex.Entities.ICollideAble
+  commentId: T:UndyneFight_Ex.Entities.ICollideAble
+  id: ICollideAble
+  parent: UndyneFight_Ex.Entities
+  children:
+  - UndyneFight_Ex.Entities.ICollideAble.GetCollide(UndyneFight_Ex.Entities.Player.Heart)
+  langs:
+  - csharp
+  - vb
+  name: ICollideAble
+  nameWithType: ICollideAble
+  fullName: UndyneFight_Ex.Entities.ICollideAble
+  type: Interface
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: The interface for a player collidable instance
+  example: []
+  syntax:
+    content: public interface ICollideAble
+    content.vb: Public Interface ICollideAble
+- uid: UndyneFight_Ex.Entities.ICollideAble.GetCollide(UndyneFight_Ex.Entities.Player.Heart)
+  commentId: M:UndyneFight_Ex.Entities.ICollideAble.GetCollide(UndyneFight_Ex.Entities.Player.Heart)
+  id: GetCollide(UndyneFight_Ex.Entities.Player.Heart)
+  parent: UndyneFight_Ex.Entities.ICollideAble
+  langs:
+  - csharp
+  - vb
+  name: GetCollide(Heart)
+  nameWithType: ICollideAble.GetCollide(Player.Heart)
+  fullName: UndyneFight_Ex.Entities.ICollideAble.GetCollide(UndyneFight_Ex.Entities.Player.Heart)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: The function to check collision with the player
+  example: []
+  syntax:
+    content: void GetCollide(Player.Heart player)
+    parameters:
+    - id: player
+      type: UndyneFight_Ex.Entities.Player.Heart
+      description: The player to check
+    content.vb: Sub GetCollide(player As Player.Heart)
+  overload: UndyneFight_Ex.Entities.ICollideAble.GetCollide*
+references:
+- uid: UndyneFight_Ex.Entities
+  commentId: N:UndyneFight_Ex.Entities
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex.Entities
+  nameWithType: UndyneFight_Ex.Entities
+  fullName: UndyneFight_Ex.Entities
+  spec.csharp:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities
+    name: Entities
+    isExternal: true
+    href: UndyneFight_Ex.Entities.html
+  spec.vb:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities
+    name: Entities
+    isExternal: true
+    href: UndyneFight_Ex.Entities.html
+- uid: UndyneFight_Ex.Entities.ICollideAble.GetCollide*
+  commentId: Overload:UndyneFight_Ex.Entities.ICollideAble.GetCollide
+  isExternal: true
+  href: UndyneFight_Ex.Entities.ICollideAble.html#UndyneFight_Ex_Entities_ICollideAble_GetCollide_UndyneFight_Ex_Entities_Player_Heart_
+  name: GetCollide
+  nameWithType: ICollideAble.GetCollide
+  fullName: UndyneFight_Ex.Entities.ICollideAble.GetCollide
+- uid: UndyneFight_Ex.Entities.Player.Heart
+  commentId: T:UndyneFight_Ex.Entities.Player.Heart
+  parent: UndyneFight_Ex.Entities
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Player.html
+  name: Player.Heart
+  nameWithType: Player.Heart
+  fullName: UndyneFight_Ex.Entities.Player.Heart
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entities.Player
+    name: Player
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Player.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities.Player.Heart
+    name: Heart
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Player.Heart.html
+  spec.vb:
+  - uid: UndyneFight_Ex.Entities.Player
+    name: Player
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Player.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities.Player.Heart
+    name: Heart
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Player.Heart.html

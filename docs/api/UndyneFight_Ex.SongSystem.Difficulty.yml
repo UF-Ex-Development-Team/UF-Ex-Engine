@@ -1,0 +1,414 @@
+### YamlMime:ManagedReference
+items:
+- uid: UndyneFight_Ex.SongSystem.Difficulty
+  commentId: T:UndyneFight_Ex.SongSystem.Difficulty
+  id: Difficulty
+  parent: UndyneFight_Ex.SongSystem
+  children:
+  - UndyneFight_Ex.SongSystem.Difficulty.Easy
+  - UndyneFight_Ex.SongSystem.Difficulty.Extreme
+  - UndyneFight_Ex.SongSystem.Difficulty.ExtremePlus
+  - UndyneFight_Ex.SongSystem.Difficulty.Hard
+  - UndyneFight_Ex.SongSystem.Difficulty.Noob
+  - UndyneFight_Ex.SongSystem.Difficulty.Normal
+  - UndyneFight_Ex.SongSystem.Difficulty.NotSelected
+  langs:
+  - csharp
+  - vb
+  name: Difficulty
+  nameWithType: Difficulty
+  fullName: UndyneFight_Ex.SongSystem.Difficulty
+  type: Enum
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.SongSystem
+  syntax:
+    content: public enum Difficulty
+    content.vb: Public Enum Difficulty
+  extensionMethods:
+  - UndyneFight_Ex.SongSystem.Difficulty.UndyneFight_Ex.MathUtil.InRange``1(UndyneFight_Ex.SongSystem.Difficulty,UndyneFight_Ex.SongSystem.Difficulty)
+- uid: UndyneFight_Ex.SongSystem.Difficulty.Noob
+  commentId: F:UndyneFight_Ex.SongSystem.Difficulty.Noob
+  id: Noob
+  parent: UndyneFight_Ex.SongSystem.Difficulty
+  langs:
+  - csharp
+  - vb
+  name: Noob
+  nameWithType: Difficulty.Noob
+  fullName: UndyneFight_Ex.SongSystem.Difficulty.Noob
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.SongSystem
+  syntax:
+    content: >-
+      [MiscUtil.ShorthandName("Nb")]
+
+      Noob = 0
+    return:
+      type: UndyneFight_Ex.SongSystem.Difficulty
+    content.vb: >-
+      <MiscUtil.ShorthandName("Nb")>
+
+      Noob = 0
+  attributes:
+  - type: UndyneFight_Ex.MiscUtil.ShorthandName
+    ctor: UndyneFight_Ex.MiscUtil.ShorthandName.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Nb
+- uid: UndyneFight_Ex.SongSystem.Difficulty.Easy
+  commentId: F:UndyneFight_Ex.SongSystem.Difficulty.Easy
+  id: Easy
+  parent: UndyneFight_Ex.SongSystem.Difficulty
+  langs:
+  - csharp
+  - vb
+  name: Easy
+  nameWithType: Difficulty.Easy
+  fullName: UndyneFight_Ex.SongSystem.Difficulty.Easy
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.SongSystem
+  syntax:
+    content: >-
+      [MiscUtil.ShorthandName("Ez")]
+
+      Easy = 1
+    return:
+      type: UndyneFight_Ex.SongSystem.Difficulty
+    content.vb: >-
+      <MiscUtil.ShorthandName("Ez")>
+
+      Easy = 1
+  attributes:
+  - type: UndyneFight_Ex.MiscUtil.ShorthandName
+    ctor: UndyneFight_Ex.MiscUtil.ShorthandName.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Ez
+- uid: UndyneFight_Ex.SongSystem.Difficulty.Normal
+  commentId: F:UndyneFight_Ex.SongSystem.Difficulty.Normal
+  id: Normal
+  parent: UndyneFight_Ex.SongSystem.Difficulty
+  langs:
+  - csharp
+  - vb
+  name: Normal
+  nameWithType: Difficulty.Normal
+  fullName: UndyneFight_Ex.SongSystem.Difficulty.Normal
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.SongSystem
+  syntax:
+    content: >-
+      [MiscUtil.ShorthandName("Nr")]
+
+      Normal = 2
+    return:
+      type: UndyneFight_Ex.SongSystem.Difficulty
+    content.vb: >-
+      <MiscUtil.ShorthandName("Nr")>
+
+      Normal = 2
+  attributes:
+  - type: UndyneFight_Ex.MiscUtil.ShorthandName
+    ctor: UndyneFight_Ex.MiscUtil.ShorthandName.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Nr
+- uid: UndyneFight_Ex.SongSystem.Difficulty.Hard
+  commentId: F:UndyneFight_Ex.SongSystem.Difficulty.Hard
+  id: Hard
+  parent: UndyneFight_Ex.SongSystem.Difficulty
+  langs:
+  - csharp
+  - vb
+  name: Hard
+  nameWithType: Difficulty.Hard
+  fullName: UndyneFight_Ex.SongSystem.Difficulty.Hard
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.SongSystem
+  syntax:
+    content: >-
+      [MiscUtil.ShorthandName("Hd")]
+
+      Hard = 3
+    return:
+      type: UndyneFight_Ex.SongSystem.Difficulty
+    content.vb: >-
+      <MiscUtil.ShorthandName("Hd")>
+
+      Hard = 3
+  attributes:
+  - type: UndyneFight_Ex.MiscUtil.ShorthandName
+    ctor: UndyneFight_Ex.MiscUtil.ShorthandName.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Hd
+- uid: UndyneFight_Ex.SongSystem.Difficulty.Extreme
+  commentId: F:UndyneFight_Ex.SongSystem.Difficulty.Extreme
+  id: Extreme
+  parent: UndyneFight_Ex.SongSystem.Difficulty
+  langs:
+  - csharp
+  - vb
+  name: Extreme
+  nameWithType: Difficulty.Extreme
+  fullName: UndyneFight_Ex.SongSystem.Difficulty.Extreme
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.SongSystem
+  syntax:
+    content: >-
+      [MiscUtil.ShorthandName("Ex")]
+
+      Extreme = 4
+    return:
+      type: UndyneFight_Ex.SongSystem.Difficulty
+    content.vb: >-
+      <MiscUtil.ShorthandName("Ex")>
+
+      Extreme = 4
+  attributes:
+  - type: UndyneFight_Ex.MiscUtil.ShorthandName
+    ctor: UndyneFight_Ex.MiscUtil.ShorthandName.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Ex
+- uid: UndyneFight_Ex.SongSystem.Difficulty.ExtremePlus
+  commentId: F:UndyneFight_Ex.SongSystem.Difficulty.ExtremePlus
+  id: ExtremePlus
+  parent: UndyneFight_Ex.SongSystem.Difficulty
+  langs:
+  - csharp
+  - vb
+  name: ExtremePlus
+  nameWithType: Difficulty.ExtremePlus
+  fullName: UndyneFight_Ex.SongSystem.Difficulty.ExtremePlus
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.SongSystem
+  syntax:
+    content: >-
+      [MiscUtil.ShorthandName("Ex+")]
+
+      ExtremePlus = 5
+    return:
+      type: UndyneFight_Ex.SongSystem.Difficulty
+    content.vb: >-
+      <MiscUtil.ShorthandName("Ex+")>
+
+      ExtremePlus = 5
+  attributes:
+  - type: UndyneFight_Ex.MiscUtil.ShorthandName
+    ctor: UndyneFight_Ex.MiscUtil.ShorthandName.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Ex+
+- uid: UndyneFight_Ex.SongSystem.Difficulty.NotSelected
+  commentId: F:UndyneFight_Ex.SongSystem.Difficulty.NotSelected
+  id: NotSelected
+  parent: UndyneFight_Ex.SongSystem.Difficulty
+  langs:
+  - csharp
+  - vb
+  name: NotSelected
+  nameWithType: Difficulty.NotSelected
+  fullName: UndyneFight_Ex.SongSystem.Difficulty.NotSelected
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.SongSystem
+  syntax:
+    content: >-
+      [MiscUtil.ShorthandName("NS")]
+
+      NotSelected = 6
+    return:
+      type: UndyneFight_Ex.SongSystem.Difficulty
+    content.vb: >-
+      <MiscUtil.ShorthandName("NS")>
+
+      NotSelected = 6
+  attributes:
+  - type: UndyneFight_Ex.MiscUtil.ShorthandName
+    ctor: UndyneFight_Ex.MiscUtil.ShorthandName.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: NS
+references:
+- uid: UndyneFight_Ex.SongSystem
+  commentId: N:UndyneFight_Ex.SongSystem
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex.SongSystem
+  nameWithType: UndyneFight_Ex.SongSystem
+  fullName: UndyneFight_Ex.SongSystem
+  spec.csharp:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.SongSystem
+    name: SongSystem
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.html
+  spec.vb:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.SongSystem
+    name: SongSystem
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.html
+- uid: UndyneFight_Ex.SongSystem.Difficulty.UndyneFight_Ex.MathUtil.InRange``1(UndyneFight_Ex.SongSystem.Difficulty,UndyneFight_Ex.SongSystem.Difficulty)
+  commentId: M:UndyneFight_Ex.MathUtil.InRange``1(``0,``0,``0)
+  parent: UndyneFight_Ex.MathUtil
+  definition: UndyneFight_Ex.MathUtil.InRange``1(``0,``0,``0)
+  href: UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_InRange__1___0___0___0_
+  name: InRange<Difficulty>(Difficulty, Difficulty, Difficulty)
+  nameWithType: MathUtil.InRange<Difficulty>(Difficulty, Difficulty, Difficulty)
+  fullName: UndyneFight_Ex.MathUtil.InRange<UndyneFight_Ex.SongSystem.Difficulty>(UndyneFight_Ex.SongSystem.Difficulty, UndyneFight_Ex.SongSystem.Difficulty, UndyneFight_Ex.SongSystem.Difficulty)
+  nameWithType.vb: MathUtil.InRange(Of Difficulty)(Difficulty, Difficulty, Difficulty)
+  fullName.vb: UndyneFight_Ex.MathUtil.InRange(Of UndyneFight_Ex.SongSystem.Difficulty)(UndyneFight_Ex.SongSystem.Difficulty, UndyneFight_Ex.SongSystem.Difficulty, UndyneFight_Ex.SongSystem.Difficulty)
+  name.vb: InRange(Of Difficulty)(Difficulty, Difficulty, Difficulty)
+  spec.csharp:
+  - uid: UndyneFight_Ex.MathUtil.InRange``1(UndyneFight_Ex.SongSystem.Difficulty,UndyneFight_Ex.SongSystem.Difficulty,UndyneFight_Ex.SongSystem.Difficulty)
+    name: InRange
+    isExternal: true
+    href: UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_InRange__1___0___0___0_
+  - name: <
+  - uid: UndyneFight_Ex.SongSystem.Difficulty
+    name: Difficulty
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.Difficulty.html
+  - name: '>'
+  - name: (
+  - uid: UndyneFight_Ex.SongSystem.Difficulty
+    name: Difficulty
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.Difficulty.html
+  - name: ','
+  - name: " "
+  - uid: UndyneFight_Ex.SongSystem.Difficulty
+    name: Difficulty
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.Difficulty.html
+  - name: ','
+  - name: " "
+  - uid: UndyneFight_Ex.SongSystem.Difficulty
+    name: Difficulty
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.Difficulty.html
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.MathUtil.InRange``1(UndyneFight_Ex.SongSystem.Difficulty,UndyneFight_Ex.SongSystem.Difficulty,UndyneFight_Ex.SongSystem.Difficulty)
+    name: InRange
+    isExternal: true
+    href: UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_InRange__1___0___0___0_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: UndyneFight_Ex.SongSystem.Difficulty
+    name: Difficulty
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.Difficulty.html
+  - name: )
+  - name: (
+  - uid: UndyneFight_Ex.SongSystem.Difficulty
+    name: Difficulty
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.Difficulty.html
+  - name: ','
+  - name: " "
+  - uid: UndyneFight_Ex.SongSystem.Difficulty
+    name: Difficulty
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.Difficulty.html
+  - name: ','
+  - name: " "
+  - uid: UndyneFight_Ex.SongSystem.Difficulty
+    name: Difficulty
+    isExternal: true
+    href: UndyneFight_Ex.SongSystem.Difficulty.html
+  - name: )
+- uid: UndyneFight_Ex.MathUtil.InRange``1(``0,``0,``0)
+  commentId: M:UndyneFight_Ex.MathUtil.InRange``1(``0,``0,``0)
+  isExternal: true
+  href: UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_InRange__1___0___0___0_
+  name: InRange<T>(T, T, T)
+  nameWithType: MathUtil.InRange<T>(T, T, T)
+  fullName: UndyneFight_Ex.MathUtil.InRange<T>(T, T, T)
+  nameWithType.vb: MathUtil.InRange(Of T)(T, T, T)
+  fullName.vb: UndyneFight_Ex.MathUtil.InRange(Of T)(T, T, T)
+  name.vb: InRange(Of T)(T, T, T)
+  spec.csharp:
+  - uid: UndyneFight_Ex.MathUtil.InRange``1(``0,``0,``0)
+    name: InRange
+    isExternal: true
+    href: UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_InRange__1___0___0___0_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.MathUtil.InRange``1(``0,``0,``0)
+    name: InRange
+    isExternal: true
+    href: UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_InRange__1___0___0___0_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+- uid: UndyneFight_Ex.MathUtil
+  commentId: T:UndyneFight_Ex.MathUtil
+  parent: UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.MathUtil.html
+  name: MathUtil
+  nameWithType: MathUtil
+  fullName: UndyneFight_Ex.MathUtil
+- uid: UndyneFight_Ex
+  commentId: N:UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex
+  nameWithType: UndyneFight_Ex
+  fullName: UndyneFight_Ex
+- uid: UndyneFight_Ex.SongSystem.Difficulty
+  commentId: T:UndyneFight_Ex.SongSystem.Difficulty
+  parent: UndyneFight_Ex.SongSystem
+  isExternal: true
+  href: UndyneFight_Ex.SongSystem.Difficulty.html
+  name: Difficulty
+  nameWithType: Difficulty
+  fullName: UndyneFight_Ex.SongSystem.Difficulty

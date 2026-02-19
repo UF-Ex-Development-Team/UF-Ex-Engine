@@ -1,0 +1,337 @@
+### YamlMime:ManagedReference
+items:
+- uid: UndyneFight_Ex.UserService
+  commentId: N:UndyneFight_Ex.UserService
+  id: UndyneFight_Ex.UserService
+  children:
+  - UndyneFight_Ex.UserService.AchievementManager
+  - UndyneFight_Ex.UserService.AchievementObject
+  - UndyneFight_Ex.UserService.ChallengeData
+  - UndyneFight_Ex.UserService.ChampionshipManager
+  - UndyneFight_Ex.UserService.ISaveLoad
+  - UndyneFight_Ex.UserService.ItemRarity
+  - UndyneFight_Ex.UserService.RatingCalculator
+  - UndyneFight_Ex.UserService.RatingCalculator.RatingList
+  - UndyneFight_Ex.UserService.RatingCalculator.RatingList.SingleSong
+  - UndyneFight_Ex.UserService.Settings
+  - UndyneFight_Ex.UserService.ShopData
+  - UndyneFight_Ex.UserService.ShopData.ShopCash
+  - UndyneFight_Ex.UserService.ShopItemData
+  - UndyneFight_Ex.UserService.SingleChallenge
+  - UndyneFight_Ex.UserService.SongData
+  - UndyneFight_Ex.UserService.SongData.SongState
+  - UndyneFight_Ex.UserService.SongManager
+  - UndyneFight_Ex.UserService.Statistic
+  - UndyneFight_Ex.UserService.StoreItem
+  - UndyneFight_Ex.UserService.StoreItem.ItemAttribute
+  - UndyneFight_Ex.UserService.User
+  langs:
+  - csharp
+  - vb
+  name: UndyneFight_Ex.UserService
+  nameWithType: UndyneFight_Ex.UserService
+  fullName: UndyneFight_Ex.UserService
+  type: Namespace
+  assemblies:
+  - UndyneFight-Ex
+references:
+- uid: UndyneFight_Ex.UserService.AchievementObject
+  commentId: T:UndyneFight_Ex.UserService.AchievementObject
+  isExternal: true
+  href: UndyneFight_Ex.UserService.AchievementObject.html
+  name: AchievementObject
+  nameWithType: AchievementObject
+  fullName: UndyneFight_Ex.UserService.AchievementObject
+- uid: UndyneFight_Ex.UserService.AchievementManager
+  commentId: T:UndyneFight_Ex.UserService.AchievementManager
+  isExternal: true
+  href: UndyneFight_Ex.UserService.AchievementManager.html
+  name: AchievementManager
+  nameWithType: AchievementManager
+  fullName: UndyneFight_Ex.UserService.AchievementManager
+- uid: UndyneFight_Ex.UserService.ShopData
+  commentId: T:UndyneFight_Ex.UserService.ShopData
+  parent: UndyneFight_Ex.UserService
+  isExternal: true
+  href: UndyneFight_Ex.UserService.ShopData.html
+  name: ShopData
+  nameWithType: ShopData
+  fullName: UndyneFight_Ex.UserService.ShopData
+- uid: UndyneFight_Ex.UserService.ShopData.ShopCash
+  commentId: T:UndyneFight_Ex.UserService.ShopData.ShopCash
+  parent: UndyneFight_Ex.UserService
+  isExternal: true
+  href: UndyneFight_Ex.UserService.ShopData.html
+  name: ShopData.ShopCash
+  nameWithType: ShopData.ShopCash
+  fullName: UndyneFight_Ex.UserService.ShopData.ShopCash
+  spec.csharp:
+  - uid: UndyneFight_Ex.UserService.ShopData
+    name: ShopData
+    isExternal: true
+    href: UndyneFight_Ex.UserService.ShopData.html
+  - name: .
+  - uid: UndyneFight_Ex.UserService.ShopData.ShopCash
+    name: ShopCash
+    isExternal: true
+    href: UndyneFight_Ex.UserService.ShopData.ShopCash.html
+  spec.vb:
+  - uid: UndyneFight_Ex.UserService.ShopData
+    name: ShopData
+    isExternal: true
+    href: UndyneFight_Ex.UserService.ShopData.html
+  - name: .
+  - uid: UndyneFight_Ex.UserService.ShopData.ShopCash
+    name: ShopCash
+    isExternal: true
+    href: UndyneFight_Ex.UserService.ShopData.ShopCash.html
+- uid: UndyneFight_Ex.UserService.ItemRarity
+  commentId: T:UndyneFight_Ex.UserService.ItemRarity
+  parent: UndyneFight_Ex.UserService
+  isExternal: true
+  href: UndyneFight_Ex.UserService.ItemRarity.html
+  name: ItemRarity
+  nameWithType: ItemRarity
+  fullName: UndyneFight_Ex.UserService.ItemRarity
+- uid: UndyneFight_Ex.UserService.StoreItem
+  commentId: T:UndyneFight_Ex.UserService.StoreItem
+  parent: UndyneFight_Ex.UserService
+  isExternal: true
+  href: UndyneFight_Ex.UserService.StoreItem.html
+  name: StoreItem
+  nameWithType: StoreItem
+  fullName: UndyneFight_Ex.UserService.StoreItem
+- uid: UndyneFight_Ex.UserService.StoreItem.ItemAttribute
+  commentId: T:UndyneFight_Ex.UserService.StoreItem.ItemAttribute
+  parent: UndyneFight_Ex.UserService
+  isExternal: true
+  href: UndyneFight_Ex.UserService.StoreItem.html
+  name: StoreItem.ItemAttribute
+  nameWithType: StoreItem.ItemAttribute
+  fullName: UndyneFight_Ex.UserService.StoreItem.ItemAttribute
+  spec.csharp:
+  - uid: UndyneFight_Ex.UserService.StoreItem
+    name: StoreItem
+    isExternal: true
+    href: UndyneFight_Ex.UserService.StoreItem.html
+  - name: .
+  - uid: UndyneFight_Ex.UserService.StoreItem.ItemAttribute
+    name: ItemAttribute
+    isExternal: true
+    href: UndyneFight_Ex.UserService.StoreItem.ItemAttribute.html
+  spec.vb:
+  - uid: UndyneFight_Ex.UserService.StoreItem
+    name: StoreItem
+    isExternal: true
+    href: UndyneFight_Ex.UserService.StoreItem.html
+  - name: .
+  - uid: UndyneFight_Ex.UserService.StoreItem.ItemAttribute
+    name: ItemAttribute
+    isExternal: true
+    href: UndyneFight_Ex.UserService.StoreItem.ItemAttribute.html
+- uid: UndyneFight_Ex.UserService.ShopItemData
+  commentId: T:UndyneFight_Ex.UserService.ShopItemData
+  parent: UndyneFight_Ex.UserService
+  isExternal: true
+  href: UndyneFight_Ex.UserService.ShopItemData.html
+  name: ShopItemData
+  nameWithType: ShopItemData
+  fullName: UndyneFight_Ex.UserService.ShopItemData
+- uid: UndyneFight_Ex.UserService.SongData
+  commentId: T:UndyneFight_Ex.UserService.SongData
+  parent: UndyneFight_Ex.UserService
+  isExternal: true
+  href: UndyneFight_Ex.UserService.SongData.html
+  name: SongData
+  nameWithType: SongData
+  fullName: UndyneFight_Ex.UserService.SongData
+- uid: UndyneFight_Ex.UserService.SongData.SongState
+  commentId: T:UndyneFight_Ex.UserService.SongData.SongState
+  isExternal: true
+  href: UndyneFight_Ex.UserService.SongData.html
+  name: SongData.SongState
+  nameWithType: SongData.SongState
+  fullName: UndyneFight_Ex.UserService.SongData.SongState
+  spec.csharp:
+  - uid: UndyneFight_Ex.UserService.SongData
+    name: SongData
+    isExternal: true
+    href: UndyneFight_Ex.UserService.SongData.html
+  - name: .
+  - uid: UndyneFight_Ex.UserService.SongData.SongState
+    name: SongState
+    isExternal: true
+    href: UndyneFight_Ex.UserService.SongData.SongState.html
+  spec.vb:
+  - uid: UndyneFight_Ex.UserService.SongData
+    name: SongData
+    isExternal: true
+    href: UndyneFight_Ex.UserService.SongData.html
+  - name: .
+  - uid: UndyneFight_Ex.UserService.SongData.SongState
+    name: SongState
+    isExternal: true
+    href: UndyneFight_Ex.UserService.SongData.SongState.html
+- uid: UndyneFight_Ex.UserService.SongManager
+  commentId: T:UndyneFight_Ex.UserService.SongManager
+  parent: UndyneFight_Ex.UserService
+  isExternal: true
+  href: UndyneFight_Ex.UserService.SongManager.html
+  name: SongManager
+  nameWithType: SongManager
+  fullName: UndyneFight_Ex.UserService.SongManager
+- uid: UndyneFight_Ex.UserService.RatingCalculator
+  commentId: T:UndyneFight_Ex.UserService.RatingCalculator
+  isExternal: true
+  href: UndyneFight_Ex.UserService.RatingCalculator.html
+  name: RatingCalculator
+  nameWithType: RatingCalculator
+  fullName: UndyneFight_Ex.UserService.RatingCalculator
+- uid: UndyneFight_Ex.UserService.RatingCalculator.RatingList
+  commentId: T:UndyneFight_Ex.UserService.RatingCalculator.RatingList
+  parent: UndyneFight_Ex.UserService
+  isExternal: true
+  href: UndyneFight_Ex.UserService.RatingCalculator.html
+  name: RatingCalculator.RatingList
+  nameWithType: RatingCalculator.RatingList
+  fullName: UndyneFight_Ex.UserService.RatingCalculator.RatingList
+  spec.csharp:
+  - uid: UndyneFight_Ex.UserService.RatingCalculator
+    name: RatingCalculator
+    isExternal: true
+    href: UndyneFight_Ex.UserService.RatingCalculator.html
+  - name: .
+  - uid: UndyneFight_Ex.UserService.RatingCalculator.RatingList
+    name: RatingList
+    isExternal: true
+    href: UndyneFight_Ex.UserService.RatingCalculator.RatingList.html
+  spec.vb:
+  - uid: UndyneFight_Ex.UserService.RatingCalculator
+    name: RatingCalculator
+    isExternal: true
+    href: UndyneFight_Ex.UserService.RatingCalculator.html
+  - name: .
+  - uid: UndyneFight_Ex.UserService.RatingCalculator.RatingList
+    name: RatingList
+    isExternal: true
+    href: UndyneFight_Ex.UserService.RatingCalculator.RatingList.html
+- uid: UndyneFight_Ex.UserService.RatingCalculator.RatingList.SingleSong
+  commentId: T:UndyneFight_Ex.UserService.RatingCalculator.RatingList.SingleSong
+  parent: UndyneFight_Ex.UserService
+  isExternal: true
+  href: UndyneFight_Ex.UserService.RatingCalculator.html
+  name: RatingCalculator.RatingList.SingleSong
+  nameWithType: RatingCalculator.RatingList.SingleSong
+  fullName: UndyneFight_Ex.UserService.RatingCalculator.RatingList.SingleSong
+  spec.csharp:
+  - uid: UndyneFight_Ex.UserService.RatingCalculator
+    name: RatingCalculator
+    isExternal: true
+    href: UndyneFight_Ex.UserService.RatingCalculator.html
+  - name: .
+  - uid: UndyneFight_Ex.UserService.RatingCalculator.RatingList
+    name: RatingList
+    isExternal: true
+    href: UndyneFight_Ex.UserService.RatingCalculator.RatingList.html
+  - name: .
+  - uid: UndyneFight_Ex.UserService.RatingCalculator.RatingList.SingleSong
+    name: SingleSong
+    isExternal: true
+    href: UndyneFight_Ex.UserService.RatingCalculator.RatingList.SingleSong.html
+  spec.vb:
+  - uid: UndyneFight_Ex.UserService.RatingCalculator
+    name: RatingCalculator
+    isExternal: true
+    href: UndyneFight_Ex.UserService.RatingCalculator.html
+  - name: .
+  - uid: UndyneFight_Ex.UserService.RatingCalculator.RatingList
+    name: RatingList
+    isExternal: true
+    href: UndyneFight_Ex.UserService.RatingCalculator.RatingList.html
+  - name: .
+  - uid: UndyneFight_Ex.UserService.RatingCalculator.RatingList.SingleSong
+    name: SingleSong
+    isExternal: true
+    href: UndyneFight_Ex.UserService.RatingCalculator.RatingList.SingleSong.html
+- uid: UndyneFight_Ex.UserService.Settings
+  commentId: T:UndyneFight_Ex.UserService.Settings
+  parent: UndyneFight_Ex.UserService
+  isExternal: true
+  href: UndyneFight_Ex.UserService.Settings.html
+  name: Settings
+  nameWithType: Settings
+  fullName: UndyneFight_Ex.UserService.Settings
+- uid: UndyneFight_Ex.UserService.Statistic
+  commentId: T:UndyneFight_Ex.UserService.Statistic
+  parent: UndyneFight_Ex.UserService
+  isExternal: true
+  href: UndyneFight_Ex.UserService.Statistic.html
+  name: Statistic
+  nameWithType: Statistic
+  fullName: UndyneFight_Ex.UserService.Statistic
+- uid: UndyneFight_Ex.UserService.ISaveLoad
+  commentId: T:UndyneFight_Ex.UserService.ISaveLoad
+  parent: UndyneFight_Ex.UserService
+  isExternal: true
+  href: UndyneFight_Ex.UserService.ISaveLoad.html
+  name: ISaveLoad
+  nameWithType: ISaveLoad
+  fullName: UndyneFight_Ex.UserService.ISaveLoad
+- uid: UndyneFight_Ex.UserService.User
+  commentId: T:UndyneFight_Ex.UserService.User
+  parent: UndyneFight_Ex.UserService
+  isExternal: true
+  href: UndyneFight_Ex.UserService.User.html
+  name: User
+  nameWithType: User
+  fullName: UndyneFight_Ex.UserService.User
+- uid: UndyneFight_Ex.UserService.SingleChallenge
+  commentId: T:UndyneFight_Ex.UserService.SingleChallenge
+  isExternal: true
+  href: UndyneFight_Ex.UserService.SingleChallenge.html
+  name: SingleChallenge
+  nameWithType: SingleChallenge
+  fullName: UndyneFight_Ex.UserService.SingleChallenge
+- uid: UndyneFight_Ex.UserService.ChallengeData
+  commentId: T:UndyneFight_Ex.UserService.ChallengeData
+  parent: UndyneFight_Ex.UserService
+  isExternal: true
+  href: UndyneFight_Ex.UserService.ChallengeData.html
+  name: ChallengeData
+  nameWithType: ChallengeData
+  fullName: UndyneFight_Ex.UserService.ChallengeData
+- uid: UndyneFight_Ex.UserService.ChampionshipManager
+  commentId: T:UndyneFight_Ex.UserService.ChampionshipManager
+  parent: UndyneFight_Ex.UserService
+  isExternal: true
+  href: UndyneFight_Ex.UserService.ChampionshipManager.html
+  name: ChampionshipManager
+  nameWithType: ChampionshipManager
+  fullName: UndyneFight_Ex.UserService.ChampionshipManager
+- uid: UndyneFight_Ex.UserService
+  commentId: N:UndyneFight_Ex.UserService
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex.UserService
+  nameWithType: UndyneFight_Ex.UserService
+  fullName: UndyneFight_Ex.UserService
+  spec.csharp:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.UserService
+    name: UserService
+    isExternal: true
+    href: UndyneFight_Ex.UserService.html
+  spec.vb:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.UserService
+    name: UserService
+    isExternal: true
+    href: UndyneFight_Ex.UserService.html

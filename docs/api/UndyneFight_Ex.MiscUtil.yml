@@ -1,0 +1,729 @@
+### YamlMime:ManagedReference
+items:
+- uid: UndyneFight_Ex.MiscUtil
+  commentId: T:UndyneFight_Ex.MiscUtil
+  id: MiscUtil
+  parent: UndyneFight_Ex
+  children:
+  - UndyneFight_Ex.MiscUtil.#ctor
+  - UndyneFight_Ex.MiscUtil.GetAsset(System.String,System.Type)
+  - UndyneFight_Ex.MiscUtil.GetInputKeys(UndyneFight_Ex.InputIdentity)
+  - UndyneFight_Ex.MiscUtil.GetShorthandName(System.Object)
+  - UndyneFight_Ex.MiscUtil.KeyToString(Microsoft.Xna.Framework.Input.Keys)
+  - UndyneFight_Ex.MiscUtil.StringToKey(System.String)
+  langs:
+  - csharp
+  - vb
+  name: MiscUtil
+  nameWithType: MiscUtil
+  fullName: UndyneFight_Ex.MiscUtil
+  type: Class
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Miscellaneous Utilities
+  example: []
+  syntax:
+    content: public class MiscUtil
+    content.vb: Public Class MiscUtil
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+- uid: UndyneFight_Ex.MiscUtil.GetShorthandName(System.Object)
+  commentId: M:UndyneFight_Ex.MiscUtil.GetShorthandName(System.Object)
+  id: GetShorthandName(System.Object)
+  parent: UndyneFight_Ex.MiscUtil
+  langs:
+  - csharp
+  - vb
+  name: GetShorthandName(object)
+  nameWithType: MiscUtil.GetShorthandName(object)
+  fullName: UndyneFight_Ex.MiscUtil.GetShorthandName(object)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Gets the <xref href="UndyneFight_Ex.MiscUtil.ShorthandName" data-throw-if-not-resolved="false"></xref> of the object
+  example: []
+  syntax:
+    content: public static string GetShorthandName(object thing)
+    parameters:
+    - id: thing
+      type: System.Object
+      description: The object to pull the shorthand name of
+    return:
+      type: System.String
+      description: The <xref href="UndyneFight_Ex.MiscUtil.ShorthandName" data-throw-if-not-resolved="false"></xref> of the object
+    content.vb: Public Shared Function GetShorthandName(thing As Object) As String
+  overload: UndyneFight_Ex.MiscUtil.GetShorthandName*
+  nameWithType.vb: MiscUtil.GetShorthandName(Object)
+  fullName.vb: UndyneFight_Ex.MiscUtil.GetShorthandName(Object)
+  name.vb: GetShorthandName(Object)
+- uid: UndyneFight_Ex.MiscUtil.KeyToString(Microsoft.Xna.Framework.Input.Keys)
+  commentId: M:UndyneFight_Ex.MiscUtil.KeyToString(Microsoft.Xna.Framework.Input.Keys)
+  id: KeyToString(Microsoft.Xna.Framework.Input.Keys)
+  parent: UndyneFight_Ex.MiscUtil
+  langs:
+  - csharp
+  - vb
+  name: KeyToString(Keys)
+  nameWithType: MiscUtil.KeyToString(Keys)
+  fullName: UndyneFight_Ex.MiscUtil.KeyToString(Microsoft.Xna.Framework.Input.Keys)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: >-
+    <br>Converts a key to string</br>
+
+    <br>Warning, this may not cover all the keys, report to the Discord server if you found any missing keys</br>
+  example: []
+  syntax:
+    content: public static string KeyToString(Keys key)
+    parameters:
+    - id: key
+      type: Microsoft.Xna.Framework.Input.Keys
+      description: The key to convert
+    return:
+      type: System.String
+      description: The string name of the key
+    content.vb: Public Shared Function KeyToString(key As Keys) As String
+  overload: UndyneFight_Ex.MiscUtil.KeyToString*
+- uid: UndyneFight_Ex.MiscUtil.StringToKey(System.String)
+  commentId: M:UndyneFight_Ex.MiscUtil.StringToKey(System.String)
+  id: StringToKey(System.String)
+  parent: UndyneFight_Ex.MiscUtil
+  langs:
+  - csharp
+  - vb
+  name: StringToKey(string)
+  nameWithType: MiscUtil.StringToKey(string)
+  fullName: UndyneFight_Ex.MiscUtil.StringToKey(string)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: >-
+    <br>Converts a string to key</br>
+
+    <br>The strings should follow the format of <xref href="UndyneFight_Ex.MiscUtil.KeyToString(Microsoft.Xna.Framework.Input.Keys)" data-throw-if-not-resolved="false"></xref></br>
+
+    <br>Warning, this may not cover all the keys, report to the Discord server if you found any missing keys</br>
+  example: []
+  syntax:
+    content: public static Keys StringToKey(string text)
+    parameters:
+    - id: text
+      type: System.String
+      description: The string to convert
+    return:
+      type: Microsoft.Xna.Framework.Input.Keys
+      description: The key the string represents
+    content.vb: Public Shared Function StringToKey(text As String) As Keys
+  overload: UndyneFight_Ex.MiscUtil.StringToKey*
+  nameWithType.vb: MiscUtil.StringToKey(String)
+  fullName.vb: UndyneFight_Ex.MiscUtil.StringToKey(String)
+  name.vb: StringToKey(String)
+- uid: UndyneFight_Ex.MiscUtil.GetInputKeys(UndyneFight_Ex.InputIdentity)
+  commentId: M:UndyneFight_Ex.MiscUtil.GetInputKeys(UndyneFight_Ex.InputIdentity)
+  id: GetInputKeys(UndyneFight_Ex.InputIdentity)
+  parent: UndyneFight_Ex.MiscUtil
+  langs:
+  - csharp
+  - vb
+  name: GetInputKeys(InputIdentity)
+  nameWithType: MiscUtil.GetInputKeys(InputIdentity)
+  fullName: UndyneFight_Ex.MiscUtil.GetInputKeys(UndyneFight_Ex.InputIdentity)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Gets the current key binding of the input identity
+  example: []
+  syntax:
+    content: public static List<Keys> GetInputKeys(InputIdentity identity)
+    parameters:
+    - id: identity
+      type: UndyneFight_Ex.InputIdentity
+      description: The identity to get
+    return:
+      type: System.Collections.Generic.List{Microsoft.Xna.Framework.Input.Keys}
+      description: The key the identity is binded to
+    content.vb: Public Shared Function GetInputKeys(identity As InputIdentity) As List(Of Keys)
+  overload: UndyneFight_Ex.MiscUtil.GetInputKeys*
+- uid: UndyneFight_Ex.MiscUtil.GetAsset(System.String,System.Type)
+  commentId: M:UndyneFight_Ex.MiscUtil.GetAsset(System.String,System.Type)
+  id: GetAsset(System.String,System.Type)
+  parent: UndyneFight_Ex.MiscUtil
+  langs:
+  - csharp
+  - vb
+  name: GetAsset(string, Type)
+  nameWithType: MiscUtil.GetAsset(string, Type)
+  fullName: UndyneFight_Ex.MiscUtil.GetAsset(string, System.Type)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Gets the asset from the name, i.e. FightResources.Sounds.spearAppear -&gt; GetAsset("spearAppear", typeof(FightResources.Sounds)) would return the audio
+  example: []
+  syntax:
+    content: public static object GetAsset(string name, Type type)
+    parameters:
+    - id: name
+      type: System.String
+      description: The name of the asset
+    - id: type
+      type: System.Type
+      description: The type the asset belongs to
+    return:
+      type: System.Object
+      description: The asset
+    content.vb: Public Shared Function GetAsset(name As String, type As Type) As Object
+  overload: UndyneFight_Ex.MiscUtil.GetAsset*
+  nameWithType.vb: MiscUtil.GetAsset(String, Type)
+  fullName.vb: UndyneFight_Ex.MiscUtil.GetAsset(String, System.Type)
+  name.vb: GetAsset(String, Type)
+- uid: UndyneFight_Ex.MiscUtil.#ctor
+  commentId: M:UndyneFight_Ex.MiscUtil.#ctor
+  id: '#ctor'
+  parent: UndyneFight_Ex.MiscUtil
+  langs:
+  - csharp
+  - vb
+  name: MiscUtil()
+  nameWithType: MiscUtil.MiscUtil()
+  fullName: UndyneFight_Ex.MiscUtil.MiscUtil()
+  type: Constructor
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  syntax:
+    content: public MiscUtil()
+    content.vb: Public Sub New()
+  overload: UndyneFight_Ex.MiscUtil.#ctor*
+  nameWithType.vb: MiscUtil.New()
+  fullName.vb: UndyneFight_Ex.MiscUtil.New()
+  name.vb: New()
+references:
+- uid: UndyneFight_Ex
+  commentId: N:UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex
+  nameWithType: UndyneFight_Ex
+  fullName: UndyneFight_Ex
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UndyneFight_Ex.MiscUtil.ShorthandName
+  commentId: T:UndyneFight_Ex.MiscUtil.ShorthandName
+  parent: UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.MiscUtil.html
+  name: MiscUtil.ShorthandName
+  nameWithType: MiscUtil.ShorthandName
+  fullName: UndyneFight_Ex.MiscUtil.ShorthandName
+  spec.csharp:
+  - uid: UndyneFight_Ex.MiscUtil
+    name: MiscUtil
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.html
+  - name: .
+  - uid: UndyneFight_Ex.MiscUtil.ShorthandName
+    name: ShorthandName
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.ShorthandName.html
+  spec.vb:
+  - uid: UndyneFight_Ex.MiscUtil
+    name: MiscUtil
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.html
+  - name: .
+  - uid: UndyneFight_Ex.MiscUtil.ShorthandName
+    name: ShorthandName
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.ShorthandName.html
+- uid: UndyneFight_Ex.MiscUtil.GetShorthandName*
+  commentId: Overload:UndyneFight_Ex.MiscUtil.GetShorthandName
+  isExternal: true
+  href: UndyneFight_Ex.MiscUtil.html#UndyneFight_Ex_MiscUtil_GetShorthandName_System_Object_
+  name: GetShorthandName
+  nameWithType: MiscUtil.GetShorthandName
+  fullName: UndyneFight_Ex.MiscUtil.GetShorthandName
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: UndyneFight_Ex.MiscUtil.KeyToString*
+  commentId: Overload:UndyneFight_Ex.MiscUtil.KeyToString
+  isExternal: true
+  href: UndyneFight_Ex.MiscUtil.html#UndyneFight_Ex_MiscUtil_KeyToString_Microsoft_Xna_Framework_Input_Keys_
+  name: KeyToString
+  nameWithType: MiscUtil.KeyToString
+  fullName: UndyneFight_Ex.MiscUtil.KeyToString
+- uid: Microsoft.Xna.Framework.Input.Keys
+  commentId: T:Microsoft.Xna.Framework.Input.Keys
+  parent: Microsoft.Xna.Framework.Input
+  isExternal: true
+  name: Keys
+  nameWithType: Keys
+  fullName: Microsoft.Xna.Framework.Input.Keys
+- uid: Microsoft.Xna.Framework.Input
+  commentId: N:Microsoft.Xna.Framework.Input
+  isExternal: true
+  name: Microsoft.Xna.Framework.Input
+  nameWithType: Microsoft.Xna.Framework.Input
+  fullName: Microsoft.Xna.Framework.Input
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework.Input
+    name: Input
+    isExternal: true
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework.Input
+    name: Input
+    isExternal: true
+- uid: UndyneFight_Ex.MiscUtil.KeyToString(Microsoft.Xna.Framework.Input.Keys)
+  commentId: M:UndyneFight_Ex.MiscUtil.KeyToString(Microsoft.Xna.Framework.Input.Keys)
+  isExternal: true
+  href: UndyneFight_Ex.MiscUtil.html#UndyneFight_Ex_MiscUtil_KeyToString_Microsoft_Xna_Framework_Input_Keys_
+  name: KeyToString(Keys)
+  nameWithType: MiscUtil.KeyToString(Keys)
+  fullName: UndyneFight_Ex.MiscUtil.KeyToString(Microsoft.Xna.Framework.Input.Keys)
+  spec.csharp:
+  - uid: UndyneFight_Ex.MiscUtil.KeyToString(Microsoft.Xna.Framework.Input.Keys)
+    name: KeyToString
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.html#UndyneFight_Ex_MiscUtil_KeyToString_Microsoft_Xna_Framework_Input_Keys_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Input.Keys
+    name: Keys
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.MiscUtil.KeyToString(Microsoft.Xna.Framework.Input.Keys)
+    name: KeyToString
+    isExternal: true
+    href: UndyneFight_Ex.MiscUtil.html#UndyneFight_Ex_MiscUtil_KeyToString_Microsoft_Xna_Framework_Input_Keys_
+  - name: (
+  - uid: Microsoft.Xna.Framework.Input.Keys
+    name: Keys
+    isExternal: true
+  - name: )
+- uid: UndyneFight_Ex.MiscUtil.StringToKey*
+  commentId: Overload:UndyneFight_Ex.MiscUtil.StringToKey
+  isExternal: true
+  href: UndyneFight_Ex.MiscUtil.html#UndyneFight_Ex_MiscUtil_StringToKey_System_String_
+  name: StringToKey
+  nameWithType: MiscUtil.StringToKey
+  fullName: UndyneFight_Ex.MiscUtil.StringToKey
+- uid: UndyneFight_Ex.MiscUtil.GetInputKeys*
+  commentId: Overload:UndyneFight_Ex.MiscUtil.GetInputKeys
+  isExternal: true
+  href: UndyneFight_Ex.MiscUtil.html#UndyneFight_Ex_MiscUtil_GetInputKeys_UndyneFight_Ex_InputIdentity_
+  name: GetInputKeys
+  nameWithType: MiscUtil.GetInputKeys
+  fullName: UndyneFight_Ex.MiscUtil.GetInputKeys
+- uid: UndyneFight_Ex.InputIdentity
+  commentId: T:UndyneFight_Ex.InputIdentity
+  parent: UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.InputIdentity.html
+  name: InputIdentity
+  nameWithType: InputIdentity
+  fullName: UndyneFight_Ex.InputIdentity
+- uid: System.Collections.Generic.List{Microsoft.Xna.Framework.Input.Keys}
+  commentId: T:System.Collections.Generic.List{Microsoft.Xna.Framework.Input.Keys}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<Keys>
+  nameWithType: List<Keys>
+  fullName: System.Collections.Generic.List<Microsoft.Xna.Framework.Input.Keys>
+  nameWithType.vb: List(Of Keys)
+  fullName.vb: System.Collections.Generic.List(Of Microsoft.Xna.Framework.Input.Keys)
+  name.vb: List(Of Keys)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: Microsoft.Xna.Framework.Input.Keys
+    name: Keys
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Microsoft.Xna.Framework.Input.Keys
+    name: Keys
+    isExternal: true
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: UndyneFight_Ex.MiscUtil.GetAsset*
+  commentId: Overload:UndyneFight_Ex.MiscUtil.GetAsset
+  isExternal: true
+  href: UndyneFight_Ex.MiscUtil.html#UndyneFight_Ex_MiscUtil_GetAsset_System_String_System_Type_
+  name: GetAsset
+  nameWithType: MiscUtil.GetAsset
+  fullName: UndyneFight_Ex.MiscUtil.GetAsset
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: UndyneFight_Ex.MiscUtil.#ctor*
+  commentId: Overload:UndyneFight_Ex.MiscUtil.#ctor
+  isExternal: true
+  href: UndyneFight_Ex.MiscUtil.html#UndyneFight_Ex_MiscUtil__ctor
+  name: MiscUtil
+  nameWithType: MiscUtil.MiscUtil
+  fullName: UndyneFight_Ex.MiscUtil.MiscUtil
+  nameWithType.vb: MiscUtil.New
+  fullName.vb: UndyneFight_Ex.MiscUtil.New
+  name.vb: New

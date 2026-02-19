@@ -1,0 +1,305 @@
+### YamlMime:ManagedReference
+items:
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode
+  commentId: T:UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode
+  id: Functions.ScreenDrawing.Shaders.Lighting.LightMode
+  parent: UndyneFight_Ex.Fight
+  children:
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode.Additive
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode.Limit
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode.ShaderMul
+  langs:
+  - csharp
+  - vb
+  name: Functions.ScreenDrawing.Shaders.Lighting.LightMode
+  nameWithType: Functions.ScreenDrawing.Shaders.Lighting.LightMode
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode
+  type: Enum
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Available modes for blooming, see <a href="https://en.wikipedia.org/wiki/Blend_modes">https://en.wikipedia.org/wiki/Blend_modes</a> for more information
+  example: []
+  syntax:
+    content: public enum Functions.ScreenDrawing.Shaders.Lighting.LightMode
+    content.vb: Public Enum Functions.ScreenDrawing.Shaders.Lighting.LightMode
+  extensionMethods:
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode.UndyneFight_Ex.MathUtil.InRange``1(UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode,UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode)
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode.Limit
+  commentId: F:UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode.Limit
+  id: Limit
+  parent: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode
+  langs:
+  - csharp
+  - vb
+  name: Limit
+  nameWithType: Functions.ScreenDrawing.Shaders.Lighting.LightMode.Limit
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode.Limit
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Liminal bloom
+  example: []
+  syntax:
+    content: Limit = 1
+    return:
+      type: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode.Additive
+  commentId: F:UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode.Additive
+  id: Additive
+  parent: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode
+  langs:
+  - csharp
+  - vb
+  name: Additive
+  nameWithType: Functions.ScreenDrawing.Shaders.Lighting.LightMode.Additive
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode.Additive
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Additive bloom
+  example: []
+  syntax:
+    content: Additive = 2
+    return:
+      type: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode.ShaderMul
+  commentId: F:UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode.ShaderMul
+  id: ShaderMul
+  parent: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode
+  langs:
+  - csharp
+  - vb
+  name: ShaderMul
+  nameWithType: Functions.ScreenDrawing.Shaders.Lighting.LightMode.ShaderMul
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode.ShaderMul
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Fight
+  summary: Blend multiplication bloom
+  example: []
+  syntax:
+    content: ShaderMul = 3
+    return:
+      type: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode
+references:
+- uid: UndyneFight_Ex.Fight
+  commentId: N:UndyneFight_Ex.Fight
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex.Fight
+  nameWithType: UndyneFight_Ex.Fight
+  fullName: UndyneFight_Ex.Fight
+  spec.csharp:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight
+    name: Fight
+    isExternal: true
+    href: UndyneFight_Ex.Fight.html
+  spec.vb:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight
+    name: Fight
+    isExternal: true
+    href: UndyneFight_Ex.Fight.html
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode.UndyneFight_Ex.MathUtil.InRange``1(UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode,UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode)
+  commentId: M:UndyneFight_Ex.MathUtil.InRange``1(``0,``0,``0)
+  parent: UndyneFight_Ex.MathUtil
+  definition: UndyneFight_Ex.MathUtil.InRange``1(``0,``0,``0)
+  href: UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_InRange__1___0___0___0_
+  name: InRange<LightMode>(LightMode, LightMode, LightMode)
+  nameWithType: MathUtil.InRange<Functions.ScreenDrawing.Shaders.Lighting.LightMode>(Functions.ScreenDrawing.Shaders.Lighting.LightMode, Functions.ScreenDrawing.Shaders.Lighting.LightMode, Functions.ScreenDrawing.Shaders.Lighting.LightMode)
+  fullName: UndyneFight_Ex.MathUtil.InRange<UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode>(UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode, UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode, UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode)
+  nameWithType.vb: MathUtil.InRange(Of Functions.ScreenDrawing.Shaders.Lighting.LightMode)(Functions.ScreenDrawing.Shaders.Lighting.LightMode, Functions.ScreenDrawing.Shaders.Lighting.LightMode, Functions.ScreenDrawing.Shaders.Lighting.LightMode)
+  fullName.vb: UndyneFight_Ex.MathUtil.InRange(Of UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode)(UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode, UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode, UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode)
+  name.vb: InRange(Of LightMode)(LightMode, LightMode, LightMode)
+  spec.csharp:
+  - uid: UndyneFight_Ex.MathUtil.InRange``1(UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode,UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode,UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode)
+    name: InRange
+    isExternal: true
+    href: UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_InRange__1___0___0___0_
+  - name: <
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode
+    name: LightMode
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode.html
+  - name: '>'
+  - name: (
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode
+    name: LightMode
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode.html
+  - name: ','
+  - name: " "
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode
+    name: LightMode
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode.html
+  - name: ','
+  - name: " "
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode
+    name: LightMode
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode.html
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.MathUtil.InRange``1(UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode,UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode,UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode)
+    name: InRange
+    isExternal: true
+    href: UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_InRange__1___0___0___0_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode
+    name: LightMode
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode.html
+  - name: )
+  - name: (
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode
+    name: LightMode
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode.html
+  - name: ','
+  - name: " "
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode
+    name: LightMode
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode.html
+  - name: ','
+  - name: " "
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode
+    name: LightMode
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode.html
+  - name: )
+- uid: UndyneFight_Ex.MathUtil.InRange``1(``0,``0,``0)
+  commentId: M:UndyneFight_Ex.MathUtil.InRange``1(``0,``0,``0)
+  isExternal: true
+  href: UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_InRange__1___0___0___0_
+  name: InRange<T>(T, T, T)
+  nameWithType: MathUtil.InRange<T>(T, T, T)
+  fullName: UndyneFight_Ex.MathUtil.InRange<T>(T, T, T)
+  nameWithType.vb: MathUtil.InRange(Of T)(T, T, T)
+  fullName.vb: UndyneFight_Ex.MathUtil.InRange(Of T)(T, T, T)
+  name.vb: InRange(Of T)(T, T, T)
+  spec.csharp:
+  - uid: UndyneFight_Ex.MathUtil.InRange``1(``0,``0,``0)
+    name: InRange
+    isExternal: true
+    href: UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_InRange__1___0___0___0_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.MathUtil.InRange``1(``0,``0,``0)
+    name: InRange
+    isExternal: true
+    href: UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_InRange__1___0___0___0_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+- uid: UndyneFight_Ex.MathUtil
+  commentId: T:UndyneFight_Ex.MathUtil
+  parent: UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.MathUtil.html
+  name: MathUtil
+  nameWithType: MathUtil
+  fullName: UndyneFight_Ex.MathUtil
+- uid: UndyneFight_Ex
+  commentId: N:UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex
+  nameWithType: UndyneFight_Ex
+  fullName: UndyneFight_Ex
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode
+  commentId: T:UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode
+  parent: UndyneFight_Ex.Fight
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html
+  name: Functions.ScreenDrawing.Shaders.Lighting.LightMode
+  nameWithType: Functions.ScreenDrawing.Shaders.Lighting.LightMode
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode
+  spec.csharp:
+  - uid: UndyneFight_Ex.Fight.Functions
+    name: Functions
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+    name: ScreenDrawing
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders
+    name: Shaders
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting
+    name: Lighting
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode
+    name: LightMode
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode.html
+  spec.vb:
+  - uid: UndyneFight_Ex.Fight.Functions
+    name: Functions
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+    name: ScreenDrawing
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders
+    name: Shaders
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting
+    name: Lighting
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode
+    name: LightMode
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode.html

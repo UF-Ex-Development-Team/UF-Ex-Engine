@@ -1,0 +1,696 @@
+### YamlMime:ManagedReference
+items:
+- uid: UndyneFight_Ex.Entities.BoxVertex
+  commentId: T:UndyneFight_Ex.Entities.BoxVertex
+  id: BoxVertex
+  parent: UndyneFight_Ex.Entities
+  children:
+  - UndyneFight_Ex.Entities.BoxVertex.#ctor
+  - UndyneFight_Ex.Entities.BoxVertex.#ctor(Microsoft.Xna.Framework.Vector2)
+  - UndyneFight_Ex.Entities.BoxVertex.CurrentPosition
+  - UndyneFight_Ex.Entities.BoxVertex.ID
+  - UndyneFight_Ex.Entities.BoxVertex.InstantMove(Microsoft.Xna.Framework.Vector2)
+  - UndyneFight_Ex.Entities.BoxVertex.MissionPosition
+  - UndyneFight_Ex.Entities.BoxVertex.Move(System.Single)
+  - UndyneFight_Ex.Entities.BoxVertex.Previous
+  - UndyneFight_Ex.Entities.BoxVertex.op_Implicit(Microsoft.Xna.Framework.Vector2)~UndyneFight_Ex.Entities.BoxVertex
+  - UndyneFight_Ex.Entities.BoxVertex.op_Implicit(UndyneFight_Ex.Entities.BoxVertex)~Microsoft.Xna.Framework.Vector2
+  langs:
+  - csharp
+  - vb
+  name: BoxVertex
+  nameWithType: BoxVertex
+  fullName: UndyneFight_Ex.Entities.BoxVertex
+  type: Class
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: A custom box vertex
+  example: []
+  syntax:
+    content: public class BoxVertex
+    content.vb: Public Class BoxVertex
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+- uid: UndyneFight_Ex.Entities.BoxVertex.#ctor(Microsoft.Xna.Framework.Vector2)
+  commentId: M:UndyneFight_Ex.Entities.BoxVertex.#ctor(Microsoft.Xna.Framework.Vector2)
+  id: '#ctor(Microsoft.Xna.Framework.Vector2)'
+  parent: UndyneFight_Ex.Entities.BoxVertex
+  langs:
+  - csharp
+  - vb
+  name: BoxVertex(Vector2)
+  nameWithType: BoxVertex.BoxVertex(Vector2)
+  fullName: UndyneFight_Ex.Entities.BoxVertex.BoxVertex(Microsoft.Xna.Framework.Vector2)
+  type: Constructor
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Creates a box vertex with a given position
+  example: []
+  syntax:
+    content: public BoxVertex(Vector2 pos)
+    parameters:
+    - id: pos
+      type: Microsoft.Xna.Framework.Vector2
+      description: The position of the vertex
+    content.vb: Public Sub New(pos As Vector2)
+  overload: UndyneFight_Ex.Entities.BoxVertex.#ctor*
+  nameWithType.vb: BoxVertex.New(Vector2)
+  fullName.vb: UndyneFight_Ex.Entities.BoxVertex.New(Microsoft.Xna.Framework.Vector2)
+  name.vb: New(Vector2)
+- uid: UndyneFight_Ex.Entities.BoxVertex.#ctor
+  commentId: M:UndyneFight_Ex.Entities.BoxVertex.#ctor
+  id: '#ctor'
+  parent: UndyneFight_Ex.Entities.BoxVertex
+  langs:
+  - csharp
+  - vb
+  name: BoxVertex()
+  nameWithType: BoxVertex.BoxVertex()
+  fullName: UndyneFight_Ex.Entities.BoxVertex.BoxVertex()
+  type: Constructor
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Creates a box vertex
+  example: []
+  syntax:
+    content: public BoxVertex()
+    content.vb: Public Sub New()
+  overload: UndyneFight_Ex.Entities.BoxVertex.#ctor*
+  nameWithType.vb: BoxVertex.New()
+  fullName.vb: UndyneFight_Ex.Entities.BoxVertex.New()
+  name.vb: New()
+- uid: UndyneFight_Ex.Entities.BoxVertex.Move(System.Single)
+  commentId: M:UndyneFight_Ex.Entities.BoxVertex.Move(System.Single)
+  id: Move(System.Single)
+  parent: UndyneFight_Ex.Entities.BoxVertex
+  langs:
+  - csharp
+  - vb
+  name: Move(float)
+  nameWithType: BoxVertex.Move(float)
+  fullName: UndyneFight_Ex.Entities.BoxVertex.Move(float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Moves the box position by 1 frame in the given lerp scale
+  example: []
+  syntax:
+    content: public void Move(float scale)
+    parameters:
+    - id: scale
+      type: System.Single
+      description: The lerp scale to move
+    content.vb: Public Sub Move(scale As Single)
+  overload: UndyneFight_Ex.Entities.BoxVertex.Move*
+  nameWithType.vb: BoxVertex.Move(Single)
+  fullName.vb: UndyneFight_Ex.Entities.BoxVertex.Move(Single)
+  name.vb: Move(Single)
+- uid: UndyneFight_Ex.Entities.BoxVertex.InstantMove(Microsoft.Xna.Framework.Vector2)
+  commentId: M:UndyneFight_Ex.Entities.BoxVertex.InstantMove(Microsoft.Xna.Framework.Vector2)
+  id: InstantMove(Microsoft.Xna.Framework.Vector2)
+  parent: UndyneFight_Ex.Entities.BoxVertex
+  langs:
+  - csharp
+  - vb
+  name: InstantMove(Vector2)
+  nameWithType: BoxVertex.InstantMove(Vector2)
+  fullName: UndyneFight_Ex.Entities.BoxVertex.InstantMove(Microsoft.Xna.Framework.Vector2)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Sets the box vertex to it's <xref href="UndyneFight_Ex.Entities.BoxVertex.MissionPosition" data-throw-if-not-resolved="false"></xref>
+  example: []
+  syntax:
+    content: public void InstantMove(Vector2 position)
+    parameters:
+    - id: position
+      type: Microsoft.Xna.Framework.Vector2
+      description: The <xref href="UndyneFight_Ex.Entities.BoxVertex.MissionPosition" data-throw-if-not-resolved="false"></xref> of the vertex
+    content.vb: Public Sub InstantMove(position As Vector2)
+  overload: UndyneFight_Ex.Entities.BoxVertex.InstantMove*
+- uid: UndyneFight_Ex.Entities.BoxVertex.op_Implicit(UndyneFight_Ex.Entities.BoxVertex)~Microsoft.Xna.Framework.Vector2
+  commentId: M:UndyneFight_Ex.Entities.BoxVertex.op_Implicit(UndyneFight_Ex.Entities.BoxVertex)~Microsoft.Xna.Framework.Vector2
+  id: op_Implicit(UndyneFight_Ex.Entities.BoxVertex)~Microsoft.Xna.Framework.Vector2
+  parent: UndyneFight_Ex.Entities.BoxVertex
+  langs:
+  - csharp
+  - vb
+  name: implicit operator Vector2(BoxVertex)
+  nameWithType: BoxVertex.implicit operator Vector2(BoxVertex)
+  fullName: UndyneFight_Ex.Entities.BoxVertex.implicit operator Microsoft.Xna.Framework.Vector2(UndyneFight_Ex.Entities.BoxVertex)
+  type: Operator
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Converts the box vertex into a Vector2
+  example: []
+  syntax:
+    content: public static implicit operator Vector2(BoxVertex v)
+    parameters:
+    - id: v
+      type: UndyneFight_Ex.Entities.BoxVertex
+      description: The box vertex to convert
+    return:
+      type: Microsoft.Xna.Framework.Vector2
+    content.vb: Public Shared Widening Operator CType(v As BoxVertex) As Vector2
+  overload: UndyneFight_Ex.Entities.BoxVertex.op_Implicit*
+  nameWithType.vb: BoxVertex.CType(BoxVertex)
+  fullName.vb: UndyneFight_Ex.Entities.BoxVertex.CType(UndyneFight_Ex.Entities.BoxVertex)
+  name.vb: CType(BoxVertex)
+- uid: UndyneFight_Ex.Entities.BoxVertex.op_Implicit(Microsoft.Xna.Framework.Vector2)~UndyneFight_Ex.Entities.BoxVertex
+  commentId: M:UndyneFight_Ex.Entities.BoxVertex.op_Implicit(Microsoft.Xna.Framework.Vector2)~UndyneFight_Ex.Entities.BoxVertex
+  id: op_Implicit(Microsoft.Xna.Framework.Vector2)~UndyneFight_Ex.Entities.BoxVertex
+  parent: UndyneFight_Ex.Entities.BoxVertex
+  langs:
+  - csharp
+  - vb
+  name: implicit operator BoxVertex(Vector2)
+  nameWithType: BoxVertex.implicit operator BoxVertex(Vector2)
+  fullName: UndyneFight_Ex.Entities.BoxVertex.implicit operator UndyneFight_Ex.Entities.BoxVertex(Microsoft.Xna.Framework.Vector2)
+  type: Operator
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Converts a Vector2 to box vertex
+  example: []
+  syntax:
+    content: public static implicit operator BoxVertex(Vector2 v)
+    parameters:
+    - id: v
+      type: Microsoft.Xna.Framework.Vector2
+      description: The Vector2 to convert
+    return:
+      type: UndyneFight_Ex.Entities.BoxVertex
+    content.vb: Public Shared Widening Operator CType(v As Vector2) As BoxVertex
+  overload: UndyneFight_Ex.Entities.BoxVertex.op_Implicit*
+  nameWithType.vb: BoxVertex.CType(Vector2)
+  fullName.vb: UndyneFight_Ex.Entities.BoxVertex.CType(Microsoft.Xna.Framework.Vector2)
+  name.vb: CType(Vector2)
+- uid: UndyneFight_Ex.Entities.BoxVertex.CurrentPosition
+  commentId: P:UndyneFight_Ex.Entities.BoxVertex.CurrentPosition
+  id: CurrentPosition
+  parent: UndyneFight_Ex.Entities.BoxVertex
+  langs:
+  - csharp
+  - vb
+  name: CurrentPosition
+  nameWithType: BoxVertex.CurrentPosition
+  fullName: UndyneFight_Ex.Entities.BoxVertex.CurrentPosition
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: The current position of the vertex
+  example: []
+  syntax:
+    content: public Vector2 CurrentPosition { get; set; }
+    parameters: []
+    return:
+      type: Microsoft.Xna.Framework.Vector2
+    content.vb: Public Property CurrentPosition As Vector2
+  overload: UndyneFight_Ex.Entities.BoxVertex.CurrentPosition*
+- uid: UndyneFight_Ex.Entities.BoxVertex.MissionPosition
+  commentId: P:UndyneFight_Ex.Entities.BoxVertex.MissionPosition
+  id: MissionPosition
+  parent: UndyneFight_Ex.Entities.BoxVertex
+  langs:
+  - csharp
+  - vb
+  name: MissionPosition
+  nameWithType: BoxVertex.MissionPosition
+  fullName: UndyneFight_Ex.Entities.BoxVertex.MissionPosition
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: The target position of the vertex
+  example: []
+  syntax:
+    content: public Vector2 MissionPosition { get; set; }
+    parameters: []
+    return:
+      type: Microsoft.Xna.Framework.Vector2
+    content.vb: Public Property MissionPosition As Vector2
+  overload: UndyneFight_Ex.Entities.BoxVertex.MissionPosition*
+- uid: UndyneFight_Ex.Entities.BoxVertex.ID
+  commentId: P:UndyneFight_Ex.Entities.BoxVertex.ID
+  id: ID
+  parent: UndyneFight_Ex.Entities.BoxVertex
+  langs:
+  - csharp
+  - vb
+  name: ID
+  nameWithType: BoxVertex.ID
+  fullName: UndyneFight_Ex.Entities.BoxVertex.ID
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: The ID of the vertex
+  example: []
+  syntax:
+    content: public int ID { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property ID As Integer
+  overload: UndyneFight_Ex.Entities.BoxVertex.ID*
+- uid: UndyneFight_Ex.Entities.BoxVertex.Previous
+  commentId: P:UndyneFight_Ex.Entities.BoxVertex.Previous
+  id: Previous
+  parent: UndyneFight_Ex.Entities.BoxVertex
+  langs:
+  - csharp
+  - vb
+  name: Previous
+  nameWithType: BoxVertex.Previous
+  fullName: UndyneFight_Ex.Entities.BoxVertex.Previous
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: The previous box vertex
+  example: []
+  syntax:
+    content: public BoxVertex Previous { get; set; }
+    parameters: []
+    return:
+      type: UndyneFight_Ex.Entities.BoxVertex
+    content.vb: Public Property Previous As BoxVertex
+  overload: UndyneFight_Ex.Entities.BoxVertex.Previous*
+references:
+- uid: UndyneFight_Ex.Entities
+  commentId: N:UndyneFight_Ex.Entities
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex.Entities
+  nameWithType: UndyneFight_Ex.Entities
+  fullName: UndyneFight_Ex.Entities
+  spec.csharp:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities
+    name: Entities
+    isExternal: true
+    href: UndyneFight_Ex.Entities.html
+  spec.vb:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities
+    name: Entities
+    isExternal: true
+    href: UndyneFight_Ex.Entities.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UndyneFight_Ex.Entities.BoxVertex.#ctor*
+  commentId: Overload:UndyneFight_Ex.Entities.BoxVertex.#ctor
+  isExternal: true
+  href: UndyneFight_Ex.Entities.BoxVertex.html#UndyneFight_Ex_Entities_BoxVertex__ctor_Microsoft_Xna_Framework_Vector2_
+  name: BoxVertex
+  nameWithType: BoxVertex.BoxVertex
+  fullName: UndyneFight_Ex.Entities.BoxVertex.BoxVertex
+  nameWithType.vb: BoxVertex.New
+  fullName.vb: UndyneFight_Ex.Entities.BoxVertex.New
+  name.vb: New
+- uid: Microsoft.Xna.Framework.Vector2
+  commentId: T:Microsoft.Xna.Framework.Vector2
+  parent: Microsoft.Xna.Framework
+  isExternal: true
+  name: Vector2
+  nameWithType: Vector2
+  fullName: Microsoft.Xna.Framework.Vector2
+- uid: Microsoft.Xna.Framework
+  commentId: N:Microsoft.Xna.Framework
+  isExternal: true
+  name: Microsoft.Xna.Framework
+  nameWithType: Microsoft.Xna.Framework
+  fullName: Microsoft.Xna.Framework
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+- uid: UndyneFight_Ex.Entities.BoxVertex.Move*
+  commentId: Overload:UndyneFight_Ex.Entities.BoxVertex.Move
+  isExternal: true
+  href: UndyneFight_Ex.Entities.BoxVertex.html#UndyneFight_Ex_Entities_BoxVertex_Move_System_Single_
+  name: Move
+  nameWithType: BoxVertex.Move
+  fullName: UndyneFight_Ex.Entities.BoxVertex.Move
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: UndyneFight_Ex.Entities.BoxVertex.MissionPosition
+  commentId: P:UndyneFight_Ex.Entities.BoxVertex.MissionPosition
+  isExternal: true
+  href: UndyneFight_Ex.Entities.BoxVertex.html#UndyneFight_Ex_Entities_BoxVertex_MissionPosition
+  name: MissionPosition
+  nameWithType: BoxVertex.MissionPosition
+  fullName: UndyneFight_Ex.Entities.BoxVertex.MissionPosition
+- uid: UndyneFight_Ex.Entities.BoxVertex.InstantMove*
+  commentId: Overload:UndyneFight_Ex.Entities.BoxVertex.InstantMove
+  isExternal: true
+  href: UndyneFight_Ex.Entities.BoxVertex.html#UndyneFight_Ex_Entities_BoxVertex_InstantMove_Microsoft_Xna_Framework_Vector2_
+  name: InstantMove
+  nameWithType: BoxVertex.InstantMove
+  fullName: UndyneFight_Ex.Entities.BoxVertex.InstantMove
+- uid: UndyneFight_Ex.Entities.BoxVertex.op_Implicit*
+  commentId: Overload:UndyneFight_Ex.Entities.BoxVertex.op_Implicit
+  name: implicit operator
+  nameWithType: BoxVertex.implicit operator
+  fullName: UndyneFight_Ex.Entities.BoxVertex.implicit operator
+  nameWithType.vb: BoxVertex.CType
+  fullName.vb: UndyneFight_Ex.Entities.BoxVertex.CType
+  name.vb: CType
+  spec.csharp:
+  - name: implicit
+  - name: " "
+  - name: operator
+- uid: UndyneFight_Ex.Entities.BoxVertex
+  commentId: T:UndyneFight_Ex.Entities.BoxVertex
+  parent: UndyneFight_Ex.Entities
+  isExternal: true
+  href: UndyneFight_Ex.Entities.BoxVertex.html
+  name: BoxVertex
+  nameWithType: BoxVertex
+  fullName: UndyneFight_Ex.Entities.BoxVertex
+- uid: UndyneFight_Ex.Entities.BoxVertex.CurrentPosition*
+  commentId: Overload:UndyneFight_Ex.Entities.BoxVertex.CurrentPosition
+  isExternal: true
+  href: UndyneFight_Ex.Entities.BoxVertex.html#UndyneFight_Ex_Entities_BoxVertex_CurrentPosition
+  name: CurrentPosition
+  nameWithType: BoxVertex.CurrentPosition
+  fullName: UndyneFight_Ex.Entities.BoxVertex.CurrentPosition
+- uid: UndyneFight_Ex.Entities.BoxVertex.MissionPosition*
+  commentId: Overload:UndyneFight_Ex.Entities.BoxVertex.MissionPosition
+  isExternal: true
+  href: UndyneFight_Ex.Entities.BoxVertex.html#UndyneFight_Ex_Entities_BoxVertex_MissionPosition
+  name: MissionPosition
+  nameWithType: BoxVertex.MissionPosition
+  fullName: UndyneFight_Ex.Entities.BoxVertex.MissionPosition
+- uid: UndyneFight_Ex.Entities.BoxVertex.ID*
+  commentId: Overload:UndyneFight_Ex.Entities.BoxVertex.ID
+  isExternal: true
+  href: UndyneFight_Ex.Entities.BoxVertex.html#UndyneFight_Ex_Entities_BoxVertex_ID
+  name: ID
+  nameWithType: BoxVertex.ID
+  fullName: UndyneFight_Ex.Entities.BoxVertex.ID
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: UndyneFight_Ex.Entities.BoxVertex.Previous*
+  commentId: Overload:UndyneFight_Ex.Entities.BoxVertex.Previous
+  isExternal: true
+  href: UndyneFight_Ex.Entities.BoxVertex.html#UndyneFight_Ex_Entities_BoxVertex_Previous
+  name: Previous
+  nameWithType: BoxVertex.Previous
+  fullName: UndyneFight_Ex.Entities.BoxVertex.Previous

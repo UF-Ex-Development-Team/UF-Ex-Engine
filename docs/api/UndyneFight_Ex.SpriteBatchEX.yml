@@ -1,0 +1,1408 @@
+### YamlMime:ManagedReference
+items:
+- uid: UndyneFight_Ex.SpriteBatchEX
+  commentId: T:UndyneFight_Ex.SpriteBatchEX
+  id: SpriteBatchEX
+  parent: UndyneFight_Ex
+  children:
+  - UndyneFight_Ex.SpriteBatchEX.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice)
+  - UndyneFight_Ex.SpriteBatchEX.Begin(Microsoft.Xna.Framework.Graphics.SpriteSortMode,Microsoft.Xna.Framework.Graphics.BlendState,Microsoft.Xna.Framework.Graphics.SamplerState,Microsoft.Xna.Framework.Graphics.DepthStencilState,Microsoft.Xna.Framework.Graphics.RasterizerState,Microsoft.Xna.Framework.Graphics.Effect,System.Nullable{Microsoft.Xna.Framework.Matrix})
+  - UndyneFight_Ex.SpriteBatchEX.DefaultState
+  - UndyneFight_Ex.SpriteBatchEX.Draw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Nullable{UndyneFight_Ex.CollideRect},Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Graphics.SpriteEffects,System.Single)
+  - UndyneFight_Ex.SpriteBatchEX.Draw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Nullable{UndyneFight_Ex.CollideRect},Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Graphics.SpriteEffects,System.Single)
+  - UndyneFight_Ex.SpriteBatchEX.Draw(Microsoft.Xna.Framework.Graphics.Texture2D,UndyneFight_Ex.CollideRect,System.Nullable{UndyneFight_Ex.CollideRect},Microsoft.Xna.Framework.Color)
+  - UndyneFight_Ex.SpriteBatchEX.Draw(Microsoft.Xna.Framework.Graphics.Texture2D,UndyneFight_Ex.CollideRect,System.Nullable{UndyneFight_Ex.CollideRect},Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Graphics.SpriteEffects,System.Single)
+  - UndyneFight_Ex.SpriteBatchEX.Draw(Microsoft.Xna.Framework.Graphics.Texture2D,UndyneFight_Ex.CollideRect,System.Nullable{UndyneFight_Ex.CollideRect},Microsoft.Xna.Framework.Color,System.Single,System.Nullable{Microsoft.Xna.Framework.Vector2},Microsoft.Xna.Framework.Graphics.SpriteEffects,System.Single)
+  - UndyneFight_Ex.SpriteBatchEX.DrawSortedVertex(System.Single,Microsoft.Xna.Framework.Graphics.VertexPositionColor[])
+  - UndyneFight_Ex.SpriteBatchEX.DrawString(UndyneFight_Ex.GLFont,System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Graphics.SpriteEffects,System.Single)
+  - UndyneFight_Ex.SpriteBatchEX.DrawString(UndyneFight_Ex.GLFont,System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Vector2},Microsoft.Xna.Framework.Graphics.SpriteEffects,System.Single)
+  - UndyneFight_Ex.SpriteBatchEX.DrawString(UndyneFight_Ex.GLFont,System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color[],System.Single,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Vector2},Microsoft.Xna.Framework.Graphics.SpriteEffects,System.Single)
+  - UndyneFight_Ex.SpriteBatchEX.DrawVertex(Microsoft.Xna.Framework.Graphics.Texture2D,System.Single,Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture[])
+  - UndyneFight_Ex.SpriteBatchEX.DrawVertex(Microsoft.Xna.Framework.Graphics.Texture2D,System.Single,Microsoft.Xna.Framework.Graphics.VertexPositionColor[])
+  - UndyneFight_Ex.SpriteBatchEX.DrawVertex(Microsoft.Xna.Framework.Graphics.Texture2D,System.Single,System.Int32[],Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture[])
+  - UndyneFight_Ex.SpriteBatchEX.DrawVertex(Microsoft.Xna.Framework.Graphics.Texture2D,System.Single,System.Int32[],Microsoft.Xna.Framework.Graphics.VertexPositionColor[])
+  - UndyneFight_Ex.SpriteBatchEX.DrawVertex(System.Single,Microsoft.Xna.Framework.Graphics.VertexPositionColor[])
+  - UndyneFight_Ex.SpriteBatchEX.End
+  - UndyneFight_Ex.SpriteBatchEX.GraphicsDevice
+  - UndyneFight_Ex.SpriteBatchEX.NearestSample
+  - UndyneFight_Ex.SpriteBatchEX._graphicDevice
+  langs:
+  - csharp
+  - vb
+  name: SpriteBatchEX
+  nameWithType: SpriteBatchEX
+  fullName: UndyneFight_Ex.SpriteBatchEX
+  type: Class
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Extended sprite batch class
+  example: []
+  syntax:
+    content: public class SpriteBatchEX
+    content.vb: Public Class SpriteBatchEX
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+- uid: UndyneFight_Ex.SpriteBatchEX._graphicDevice
+  commentId: F:UndyneFight_Ex.SpriteBatchEX._graphicDevice
+  id: _graphicDevice
+  parent: UndyneFight_Ex.SpriteBatchEX
+  langs:
+  - csharp
+  - vb
+  name: _graphicDevice
+  nameWithType: SpriteBatchEX._graphicDevice
+  fullName: UndyneFight_Ex.SpriteBatchEX._graphicDevice
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  syntax:
+    content: protected GraphicsDevice _graphicDevice
+    return:
+      type: Microsoft.Xna.Framework.Graphics.GraphicsDevice
+    content.vb: Protected _graphicDevice As GraphicsDevice
+- uid: UndyneFight_Ex.SpriteBatchEX.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice)
+  commentId: M:UndyneFight_Ex.SpriteBatchEX.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice)
+  id: '#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice)'
+  parent: UndyneFight_Ex.SpriteBatchEX
+  langs:
+  - csharp
+  - vb
+  name: SpriteBatchEX(GraphicsDevice)
+  nameWithType: SpriteBatchEX.SpriteBatchEX(GraphicsDevice)
+  fullName: UndyneFight_Ex.SpriteBatchEX.SpriteBatchEX(Microsoft.Xna.Framework.Graphics.GraphicsDevice)
+  type: Constructor
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Creates a new sprite batch
+  example: []
+  syntax:
+    content: public SpriteBatchEX(GraphicsDevice graphicsDevice)
+    parameters:
+    - id: graphicsDevice
+      type: Microsoft.Xna.Framework.Graphics.GraphicsDevice
+      description: The graphics device to use
+    content.vb: Public Sub New(graphicsDevice As GraphicsDevice)
+  overload: UndyneFight_Ex.SpriteBatchEX.#ctor*
+  nameWithType.vb: SpriteBatchEX.New(GraphicsDevice)
+  fullName.vb: UndyneFight_Ex.SpriteBatchEX.New(Microsoft.Xna.Framework.Graphics.GraphicsDevice)
+  name.vb: New(GraphicsDevice)
+- uid: UndyneFight_Ex.SpriteBatchEX.Begin(Microsoft.Xna.Framework.Graphics.SpriteSortMode,Microsoft.Xna.Framework.Graphics.BlendState,Microsoft.Xna.Framework.Graphics.SamplerState,Microsoft.Xna.Framework.Graphics.DepthStencilState,Microsoft.Xna.Framework.Graphics.RasterizerState,Microsoft.Xna.Framework.Graphics.Effect,System.Nullable{Microsoft.Xna.Framework.Matrix})
+  commentId: M:UndyneFight_Ex.SpriteBatchEX.Begin(Microsoft.Xna.Framework.Graphics.SpriteSortMode,Microsoft.Xna.Framework.Graphics.BlendState,Microsoft.Xna.Framework.Graphics.SamplerState,Microsoft.Xna.Framework.Graphics.DepthStencilState,Microsoft.Xna.Framework.Graphics.RasterizerState,Microsoft.Xna.Framework.Graphics.Effect,System.Nullable{Microsoft.Xna.Framework.Matrix})
+  id: Begin(Microsoft.Xna.Framework.Graphics.SpriteSortMode,Microsoft.Xna.Framework.Graphics.BlendState,Microsoft.Xna.Framework.Graphics.SamplerState,Microsoft.Xna.Framework.Graphics.DepthStencilState,Microsoft.Xna.Framework.Graphics.RasterizerState,Microsoft.Xna.Framework.Graphics.Effect,System.Nullable{Microsoft.Xna.Framework.Matrix})
+  parent: UndyneFight_Ex.SpriteBatchEX
+  langs:
+  - csharp
+  - vb
+  name: Begin(SpriteSortMode, BlendState, SamplerState, DepthStencilState, RasterizerState, Effect, Matrix?)
+  nameWithType: SpriteBatchEX.Begin(SpriteSortMode, BlendState, SamplerState, DepthStencilState, RasterizerState, Effect, Matrix?)
+  fullName: UndyneFight_Ex.SpriteBatchEX.Begin(Microsoft.Xna.Framework.Graphics.SpriteSortMode, Microsoft.Xna.Framework.Graphics.BlendState, Microsoft.Xna.Framework.Graphics.SamplerState, Microsoft.Xna.Framework.Graphics.DepthStencilState, Microsoft.Xna.Framework.Graphics.RasterizerState, Microsoft.Xna.Framework.Graphics.Effect, Microsoft.Xna.Framework.Matrix?)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: begins the sprite batch rendering
+  example: []
+  syntax:
+    content: public void Begin(SpriteSortMode sortMode = SpriteSortMode.Deferred, BlendState blendState = null, SamplerState samplerState = null, DepthStencilState depthStencilState = null, RasterizerState rasterizerState = null, Effect effect = null, Matrix? transform = null)
+    parameters:
+    - id: sortMode
+      type: Microsoft.Xna.Framework.Graphics.SpriteSortMode
+      description: Sorting method of the sprites
+    - id: blendState
+      type: Microsoft.Xna.Framework.Graphics.BlendState
+      description: Blending state of the sprites
+    - id: samplerState
+      type: Microsoft.Xna.Framework.Graphics.SamplerState
+      description: The sampler state of the sprites
+    - id: depthStencilState
+      type: Microsoft.Xna.Framework.Graphics.DepthStencilState
+      description: The stencil buffer of the sprites
+    - id: rasterizerState
+      type: Microsoft.Xna.Framework.Graphics.RasterizerState
+      description: The rasterizer state of the sprites
+    - id: effect
+      type: Microsoft.Xna.Framework.Graphics.Effect
+      description: The effect to render the sprites with
+    - id: transform
+      type: System.Nullable{Microsoft.Xna.Framework.Matrix}
+      description: The world matrix of the sprites
+    content.vb: Public Sub Begin(sortMode As SpriteSortMode = SpriteSortMode.Deferred, blendState As BlendState = Nothing, samplerState As SamplerState = Nothing, depthStencilState As DepthStencilState = Nothing, rasterizerState As RasterizerState = Nothing, effect As Effect = Nothing, transform As Matrix? = Nothing)
+  overload: UndyneFight_Ex.SpriteBatchEX.Begin*
+  exceptions:
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: ''
+- uid: UndyneFight_Ex.SpriteBatchEX.End
+  commentId: M:UndyneFight_Ex.SpriteBatchEX.End
+  id: End
+  parent: UndyneFight_Ex.SpriteBatchEX
+  langs:
+  - csharp
+  - vb
+  name: End()
+  nameWithType: SpriteBatchEX.End()
+  fullName: UndyneFight_Ex.SpriteBatchEX.End()
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Ends the current sprite batch rendering
+  example: []
+  syntax:
+    content: public void End()
+    content.vb: Public Sub [End]()
+  overload: UndyneFight_Ex.SpriteBatchEX.End*
+  exceptions:
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: ''
+- uid: UndyneFight_Ex.SpriteBatchEX.Draw(Microsoft.Xna.Framework.Graphics.Texture2D,UndyneFight_Ex.CollideRect,System.Nullable{UndyneFight_Ex.CollideRect},Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Graphics.SpriteEffects,System.Single)
+  commentId: M:UndyneFight_Ex.SpriteBatchEX.Draw(Microsoft.Xna.Framework.Graphics.Texture2D,UndyneFight_Ex.CollideRect,System.Nullable{UndyneFight_Ex.CollideRect},Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Graphics.SpriteEffects,System.Single)
+  id: Draw(Microsoft.Xna.Framework.Graphics.Texture2D,UndyneFight_Ex.CollideRect,System.Nullable{UndyneFight_Ex.CollideRect},Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Graphics.SpriteEffects,System.Single)
+  parent: UndyneFight_Ex.SpriteBatchEX
+  langs:
+  - csharp
+  - vb
+  name: Draw(Texture2D, CollideRect, CollideRect?, Color, float, Vector2, Vector2, SpriteEffects, float)
+  nameWithType: SpriteBatchEX.Draw(Texture2D, CollideRect, CollideRect?, Color, float, Vector2, Vector2, SpriteEffects, float)
+  fullName: UndyneFight_Ex.SpriteBatchEX.Draw(Microsoft.Xna.Framework.Graphics.Texture2D, UndyneFight_Ex.CollideRect, UndyneFight_Ex.CollideRect?, Microsoft.Xna.Framework.Color, float, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Graphics.SpriteEffects, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  syntax:
+    content: public void Draw(Texture2D texture, CollideRect origin, CollideRect? source, Color color, float rotation, Vector2 anchor, Vector2 scale, SpriteEffects effects, float depth)
+    parameters:
+    - id: texture
+      type: Microsoft.Xna.Framework.Graphics.Texture2D
+    - id: origin
+      type: UndyneFight_Ex.CollideRect
+    - id: source
+      type: System.Nullable{UndyneFight_Ex.CollideRect}
+    - id: color
+      type: Microsoft.Xna.Framework.Color
+    - id: rotation
+      type: System.Single
+    - id: anchor
+      type: Microsoft.Xna.Framework.Vector2
+    - id: scale
+      type: Microsoft.Xna.Framework.Vector2
+    - id: effects
+      type: Microsoft.Xna.Framework.Graphics.SpriteEffects
+    - id: depth
+      type: System.Single
+    content.vb: Public Sub Draw(texture As Texture2D, origin As CollideRect, source As CollideRect?, color As Color, rotation As Single, anchor As Vector2, scale As Vector2, effects As SpriteEffects, depth As Single)
+  overload: UndyneFight_Ex.SpriteBatchEX.Draw*
+  nameWithType.vb: SpriteBatchEX.Draw(Texture2D, CollideRect, CollideRect?, Color, Single, Vector2, Vector2, SpriteEffects, Single)
+  fullName.vb: UndyneFight_Ex.SpriteBatchEX.Draw(Microsoft.Xna.Framework.Graphics.Texture2D, UndyneFight_Ex.CollideRect, UndyneFight_Ex.CollideRect?, Microsoft.Xna.Framework.Color, Single, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Graphics.SpriteEffects, Single)
+  name.vb: Draw(Texture2D, CollideRect, CollideRect?, Color, Single, Vector2, Vector2, SpriteEffects, Single)
+- uid: UndyneFight_Ex.SpriteBatchEX.Draw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Nullable{UndyneFight_Ex.CollideRect},Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Graphics.SpriteEffects,System.Single)
+  commentId: M:UndyneFight_Ex.SpriteBatchEX.Draw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Nullable{UndyneFight_Ex.CollideRect},Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Graphics.SpriteEffects,System.Single)
+  id: Draw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Nullable{UndyneFight_Ex.CollideRect},Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Graphics.SpriteEffects,System.Single)
+  parent: UndyneFight_Ex.SpriteBatchEX
+  langs:
+  - csharp
+  - vb
+  name: Draw(Texture2D, Vector2, CollideRect?, Color, float, Vector2, Vector2, SpriteEffects, float)
+  nameWithType: SpriteBatchEX.Draw(Texture2D, Vector2, CollideRect?, Color, float, Vector2, Vector2, SpriteEffects, float)
+  fullName: UndyneFight_Ex.SpriteBatchEX.Draw(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Vector2, UndyneFight_Ex.CollideRect?, Microsoft.Xna.Framework.Color, float, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Graphics.SpriteEffects, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  syntax:
+    content: public void Draw(Texture2D texture, Vector2 position, CollideRect? sourceRectangle, Color color, float rotation, Vector2 anchor, Vector2 scale, SpriteEffects effects, float depth)
+    parameters:
+    - id: texture
+      type: Microsoft.Xna.Framework.Graphics.Texture2D
+    - id: position
+      type: Microsoft.Xna.Framework.Vector2
+    - id: sourceRectangle
+      type: System.Nullable{UndyneFight_Ex.CollideRect}
+    - id: color
+      type: Microsoft.Xna.Framework.Color
+    - id: rotation
+      type: System.Single
+    - id: anchor
+      type: Microsoft.Xna.Framework.Vector2
+    - id: scale
+      type: Microsoft.Xna.Framework.Vector2
+    - id: effects
+      type: Microsoft.Xna.Framework.Graphics.SpriteEffects
+    - id: depth
+      type: System.Single
+    content.vb: Public Sub Draw(texture As Texture2D, position As Vector2, sourceRectangle As CollideRect?, color As Color, rotation As Single, anchor As Vector2, scale As Vector2, effects As SpriteEffects, depth As Single)
+  overload: UndyneFight_Ex.SpriteBatchEX.Draw*
+  nameWithType.vb: SpriteBatchEX.Draw(Texture2D, Vector2, CollideRect?, Color, Single, Vector2, Vector2, SpriteEffects, Single)
+  fullName.vb: UndyneFight_Ex.SpriteBatchEX.Draw(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Vector2, UndyneFight_Ex.CollideRect?, Microsoft.Xna.Framework.Color, Single, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Graphics.SpriteEffects, Single)
+  name.vb: Draw(Texture2D, Vector2, CollideRect?, Color, Single, Vector2, Vector2, SpriteEffects, Single)
+- uid: UndyneFight_Ex.SpriteBatchEX.Draw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Nullable{UndyneFight_Ex.CollideRect},Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Graphics.SpriteEffects,System.Single)
+  commentId: M:UndyneFight_Ex.SpriteBatchEX.Draw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Nullable{UndyneFight_Ex.CollideRect},Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Graphics.SpriteEffects,System.Single)
+  id: Draw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Nullable{UndyneFight_Ex.CollideRect},Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Graphics.SpriteEffects,System.Single)
+  parent: UndyneFight_Ex.SpriteBatchEX
+  langs:
+  - csharp
+  - vb
+  name: Draw(Texture2D, Vector2, CollideRect?, Color, float, Vector2, float, SpriteEffects, float)
+  nameWithType: SpriteBatchEX.Draw(Texture2D, Vector2, CollideRect?, Color, float, Vector2, float, SpriteEffects, float)
+  fullName: UndyneFight_Ex.SpriteBatchEX.Draw(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Vector2, UndyneFight_Ex.CollideRect?, Microsoft.Xna.Framework.Color, float, Microsoft.Xna.Framework.Vector2, float, Microsoft.Xna.Framework.Graphics.SpriteEffects, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  syntax:
+    content: public void Draw(Texture2D texture, Vector2 centre, CollideRect? sourceRectangle, Color color, float rotation, Vector2 anchor, float scale, SpriteEffects effects, float depth)
+    parameters:
+    - id: texture
+      type: Microsoft.Xna.Framework.Graphics.Texture2D
+    - id: centre
+      type: Microsoft.Xna.Framework.Vector2
+    - id: sourceRectangle
+      type: System.Nullable{UndyneFight_Ex.CollideRect}
+    - id: color
+      type: Microsoft.Xna.Framework.Color
+    - id: rotation
+      type: System.Single
+    - id: anchor
+      type: Microsoft.Xna.Framework.Vector2
+    - id: scale
+      type: System.Single
+    - id: effects
+      type: Microsoft.Xna.Framework.Graphics.SpriteEffects
+    - id: depth
+      type: System.Single
+    content.vb: Public Sub Draw(texture As Texture2D, centre As Vector2, sourceRectangle As CollideRect?, color As Color, rotation As Single, anchor As Vector2, scale As Single, effects As SpriteEffects, depth As Single)
+  overload: UndyneFight_Ex.SpriteBatchEX.Draw*
+  nameWithType.vb: SpriteBatchEX.Draw(Texture2D, Vector2, CollideRect?, Color, Single, Vector2, Single, SpriteEffects, Single)
+  fullName.vb: UndyneFight_Ex.SpriteBatchEX.Draw(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Vector2, UndyneFight_Ex.CollideRect?, Microsoft.Xna.Framework.Color, Single, Microsoft.Xna.Framework.Vector2, Single, Microsoft.Xna.Framework.Graphics.SpriteEffects, Single)
+  name.vb: Draw(Texture2D, Vector2, CollideRect?, Color, Single, Vector2, Single, SpriteEffects, Single)
+- uid: UndyneFight_Ex.SpriteBatchEX.Draw(Microsoft.Xna.Framework.Graphics.Texture2D,UndyneFight_Ex.CollideRect,System.Nullable{UndyneFight_Ex.CollideRect},Microsoft.Xna.Framework.Color,System.Single,System.Nullable{Microsoft.Xna.Framework.Vector2},Microsoft.Xna.Framework.Graphics.SpriteEffects,System.Single)
+  commentId: M:UndyneFight_Ex.SpriteBatchEX.Draw(Microsoft.Xna.Framework.Graphics.Texture2D,UndyneFight_Ex.CollideRect,System.Nullable{UndyneFight_Ex.CollideRect},Microsoft.Xna.Framework.Color,System.Single,System.Nullable{Microsoft.Xna.Framework.Vector2},Microsoft.Xna.Framework.Graphics.SpriteEffects,System.Single)
+  id: Draw(Microsoft.Xna.Framework.Graphics.Texture2D,UndyneFight_Ex.CollideRect,System.Nullable{UndyneFight_Ex.CollideRect},Microsoft.Xna.Framework.Color,System.Single,System.Nullable{Microsoft.Xna.Framework.Vector2},Microsoft.Xna.Framework.Graphics.SpriteEffects,System.Single)
+  parent: UndyneFight_Ex.SpriteBatchEX
+  langs:
+  - csharp
+  - vb
+  name: Draw(Texture2D, CollideRect, CollideRect?, Color, float, Vector2?, SpriteEffects, float)
+  nameWithType: SpriteBatchEX.Draw(Texture2D, CollideRect, CollideRect?, Color, float, Vector2?, SpriteEffects, float)
+  fullName: UndyneFight_Ex.SpriteBatchEX.Draw(Microsoft.Xna.Framework.Graphics.Texture2D, UndyneFight_Ex.CollideRect, UndyneFight_Ex.CollideRect?, Microsoft.Xna.Framework.Color, float, Microsoft.Xna.Framework.Vector2?, Microsoft.Xna.Framework.Graphics.SpriteEffects, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  syntax:
+    content: public void Draw(Texture2D texture, CollideRect rect1, CollideRect? rect2, Color color, float rotation = 0, Vector2? anchor = null, SpriteEffects se = SpriteEffects.None, float depth = 0)
+    parameters:
+    - id: texture
+      type: Microsoft.Xna.Framework.Graphics.Texture2D
+    - id: rect1
+      type: UndyneFight_Ex.CollideRect
+    - id: rect2
+      type: System.Nullable{UndyneFight_Ex.CollideRect}
+    - id: color
+      type: Microsoft.Xna.Framework.Color
+    - id: rotation
+      type: System.Single
+    - id: anchor
+      type: System.Nullable{Microsoft.Xna.Framework.Vector2}
+    - id: se
+      type: Microsoft.Xna.Framework.Graphics.SpriteEffects
+    - id: depth
+      type: System.Single
+    content.vb: Public Sub Draw(texture As Texture2D, rect1 As CollideRect, rect2 As CollideRect?, color As Color, rotation As Single = 0, anchor As Vector2? = Nothing, se As SpriteEffects = SpriteEffects.None, depth As Single = 0)
+  overload: UndyneFight_Ex.SpriteBatchEX.Draw*
+  nameWithType.vb: SpriteBatchEX.Draw(Texture2D, CollideRect, CollideRect?, Color, Single, Vector2?, SpriteEffects, Single)
+  fullName.vb: UndyneFight_Ex.SpriteBatchEX.Draw(Microsoft.Xna.Framework.Graphics.Texture2D, UndyneFight_Ex.CollideRect, UndyneFight_Ex.CollideRect?, Microsoft.Xna.Framework.Color, Single, Microsoft.Xna.Framework.Vector2?, Microsoft.Xna.Framework.Graphics.SpriteEffects, Single)
+  name.vb: Draw(Texture2D, CollideRect, CollideRect?, Color, Single, Vector2?, SpriteEffects, Single)
+- uid: UndyneFight_Ex.SpriteBatchEX.Draw(Microsoft.Xna.Framework.Graphics.Texture2D,UndyneFight_Ex.CollideRect,System.Nullable{UndyneFight_Ex.CollideRect},Microsoft.Xna.Framework.Color)
+  commentId: M:UndyneFight_Ex.SpriteBatchEX.Draw(Microsoft.Xna.Framework.Graphics.Texture2D,UndyneFight_Ex.CollideRect,System.Nullable{UndyneFight_Ex.CollideRect},Microsoft.Xna.Framework.Color)
+  id: Draw(Microsoft.Xna.Framework.Graphics.Texture2D,UndyneFight_Ex.CollideRect,System.Nullable{UndyneFight_Ex.CollideRect},Microsoft.Xna.Framework.Color)
+  parent: UndyneFight_Ex.SpriteBatchEX
+  langs:
+  - csharp
+  - vb
+  name: Draw(Texture2D, CollideRect, CollideRect?, Color)
+  nameWithType: SpriteBatchEX.Draw(Texture2D, CollideRect, CollideRect?, Color)
+  fullName: UndyneFight_Ex.SpriteBatchEX.Draw(Microsoft.Xna.Framework.Graphics.Texture2D, UndyneFight_Ex.CollideRect, UndyneFight_Ex.CollideRect?, Microsoft.Xna.Framework.Color)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  syntax:
+    content: public void Draw(Texture2D texture, CollideRect rect1, CollideRect? rect2, Color color)
+    parameters:
+    - id: texture
+      type: Microsoft.Xna.Framework.Graphics.Texture2D
+    - id: rect1
+      type: UndyneFight_Ex.CollideRect
+    - id: rect2
+      type: System.Nullable{UndyneFight_Ex.CollideRect}
+    - id: color
+      type: Microsoft.Xna.Framework.Color
+    content.vb: Public Sub Draw(texture As Texture2D, rect1 As CollideRect, rect2 As CollideRect?, color As Color)
+  overload: UndyneFight_Ex.SpriteBatchEX.Draw*
+- uid: UndyneFight_Ex.SpriteBatchEX.DrawVertex(Microsoft.Xna.Framework.Graphics.Texture2D,System.Single,Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture[])
+  commentId: M:UndyneFight_Ex.SpriteBatchEX.DrawVertex(Microsoft.Xna.Framework.Graphics.Texture2D,System.Single,Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture[])
+  id: DrawVertex(Microsoft.Xna.Framework.Graphics.Texture2D,System.Single,Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture[])
+  parent: UndyneFight_Ex.SpriteBatchEX
+  langs:
+  - csharp
+  - vb
+  name: DrawVertex(Texture2D, float, params VertexPositionColorTexture[])
+  nameWithType: SpriteBatchEX.DrawVertex(Texture2D, float, params VertexPositionColorTexture[])
+  fullName: UndyneFight_Ex.SpriteBatchEX.DrawVertex(Microsoft.Xna.Framework.Graphics.Texture2D, float, params Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture[])
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Give the Vertices information of sprite to draw on the current RenderTarget
+  example: []
+  syntax:
+    content: public void DrawVertex(Texture2D texture, float depth, params VertexPositionColorTexture[] Vertices)
+    parameters:
+    - id: texture
+      type: Microsoft.Xna.Framework.Graphics.Texture2D
+      description: the texture sprite
+    - id: depth
+      type: System.Single
+      description: The depth to sort
+    - id: Vertices
+      type: Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture[]
+      description: The Vertices given. Make them in the order of clockwise!
+    content.vb: Public Sub DrawVertex(texture As Texture2D, depth As Single, ParamArray Vertices As VertexPositionColorTexture())
+  overload: UndyneFight_Ex.SpriteBatchEX.DrawVertex*
+  nameWithType.vb: SpriteBatchEX.DrawVertex(Texture2D, Single, ParamArray VertexPositionColorTexture())
+  fullName.vb: UndyneFight_Ex.SpriteBatchEX.DrawVertex(Microsoft.Xna.Framework.Graphics.Texture2D, Single, ParamArray Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture())
+  name.vb: DrawVertex(Texture2D, Single, ParamArray VertexPositionColorTexture())
+- uid: UndyneFight_Ex.SpriteBatchEX.DrawVertex(System.Single,Microsoft.Xna.Framework.Graphics.VertexPositionColor[])
+  commentId: M:UndyneFight_Ex.SpriteBatchEX.DrawVertex(System.Single,Microsoft.Xna.Framework.Graphics.VertexPositionColor[])
+  id: DrawVertex(System.Single,Microsoft.Xna.Framework.Graphics.VertexPositionColor[])
+  parent: UndyneFight_Ex.SpriteBatchEX
+  langs:
+  - csharp
+  - vb
+  name: DrawVertex(float, params VertexPositionColor[])
+  nameWithType: SpriteBatchEX.DrawVertex(float, params VertexPositionColor[])
+  fullName: UndyneFight_Ex.SpriteBatchEX.DrawVertex(float, params Microsoft.Xna.Framework.Graphics.VertexPositionColor[])
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Give the Vertices information of sprite to draw on the current RenderTarget
+  example: []
+  syntax:
+    content: public void DrawVertex(float depth, params VertexPositionColor[] Vertices)
+    parameters:
+    - id: depth
+      type: System.Single
+      description: The depth to sort
+    - id: Vertices
+      type: Microsoft.Xna.Framework.Graphics.VertexPositionColor[]
+      description: The Vertices given. Make them in the order of clockwise!
+    content.vb: Public Sub DrawVertex(depth As Single, ParamArray Vertices As VertexPositionColor())
+  overload: UndyneFight_Ex.SpriteBatchEX.DrawVertex*
+  nameWithType.vb: SpriteBatchEX.DrawVertex(Single, ParamArray VertexPositionColor())
+  fullName.vb: UndyneFight_Ex.SpriteBatchEX.DrawVertex(Single, ParamArray Microsoft.Xna.Framework.Graphics.VertexPositionColor())
+  name.vb: DrawVertex(Single, ParamArray VertexPositionColor())
+- uid: UndyneFight_Ex.SpriteBatchEX.DrawSortedVertex(System.Single,Microsoft.Xna.Framework.Graphics.VertexPositionColor[])
+  commentId: M:UndyneFight_Ex.SpriteBatchEX.DrawSortedVertex(System.Single,Microsoft.Xna.Framework.Graphics.VertexPositionColor[])
+  id: DrawSortedVertex(System.Single,Microsoft.Xna.Framework.Graphics.VertexPositionColor[])
+  parent: UndyneFight_Ex.SpriteBatchEX
+  langs:
+  - csharp
+  - vb
+  name: DrawSortedVertex(float, params VertexPositionColor[])
+  nameWithType: SpriteBatchEX.DrawSortedVertex(float, params VertexPositionColor[])
+  fullName: UndyneFight_Ex.SpriteBatchEX.DrawSortedVertex(float, params Microsoft.Xna.Framework.Graphics.VertexPositionColor[])
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Give the Vertices information of sprite to draw on the current RenderTarget
+  example: []
+  syntax:
+    content: public void DrawSortedVertex(float depth, params VertexPositionColor[] vertices)
+    parameters:
+    - id: depth
+      type: System.Single
+      description: The depth to sort
+    - id: vertices
+      type: Microsoft.Xna.Framework.Graphics.VertexPositionColor[]
+      description: The Vertices given. Make them in the order of clockwise!
+    content.vb: Public Sub DrawSortedVertex(depth As Single, ParamArray vertices As VertexPositionColor())
+  overload: UndyneFight_Ex.SpriteBatchEX.DrawSortedVertex*
+  nameWithType.vb: SpriteBatchEX.DrawSortedVertex(Single, ParamArray VertexPositionColor())
+  fullName.vb: UndyneFight_Ex.SpriteBatchEX.DrawSortedVertex(Single, ParamArray Microsoft.Xna.Framework.Graphics.VertexPositionColor())
+  name.vb: DrawSortedVertex(Single, ParamArray VertexPositionColor())
+- uid: UndyneFight_Ex.SpriteBatchEX.DrawVertex(Microsoft.Xna.Framework.Graphics.Texture2D,System.Single,System.Int32[],Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture[])
+  commentId: M:UndyneFight_Ex.SpriteBatchEX.DrawVertex(Microsoft.Xna.Framework.Graphics.Texture2D,System.Single,System.Int32[],Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture[])
+  id: DrawVertex(Microsoft.Xna.Framework.Graphics.Texture2D,System.Single,System.Int32[],Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture[])
+  parent: UndyneFight_Ex.SpriteBatchEX
+  langs:
+  - csharp
+  - vb
+  name: DrawVertex(Texture2D, float, int[], params VertexPositionColorTexture[])
+  nameWithType: SpriteBatchEX.DrawVertex(Texture2D, float, int[], params VertexPositionColorTexture[])
+  fullName: UndyneFight_Ex.SpriteBatchEX.DrawVertex(Microsoft.Xna.Framework.Graphics.Texture2D, float, int[], params Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture[])
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Give the Vertices information of sprite to draw on the current RenderTarget
+  example: []
+  syntax:
+    content: public void DrawVertex(Texture2D texture, float depth, int[] indices, params VertexPositionColorTexture[] vertices)
+    parameters:
+    - id: texture
+      type: Microsoft.Xna.Framework.Graphics.Texture2D
+      description: the texture sprite
+    - id: depth
+      type: System.Single
+      description: The depth to sort
+    - id: indices
+      type: System.Int32[]
+      description: The list of indices of the texture
+    - id: vertices
+      type: Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture[]
+      description: The Vertices given. Make them in the order of clockwise!
+    content.vb: Public Sub DrawVertex(texture As Texture2D, depth As Single, indices As Integer(), ParamArray vertices As VertexPositionColorTexture())
+  overload: UndyneFight_Ex.SpriteBatchEX.DrawVertex*
+  nameWithType.vb: SpriteBatchEX.DrawVertex(Texture2D, Single, Integer(), ParamArray VertexPositionColorTexture())
+  fullName.vb: UndyneFight_Ex.SpriteBatchEX.DrawVertex(Microsoft.Xna.Framework.Graphics.Texture2D, Single, Integer(), ParamArray Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture())
+  name.vb: DrawVertex(Texture2D, Single, Integer(), ParamArray VertexPositionColorTexture())
+- uid: UndyneFight_Ex.SpriteBatchEX.DrawVertex(Microsoft.Xna.Framework.Graphics.Texture2D,System.Single,Microsoft.Xna.Framework.Graphics.VertexPositionColor[])
+  commentId: M:UndyneFight_Ex.SpriteBatchEX.DrawVertex(Microsoft.Xna.Framework.Graphics.Texture2D,System.Single,Microsoft.Xna.Framework.Graphics.VertexPositionColor[])
+  id: DrawVertex(Microsoft.Xna.Framework.Graphics.Texture2D,System.Single,Microsoft.Xna.Framework.Graphics.VertexPositionColor[])
+  parent: UndyneFight_Ex.SpriteBatchEX
+  langs:
+  - csharp
+  - vb
+  name: DrawVertex(Texture2D, float, params VertexPositionColor[])
+  nameWithType: SpriteBatchEX.DrawVertex(Texture2D, float, params VertexPositionColor[])
+  fullName: UndyneFight_Ex.SpriteBatchEX.DrawVertex(Microsoft.Xna.Framework.Graphics.Texture2D, float, params Microsoft.Xna.Framework.Graphics.VertexPositionColor[])
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Give the Vertices information of sprite to draw on the current RenderTarget
+  example: []
+  syntax:
+    content: public void DrawVertex(Texture2D texture, float depth, params VertexPositionColor[] vertices)
+    parameters:
+    - id: texture
+      type: Microsoft.Xna.Framework.Graphics.Texture2D
+      description: the texture sprite
+    - id: depth
+      type: System.Single
+      description: The depth to sort
+    - id: vertices
+      type: Microsoft.Xna.Framework.Graphics.VertexPositionColor[]
+      description: The Vertices given. Make them in the order of clockwise!
+    content.vb: Public Sub DrawVertex(texture As Texture2D, depth As Single, ParamArray vertices As VertexPositionColor())
+  overload: UndyneFight_Ex.SpriteBatchEX.DrawVertex*
+  nameWithType.vb: SpriteBatchEX.DrawVertex(Texture2D, Single, ParamArray VertexPositionColor())
+  fullName.vb: UndyneFight_Ex.SpriteBatchEX.DrawVertex(Microsoft.Xna.Framework.Graphics.Texture2D, Single, ParamArray Microsoft.Xna.Framework.Graphics.VertexPositionColor())
+  name.vb: DrawVertex(Texture2D, Single, ParamArray VertexPositionColor())
+- uid: UndyneFight_Ex.SpriteBatchEX.DrawVertex(Microsoft.Xna.Framework.Graphics.Texture2D,System.Single,System.Int32[],Microsoft.Xna.Framework.Graphics.VertexPositionColor[])
+  commentId: M:UndyneFight_Ex.SpriteBatchEX.DrawVertex(Microsoft.Xna.Framework.Graphics.Texture2D,System.Single,System.Int32[],Microsoft.Xna.Framework.Graphics.VertexPositionColor[])
+  id: DrawVertex(Microsoft.Xna.Framework.Graphics.Texture2D,System.Single,System.Int32[],Microsoft.Xna.Framework.Graphics.VertexPositionColor[])
+  parent: UndyneFight_Ex.SpriteBatchEX
+  langs:
+  - csharp
+  - vb
+  name: DrawVertex(Texture2D, float, int[], params VertexPositionColor[])
+  nameWithType: SpriteBatchEX.DrawVertex(Texture2D, float, int[], params VertexPositionColor[])
+  fullName: UndyneFight_Ex.SpriteBatchEX.DrawVertex(Microsoft.Xna.Framework.Graphics.Texture2D, float, int[], params Microsoft.Xna.Framework.Graphics.VertexPositionColor[])
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Give the Vertices information of sprite to draw on the current RenderTarget
+  example: []
+  syntax:
+    content: public void DrawVertex(Texture2D texture, float depth, int[] indices, params VertexPositionColor[] vertices)
+    parameters:
+    - id: texture
+      type: Microsoft.Xna.Framework.Graphics.Texture2D
+      description: the texture sprite
+    - id: depth
+      type: System.Single
+      description: The depth to sort
+    - id: indices
+      type: System.Int32[]
+      description: ''
+    - id: vertices
+      type: Microsoft.Xna.Framework.Graphics.VertexPositionColor[]
+      description: The Vertices given. Make them in the order of clockwise!
+    content.vb: Public Sub DrawVertex(texture As Texture2D, depth As Single, indices As Integer(), ParamArray vertices As VertexPositionColor())
+  overload: UndyneFight_Ex.SpriteBatchEX.DrawVertex*
+  nameWithType.vb: SpriteBatchEX.DrawVertex(Texture2D, Single, Integer(), ParamArray VertexPositionColor())
+  fullName.vb: UndyneFight_Ex.SpriteBatchEX.DrawVertex(Microsoft.Xna.Framework.Graphics.Texture2D, Single, Integer(), ParamArray Microsoft.Xna.Framework.Graphics.VertexPositionColor())
+  name.vb: DrawVertex(Texture2D, Single, Integer(), ParamArray VertexPositionColor())
+- uid: UndyneFight_Ex.SpriteBatchEX.DrawString(UndyneFight_Ex.GLFont,System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Graphics.SpriteEffects,System.Single)
+  commentId: M:UndyneFight_Ex.SpriteBatchEX.DrawString(UndyneFight_Ex.GLFont,System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Graphics.SpriteEffects,System.Single)
+  id: DrawString(UndyneFight_Ex.GLFont,System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Graphics.SpriteEffects,System.Single)
+  parent: UndyneFight_Ex.SpriteBatchEX
+  langs:
+  - csharp
+  - vb
+  name: DrawString(GLFont, string, Vector2, Color, float, Vector2, float, SpriteEffects, float)
+  nameWithType: SpriteBatchEX.DrawString(GLFont, string, Vector2, Color, float, Vector2, float, SpriteEffects, float)
+  fullName: UndyneFight_Ex.SpriteBatchEX.DrawString(UndyneFight_Ex.GLFont, string, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Color, float, Microsoft.Xna.Framework.Vector2, float, Microsoft.Xna.Framework.Graphics.SpriteEffects, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  syntax:
+    content: public void DrawString(GLFont spriteFont, string text, Vector2 position, Color color, float rotation, Vector2 origin, float scale, SpriteEffects effects, float layerDepth)
+    parameters:
+    - id: spriteFont
+      type: UndyneFight_Ex.GLFont
+    - id: text
+      type: System.String
+    - id: position
+      type: Microsoft.Xna.Framework.Vector2
+    - id: color
+      type: Microsoft.Xna.Framework.Color
+    - id: rotation
+      type: System.Single
+    - id: origin
+      type: Microsoft.Xna.Framework.Vector2
+    - id: scale
+      type: System.Single
+    - id: effects
+      type: Microsoft.Xna.Framework.Graphics.SpriteEffects
+    - id: layerDepth
+      type: System.Single
+    content.vb: Public Sub DrawString(spriteFont As GLFont, text As String, position As Vector2, color As Color, rotation As Single, origin As Vector2, scale As Single, effects As SpriteEffects, layerDepth As Single)
+  overload: UndyneFight_Ex.SpriteBatchEX.DrawString*
+  nameWithType.vb: SpriteBatchEX.DrawString(GLFont, String, Vector2, Color, Single, Vector2, Single, SpriteEffects, Single)
+  fullName.vb: UndyneFight_Ex.SpriteBatchEX.DrawString(UndyneFight_Ex.GLFont, String, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Color, Single, Microsoft.Xna.Framework.Vector2, Single, Microsoft.Xna.Framework.Graphics.SpriteEffects, Single)
+  name.vb: DrawString(GLFont, String, Vector2, Color, Single, Vector2, Single, SpriteEffects, Single)
+- uid: UndyneFight_Ex.SpriteBatchEX.DrawString(UndyneFight_Ex.GLFont,System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Vector2},Microsoft.Xna.Framework.Graphics.SpriteEffects,System.Single)
+  commentId: M:UndyneFight_Ex.SpriteBatchEX.DrawString(UndyneFight_Ex.GLFont,System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Vector2},Microsoft.Xna.Framework.Graphics.SpriteEffects,System.Single)
+  id: DrawString(UndyneFight_Ex.GLFont,System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Vector2},Microsoft.Xna.Framework.Graphics.SpriteEffects,System.Single)
+  parent: UndyneFight_Ex.SpriteBatchEX
+  langs:
+  - csharp
+  - vb
+  name: DrawString(GLFont, string, Vector2, Color, float, Vector2?, Vector2?, SpriteEffects, float)
+  nameWithType: SpriteBatchEX.DrawString(GLFont, string, Vector2, Color, float, Vector2?, Vector2?, SpriteEffects, float)
+  fullName: UndyneFight_Ex.SpriteBatchEX.DrawString(UndyneFight_Ex.GLFont, string, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Color, float, Microsoft.Xna.Framework.Vector2?, Microsoft.Xna.Framework.Vector2?, Microsoft.Xna.Framework.Graphics.SpriteEffects, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  syntax:
+    content: public void DrawString(GLFont font, string text, Vector2 position, Color color, float rotation = 0, Vector2? originN = null, Vector2? scaleN = null, SpriteEffects effects = SpriteEffects.None, float layerDepth = 0)
+    parameters:
+    - id: font
+      type: UndyneFight_Ex.GLFont
+    - id: text
+      type: System.String
+    - id: position
+      type: Microsoft.Xna.Framework.Vector2
+    - id: color
+      type: Microsoft.Xna.Framework.Color
+    - id: rotation
+      type: System.Single
+    - id: originN
+      type: System.Nullable{Microsoft.Xna.Framework.Vector2}
+    - id: scaleN
+      type: System.Nullable{Microsoft.Xna.Framework.Vector2}
+    - id: effects
+      type: Microsoft.Xna.Framework.Graphics.SpriteEffects
+    - id: layerDepth
+      type: System.Single
+    content.vb: Public Sub DrawString(font As GLFont, text As String, position As Vector2, color As Color, rotation As Single = 0, originN As Vector2? = Nothing, scaleN As Vector2? = Nothing, effects As SpriteEffects = SpriteEffects.None, layerDepth As Single = 0)
+  overload: UndyneFight_Ex.SpriteBatchEX.DrawString*
+  nameWithType.vb: SpriteBatchEX.DrawString(GLFont, String, Vector2, Color, Single, Vector2?, Vector2?, SpriteEffects, Single)
+  fullName.vb: UndyneFight_Ex.SpriteBatchEX.DrawString(UndyneFight_Ex.GLFont, String, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Color, Single, Microsoft.Xna.Framework.Vector2?, Microsoft.Xna.Framework.Vector2?, Microsoft.Xna.Framework.Graphics.SpriteEffects, Single)
+  name.vb: DrawString(GLFont, String, Vector2, Color, Single, Vector2?, Vector2?, SpriteEffects, Single)
+- uid: UndyneFight_Ex.SpriteBatchEX.DrawString(UndyneFight_Ex.GLFont,System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color[],System.Single,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Vector2},Microsoft.Xna.Framework.Graphics.SpriteEffects,System.Single)
+  commentId: M:UndyneFight_Ex.SpriteBatchEX.DrawString(UndyneFight_Ex.GLFont,System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color[],System.Single,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Vector2},Microsoft.Xna.Framework.Graphics.SpriteEffects,System.Single)
+  id: DrawString(UndyneFight_Ex.GLFont,System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color[],System.Single,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Vector2},Microsoft.Xna.Framework.Graphics.SpriteEffects,System.Single)
+  parent: UndyneFight_Ex.SpriteBatchEX
+  langs:
+  - csharp
+  - vb
+  name: DrawString(GLFont, string, Vector2, Color[], float, Vector2?, Vector2?, SpriteEffects, float)
+  nameWithType: SpriteBatchEX.DrawString(GLFont, string, Vector2, Color[], float, Vector2?, Vector2?, SpriteEffects, float)
+  fullName: UndyneFight_Ex.SpriteBatchEX.DrawString(UndyneFight_Ex.GLFont, string, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Color[], float, Microsoft.Xna.Framework.Vector2?, Microsoft.Xna.Framework.Vector2?, Microsoft.Xna.Framework.Graphics.SpriteEffects, float)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  syntax:
+    content: public void DrawString(GLFont font, string text, Vector2 position, Color[] color, float rotation = 0, Vector2? originN = null, Vector2? scaleN = null, SpriteEffects effects = SpriteEffects.None, float layerDepth = 0)
+    parameters:
+    - id: font
+      type: UndyneFight_Ex.GLFont
+    - id: text
+      type: System.String
+    - id: position
+      type: Microsoft.Xna.Framework.Vector2
+    - id: color
+      type: Microsoft.Xna.Framework.Color[]
+    - id: rotation
+      type: System.Single
+    - id: originN
+      type: System.Nullable{Microsoft.Xna.Framework.Vector2}
+    - id: scaleN
+      type: System.Nullable{Microsoft.Xna.Framework.Vector2}
+    - id: effects
+      type: Microsoft.Xna.Framework.Graphics.SpriteEffects
+    - id: layerDepth
+      type: System.Single
+    content.vb: Public Sub DrawString(font As GLFont, text As String, position As Vector2, color As Color(), rotation As Single = 0, originN As Vector2? = Nothing, scaleN As Vector2? = Nothing, effects As SpriteEffects = SpriteEffects.None, layerDepth As Single = 0)
+  overload: UndyneFight_Ex.SpriteBatchEX.DrawString*
+  nameWithType.vb: SpriteBatchEX.DrawString(GLFont, String, Vector2, Color(), Single, Vector2?, Vector2?, SpriteEffects, Single)
+  fullName.vb: UndyneFight_Ex.SpriteBatchEX.DrawString(UndyneFight_Ex.GLFont, String, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Color(), Single, Microsoft.Xna.Framework.Vector2?, Microsoft.Xna.Framework.Vector2?, Microsoft.Xna.Framework.Graphics.SpriteEffects, Single)
+  name.vb: DrawString(GLFont, String, Vector2, Color(), Single, Vector2?, Vector2?, SpriteEffects, Single)
+- uid: UndyneFight_Ex.SpriteBatchEX.GraphicsDevice
+  commentId: P:UndyneFight_Ex.SpriteBatchEX.GraphicsDevice
+  id: GraphicsDevice
+  parent: UndyneFight_Ex.SpriteBatchEX
+  langs:
+  - csharp
+  - vb
+  name: GraphicsDevice
+  nameWithType: SpriteBatchEX.GraphicsDevice
+  fullName: UndyneFight_Ex.SpriteBatchEX.GraphicsDevice
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  syntax:
+    content: public GraphicsDevice GraphicsDevice { get; }
+    parameters: []
+    return:
+      type: Microsoft.Xna.Framework.Graphics.GraphicsDevice
+    content.vb: Public ReadOnly Property GraphicsDevice As GraphicsDevice
+  overload: UndyneFight_Ex.SpriteBatchEX.GraphicsDevice*
+- uid: UndyneFight_Ex.SpriteBatchEX.NearestSample
+  commentId: P:UndyneFight_Ex.SpriteBatchEX.NearestSample
+  id: NearestSample
+  parent: UndyneFight_Ex.SpriteBatchEX
+  langs:
+  - csharp
+  - vb
+  name: NearestSample
+  nameWithType: SpriteBatchEX.NearestSample
+  fullName: UndyneFight_Ex.SpriteBatchEX.NearestSample
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  syntax:
+    content: public static SamplerState NearestSample { get; set; }
+    parameters: []
+    return:
+      type: Microsoft.Xna.Framework.Graphics.SamplerState
+    content.vb: Public Shared Property NearestSample As SamplerState
+  overload: UndyneFight_Ex.SpriteBatchEX.NearestSample*
+- uid: UndyneFight_Ex.SpriteBatchEX.DefaultState
+  commentId: P:UndyneFight_Ex.SpriteBatchEX.DefaultState
+  id: DefaultState
+  parent: UndyneFight_Ex.SpriteBatchEX
+  langs:
+  - csharp
+  - vb
+  name: DefaultState
+  nameWithType: SpriteBatchEX.DefaultState
+  fullName: UndyneFight_Ex.SpriteBatchEX.DefaultState
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  syntax:
+    content: public SamplerState DefaultState { get; set; }
+    parameters: []
+    return:
+      type: Microsoft.Xna.Framework.Graphics.SamplerState
+    content.vb: Public Property DefaultState As SamplerState
+  overload: UndyneFight_Ex.SpriteBatchEX.DefaultState*
+references:
+- uid: UndyneFight_Ex
+  commentId: N:UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex
+  nameWithType: UndyneFight_Ex
+  fullName: UndyneFight_Ex
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.Xna.Framework.Graphics.GraphicsDevice
+  commentId: T:Microsoft.Xna.Framework.Graphics.GraphicsDevice
+  parent: Microsoft.Xna.Framework.Graphics
+  isExternal: true
+  name: GraphicsDevice
+  nameWithType: GraphicsDevice
+  fullName: Microsoft.Xna.Framework.Graphics.GraphicsDevice
+- uid: Microsoft.Xna.Framework.Graphics
+  commentId: N:Microsoft.Xna.Framework.Graphics
+  isExternal: true
+  name: Microsoft.Xna.Framework.Graphics
+  nameWithType: Microsoft.Xna.Framework.Graphics
+  fullName: Microsoft.Xna.Framework.Graphics
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework.Graphics
+    name: Graphics
+    isExternal: true
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework.Graphics
+    name: Graphics
+    isExternal: true
+- uid: UndyneFight_Ex.SpriteBatchEX.#ctor*
+  commentId: Overload:UndyneFight_Ex.SpriteBatchEX.#ctor
+  isExternal: true
+  href: UndyneFight_Ex.SpriteBatchEX.html#UndyneFight_Ex_SpriteBatchEX__ctor_Microsoft_Xna_Framework_Graphics_GraphicsDevice_
+  name: SpriteBatchEX
+  nameWithType: SpriteBatchEX.SpriteBatchEX
+  fullName: UndyneFight_Ex.SpriteBatchEX.SpriteBatchEX
+  nameWithType.vb: SpriteBatchEX.New
+  fullName.vb: UndyneFight_Ex.SpriteBatchEX.New
+  name.vb: New
+- uid: System.InvalidOperationException
+  commentId: T:System.InvalidOperationException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.invalidoperationexception
+  name: InvalidOperationException
+  nameWithType: InvalidOperationException
+  fullName: System.InvalidOperationException
+- uid: UndyneFight_Ex.SpriteBatchEX.Begin*
+  commentId: Overload:UndyneFight_Ex.SpriteBatchEX.Begin
+  isExternal: true
+  href: UndyneFight_Ex.SpriteBatchEX.html#UndyneFight_Ex_SpriteBatchEX_Begin_Microsoft_Xna_Framework_Graphics_SpriteSortMode_Microsoft_Xna_Framework_Graphics_BlendState_Microsoft_Xna_Framework_Graphics_SamplerState_Microsoft_Xna_Framework_Graphics_DepthStencilState_Microsoft_Xna_Framework_Graphics_RasterizerState_Microsoft_Xna_Framework_Graphics_Effect_System_Nullable_Microsoft_Xna_Framework_Matrix__
+  name: Begin
+  nameWithType: SpriteBatchEX.Begin
+  fullName: UndyneFight_Ex.SpriteBatchEX.Begin
+- uid: Microsoft.Xna.Framework.Graphics.SpriteSortMode
+  commentId: T:Microsoft.Xna.Framework.Graphics.SpriteSortMode
+  parent: Microsoft.Xna.Framework.Graphics
+  isExternal: true
+  name: SpriteSortMode
+  nameWithType: SpriteSortMode
+  fullName: Microsoft.Xna.Framework.Graphics.SpriteSortMode
+- uid: Microsoft.Xna.Framework.Graphics.BlendState
+  commentId: T:Microsoft.Xna.Framework.Graphics.BlendState
+  parent: Microsoft.Xna.Framework.Graphics
+  isExternal: true
+  name: BlendState
+  nameWithType: BlendState
+  fullName: Microsoft.Xna.Framework.Graphics.BlendState
+- uid: Microsoft.Xna.Framework.Graphics.SamplerState
+  commentId: T:Microsoft.Xna.Framework.Graphics.SamplerState
+  parent: Microsoft.Xna.Framework.Graphics
+  isExternal: true
+  name: SamplerState
+  nameWithType: SamplerState
+  fullName: Microsoft.Xna.Framework.Graphics.SamplerState
+- uid: Microsoft.Xna.Framework.Graphics.DepthStencilState
+  commentId: T:Microsoft.Xna.Framework.Graphics.DepthStencilState
+  parent: Microsoft.Xna.Framework.Graphics
+  isExternal: true
+  name: DepthStencilState
+  nameWithType: DepthStencilState
+  fullName: Microsoft.Xna.Framework.Graphics.DepthStencilState
+- uid: Microsoft.Xna.Framework.Graphics.RasterizerState
+  commentId: T:Microsoft.Xna.Framework.Graphics.RasterizerState
+  parent: Microsoft.Xna.Framework.Graphics
+  isExternal: true
+  name: RasterizerState
+  nameWithType: RasterizerState
+  fullName: Microsoft.Xna.Framework.Graphics.RasterizerState
+- uid: Microsoft.Xna.Framework.Graphics.Effect
+  commentId: T:Microsoft.Xna.Framework.Graphics.Effect
+  parent: Microsoft.Xna.Framework.Graphics
+  isExternal: true
+  name: Effect
+  nameWithType: Effect
+  fullName: Microsoft.Xna.Framework.Graphics.Effect
+- uid: System.Nullable{Microsoft.Xna.Framework.Matrix}
+  commentId: T:System.Nullable{Microsoft.Xna.Framework.Matrix}
+  parent: System
+  definition: System.Nullable`1
+  name: Matrix?
+  nameWithType: Matrix?
+  fullName: Microsoft.Xna.Framework.Matrix?
+  spec.csharp:
+  - uid: Microsoft.Xna.Framework.Matrix
+    name: Matrix
+    isExternal: true
+  - name: '?'
+  spec.vb:
+  - uid: Microsoft.Xna.Framework.Matrix
+    name: Matrix
+    isExternal: true
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: UndyneFight_Ex.SpriteBatchEX.End*
+  commentId: Overload:UndyneFight_Ex.SpriteBatchEX.End
+  isExternal: true
+  href: UndyneFight_Ex.SpriteBatchEX.html#UndyneFight_Ex_SpriteBatchEX_End
+  name: End
+  nameWithType: SpriteBatchEX.End
+  fullName: UndyneFight_Ex.SpriteBatchEX.End
+- uid: UndyneFight_Ex.SpriteBatchEX.Draw*
+  commentId: Overload:UndyneFight_Ex.SpriteBatchEX.Draw
+  isExternal: true
+  href: UndyneFight_Ex.SpriteBatchEX.html#UndyneFight_Ex_SpriteBatchEX_Draw_Microsoft_Xna_Framework_Graphics_Texture2D_UndyneFight_Ex_CollideRect_System_Nullable_UndyneFight_Ex_CollideRect__Microsoft_Xna_Framework_Color_System_Single_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Graphics_SpriteEffects_System_Single_
+  name: Draw
+  nameWithType: SpriteBatchEX.Draw
+  fullName: UndyneFight_Ex.SpriteBatchEX.Draw
+- uid: Microsoft.Xna.Framework.Graphics.Texture2D
+  commentId: T:Microsoft.Xna.Framework.Graphics.Texture2D
+  parent: Microsoft.Xna.Framework.Graphics
+  isExternal: true
+  name: Texture2D
+  nameWithType: Texture2D
+  fullName: Microsoft.Xna.Framework.Graphics.Texture2D
+- uid: UndyneFight_Ex.CollideRect
+  commentId: T:UndyneFight_Ex.CollideRect
+  parent: UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.CollideRect.html
+  name: CollideRect
+  nameWithType: CollideRect
+  fullName: UndyneFight_Ex.CollideRect
+- uid: System.Nullable{UndyneFight_Ex.CollideRect}
+  commentId: T:System.Nullable{UndyneFight_Ex.CollideRect}
+  parent: System
+  definition: System.Nullable`1
+  href: UndyneFight_Ex.CollideRect.html
+  name: CollideRect?
+  nameWithType: CollideRect?
+  fullName: UndyneFight_Ex.CollideRect?
+  spec.csharp:
+  - uid: UndyneFight_Ex.CollideRect
+    name: CollideRect
+    isExternal: true
+    href: UndyneFight_Ex.CollideRect.html
+  - name: '?'
+  spec.vb:
+  - uid: UndyneFight_Ex.CollideRect
+    name: CollideRect
+    isExternal: true
+    href: UndyneFight_Ex.CollideRect.html
+  - name: '?'
+- uid: Microsoft.Xna.Framework.Color
+  commentId: T:Microsoft.Xna.Framework.Color
+  parent: Microsoft.Xna.Framework
+  isExternal: true
+  name: Color
+  nameWithType: Color
+  fullName: Microsoft.Xna.Framework.Color
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: Microsoft.Xna.Framework.Vector2
+  commentId: T:Microsoft.Xna.Framework.Vector2
+  parent: Microsoft.Xna.Framework
+  isExternal: true
+  name: Vector2
+  nameWithType: Vector2
+  fullName: Microsoft.Xna.Framework.Vector2
+- uid: Microsoft.Xna.Framework.Graphics.SpriteEffects
+  commentId: T:Microsoft.Xna.Framework.Graphics.SpriteEffects
+  parent: Microsoft.Xna.Framework.Graphics
+  isExternal: true
+  name: SpriteEffects
+  nameWithType: SpriteEffects
+  fullName: Microsoft.Xna.Framework.Graphics.SpriteEffects
+- uid: Microsoft.Xna.Framework
+  commentId: N:Microsoft.Xna.Framework
+  isExternal: true
+  name: Microsoft.Xna.Framework
+  nameWithType: Microsoft.Xna.Framework
+  fullName: Microsoft.Xna.Framework
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+- uid: System.Nullable{Microsoft.Xna.Framework.Vector2}
+  commentId: T:System.Nullable{Microsoft.Xna.Framework.Vector2}
+  parent: System
+  definition: System.Nullable`1
+  name: Vector2?
+  nameWithType: Vector2?
+  fullName: Microsoft.Xna.Framework.Vector2?
+  spec.csharp:
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: '?'
+  spec.vb:
+  - uid: Microsoft.Xna.Framework.Vector2
+    name: Vector2
+    isExternal: true
+  - name: '?'
+- uid: UndyneFight_Ex.SpriteBatchEX.DrawVertex*
+  commentId: Overload:UndyneFight_Ex.SpriteBatchEX.DrawVertex
+  isExternal: true
+  href: UndyneFight_Ex.SpriteBatchEX.html#UndyneFight_Ex_SpriteBatchEX_DrawVertex_Microsoft_Xna_Framework_Graphics_Texture2D_System_Single_Microsoft_Xna_Framework_Graphics_VertexPositionColorTexture___
+  name: DrawVertex
+  nameWithType: SpriteBatchEX.DrawVertex
+  fullName: UndyneFight_Ex.SpriteBatchEX.DrawVertex
+- uid: Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture[]
+  isExternal: true
+  name: VertexPositionColorTexture[]
+  nameWithType: VertexPositionColorTexture[]
+  fullName: Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture[]
+  nameWithType.vb: VertexPositionColorTexture()
+  fullName.vb: Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture()
+  name.vb: VertexPositionColorTexture()
+  spec.csharp:
+  - uid: Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture
+    name: VertexPositionColorTexture
+    isExternal: true
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture
+    name: VertexPositionColorTexture
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Microsoft.Xna.Framework.Graphics.VertexPositionColor[]
+  isExternal: true
+  name: VertexPositionColor[]
+  nameWithType: VertexPositionColor[]
+  fullName: Microsoft.Xna.Framework.Graphics.VertexPositionColor[]
+  nameWithType.vb: VertexPositionColor()
+  fullName.vb: Microsoft.Xna.Framework.Graphics.VertexPositionColor()
+  name.vb: VertexPositionColor()
+  spec.csharp:
+  - uid: Microsoft.Xna.Framework.Graphics.VertexPositionColor
+    name: VertexPositionColor
+    isExternal: true
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: Microsoft.Xna.Framework.Graphics.VertexPositionColor
+    name: VertexPositionColor
+    isExternal: true
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.SpriteBatchEX.DrawSortedVertex*
+  commentId: Overload:UndyneFight_Ex.SpriteBatchEX.DrawSortedVertex
+  isExternal: true
+  href: UndyneFight_Ex.SpriteBatchEX.html#UndyneFight_Ex_SpriteBatchEX_DrawSortedVertex_System_Single_Microsoft_Xna_Framework_Graphics_VertexPositionColor___
+  name: DrawSortedVertex
+  nameWithType: SpriteBatchEX.DrawSortedVertex
+  fullName: UndyneFight_Ex.SpriteBatchEX.DrawSortedVertex
+- uid: System.Int32[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int[]
+  nameWithType: int[]
+  fullName: int[]
+  nameWithType.vb: Integer()
+  fullName.vb: Integer()
+  name.vb: Integer()
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.SpriteBatchEX.DrawString*
+  commentId: Overload:UndyneFight_Ex.SpriteBatchEX.DrawString
+  isExternal: true
+  href: UndyneFight_Ex.SpriteBatchEX.html#UndyneFight_Ex_SpriteBatchEX_DrawString_UndyneFight_Ex_GLFont_System_String_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_System_Single_Microsoft_Xna_Framework_Vector2_System_Single_Microsoft_Xna_Framework_Graphics_SpriteEffects_System_Single_
+  name: DrawString
+  nameWithType: SpriteBatchEX.DrawString
+  fullName: UndyneFight_Ex.SpriteBatchEX.DrawString
+- uid: UndyneFight_Ex.GLFont
+  commentId: T:UndyneFight_Ex.GLFont
+  parent: UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.GLFont.html
+  name: GLFont
+  nameWithType: GLFont
+  fullName: UndyneFight_Ex.GLFont
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Microsoft.Xna.Framework.Color[]
+  isExternal: true
+  name: Color[]
+  nameWithType: Color[]
+  fullName: Microsoft.Xna.Framework.Color[]
+  nameWithType.vb: Color()
+  fullName.vb: Microsoft.Xna.Framework.Color()
+  name.vb: Color()
+  spec.csharp:
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: Microsoft.Xna.Framework.Color
+    name: Color
+    isExternal: true
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.SpriteBatchEX.GraphicsDevice*
+  commentId: Overload:UndyneFight_Ex.SpriteBatchEX.GraphicsDevice
+  isExternal: true
+  href: UndyneFight_Ex.SpriteBatchEX.html#UndyneFight_Ex_SpriteBatchEX_GraphicsDevice
+  name: GraphicsDevice
+  nameWithType: SpriteBatchEX.GraphicsDevice
+  fullName: UndyneFight_Ex.SpriteBatchEX.GraphicsDevice
+- uid: UndyneFight_Ex.SpriteBatchEX.NearestSample*
+  commentId: Overload:UndyneFight_Ex.SpriteBatchEX.NearestSample
+  isExternal: true
+  href: UndyneFight_Ex.SpriteBatchEX.html#UndyneFight_Ex_SpriteBatchEX_NearestSample
+  name: NearestSample
+  nameWithType: SpriteBatchEX.NearestSample
+  fullName: UndyneFight_Ex.SpriteBatchEX.NearestSample
+- uid: UndyneFight_Ex.SpriteBatchEX.DefaultState*
+  commentId: Overload:UndyneFight_Ex.SpriteBatchEX.DefaultState
+  isExternal: true
+  href: UndyneFight_Ex.SpriteBatchEX.html#UndyneFight_Ex_SpriteBatchEX_DefaultState
+  name: DefaultState
+  nameWithType: SpriteBatchEX.DefaultState
+  fullName: UndyneFight_Ex.SpriteBatchEX.DefaultState

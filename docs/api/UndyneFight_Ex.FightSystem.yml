@@ -1,0 +1,1076 @@
+### YamlMime:ManagedReference
+items:
+- uid: UndyneFight_Ex.FightSystem
+  commentId: T:UndyneFight_Ex.FightSystem
+  id: FightSystem
+  parent: UndyneFight_Ex
+  children:
+  - UndyneFight_Ex.FightSystem.AllSongs
+  - UndyneFight_Ex.FightSystem.Challenges
+  - UndyneFight_Ex.FightSystem.ChampionShips
+  - UndyneFight_Ex.FightSystem.CurrentChampionShip
+  - UndyneFight_Ex.FightSystem.CurrentSongs
+  - UndyneFight_Ex.FightSystem.CustomSongs
+  - UndyneFight_Ex.FightSystem.ExtraSongSets
+  - UndyneFight_Ex.FightSystem.GetPlayableCharts
+  - UndyneFight_Ex.FightSystem.Initialize(System.Collections.Generic.List{System.Type})
+  - UndyneFight_Ex.FightSystem.MainGameFights
+  - UndyneFight_Ex.FightSystem.MainGameSongs
+  - UndyneFight_Ex.FightSystem.PushChallenge(UndyneFight_Ex.Challenge)
+  - UndyneFight_Ex.FightSystem.PushChampionShip(UndyneFight_Ex.ChampionShips.ChampionShip)
+  - UndyneFight_Ex.FightSystem.PushExtra(UndyneFight_Ex.Fight.IExtraOption)
+  - UndyneFight_Ex.FightSystem.PushSongSet(UndyneFight_Ex.SongSet)
+  - UndyneFight_Ex.FightSystem.RemoveSongSet(UndyneFight_Ex.SongSet)
+  langs:
+  - csharp
+  - vb
+  name: FightSystem
+  nameWithType: FightSystem
+  fullName: UndyneFight_Ex.FightSystem
+  type: Class
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  syntax:
+    content: public static class FightSystem
+    content.vb: Public Module FightSystem
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+- uid: UndyneFight_Ex.FightSystem.Initialize(System.Collections.Generic.List{System.Type})
+  commentId: M:UndyneFight_Ex.FightSystem.Initialize(System.Collections.Generic.List{System.Type})
+  id: Initialize(System.Collections.Generic.List{System.Type})
+  parent: UndyneFight_Ex.FightSystem
+  langs:
+  - csharp
+  - vb
+  name: Initialize(List<Type>)
+  nameWithType: FightSystem.Initialize(List<Type>)
+  fullName: UndyneFight_Ex.FightSystem.Initialize(System.Collections.Generic.List<System.Type>)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  syntax:
+    content: public static void Initialize(List<Type> loadItems)
+    parameters:
+    - id: loadItems
+      type: System.Collections.Generic.List{System.Type}
+    content.vb: Public Shared Sub Initialize(loadItems As List(Of Type))
+  overload: UndyneFight_Ex.FightSystem.Initialize*
+  nameWithType.vb: FightSystem.Initialize(List(Of Type))
+  fullName.vb: UndyneFight_Ex.FightSystem.Initialize(System.Collections.Generic.List(Of System.Type))
+  name.vb: Initialize(List(Of Type))
+- uid: UndyneFight_Ex.FightSystem.PushSongSet(UndyneFight_Ex.SongSet)
+  commentId: M:UndyneFight_Ex.FightSystem.PushSongSet(UndyneFight_Ex.SongSet)
+  id: PushSongSet(UndyneFight_Ex.SongSet)
+  parent: UndyneFight_Ex.FightSystem
+  langs:
+  - csharp
+  - vb
+  name: PushSongSet(SongSet)
+  nameWithType: FightSystem.PushSongSet(SongSet)
+  fullName: UndyneFight_Ex.FightSystem.PushSongSet(UndyneFight_Ex.SongSet)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Adds a song set
+  example: []
+  syntax:
+    content: public static void PushSongSet(SongSet songSet)
+    parameters:
+    - id: songSet
+      type: UndyneFight_Ex.SongSet
+      description: The song set to add
+    content.vb: Public Shared Sub PushSongSet(songSet As SongSet)
+  overload: UndyneFight_Ex.FightSystem.PushSongSet*
+- uid: UndyneFight_Ex.FightSystem.RemoveSongSet(UndyneFight_Ex.SongSet)
+  commentId: M:UndyneFight_Ex.FightSystem.RemoveSongSet(UndyneFight_Ex.SongSet)
+  id: RemoveSongSet(UndyneFight_Ex.SongSet)
+  parent: UndyneFight_Ex.FightSystem
+  langs:
+  - csharp
+  - vb
+  name: RemoveSongSet(SongSet)
+  nameWithType: FightSystem.RemoveSongSet(SongSet)
+  fullName: UndyneFight_Ex.FightSystem.RemoveSongSet(UndyneFight_Ex.SongSet)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Removes a song set
+  example: []
+  syntax:
+    content: public static void RemoveSongSet(SongSet songSet)
+    parameters:
+    - id: songSet
+      type: UndyneFight_Ex.SongSet
+      description: The song set to remove
+    content.vb: Public Shared Sub RemoveSongSet(songSet As SongSet)
+  overload: UndyneFight_Ex.FightSystem.RemoveSongSet*
+- uid: UndyneFight_Ex.FightSystem.PushChampionShip(UndyneFight_Ex.ChampionShips.ChampionShip)
+  commentId: M:UndyneFight_Ex.FightSystem.PushChampionShip(UndyneFight_Ex.ChampionShips.ChampionShip)
+  id: PushChampionShip(UndyneFight_Ex.ChampionShips.ChampionShip)
+  parent: UndyneFight_Ex.FightSystem
+  langs:
+  - csharp
+  - vb
+  name: PushChampionShip(ChampionShip)
+  nameWithType: FightSystem.PushChampionShip(ChampionShip)
+  fullName: UndyneFight_Ex.FightSystem.PushChampionShip(UndyneFight_Ex.ChampionShips.ChampionShip)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Adds a championship
+  example: []
+  syntax:
+    content: public static void PushChampionShip(ChampionShip championShip)
+    parameters:
+    - id: championShip
+      type: UndyneFight_Ex.ChampionShips.ChampionShip
+      description: The championship to add
+    content.vb: Public Shared Sub PushChampionShip(championShip As ChampionShip)
+  overload: UndyneFight_Ex.FightSystem.PushChampionShip*
+- uid: UndyneFight_Ex.FightSystem.PushChallenge(UndyneFight_Ex.Challenge)
+  commentId: M:UndyneFight_Ex.FightSystem.PushChallenge(UndyneFight_Ex.Challenge)
+  id: PushChallenge(UndyneFight_Ex.Challenge)
+  parent: UndyneFight_Ex.FightSystem
+  langs:
+  - csharp
+  - vb
+  name: PushChallenge(Challenge)
+  nameWithType: FightSystem.PushChallenge(Challenge)
+  fullName: UndyneFight_Ex.FightSystem.PushChallenge(UndyneFight_Ex.Challenge)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Adds a challenge
+  example: []
+  syntax:
+    content: public static void PushChallenge(Challenge challenge)
+    parameters:
+    - id: challenge
+      type: UndyneFight_Ex.Challenge
+      description: The challenge to add
+    content.vb: Public Shared Sub PushChallenge(challenge As Challenge)
+  overload: UndyneFight_Ex.FightSystem.PushChallenge*
+- uid: UndyneFight_Ex.FightSystem.PushExtra(UndyneFight_Ex.Fight.IExtraOption)
+  commentId: M:UndyneFight_Ex.FightSystem.PushExtra(UndyneFight_Ex.Fight.IExtraOption)
+  id: PushExtra(UndyneFight_Ex.Fight.IExtraOption)
+  parent: UndyneFight_Ex.FightSystem
+  langs:
+  - csharp
+  - vb
+  name: PushExtra(IExtraOption)
+  nameWithType: FightSystem.PushExtra(IExtraOption)
+  fullName: UndyneFight_Ex.FightSystem.PushExtra(UndyneFight_Ex.Fight.IExtraOption)
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Adds a fight
+  example: []
+  syntax:
+    content: public static void PushExtra(IExtraOption classicFight)
+    parameters:
+    - id: classicFight
+      type: UndyneFight_Ex.Fight.IExtraOption
+      description: The fight to add
+    content.vb: Public Shared Sub PushExtra(classicFight As IExtraOption)
+  overload: UndyneFight_Ex.FightSystem.PushExtra*
+- uid: UndyneFight_Ex.FightSystem.GetPlayableCharts
+  commentId: M:UndyneFight_Ex.FightSystem.GetPlayableCharts
+  id: GetPlayableCharts
+  parent: UndyneFight_Ex.FightSystem
+  langs:
+  - csharp
+  - vb
+  name: GetPlayableCharts()
+  nameWithType: FightSystem.GetPlayableCharts()
+  fullName: UndyneFight_Ex.FightSystem.GetPlayableCharts()
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Gets all the playable charts
+  example: []
+  syntax:
+    content: public static List<Type> GetPlayableCharts()
+    return:
+      type: System.Collections.Generic.List{System.Type}
+      description: ''
+    content.vb: Public Shared Function GetPlayableCharts() As List(Of Type)
+  overload: UndyneFight_Ex.FightSystem.GetPlayableCharts*
+- uid: UndyneFight_Ex.FightSystem.CurrentSongs
+  commentId: P:UndyneFight_Ex.FightSystem.CurrentSongs
+  id: CurrentSongs
+  parent: UndyneFight_Ex.FightSystem
+  langs:
+  - csharp
+  - vb
+  name: CurrentSongs
+  nameWithType: FightSystem.CurrentSongs
+  fullName: UndyneFight_Ex.FightSystem.CurrentSongs
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Current song set selected
+  example: []
+  syntax:
+    content: public static SongSet CurrentSongs { get; }
+    parameters: []
+    return:
+      type: UndyneFight_Ex.SongSet
+    content.vb: Public Shared ReadOnly Property CurrentSongs As SongSet
+  overload: UndyneFight_Ex.FightSystem.CurrentSongs*
+- uid: UndyneFight_Ex.FightSystem.AllSongs
+  commentId: P:UndyneFight_Ex.FightSystem.AllSongs
+  id: AllSongs
+  parent: UndyneFight_Ex.FightSystem
+  langs:
+  - csharp
+  - vb
+  name: AllSongs
+  nameWithType: FightSystem.AllSongs
+  fullName: UndyneFight_Ex.FightSystem.AllSongs
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: List of all charts
+  example: []
+  syntax:
+    content: public static SongSet AllSongs { get; }
+    parameters: []
+    return:
+      type: UndyneFight_Ex.SongSet
+    content.vb: Public Shared ReadOnly Property AllSongs As SongSet
+  overload: UndyneFight_Ex.FightSystem.AllSongs*
+- uid: UndyneFight_Ex.FightSystem.MainGameSongs
+  commentId: P:UndyneFight_Ex.FightSystem.MainGameSongs
+  id: MainGameSongs
+  parent: UndyneFight_Ex.FightSystem
+  langs:
+  - csharp
+  - vb
+  name: MainGameSongs
+  nameWithType: FightSystem.MainGameSongs
+  fullName: UndyneFight_Ex.FightSystem.MainGameSongs
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Main charts
+  example: []
+  syntax:
+    content: public static SongSet MainGameSongs { get; }
+    parameters: []
+    return:
+      type: UndyneFight_Ex.SongSet
+    content.vb: Public Shared ReadOnly Property MainGameSongs As SongSet
+  overload: UndyneFight_Ex.FightSystem.MainGameSongs*
+- uid: UndyneFight_Ex.FightSystem.CustomSongs
+  commentId: P:UndyneFight_Ex.FightSystem.CustomSongs
+  id: CustomSongs
+  parent: UndyneFight_Ex.FightSystem
+  langs:
+  - csharp
+  - vb
+  name: CustomSongs
+  nameWithType: FightSystem.CustomSongs
+  fullName: UndyneFight_Ex.FightSystem.CustomSongs
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Custom charts
+  example: []
+  syntax:
+    content: public static SongSet CustomSongs { get; set; }
+    parameters: []
+    return:
+      type: UndyneFight_Ex.SongSet
+    content.vb: Public Shared Property CustomSongs As SongSet
+  overload: UndyneFight_Ex.FightSystem.CustomSongs*
+- uid: UndyneFight_Ex.FightSystem.MainGameFights
+  commentId: P:UndyneFight_Ex.FightSystem.MainGameFights
+  id: MainGameFights
+  parent: UndyneFight_Ex.FightSystem
+  langs:
+  - csharp
+  - vb
+  name: MainGameFights
+  nameWithType: FightSystem.MainGameFights
+  fullName: UndyneFight_Ex.FightSystem.MainGameFights
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Main fights (Essentially unused)
+  example: []
+  syntax:
+    content: public static FightSet MainGameFights { get; }
+    parameters: []
+    return:
+      type: UndyneFight_Ex.FightSet
+    content.vb: Public Shared ReadOnly Property MainGameFights As FightSet
+  overload: UndyneFight_Ex.FightSystem.MainGameFights*
+- uid: UndyneFight_Ex.FightSystem.ChampionShips
+  commentId: P:UndyneFight_Ex.FightSystem.ChampionShips
+  id: ChampionShips
+  parent: UndyneFight_Ex.FightSystem
+  langs:
+  - csharp
+  - vb
+  name: ChampionShips
+  nameWithType: FightSystem.ChampionShips
+  fullName: UndyneFight_Ex.FightSystem.ChampionShips
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: List of championships
+  example: []
+  syntax:
+    content: public static List<ChampionShip> ChampionShips { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{UndyneFight_Ex.ChampionShips.ChampionShip}
+    content.vb: Public Shared ReadOnly Property ChampionShips As List(Of ChampionShip)
+  overload: UndyneFight_Ex.FightSystem.ChampionShips*
+- uid: UndyneFight_Ex.FightSystem.CurrentChampionShip
+  commentId: P:UndyneFight_Ex.FightSystem.CurrentChampionShip
+  id: CurrentChampionShip
+  parent: UndyneFight_Ex.FightSystem
+  langs:
+  - csharp
+  - vb
+  name: CurrentChampionShip
+  nameWithType: FightSystem.CurrentChampionShip
+  fullName: UndyneFight_Ex.FightSystem.CurrentChampionShip
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Current selected championship
+  example: []
+  syntax:
+    content: public static ChampionShip CurrentChampionShip { get; }
+    parameters: []
+    return:
+      type: UndyneFight_Ex.ChampionShips.ChampionShip
+    content.vb: Public Shared ReadOnly Property CurrentChampionShip As ChampionShip
+  overload: UndyneFight_Ex.FightSystem.CurrentChampionShip*
+- uid: UndyneFight_Ex.FightSystem.Challenges
+  commentId: P:UndyneFight_Ex.FightSystem.Challenges
+  id: Challenges
+  parent: UndyneFight_Ex.FightSystem
+  langs:
+  - csharp
+  - vb
+  name: Challenges
+  nameWithType: FightSystem.Challenges
+  fullName: UndyneFight_Ex.FightSystem.Challenges
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: List of challenges
+  example: []
+  syntax:
+    content: public static List<Challenge> Challenges { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{UndyneFight_Ex.Challenge}
+    content.vb: Public Shared ReadOnly Property Challenges As List(Of Challenge)
+  overload: UndyneFight_Ex.FightSystem.Challenges*
+- uid: UndyneFight_Ex.FightSystem.ExtraSongSets
+  commentId: P:UndyneFight_Ex.FightSystem.ExtraSongSets
+  id: ExtraSongSets
+  parent: UndyneFight_Ex.FightSystem
+  langs:
+  - csharp
+  - vb
+  name: ExtraSongSets
+  nameWithType: FightSystem.ExtraSongSets
+  fullName: UndyneFight_Ex.FightSystem.ExtraSongSets
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Other song sets
+  example: []
+  syntax:
+    content: public static List<SongSet> ExtraSongSets { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{UndyneFight_Ex.SongSet}
+    content.vb: Public Shared ReadOnly Property ExtraSongSets As List(Of SongSet)
+  overload: UndyneFight_Ex.FightSystem.ExtraSongSets*
+references:
+- uid: UndyneFight_Ex
+  commentId: N:UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex
+  nameWithType: UndyneFight_Ex
+  fullName: UndyneFight_Ex
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UndyneFight_Ex.FightSystem.Initialize*
+  commentId: Overload:UndyneFight_Ex.FightSystem.Initialize
+  isExternal: true
+  href: UndyneFight_Ex.FightSystem.html#UndyneFight_Ex_FightSystem_Initialize_System_Collections_Generic_List_System_Type__
+  name: Initialize
+  nameWithType: FightSystem.Initialize
+  fullName: UndyneFight_Ex.FightSystem.Initialize
+- uid: System.Collections.Generic.List{System.Type}
+  commentId: T:System.Collections.Generic.List{System.Type}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<Type>
+  nameWithType: List<Type>
+  fullName: System.Collections.Generic.List<System.Type>
+  nameWithType.vb: List(Of Type)
+  fullName.vb: System.Collections.Generic.List(Of System.Type)
+  name.vb: List(Of Type)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: UndyneFight_Ex.FightSystem.PushSongSet*
+  commentId: Overload:UndyneFight_Ex.FightSystem.PushSongSet
+  isExternal: true
+  href: UndyneFight_Ex.FightSystem.html#UndyneFight_Ex_FightSystem_PushSongSet_UndyneFight_Ex_SongSet_
+  name: PushSongSet
+  nameWithType: FightSystem.PushSongSet
+  fullName: UndyneFight_Ex.FightSystem.PushSongSet
+- uid: UndyneFight_Ex.SongSet
+  commentId: T:UndyneFight_Ex.SongSet
+  parent: UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.SongSet.html
+  name: SongSet
+  nameWithType: SongSet
+  fullName: UndyneFight_Ex.SongSet
+- uid: UndyneFight_Ex.FightSystem.RemoveSongSet*
+  commentId: Overload:UndyneFight_Ex.FightSystem.RemoveSongSet
+  isExternal: true
+  href: UndyneFight_Ex.FightSystem.html#UndyneFight_Ex_FightSystem_RemoveSongSet_UndyneFight_Ex_SongSet_
+  name: RemoveSongSet
+  nameWithType: FightSystem.RemoveSongSet
+  fullName: UndyneFight_Ex.FightSystem.RemoveSongSet
+- uid: UndyneFight_Ex.FightSystem.PushChampionShip*
+  commentId: Overload:UndyneFight_Ex.FightSystem.PushChampionShip
+  isExternal: true
+  href: UndyneFight_Ex.FightSystem.html#UndyneFight_Ex_FightSystem_PushChampionShip_UndyneFight_Ex_ChampionShips_ChampionShip_
+  name: PushChampionShip
+  nameWithType: FightSystem.PushChampionShip
+  fullName: UndyneFight_Ex.FightSystem.PushChampionShip
+- uid: UndyneFight_Ex.ChampionShips.ChampionShip
+  commentId: T:UndyneFight_Ex.ChampionShips.ChampionShip
+  parent: UndyneFight_Ex.ChampionShips
+  isExternal: true
+  href: UndyneFight_Ex.ChampionShips.ChampionShip.html
+  name: ChampionShip
+  nameWithType: ChampionShip
+  fullName: UndyneFight_Ex.ChampionShips.ChampionShip
+- uid: UndyneFight_Ex.ChampionShips
+  commentId: N:UndyneFight_Ex.ChampionShips
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex.ChampionShips
+  nameWithType: UndyneFight_Ex.ChampionShips
+  fullName: UndyneFight_Ex.ChampionShips
+  spec.csharp:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.ChampionShips
+    name: ChampionShips
+    isExternal: true
+    href: UndyneFight_Ex.ChampionShips.html
+  spec.vb:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.ChampionShips
+    name: ChampionShips
+    isExternal: true
+    href: UndyneFight_Ex.ChampionShips.html
+- uid: UndyneFight_Ex.FightSystem.PushChallenge*
+  commentId: Overload:UndyneFight_Ex.FightSystem.PushChallenge
+  isExternal: true
+  href: UndyneFight_Ex.FightSystem.html#UndyneFight_Ex_FightSystem_PushChallenge_UndyneFight_Ex_Challenge_
+  name: PushChallenge
+  nameWithType: FightSystem.PushChallenge
+  fullName: UndyneFight_Ex.FightSystem.PushChallenge
+- uid: UndyneFight_Ex.Challenge
+  commentId: T:UndyneFight_Ex.Challenge
+  parent: UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.Challenge.html
+  name: Challenge
+  nameWithType: Challenge
+  fullName: UndyneFight_Ex.Challenge
+- uid: UndyneFight_Ex.FightSystem.PushExtra*
+  commentId: Overload:UndyneFight_Ex.FightSystem.PushExtra
+  isExternal: true
+  href: UndyneFight_Ex.FightSystem.html#UndyneFight_Ex_FightSystem_PushExtra_UndyneFight_Ex_Fight_IExtraOption_
+  name: PushExtra
+  nameWithType: FightSystem.PushExtra
+  fullName: UndyneFight_Ex.FightSystem.PushExtra
+- uid: UndyneFight_Ex.Fight.IExtraOption
+  commentId: T:UndyneFight_Ex.Fight.IExtraOption
+  parent: UndyneFight_Ex.Fight
+  isExternal: true
+  href: UndyneFight_Ex.Fight.IExtraOption.html
+  name: IExtraOption
+  nameWithType: IExtraOption
+  fullName: UndyneFight_Ex.Fight.IExtraOption
+- uid: UndyneFight_Ex.Fight
+  commentId: N:UndyneFight_Ex.Fight
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex.Fight
+  nameWithType: UndyneFight_Ex.Fight
+  fullName: UndyneFight_Ex.Fight
+  spec.csharp:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight
+    name: Fight
+    isExternal: true
+    href: UndyneFight_Ex.Fight.html
+  spec.vb:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight
+    name: Fight
+    isExternal: true
+    href: UndyneFight_Ex.Fight.html
+- uid: UndyneFight_Ex.FightSystem.GetPlayableCharts*
+  commentId: Overload:UndyneFight_Ex.FightSystem.GetPlayableCharts
+  isExternal: true
+  href: UndyneFight_Ex.FightSystem.html#UndyneFight_Ex_FightSystem_GetPlayableCharts
+  name: GetPlayableCharts
+  nameWithType: FightSystem.GetPlayableCharts
+  fullName: UndyneFight_Ex.FightSystem.GetPlayableCharts
+- uid: UndyneFight_Ex.FightSystem.CurrentSongs*
+  commentId: Overload:UndyneFight_Ex.FightSystem.CurrentSongs
+  isExternal: true
+  href: UndyneFight_Ex.FightSystem.html#UndyneFight_Ex_FightSystem_CurrentSongs
+  name: CurrentSongs
+  nameWithType: FightSystem.CurrentSongs
+  fullName: UndyneFight_Ex.FightSystem.CurrentSongs
+- uid: UndyneFight_Ex.FightSystem.AllSongs*
+  commentId: Overload:UndyneFight_Ex.FightSystem.AllSongs
+  isExternal: true
+  href: UndyneFight_Ex.FightSystem.html#UndyneFight_Ex_FightSystem_AllSongs
+  name: AllSongs
+  nameWithType: FightSystem.AllSongs
+  fullName: UndyneFight_Ex.FightSystem.AllSongs
+- uid: UndyneFight_Ex.FightSystem.MainGameSongs*
+  commentId: Overload:UndyneFight_Ex.FightSystem.MainGameSongs
+  isExternal: true
+  href: UndyneFight_Ex.FightSystem.html#UndyneFight_Ex_FightSystem_MainGameSongs
+  name: MainGameSongs
+  nameWithType: FightSystem.MainGameSongs
+  fullName: UndyneFight_Ex.FightSystem.MainGameSongs
+- uid: UndyneFight_Ex.FightSystem.CustomSongs*
+  commentId: Overload:UndyneFight_Ex.FightSystem.CustomSongs
+  isExternal: true
+  href: UndyneFight_Ex.FightSystem.html#UndyneFight_Ex_FightSystem_CustomSongs
+  name: CustomSongs
+  nameWithType: FightSystem.CustomSongs
+  fullName: UndyneFight_Ex.FightSystem.CustomSongs
+- uid: UndyneFight_Ex.FightSystem.MainGameFights*
+  commentId: Overload:UndyneFight_Ex.FightSystem.MainGameFights
+  isExternal: true
+  href: UndyneFight_Ex.FightSystem.html#UndyneFight_Ex_FightSystem_MainGameFights
+  name: MainGameFights
+  nameWithType: FightSystem.MainGameFights
+  fullName: UndyneFight_Ex.FightSystem.MainGameFights
+- uid: UndyneFight_Ex.FightSet
+  commentId: T:UndyneFight_Ex.FightSet
+  parent: UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.FightSet.html
+  name: FightSet
+  nameWithType: FightSet
+  fullName: UndyneFight_Ex.FightSet
+- uid: UndyneFight_Ex.FightSystem.ChampionShips*
+  commentId: Overload:UndyneFight_Ex.FightSystem.ChampionShips
+  isExternal: true
+  href: UndyneFight_Ex.FightSystem.html#UndyneFight_Ex_FightSystem_ChampionShips
+  name: ChampionShips
+  nameWithType: FightSystem.ChampionShips
+  fullName: UndyneFight_Ex.FightSystem.ChampionShips
+- uid: System.Collections.Generic.List{UndyneFight_Ex.ChampionShips.ChampionShip}
+  commentId: T:System.Collections.Generic.List{UndyneFight_Ex.ChampionShips.ChampionShip}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<ChampionShip>
+  nameWithType: List<ChampionShip>
+  fullName: System.Collections.Generic.List<UndyneFight_Ex.ChampionShips.ChampionShip>
+  nameWithType.vb: List(Of ChampionShip)
+  fullName.vb: System.Collections.Generic.List(Of UndyneFight_Ex.ChampionShips.ChampionShip)
+  name.vb: List(Of ChampionShip)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: UndyneFight_Ex.ChampionShips.ChampionShip
+    name: ChampionShip
+    isExternal: true
+    href: UndyneFight_Ex.ChampionShips.ChampionShip.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: UndyneFight_Ex.ChampionShips.ChampionShip
+    name: ChampionShip
+    isExternal: true
+    href: UndyneFight_Ex.ChampionShips.ChampionShip.html
+  - name: )
+- uid: UndyneFight_Ex.FightSystem.CurrentChampionShip*
+  commentId: Overload:UndyneFight_Ex.FightSystem.CurrentChampionShip
+  isExternal: true
+  href: UndyneFight_Ex.FightSystem.html#UndyneFight_Ex_FightSystem_CurrentChampionShip
+  name: CurrentChampionShip
+  nameWithType: FightSystem.CurrentChampionShip
+  fullName: UndyneFight_Ex.FightSystem.CurrentChampionShip
+- uid: UndyneFight_Ex.FightSystem.Challenges*
+  commentId: Overload:UndyneFight_Ex.FightSystem.Challenges
+  isExternal: true
+  href: UndyneFight_Ex.FightSystem.html#UndyneFight_Ex_FightSystem_Challenges
+  name: Challenges
+  nameWithType: FightSystem.Challenges
+  fullName: UndyneFight_Ex.FightSystem.Challenges
+- uid: System.Collections.Generic.List{UndyneFight_Ex.Challenge}
+  commentId: T:System.Collections.Generic.List{UndyneFight_Ex.Challenge}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<Challenge>
+  nameWithType: List<Challenge>
+  fullName: System.Collections.Generic.List<UndyneFight_Ex.Challenge>
+  nameWithType.vb: List(Of Challenge)
+  fullName.vb: System.Collections.Generic.List(Of UndyneFight_Ex.Challenge)
+  name.vb: List(Of Challenge)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: UndyneFight_Ex.Challenge
+    name: Challenge
+    isExternal: true
+    href: UndyneFight_Ex.Challenge.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: UndyneFight_Ex.Challenge
+    name: Challenge
+    isExternal: true
+    href: UndyneFight_Ex.Challenge.html
+  - name: )
+- uid: UndyneFight_Ex.FightSystem.ExtraSongSets*
+  commentId: Overload:UndyneFight_Ex.FightSystem.ExtraSongSets
+  isExternal: true
+  href: UndyneFight_Ex.FightSystem.html#UndyneFight_Ex_FightSystem_ExtraSongSets
+  name: ExtraSongSets
+  nameWithType: FightSystem.ExtraSongSets
+  fullName: UndyneFight_Ex.FightSystem.ExtraSongSets
+- uid: System.Collections.Generic.List{UndyneFight_Ex.SongSet}
+  commentId: T:System.Collections.Generic.List{UndyneFight_Ex.SongSet}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<SongSet>
+  nameWithType: List<SongSet>
+  fullName: System.Collections.Generic.List<UndyneFight_Ex.SongSet>
+  nameWithType.vb: List(Of SongSet)
+  fullName.vb: System.Collections.Generic.List(Of UndyneFight_Ex.SongSet)
+  name.vb: List(Of SongSet)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: UndyneFight_Ex.SongSet
+    name: SongSet
+    isExternal: true
+    href: UndyneFight_Ex.SongSet.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: UndyneFight_Ex.SongSet
+    name: SongSet
+    isExternal: true
+    href: UndyneFight_Ex.SongSet.html
+  - name: )

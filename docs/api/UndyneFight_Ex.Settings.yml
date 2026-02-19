@@ -1,0 +1,126 @@
+### YamlMime:ManagedReference
+items:
+- uid: UndyneFight_Ex.Settings
+  commentId: N:UndyneFight_Ex.Settings
+  id: UndyneFight_Ex.Settings
+  children:
+  - UndyneFight_Ex.Settings.SettingsManager
+  - UndyneFight_Ex.Settings.SettingsManager.DataLibrary
+  - UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality
+  - UndyneFight_Ex.Settings.SettingsResetInterface
+  langs:
+  - csharp
+  - vb
+  name: UndyneFight_Ex.Settings
+  nameWithType: UndyneFight_Ex.Settings
+  fullName: UndyneFight_Ex.Settings
+  type: Namespace
+  assemblies:
+  - UndyneFight-Ex
+references:
+- uid: UndyneFight_Ex.Settings.SettingsManager
+  commentId: T:UndyneFight_Ex.Settings.SettingsManager
+  isExternal: true
+  href: UndyneFight_Ex.Settings.SettingsManager.html
+  name: SettingsManager
+  nameWithType: SettingsManager
+  fullName: UndyneFight_Ex.Settings.SettingsManager
+- uid: UndyneFight_Ex.Settings.SettingsManager.DataLibrary
+  commentId: T:UndyneFight_Ex.Settings.SettingsManager.DataLibrary
+  isExternal: true
+  href: UndyneFight_Ex.Settings.SettingsManager.html
+  name: SettingsManager.DataLibrary
+  nameWithType: SettingsManager.DataLibrary
+  fullName: UndyneFight_Ex.Settings.SettingsManager.DataLibrary
+  spec.csharp:
+  - uid: UndyneFight_Ex.Settings.SettingsManager
+    name: SettingsManager
+    isExternal: true
+    href: UndyneFight_Ex.Settings.SettingsManager.html
+  - name: .
+  - uid: UndyneFight_Ex.Settings.SettingsManager.DataLibrary
+    name: DataLibrary
+    isExternal: true
+    href: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.html
+  spec.vb:
+  - uid: UndyneFight_Ex.Settings.SettingsManager
+    name: SettingsManager
+    isExternal: true
+    href: UndyneFight_Ex.Settings.SettingsManager.html
+  - name: .
+  - uid: UndyneFight_Ex.Settings.SettingsManager.DataLibrary
+    name: DataLibrary
+    isExternal: true
+    href: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.html
+- uid: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality
+  commentId: T:UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality
+  parent: UndyneFight_Ex.Settings
+  isExternal: true
+  href: UndyneFight_Ex.Settings.SettingsManager.html
+  name: SettingsManager.DataLibrary.DrawingQuality
+  nameWithType: SettingsManager.DataLibrary.DrawingQuality
+  fullName: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality
+  spec.csharp:
+  - uid: UndyneFight_Ex.Settings.SettingsManager
+    name: SettingsManager
+    isExternal: true
+    href: UndyneFight_Ex.Settings.SettingsManager.html
+  - name: .
+  - uid: UndyneFight_Ex.Settings.SettingsManager.DataLibrary
+    name: DataLibrary
+    isExternal: true
+    href: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.html
+  - name: .
+  - uid: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality
+    name: DrawingQuality
+    isExternal: true
+    href: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality.html
+  spec.vb:
+  - uid: UndyneFight_Ex.Settings.SettingsManager
+    name: SettingsManager
+    isExternal: true
+    href: UndyneFight_Ex.Settings.SettingsManager.html
+  - name: .
+  - uid: UndyneFight_Ex.Settings.SettingsManager.DataLibrary
+    name: DataLibrary
+    isExternal: true
+    href: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.html
+  - name: .
+  - uid: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality
+    name: DrawingQuality
+    isExternal: true
+    href: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality.html
+- uid: UndyneFight_Ex.Settings.SettingsResetInterface
+  commentId: T:UndyneFight_Ex.Settings.SettingsResetInterface
+  isExternal: true
+  href: UndyneFight_Ex.Settings.SettingsResetInterface.html
+  name: SettingsResetInterface
+  nameWithType: SettingsResetInterface
+  fullName: UndyneFight_Ex.Settings.SettingsResetInterface
+- uid: UndyneFight_Ex.Settings
+  commentId: N:UndyneFight_Ex.Settings
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex.Settings
+  nameWithType: UndyneFight_Ex.Settings
+  fullName: UndyneFight_Ex.Settings
+  spec.csharp:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Settings
+    name: Settings
+    isExternal: true
+    href: UndyneFight_Ex.Settings.html
+  spec.vb:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Settings
+    name: Settings
+    isExternal: true
+    href: UndyneFight_Ex.Settings.html

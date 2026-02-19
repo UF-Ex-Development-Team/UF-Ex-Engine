@@ -1,0 +1,1146 @@
+### YamlMime:ManagedReference
+items:
+- uid: UndyneFight_Ex.FightResources.Sounds
+  commentId: T:UndyneFight_Ex.FightResources.Sounds
+  id: FightResources.Sounds
+  parent: UndyneFight_Ex
+  children:
+  - UndyneFight_Ex.FightResources.Sounds.ArrowStuck
+  - UndyneFight_Ex.FightResources.Sounds.Bomb
+  - UndyneFight_Ex.FightResources.Sounds.Ding
+  - UndyneFight_Ex.FightResources.Sounds.GBShoot
+  - UndyneFight_Ex.FightResources.Sounds.GBSpawn
+  - UndyneFight_Ex.FightResources.Sounds.TargetBurst
+  - UndyneFight_Ex.FightResources.Sounds.Warning
+  - UndyneFight_Ex.FightResources.Sounds.YellowShoot
+  - UndyneFight_Ex.FightResources.Sounds.boneSlabSpawn
+  - UndyneFight_Ex.FightResources.Sounds.boneSpawnLarge
+  - UndyneFight_Ex.FightResources.Sounds.change
+  - UndyneFight_Ex.FightResources.Sounds.changeSelection
+  - UndyneFight_Ex.FightResources.Sounds.damaged
+  - UndyneFight_Ex.FightResources.Sounds.destroy
+  - UndyneFight_Ex.FightResources.Sounds.die1
+  - UndyneFight_Ex.FightResources.Sounds.die2
+  - UndyneFight_Ex.FightResources.Sounds.explode
+  - UndyneFight_Ex.FightResources.Sounds.giga
+  - UndyneFight_Ex.FightResources.Sounds.gunShot
+  - UndyneFight_Ex.FightResources.Sounds.gunTargeting
+  - UndyneFight_Ex.FightResources.Sounds.heal
+  - UndyneFight_Ex.FightResources.Sounds.largeKnife
+  - UndyneFight_Ex.FightResources.Sounds.pierce
+  - UndyneFight_Ex.FightResources.Sounds.playerHurt
+  - UndyneFight_Ex.FightResources.Sounds.playerSlice
+  - UndyneFight_Ex.FightResources.Sounds.printWord
+  - UndyneFight_Ex.FightResources.Sounds.sansWord
+  - UndyneFight_Ex.FightResources.Sounds.select
+  - UndyneFight_Ex.FightResources.Sounds.slam
+  - UndyneFight_Ex.FightResources.Sounds.sparkles
+  - UndyneFight_Ex.FightResources.Sounds.spearAppear
+  - UndyneFight_Ex.FightResources.Sounds.spearShoot
+  - UndyneFight_Ex.FightResources.Sounds.star0
+  - UndyneFight_Ex.FightResources.Sounds.star1
+  - UndyneFight_Ex.FightResources.Sounds.switchScene
+  langs:
+  - csharp
+  - vb
+  name: FightResources.Sounds
+  nameWithType: FightResources.Sounds
+  fullName: UndyneFight_Ex.FightResources.Sounds
+  type: Class
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: A list of built-in audio
+  example: []
+  syntax:
+    content: public static class FightResources.Sounds
+    content.vb: Public Module FightResources.Sounds
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+- uid: UndyneFight_Ex.FightResources.Sounds.switchScene
+  commentId: F:UndyneFight_Ex.FightResources.Sounds.switchScene
+  id: switchScene
+  parent: UndyneFight_Ex.FightResources.Sounds
+  langs:
+  - csharp
+  - vb
+  name: switchScene
+  nameWithType: FightResources.Sounds.switchScene
+  fullName: UndyneFight_Ex.FightResources.Sounds.switchScene
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Used for large scale scene transition
+  example: []
+  syntax:
+    content: public static SoundEffect switchScene
+    return:
+      type: Microsoft.Xna.Framework.Audio.SoundEffect
+    content.vb: Public Shared switchScene As SoundEffect
+- uid: UndyneFight_Ex.FightResources.Sounds.boneSpawnLarge
+  commentId: F:UndyneFight_Ex.FightResources.Sounds.boneSpawnLarge
+  id: boneSpawnLarge
+  parent: UndyneFight_Ex.FightResources.Sounds
+  langs:
+  - csharp
+  - vb
+  name: boneSpawnLarge
+  nameWithType: FightResources.Sounds.boneSpawnLarge
+  fullName: UndyneFight_Ex.FightResources.Sounds.boneSpawnLarge
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Used for creating large bones
+  example: []
+  syntax:
+    content: public static SoundEffect boneSpawnLarge
+    return:
+      type: Microsoft.Xna.Framework.Audio.SoundEffect
+    content.vb: Public Shared boneSpawnLarge As SoundEffect
+- uid: UndyneFight_Ex.FightResources.Sounds.slam
+  commentId: F:UndyneFight_Ex.FightResources.Sounds.slam
+  id: slam
+  parent: UndyneFight_Ex.FightResources.Sounds
+  langs:
+  - csharp
+  - vb
+  name: slam
+  nameWithType: FightResources.Sounds.slam
+  fullName: UndyneFight_Ex.FightResources.Sounds.slam
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Slamming SFX
+  example: []
+  syntax:
+    content: public static SoundEffect slam
+    return:
+      type: Microsoft.Xna.Framework.Audio.SoundEffect
+    content.vb: Public Shared slam As SoundEffect
+- uid: UndyneFight_Ex.FightResources.Sounds.playerSlice
+  commentId: F:UndyneFight_Ex.FightResources.Sounds.playerSlice
+  id: playerSlice
+  parent: UndyneFight_Ex.FightResources.Sounds
+  langs:
+  - csharp
+  - vb
+  name: playerSlice
+  nameWithType: FightResources.Sounds.playerSlice
+  fullName: UndyneFight_Ex.FightResources.Sounds.playerSlice
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: SFX of player attack
+  example: []
+  syntax:
+    content: public static SoundEffect playerSlice
+    return:
+      type: Microsoft.Xna.Framework.Audio.SoundEffect
+    content.vb: Public Shared playerSlice As SoundEffect
+- uid: UndyneFight_Ex.FightResources.Sounds.printWord
+  commentId: F:UndyneFight_Ex.FightResources.Sounds.printWord
+  id: printWord
+  parent: UndyneFight_Ex.FightResources.Sounds
+  langs:
+  - csharp
+  - vb
+  name: printWord
+  nameWithType: FightResources.Sounds.printWord
+  fullName: UndyneFight_Ex.FightResources.Sounds.printWord
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: SFX of text typing
+  example: []
+  syntax:
+    content: public static SoundEffect printWord
+    return:
+      type: Microsoft.Xna.Framework.Audio.SoundEffect
+    content.vb: Public Shared printWord As SoundEffect
+- uid: UndyneFight_Ex.FightResources.Sounds.sansWord
+  commentId: F:UndyneFight_Ex.FightResources.Sounds.sansWord
+  id: sansWord
+  parent: UndyneFight_Ex.FightResources.Sounds
+  langs:
+  - csharp
+  - vb
+  name: sansWord
+  nameWithType: FightResources.Sounds.sansWord
+  fullName: UndyneFight_Ex.FightResources.Sounds.sansWord
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: SFX of Sans talking
+  example: []
+  syntax:
+    content: public static SoundEffect sansWord
+    return:
+      type: Microsoft.Xna.Framework.Audio.SoundEffect
+    content.vb: Public Shared sansWord As SoundEffect
+- uid: UndyneFight_Ex.FightResources.Sounds.heal
+  commentId: F:UndyneFight_Ex.FightResources.Sounds.heal
+  id: heal
+  parent: UndyneFight_Ex.FightResources.Sounds
+  langs:
+  - csharp
+  - vb
+  name: heal
+  nameWithType: FightResources.Sounds.heal
+  fullName: UndyneFight_Ex.FightResources.Sounds.heal
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: SFX of healing
+  example: []
+  syntax:
+    content: public static SoundEffect heal
+    return:
+      type: Microsoft.Xna.Framework.Audio.SoundEffect
+    content.vb: Public Shared heal As SoundEffect
+- uid: UndyneFight_Ex.FightResources.Sounds.playerHurt
+  commentId: F:UndyneFight_Ex.FightResources.Sounds.playerHurt
+  id: playerHurt
+  parent: UndyneFight_Ex.FightResources.Sounds
+  langs:
+  - csharp
+  - vb
+  name: playerHurt
+  nameWithType: FightResources.Sounds.playerHurt
+  fullName: UndyneFight_Ex.FightResources.Sounds.playerHurt
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: SFX of player taking damage
+  example: []
+  syntax:
+    content: public static SoundEffect playerHurt
+    return:
+      type: Microsoft.Xna.Framework.Audio.SoundEffect
+    content.vb: Public Shared playerHurt As SoundEffect
+- uid: UndyneFight_Ex.FightResources.Sounds.spearAppear
+  commentId: F:UndyneFight_Ex.FightResources.Sounds.spearAppear
+  id: spearAppear
+  parent: UndyneFight_Ex.FightResources.Sounds
+  langs:
+  - csharp
+  - vb
+  name: spearAppear
+  nameWithType: FightResources.Sounds.spearAppear
+  fullName: UndyneFight_Ex.FightResources.Sounds.spearAppear
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: SFX of a spear appearing
+  example: []
+  syntax:
+    content: public static SoundEffect spearAppear
+    return:
+      type: Microsoft.Xna.Framework.Audio.SoundEffect
+    content.vb: Public Shared spearAppear As SoundEffect
+- uid: UndyneFight_Ex.FightResources.Sounds.spearShoot
+  commentId: F:UndyneFight_Ex.FightResources.Sounds.spearShoot
+  id: spearShoot
+  parent: UndyneFight_Ex.FightResources.Sounds
+  langs:
+  - csharp
+  - vb
+  name: spearShoot
+  nameWithType: FightResources.Sounds.spearShoot
+  fullName: UndyneFight_Ex.FightResources.Sounds.spearShoot
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: SFX of a spear being shot
+  example: []
+  syntax:
+    content: public static SoundEffect spearShoot
+    return:
+      type: Microsoft.Xna.Framework.Audio.SoundEffect
+    content.vb: Public Shared spearShoot As SoundEffect
+- uid: UndyneFight_Ex.FightResources.Sounds.pierce
+  commentId: F:UndyneFight_Ex.FightResources.Sounds.pierce
+  id: pierce
+  parent: UndyneFight_Ex.FightResources.Sounds
+  langs:
+  - csharp
+  - vb
+  name: pierce
+  nameWithType: FightResources.Sounds.pierce
+  fullName: UndyneFight_Ex.FightResources.Sounds.pierce
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: SFX of piercing, often used for creating bones
+  example: []
+  syntax:
+    content: public static SoundEffect pierce
+    return:
+      type: Microsoft.Xna.Framework.Audio.SoundEffect
+    content.vb: Public Shared pierce As SoundEffect
+- uid: UndyneFight_Ex.FightResources.Sounds.select
+  commentId: F:UndyneFight_Ex.FightResources.Sounds.select
+  id: select
+  parent: UndyneFight_Ex.FightResources.Sounds
+  langs:
+  - csharp
+  - vb
+  name: select
+  nameWithType: FightResources.Sounds.select
+  fullName: UndyneFight_Ex.FightResources.Sounds.select
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: SFX of selecting menu choice
+  example: []
+  syntax:
+    content: public static SoundEffect select
+    return:
+      type: Microsoft.Xna.Framework.Audio.SoundEffect
+    content.vb: Public Shared [select] As SoundEffect
+- uid: UndyneFight_Ex.FightResources.Sounds.changeSelection
+  commentId: F:UndyneFight_Ex.FightResources.Sounds.changeSelection
+  id: changeSelection
+  parent: UndyneFight_Ex.FightResources.Sounds
+  langs:
+  - csharp
+  - vb
+  name: changeSelection
+  nameWithType: FightResources.Sounds.changeSelection
+  fullName: UndyneFight_Ex.FightResources.Sounds.changeSelection
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: SFX of changing menu choice
+  example: []
+  syntax:
+    content: public static SoundEffect changeSelection
+    return:
+      type: Microsoft.Xna.Framework.Audio.SoundEffect
+    content.vb: Public Shared changeSelection As SoundEffect
+- uid: UndyneFight_Ex.FightResources.Sounds.change
+  commentId: F:UndyneFight_Ex.FightResources.Sounds.change
+  id: change
+  parent: UndyneFight_Ex.FightResources.Sounds
+  langs:
+  - csharp
+  - vb
+  name: change
+  nameWithType: FightResources.Sounds.change
+  fullName: UndyneFight_Ex.FightResources.Sounds.change
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: SFX of Sans flickering the screen
+  example: []
+  syntax:
+    content: public static SoundEffect change
+    return:
+      type: Microsoft.Xna.Framework.Audio.SoundEffect
+    content.vb: Public Shared change As SoundEffect
+- uid: UndyneFight_Ex.FightResources.Sounds.damaged
+  commentId: F:UndyneFight_Ex.FightResources.Sounds.damaged
+  id: damaged
+  parent: UndyneFight_Ex.FightResources.Sounds
+  langs:
+  - csharp
+  - vb
+  name: damaged
+  nameWithType: FightResources.Sounds.damaged
+  fullName: UndyneFight_Ex.FightResources.Sounds.damaged
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: SFX of an enemy being damaged
+  example: []
+  syntax:
+    content: public static SoundEffect damaged
+    return:
+      type: Microsoft.Xna.Framework.Audio.SoundEffect
+    content.vb: Public Shared damaged As SoundEffect
+- uid: UndyneFight_Ex.FightResources.Sounds.die1
+  commentId: F:UndyneFight_Ex.FightResources.Sounds.die1
+  id: die1
+  parent: UndyneFight_Ex.FightResources.Sounds
+  langs:
+  - csharp
+  - vb
+  name: die1
+  nameWithType: FightResources.Sounds.die1
+  fullName: UndyneFight_Ex.FightResources.Sounds.die1
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: SFX of soul split in half
+  example: []
+  syntax:
+    content: public static SoundEffect die1
+    return:
+      type: Microsoft.Xna.Framework.Audio.SoundEffect
+    content.vb: Public Shared die1 As SoundEffect
+- uid: UndyneFight_Ex.FightResources.Sounds.die2
+  commentId: F:UndyneFight_Ex.FightResources.Sounds.die2
+  id: die2
+  parent: UndyneFight_Ex.FightResources.Sounds
+  langs:
+  - csharp
+  - vb
+  name: die2
+  nameWithType: FightResources.Sounds.die2
+  fullName: UndyneFight_Ex.FightResources.Sounds.die2
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: SFX of soul shattering
+  example: []
+  syntax:
+    content: public static SoundEffect die2
+    return:
+      type: Microsoft.Xna.Framework.Audio.SoundEffect
+    content.vb: Public Shared die2 As SoundEffect
+- uid: UndyneFight_Ex.FightResources.Sounds.GBSpawn
+  commentId: F:UndyneFight_Ex.FightResources.Sounds.GBSpawn
+  id: GBSpawn
+  parent: UndyneFight_Ex.FightResources.Sounds
+  langs:
+  - csharp
+  - vb
+  name: GBSpawn
+  nameWithType: FightResources.Sounds.GBSpawn
+  fullName: UndyneFight_Ex.FightResources.Sounds.GBSpawn
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: SFX of Gaster Blaster spawning
+  example: []
+  syntax:
+    content: public static SoundEffect GBSpawn
+    return:
+      type: Microsoft.Xna.Framework.Audio.SoundEffect
+    content.vb: Public Shared GBSpawn As SoundEffect
+- uid: UndyneFight_Ex.FightResources.Sounds.GBShoot
+  commentId: F:UndyneFight_Ex.FightResources.Sounds.GBShoot
+  id: GBShoot
+  parent: UndyneFight_Ex.FightResources.Sounds
+  langs:
+  - csharp
+  - vb
+  name: GBShoot
+  nameWithType: FightResources.Sounds.GBShoot
+  fullName: UndyneFight_Ex.FightResources.Sounds.GBShoot
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: SFX of Gaster Blaster firing
+  example: []
+  syntax:
+    content: public static SoundEffect GBShoot
+    return:
+      type: Microsoft.Xna.Framework.Audio.SoundEffect
+    content.vb: Public Shared GBShoot As SoundEffect
+- uid: UndyneFight_Ex.FightResources.Sounds.explode
+  commentId: F:UndyneFight_Ex.FightResources.Sounds.explode
+  id: explode
+  parent: UndyneFight_Ex.FightResources.Sounds
+  langs:
+  - csharp
+  - vb
+  name: explode
+  nameWithType: FightResources.Sounds.explode
+  fullName: UndyneFight_Ex.FightResources.Sounds.explode
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: SFX of an explosion
+  example: []
+  syntax:
+    content: public static SoundEffect explode
+    return:
+      type: Microsoft.Xna.Framework.Audio.SoundEffect
+    content.vb: Public Shared explode As SoundEffect
+- uid: UndyneFight_Ex.FightResources.Sounds.destroy
+  commentId: F:UndyneFight_Ex.FightResources.Sounds.destroy
+  id: destroy
+  parent: UndyneFight_Ex.FightResources.Sounds
+  langs:
+  - csharp
+  - vb
+  name: destroy
+  nameWithType: FightResources.Sounds.destroy
+  fullName: UndyneFight_Ex.FightResources.Sounds.destroy
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: SFX of an item being destroyed
+  example: []
+  syntax:
+    content: public static SoundEffect destroy
+    return:
+      type: Microsoft.Xna.Framework.Audio.SoundEffect
+    content.vb: Public Shared destroy As SoundEffect
+- uid: UndyneFight_Ex.FightResources.Sounds.gunTargeting
+  commentId: F:UndyneFight_Ex.FightResources.Sounds.gunTargeting
+  id: gunTargeting
+  parent: UndyneFight_Ex.FightResources.Sounds
+  langs:
+  - csharp
+  - vb
+  name: gunTargeting
+  nameWithType: FightResources.Sounds.gunTargeting
+  fullName: UndyneFight_Ex.FightResources.Sounds.gunTargeting
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: SFX of a gun targetting
+  example: []
+  syntax:
+    content: public static SoundEffect gunTargeting
+    return:
+      type: Microsoft.Xna.Framework.Audio.SoundEffect
+    content.vb: Public Shared gunTargeting As SoundEffect
+- uid: UndyneFight_Ex.FightResources.Sounds.gunShot
+  commentId: F:UndyneFight_Ex.FightResources.Sounds.gunShot
+  id: gunShot
+  parent: UndyneFight_Ex.FightResources.Sounds
+  langs:
+  - csharp
+  - vb
+  name: gunShot
+  nameWithType: FightResources.Sounds.gunShot
+  fullName: UndyneFight_Ex.FightResources.Sounds.gunShot
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: SFX of a gun being fired
+  example: []
+  syntax:
+    content: public static SoundEffect gunShot
+    return:
+      type: Microsoft.Xna.Framework.Audio.SoundEffect
+    content.vb: Public Shared gunShot As SoundEffect
+- uid: UndyneFight_Ex.FightResources.Sounds.largeKnife
+  commentId: F:UndyneFight_Ex.FightResources.Sounds.largeKnife
+  id: largeKnife
+  parent: UndyneFight_Ex.FightResources.Sounds
+  langs:
+  - csharp
+  - vb
+  name: largeKnife
+  nameWithType: FightResources.Sounds.largeKnife
+  fullName: UndyneFight_Ex.FightResources.Sounds.largeKnife
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: SFX of DT2 knife
+  example: []
+  syntax:
+    content: public static SoundEffect largeKnife
+    return:
+      type: Microsoft.Xna.Framework.Audio.SoundEffect
+    content.vb: Public Shared largeKnife As SoundEffect
+- uid: UndyneFight_Ex.FightResources.Sounds.boneSlabSpawn
+  commentId: F:UndyneFight_Ex.FightResources.Sounds.boneSlabSpawn
+  id: boneSlabSpawn
+  parent: UndyneFight_Ex.FightResources.Sounds
+  langs:
+  - csharp
+  - vb
+  name: boneSlabSpawn
+  nameWithType: FightResources.Sounds.boneSlabSpawn
+  fullName: UndyneFight_Ex.FightResources.Sounds.boneSlabSpawn
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: SFX of a bone slab spawning/enemy encounter
+  example: []
+  syntax:
+    content: public static SoundEffect boneSlabSpawn
+    return:
+      type: Microsoft.Xna.Framework.Audio.SoundEffect
+    content.vb: Public Shared boneSlabSpawn As SoundEffect
+- uid: UndyneFight_Ex.FightResources.Sounds.giga
+  commentId: F:UndyneFight_Ex.FightResources.Sounds.giga
+  id: giga
+  parent: UndyneFight_Ex.FightResources.Sounds
+  langs:
+  - csharp
+  - vb
+  name: giga
+  nameWithType: FightResources.Sounds.giga
+  fullName: UndyneFight_Ex.FightResources.Sounds.giga
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: SFX of DT2 yelling
+  example: []
+  syntax:
+    content: public static SoundEffect giga
+    return:
+      type: Microsoft.Xna.Framework.Audio.SoundEffect
+    content.vb: Public Shared giga As SoundEffect
+- uid: UndyneFight_Ex.FightResources.Sounds.star0
+  commentId: F:UndyneFight_Ex.FightResources.Sounds.star0
+  id: star0
+  parent: UndyneFight_Ex.FightResources.Sounds
+  langs:
+  - csharp
+  - vb
+  name: star0
+  nameWithType: FightResources.Sounds.star0
+  fullName: UndyneFight_Ex.FightResources.Sounds.star0
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: SFX of star appearing
+  example: []
+  syntax:
+    content: public static SoundEffect star0
+    return:
+      type: Microsoft.Xna.Framework.Audio.SoundEffect
+    content.vb: Public Shared star0 As SoundEffect
+- uid: UndyneFight_Ex.FightResources.Sounds.star1
+  commentId: F:UndyneFight_Ex.FightResources.Sounds.star1
+  id: star1
+  parent: UndyneFight_Ex.FightResources.Sounds
+  langs:
+  - csharp
+  - vb
+  name: star1
+  nameWithType: FightResources.Sounds.star1
+  fullName: UndyneFight_Ex.FightResources.Sounds.star1
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: SFX of star firing
+  example: []
+  syntax:
+    content: public static SoundEffect star1
+    return:
+      type: Microsoft.Xna.Framework.Audio.SoundEffect
+    content.vb: Public Shared star1 As SoundEffect
+- uid: UndyneFight_Ex.FightResources.Sounds.sparkles
+  commentId: F:UndyneFight_Ex.FightResources.Sounds.sparkles
+  id: sparkles
+  parent: UndyneFight_Ex.FightResources.Sounds
+  langs:
+  - csharp
+  - vb
+  name: sparkles
+  nameWithType: FightResources.Sounds.sparkles
+  fullName: UndyneFight_Ex.FightResources.Sounds.sparkles
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: SFX of a sparkle
+  example: []
+  syntax:
+    content: public static SoundEffect sparkles
+    return:
+      type: Microsoft.Xna.Framework.Audio.SoundEffect
+    content.vb: Public Shared sparkles As SoundEffect
+- uid: UndyneFight_Ex.FightResources.Sounds.Warning
+  commentId: P:UndyneFight_Ex.FightResources.Sounds.Warning
+  id: Warning
+  parent: UndyneFight_Ex.FightResources.Sounds
+  langs:
+  - csharp
+  - vb
+  name: Warning
+  nameWithType: FightResources.Sounds.Warning
+  fullName: UndyneFight_Ex.FightResources.Sounds.Warning
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: SFX of warning
+  example: []
+  syntax:
+    content: public static SoundEffect Warning { get; }
+    parameters: []
+    return:
+      type: Microsoft.Xna.Framework.Audio.SoundEffect
+    content.vb: Public Shared ReadOnly Property Warning As SoundEffect
+  overload: UndyneFight_Ex.FightResources.Sounds.Warning*
+- uid: UndyneFight_Ex.FightResources.Sounds.Ding
+  commentId: P:UndyneFight_Ex.FightResources.Sounds.Ding
+  id: Ding
+  parent: UndyneFight_Ex.FightResources.Sounds
+  langs:
+  - csharp
+  - vb
+  name: Ding
+  nameWithType: FightResources.Sounds.Ding
+  fullName: UndyneFight_Ex.FightResources.Sounds.Ding
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Ding~
+  example: []
+  syntax:
+    content: public static SoundEffect Ding { get; }
+    parameters: []
+    return:
+      type: Microsoft.Xna.Framework.Audio.SoundEffect
+    content.vb: Public Shared ReadOnly Property Ding As SoundEffect
+  overload: UndyneFight_Ex.FightResources.Sounds.Ding*
+- uid: UndyneFight_Ex.FightResources.Sounds.ArrowStuck
+  commentId: P:UndyneFight_Ex.FightResources.Sounds.ArrowStuck
+  id: ArrowStuck
+  parent: UndyneFight_Ex.FightResources.Sounds
+  langs:
+  - csharp
+  - vb
+  name: ArrowStuck
+  nameWithType: FightResources.Sounds.ArrowStuck
+  fullName: UndyneFight_Ex.FightResources.Sounds.ArrowStuck
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: SFX of new arrow collision
+  example: []
+  syntax:
+    content: public static SoundEffect ArrowStuck { get; }
+    parameters: []
+    return:
+      type: Microsoft.Xna.Framework.Audio.SoundEffect
+    content.vb: Public Shared ReadOnly Property ArrowStuck As SoundEffect
+  overload: UndyneFight_Ex.FightResources.Sounds.ArrowStuck*
+- uid: UndyneFight_Ex.FightResources.Sounds.YellowShoot
+  commentId: P:UndyneFight_Ex.FightResources.Sounds.YellowShoot
+  id: YellowShoot
+  parent: UndyneFight_Ex.FightResources.Sounds
+  langs:
+  - csharp
+  - vb
+  name: YellowShoot
+  nameWithType: FightResources.Sounds.YellowShoot
+  fullName: UndyneFight_Ex.FightResources.Sounds.YellowShoot
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: Yellow soul bullet shooting SFX
+  example: []
+  syntax:
+    content: public static SoundEffect YellowShoot { get; set; }
+    parameters: []
+    return:
+      type: Microsoft.Xna.Framework.Audio.SoundEffect
+    content.vb: Public Shared Property YellowShoot As SoundEffect
+  overload: UndyneFight_Ex.FightResources.Sounds.YellowShoot*
+- uid: UndyneFight_Ex.FightResources.Sounds.TargetBurst
+  commentId: P:UndyneFight_Ex.FightResources.Sounds.TargetBurst
+  id: TargetBurst
+  parent: UndyneFight_Ex.FightResources.Sounds
+  langs:
+  - csharp
+  - vb
+  name: TargetBurst
+  nameWithType: FightResources.Sounds.TargetBurst
+  fullName: UndyneFight_Ex.FightResources.Sounds.TargetBurst
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: SFX of a block destroyed by yellow bullet
+  example: []
+  syntax:
+    content: public static SoundEffect TargetBurst { get; set; }
+    parameters: []
+    return:
+      type: Microsoft.Xna.Framework.Audio.SoundEffect
+    content.vb: Public Shared Property TargetBurst As SoundEffect
+  overload: UndyneFight_Ex.FightResources.Sounds.TargetBurst*
+- uid: UndyneFight_Ex.FightResources.Sounds.Bomb
+  commentId: P:UndyneFight_Ex.FightResources.Sounds.Bomb
+  id: Bomb
+  parent: UndyneFight_Ex.FightResources.Sounds
+  langs:
+  - csharp
+  - vb
+  name: Bomb
+  nameWithType: FightResources.Sounds.Bomb
+  fullName: UndyneFight_Ex.FightResources.Sounds.Bomb
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex
+  summary: SFX of a yellow soul bomb exploding
+  example: []
+  syntax:
+    content: public static SoundEffect Bomb { get; }
+    parameters: []
+    return:
+      type: Microsoft.Xna.Framework.Audio.SoundEffect
+    content.vb: Public Shared ReadOnly Property Bomb As SoundEffect
+  overload: UndyneFight_Ex.FightResources.Sounds.Bomb*
+references:
+- uid: UndyneFight_Ex
+  commentId: N:UndyneFight_Ex
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex
+  nameWithType: UndyneFight_Ex
+  fullName: UndyneFight_Ex
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.Xna.Framework.Audio.SoundEffect
+  commentId: T:Microsoft.Xna.Framework.Audio.SoundEffect
+  parent: Microsoft.Xna.Framework.Audio
+  isExternal: true
+  name: SoundEffect
+  nameWithType: SoundEffect
+  fullName: Microsoft.Xna.Framework.Audio.SoundEffect
+- uid: Microsoft.Xna.Framework.Audio
+  commentId: N:Microsoft.Xna.Framework.Audio
+  isExternal: true
+  name: Microsoft.Xna.Framework.Audio
+  nameWithType: Microsoft.Xna.Framework.Audio
+  fullName: Microsoft.Xna.Framework.Audio
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework.Audio
+    name: Audio
+    isExternal: true
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework.Audio
+    name: Audio
+    isExternal: true
+- uid: UndyneFight_Ex.FightResources.Sounds.Warning*
+  commentId: Overload:UndyneFight_Ex.FightResources.Sounds.Warning
+  isExternal: true
+  href: UndyneFight_Ex.FightResources.Sounds.html#UndyneFight_Ex_FightResources_Sounds_Warning
+  name: Warning
+  nameWithType: FightResources.Sounds.Warning
+  fullName: UndyneFight_Ex.FightResources.Sounds.Warning
+- uid: UndyneFight_Ex.FightResources.Sounds.Ding*
+  commentId: Overload:UndyneFight_Ex.FightResources.Sounds.Ding
+  isExternal: true
+  href: UndyneFight_Ex.FightResources.Sounds.html#UndyneFight_Ex_FightResources_Sounds_Ding
+  name: Ding
+  nameWithType: FightResources.Sounds.Ding
+  fullName: UndyneFight_Ex.FightResources.Sounds.Ding
+- uid: UndyneFight_Ex.FightResources.Sounds.ArrowStuck*
+  commentId: Overload:UndyneFight_Ex.FightResources.Sounds.ArrowStuck
+  isExternal: true
+  href: UndyneFight_Ex.FightResources.Sounds.html#UndyneFight_Ex_FightResources_Sounds_ArrowStuck
+  name: ArrowStuck
+  nameWithType: FightResources.Sounds.ArrowStuck
+  fullName: UndyneFight_Ex.FightResources.Sounds.ArrowStuck
+- uid: UndyneFight_Ex.FightResources.Sounds.YellowShoot*
+  commentId: Overload:UndyneFight_Ex.FightResources.Sounds.YellowShoot
+  isExternal: true
+  href: UndyneFight_Ex.FightResources.Sounds.html#UndyneFight_Ex_FightResources_Sounds_YellowShoot
+  name: YellowShoot
+  nameWithType: FightResources.Sounds.YellowShoot
+  fullName: UndyneFight_Ex.FightResources.Sounds.YellowShoot
+- uid: UndyneFight_Ex.FightResources.Sounds.TargetBurst*
+  commentId: Overload:UndyneFight_Ex.FightResources.Sounds.TargetBurst
+  isExternal: true
+  href: UndyneFight_Ex.FightResources.Sounds.html#UndyneFight_Ex_FightResources_Sounds_TargetBurst
+  name: TargetBurst
+  nameWithType: FightResources.Sounds.TargetBurst
+  fullName: UndyneFight_Ex.FightResources.Sounds.TargetBurst
+- uid: UndyneFight_Ex.FightResources.Sounds.Bomb*
+  commentId: Overload:UndyneFight_Ex.FightResources.Sounds.Bomb
+  isExternal: true
+  href: UndyneFight_Ex.FightResources.Sounds.html#UndyneFight_Ex_FightResources_Sounds_Bomb
+  name: Bomb
+  nameWithType: FightResources.Sounds.Bomb
+  fullName: UndyneFight_Ex.FightResources.Sounds.Bomb

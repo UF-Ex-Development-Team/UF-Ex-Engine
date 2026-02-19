@@ -1,0 +1,1278 @@
+### YamlMime:ManagedReference
+items:
+- uid: UndyneFight_Ex.Fight
+  commentId: N:UndyneFight_Ex.Fight
+  id: UndyneFight_Ex.Fight
+  children:
+  - UndyneFight_Ex.Fight.AdvanceFunctions
+  - UndyneFight_Ex.Fight.AdvanceFunctions.Interactive
+  - UndyneFight_Ex.Fight.AttackAnimation
+  - UndyneFight_Ex.Fight.AttributeSet
+  - UndyneFight_Ex.Fight.BoxMessage
+  - UndyneFight_Ex.Fight.ClassicFight
+  - UndyneFight_Ex.Fight.ClassicFight.InterActive
+  - UndyneFight_Ex.Fight.ClassicFight.Menu
+  - UndyneFight_Ex.Fight.ClassicFight.PlayerInformation
+  - UndyneFight_Ex.Fight.DialogBox
+  - UndyneFight_Ex.Fight.Enemy
+  - UndyneFight_Ex.Fight.FightSelection
+  - UndyneFight_Ex.Fight.FightSelectionCollection
+  - UndyneFight_Ex.Fight.FightTextSelection
+  - UndyneFight_Ex.Fight.Functions
+  - UndyneFight_Ex.Fight.Functions.ArrowAttribute
+  - UndyneFight_Ex.Fight.Functions.ArrowEase
+  - UndyneFight_Ex.Fight.Functions.BoxStates
+  - UndyneFight_Ex.Fight.Functions.HeartAttribute
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.CameraEffect
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.CustomSurface
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.HPBar
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Blur
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Filter
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Glitching
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.Light
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.UISettings
+  - UndyneFight_Ex.Fight.Functions.ScreenDrawing.UISettings.UISurfaceDrawing
+  - UndyneFight_Ex.Fight.GameAction
+  - UndyneFight_Ex.Fight.IClassicFight
+  - UndyneFight_Ex.Fight.IExtraOption
+  - UndyneFight_Ex.Fight.Item
+  - UndyneFight_Ex.Fight.MenuButtons
+  - UndyneFight_Ex.Fight.MenuButtons.ActButton
+  - UndyneFight_Ex.Fight.MenuButtons.FightButton
+  - UndyneFight_Ex.Fight.MenuButtons.ItemButton
+  - UndyneFight_Ex.Fight.MenuButtons.MercyButton
+  - UndyneFight_Ex.Fight.PrintingSettings
+  - UndyneFight_Ex.Fight.PrintingSettings.CurrentPrintingData
+  - UndyneFight_Ex.Fight.Slice
+  - UndyneFight_Ex.Fight.TextAction
+  - UndyneFight_Ex.Fight.TextAttribute
+  - UndyneFight_Ex.Fight.TextCharMovingAttribute
+  - UndyneFight_Ex.Fight.TextColorAttribute
+  - UndyneFight_Ex.Fight.TextFadeoutAttribute
+  - UndyneFight_Ex.Fight.TextGleamAttribute
+  - UndyneFight_Ex.Fight.TextMoveAttribute
+  - UndyneFight_Ex.Fight.TextPrinter
+  - UndyneFight_Ex.Fight.TextSizeAttribute
+  - UndyneFight_Ex.Fight.TextSpeedAttribute
+  - UndyneFight_Ex.Fight.TextTimeThreshold
+  langs:
+  - csharp
+  - vb
+  name: UndyneFight_Ex.Fight
+  nameWithType: UndyneFight_Ex.Fight
+  fullName: UndyneFight_Ex.Fight
+  type: Namespace
+  assemblies:
+  - UndyneFight-Ex
+references:
+- uid: UndyneFight_Ex.Fight.AdvanceFunctions
+  commentId: T:UndyneFight_Ex.Fight.AdvanceFunctions
+  isExternal: true
+  href: UndyneFight_Ex.Fight.AdvanceFunctions.html
+  name: AdvanceFunctions
+  nameWithType: AdvanceFunctions
+  fullName: UndyneFight_Ex.Fight.AdvanceFunctions
+- uid: UndyneFight_Ex.Fight.AdvanceFunctions.Interactive
+  commentId: T:UndyneFight_Ex.Fight.AdvanceFunctions.Interactive
+  isExternal: true
+  href: UndyneFight_Ex.Fight.AdvanceFunctions.html
+  name: AdvanceFunctions.Interactive
+  nameWithType: AdvanceFunctions.Interactive
+  fullName: UndyneFight_Ex.Fight.AdvanceFunctions.Interactive
+  spec.csharp:
+  - uid: UndyneFight_Ex.Fight.AdvanceFunctions
+    name: AdvanceFunctions
+    isExternal: true
+    href: UndyneFight_Ex.Fight.AdvanceFunctions.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.AdvanceFunctions.Interactive
+    name: Interactive
+    isExternal: true
+    href: UndyneFight_Ex.Fight.AdvanceFunctions.Interactive.html
+  spec.vb:
+  - uid: UndyneFight_Ex.Fight.AdvanceFunctions
+    name: AdvanceFunctions
+    isExternal: true
+    href: UndyneFight_Ex.Fight.AdvanceFunctions.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.AdvanceFunctions.Interactive
+    name: Interactive
+    isExternal: true
+    href: UndyneFight_Ex.Fight.AdvanceFunctions.Interactive.html
+- uid: UndyneFight_Ex.Fight.Functions
+  commentId: T:UndyneFight_Ex.Fight.Functions
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html
+  name: Functions
+  nameWithType: Functions
+  fullName: UndyneFight_Ex.Fight.Functions
+- uid: UndyneFight_Ex.Fight.Functions.HeartAttribute
+  commentId: T:UndyneFight_Ex.Fight.Functions.HeartAttribute
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html
+  name: Functions.HeartAttribute
+  nameWithType: Functions.HeartAttribute
+  fullName: UndyneFight_Ex.Fight.Functions.HeartAttribute
+  spec.csharp:
+  - uid: UndyneFight_Ex.Fight.Functions
+    name: Functions
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.HeartAttribute
+    name: HeartAttribute
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.HeartAttribute.html
+  spec.vb:
+  - uid: UndyneFight_Ex.Fight.Functions
+    name: Functions
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.HeartAttribute
+    name: HeartAttribute
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.HeartAttribute.html
+- uid: UndyneFight_Ex.Fight.Functions.BoxStates
+  commentId: T:UndyneFight_Ex.Fight.Functions.BoxStates
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html
+  name: Functions.BoxStates
+  nameWithType: Functions.BoxStates
+  fullName: UndyneFight_Ex.Fight.Functions.BoxStates
+  spec.csharp:
+  - uid: UndyneFight_Ex.Fight.Functions
+    name: Functions
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.BoxStates
+    name: BoxStates
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.BoxStates.html
+  spec.vb:
+  - uid: UndyneFight_Ex.Fight.Functions
+    name: Functions
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.BoxStates
+    name: BoxStates
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.BoxStates.html
+- uid: UndyneFight_Ex.Fight.Functions.ArrowAttribute
+  commentId: T:UndyneFight_Ex.Fight.Functions.ArrowAttribute
+  parent: UndyneFight_Ex.Fight
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html
+  name: Functions.ArrowAttribute
+  nameWithType: Functions.ArrowAttribute
+  fullName: UndyneFight_Ex.Fight.Functions.ArrowAttribute
+  spec.csharp:
+  - uid: UndyneFight_Ex.Fight.Functions
+    name: Functions
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ArrowAttribute
+    name: ArrowAttribute
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ArrowAttribute.html
+  spec.vb:
+  - uid: UndyneFight_Ex.Fight.Functions
+    name: Functions
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ArrowAttribute
+    name: ArrowAttribute
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ArrowAttribute.html
+- uid: UndyneFight_Ex.Fight.Functions.ArrowEase
+  commentId: T:UndyneFight_Ex.Fight.Functions.ArrowEase
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html
+  name: Functions.ArrowEase
+  nameWithType: Functions.ArrowEase
+  fullName: UndyneFight_Ex.Fight.Functions.ArrowEase
+  spec.csharp:
+  - uid: UndyneFight_Ex.Fight.Functions
+    name: Functions
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ArrowEase
+    name: ArrowEase
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ArrowEase.html
+  spec.vb:
+  - uid: UndyneFight_Ex.Fight.Functions
+    name: Functions
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ArrowEase
+    name: ArrowEase
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ArrowEase.html
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+  commentId: T:UndyneFight_Ex.Fight.Functions.ScreenDrawing
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html
+  name: Functions.ScreenDrawing
+  nameWithType: Functions.ScreenDrawing
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+  spec.csharp:
+  - uid: UndyneFight_Ex.Fight.Functions
+    name: Functions
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+    name: ScreenDrawing
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html
+  spec.vb:
+  - uid: UndyneFight_Ex.Fight.Functions
+    name: Functions
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+    name: ScreenDrawing
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.CustomSurface
+  commentId: T:UndyneFight_Ex.Fight.Functions.ScreenDrawing.CustomSurface
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html
+  name: Functions.ScreenDrawing.CustomSurface
+  nameWithType: Functions.ScreenDrawing.CustomSurface
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.CustomSurface
+  spec.csharp:
+  - uid: UndyneFight_Ex.Fight.Functions
+    name: Functions
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+    name: ScreenDrawing
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.CustomSurface
+    name: CustomSurface
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.CustomSurface.html
+  spec.vb:
+  - uid: UndyneFight_Ex.Fight.Functions
+    name: Functions
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+    name: ScreenDrawing
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.CustomSurface
+    name: CustomSurface
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.CustomSurface.html
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.UISettings
+  commentId: T:UndyneFight_Ex.Fight.Functions.ScreenDrawing.UISettings
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html
+  name: Functions.ScreenDrawing.UISettings
+  nameWithType: Functions.ScreenDrawing.UISettings
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.UISettings
+  spec.csharp:
+  - uid: UndyneFight_Ex.Fight.Functions
+    name: Functions
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+    name: ScreenDrawing
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.UISettings
+    name: UISettings
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.UISettings.html
+  spec.vb:
+  - uid: UndyneFight_Ex.Fight.Functions
+    name: Functions
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+    name: ScreenDrawing
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.UISettings
+    name: UISettings
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.UISettings.html
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.UISettings.UISurfaceDrawing
+  commentId: T:UndyneFight_Ex.Fight.Functions.ScreenDrawing.UISettings.UISurfaceDrawing
+  parent: UndyneFight_Ex.Fight
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html
+  name: Functions.ScreenDrawing.UISettings.UISurfaceDrawing
+  nameWithType: Functions.ScreenDrawing.UISettings.UISurfaceDrawing
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.UISettings.UISurfaceDrawing
+  spec.csharp:
+  - uid: UndyneFight_Ex.Fight.Functions
+    name: Functions
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+    name: ScreenDrawing
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.UISettings
+    name: UISettings
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.UISettings.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.UISettings.UISurfaceDrawing
+    name: UISurfaceDrawing
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.UISettings.UISurfaceDrawing.html
+  spec.vb:
+  - uid: UndyneFight_Ex.Fight.Functions
+    name: Functions
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+    name: ScreenDrawing
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.UISettings
+    name: UISettings
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.UISettings.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.UISettings.UISurfaceDrawing
+    name: UISurfaceDrawing
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.UISettings.UISurfaceDrawing.html
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.HPBar
+  commentId: T:UndyneFight_Ex.Fight.Functions.ScreenDrawing.HPBar
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html
+  name: Functions.ScreenDrawing.HPBar
+  nameWithType: Functions.ScreenDrawing.HPBar
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.HPBar
+  spec.csharp:
+  - uid: UndyneFight_Ex.Fight.Functions
+    name: Functions
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+    name: ScreenDrawing
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.HPBar
+    name: HPBar
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.HPBar.html
+  spec.vb:
+  - uid: UndyneFight_Ex.Fight.Functions
+    name: Functions
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+    name: ScreenDrawing
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.HPBar
+    name: HPBar
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.HPBar.html
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.CameraEffect
+  commentId: T:UndyneFight_Ex.Fight.Functions.ScreenDrawing.CameraEffect
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html
+  name: Functions.ScreenDrawing.CameraEffect
+  nameWithType: Functions.ScreenDrawing.CameraEffect
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.CameraEffect
+  spec.csharp:
+  - uid: UndyneFight_Ex.Fight.Functions
+    name: Functions
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+    name: ScreenDrawing
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.CameraEffect
+    name: CameraEffect
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.CameraEffect.html
+  spec.vb:
+  - uid: UndyneFight_Ex.Fight.Functions
+    name: Functions
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+    name: ScreenDrawing
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.CameraEffect
+    name: CameraEffect
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.CameraEffect.html
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders
+  commentId: T:UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html
+  name: Functions.ScreenDrawing.Shaders
+  nameWithType: Functions.ScreenDrawing.Shaders
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders
+  spec.csharp:
+  - uid: UndyneFight_Ex.Fight.Functions
+    name: Functions
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+    name: ScreenDrawing
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders
+    name: Shaders
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.html
+  spec.vb:
+  - uid: UndyneFight_Ex.Fight.Functions
+    name: Functions
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+    name: ScreenDrawing
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders
+    name: Shaders
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.html
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting
+  commentId: T:UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html
+  name: Functions.ScreenDrawing.Shaders.Lighting
+  nameWithType: Functions.ScreenDrawing.Shaders.Lighting
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting
+  spec.csharp:
+  - uid: UndyneFight_Ex.Fight.Functions
+    name: Functions
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+    name: ScreenDrawing
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders
+    name: Shaders
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting
+    name: Lighting
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.html
+  spec.vb:
+  - uid: UndyneFight_Ex.Fight.Functions
+    name: Functions
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+    name: ScreenDrawing
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders
+    name: Shaders
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting
+    name: Lighting
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.html
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode
+  commentId: T:UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode
+  parent: UndyneFight_Ex.Fight
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html
+  name: Functions.ScreenDrawing.Shaders.Lighting.LightMode
+  nameWithType: Functions.ScreenDrawing.Shaders.Lighting.LightMode
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode
+  spec.csharp:
+  - uid: UndyneFight_Ex.Fight.Functions
+    name: Functions
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+    name: ScreenDrawing
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders
+    name: Shaders
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting
+    name: Lighting
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode
+    name: LightMode
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode.html
+  spec.vb:
+  - uid: UndyneFight_Ex.Fight.Functions
+    name: Functions
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+    name: ScreenDrawing
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders
+    name: Shaders
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting
+    name: Lighting
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode
+    name: LightMode
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode.html
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.Light
+  commentId: T:UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.Light
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html
+  name: Functions.ScreenDrawing.Shaders.Lighting.Light
+  nameWithType: Functions.ScreenDrawing.Shaders.Lighting.Light
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.Light
+  spec.csharp:
+  - uid: UndyneFight_Ex.Fight.Functions
+    name: Functions
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+    name: ScreenDrawing
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders
+    name: Shaders
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting
+    name: Lighting
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.Light
+    name: Light
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.Light.html
+  spec.vb:
+  - uid: UndyneFight_Ex.Fight.Functions
+    name: Functions
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+    name: ScreenDrawing
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders
+    name: Shaders
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting
+    name: Lighting
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.Light
+    name: Light
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.Light.html
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting
+  commentId: T:UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html
+  name: Functions.ScreenDrawing.Shaders.RGBSplitting
+  nameWithType: Functions.ScreenDrawing.Shaders.RGBSplitting
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting
+  spec.csharp:
+  - uid: UndyneFight_Ex.Fight.Functions
+    name: Functions
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+    name: ScreenDrawing
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders
+    name: Shaders
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting
+    name: RGBSplitting
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.html
+  spec.vb:
+  - uid: UndyneFight_Ex.Fight.Functions
+    name: Functions
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+    name: ScreenDrawing
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders
+    name: Shaders
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting
+    name: RGBSplitting
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.html
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Glitching
+  commentId: T:UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Glitching
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html
+  name: Functions.ScreenDrawing.Shaders.Glitching
+  nameWithType: Functions.ScreenDrawing.Shaders.Glitching
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Glitching
+  spec.csharp:
+  - uid: UndyneFight_Ex.Fight.Functions
+    name: Functions
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+    name: ScreenDrawing
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders
+    name: Shaders
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Glitching
+    name: Glitching
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Glitching.html
+  spec.vb:
+  - uid: UndyneFight_Ex.Fight.Functions
+    name: Functions
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+    name: ScreenDrawing
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders
+    name: Shaders
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Glitching
+    name: Glitching
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Glitching.html
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Filter
+  commentId: T:UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Filter
+  parent: UndyneFight_Ex.Fight
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html
+  name: Functions.ScreenDrawing.Shaders.Filter
+  nameWithType: Functions.ScreenDrawing.Shaders.Filter
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Filter
+  spec.csharp:
+  - uid: UndyneFight_Ex.Fight.Functions
+    name: Functions
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+    name: ScreenDrawing
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders
+    name: Shaders
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Filter
+    name: Filter
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Filter.html
+  spec.vb:
+  - uid: UndyneFight_Ex.Fight.Functions
+    name: Functions
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+    name: ScreenDrawing
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders
+    name: Shaders
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Filter
+    name: Filter
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Filter.html
+- uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Blur
+  commentId: T:UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Blur
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Functions.html
+  name: Functions.ScreenDrawing.Shaders.Blur
+  nameWithType: Functions.ScreenDrawing.Shaders.Blur
+  fullName: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Blur
+  spec.csharp:
+  - uid: UndyneFight_Ex.Fight.Functions
+    name: Functions
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+    name: ScreenDrawing
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders
+    name: Shaders
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Blur
+    name: Blur
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Blur.html
+  spec.vb:
+  - uid: UndyneFight_Ex.Fight.Functions
+    name: Functions
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing
+    name: ScreenDrawing
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders
+    name: Shaders
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Blur
+    name: Blur
+    isExternal: true
+    href: UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Blur.html
+- uid: UndyneFight_Ex.Fight.ClassicFight
+  commentId: T:UndyneFight_Ex.Fight.ClassicFight
+  isExternal: true
+  href: UndyneFight_Ex.Fight.ClassicFight.html
+  name: ClassicFight
+  nameWithType: ClassicFight
+  fullName: UndyneFight_Ex.Fight.ClassicFight
+- uid: UndyneFight_Ex.Fight.ClassicFight.PlayerInformation
+  commentId: T:UndyneFight_Ex.Fight.ClassicFight.PlayerInformation
+  isExternal: true
+  href: UndyneFight_Ex.Fight.ClassicFight.html
+  name: ClassicFight.PlayerInformation
+  nameWithType: ClassicFight.PlayerInformation
+  fullName: UndyneFight_Ex.Fight.ClassicFight.PlayerInformation
+  spec.csharp:
+  - uid: UndyneFight_Ex.Fight.ClassicFight
+    name: ClassicFight
+    isExternal: true
+    href: UndyneFight_Ex.Fight.ClassicFight.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.ClassicFight.PlayerInformation
+    name: PlayerInformation
+    isExternal: true
+    href: UndyneFight_Ex.Fight.ClassicFight.PlayerInformation.html
+  spec.vb:
+  - uid: UndyneFight_Ex.Fight.ClassicFight
+    name: ClassicFight
+    isExternal: true
+    href: UndyneFight_Ex.Fight.ClassicFight.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.ClassicFight.PlayerInformation
+    name: PlayerInformation
+    isExternal: true
+    href: UndyneFight_Ex.Fight.ClassicFight.PlayerInformation.html
+- uid: UndyneFight_Ex.Fight.ClassicFight.InterActive
+  commentId: T:UndyneFight_Ex.Fight.ClassicFight.InterActive
+  isExternal: true
+  href: UndyneFight_Ex.Fight.ClassicFight.html
+  name: ClassicFight.InterActive
+  nameWithType: ClassicFight.InterActive
+  fullName: UndyneFight_Ex.Fight.ClassicFight.InterActive
+  spec.csharp:
+  - uid: UndyneFight_Ex.Fight.ClassicFight
+    name: ClassicFight
+    isExternal: true
+    href: UndyneFight_Ex.Fight.ClassicFight.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.ClassicFight.InterActive
+    name: InterActive
+    isExternal: true
+    href: UndyneFight_Ex.Fight.ClassicFight.InterActive.html
+  spec.vb:
+  - uid: UndyneFight_Ex.Fight.ClassicFight
+    name: ClassicFight
+    isExternal: true
+    href: UndyneFight_Ex.Fight.ClassicFight.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.ClassicFight.InterActive
+    name: InterActive
+    isExternal: true
+    href: UndyneFight_Ex.Fight.ClassicFight.InterActive.html
+- uid: UndyneFight_Ex.Fight.ClassicFight.Menu
+  commentId: T:UndyneFight_Ex.Fight.ClassicFight.Menu
+  isExternal: true
+  href: UndyneFight_Ex.Fight.ClassicFight.html
+  name: ClassicFight.Menu
+  nameWithType: ClassicFight.Menu
+  fullName: UndyneFight_Ex.Fight.ClassicFight.Menu
+  spec.csharp:
+  - uid: UndyneFight_Ex.Fight.ClassicFight
+    name: ClassicFight
+    isExternal: true
+    href: UndyneFight_Ex.Fight.ClassicFight.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.ClassicFight.Menu
+    name: Menu
+    isExternal: true
+    href: UndyneFight_Ex.Fight.ClassicFight.Menu.html
+  spec.vb:
+  - uid: UndyneFight_Ex.Fight.ClassicFight
+    name: ClassicFight
+    isExternal: true
+    href: UndyneFight_Ex.Fight.ClassicFight.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.ClassicFight.Menu
+    name: Menu
+    isExternal: true
+    href: UndyneFight_Ex.Fight.ClassicFight.Menu.html
+- uid: UndyneFight_Ex.Fight.Enemy
+  commentId: T:UndyneFight_Ex.Fight.Enemy
+  parent: UndyneFight_Ex.Fight
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Enemy.html
+  name: Enemy
+  nameWithType: Enemy
+  fullName: UndyneFight_Ex.Fight.Enemy
+- uid: UndyneFight_Ex.Fight.FightSelection
+  commentId: T:UndyneFight_Ex.Fight.FightSelection
+  parent: UndyneFight_Ex.Fight
+  isExternal: true
+  href: UndyneFight_Ex.Fight.FightSelection.html
+  name: FightSelection
+  nameWithType: FightSelection
+  fullName: UndyneFight_Ex.Fight.FightSelection
+- uid: UndyneFight_Ex.Fight.FightTextSelection
+  commentId: T:UndyneFight_Ex.Fight.FightTextSelection
+  isExternal: true
+  href: UndyneFight_Ex.Fight.FightTextSelection.html
+  name: FightTextSelection
+  nameWithType: FightTextSelection
+  fullName: UndyneFight_Ex.Fight.FightTextSelection
+- uid: UndyneFight_Ex.Fight.FightSelectionCollection
+  commentId: T:UndyneFight_Ex.Fight.FightSelectionCollection
+  isExternal: true
+  href: UndyneFight_Ex.Fight.FightSelectionCollection.html
+  name: FightSelectionCollection
+  nameWithType: FightSelectionCollection
+  fullName: UndyneFight_Ex.Fight.FightSelectionCollection
+- uid: UndyneFight_Ex.Fight.IExtraOption
+  commentId: T:UndyneFight_Ex.Fight.IExtraOption
+  parent: UndyneFight_Ex.Fight
+  isExternal: true
+  href: UndyneFight_Ex.Fight.IExtraOption.html
+  name: IExtraOption
+  nameWithType: IExtraOption
+  fullName: UndyneFight_Ex.Fight.IExtraOption
+- uid: UndyneFight_Ex.Fight.IClassicFight
+  commentId: T:UndyneFight_Ex.Fight.IClassicFight
+  parent: UndyneFight_Ex.Fight
+  isExternal: true
+  href: UndyneFight_Ex.Fight.IClassicFight.html
+  name: IClassicFight
+  nameWithType: IClassicFight
+  fullName: UndyneFight_Ex.Fight.IClassicFight
+- uid: UndyneFight_Ex.Fight.AttackAnimation
+  commentId: T:UndyneFight_Ex.Fight.AttackAnimation
+  parent: UndyneFight_Ex.Fight
+  isExternal: true
+  href: UndyneFight_Ex.Fight.AttackAnimation.html
+  name: AttackAnimation
+  nameWithType: AttackAnimation
+  fullName: UndyneFight_Ex.Fight.AttackAnimation
+- uid: UndyneFight_Ex.Fight.Slice
+  commentId: T:UndyneFight_Ex.Fight.Slice
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Slice.html
+  name: Slice
+  nameWithType: Slice
+  fullName: UndyneFight_Ex.Fight.Slice
+- uid: UndyneFight_Ex.Fight.MenuButtons
+  commentId: T:UndyneFight_Ex.Fight.MenuButtons
+  isExternal: true
+  href: UndyneFight_Ex.Fight.MenuButtons.html
+  name: MenuButtons
+  nameWithType: MenuButtons
+  fullName: UndyneFight_Ex.Fight.MenuButtons
+- uid: UndyneFight_Ex.Fight.MenuButtons.FightButton
+  commentId: T:UndyneFight_Ex.Fight.MenuButtons.FightButton
+  parent: UndyneFight_Ex.Fight
+  isExternal: true
+  href: UndyneFight_Ex.Fight.MenuButtons.html
+  name: MenuButtons.FightButton
+  nameWithType: MenuButtons.FightButton
+  fullName: UndyneFight_Ex.Fight.MenuButtons.FightButton
+  spec.csharp:
+  - uid: UndyneFight_Ex.Fight.MenuButtons
+    name: MenuButtons
+    isExternal: true
+    href: UndyneFight_Ex.Fight.MenuButtons.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.MenuButtons.FightButton
+    name: FightButton
+    isExternal: true
+    href: UndyneFight_Ex.Fight.MenuButtons.FightButton.html
+  spec.vb:
+  - uid: UndyneFight_Ex.Fight.MenuButtons
+    name: MenuButtons
+    isExternal: true
+    href: UndyneFight_Ex.Fight.MenuButtons.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.MenuButtons.FightButton
+    name: FightButton
+    isExternal: true
+    href: UndyneFight_Ex.Fight.MenuButtons.FightButton.html
+- uid: UndyneFight_Ex.Fight.MenuButtons.ActButton
+  commentId: T:UndyneFight_Ex.Fight.MenuButtons.ActButton
+  parent: UndyneFight_Ex.Fight
+  isExternal: true
+  href: UndyneFight_Ex.Fight.MenuButtons.html
+  name: MenuButtons.ActButton
+  nameWithType: MenuButtons.ActButton
+  fullName: UndyneFight_Ex.Fight.MenuButtons.ActButton
+  spec.csharp:
+  - uid: UndyneFight_Ex.Fight.MenuButtons
+    name: MenuButtons
+    isExternal: true
+    href: UndyneFight_Ex.Fight.MenuButtons.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.MenuButtons.ActButton
+    name: ActButton
+    isExternal: true
+    href: UndyneFight_Ex.Fight.MenuButtons.ActButton.html
+  spec.vb:
+  - uid: UndyneFight_Ex.Fight.MenuButtons
+    name: MenuButtons
+    isExternal: true
+    href: UndyneFight_Ex.Fight.MenuButtons.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.MenuButtons.ActButton
+    name: ActButton
+    isExternal: true
+    href: UndyneFight_Ex.Fight.MenuButtons.ActButton.html
+- uid: UndyneFight_Ex.Fight.MenuButtons.ItemButton
+  commentId: T:UndyneFight_Ex.Fight.MenuButtons.ItemButton
+  parent: UndyneFight_Ex.Fight
+  isExternal: true
+  href: UndyneFight_Ex.Fight.MenuButtons.html
+  name: MenuButtons.ItemButton
+  nameWithType: MenuButtons.ItemButton
+  fullName: UndyneFight_Ex.Fight.MenuButtons.ItemButton
+  spec.csharp:
+  - uid: UndyneFight_Ex.Fight.MenuButtons
+    name: MenuButtons
+    isExternal: true
+    href: UndyneFight_Ex.Fight.MenuButtons.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.MenuButtons.ItemButton
+    name: ItemButton
+    isExternal: true
+    href: UndyneFight_Ex.Fight.MenuButtons.ItemButton.html
+  spec.vb:
+  - uid: UndyneFight_Ex.Fight.MenuButtons
+    name: MenuButtons
+    isExternal: true
+    href: UndyneFight_Ex.Fight.MenuButtons.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.MenuButtons.ItemButton
+    name: ItemButton
+    isExternal: true
+    href: UndyneFight_Ex.Fight.MenuButtons.ItemButton.html
+- uid: UndyneFight_Ex.Fight.MenuButtons.MercyButton
+  commentId: T:UndyneFight_Ex.Fight.MenuButtons.MercyButton
+  parent: UndyneFight_Ex.Fight
+  isExternal: true
+  href: UndyneFight_Ex.Fight.MenuButtons.html
+  name: MenuButtons.MercyButton
+  nameWithType: MenuButtons.MercyButton
+  fullName: UndyneFight_Ex.Fight.MenuButtons.MercyButton
+  spec.csharp:
+  - uid: UndyneFight_Ex.Fight.MenuButtons
+    name: MenuButtons
+    isExternal: true
+    href: UndyneFight_Ex.Fight.MenuButtons.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.MenuButtons.MercyButton
+    name: MercyButton
+    isExternal: true
+    href: UndyneFight_Ex.Fight.MenuButtons.MercyButton.html
+  spec.vb:
+  - uid: UndyneFight_Ex.Fight.MenuButtons
+    name: MenuButtons
+    isExternal: true
+    href: UndyneFight_Ex.Fight.MenuButtons.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.MenuButtons.MercyButton
+    name: MercyButton
+    isExternal: true
+    href: UndyneFight_Ex.Fight.MenuButtons.MercyButton.html
+- uid: UndyneFight_Ex.Fight.TextAttribute
+  commentId: T:UndyneFight_Ex.Fight.TextAttribute
+  parent: UndyneFight_Ex.Fight
+  isExternal: true
+  href: UndyneFight_Ex.Fight.TextAttribute.html
+  name: TextAttribute
+  nameWithType: TextAttribute
+  fullName: UndyneFight_Ex.Fight.TextAttribute
+- uid: UndyneFight_Ex.Fight.TextAction
+  commentId: T:UndyneFight_Ex.Fight.TextAction
+  isExternal: true
+  href: UndyneFight_Ex.Fight.TextAction.html
+  name: TextAction
+  nameWithType: TextAction
+  fullName: UndyneFight_Ex.Fight.TextAction
+- uid: UndyneFight_Ex.Fight.TextMoveAttribute
+  commentId: T:UndyneFight_Ex.Fight.TextMoveAttribute
+  isExternal: true
+  href: UndyneFight_Ex.Fight.TextMoveAttribute.html
+  name: TextMoveAttribute
+  nameWithType: TextMoveAttribute
+  fullName: UndyneFight_Ex.Fight.TextMoveAttribute
+- uid: UndyneFight_Ex.Fight.TextSizeAttribute
+  commentId: T:UndyneFight_Ex.Fight.TextSizeAttribute
+  isExternal: true
+  href: UndyneFight_Ex.Fight.TextSizeAttribute.html
+  name: TextSizeAttribute
+  nameWithType: TextSizeAttribute
+  fullName: UndyneFight_Ex.Fight.TextSizeAttribute
+- uid: UndyneFight_Ex.Fight.TextSpeedAttribute
+  commentId: T:UndyneFight_Ex.Fight.TextSpeedAttribute
+  isExternal: true
+  href: UndyneFight_Ex.Fight.TextSpeedAttribute.html
+  name: TextSpeedAttribute
+  nameWithType: TextSpeedAttribute
+  fullName: UndyneFight_Ex.Fight.TextSpeedAttribute
+- uid: UndyneFight_Ex.Fight.TextTimeThreshold
+  commentId: T:UndyneFight_Ex.Fight.TextTimeThreshold
+  isExternal: true
+  href: UndyneFight_Ex.Fight.TextTimeThreshold.html
+  name: TextTimeThreshold
+  nameWithType: TextTimeThreshold
+  fullName: UndyneFight_Ex.Fight.TextTimeThreshold
+- uid: UndyneFight_Ex.Fight.TextCharMovingAttribute
+  commentId: T:UndyneFight_Ex.Fight.TextCharMovingAttribute
+  isExternal: true
+  href: UndyneFight_Ex.Fight.TextCharMovingAttribute.html
+  name: TextCharMovingAttribute
+  nameWithType: TextCharMovingAttribute
+  fullName: UndyneFight_Ex.Fight.TextCharMovingAttribute
+- uid: UndyneFight_Ex.Fight.TextGleamAttribute
+  commentId: T:UndyneFight_Ex.Fight.TextGleamAttribute
+  isExternal: true
+  href: UndyneFight_Ex.Fight.TextGleamAttribute.html
+  name: TextGleamAttribute
+  nameWithType: TextGleamAttribute
+  fullName: UndyneFight_Ex.Fight.TextGleamAttribute
+- uid: UndyneFight_Ex.Fight.TextColorAttribute
+  commentId: T:UndyneFight_Ex.Fight.TextColorAttribute
+  isExternal: true
+  href: UndyneFight_Ex.Fight.TextColorAttribute.html
+  name: TextColorAttribute
+  nameWithType: TextColorAttribute
+  fullName: UndyneFight_Ex.Fight.TextColorAttribute
+- uid: UndyneFight_Ex.Fight.TextFadeoutAttribute
+  commentId: T:UndyneFight_Ex.Fight.TextFadeoutAttribute
+  isExternal: true
+  href: UndyneFight_Ex.Fight.TextFadeoutAttribute.html
+  name: TextFadeoutAttribute
+  nameWithType: TextFadeoutAttribute
+  fullName: UndyneFight_Ex.Fight.TextFadeoutAttribute
+- uid: UndyneFight_Ex.Fight.AttributeSet
+  commentId: T:UndyneFight_Ex.Fight.AttributeSet
+  isExternal: true
+  href: UndyneFight_Ex.Fight.AttributeSet.html
+  name: AttributeSet
+  nameWithType: AttributeSet
+  fullName: UndyneFight_Ex.Fight.AttributeSet
+- uid: UndyneFight_Ex.Fight.PrintingSettings
+  commentId: T:UndyneFight_Ex.Fight.PrintingSettings
+  isExternal: true
+  href: UndyneFight_Ex.Fight.PrintingSettings.html
+  name: PrintingSettings
+  nameWithType: PrintingSettings
+  fullName: UndyneFight_Ex.Fight.PrintingSettings
+- uid: UndyneFight_Ex.Fight.PrintingSettings.CurrentPrintingData
+  commentId: T:UndyneFight_Ex.Fight.PrintingSettings.CurrentPrintingData
+  parent: UndyneFight_Ex.Fight
+  isExternal: true
+  href: UndyneFight_Ex.Fight.PrintingSettings.html
+  name: PrintingSettings.CurrentPrintingData
+  nameWithType: PrintingSettings.CurrentPrintingData
+  fullName: UndyneFight_Ex.Fight.PrintingSettings.CurrentPrintingData
+  spec.csharp:
+  - uid: UndyneFight_Ex.Fight.PrintingSettings
+    name: PrintingSettings
+    isExternal: true
+    href: UndyneFight_Ex.Fight.PrintingSettings.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.PrintingSettings.CurrentPrintingData
+    name: CurrentPrintingData
+    isExternal: true
+    href: UndyneFight_Ex.Fight.PrintingSettings.CurrentPrintingData.html
+  spec.vb:
+  - uid: UndyneFight_Ex.Fight.PrintingSettings
+    name: PrintingSettings
+    isExternal: true
+    href: UndyneFight_Ex.Fight.PrintingSettings.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight.PrintingSettings.CurrentPrintingData
+    name: CurrentPrintingData
+    isExternal: true
+    href: UndyneFight_Ex.Fight.PrintingSettings.CurrentPrintingData.html
+- uid: UndyneFight_Ex.Fight.TextPrinter
+  commentId: T:UndyneFight_Ex.Fight.TextPrinter
+  isExternal: true
+  href: UndyneFight_Ex.Fight.TextPrinter.html
+  name: TextPrinter
+  nameWithType: TextPrinter
+  fullName: UndyneFight_Ex.Fight.TextPrinter
+- uid: UndyneFight_Ex.Fight.DialogBox
+  commentId: T:UndyneFight_Ex.Fight.DialogBox
+  isExternal: true
+  href: UndyneFight_Ex.Fight.DialogBox.html
+  name: DialogBox
+  nameWithType: DialogBox
+  fullName: UndyneFight_Ex.Fight.DialogBox
+- uid: UndyneFight_Ex.Fight.BoxMessage
+  commentId: T:UndyneFight_Ex.Fight.BoxMessage
+  isExternal: true
+  href: UndyneFight_Ex.Fight.BoxMessage.html
+  name: BoxMessage
+  nameWithType: BoxMessage
+  fullName: UndyneFight_Ex.Fight.BoxMessage
+- uid: UndyneFight_Ex.Fight.GameAction
+  commentId: T:UndyneFight_Ex.Fight.GameAction
+  parent: UndyneFight_Ex.Fight
+  isExternal: true
+  href: UndyneFight_Ex.Fight.GameAction.html
+  name: GameAction
+  nameWithType: GameAction
+  fullName: UndyneFight_Ex.Fight.GameAction
+- uid: UndyneFight_Ex.Fight.Item
+  commentId: T:UndyneFight_Ex.Fight.Item
+  parent: UndyneFight_Ex.Fight
+  isExternal: true
+  href: UndyneFight_Ex.Fight.Item.html
+  name: Item
+  nameWithType: Item
+  fullName: UndyneFight_Ex.Fight.Item
+- uid: UndyneFight_Ex.Fight
+  commentId: N:UndyneFight_Ex.Fight
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex.Fight
+  nameWithType: UndyneFight_Ex.Fight
+  fullName: UndyneFight_Ex.Fight
+  spec.csharp:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight
+    name: Fight
+    isExternal: true
+    href: UndyneFight_Ex.Fight.html
+  spec.vb:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Fight
+    name: Fight
+    isExternal: true
+    href: UndyneFight_Ex.Fight.html

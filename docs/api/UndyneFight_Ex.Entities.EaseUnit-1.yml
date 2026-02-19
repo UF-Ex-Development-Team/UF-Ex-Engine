@@ -1,0 +1,693 @@
+### YamlMime:ManagedReference
+items:
+- uid: UndyneFight_Ex.Entities.EaseUnit`1
+  commentId: T:UndyneFight_Ex.Entities.EaseUnit`1
+  id: EaseUnit`1
+  parent: UndyneFight_Ex.Entities
+  children:
+  - UndyneFight_Ex.Entities.EaseUnit`1.#ctor(`0,`0,System.Single,System.Func{UndyneFight_Ex.Entities.ICustomMotion,`0})
+  - UndyneFight_Ex.Entities.EaseUnit`1.Easing
+  - UndyneFight_Ex.Entities.EaseUnit`1.End
+  - UndyneFight_Ex.Entities.EaseUnit`1.Start
+  - UndyneFight_Ex.Entities.EaseUnit`1.Time
+  - UndyneFight_Ex.Entities.EaseUnit`1.ToString
+  - UndyneFight_Ex.Entities.EaseUnit`1.op_Implicit(UndyneFight_Ex.Entities.EaseUnit{`0})~System.Func{UndyneFight_Ex.Entities.ICustomMotion,`0}
+  langs:
+  - csharp
+  - vb
+  name: EaseUnit<T>
+  nameWithType: EaseUnit<T>
+  fullName: UndyneFight_Ex.Entities.EaseUnit<T>
+  type: Struct
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: A unit of easing motion between two values over a specified duration.
+  example: []
+  syntax:
+    content: public struct EaseUnit<T>
+    typeParameters:
+    - id: T
+      description: The type of the values being eased between. (It should either be a <xref href="System.Single" data-throw-if-not-resolved="false"></xref> or <xref href="Microsoft.Xna.Framework.Vector2" data-throw-if-not-resolved="false"></xref>
+    content.vb: Public Structure EaseUnit(Of T)
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.Object.GetType
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  nameWithType.vb: EaseUnit(Of T)
+  fullName.vb: UndyneFight_Ex.Entities.EaseUnit(Of T)
+  name.vb: EaseUnit(Of T)
+- uid: UndyneFight_Ex.Entities.EaseUnit`1.Time
+  commentId: F:UndyneFight_Ex.Entities.EaseUnit`1.Time
+  id: Time
+  parent: UndyneFight_Ex.Entities.EaseUnit`1
+  langs:
+  - csharp
+  - vb
+  name: Time
+  nameWithType: EaseUnit<T>.Time
+  fullName: UndyneFight_Ex.Entities.EaseUnit<T>.Time
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: The duration of the easing
+  example: []
+  syntax:
+    content: public float Time
+    return:
+      type: System.Single
+    content.vb: Public Time As Single
+  nameWithType.vb: EaseUnit(Of T).Time
+  fullName.vb: UndyneFight_Ex.Entities.EaseUnit(Of T).Time
+- uid: UndyneFight_Ex.Entities.EaseUnit`1.Easing
+  commentId: F:UndyneFight_Ex.Entities.EaseUnit`1.Easing
+  id: Easing
+  parent: UndyneFight_Ex.Entities.EaseUnit`1
+  langs:
+  - csharp
+  - vb
+  name: Easing
+  nameWithType: EaseUnit<T>.Easing
+  fullName: UndyneFight_Ex.Entities.EaseUnit<T>.Easing
+  type: Field
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: The easing function
+  example: []
+  syntax:
+    content: public Func<ICustomMotion, T> Easing
+    return:
+      type: System.Func{UndyneFight_Ex.Entities.ICustomMotion,{T}}
+    content.vb: Public Easing As Func(Of ICustomMotion, T)
+  nameWithType.vb: EaseUnit(Of T).Easing
+  fullName.vb: UndyneFight_Ex.Entities.EaseUnit(Of T).Easing
+- uid: UndyneFight_Ex.Entities.EaseUnit`1.#ctor(`0,`0,System.Single,System.Func{UndyneFight_Ex.Entities.ICustomMotion,`0})
+  commentId: M:UndyneFight_Ex.Entities.EaseUnit`1.#ctor(`0,`0,System.Single,System.Func{UndyneFight_Ex.Entities.ICustomMotion,`0})
+  id: '#ctor(`0,`0,System.Single,System.Func{UndyneFight_Ex.Entities.ICustomMotion,`0})'
+  parent: UndyneFight_Ex.Entities.EaseUnit`1
+  langs:
+  - csharp
+  - vb
+  name: EaseUnit(T, T, float, Func<ICustomMotion, T>)
+  nameWithType: EaseUnit<T>.EaseUnit(T, T, float, Func<ICustomMotion, T>)
+  fullName: UndyneFight_Ex.Entities.EaseUnit<T>.EaseUnit(T, T, float, System.Func<UndyneFight_Ex.Entities.ICustomMotion, T>)
+  type: Constructor
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: A unit of easing motion between two values over a specified duration.
+  example: []
+  syntax:
+    content: public EaseUnit(T start, T end, float time, Func<ICustomMotion, T> easing)
+    parameters:
+    - id: start
+      type: '{T}'
+      description: The initial value of the easing
+    - id: end
+      type: '{T}'
+      description: The destination value of the easing
+    - id: time
+      type: System.Single
+      description: The duration of the easing
+    - id: easing
+      type: System.Func{UndyneFight_Ex.Entities.ICustomMotion,{T}}
+      description: The easing function
+    content.vb: Public Sub New(start As T, [end] As T, time As Single, easing As Func(Of ICustomMotion, T))
+  overload: UndyneFight_Ex.Entities.EaseUnit`1.#ctor*
+  nameWithType.vb: EaseUnit(Of T).New(T, T, Single, Func(Of ICustomMotion, T))
+  fullName.vb: UndyneFight_Ex.Entities.EaseUnit(Of T).New(T, T, Single, System.Func(Of UndyneFight_Ex.Entities.ICustomMotion, T))
+  name.vb: New(T, T, Single, Func(Of ICustomMotion, T))
+- uid: UndyneFight_Ex.Entities.EaseUnit`1.op_Implicit(UndyneFight_Ex.Entities.EaseUnit{`0})~System.Func{UndyneFight_Ex.Entities.ICustomMotion,`0}
+  commentId: M:UndyneFight_Ex.Entities.EaseUnit`1.op_Implicit(UndyneFight_Ex.Entities.EaseUnit{`0})~System.Func{UndyneFight_Ex.Entities.ICustomMotion,`0}
+  id: op_Implicit(UndyneFight_Ex.Entities.EaseUnit{`0})~System.Func{UndyneFight_Ex.Entities.ICustomMotion,`0}
+  parent: UndyneFight_Ex.Entities.EaseUnit`1
+  langs:
+  - csharp
+  - vb
+  name: implicit operator Func<ICustomMotion, T>(EaseUnit<T>)
+  nameWithType: EaseUnit<T>.implicit operator Func<ICustomMotion, T>(EaseUnit<T>)
+  fullName: UndyneFight_Ex.Entities.EaseUnit<T>.implicit operator System.Func<UndyneFight_Ex.Entities.ICustomMotion, T>(UndyneFight_Ex.Entities.EaseUnit<T>)
+  type: Operator
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: Implicit conversion to the easing function
+  example: []
+  syntax:
+    content: public static implicit operator Func<ICustomMotion, T>(EaseUnit<T> u)
+    parameters:
+    - id: u
+      type: UndyneFight_Ex.Entities.EaseUnit`1
+      description: ''
+    return:
+      type: System.Func{UndyneFight_Ex.Entities.ICustomMotion,{T}}
+    content.vb: Public Shared Widening Operator CType(u As EaseUnit(Of T)) As Func(Of ICustomMotion, T)
+  overload: UndyneFight_Ex.Entities.EaseUnit`1.op_Implicit*
+  nameWithType.vb: EaseUnit(Of T).CType(EaseUnit(Of T))
+  fullName.vb: UndyneFight_Ex.Entities.EaseUnit(Of T).CType(UndyneFight_Ex.Entities.EaseUnit(Of T))
+  name.vb: CType(EaseUnit(Of T))
+- uid: UndyneFight_Ex.Entities.EaseUnit`1.ToString
+  commentId: M:UndyneFight_Ex.Entities.EaseUnit`1.ToString
+  id: ToString
+  parent: UndyneFight_Ex.Entities.EaseUnit`1
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: EaseUnit<T>.ToString()
+  fullName: UndyneFight_Ex.Entities.EaseUnit<T>.ToString()
+  type: Method
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  example: []
+  syntax:
+    content: public override readonly string ToString()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function ToString() As String
+  overridden: System.ValueType.ToString
+  overload: UndyneFight_Ex.Entities.EaseUnit`1.ToString*
+  nameWithType.vb: EaseUnit(Of T).ToString()
+  fullName.vb: UndyneFight_Ex.Entities.EaseUnit(Of T).ToString()
+- uid: UndyneFight_Ex.Entities.EaseUnit`1.Start
+  commentId: P:UndyneFight_Ex.Entities.EaseUnit`1.Start
+  id: Start
+  parent: UndyneFight_Ex.Entities.EaseUnit`1
+  langs:
+  - csharp
+  - vb
+  name: Start
+  nameWithType: EaseUnit<T>.Start
+  fullName: UndyneFight_Ex.Entities.EaseUnit<T>.Start
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: The initial value of the easing
+  example: []
+  syntax:
+    content: public T Start { readonly get; init; }
+    parameters: []
+    return:
+      type: '{T}'
+    content.vb: Public Property Start As T
+  overload: UndyneFight_Ex.Entities.EaseUnit`1.Start*
+  nameWithType.vb: EaseUnit(Of T).Start
+  fullName.vb: UndyneFight_Ex.Entities.EaseUnit(Of T).Start
+- uid: UndyneFight_Ex.Entities.EaseUnit`1.End
+  commentId: P:UndyneFight_Ex.Entities.EaseUnit`1.End
+  id: End
+  parent: UndyneFight_Ex.Entities.EaseUnit`1
+  langs:
+  - csharp
+  - vb
+  name: End
+  nameWithType: EaseUnit<T>.End
+  fullName: UndyneFight_Ex.Entities.EaseUnit<T>.End
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Entities
+  summary: The destination value of the easing
+  example: []
+  syntax:
+    content: public T End { readonly get; init; }
+    parameters: []
+    return:
+      type: '{T}'
+    content.vb: Public Property [End] As T
+  overload: UndyneFight_Ex.Entities.EaseUnit`1.End*
+  nameWithType.vb: EaseUnit(Of T).End
+  fullName.vb: UndyneFight_Ex.Entities.EaseUnit(Of T).End
+references:
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: Microsoft.Xna.Framework.Vector2
+  commentId: T:Microsoft.Xna.Framework.Vector2
+  parent: Microsoft.Xna.Framework
+  isExternal: true
+  name: Vector2
+  nameWithType: Vector2
+  fullName: Microsoft.Xna.Framework.Vector2
+- uid: UndyneFight_Ex.Entities
+  commentId: N:UndyneFight_Ex.Entities
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex.Entities
+  nameWithType: UndyneFight_Ex.Entities
+  fullName: UndyneFight_Ex.Entities
+  spec.csharp:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities
+    name: Entities
+    isExternal: true
+    href: UndyneFight_Ex.Entities.html
+  spec.vb:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities
+    name: Entities
+    isExternal: true
+    href: UndyneFight_Ex.Entities.html
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.Xna.Framework
+  commentId: N:Microsoft.Xna.Framework
+  isExternal: true
+  name: Microsoft.Xna.Framework
+  nameWithType: Microsoft.Xna.Framework
+  fullName: Microsoft.Xna.Framework
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Func{UndyneFight_Ex.Entities.ICustomMotion,{T}}
+  commentId: T:System.Func{UndyneFight_Ex.Entities.ICustomMotion,`0}
+  parent: System
+  definition: System.Func`2
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<ICustomMotion, T>
+  nameWithType: Func<ICustomMotion, T>
+  fullName: System.Func<UndyneFight_Ex.Entities.ICustomMotion, T>
+  nameWithType.vb: Func(Of ICustomMotion, T)
+  fullName.vb: System.Func(Of UndyneFight_Ex.Entities.ICustomMotion, T)
+  name.vb: Func(Of ICustomMotion, T)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - uid: UndyneFight_Ex.Entities.ICustomMotion
+    name: ICustomMotion
+    isExternal: true
+    href: UndyneFight_Ex.Entities.ICustomMotion.html
+  - name: ','
+  - name: " "
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: UndyneFight_Ex.Entities.ICustomMotion
+    name: ICustomMotion
+    isExternal: true
+    href: UndyneFight_Ex.Entities.ICustomMotion.html
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Func`2
+  commentId: T:System.Func`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: UndyneFight_Ex.Entities.EaseUnit`1.#ctor*
+  commentId: Overload:UndyneFight_Ex.Entities.EaseUnit`1.#ctor
+  isExternal: true
+  href: UndyneFight_Ex.Entities.EaseUnit-1.html#UndyneFight_Ex_Entities_EaseUnit_1__ctor__0__0_System_Single_System_Func_UndyneFight_Ex_Entities_ICustomMotion__0__
+  name: EaseUnit
+  nameWithType: EaseUnit<T>.EaseUnit
+  fullName: UndyneFight_Ex.Entities.EaseUnit<T>.EaseUnit
+  nameWithType.vb: EaseUnit(Of T).New
+  fullName.vb: UndyneFight_Ex.Entities.EaseUnit(Of T).New
+  name.vb: New
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: UndyneFight_Ex.Entities.EaseUnit`1.op_Implicit*
+  commentId: Overload:UndyneFight_Ex.Entities.EaseUnit`1.op_Implicit
+  name: implicit operator
+  nameWithType: EaseUnit<T>.implicit operator
+  fullName: UndyneFight_Ex.Entities.EaseUnit<T>.implicit operator
+  nameWithType.vb: EaseUnit(Of T).CType
+  fullName.vb: UndyneFight_Ex.Entities.EaseUnit(Of T).CType
+  name.vb: CType
+  spec.csharp:
+  - name: implicit
+  - name: " "
+  - name: operator
+- uid: UndyneFight_Ex.Entities.EaseUnit`1
+  commentId: T:UndyneFight_Ex.Entities.EaseUnit`1
+  parent: UndyneFight_Ex.Entities
+  isExternal: true
+  href: UndyneFight_Ex.Entities.EaseUnit-1.html
+  name: EaseUnit<T>
+  nameWithType: EaseUnit<T>
+  fullName: UndyneFight_Ex.Entities.EaseUnit<T>
+  nameWithType.vb: EaseUnit(Of T)
+  fullName.vb: UndyneFight_Ex.Entities.EaseUnit(Of T)
+  name.vb: EaseUnit(Of T)
+  spec.csharp:
+  - uid: UndyneFight_Ex.Entities.EaseUnit`1
+    name: EaseUnit
+    isExternal: true
+    href: UndyneFight_Ex.Entities.EaseUnit-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: UndyneFight_Ex.Entities.EaseUnit`1
+    name: EaseUnit
+    isExternal: true
+    href: UndyneFight_Ex.Entities.EaseUnit-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: UndyneFight_Ex.Entities.EaseUnit`1.ToString*
+  commentId: Overload:UndyneFight_Ex.Entities.EaseUnit`1.ToString
+  isExternal: true
+  href: UndyneFight_Ex.Entities.EaseUnit-1.html#UndyneFight_Ex_Entities_EaseUnit_1_ToString
+  name: ToString
+  nameWithType: EaseUnit<T>.ToString
+  fullName: UndyneFight_Ex.Entities.EaseUnit<T>.ToString
+  nameWithType.vb: EaseUnit(Of T).ToString
+  fullName.vb: UndyneFight_Ex.Entities.EaseUnit(Of T).ToString
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: UndyneFight_Ex.Entities.EaseUnit`1.Start*
+  commentId: Overload:UndyneFight_Ex.Entities.EaseUnit`1.Start
+  isExternal: true
+  href: UndyneFight_Ex.Entities.EaseUnit-1.html#UndyneFight_Ex_Entities_EaseUnit_1_Start
+  name: Start
+  nameWithType: EaseUnit<T>.Start
+  fullName: UndyneFight_Ex.Entities.EaseUnit<T>.Start
+  nameWithType.vb: EaseUnit(Of T).Start
+  fullName.vb: UndyneFight_Ex.Entities.EaseUnit(Of T).Start
+- uid: UndyneFight_Ex.Entities.EaseUnit`1.End*
+  commentId: Overload:UndyneFight_Ex.Entities.EaseUnit`1.End
+  isExternal: true
+  href: UndyneFight_Ex.Entities.EaseUnit-1.html#UndyneFight_Ex_Entities_EaseUnit_1_End
+  name: End
+  nameWithType: EaseUnit<T>.End
+  fullName: UndyneFight_Ex.Entities.EaseUnit<T>.End
+  nameWithType.vb: EaseUnit(Of T).End
+  fullName.vb: UndyneFight_Ex.Entities.EaseUnit(Of T).End

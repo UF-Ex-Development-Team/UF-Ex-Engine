@@ -1,0 +1,94 @@
+### YamlMime:ManagedReference
+items:
+- uid: UndyneFight_Ex.Entities.Advanced
+  commentId: N:UndyneFight_Ex.Entities.Advanced
+  id: UndyneFight_Ex.Entities.Advanced
+  children:
+  - UndyneFight_Ex.Entities.Advanced.BarrageExtend
+  - UndyneFight_Ex.Entities.Advanced.FightAlphaManager
+  - UndyneFight_Ex.Entities.Advanced.ScreenShaker
+  - UndyneFight_Ex.Entities.Advanced.VertexHull
+  - UndyneFight_Ex.Entities.Advanced.ZaWarudo
+  langs:
+  - csharp
+  - vb
+  name: UndyneFight_Ex.Entities.Advanced
+  nameWithType: UndyneFight_Ex.Entities.Advanced
+  fullName: UndyneFight_Ex.Entities.Advanced
+  type: Namespace
+  assemblies:
+  - UndyneFight-Ex
+references:
+- uid: UndyneFight_Ex.Entities.Advanced.BarrageExtend
+  commentId: T:UndyneFight_Ex.Entities.Advanced.BarrageExtend
+  parent: UndyneFight_Ex.Entities.Advanced
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Advanced.BarrageExtend.html
+  name: BarrageExtend
+  nameWithType: BarrageExtend
+  fullName: UndyneFight_Ex.Entities.Advanced.BarrageExtend
+- uid: UndyneFight_Ex.Entities.Advanced.FightAlphaManager
+  commentId: T:UndyneFight_Ex.Entities.Advanced.FightAlphaManager
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Advanced.FightAlphaManager.html
+  name: FightAlphaManager
+  nameWithType: FightAlphaManager
+  fullName: UndyneFight_Ex.Entities.Advanced.FightAlphaManager
+- uid: UndyneFight_Ex.Entities.Advanced.ScreenShaker
+  commentId: T:UndyneFight_Ex.Entities.Advanced.ScreenShaker
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Advanced.ScreenShaker.html
+  name: ScreenShaker
+  nameWithType: ScreenShaker
+  fullName: UndyneFight_Ex.Entities.Advanced.ScreenShaker
+- uid: UndyneFight_Ex.Entities.Advanced.VertexHull
+  commentId: T:UndyneFight_Ex.Entities.Advanced.VertexHull
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Advanced.VertexHull.html
+  name: VertexHull
+  nameWithType: VertexHull
+  fullName: UndyneFight_Ex.Entities.Advanced.VertexHull
+- uid: UndyneFight_Ex.Entities.Advanced.ZaWarudo
+  commentId: T:UndyneFight_Ex.Entities.Advanced.ZaWarudo
+  isExternal: true
+  href: UndyneFight_Ex.Entities.Advanced.ZaWarudo.html
+  name: ZaWarudo
+  nameWithType: ZaWarudo
+  fullName: UndyneFight_Ex.Entities.Advanced.ZaWarudo
+- uid: UndyneFight_Ex.Entities.Advanced
+  commentId: N:UndyneFight_Ex.Entities.Advanced
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex.Entities.Advanced
+  nameWithType: UndyneFight_Ex.Entities.Advanced
+  fullName: UndyneFight_Ex.Entities.Advanced
+  spec.csharp:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities
+    name: Entities
+    isExternal: true
+    href: UndyneFight_Ex.Entities.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities.Advanced
+    name: Advanced
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Advanced.html
+  spec.vb:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities
+    name: Entities
+    isExternal: true
+    href: UndyneFight_Ex.Entities.html
+  - name: .
+  - uid: UndyneFight_Ex.Entities.Advanced
+    name: Advanced
+    isExternal: true
+    href: UndyneFight_Ex.Entities.Advanced.html

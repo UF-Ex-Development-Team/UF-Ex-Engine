@@ -1,0 +1,439 @@
+### YamlMime:ManagedReference
+items:
+- uid: UndyneFight_Ex.Server.User
+  commentId: T:UndyneFight_Ex.Server.User
+  id: User
+  parent: UndyneFight_Ex.Server
+  children:
+  - UndyneFight_Ex.Server.User.#ctor
+  - UndyneFight_Ex.Server.User.Name
+  - UndyneFight_Ex.Server.User.UUID
+  langs:
+  - csharp
+  - vb
+  name: User
+  nameWithType: User
+  fullName: UndyneFight_Ex.Server.User
+  type: Class
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Server
+  syntax:
+    content: 'public class User : AliveData'
+    content.vb: Public Class User Inherits AliveData
+  inheritance:
+  - System.Object
+  - UndyneFight_Ex.Server.AliveData
+  inheritedMembers:
+  - UndyneFight_Ex.Server.AliveData.Refresh
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+- uid: UndyneFight_Ex.Server.User.#ctor
+  commentId: M:UndyneFight_Ex.Server.User.#ctor
+  id: '#ctor'
+  parent: UndyneFight_Ex.Server.User
+  langs:
+  - csharp
+  - vb
+  name: User()
+  nameWithType: User.User()
+  fullName: UndyneFight_Ex.Server.User.User()
+  type: Constructor
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Server
+  syntax:
+    content: public User()
+    content.vb: Public Sub New()
+  overload: UndyneFight_Ex.Server.User.#ctor*
+  nameWithType.vb: User.New()
+  fullName.vb: UndyneFight_Ex.Server.User.New()
+  name.vb: New()
+- uid: UndyneFight_Ex.Server.User.UUID
+  commentId: P:UndyneFight_Ex.Server.User.UUID
+  id: UUID
+  parent: UndyneFight_Ex.Server.User
+  langs:
+  - csharp
+  - vb
+  name: UUID
+  nameWithType: User.UUID
+  fullName: UndyneFight_Ex.Server.User.UUID
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Server
+  syntax:
+    content: public long UUID { get; set; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public Property UUID As Long
+  overload: UndyneFight_Ex.Server.User.UUID*
+- uid: UndyneFight_Ex.Server.User.Name
+  commentId: P:UndyneFight_Ex.Server.User.Name
+  id: Name
+  parent: UndyneFight_Ex.Server.User
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: User.Name
+  fullName: UndyneFight_Ex.Server.User.Name
+  type: Property
+  assemblies:
+  - UndyneFight-Ex
+  namespace: UndyneFight_Ex.Server
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: UndyneFight_Ex.Server.User.Name*
+references:
+- uid: UndyneFight_Ex.Server
+  commentId: N:UndyneFight_Ex.Server
+  isExternal: true
+  href: UndyneFight_Ex.html
+  name: UndyneFight_Ex.Server
+  nameWithType: UndyneFight_Ex.Server
+  fullName: UndyneFight_Ex.Server
+  spec.csharp:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Server
+    name: Server
+    isExternal: true
+    href: UndyneFight_Ex.Server.html
+  spec.vb:
+  - uid: UndyneFight_Ex
+    name: UndyneFight_Ex
+    isExternal: true
+    href: UndyneFight_Ex.html
+  - name: .
+  - uid: UndyneFight_Ex.Server
+    name: Server
+    isExternal: true
+    href: UndyneFight_Ex.Server.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: UndyneFight_Ex.Server.AliveData
+  commentId: T:UndyneFight_Ex.Server.AliveData
+  parent: UndyneFight_Ex.Server
+  isExternal: true
+  href: UndyneFight_Ex.Server.AliveData.html
+  name: AliveData
+  nameWithType: AliveData
+  fullName: UndyneFight_Ex.Server.AliveData
+- uid: UndyneFight_Ex.Server.AliveData.Refresh
+  commentId: M:UndyneFight_Ex.Server.AliveData.Refresh
+  parent: UndyneFight_Ex.Server.AliveData
+  isExternal: true
+  href: UndyneFight_Ex.Server.AliveData.html#UndyneFight_Ex_Server_AliveData_Refresh
+  name: Refresh()
+  nameWithType: AliveData.Refresh()
+  fullName: UndyneFight_Ex.Server.AliveData.Refresh()
+  spec.csharp:
+  - uid: UndyneFight_Ex.Server.AliveData.Refresh
+    name: Refresh
+    isExternal: true
+    href: UndyneFight_Ex.Server.AliveData.html#UndyneFight_Ex_Server_AliveData_Refresh
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: UndyneFight_Ex.Server.AliveData.Refresh
+    name: Refresh
+    isExternal: true
+    href: UndyneFight_Ex.Server.AliveData.html#UndyneFight_Ex_Server_AliveData_Refresh
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UndyneFight_Ex.Server.User.#ctor*
+  commentId: Overload:UndyneFight_Ex.Server.User.#ctor
+  isExternal: true
+  href: UndyneFight_Ex.Server.User.html#UndyneFight_Ex_Server_User__ctor
+  name: User
+  nameWithType: User.User
+  fullName: UndyneFight_Ex.Server.User.User
+  nameWithType.vb: User.New
+  fullName.vb: UndyneFight_Ex.Server.User.New
+  name.vb: New
+- uid: UndyneFight_Ex.Server.User.UUID*
+  commentId: Overload:UndyneFight_Ex.Server.User.UUID
+  isExternal: true
+  href: UndyneFight_Ex.Server.User.html#UndyneFight_Ex_Server_User_UUID
+  name: UUID
+  nameWithType: User.UUID
+  fullName: UndyneFight_Ex.Server.User.UUID
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int64
+  name: long
+  nameWithType: long
+  fullName: long
+  nameWithType.vb: Long
+  fullName.vb: Long
+  name.vb: Long
+- uid: UndyneFight_Ex.Server.User.Name*
+  commentId: Overload:UndyneFight_Ex.Server.User.Name
+  isExternal: true
+  href: UndyneFight_Ex.Server.User.html#UndyneFight_Ex_Server_User_Name
+  name: Name
+  nameWithType: User.Name
+  fullName: UndyneFight_Ex.Server.User.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
