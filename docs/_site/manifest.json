@@ -1,4 +1,4725 @@
 {
-  "source_base_path": "D:/GitHub/Rhythm-Recall-TK-Edition",
-  "files": []
+  "source_base_path": "D:/GitHub/UF-Ex-Engine/docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Basic Charting.md",
+      "output": {
+        ".html": {
+          "relative_path": "Basic Charting.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Crash Course.md",
+      "output": {
+        ".html": {
+          "relative_path": "Crash Course.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Introduction to Effects.md",
+      "output": {
+        ".html": {
+          "relative_path": "Introduction to Effects.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Setting Up.md",
+      "output": {
+        ".html": {
+          "relative_path": "Setting Up.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Extends.DrawingUtil.Circle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Extends.DrawingUtil.Circle.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Extends.DrawingUtil.Circle",
+      "Summary": "<p sourcefile=\"api/Extends.DrawingUtil.Circle.yml\" sourcestartlinenumber=\"1\">A circle</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Extends.DrawingUtil.Linerotate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Extends.DrawingUtil.Linerotate.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Extends.DrawingUtil.Linerotate",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Extends.DrawingUtil.Linerotatelong.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Extends.DrawingUtil.Linerotatelong.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Extends.DrawingUtil.Linerotatelong",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Extends.DrawingUtil.MaskSquare.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Extends.DrawingUtil.MaskSquare.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Extends.DrawingUtil.MaskSquare",
+      "Summary": "<p sourcefile=\"api/Extends.DrawingUtil.MaskSquare.yml\" sourcestartlinenumber=\"1\">Creates a masking rectangle</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Extends.DrawingUtil.NormalLine.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Extends.DrawingUtil.NormalLine.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Extends.DrawingUtil.NormalLine",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Extends.DrawingUtil.SpecialBox.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Extends.DrawingUtil.SpecialBox.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Extends.DrawingUtil.SpecialBox",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Extends.DrawingUtil.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Extends.DrawingUtil.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Extends.DrawingUtil",
+      "Summary": "<p sourcefile=\"api/Extends.DrawingUtil.yml\" sourcestartlinenumber=\"1\">Utilities for drawing</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Extends.FightUtil.DownBonesea.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Extends.FightUtil.DownBonesea.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Extends.FightUtil.DownBonesea",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Extends.FightUtil.UpBonesea.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Extends.FightUtil.UpBonesea.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Extends.FightUtil.UpBonesea",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Extends.FightUtil.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Extends.FightUtil.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Extends.FightUtil",
+      "Summary": "<p sourcefile=\"api/Extends.FightUtil.yml\" sourcestartlinenumber=\"1\">Utilities for bones</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Extends.Fireball.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Extends.Fireball.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Extends.Fireball",
+      "Summary": "<p sourcefile=\"api/Extends.Fireball.yml\" sourcestartlinenumber=\"1\">A fireball</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Extends.LineMoveLibrary.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Extends.LineMoveLibrary.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Extends.LineMoveLibrary",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Extends.ShadowLibrary.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Extends.ShadowLibrary.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Extends.ShadowLibrary",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Extends.Someway.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Extends.Someway.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Extends.Someway",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Extends.Star.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Extends.Star.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Extends.Star",
+      "Summary": "<p sourcefile=\"api/Extends.Star.yml\" sourcestartlinenumber=\"1\">A star (Used in Hopes and Dreams) (Please use something else)</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Extends.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Extends.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Extends",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFData.ChampionshipInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFData.ChampionshipInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UFData.ChampionshipInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFData.ChampionshipParticipant.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFData.ChampionshipParticipant.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UFData.ChampionshipParticipant",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFData.ChampionshipScoreboard.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFData.ChampionshipScoreboard.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UFData.ChampionshipScoreboard",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFData.DivisionInformation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFData.DivisionInformation.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UFData.DivisionInformation",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UFData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UFData.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UFData",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Achievements.Achievement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Achievements.Achievement.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Achievements.Achievement",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Achievements.Achievement.yml\" sourcestartlinenumber=\"1\">The achievement class</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Achievements.AchievementUI.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Achievements.AchievementUI.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Achievements.AchievementUI",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Achievements.AchievementUI.yml\" sourcestartlinenumber=\"1\">v0.3.0+ Achievement UI</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Achievements.CheckerType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Achievements.CheckerType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Achievements.CheckerType",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Achievements.CheckerType.yml\" sourcestartlinenumber=\"1\">The type of data to check for the achievement</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Achievements.IAchievementCheck.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Achievements.IAchievementCheck.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Achievements.IAchievementCheck",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Achievements.IAchievementCheck.yml\" sourcestartlinenumber=\"1\">Interface for achievement progress checkers</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Achievements.SongDataChecker.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Achievements.SongDataChecker.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Achievements.SongDataChecker",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Achievements.SongDataChecker.yml\" sourcestartlinenumber=\"1\">An achievement checker for chart data</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Achievements.UserDataChecker.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Achievements.UserDataChecker.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Achievements.UserDataChecker",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Achievements.UserDataChecker.yml\" sourcestartlinenumber=\"1\">An achievement checker for user data</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Achievements.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Achievements.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Achievements",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Audio.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Audio.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Audio",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Audio.yml\" sourcestartlinenumber=\"1\">An audio</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.AutoEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.AutoEntity.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.AutoEntity",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.AutoEntity.yml\" sourcestartlinenumber=\"1\">Draws an image with color and alpha</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.BoxUtil.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.BoxUtil.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.BoxUtil",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.BoxUtil.yml\" sourcestartlinenumber=\"1\">Utilities for box functions</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Challenge.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Challenge.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Challenge",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Challenge.yml\" sourcestartlinenumber=\"1\">A list of charts that makes up a challenge</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.ChampionShips.ChampionShip.ChampionShipStates.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.ChampionShips.ChampionShip.ChampionShipStates.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.ChampionShips.ChampionShip.ChampionShipStates",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.ChampionShips.ChampionShip.ChampionShipStates.yml\" sourcestartlinenumber=\"1\">The state of the championship</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.ChampionShips.ChampionShip.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.ChampionShips.ChampionShip.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.ChampionShips.ChampionShip",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.ChampionShips.ChampionShip.yml\" sourcestartlinenumber=\"1\">A championship class</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.ChampionShips.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.ChampionShips.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.ChampionShips",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.CollideRect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.CollideRect.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.CollideRect",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.CollideRect.yml\" sourcestartlinenumber=\"1\">A rectangle with collision</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.DebugState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.DebugState.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.DebugState",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.DebugState.yml\" sourcestartlinenumber=\"1\">Debug variables for the SDK</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.DrawingLab.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.DrawingLab.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.DrawingLab",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.DrawingLab.yml\" sourcestartlinenumber=\"1\">Drawing Utilities</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.AccuracyBar.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.AccuracyBar.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.AccuracyBar",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.AccuracyBar.yml\" sourcestartlinenumber=\"1\">The accuracy bar at the bottom of the screen</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.Advanced.BarrageExtend.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.Advanced.BarrageExtend.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.Advanced.BarrageExtend",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.Advanced.BarrageExtend.yml\" sourcestartlinenumber=\"1\">Advanced barrage classes</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.Advanced.FightAlphaManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.Advanced.FightAlphaManager.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.Advanced.FightAlphaManager",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.Advanced.FightAlphaManager.yml\" sourcestartlinenumber=\"1\">自动控制 ClassicFight.InterActive.UIAlpha的工具。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.Advanced.ScreenShaker.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.Advanced.ScreenShaker.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.Advanced.ScreenShaker",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.Advanced.ScreenShaker.yml\" sourcestartlinenumber=\"1\">Shakes the screen</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.Advanced.VertexHull.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.Advanced.VertexHull.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.Advanced.VertexHull",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.Advanced.VertexHull.yml\" sourcestartlinenumber=\"1\">3D processing logic, used in Dream Battle and Maware Setsugekka</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.Advanced.ZaWarudo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.Advanced.ZaWarudo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.Advanced.ZaWarudo",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.Advanced.ZaWarudo.yml\" sourcestartlinenumber=\"1\">The effect used in the OST Undyne remake</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.Advanced.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.Advanced.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.Advanced",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.Arrow.ArrowEasing.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.Arrow.ArrowEasing.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.Arrow.ArrowEasing",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.Arrow.ArrowEasing.yml\" sourcestartlinenumber=\"1\">The base for arrow easing functions</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.Arrow.ArrowPiece.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.Arrow.ArrowPiece.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.Arrow.ArrowPiece",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.Arrow.ArrowPiece.yml\" sourcestartlinenumber=\"1\">A broken shard of an arrow</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.Arrow.ClassicApplier.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.Arrow.ClassicApplier.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.Arrow.ClassicApplier",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.Arrow.EnsembleEasing.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.Arrow.EnsembleEasing.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.Arrow.EnsembleEasing",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.Arrow.JudgementType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.Arrow.JudgementType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.Arrow.JudgementType",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.Arrow.JudgementType.yml\" sourcestartlinenumber=\"1\">The possible judgement types of the arrow</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.Arrow.UnitEasing.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.Arrow.UnitEasing.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.Arrow.UnitEasing",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.Arrow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.Arrow.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.Arrow",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.Arrow.yml\" sourcestartlinenumber=\"1\">An arrow</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.Barrage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.Barrage.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.Barrage",
+      "Summary": "<p>A parent class for barrage making, contains commonly used variables and functions</p>\nThis class is not the parent class for <xref href=\"UndyneFight_Ex.Entities.Arrow\" data-throw-if-not-resolved=\"false\"></xref>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.Bomb.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.Bomb.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.Bomb",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.Bomb.yml\" sourcestartlinenumber=\"1\">A shootable bomb</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.Bone.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.Bone.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.Bone",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.Bone.yml\" sourcestartlinenumber=\"1\">The base class for a bone, you should not call this</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.Boneslab.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.Boneslab.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.Boneslab",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.Boneslab.yml\" sourcestartlinenumber=\"1\">A boneslab (The bones on the side of the box)</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.BoxVertex.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.BoxVertex.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.BoxVertex",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.BoxVertex.yml\" sourcestartlinenumber=\"1\">A custom box vertex</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.BulletShootable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.BulletShootable.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.BulletShootable",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.BulletShootable.yml\" sourcestartlinenumber=\"1\">A barrage that is shootable by a yellow soul bullet</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.CentreCircleBone.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.CentreCircleBone.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.CentreCircleBone",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.CentreCircleBone.yml\" sourcestartlinenumber=\"1\">A rotating bone at the center of the box</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.ChallengeScene.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.ChallengeScene.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.ChallengeScene",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.ChallengeScene.yml\" sourcestartlinenumber=\"1\">Challenge selection</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.CircleCollisionBarrage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.CircleCollisionBarrage.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.CircleCollisionBarrage",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.CircleCollisionBarrage.yml\" sourcestartlinenumber=\"1\">A barrage with circle collision</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.CircleSpear.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.CircleSpear.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.CircleSpear",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.CircleSpear.yml\" sourcestartlinenumber=\"1\">Creates a spear that moves around the target with a circular motion</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.CustomBone.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.CustomBone.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.CustomBone",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.CustomBone.yml\" sourcestartlinenumber=\"1\">A bone with custom parameters</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.CustomSpear.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.CustomSpear.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.CustomSpear",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.CustomSpear.yml\" sourcestartlinenumber=\"1\">A spear with custom motion (Initial alpha is 0, be aware)</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.DownBone.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.DownBone.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.DownBone",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.DownBone.yml\" sourcestartlinenumber=\"1\">A bone that sticks at the bottom of the box</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.EaseLibrary.EaseMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.EaseLibrary.EaseMode.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.EaseLibrary.EaseMode",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.EaseLibrary.EaseMode.yml\" sourcestartlinenumber=\"1\">Modes of easing</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.EaseLibrary.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.EaseLibrary.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.EaseLibrary",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.EaseLibrary.yml\" sourcestartlinenumber=\"1\">The library for ease functions</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.EaseUnit-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.EaseUnit-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.EaseUnit<T>",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.EaseUnit-1.yml\" sourcestartlinenumber=\"1\">A unit of easing motion between two values over a specified duration.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.EasingUtil.CentreEasing.EaseBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.EasingUtil.CentreEasing.EaseBuilder.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.EasingUtil.CentreEasing.EaseBuilder",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.EasingUtil.CentreEasing.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.EasingUtil.CentreEasing.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.EasingUtil.CentreEasing",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.EasingUtil.CentreEasing.yml\" sourcestartlinenumber=\"1\">Easing library, note that they run at 125fps<br>\nThe functions are not documented as they are replaced by <xref href=\"UndyneFight_Ex.Entities.SimplifiedEasing\" data-throw-if-not-resolved=\"false\"></xref> functions, or are not useful except for a few occasions.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.EasingUtil.ValueEasing.EaseBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.EasingUtil.ValueEasing.EaseBuilder.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.EasingUtil.ValueEasing.EaseBuilder",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.EasingUtil.ValueEasing.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.EasingUtil.ValueEasing.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.EasingUtil.ValueEasing",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.EasingUtil.ValueEasing.yml\" sourcestartlinenumber=\"1\">Easing library, note that they run at 125fps<br>\nThe functions are not documented as they are replaced by <xref href=\"UndyneFight_Ex.Entities.SimplifiedEasing\" data-throw-if-not-resolved=\"false\"></xref> functions, or are not useful except for a few occasions</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.EasingUtil.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.EasingUtil.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.EasingUtil",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.EasingUtil.yml\" sourcestartlinenumber=\"1\">Easing utilities that support <xref href=\"UndyneFight_Ex.Entities.SimplifiedEasing\" data-throw-if-not-resolved=\"false\"></xref>, however it is better to use <xref href=\"UndyneFight_Ex.Entities.SimplifiedEasing\" data-throw-if-not-resolved=\"false\"></xref> for better readability</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.FightBox.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.FightBox.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.FightBox",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.FightBox.yml\" sourcestartlinenumber=\"1\">The box during fight</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.FightScene.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.FightScene.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.FightScene",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.FightScene.yml\" sourcestartlinenumber=\"1\">A scene of battle, whether it is a classic battle or a chart</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.FireBall.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.FireBall.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.FireBall",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.FireBall.yml\" sourcestartlinenumber=\"1\">A fireball</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.GameMenuScene.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.GameMenuScene.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.GameMenuScene",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.GameMenuScene.yml\" sourcestartlinenumber=\"1\">The game menu scene</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.GasterBlaster.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.GasterBlaster.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.GasterBlaster",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.GasterBlaster.yml\" sourcestartlinenumber=\"1\">The base class for a Gaster Blaster, you should not call this</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.GreenSoulGB.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.GreenSoulGB.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.GreenSoulGB",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.GreenSoulGB.yml\" sourcestartlinenumber=\"1\">A Green Soul Blaster</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.GunBullet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.GunBullet.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.GunBullet",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.GunBullet.yml\" sourcestartlinenumber=\"1\">A (Sudden Changes) bullet</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.ICollideAble.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.ICollideAble.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.ICollideAble",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.ICollideAble.yml\" sourcestartlinenumber=\"1\">The interface for a player collidable instance</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.ICustomLength.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.ICustomLength.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.ICustomLength",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.ICustomLength.yml\" sourcestartlinenumber=\"1\">Interface for entities that has length control (Bones)</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.ICustomMotion.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.ICustomMotion.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.ICustomMotion",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.ICustomMotion.yml\" sourcestartlinenumber=\"1\">Interface for entities that has motion control</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.ISelectAble.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.ISelectAble.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.ISelectAble",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.ISelectAble.yml\" sourcestartlinenumber=\"1\">Interface for selectable menu items (Legacy)</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.InstantEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.InstantEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.InstantEvent",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.InstantEvent.yml\" sourcestartlinenumber=\"1\">Invokes an action after a given delay</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.Knife.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.Knife.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.Knife",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.Knife.yml\" sourcestartlinenumber=\"1\">A knife beam</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.LeftBone.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.LeftBone.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.LeftBone",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.LeftBone.yml\" sourcestartlinenumber=\"1\">A bone that sticks to the left side of the box</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.Line.RetentionEffect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.Line.RetentionEffect.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.Line.RetentionEffect",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.Line.RetentionEffect.yml\" sourcestartlinenumber=\"1\">The retention effect of the line</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.Line.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.Line.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.Line",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.Line.yml\" sourcestartlinenumber=\"1\">The class for a line effect</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.LineCollisionBarrage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.LineCollisionBarrage.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.LineCollisionBarrage",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.LineCollisionBarrage.yml\" sourcestartlinenumber=\"1\">A barrage with a line collision</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.LineSpider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.LineSpider.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.LineSpider",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.LineSpider.yml\" sourcestartlinenumber=\"1\">A spider on a line</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.Motions.LengthRoute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.Motions.LengthRoute.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.Motions.LengthRoute",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.Motions.LengthRoute.yml\" sourcestartlinenumber=\"1\">Length route for entities</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.Motions.PositionRoute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.Motions.PositionRoute.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.Motions.PositionRoute",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.Motions.PositionRoute.yml\" sourcestartlinenumber=\"1\">Position route for entities</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.Motions.RotationRoute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.Motions.RotationRoute.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.Motions.RotationRoute",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.Motions.RotationRoute.yml\" sourcestartlinenumber=\"1\">Rotation route for entities</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.Motions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.Motions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.Motions",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.Motions.yml\" sourcestartlinenumber=\"1\">Set motions for entities</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.NameShower.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.NameShower.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.NameShower",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.NameShower.yml\" sourcestartlinenumber=\"1\">The name display entity</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.NormalGB.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.NormalGB.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.NormalGB",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.NormalGB.yml\" sourcestartlinenumber=\"1\">A normal gaster blaster</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.NormalSpear.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.NormalSpear.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.NormalSpear",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.NormalSpear.yml\" sourcestartlinenumber=\"1\">A normal spear</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.ParasolMett.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.ParasolMett.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.ParasolMett",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.ParasolMett.yml\" sourcestartlinenumber=\"1\">A mettaton robot with parasol</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.Particle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.Particle.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.Particle",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.Particle.yml\" sourcestartlinenumber=\"1\">A particle entity</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.ParticleGather.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.ParticleGather.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.ParticleGather",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.ParticleGather.yml\" sourcestartlinenumber=\"1\">Gathers particles</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.PerfectCollisionBarrage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.PerfectCollisionBarrage.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.PerfectCollisionBarrage",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.PerfectCollisionBarrage.yml\" sourcestartlinenumber=\"1\">A barrage with pixel perfect collision</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.Pike.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.Pike.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.Pike",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.Pike.yml\" sourcestartlinenumber=\"1\">A spear with alpha fade in animation</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.Platform.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.Platform.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.Platform",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.Platform.yml\" sourcestartlinenumber=\"1\">A platform</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.Player.HPControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.Player.HPControl.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.Player.HPControl",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.Player.HPControl.yml\" sourcestartlinenumber=\"1\">The HP controller of the player</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.Player.Heart.Shield.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.Player.Heart.Shield.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.Player.Heart.Shield",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.Player.Heart.Shield.yml\" sourcestartlinenumber=\"1\">The shield. Calculation of angle</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.Player.Heart.ShieldCircle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.Player.Heart.ShieldCircle.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.Player.Heart.ShieldCircle",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.Player.Heart.ShieldCircle.yml\" sourcestartlinenumber=\"1\">The background of the shield</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.Player.Heart.ShieldManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.Player.Heart.ShieldManager.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.Player.Heart.ShieldManager",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.Player.Heart.ShieldManager.yml\" sourcestartlinenumber=\"1\">Shield manager, shields are added/removed here</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.Player.Heart.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.Player.Heart.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.Player.Heart",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.Player.Heart.yml\" sourcestartlinenumber=\"1\">The heart class of <xref href=\"UndyneFight_Ex.Entities.Player\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.Player.MoveState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.Player.MoveState.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.Player.MoveState",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.Player.MoveState.yml\" sourcestartlinenumber=\"1\">The state of heart movement</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.Player.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.Player.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.Player",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.Player.yml\" sourcestartlinenumber=\"1\">The player class</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.RebindKeyScene.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.RebindKeyScene.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.RebindKeyScene",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.RebindKeyScene.yml\" sourcestartlinenumber=\"1\">v0.3.0+ Rebinding scene</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.RectangleBox.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.RectangleBox.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.RectangleBox",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.RectangleBox.yml\" sourcestartlinenumber=\"1\">A rectangle box</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.RightBone.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.RightBone.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.RightBone",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.RightBone.yml\" sourcestartlinenumber=\"1\">A bone that sticks to the right side of the box</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.Shattered.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.Shattered.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.Shattered",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.Shattered.yml\" sourcestartlinenumber=\"1\">A shattered box</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.ShootableBlock.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.ShootableBlock.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.ShootableBlock",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.ShootableBlock.yml\" sourcestartlinenumber=\"1\">A block that will be destroyed upon being shot at</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.SideBone.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.SideBone.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.SideBone",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.SideBone.yml\" sourcestartlinenumber=\"1\">The base class of a side bone, being <xref href=\"UndyneFight_Ex.Entities.UpBone\" data-throw-if-not-resolved=\"false\"></xref>, <xref href=\"UndyneFight_Ex.Entities.DownBone\" data-throw-if-not-resolved=\"false\"></xref>, <xref href=\"UndyneFight_Ex.Entities.LeftBone\" data-throw-if-not-resolved=\"false\"></xref>, <xref href=\"UndyneFight_Ex.Entities.RightBone\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.SideCircleBone.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.SideCircleBone.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.SideCircleBone",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.SideCircleBone.yml\" sourcestartlinenumber=\"1\">A rotating bone at the side of the box (The box must be a square)</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.SimplifiedEasing.EaseState",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.SimplifiedEasing.EaseState.yml\" sourcestartlinenumber=\"1\">Modes of easing to apply on easing functions, see <a href=\"https://easings.net/\">https://easings.net/</a> for more information</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.SimplifiedEasing.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.SimplifiedEasing.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.SimplifiedEasing",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.SimplifiedEasing.yml\" sourcestartlinenumber=\"1\">Simplified easing functions</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.SongFightingScene.SceneParams.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.SongFightingScene.SceneParams.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.SongFightingScene.SceneParams",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.SongFightingScene.SceneParams.yml\" sourcestartlinenumber=\"1\">Sets the parameters of the chart</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.SongFightingScene.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.SongFightingScene.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.SongFightingScene",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.SongFightingScene.yml\" sourcestartlinenumber=\"1\">Chart scene</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.SoulBullet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.SoulBullet.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.SoulBullet",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.SoulBullet.yml\" sourcestartlinenumber=\"1\">A yellow soul bullet</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.Souls.CyanMoveState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.Souls.CyanMoveState.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.Souls.CyanMoveState",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.Souls.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.Souls.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.Souls",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.Souls.yml\" sourcestartlinenumber=\"1\">Extra movement modes for souls</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.Spear.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.Spear.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.Spear",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.Spear.yml\" sourcestartlinenumber=\"1\">Base class of a spear (You should not create this)</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.Spider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.Spider.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.Spider",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.Spider.yml\" sourcestartlinenumber=\"1\">A spider</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.StartingShower.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.StartingShower.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.StartingShower",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.StartingShower.yml\" sourcestartlinenumber=\"1\">The items to display on startup</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.SwarmBone.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.SwarmBone.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.SwarmBone",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.SwarmBone.yml\" sourcestartlinenumber=\"1\">A bone that cycles inside the box</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.SwarmSpear.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.SwarmSpear.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.SwarmSpear",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.SwarmSpear.yml\" sourcestartlinenumber=\"1\">Creates a spear that aims towards a center</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.TextSelection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.TextSelection.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.TextSelection",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.TextSelection.yml\" sourcestartlinenumber=\"1\">A text button you can choose</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.TimeRangedEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.TimeRangedEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.TimeRangedEvent",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.TimeRangedEvent.yml\" sourcestartlinenumber=\"1\">Invoke an action that lasts for a duration after a delay</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.ToughBlock.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.ToughBlock.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.ToughBlock",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.ToughBlock.yml\" sourcestartlinenumber=\"1\">A block that cannot be destroyed upon being shot at</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.UpBone.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.UpBone.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.UpBone",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.UpBone.yml\" sourcestartlinenumber=\"1\">A bone that sticks to the top of the box</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.VertexBox.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.VertexBox.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.VertexBox",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.VertexBox.yml\" sourcestartlinenumber=\"1\">A box with user defined vertices</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.VerticalSpider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.VerticalSpider.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.VerticalSpider",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.VerticalSpider.yml\" sourcestartlinenumber=\"1\">A spider that moves vertically</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entity.RetentionEffect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entity.RetentionEffect.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entity.RetentionEffect",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entity.ShinyEffect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entity.ShinyEffect.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entity.ShinyEffect",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entity.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entity",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entity.yml\" sourcestartlinenumber=\"1\">An entity base</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.AdvanceFunctions.Interactive.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.AdvanceFunctions.Interactive.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.AdvanceFunctions.Interactive",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Fight.AdvanceFunctions.Interactive.yml\" sourcestartlinenumber=\"1\">Score events</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.AdvanceFunctions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.AdvanceFunctions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.AdvanceFunctions",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Fight.AdvanceFunctions.yml\" sourcestartlinenumber=\"1\">More advance functions for scoring</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.AttackAnimation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.AttackAnimation.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.AttackAnimation",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.AttributeSet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.AttributeSet.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.AttributeSet",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Fight.AttributeSet.yml\" sourcestartlinenumber=\"1\">A <xref href=\"UndyneFight_Ex.Fight.TextAttribute\" data-throw-if-not-resolved=\"false\"></xref> that combines several <xref href=\"UndyneFight_Ex.Fight.TextAttribute\" data-throw-if-not-resolved=\"false\"></xref>s, you can use this to avoid using multiple $</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.BoxMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.BoxMessage.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.BoxMessage",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.ClassicFight.InterActive.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.ClassicFight.InterActive.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.ClassicFight.InterActive",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.ClassicFight.Menu.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.ClassicFight.Menu.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.ClassicFight.Menu",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.ClassicFight.PlayerInformation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.ClassicFight.PlayerInformation.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.ClassicFight.PlayerInformation",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.ClassicFight.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.ClassicFight.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.ClassicFight",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.DialogBox.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.DialogBox.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.DialogBox",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.Enemy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.Enemy.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.Enemy",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.FightSelection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.FightSelection.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.FightSelection",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.FightSelectionCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.FightSelectionCollection.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.FightSelectionCollection",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.FightTextSelection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.FightTextSelection.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.FightTextSelection",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.Functions.ArrowAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.Functions.ArrowAttribute.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.Functions.ArrowAttribute",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Fight.Functions.ArrowAttribute.yml\" sourcestartlinenumber=\"1\">Attributes of an arrow</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.Functions.ArrowEase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.Functions.ArrowEase.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.Functions.ArrowEase",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.Functions.BoxStates.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.Functions.BoxStates.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.Functions.BoxStates",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Fight.Functions.BoxStates.yml\" sourcestartlinenumber=\"1\">Use this static class to access variables of the box</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.Functions.HeartAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.Functions.HeartAttribute.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.Functions.HeartAttribute",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Fight.Functions.HeartAttribute.yml\" sourcestartlinenumber=\"1\">Use this static class to access some attributes of the Heart</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.Functions.ScreenDrawing.CameraEffect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.Functions.ScreenDrawing.CameraEffect.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.Functions.ScreenDrawing.CameraEffect",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Fight.Functions.ScreenDrawing.CameraEffect.yml\" sourcestartlinenumber=\"1\">Camera effect methods</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.Functions.ScreenDrawing.CustomSurface.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.Functions.ScreenDrawing.CustomSurface.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.Functions.ScreenDrawing.CustomSurface",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Fight.Functions.ScreenDrawing.CustomSurface.yml\" sourcestartlinenumber=\"1\">A class for creating custom surfaces</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.Functions.ScreenDrawing.HPBar.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.Functions.ScreenDrawing.HPBar.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.Functions.ScreenDrawing.HPBar",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Fight.Functions.ScreenDrawing.HPBar.yml\" sourcestartlinenumber=\"1\">Variables related to the HP Bar</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Blur.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Blur.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Blur",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Blur.yml\" sourcestartlinenumber=\"1\">Creates a Gaussian Blur or Kawase Blur, depending on the user's Drawing Quality and <xref href=\"UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Blur.KawaseMode\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Filter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Filter.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Filter",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Filter.yml\" sourcestartlinenumber=\"1\">Creates a filter for the <code class=\"paramref\">shader</code>, commonly associated with <xref href=\"UndyneFight_Ex.Fight.Functions.ScreenDrawing.ActivateShader(UndyneFight_Ex.Shader%2cSystem.Single)\" data-throw-if-not-resolved=\"false\"></xref> and <xref href=\"UndyneFight_Ex.Fight.Functions.ScreenDrawing.ActivateShaderBack(UndyneFight_Ex.Shader%2cSystem.Single)\" data-throw-if-not-resolved=\"false\"></xref><br>\nThe filter effects uses the 3rd helper channel in the render pipeline</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Glitching.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Glitching.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Glitching",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Glitching.yml\" sourcestartlinenumber=\"1\">A glitching effect (Similar to BktGlitch in Game Maker, if you had used it)</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.Light.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.Light.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.Light",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.Light.yml\" sourcestartlinenumber=\"1\">The class for the bloom</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.LightMode.yml\" sourcestartlinenumber=\"1\">Available modes for blooming, see <a href=\"https://en.wikipedia.org/wiki/Blend_modes\">https://en.wikipedia.org/wiki/Blend_modes</a> for more information</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.Lighting.yml\" sourcestartlinenumber=\"1\">A bloom effect</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.RGBSplitting.yml\" sourcestartlinenumber=\"1\">A RGB splitting effect</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Fight.Functions.ScreenDrawing.Shaders.yml\" sourcestartlinenumber=\"1\">List of shaders that are built in to the engine, you will need to manually dispose them</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.Functions.ScreenDrawing.UISettings.UISurfaceDrawing.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.Functions.ScreenDrawing.UISettings.UISurfaceDrawing.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.Functions.ScreenDrawing.UISettings.UISurfaceDrawing",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Fight.Functions.ScreenDrawing.UISettings.UISurfaceDrawing.yml\" sourcestartlinenumber=\"1\">The render production for drawing the UI surface</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.Functions.ScreenDrawing.UISettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.Functions.ScreenDrawing.UISettings.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.Functions.ScreenDrawing.UISettings",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Fight.Functions.ScreenDrawing.UISettings.yml\" sourcestartlinenumber=\"1\">Variables related to UI</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.Functions.ScreenDrawing.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.Functions.ScreenDrawing.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.Functions.ScreenDrawing",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Fight.Functions.ScreenDrawing.yml\" sourcestartlinenumber=\"1\">Functions related to drawing</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.Functions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.Functions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.Functions",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Fight.Functions.yml\" sourcestartlinenumber=\"1\">General charting functions</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.GameAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.GameAction.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.GameAction",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.IClassicFight.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.IClassicFight.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.IClassicFight",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.IExtraOption.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.IExtraOption.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.IExtraOption",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.Item.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.Item.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.Item",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.MenuButtons.ActButton.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.MenuButtons.ActButton.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.MenuButtons.ActButton",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.MenuButtons.FightButton.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.MenuButtons.FightButton.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.MenuButtons.FightButton",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.MenuButtons.ItemButton.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.MenuButtons.ItemButton.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.MenuButtons.ItemButton",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.MenuButtons.MercyButton.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.MenuButtons.MercyButton.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.MenuButtons.MercyButton",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.MenuButtons.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.MenuButtons.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.MenuButtons",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.PrintingSettings.CurrentPrintingData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.PrintingSettings.CurrentPrintingData.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.PrintingSettings.CurrentPrintingData",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.PrintingSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.PrintingSettings.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.PrintingSettings",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.Slice.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.Slice.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.Slice",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.TextAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.TextAction.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.TextAction",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Fight.TextAction.yml\" sourcestartlinenumber=\"1\">Invokes an action when the text reaches this point</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.TextAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.TextAttribute.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.TextAttribute",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Fight.TextAttribute.yml\" sourcestartlinenumber=\"1\">The base class for text attributes, contains</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.TextCharMovingAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.TextCharMovingAttribute.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.TextCharMovingAttribute",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.TextColorAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.TextColorAttribute.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.TextColorAttribute",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Fight.TextColorAttribute.yml\" sourcestartlinenumber=\"1\">Sets the color of the text to the given color</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.TextFadeoutAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.TextFadeoutAttribute.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.TextFadeoutAttribute",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Fight.TextFadeoutAttribute.yml\" sourcestartlinenumber=\"1\">Fades the text after a time delay in the given duration</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.TextGleamAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.TextGleamAttribute.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.TextGleamAttribute",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Fight.TextGleamAttribute.yml\" sourcestartlinenumber=\"1\">Toggles the bloom effect of the text</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.TextMoveAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.TextMoveAttribute.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.TextMoveAttribute",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Fight.TextMoveAttribute.yml\" sourcestartlinenumber=\"1\">Moves the text(s) using provided function</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.TextPrinter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.TextPrinter.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.TextPrinter",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Fight.TextPrinter.yml\" sourcestartlinenumber=\"1\">The text typing entity</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.TextSizeAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.TextSizeAttribute.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.TextSizeAttribute",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Fight.TextSizeAttribute.yml\" sourcestartlinenumber=\"1\">Scales the text(s) by the given scale</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.TextSpeedAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.TextSpeedAttribute.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.TextSpeedAttribute",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Fight.TextSpeedAttribute.yml\" sourcestartlinenumber=\"1\">Changes the speed of the typing</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.TextTimeThreshold.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.TextTimeThreshold.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight.TextTimeThreshold",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Fight.TextTimeThreshold.yml\" sourcestartlinenumber=\"1\">Pauses the typer for the given duration of time</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Fight.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Fight.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Fight",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.FightResources.FightSprites.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.FightResources.FightSprites.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.FightResources.FightSprites",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.FightResources.FightSprites.yml\" sourcestartlinenumber=\"1\">A list of sprites used in fighting</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.FightResources.Font.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.FightResources.Font.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.FightResources.Font",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.FightResources.Font.yml\" sourcestartlinenumber=\"1\">A list of built-in fonts</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.FightResources.Shaders.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.FightResources.Shaders.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.FightResources.Shaders",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.FightResources.Shaders.yml\" sourcestartlinenumber=\"1\">A list of built-in shaders</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.FightResources.Sounds.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.FightResources.Sounds.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.FightResources.Sounds",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.FightResources.Sounds.yml\" sourcestartlinenumber=\"1\">A list of built-in audio</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.FightResources.Sprites.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.FightResources.Sprites.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.FightResources.Sprites",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.FightResources.Sprites.yml\" sourcestartlinenumber=\"1\">A list of built-in sprites</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.FightResources.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.FightResources.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.FightResources",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.FightSet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.FightSet.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.FightSet",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.FightSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.FightSystem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.FightSystem",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.GLFont.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.GLFont.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.GLFont",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.GLFont.yml\" sourcestartlinenumber=\"1\">Graphics Library Font class</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.GameEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.GameEventArgs.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.GameEventArgs",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.GameEventArgs.yml\" sourcestartlinenumber=\"1\">An event to be broadcasted that can be detected</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.GameInterface.ClassicalGUI.MainMenuSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.GameInterface.ClassicalGUI.MainMenuSettings.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.GameInterface.ClassicalGUI.MainMenuSettings",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.GameInterface.ClassicalGUI.MainMenuSettings.yml\" sourcestartlinenumber=\"1\">Settings for the game menu</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.GameInterface.ClassicalGUI.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.GameInterface.ClassicalGUI.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.GameInterface.ClassicalGUI",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.GameInterface.ClassicalGUI.yml\" sourcestartlinenumber=\"1\">The classic UF-Ex menu</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.GameInterface.GameStartUp.LoadingSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.GameInterface.GameStartUp.LoadingSettings.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.GameInterface.GameStartUp.LoadingSettings",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.GameInterface.GameStartUp.LoadingSettings.yml\" sourcestartlinenumber=\"1\">User defined loading screen settings</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.GameInterface.GameStartUp.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.GameInterface.GameStartUp.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.GameInterface.GameStartUp",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.GameInterface.GameStartUp.yml\" sourcestartlinenumber=\"1\">The game start up event class</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.GameInterface.UFEXSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.GameInterface.UFEXSettings.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.GameInterface.UFEXSettings",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.GameInterface.UFEXSettings.yml\" sourcestartlinenumber=\"1\">The settings for the base UF-Ex engine</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.GameInterface.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.GameInterface.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.GameInterface",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.GameObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.GameObject.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.GameObject",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.GameObject.yml\" sourcestartlinenumber=\"1\">A game object</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.GameStates.GameRule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.GameStates.GameRule.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.GameStates.GameRule",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.GameStates.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.GameStates.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.GameStates",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.GlobalResources.Effects.AuroraShader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.GlobalResources.Effects.AuroraShader.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.GlobalResources.Effects.AuroraShader",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.GlobalResources.Effects.AuroraShader.yml\" sourcestartlinenumber=\"1\">Shader class for <xref href=\"UndyneFight_Ex.FightResources.Shaders.Aurora\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.GlobalResources.Effects.BallShapingShader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.GlobalResources.Effects.BallShapingShader.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.GlobalResources.Effects.BallShapingShader",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.GlobalResources.Effects.BallShapingShader.yml\" sourcestartlinenumber=\"1\">Shader class for <xref href=\"UndyneFight_Ex.FightResources.Shaders.Cos1Ball\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.GlobalResources.Effects.BlurKawaseShader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.GlobalResources.Effects.BlurKawaseShader.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.GlobalResources.Effects.BlurKawaseShader",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.GlobalResources.Effects.BlurKawaseShader.yml\" sourcestartlinenumber=\"1\">Shader class for <xref href=\"UndyneFight_Ex.FightResources.Shaders.BlurKawase\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.GlobalResources.Effects.BlurShader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.GlobalResources.Effects.BlurShader.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.GlobalResources.Effects.BlurShader",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.GlobalResources.Effects.BlurShader.yml\" sourcestartlinenumber=\"1\">Shader class for <xref href=\"UndyneFight_Ex.FightResources.Shaders.Blur\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.GlobalResources.Effects.CameraShader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.GlobalResources.Effects.CameraShader.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.GlobalResources.Effects.CameraShader",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.GlobalResources.Effects.CameraShader.yml\" sourcestartlinenumber=\"1\">Shader class for <xref href=\"UndyneFight_Ex.FightResources.Shaders.Camera\" data-throw-if-not-resolved=\"false\"></xref>, it is best to have knowledge of camera matrix before using this</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.GlobalResources.Effects.ColorBlendShader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.GlobalResources.Effects.ColorBlendShader.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.GlobalResources.Effects.ColorBlendShader",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.GlobalResources.Effects.DislocationShaderX.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.GlobalResources.Effects.DislocationShaderX.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.GlobalResources.Effects.DislocationShaderX",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.GlobalResources.Effects.DislocationShaderY.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.GlobalResources.Effects.DislocationShaderY.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.GlobalResources.Effects.DislocationShaderY",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.GlobalResources.Effects.FireShader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.GlobalResources.Effects.FireShader.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.GlobalResources.Effects.FireShader",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.GlobalResources.Effects.FireShader.yml\" sourcestartlinenumber=\"1\">Shader class for <xref href=\"UndyneFight_Ex.FightResources.Shaders.Fire\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.GlobalResources.Effects.GrayShader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.GlobalResources.Effects.GrayShader.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.GlobalResources.Effects.GrayShader",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.GlobalResources.Effects.GrayShader.yml\" sourcestartlinenumber=\"1\">Shader class for <xref href=\"UndyneFight_Ex.FightResources.Shaders.Gray\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.GlobalResources.Effects.LightSweepShader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.GlobalResources.Effects.LightSweepShader.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.GlobalResources.Effects.LightSweepShader",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.GlobalResources.Effects.LightSweepShader.yml\" sourcestartlinenumber=\"1\">Shader class of <xref href=\"UndyneFight_Ex.FightResources.Shaders.LightSweep\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.GlobalResources.Effects.MosaicShader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.GlobalResources.Effects.MosaicShader.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.GlobalResources.Effects.MosaicShader",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.GlobalResources.Effects.MosaicShader.yml\" sourcestartlinenumber=\"1\">Shader class for <xref href=\"UndyneFight_Ex.FightResources.Shaders.Mosaic\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.GlobalResources.Effects.NeonLineShader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.GlobalResources.Effects.NeonLineShader.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.GlobalResources.Effects.NeonLineShader",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.GlobalResources.Effects.NeonLineShader.yml\" sourcestartlinenumber=\"1\">Shader class of <xref href=\"UndyneFight_Ex.FightResources.Shaders.NeonLine\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.GlobalResources.Effects.PolarShader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.GlobalResources.Effects.PolarShader.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.GlobalResources.Effects.PolarShader",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.GlobalResources.Effects.PolarShader.yml\" sourcestartlinenumber=\"1\">Shader class for <xref href=\"UndyneFight_Ex.FightResources.Shaders.Polar\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.GlobalResources.Effects.RadialWaveShader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.GlobalResources.Effects.RadialWaveShader.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.GlobalResources.Effects.RadialWaveShader",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.GlobalResources.Effects.RadialWaveShader.yml\" sourcestartlinenumber=\"1\">Shader class of <xref href=\"UndyneFight_Ex.FightResources.Shaders.RadialWave\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.GlobalResources.Effects.ScaleShader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.GlobalResources.Effects.ScaleShader.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.GlobalResources.Effects.ScaleShader",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.GlobalResources.Effects.ScaleShader.yml\" sourcestartlinenumber=\"1\">Shader class of <xref href=\"UndyneFight_Ex.FightResources.Shaders.Scale\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.GlobalResources.Effects.ScatterShader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.GlobalResources.Effects.ScatterShader.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.GlobalResources.Effects.ScatterShader",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.GlobalResources.Effects.ScatterShader.yml\" sourcestartlinenumber=\"1\">Shader class of <xref href=\"UndyneFight_Ex.FightResources.Shaders.Scatter\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.GlobalResources.Effects.SeismicShader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.GlobalResources.Effects.SeismicShader.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.GlobalResources.Effects.SeismicShader",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.GlobalResources.Effects.SeismicShader.yml\" sourcestartlinenumber=\"1\">Shader class of <xref href=\"UndyneFight_Ex.FightResources.Shaders.Seismic\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.GlobalResources.Effects.SpiralShader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.GlobalResources.Effects.SpiralShader.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.GlobalResources.Effects.SpiralShader",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.GlobalResources.Effects.SpiralShader.yml\" sourcestartlinenumber=\"1\">Shader class for <xref href=\"UndyneFight_Ex.FightResources.Shaders.Spiral\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.GlobalResources.Effects.StepSampleShader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.GlobalResources.Effects.StepSampleShader.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.GlobalResources.Effects.StepSampleShader",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.GlobalResources.Effects.StepSampleShader.yml\" sourcestartlinenumber=\"1\">Shader class of <xref href=\"UndyneFight_Ex.FightResources.Shaders.StepSample\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.GlobalResources.Effects.SwirlShader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.GlobalResources.Effects.SwirlShader.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.GlobalResources.Effects.SwirlShader",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.GlobalResources.Effects.TyndallShader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.GlobalResources.Effects.TyndallShader.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.GlobalResources.Effects.TyndallShader",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.GlobalResources.Effects.TyndallShader.yml\" sourcestartlinenumber=\"1\">Shader class for <xref href=\"UndyneFight_Ex.FightResources.Shaders.Tyndall\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.GlobalResources.Effects.WaveShader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.GlobalResources.Effects.WaveShader.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.GlobalResources.Effects.WaveShader",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.GlobalResources.Effects.WaveShader.yml\" sourcestartlinenumber=\"1\">Shader class for <xref href=\"UndyneFight_Ex.FightResources.Shaders.Wave\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.GlobalResources.Effects.WrongShader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.GlobalResources.Effects.WrongShader.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.GlobalResources.Effects.WrongShader",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.GlobalResources.Effects.WrongShader.yml\" sourcestartlinenumber=\"1\">Shader class for <xref href=\"UndyneFight_Ex.FightResources.Shaders.Wrong\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.GlobalResources.Effects.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.GlobalResources.Effects.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.GlobalResources.Effects",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.GlobalResources.Font.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.GlobalResources.Font.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.GlobalResources.Font",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.GlobalResources.Font.yml\" sourcestartlinenumber=\"1\">A list of built-in fonts</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.GlobalResources.Sprites.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.GlobalResources.Sprites.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.GlobalResources.Sprites",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.GlobalResources.Sprites.yml\" sourcestartlinenumber=\"1\">A list of built-in sprites</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.GlobalResources.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.GlobalResources.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.GlobalResources",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.GlobalResources.yml\" sourcestartlinenumber=\"1\">Resources that are used globally</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.GravityEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.GravityEntity.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.GravityEntity",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.GravityEntity.yml\" sourcestartlinenumber=\"1\">An entity that has gravitational motion</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.GravityLine.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.GravityLine.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.GravityLine",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.GravityLine.yml\" sourcestartlinenumber=\"1\">Used for detecting blue soul platforms</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.IO.FileIO.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.IO.FileIO.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.IO.FileIO",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.IO.FileIO.yml\" sourcestartlinenumber=\"1\">For reading player file data</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.IO.IOEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.IO.IOEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.IO.IOEvent",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.IO.IOEvent.yml\" sourcestartlinenumber=\"1\">Reading, writing, encoding, and decoding custom files</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.IO.SaveInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.IO.SaveInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.IO.SaveInfo",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.IO.SaveInfo.yml\" sourcestartlinenumber=\"1\">Storage rules of <xref href=\"UndyneFight_Ex.IO.SaveInfo\" data-throw-if-not-resolved=\"false\"></xref>:</p>\n<p>[] are constants，{} are an array of <xref href=\"UndyneFight_Ex.IO.SaveInfo.values\" data-throw-if-not-resolved=\"false\"></xref>, -&gt;{} are an array of <xref href=\"UndyneFight_Ex.IO.SaveInfo.Nexts\" data-throw-if-not-resolved=\"false\"></xref>, ',' is the separator of data</p>\n<p>Examples are as follows:</p>\n<p>(ChampionShips)-&gt;{div=[string],score=[int],position=[int]}</p>\n<p>PlayerName:[string],VIP:[bool]</p>\n<p>NormalFight-&gt;{(songName):noob=[int],easy=[int],...extreme=[int]}</p>\n<p>Achievements-&gt;{(achievementName):type=[bool],progress=[int]}</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.IO.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.IO.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.IO",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.IdentityChecker.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.IdentityChecker.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.IdentityChecker",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.IdentityChecker.yml\" sourcestartlinenumber=\"1\">Checker for player input of <xref href=\"UndyneFight_Ex.InputIdentity\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.ImageEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.ImageEntity.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.ImageEntity",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.ImageEntity.yml\" sourcestartlinenumber=\"1\">An entity that draws an image</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.InputIdentity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.InputIdentity.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.InputIdentity",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.InputIdentity.yml\" sourcestartlinenumber=\"1\">Input verbs</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.LoadingScene.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.LoadingScene.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.LoadingScene",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.LoadingScene.yml\" sourcestartlinenumber=\"1\">Loading scene</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.MathUtil.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.MathUtil.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.MathUtil",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.MathUtil.yml\" sourcestartlinenumber=\"1\">Utilities for mathematical operations</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.MiscUtil.ShorthandName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.MiscUtil.ShorthandName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.MiscUtil.ShorthandName",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.MiscUtil.ShorthandName.yml\" sourcestartlinenumber=\"1\">The shorthand name of the object</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.MiscUtil.TextBuilder.Effects.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.MiscUtil.TextBuilder.Effects.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.MiscUtil.TextBuilder.Effects",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.MiscUtil.TextBuilder.Effects.yml\" sourcestartlinenumber=\"1\">Available text effects to apply</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.MiscUtil.TextBuilder.TextHAlignment.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.MiscUtil.TextBuilder.TextHAlignment.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.MiscUtil.TextBuilder.TextHAlignment",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.MiscUtil.TextBuilder.TextHAlignment.yml\" sourcestartlinenumber=\"1\">The horizontal text alignment</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.MiscUtil.TextBuilder.TextVAlignment.yml\" sourcestartlinenumber=\"1\">The vertical text alignment</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.MiscUtil.TextBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.MiscUtil.TextBuilder.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.MiscUtil.TextBuilder",
+      "Summary": "<p>A text builder that allows text formatting on the fly</p>\n<p>Use '[[' for displaying '[' and '\\b' for displaying ']'</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.MiscUtil.TextTyper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.MiscUtil.TextTyper.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.MiscUtil.TextTyper",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.MiscUtil.TextTyper.yml\" sourcestartlinenumber=\"1\">A text typer class associated with <xref href=\"UndyneFight_Ex.MiscUtil.TextBuilder\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.MiscUtil.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.MiscUtil.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.MiscUtil",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.MiscUtil.yml\" sourcestartlinenumber=\"1\">Miscellaneous Utilities</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.MouseSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.MouseSystem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.MouseSystem",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.MouseSystem.yml\" sourcestartlinenumber=\"1\">The mouse input system</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.PlayerManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.PlayerManager.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.PlayerManager",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Program.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Program.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Program",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Program.yml\" sourcestartlinenumber=\"1\">The main class.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Protected-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Protected-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Protected<T>",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Protected-1.yml\" sourcestartlinenumber=\"1\">Protected data</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.RenderProduction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.RenderProduction.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.RenderProduction",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.RenderProduction.yml\" sourcestartlinenumber=\"1\">THe class for most rendering actions, see the documentation for more information</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.RenderingManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.RenderingManager.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.RenderingManager",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.RenderingManager.yml\" sourcestartlinenumber=\"1\">Manages <xref href=\"UndyneFight_Ex.RenderProduction\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Resource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Resource.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Resource",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Resource.yml\" sourcestartlinenumber=\"1\">Utilities for resource loading</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Scene.DrawingSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Scene.DrawingSettings.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Scene.DrawingSettings",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Scene.DrawingSettings.yml\" sourcestartlinenumber=\"1\">The drawing settings</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Scene.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Scene.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Scene",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Scene.yml\" sourcestartlinenumber=\"1\">Carrier of all entities, the FPS of every scene is 125 fps</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Server.AliveData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Server.AliveData.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Server.AliveData",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Server.User.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Server.User.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Server.User",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Server.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Server.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Server",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Settings.SettingsManager.DataLibrary.DrawingQuality",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Settings.SettingsManager.DataLibrary.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Settings.SettingsManager.DataLibrary.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Settings.SettingsManager.DataLibrary",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Settings.SettingsManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Settings.SettingsManager.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Settings.SettingsManager",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Settings.SettingsResetInterface.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Settings.SettingsResetInterface.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Settings.SettingsResetInterface",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Settings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Settings.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Settings",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Shader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Shader.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Shader",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Shader.yml\" sourcestartlinenumber=\"1\">The shader class</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Shapes.Circle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Shapes.Circle.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Shapes.Circle",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Shapes.Circle.yml\" sourcestartlinenumber=\"1\">A circle</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Shapes.DrawingData.DrawMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Shapes.DrawingData.DrawMode.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Shapes.DrawingData.DrawMode",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Shapes.DrawingData.DrawMode.yml\" sourcestartlinenumber=\"1\">The mode of drawing of the shape</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Shapes.DrawingData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Shapes.DrawingData.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Shapes.DrawingData",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Shapes.DrawingData.yml\" sourcestartlinenumber=\"1\">The data for drawing the shape</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Shapes.IShape.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Shapes.IShape.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Shapes.IShape",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Shapes.IShape.yml\" sourcestartlinenumber=\"1\">Interface for shapes</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Shapes.Rectangle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Shapes.Rectangle.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Shapes.Rectangle",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Shapes.Rectangle.yml\" sourcestartlinenumber=\"1\">A rectangle</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Shapes.Triangle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Shapes.Triangle.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Shapes.Triangle",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Shapes.Triangle.yml\" sourcestartlinenumber=\"1\">A triangle</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Shapes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Shapes.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Shapes",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.SongLoadingScene.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.SongLoadingScene.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.SongLoadingScene",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.SongLoadingScene.yml\" sourcestartlinenumber=\"1\">Loading a song</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.SongSet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.SongSet.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.SongSet",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.SongSet.yml\" sourcestartlinenumber=\"1\">A list of charts</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.SongSystem.Difficulty.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.SongSystem.Difficulty.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.SongSystem.Difficulty",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.SongSystem.GameMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.SongSystem.GameMode.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.SongSystem.GameMode",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.SongSystem.IChampionShip.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.SongSystem.IChampionShip.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.SongSystem.IChampionShip",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.SongSystem.IChampionShip.yml\" sourcestartlinenumber=\"1\">If the chart is a championship chart</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.SongSystem.IWaveSet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.SongSystem.IWaveSet.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.SongSystem.IWaveSet",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.SongSystem.IWaveSet.yml\" sourcestartlinenumber=\"1\">The interface of the chart</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.SongSystem.IWaveSetS.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.SongSystem.IWaveSetS.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.SongSystem.IWaveSetS",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.SongSystem.IWaveSetS.yml\" sourcestartlinenumber=\"1\">Simplified version of <xref href=\"UndyneFight_Ex.SongSystem.IWaveSet\" data-throw-if-not-resolved=\"false\"></xref>, note that all functions in <xref href=\"UndyneFight_Ex.SongSystem.IWaveSet\" data-throw-if-not-resolved=\"false\"></xref> will be overwritten by <xref href=\"UndyneFight_Ex.SongSystem.IWaveSetS.Chart\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.SongSystem.JudgementState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.SongSystem.JudgementState.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.SongSystem.JudgementState",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.SongSystem.SkillMark.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.SongSystem.SkillMark.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.SongSystem.SkillMark",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.SongSystem.SkillMark.yml\" sourcestartlinenumber=\"1\">Impeccable    -&gt; All Perfect <br>\nEminent       -&gt; No Hit + 99% score<br>\nExcellent     -&gt; No Hit + 98% score<br>\nRespectable   -&gt; 96% score<br>\nAcceptable    -&gt; 92% score<br>\nOrdinary      -&gt; 75% score<br></p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.SongSystem.SongInformation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.SongSystem.SongInformation.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.SongSystem.SongInformation",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.SongSystem.SongInformation.yml\" sourcestartlinenumber=\"1\">The list of information of the chart</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.SongSystem.SongPlayData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.SongSystem.SongPlayData.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.SongSystem.SongPlayData",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.SongSystem.SongResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.SongSystem.SongResult.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.SongSystem.SongResult",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.SongSystem.WaveConstructor.ChartSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.SongSystem.WaveConstructor.ChartSettings.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.SongSystem.WaveConstructor.ChartSettings",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.SongSystem.WaveConstructor.ChartSettings.yml\" sourcestartlinenumber=\"1\">The settings of the charts</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.SongSystem.WaveConstructor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.SongSystem.WaveConstructor.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.SongSystem.WaveConstructor",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.SongSystem.WaveConstructor.yml\" sourcestartlinenumber=\"1\">Wave data</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.SongSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.SongSystem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.SongSystem",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.SpriteBatchEX.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.SpriteBatchEX.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.SpriteBatchEX",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.SpriteBatchEX.yml\" sourcestartlinenumber=\"1\">Extended sprite batch class</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Surface.TransferUse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Surface.TransferUse.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Surface.TransferUse",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Surface.TransferUse.yml\" sourcestartlinenumber=\"1\">Options on how the surfaces handles the local matrix</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Surface.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Surface.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Surface",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Surface.yml\" sourcestartlinenumber=\"1\">A surface</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Tag.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Tag.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Tag",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Tag.yml\" sourcestartlinenumber=\"1\">The Tag class</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.TextEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.TextEntity.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.TextEntity",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.TextEntity.yml\" sourcestartlinenumber=\"1\">Draws a piece of static text</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.UserService.AchievementManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.UserService.AchievementManager.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.UserService.AchievementManager",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.UserService.AchievementManager.yml\" sourcestartlinenumber=\"1\">Data for the user's achievements</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.UserService.AchievementObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.UserService.AchievementObject.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.UserService.AchievementObject",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.UserService.AchievementObject.yml\" sourcestartlinenumber=\"1\">A singular achievement</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.UserService.ChallengeData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.UserService.ChallengeData.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.UserService.ChallengeData",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.UserService.ChallengeData.yml\" sourcestartlinenumber=\"1\">Cumulative challenge data</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.UserService.ChampionshipManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.UserService.ChampionshipManager.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.UserService.ChampionshipManager",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.UserService.ISaveLoad.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.UserService.ISaveLoad.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.UserService.ISaveLoad",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.UserService.ISaveLoad.yml\" sourcestartlinenumber=\"1\">Interface for savable data</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.UserService.ItemRarity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.UserService.ItemRarity.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.UserService.ItemRarity",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.UserService.ItemRarity.yml\" sourcestartlinenumber=\"1\">The rarity of the item</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.UserService.RatingCalculator.RatingList.SingleSong.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.UserService.RatingCalculator.RatingList.SingleSong.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.UserService.RatingCalculator.RatingList.SingleSong",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.UserService.RatingCalculator.RatingList.SingleSong.yml\" sourcestartlinenumber=\"1\">Data pf a single song</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.UserService.RatingCalculator.RatingList.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.UserService.RatingCalculator.RatingList.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.UserService.RatingCalculator.RatingList",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.UserService.RatingCalculator.RatingList.yml\" sourcestartlinenumber=\"1\">A list of rating</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.UserService.RatingCalculator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.UserService.RatingCalculator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.UserService.RatingCalculator",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.UserService.RatingCalculator.yml\" sourcestartlinenumber=\"1\">A rating calculator to calculate the rating of a user by their rating</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.UserService.Settings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.UserService.Settings.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.UserService.Settings",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.UserService.Settings.yml\" sourcestartlinenumber=\"1\">User custom settings</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.UserService.ShopData.ShopCash.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.UserService.ShopData.ShopCash.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.UserService.ShopData.ShopCash",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.UserService.ShopData.ShopCash.yml\" sourcestartlinenumber=\"1\">The data of the user's coins</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.UserService.ShopData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.UserService.ShopData.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.UserService.ShopData",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.UserService.ShopData.yml\" sourcestartlinenumber=\"1\">The data of the shop as a whole</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.UserService.ShopItemData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.UserService.ShopItemData.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.UserService.ShopItemData",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.UserService.ShopItemData.yml\" sourcestartlinenumber=\"1\">The data of the shop items</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.UserService.SingleChallenge.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.UserService.SingleChallenge.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.UserService.SingleChallenge",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.UserService.SingleChallenge.yml\" sourcestartlinenumber=\"1\">Singular challenge data</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.UserService.SongData.SongState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.UserService.SongData.SongState.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.UserService.SongData.SongState",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.UserService.SongData.SongState.yml\" sourcestartlinenumber=\"1\">The chart results</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.UserService.SongData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.UserService.SongData.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.UserService.SongData",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.UserService.SongData.yml\" sourcestartlinenumber=\"1\">Song data of a chart</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.UserService.SongManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.UserService.SongManager.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.UserService.SongManager",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.UserService.SongManager.yml\" sourcestartlinenumber=\"1\">Song data manager</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.UserService.Statistic.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.UserService.Statistic.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.UserService.Statistic",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.UserService.Statistic.yml\" sourcestartlinenumber=\"1\">User's statistic</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.UserService.StoreItem.ItemAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.UserService.StoreItem.ItemAttribute.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.UserService.StoreItem.ItemAttribute",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.UserService.StoreItem.ItemAttribute.yml\" sourcestartlinenumber=\"1\">Attributes to the item</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.UserService.StoreItem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.UserService.StoreItem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.UserService.StoreItem",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.UserService.StoreItem.yml\" sourcestartlinenumber=\"1\">The base class of an item in the store</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.UserService.User.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.UserService.User.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.UserService.User",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.UserService.User.yml\" sourcestartlinenumber=\"1\">A user account</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.UserService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.UserService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.UserService",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex",
+      "Summary": null
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "introduction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
 }

@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class PlayerManager | UF-Ex Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class PlayerManager | UF-Ex Documentation ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="UF-Ex Documentation">
+            UF-Ex Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="UndyneFight_Ex.PlayerManager">
+
+
+
+  <h1 id="UndyneFight_Ex_PlayerManager" data-uid="UndyneFight_Ex.PlayerManager" class="text-break">
+Class PlayerManager  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="UndyneFight_Ex.html">UndyneFight_Ex</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>UndyneFight-Ex.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class PlayerManager</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">PlayerManager</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="UndyneFight_Ex_PlayerManager_currentPlayer" data-uid="UndyneFight_Ex.PlayerManager.currentPlayer">
+  currentPlayer
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The name of the current user</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string currentPlayer</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="UndyneFight_Ex_PlayerManager_playerInfo" data-uid="UndyneFight_Ex.PlayerManager.playerInfo">
+  playerInfo
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The list of users in the data folder</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Dictionary&lt;string, User&gt; playerInfo</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="UndyneFight_Ex.UserService.User.html">User</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="UndyneFight_Ex_PlayerManager_CurrentUser_" data-uid="UndyneFight_Ex.PlayerManager.CurrentUser*"></a>
+
+  <h3 id="UndyneFight_Ex_PlayerManager_CurrentUser" data-uid="UndyneFight_Ex.PlayerManager.CurrentUser">
+  CurrentUser
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The current user that is logged in</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static User CurrentUser { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.UserService.User.html">User</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_PlayerManager_PlayerSkill_" data-uid="UndyneFight_Ex.PlayerManager.PlayerSkill*"></a>
+
+  <h3 id="UndyneFight_Ex_PlayerManager_PlayerSkill" data-uid="UndyneFight_Ex.PlayerManager.PlayerSkill">
+  PlayerSkill
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The rating of the user</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float PlayerSkill { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_PlayerManager_UserLogin_" data-uid="UndyneFight_Ex.PlayerManager.UserLogin*"></a>
+
+  <h3 id="UndyneFight_Ex_PlayerManager_UserLogin" data-uid="UndyneFight_Ex.PlayerManager.UserLogin">
+  UserLogin
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Whether is user is logged in</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool UserLogin { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="UndyneFight_Ex_PlayerManager_AddNewUser_" data-uid="UndyneFight_Ex.PlayerManager.AddNewUser*"></a>
+
+  <h3 id="UndyneFight_Ex_PlayerManager_AddNewUser_System_String_System_String_" data-uid="UndyneFight_Ex.PlayerManager.AddNewUser(System.String,System.String)">
+  AddNewUser(string, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates a new user</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void AddNewUser(string name, string password)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The new username</p>
+</dd>
+    <dt><code>password</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The password of the user</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_PlayerManager_AddUser_" data-uid="UndyneFight_Ex.PlayerManager.AddUser*"></a>
+
+  <h3 id="UndyneFight_Ex_PlayerManager_AddUser_UndyneFight_Ex_UserService_User_" data-uid="UndyneFight_Ex.PlayerManager.AddUser(UndyneFight_Ex.UserService.User)">
+  AddUser(User)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates a new user</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void AddUser(User info)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>info</code> <a class="xref" href="UndyneFight_Ex.UserService.User.html">User</a></dt>
+    <dd><p>The user to add</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_PlayerManager_Login_" data-uid="UndyneFight_Ex.PlayerManager.Login*"></a>
+
+  <h3 id="UndyneFight_Ex_PlayerManager_Login_System_String_" data-uid="UndyneFight_Ex.PlayerManager.Login(System.String)">
+  Login(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Logins as the user with the given username</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Login(string s)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>s</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The username</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_PlayerManager_RecordMark_" data-uid="UndyneFight_Ex.PlayerManager.RecordMark*"></a>
+
+  <h3 id="UndyneFight_Ex_PlayerManager_RecordMark_System_String_System_Int32_UndyneFight_Ex_SongSystem_SkillMark_System_Int32_System_Boolean_System_Boolean_System_Single_" data-uid="UndyneFight_Ex.PlayerManager.RecordMark(System.String,System.Int32,UndyneFight_Ex.SongSystem.SkillMark,System.Int32,System.Boolean,System.Boolean,System.Single)">
+  RecordMark(string, int, SkillMark, int, bool, bool, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Stores the chart completion result for the current user</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void RecordMark(string songName, int difficulty, SkillMark mark, int score, bool fc, bool ap, float acc)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>songName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The name of the chart</p>
+</dd>
+    <dt><code>difficulty</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The difficulty played</p>
+</dd>
+    <dt><code>mark</code> <a class="xref" href="UndyneFight_Ex.SongSystem.SkillMark.html">SkillMark</a></dt>
+    <dd><p>The rating of the play</p>
+</dd>
+    <dt><code>score</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The score of the play</p>
+</dd>
+    <dt><code>fc</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Whether it was a Full Combo</p>
+</dd>
+    <dt><code>ap</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Whether it was an All Perfect</p>
+</dd>
+    <dt><code>acc</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The accuracy of the chart</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_PlayerManager_RecordMark_" data-uid="UndyneFight_Ex.PlayerManager.RecordMark*"></a>
+
+  <h3 id="UndyneFight_Ex_PlayerManager_RecordMark_System_String_System_Int32_UndyneFight_Ex_SongSystem_SongResult_" data-uid="UndyneFight_Ex.PlayerManager.RecordMark(System.String,System.Int32,UndyneFight_Ex.SongSystem.SongResult)">
+  RecordMark(string, int, SongResult)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Stores the chart completion result for the current user</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void RecordMark(string songName, int difficulty, SongResult result)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>songName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The name of the chart</p>
+</dd>
+    <dt><code>difficulty</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The difficulty played</p>
+</dd>
+    <dt><code>result</code> <a class="xref" href="UndyneFight_Ex.SongSystem.SongResult.html">SongResult</a></dt>
+    <dd><p>The chart result</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_PlayerManager_Remove_" data-uid="UndyneFight_Ex.PlayerManager.Remove*"></a>
+
+  <h3 id="UndyneFight_Ex_PlayerManager_Remove_System_String_" data-uid="UndyneFight_Ex.PlayerManager.Remove(System.String)">
+  Remove(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Removes the user with the given username</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Remove(string s)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>s</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The username to remove</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_PlayerManager_Rename_" data-uid="UndyneFight_Ex.PlayerManager.Rename*"></a>
+
+  <h3 id="UndyneFight_Ex_PlayerManager_Rename_System_String_System_String_" data-uid="UndyneFight_Ex.PlayerManager.Rename(System.String,System.String)">
+  Rename(string, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Renames the current user</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Rename(string old, string now)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>old</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The old username</p>
+</dd>
+    <dt><code>now</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The new username</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_PlayerManager_Save_" data-uid="UndyneFight_Ex.PlayerManager.Save*"></a>
+
+  <h3 id="UndyneFight_Ex_PlayerManager_Save" data-uid="UndyneFight_Ex.PlayerManager.Save">
+  Save()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Saves the current user's data</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Save()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_PlayerManager_TryLogin_" data-uid="UndyneFight_Ex.PlayerManager.TryLogin*"></a>
+
+  <h3 id="UndyneFight_Ex_PlayerManager_TryLogin_System_String_System_String_" data-uid="UndyneFight_Ex.PlayerManager.TryLogin(System.String,System.String)">
+  TryLogin(string, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string TryLogin(string name, string password)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>password</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

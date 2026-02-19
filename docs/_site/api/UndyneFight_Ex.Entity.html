@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class Entity | UF-Ex Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class Entity | UF-Ex Documentation ">
+      
+      <meta name="description" content="An entity base">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="UF-Ex Documentation">
+            UF-Ex Documentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="UndyneFight_Ex.Entity">
+
+
+
+  <h1 id="UndyneFight_Ex_Entity" data-uid="UndyneFight_Ex.Entity" class="text-break">
+Class Entity  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="UndyneFight_Ex.html">UndyneFight_Ex</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>UndyneFight-Ex.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>An entity base</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class Entity : GameObject</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="UndyneFight_Ex.GameObject.html">GameObject</a></div>
+      <div><span class="xref">Entity</span></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist derived">
+    <dt>Derived</dt>
+    <dd>
+      <div><a class="xref" href="Extends.DrawingUtil.Circle.html">DrawingUtil.Circle</a></div>
+      <div><a class="xref" href="Extends.DrawingUtil.Linerotate.html">DrawingUtil.Linerotate</a></div>
+      <div><a class="xref" href="Extends.DrawingUtil.Linerotatelong.html">DrawingUtil.Linerotatelong</a></div>
+      <div><a class="xref" href="Extends.DrawingUtil.MaskSquare.html">DrawingUtil.MaskSquare</a></div>
+      <div><a class="xref" href="Extends.DrawingUtil.NormalLine.html">DrawingUtil.NormalLine</a></div>
+      <div><a class="xref" href="Extends.FightUtil.DownBonesea.html">FightUtil.DownBonesea</a></div>
+      <div><a class="xref" href="Extends.FightUtil.UpBonesea.html">FightUtil.UpBonesea</a></div>
+      <div><a class="xref" href="Extends.Fireball.html">Fireball</a></div>
+      <div><a class="xref" href="Extends.Star.html">Star</a></div>
+      <div><a class="xref" href="UndyneFight_Ex.Achievements.AchievementUI.html">AchievementUI</a></div>
+      <div><a class="xref" href="UndyneFight_Ex.AutoEntity.html">AutoEntity</a></div>
+      <div><a class="xref" href="UndyneFight_Ex.Entities.AccuracyBar.html">AccuracyBar</a></div>
+      <div><a class="xref" href="UndyneFight_Ex.Entities.Arrow.html">Arrow</a></div>
+      <div><a class="xref" href="UndyneFight_Ex.Entities.Arrow.ArrowPiece.html">Arrow.ArrowPiece</a></div>
+      <div><a class="xref" href="UndyneFight_Ex.Entities.Barrage.html">Barrage</a></div>
+      <div><a class="xref" href="UndyneFight_Ex.Entities.FightBox.html">FightBox</a></div>
+      <div><a class="xref" href="UndyneFight_Ex.Entities.GunBullet.html">GunBullet</a></div>
+      <div><a class="xref" href="UndyneFight_Ex.Entities.Line.html">Line</a></div>
+      <div><a class="xref" href="UndyneFight_Ex.Entities.Line.RetentionEffect.html">Line.RetentionEffect</a></div>
+      <div><a class="xref" href="UndyneFight_Ex.Entities.NameShower.html">NameShower</a></div>
+      <div><a class="xref" href="UndyneFight_Ex.Entities.Particle.html">Particle</a></div>
+      <div><a class="xref" href="UndyneFight_Ex.Entities.ParticleGather.html">ParticleGather</a></div>
+      <div><a class="xref" href="UndyneFight_Ex.Entities.Platform.html">Platform</a></div>
+      <div><a class="xref" href="UndyneFight_Ex.Entities.Player.html">Player</a></div>
+      <div><a class="xref" href="UndyneFight_Ex.Entities.Player.Heart.html">Player.Heart</a></div>
+      <div><a class="xref" href="UndyneFight_Ex.Entities.Player.Heart.Shield.html">Player.Heart.Shield</a></div>
+      <div><a class="xref" href="UndyneFight_Ex.Entities.Player.Heart.ShieldCircle.html">Player.Heart.ShieldCircle</a></div>
+      <div><a class="xref" href="UndyneFight_Ex.Entities.Player.Heart.ShieldManager.html">Player.Heart.ShieldManager</a></div>
+      <div><a class="xref" href="UndyneFight_Ex.Entities.Shattered.html">Shattered</a></div>
+      <div><a class="xref" href="UndyneFight_Ex.Entities.TextSelection.html">TextSelection</a></div>
+      <div><a class="xref" href="UndyneFight_Ex.Entity.RetentionEffect.html">Entity.RetentionEffect</a></div>
+      <div><a class="xref" href="UndyneFight_Ex.Entity.html">Entity</a>.<a class="xref" href="UndyneFight_Ex.Entity.ShinyEffect.html">ShinyEffect</a></div>
+      <div><a class="xref" href="UndyneFight_Ex.Fight.AttackAnimation.html">AttackAnimation</a></div>
+      <div><a class="xref" href="UndyneFight_Ex.Fight.BoxMessage.html">BoxMessage</a></div>
+      <div><a class="xref" href="UndyneFight_Ex.Fight.DialogBox.html">DialogBox</a></div>
+      <div><a class="xref" href="UndyneFight_Ex.Fight.Enemy.html">Enemy</a></div>
+      <div><a class="xref" href="UndyneFight_Ex.Fight.FightSelection.html">FightSelection</a></div>
+      <div><a class="xref" href="UndyneFight_Ex.Fight.FightSelectionCollection.html">FightSelectionCollection</a></div>
+      <div><a class="xref" href="UndyneFight_Ex.Fight.TextPrinter.html">TextPrinter</a></div>
+      <div><a class="xref" href="UndyneFight_Ex.GravityEntity.html">GravityEntity</a></div>
+      <div><a class="xref" href="UndyneFight_Ex.MiscUtil.TextBuilder.html">MiscUtil.TextBuilder</a></div>
+      <div><a class="xref" href="UndyneFight_Ex.MiscUtil.TextTyper.html">MiscUtil.TextTyper</a></div>
+      <div><a class="xref" href="UndyneFight_Ex.Scene.html">Scene</a></div>
+      <div><a class="xref" href="UndyneFight_Ex.TextEntity.html">TextEntity</a></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_ContainTag_System_String_">GameObject.ContainTag(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Broadcast_System_String_">GameObject.Broadcast(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_TryDetect_System_String_">GameObject.TryDetect(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_HasTag">GameObject.HasTag()</a>
+    </div>
+    <div>
+      <a class="xref" href="UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Update">GameObject.Update()</a>
+    </div>
+    <div>
+      <a class="xref" href="UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Start">GameObject.Start()</a>
+    </div>
+    <div>
+      <a class="xref" href="UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_TreeUpdate">GameObject.TreeUpdate()</a>
+    </div>
+    <div>
+      <a class="xref" href="UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Dispose">GameObject.Dispose()</a>
+    </div>
+    <div>
+      <a class="xref" href="UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Kill">GameObject.Kill()</a>
+    </div>
+    <div>
+      <a class="xref" href="UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_AddChild_UndyneFight_Ex_GameObject_">GameObject.AddChild(GameObject)</a>
+    </div>
+    <div>
+      <a class="xref" href="UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Reverse">GameObject.Reverse()</a>
+    </div>
+    <div>
+      <a class="xref" href="UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_GetDrawableTree">GameObject.GetDrawableTree()</a>
+    </div>
+    <div>
+      <a class="xref" href="UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_UpdateChildren">GameObject.UpdateChildren</a>
+    </div>
+    <div>
+      <a class="xref" href="UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_ChildrenUpdateFirst">GameObject.ChildrenUpdateFirst</a>
+    </div>
+    <div>
+      <a class="xref" href="UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_CurrentScene">GameObject.CurrentScene</a>
+    </div>
+    <div>
+      <a class="xref" href="UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_CurrentFightingScene">GameObject.CurrentFightingScene</a>
+    </div>
+    <div>
+      <a class="xref" href="UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_UpdateIn120">GameObject.UpdateIn120</a>
+    </div>
+    <div>
+      <a class="xref" href="UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_BeingUpdated">GameObject.BeingUpdated</a>
+    </div>
+    <div>
+      <a class="xref" href="UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_UpdateEnabled">GameObject.UpdateEnabled</a>
+    </div>
+    <div>
+      <a class="xref" href="UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_CrossScene">GameObject.CrossScene</a>
+    </div>
+    <div>
+      <a class="xref" href="UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Tags">GameObject.Tags</a>
+    </div>
+    <div>
+      <a class="xref" href="UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Extras">GameObject.Extras</a>
+    </div>
+    <div>
+      <a class="xref" href="UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_ChildObjects">GameObject.ChildObjects</a>
+    </div>
+    <div>
+      <a class="xref" href="UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_Disposed">GameObject.Disposed</a>
+    </div>
+    <div>
+      <a class="xref" href="UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_FatherObject">GameObject.FatherObject</a>
+    </div>
+    <div>
+      <a class="xref" href="UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_OnDispose">GameObject.OnDispose</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="UndyneFight_Ex_Entity__ctor_" data-uid="UndyneFight_Ex.Entity.#ctor*"></a>
+
+  <h3 id="UndyneFight_Ex_Entity__ctor" data-uid="UndyneFight_Ex.Entity.#ctor">
+  Entity()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>An entity base</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Entity()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="UndyneFight_Ex_Entity_collidingBox" data-uid="UndyneFight_Ex.Entity.collidingBox">
+  collidingBox
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Do not use this variable</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected CollideRect collidingBox</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.CollideRect.html">CollideRect</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="UndyneFight_Ex_Entity_controlLayer" data-uid="UndyneFight_Ex.Entity.controlLayer">
+  controlLayer
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The controlling surface of the entity (Default <a class="xref" href="UndyneFight_Ex.Surface.html#UndyneFight_Ex_Surface_Normal">Normal</a>)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Surface controlLayer</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Surface.html">Surface</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="UndyneFight_Ex_Entity_AngleMode_" data-uid="UndyneFight_Ex.Entity.AngleMode*"></a>
+
+  <h3 id="UndyneFight_Ex_Entity_AngleMode" data-uid="UndyneFight_Ex.Entity.AngleMode">
+  AngleMode
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Whether to use Radians (false) or Degrees (true) for the rotation angle</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool AngleMode { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entity_Centre_" data-uid="UndyneFight_Ex.Entity.Centre*"></a>
+
+  <h3 id="UndyneFight_Ex_Entity_Centre" data-uid="UndyneFight_Ex.Entity.Centre">
+  Centre
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The centre of the entity</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 Centre { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector2</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entity_CollidingBox_" data-uid="UndyneFight_Ex.Entity.CollidingBox*"></a>
+
+  <h3 id="UndyneFight_Ex_Entity_CollidingBox" data-uid="UndyneFight_Ex.Entity.CollidingBox">
+  CollidingBox
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The colliding box of the entity</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CollideRect CollidingBox { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.CollideRect.html">CollideRect</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entity_Depth_" data-uid="UndyneFight_Ex.Entity.Depth*"></a>
+
+  <h3 id="UndyneFight_Ex_Entity_Depth" data-uid="UndyneFight_Ex.Entity.Depth">
+  Depth
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The depth of the entity (The higher the value is, the less shallow it is)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Depth { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entity_DrawOptimize_" data-uid="UndyneFight_Ex.Entity.DrawOptimize*"></a>
+
+  <h3 id="UndyneFight_Ex_Entity_DrawOptimize" data-uid="UndyneFight_Ex.Entity.DrawOptimize">
+  DrawOptimize
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Whether the entity will be drawn regardless whether it is inside of the current view (false -&gt; Drawn regardless, true -&gt; Check if inside screen)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool DrawOptimize { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entity_Image_" data-uid="UndyneFight_Ex.Entity.Image*"></a>
+
+  <h3 id="UndyneFight_Ex_Entity_Image" data-uid="UndyneFight_Ex.Entity.Image">
+  Image
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The image of the entity to draw</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Texture2D Image { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Texture2D</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entity_ImageCentre_" data-uid="UndyneFight_Ex.Entity.ImageCentre*"></a>
+
+  <h3 id="UndyneFight_Ex_Entity_ImageCentre" data-uid="UndyneFight_Ex.Entity.ImageCentre">
+  ImageCentre
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The centre of the image</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Vector2 ImageCentre { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector2</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entity_Rotation_" data-uid="UndyneFight_Ex.Entity.Rotation*"></a>
+
+  <h3 id="UndyneFight_Ex_Entity_Rotation" data-uid="UndyneFight_Ex.Entity.Rotation">
+  Rotation
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The rotation of the entity</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Rotation { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entity_Scale_" data-uid="UndyneFight_Ex.Entity.Scale*"></a>
+
+  <h3 id="UndyneFight_Ex_Entity_Scale" data-uid="UndyneFight_Ex.Entity.Scale">
+  Scale
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The scale of the entity</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Scale { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entity_SpriteBatch_" data-uid="UndyneFight_Ex.Entity.SpriteBatch*"></a>
+
+  <h3 id="UndyneFight_Ex_Entity_SpriteBatch" data-uid="UndyneFight_Ex.Entity.SpriteBatch">
+  SpriteBatch
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The sprite batch that is used for drawing</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected static SpriteBatchEX SpriteBatch { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.SpriteBatchEX.html">SpriteBatchEX</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entity_Visible_" data-uid="UndyneFight_Ex.Entity.Visible*"></a>
+
+  <h3 id="UndyneFight_Ex_Entity_Visible" data-uid="UndyneFight_Ex.Entity.Visible">
+  Visible
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Whether the entity is visible</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Visible { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="UndyneFight_Ex_Entity_CreateRetentionEffect_" data-uid="UndyneFight_Ex.Entity.CreateRetentionEffect*"></a>
+
+  <h3 id="UndyneFight_Ex_Entity_CreateRetentionEffect_System_Single_System_Nullable_Microsoft_Xna_Framework_Color__" data-uid="UndyneFight_Ex.Entity.CreateRetentionEffect(System.Single,System.Nullable{Microsoft.Xna.Framework.Color})">
+  CreateRetentionEffect(float, Color?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates a drag effect of this entity</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void CreateRetentionEffect(float time, Color? color = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The duration of the drag</p>
+</dd>
+    <dt><code>color</code> <span class="xref">Color</span>?</dt>
+    <dd><p>The color of the effect</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entity_CreateShinyEffect_" data-uid="UndyneFight_Ex.Entity.CreateShinyEffect*"></a>
+
+  <h3 id="UndyneFight_Ex_Entity_CreateShinyEffect_System_Nullable_Microsoft_Xna_Framework_Color__Microsoft_Xna_Framework_Graphics_Texture2D_" data-uid="UndyneFight_Ex.Entity.CreateShinyEffect(System.Nullable{Microsoft.Xna.Framework.Color},Microsoft.Xna.Framework.Graphics.Texture2D)">
+  CreateShinyEffect(Color?, Texture2D)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates an expanding fade out effect of this entity</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Entity.ShinyEffect CreateShinyEffect(Color? color = null, Texture2D image = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>color</code> <span class="xref">Color</span>?</dt>
+    <dd><p>The color of the effect</p>
+</dd>
+    <dt><code>image</code> <span class="xref">Texture2D</span></dt>
+    <dd><p>The image of the effect</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entity.html">Entity</a>.<a class="xref" href="UndyneFight_Ex.Entity.ShinyEffect.html">ShinyEffect</a></dt>
+    <dd><p>The created effect</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entity_Draw_" data-uid="UndyneFight_Ex.Entity.Draw*"></a>
+
+  <h3 id="UndyneFight_Ex_Entity_Draw" data-uid="UndyneFight_Ex.Entity.Draw">
+  Draw()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The rendering logic of the entity</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void Draw()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entity_FormalDraw_" data-uid="UndyneFight_Ex.Entity.FormalDraw*"></a>
+
+  <h3 id="UndyneFight_Ex_Entity_FormalDraw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Rectangle_Microsoft_Xna_Framework_Rectangle_Microsoft_Xna_Framework_Color_" data-uid="UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Color)">
+  FormalDraw(Texture2D, Rectangle, Rectangle, Color)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Draws the given texture in a restricted area</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void FormalDraw(Texture2D tex, Rectangle area, Rectangle restrict, Color color)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tex</code> <span class="xref">Texture2D</span></dt>
+    <dd><p>The texture to draw</p>
+</dd>
+    <dt><code>area</code> <span class="xref">Rectangle</span></dt>
+    <dd><p>The area of the texture to draw</p>
+</dd>
+    <dt><code>restrict</code> <span class="xref">Rectangle</span></dt>
+    <dd><p>The area the texture can be drawn in</p>
+</dd>
+    <dt><code>color</code> <span class="xref">Color</span></dt>
+    <dd><p>The color of the texture to draw</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entity_FormalDraw_" data-uid="UndyneFight_Ex.Entity.FormalDraw*"></a>
+
+  <h3 id="UndyneFight_Ex_Entity_FormalDraw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_Microsoft_Xna_Framework_Vector2_System_Single_Microsoft_Xna_Framework_Vector2_" data-uid="UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Vector2)">
+  FormalDraw(Texture2D, Vector2, Color, Vector2, float, Vector2)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Draws the given texture</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void FormalDraw(Texture2D tex, Vector2 centre, Color color, Vector2 drawingScale, float rotation, Vector2 rotateCentre)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tex</code> <span class="xref">Texture2D</span></dt>
+    <dd><p>The texture to draw</p>
+</dd>
+    <dt><code>centre</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The position to draw the texture</p>
+</dd>
+    <dt><code>color</code> <span class="xref">Color</span></dt>
+    <dd><p>The color of the texture to draw</p>
+</dd>
+    <dt><code>drawingScale</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The scale of the drawn texture</p>
+</dd>
+    <dt><code>rotation</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The rotation of the texture</p>
+</dd>
+    <dt><code>rotateCentre</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The center of rotation</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entity_FormalDraw_" data-uid="UndyneFight_Ex.Entity.FormalDraw*"></a>
+
+  <h3 id="UndyneFight_Ex_Entity_FormalDraw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_System_Single_Microsoft_Xna_Framework_Vector2_" data-uid="UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Vector2)">
+  FormalDraw(Texture2D, Vector2, Color, float, Vector2)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Draws the given texture</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void FormalDraw(Texture2D tex, Vector2 centre, Color color, float rotation, Vector2 rotateCentre)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tex</code> <span class="xref">Texture2D</span></dt>
+    <dd><p>The texture to draw</p>
+</dd>
+    <dt><code>centre</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The position to draw</p>
+</dd>
+    <dt><code>color</code> <span class="xref">Color</span></dt>
+    <dd><p>The color of the texture</p>
+</dd>
+    <dt><code>rotation</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The rotation of the texture</p>
+</dd>
+    <dt><code>rotateCentre</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The center of rotation</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entity_FormalDraw_" data-uid="UndyneFight_Ex.Entity.FormalDraw*"></a>
+
+  <h3 id="UndyneFight_Ex_Entity_FormalDraw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_System_Single_System_Single_Microsoft_Xna_Framework_Vector2_" data-uid="UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single,System.Single,Microsoft.Xna.Framework.Vector2)">
+  FormalDraw(Texture2D, Vector2, Color, float, float, Vector2)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Draws the given texture</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void FormalDraw(Texture2D tex, Vector2 centre, Color color, float drawingScale, float rotation, Vector2 rotateCentre)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tex</code> <span class="xref">Texture2D</span></dt>
+    <dd><p>The texture to draw</p>
+</dd>
+    <dt><code>centre</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The position to draw the texture</p>
+</dd>
+    <dt><code>color</code> <span class="xref">Color</span></dt>
+    <dd><p>The color of the texture to draw</p>
+</dd>
+    <dt><code>drawingScale</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The scale of the drawn texture</p>
+</dd>
+    <dt><code>rotation</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The rotation of the texture</p>
+</dd>
+    <dt><code>rotateCentre</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The center of rotation</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entity_FormalDraw_" data-uid="UndyneFight_Ex.Entity.FormalDraw*"></a>
+
+  <h3 id="UndyneFight_Ex_Entity_FormalDraw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_System_Nullable_Microsoft_Xna_Framework_Rectangle__Microsoft_Xna_Framework_Color_Microsoft_Xna_Framework_Vector2_System_Single_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Graphics_SpriteEffects_" data-uid="UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Rectangle},Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Graphics.SpriteEffects)">
+  FormalDraw(Texture2D, Vector2, Rectangle?, Color, Vector2, float, Vector2, SpriteEffects)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Draws the given texture</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void FormalDraw(Texture2D tex, Vector2 centre, Rectangle? texArea, Color color, Vector2 drawingScale, float rotation, Vector2 rotateCentre, SpriteEffects spriteEffects = SpriteEffects.None)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tex</code> <span class="xref">Texture2D</span></dt>
+    <dd><p>The texture to draw</p>
+</dd>
+    <dt><code>centre</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The position to draw</p>
+</dd>
+    <dt><code>texArea</code> <span class="xref">Rectangle</span>?</dt>
+    <dd><p>The rectangle area to draw the texture</p>
+</dd>
+    <dt><code>color</code> <span class="xref">Color</span></dt>
+    <dd><p>The color of the texture</p>
+</dd>
+    <dt><code>drawingScale</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The scale of drawing</p>
+</dd>
+    <dt><code>rotation</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The rotation of the texture</p>
+</dd>
+    <dt><code>rotateCentre</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The center of rotation</p>
+</dd>
+    <dt><code>spriteEffects</code> <span class="xref">SpriteEffects</span></dt>
+    <dd><p>The sprite effect to apply on it</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entity_FormalDraw_" data-uid="UndyneFight_Ex.Entity.FormalDraw*"></a>
+
+  <h3 id="UndyneFight_Ex_Entity_FormalDraw_Microsoft_Xna_Framework_Graphics_Texture2D_UndyneFight_Ex_CollideRect_Microsoft_Xna_Framework_Color_" data-uid="UndyneFight_Ex.Entity.FormalDraw(Microsoft.Xna.Framework.Graphics.Texture2D,UndyneFight_Ex.CollideRect,Microsoft.Xna.Framework.Color)">
+  FormalDraw(Texture2D, CollideRect, Color)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Draws the given texture</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void FormalDraw(Texture2D tex, CollideRect area, Color color)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tex</code> <span class="xref">Texture2D</span></dt>
+    <dd><p>The texture to draw</p>
+</dd>
+    <dt><code>area</code> <a class="xref" href="UndyneFight_Ex.CollideRect.html">CollideRect</a></dt>
+    <dd><p>The area to draw the texture in</p>
+</dd>
+    <dt><code>color</code> <span class="xref">Color</span></dt>
+    <dd><p>The color of the texture to draw</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="UndyneFight_Ex_Entity_GeneralDraw_" data-uid="UndyneFight_Ex.Entity.GeneralDraw*"></a>
+
+  <h3 id="UndyneFight_Ex_Entity_GeneralDraw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_System_Nullable_Microsoft_Xna_Framework_Color__System_Nullable_Microsoft_Xna_Framework_Vector2__System_Single_System_Nullable_Microsoft_Xna_Framework_Vector2__System_Nullable_UndyneFight_Ex_CollideRect__System_Nullable_UndyneFight_Ex_CollideRect__System_Nullable_System_Single__" data-uid="UndyneFight_Ex.Entity.GeneralDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Vector2},System.Single,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{UndyneFight_Ex.CollideRect},System.Nullable{UndyneFight_Ex.CollideRect},System.Nullable{System.Single})">
+  GeneralDraw(Texture2D, Vector2, Color?, Vector2?, float, Vector2?, CollideRect?, CollideRect?, float?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>A general texture drawing function that integrates all functionalities from all FormalDraw functions</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void GeneralDraw(Texture2D texture, Vector2 position, Color? color = null, Vector2? scale = null, float rotation = 0, Vector2? spriteOrigin = null, CollideRect? texArea = null, CollideRect? sourceRect = null, float? depth = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>texture</code> <span class="xref">Texture2D</span></dt>
+    <dd><p>The texture to draw</p>
+</dd>
+    <dt><code>position</code> <span class="xref">Vector2</span></dt>
+    <dd><p>The position to draw the texture</p>
+</dd>
+    <dt><code>color</code> <span class="xref">Color</span>?</dt>
+    <dd><p>The color of the texture to draw (Default white)</p>
+</dd>
+    <dt><code>scale</code> <span class="xref">Vector2</span>?</dt>
+    <dd><p>The scale of the texture to draw (Default 1)</p>
+</dd>
+    <dt><code>rotation</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The rotation of the texture to draw in radians (Default 0)</p>
+</dd>
+    <dt><code>spriteOrigin</code> <span class="xref">Vector2</span>?</dt>
+    <dd><p>The origin of the texture to draw (Default center of texture)</p>
+</dd>
+    <dt><code>texArea</code> <a class="xref" href="UndyneFight_Ex.CollideRect.html">CollideRect</a>?</dt>
+    <dd><p>The bounds of drawing on the screen (Default null for normal drawing)</p>
+</dd>
+    <dt><code>sourceRect</code> <a class="xref" href="UndyneFight_Ex.CollideRect.html">CollideRect</a>?</dt>
+    <dd><p>The region of the texture to render (Default null for full texture)</p>
+</dd>
+    <dt><code>depth</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>?</dt>
+    <dd><p>The depth of the texture to draw (Default current depth)</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
