@@ -115,12 +115,12 @@ public static class FightSystem
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static List<Type> GetPlayableCharts()
 	{
-		List<Type> result = [.. from v in MainGameSongs.Values select v];
+		List<Type> result = [.. MainGameSongs.Values];
 		foreach (SongSet s in ExtraSongSets)
-			result.AddRange(from v in s.Values select v);
+			result.AddRange(s.Values);
 		foreach (ChampionShip c in ChampionShips)
 			if (c.CheckTime() == ChampionShip.ChampionShipStates.End)
-				result.AddRange(from v in c.Fights.Values select v);
+				result.AddRange(c.Fights.Values);
 		return result;
 	}
 }

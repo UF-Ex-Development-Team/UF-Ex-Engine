@@ -184,7 +184,7 @@ public class Audio
 		//Ensure no "Content" overlap
 		lock (this)
 		{
-			object result = DrawingLab.LoadContent<object>(loader.RootDirectory == "Content" && path[..7] == "Content" ? path[8..] : path);
+			object result = DrawingLab.LoadContent<object>(loader.RootDirectory == "Content" && path.StartsWith("Content") ? path[8..] : path);
 			if (result is SoundEffect sfx)
 				source = new EffectPlayer(sfx);
 			else if (result is Song song)

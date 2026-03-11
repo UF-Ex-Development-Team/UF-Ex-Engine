@@ -32,7 +32,7 @@ public class ChampionShip(SongSet fightSet)
 	/// <summary>
 	/// The path to the icon of the championship
 	/// </summary>
-	public string IconPath { get; set; } = "ChampionShips\\TCS";
+	public string IconPath { get; set; } = "TCS";
 	/// <summary>
 	/// List of available divisions of the championship
 	/// </summary>

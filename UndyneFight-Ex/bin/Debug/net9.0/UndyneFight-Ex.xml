@@ -220,6 +220,100 @@
         <member name="M:UndyneFight_Ex.Entities.TimeRangedEvent.Update">
             <inheritdoc/>
         </member>
+        <member name="T:UndyneFight_Ex.Entities.DelayEventProcessor">
+            <summary>
+            Global processor for delayed events
+            </summary>
+        </member>
+        <member name="T:UndyneFight_Ex.Entities.DelayEventProcessor.EventInfo">
+            <summary>
+            Info of the event to delay
+            </summary>
+            <param name="delay">The amount of time to delay</param>
+            <param name="action">The action to invoke</param>
+            <param name="dur">The duration of the event</param>
+            <param name="is120">Whether the updating occurs every other frame</param>
+        </member>
+        <member name="M:UndyneFight_Ex.Entities.DelayEventProcessor.EventInfo.#ctor(System.Single,System.Action,System.Single,System.Boolean)">
+            <summary>
+            Info of the event to delay
+            </summary>
+            <param name="delay">The amount of time to delay</param>
+            <param name="action">The action to invoke</param>
+            <param name="dur">The duration of the event</param>
+            <param name="is120">Whether the updating occurs every other frame</param>
+        </member>
+        <member name="F:UndyneFight_Ex.Entities.DelayEventProcessor.EventInfo.TimeDelay">
+            <summary>
+            Amount of time to delay
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.Entities.DelayEventProcessor.EventInfo.Action">
+            <summary>
+            The action to invoke
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.Entities.DelayEventProcessor.EventInfo.Duration">
+            <summary>
+            The duration of the action
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.Entities.DelayEventProcessor.EventInfo.UpdateIn120">
+            <summary>
+            Whether the updating occurs every other frame
+            </summary>
+        </member>
+        <member name="F:UndyneFight_Ex.Entities.DelayEventProcessor.DelayedInstantEvents">
+            <summary>
+            The list of delayed instant events
+            </summary>
+        </member>
+        <member name="F:UndyneFight_Ex.Entities.DelayEventProcessor.DelayedTimeRangedEvents">
+            <summary>
+            The list of delayed time ranged events
+            </summary>
+        </member>
+        <member name="F:UndyneFight_Ex.Entities.DelayEventProcessor.ScheduleCleared">
+            <summary>
+            Whether the delay event schedule has been cleared from either a natural or action invoked scene transition
+            </summary>
+        </member>
+        <member name="M:UndyneFight_Ex.Entities.DelayEventProcessor.AddInstantEvent(System.Int32,System.Action)">
+            <summary>
+            Schedules a delayed instant event
+            </summary>
+            <param name="delay">The amount of time to delay</param>
+            <param name="action">The action to invoke</param>
+        </member>
+        <member name="M:UndyneFight_Ex.Entities.DelayEventProcessor.AddTimeRangedEvent(System.Int32,System.Action,System.Int32,System.Boolean)">
+            <summary>
+            Schedules a delayed time ranged event
+            </summary>
+            <param name="delay">The amount of time to delay</param>
+            <param name="action">The action to invoke</param>
+            <param name="dur">The duration of the event</param>
+            <param name="is120">Whether to update every other frame</param>
+        </member>
+        <member name="M:UndyneFight_Ex.Entities.DelayEventProcessor.ProcessDelayEvents">
+            <summary>
+            Processes all scheduled delay events
+            </summary>
+        </member>
+        <member name="M:UndyneFight_Ex.Entities.DelayEventProcessor.ClearDelayEvents">
+            <summary>
+            Clears all scheduled delay events
+            </summary>
+        </member>
+        <member name="M:UndyneFight_Ex.Entities.DelayEventProcessor.ClearInstantEvents">
+            <summary>
+            Clears all scheduled instant events
+            </summary>
+        </member>
+        <member name="M:UndyneFight_Ex.Entities.DelayEventProcessor.ClearTimeRangedEvents">
+            <summary>
+            Clears all scheduled time ranged events
+            </summary>
+        </member>
         <member name="T:UndyneFight_Ex.Entities.BackGround">
             <summary>
             Background for legacy engine
@@ -227,7 +321,7 @@
         </member>
         <member name="T:UndyneFight_Ex.Entities.RebindKeyScene">
             <summary>
-            v0.3.0+ Rebinding scene
+            v0.3.0+ Rebinding scene, I hate everything about this
             </summary>
         </member>
         <member name="M:UndyneFight_Ex.Entities.RebindKeyScene.Update">
@@ -5411,6 +5505,42 @@
             The default key bindings
             </summary>
         </member>
+        <member name="M:UndyneFight_Ex.GameStates.KeyChecker.IsKeyDown(UndyneFight_Ex.InputIdentity)">
+            <summary>
+            Check if the key is held
+            </summary>
+            <param name="identity">The input key to detect</param>
+            <returns>Whether the key is held</returns>
+        </member>
+        <member name="M:UndyneFight_Ex.GameStates.KeyChecker.IsKeyPressed(UndyneFight_Ex.InputIdentity)">
+            <summary>
+            Check if the key is pressed
+            </summary>
+            <param name="identity">The input key to detect</param>
+            <returns>Whether the key is pressed</returns>
+        </member>
+        <member name="F:UndyneFight_Ex.GameStates.KeyChecker.DefaultKeys">
+            <summary>
+            The list of default keys for each input identity
+            </summary>
+        </member>
+        <member name="M:UndyneFight_Ex.GameStates.KeyChecker.#cctor">
+            <summary>
+            Initializes the default keys
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.GameStates.KeyChecker.InputKeys">
+            <summary>
+            The current key bindings for each input identity
+            </summary>
+        </member>
+        <member name="M:UndyneFight_Ex.GameStates.KeyChecker.SetIdentityKey(UndyneFight_Ex.InputIdentity,System.Collections.Generic.List{Microsoft.Xna.Framework.Input.Keys})">
+            <summary>
+            Sets the key bindings for an input identity
+            </summary>
+            <param name="identity">The input identity to set to</param>
+            <param name="mission">The keys assigned to the identity</param>
+        </member>
         <member name="P:UndyneFight_Ex.GameStates.WordsChanged">
             <summary>
             Player has typed
@@ -5425,6 +5555,12 @@
             <summary>
             一个键盘操作录制器(播放)或者是一个键盘操作控制器(回放)
             </summary>
+        </member>
+        <member name="M:UndyneFight_Ex.GameStates.KeysUpdate">
+            <summary>
+            Get the character the player is pressing
+            </summary>
+            <returns></returns>
         </member>
         <member name="M:UndyneFight_Ex.GameStates.IsKeyPressed(UndyneFight_Ex.InputIdentity)">
             <summary>
@@ -5660,6 +5796,16 @@
         <member name="M:UndyneFight_Ex.GameStates.ResetRendering">
             <summary>
             Resets rendering settings
+            </summary>
+        </member>
+        <member name="T:UndyneFight_Ex.KeybindData">
+            <summary>
+            The save data of keybinds
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.KeybindData.UserKeys">
+            <summary>
+            The key bindings the user is using
             </summary>
         </member>
         <member name="P:UndyneFight_Ex.KeybindData.Children">
@@ -6202,6 +6348,49 @@
         <member name="P:UndyneFight_Ex.GameMain.RenderTicks">
             <summary>
             Ticks taken to render
+            </summary>
+        </member>
+        <member name="T:UndyneFight_Ex.UFEXResourceAttribute">
+            <summary>
+            The attribute to load custom resources
+            </summary>
+            <param name="path">The path of the resource relative to ./Content/</param>
+            <param name="type">The type of the resource (i.e. Texture2D, Effect)</param>
+            <param name="dim">The dimensions of each resource if it is a multi-dimensional array</param>
+            <param name="replacement">The string to replace for the index if it is not, each separated by "|"</param>
+        </member>
+        <member name="M:UndyneFight_Ex.UFEXResourceAttribute.#ctor(System.String,System.Type,System.Int32[],System.String[])">
+            <summary>
+            The attribute to load custom resources
+            </summary>
+            <param name="path">The path of the resource relative to ./Content/</param>
+            <param name="type">The type of the resource (i.e. Texture2D, Effect)</param>
+            <param name="dim">The dimensions of each resource if it is a multi-dimensional array</param>
+            <param name="replacement">The string to replace for the index if it is not, each separated by "|"</param>
+        </member>
+        <member name="P:UndyneFight_Ex.UFEXResourceAttribute.Path">
+            <summary>
+            The path to the resource
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.UFEXResourceAttribute.Type">
+            <summary>
+            The type of the resource
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.UFEXResourceAttribute.Loaded">
+            <summary>
+            Whether the resource is loaded
+            </summary>
+        </member>
+        <member name="F:UndyneFight_Ex.UFEXResourceAttribute.Dimensions">
+            <summary>
+            The amount of sprites in each dimension
+            </summary>
+        </member>
+        <member name="F:UndyneFight_Ex.UFEXResourceAttribute.IndexReplacement">
+            <summary>
+            The string to replace the index in the path, i.e. ["a|b", "A|B"] will replace &lt;1&gt; with a and b, and replace &lt;2&gt; with A and B
             </summary>
         </member>
         <member name="T:UndyneFight_Ex.GlobalResources">
@@ -7499,6 +7688,30 @@
             The data of the shop as a whole
             </summary>
         </member>
+        <member name="M:UndyneFight_Ex.UserService.ShopData.#ctor">
+            <summary>
+            The data of the shop as a whole
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.UserService.ShopData.Children">
+            <inheritdoc/>
+        </member>
+        <member name="P:UndyneFight_Ex.UserService.ShopData.CashManager">
+            <summary>
+            The data of the user's coins
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.UserService.ShopData.StoreManager">
+            <summary>
+            The data of the shop's items
+            </summary>
+        </member>
+        <member name="M:UndyneFight_Ex.UserService.ShopData.Load(UndyneFight_Ex.IO.SaveInfo)">
+            <inheritdoc/>
+        </member>
+        <member name="M:UndyneFight_Ex.UserService.ShopData.Save">
+            <inheritdoc/>
+        </member>
         <member name="T:UndyneFight_Ex.UserService.ShopData.ShopCash">
             <summary>
             The data of the user's coins
@@ -7526,30 +7739,6 @@
             <inheritdoc/>
         </member>
         <member name="M:UndyneFight_Ex.UserService.ShopData.ShopCash.Save">
-            <inheritdoc/>
-        </member>
-        <member name="M:UndyneFight_Ex.UserService.ShopData.#ctor">
-            <summary>
-            The data of the shop as a whole
-            </summary>
-        </member>
-        <member name="P:UndyneFight_Ex.UserService.ShopData.Children">
-            <inheritdoc/>
-        </member>
-        <member name="P:UndyneFight_Ex.UserService.ShopData.CashManager">
-            <summary>
-            The data of the user's coins
-            </summary>
-        </member>
-        <member name="P:UndyneFight_Ex.UserService.ShopData.StoreManager">
-            <summary>
-            The data of the shop's items
-            </summary>
-        </member>
-        <member name="M:UndyneFight_Ex.UserService.ShopData.Load(UndyneFight_Ex.IO.SaveInfo)">
-            <inheritdoc/>
-        </member>
-        <member name="M:UndyneFight_Ex.UserService.ShopData.Save">
             <inheritdoc/>
         </member>
         <member name="T:UndyneFight_Ex.UserService.ItemRarity">
@@ -8109,6 +8298,11 @@
             A user account
             </summary>
         </member>
+        <member name="F:UndyneFight_Ex.UserService.User.DefaultUserSaveInfo">
+            <summary>
+            The default info of new users
+            </summary>
+        </member>
         <member name="M:UndyneFight_Ex.UserService.User.CreateNew(System.String,System.String)">
             <summary>
             Creates a new user
@@ -8477,6 +8671,23 @@
             Whether the achievement is forcefully disabled
             </summary>
         </member>
+        <member name="M:UndyneFight_Ex.Achievements.AchievementManager.CheckUserAchievements">
+            <summary>
+            Checks all of the achievements that are user based
+            </summary>
+        </member>
+        <member name="M:UndyneFight_Ex.Achievements.AchievementManager.CheckSongAchievements(UndyneFight_Ex.SongSystem.SongPlayData)">
+            <summary>
+            Checks all the achievements that are chart based
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:UndyneFight_Ex.Achievements.AchievementManager.ShowAchieved(UndyneFight_Ex.Achievements.Achievement)">
+            <summary>
+            Show that the achievement is achieved
+            </summary>
+            <param name="achievement">The achievement to show</param>
+        </member>
         <member name="M:UndyneFight_Ex.Achievements.AchievementManager.PushAchievement(UndyneFight_Ex.Achievements.Achievement)">
             <summary>
             Adds an achievement
@@ -8727,9 +8938,9 @@
         </member>
         <member name="M:UndyneFight_Ex.IO.IOEvent.ReadTmpfFile(System.String)">
             <summary>
-            读取Tmp图片上的像素块的颜色值并得到一串字符列表
+            Reads the list of bytes in the tmpf file
             </summary>
-            <returns>通过记忆图片得到的字符列表</returns>
+            <returns>The byte list in the tmpf file</returns>
         </member>
         <member name="M:UndyneFight_Ex.IO.IOEvent.StringToByte(System.String)">
             <summary>
@@ -8780,9 +8991,9 @@
         </member>
         <member name="M:UndyneFight_Ex.IO.FileIO.ReadFile(System.String)">
             <summary>
-            读取Tmp图片上的像素块的颜色值并得到一串字符列表
+            Reads the list of bytes in the tmpf file and converts it to <see cref="T:UndyneFight_Ex.IO.SaveInfo"/>
             </summary>
-            <returns>通过记忆图片得到的字符列表</returns>
+            <returns>The save info of the tmpf file</returns>
         </member>
         <member name="M:UndyneFight_Ex.IO.FileIO.CreatePlayerFile(System.String)">
             <summary>
@@ -9405,14 +9616,6 @@
             <param name="ratio">The ratio between each term in the sequence</param>
             <param name="items">The number of items in the sequence</param>
             <returns>The sum of the sequence</returns>
-        </member>
-        <member name="M:UndyneFight_Ex.MathUtil.CountSubstring(System.String,System.String)">
-            <summary>
-            Gets the amount of substring inside of a string
-            </summary>
-            <param name="text">The source text</param>
-            <param name="substring">The substring to check</param>
-            <returns></returns>
         </member>
         <member name="T:UndyneFight_Ex.MiscUtil">
             <summary>
@@ -10068,6 +10271,29 @@
             </summary>
             <param name="time">The frames to delay</param>
             <returns></returns>
+        </member>
+        <member name="T:UndyneFight_Ex.StringUtil">
+            <summary>
+            Utilities for mathematical operations
+            </summary>
+        </member>
+        <member name="M:UndyneFight_Ex.StringUtil.CountSubstring(System.String,System.String)">
+            <summary>
+            Gets the amount of substring inside of a string
+            </summary>
+            <param name="text">The source text</param>
+            <param name="substring">The substring to check</param>
+            <returns></returns>
+        </member>
+        <member name="M:UndyneFight_Ex.StringUtil.DefaultIfNullOrEmpty(System.String,System.String)">
+            <summary>
+            Returns the specified default string if the input string is null or empty; otherwise, returns the input string.
+            </summary>
+            <param name="text">The string to check for null or empty. If this value is null or empty, the method returns <paramref
+            name="defaultText"/>.</param>
+            <param name="defaultText">The string to return if <paramref name="text"/> is null or empty.</param>
+            <returns>A string that is either the original <paramref name="text"/> if it is not null or empty, or <paramref
+            name="defaultText"/> if <paramref name="text"/> is null or empty.</returns>
         </member>
         <member name="T:UndyneFight_Ex.Challenge">
             <summary>
@@ -12613,6 +12839,20 @@
             <param name="color">The color of the rounded rectangle</param>
             <param name="depth">The depth of the rounded rectangle</param>
         </member>
+        <member name="M:UndyneFight_Ex.DrawingLab.GeneralDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Vector2},System.Single,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{UndyneFight_Ex.CollideRect},System.Nullable{UndyneFight_Ex.CollideRect},System.Single)">
+            <summary>
+            A general texture drawing function that integrates all functionalities from all FormalDraw functions
+            </summary>
+            <param name="texture">The texture to draw</param>
+            <param name="position">The position to draw the texture</param>
+            <param name="color">The color of the texture to draw (Default white)</param>
+            <param name="scale">The scale of the texture to draw (Default 1)</param>
+            <param name="rotation">The rotation of the texture to draw in radians (Default 0)</param>
+            <param name="spriteOrigin">The origin of the texture to draw (Default center of texture)</param>
+            <param name="texArea">The bounds of drawing on the screen (Default null for normal drawing)</param>
+            <param name="sourceRect">The region of the texture to render (Default null for full texture)</param>
+            <param name="depth">The depth of the texture to draw (Default current depth)</param>
+        </member>
         <member name="M:UndyneFight_Ex.DrawingLab.LoadContent``1(System.String,Microsoft.Xna.Framework.Content.ContentManager)">
             <summary>
             Loads a file (Cross-platform)
@@ -14077,6 +14317,40 @@
             <summary>
             线段的Rotate-Lerp缓动,count为目标的lerp插值
             </summary>
+        </member>
+        <member name="T:GlobalData">
+            <summary>
+            Global data, usually for caching and accessing such data
+            </summary>
+        </member>
+        <member name="F:GlobalData.Loader">
+            <summary>
+            The global loader
+            </summary>
+        </member>
+        <member name="F:GlobalData.WavePaint">
+            <summary>
+            The cache for paints of charts, note that key is the <see cref="P:UndyneFight_Ex.SongSystem.IWaveSet.FightName"/> of the waveset, not the display name
+            </summary>
+        </member>
+        <member name="F:GlobalData.WaveCache">
+            <summary>
+            The cache for charts, note that key is the <see cref="P:UndyneFight_Ex.SongSystem.IWaveSet.FightName"/> of the waveset, not the display name
+            </summary>
+        </member>
+        <member name="M:GlobalData.GetWavesetDisplayName(UndyneFight_Ex.SongSystem.IWaveSet)">
+            <summary>
+            Gets the name of the waveset
+            </summary>
+            <param name="set">The waveset to get</param>
+            <returns>The <see cref="!:IWaveSet.Attributes.DisplayName"/> of the waveset, if any, <see cref="P:UndyneFight_Ex.SongSystem.IWaveSet.FightName"/> if not</returns>
+        </member>
+        <member name="M:GlobalData.GetWavePaint(UndyneFight_Ex.SongSystem.IWaveSet)">
+            <summary>
+            Gets the paint of the given waveset
+            </summary>
+            <param name="set">The waveset to get</param>
+            <returns>The paint if any, null if not</returns>
         </member>
     </members>
 </doc>

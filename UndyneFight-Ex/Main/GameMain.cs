@@ -148,6 +148,7 @@ internal partial class GameMain : Game
 	protected override void UnloadContent()
 	{
 		Content.Unload();
+		GlobalData.Loader.Unload();
 
 		Fight.Functions.Loader.Dispose();
 

@@ -1,10 +1,11 @@
 ﻿using Microsoft.Xna.Framework.Input;
+using System.Text;
 using static UndyneFight_Ex.GameStates;
 
 namespace UndyneFight_Ex.Entities;
 
 /// <summary>
-/// v0.3.0+ Rebinding scene
+/// v0.3.0+ Rebinding scene, I hate everything about this
 /// </summary>
 public class RebindKeyScene : Scene
 {
@@ -33,17 +34,18 @@ public class RebindKeyScene : Scene
 		InputKeys = KeyChecker.InputKeys;
 		KeyNames = [];
 		UsedKeys = [];
+		StringBuilder sb = new();
 		for (int i = 0; i < InputKeys.Keys.Count; i++)
 		{
 			if (debugKeys.Contains(InputKeys.Keys.ElementAt(i)))
 				continue;
-			string FinTxt = string.Empty;
+			_ = sb.Clear();
 			foreach (Keys item in InputKeys.Values.ElementAt(i))
 			{
-				FinTxt += MiscUtil.KeyToString(item) + ", ";
+				_ = sb.Append(MiscUtil.KeyToString(item) + ", ");
 				UsedKeys.Add(item);
 			}
-			KeyNames.Add(InputKeys.Keys.ElementAt(i), FinTxt[..^2]);
+			KeyNames.Add(InputKeys.Keys.ElementAt(i), sb.ToString()[..^2]);
 			keysCount = KeyNames.Keys.Count;
 		}
 		textScale = new float[keysCount];
@@ -202,16 +204,15 @@ public class RebindKeyScene : Scene
 		{
 			bool selected = i == curSelection;
 			col finCol = selected ? Color.Yellow : Color.White;
-			if (selected)
-			{
-				if (scrollY + i * 40 >= 455)
-					scrollYTar -= 40;
-				else if (scrollY + i * 40 <= 135)
-					scrollYTar += 40;
-				scrollYTar = MathHelper.Clamp(scrollYTar, -965, 135);
-			}
 			FightResources.Font.NormalFont.CentreDraw(KeyNames.Keys.ElementAt(i).ToString(), new Vector2(110, scrollY + i * 40), finCol, textScale[i], 0);
 			FightResources.Font.NormalFont.CentreDraw(KeyNames.Values.ElementAt(i), new Vector2(470, scrollY + i * 40), finCol, textScale[i], 0);
+			if (!selected)
+				continue;
+			if (scrollY + i * 40 >= 455)
+				scrollYTar -= 40;
+			else if (scrollY + i * 40 <= 135)
+				scrollYTar += 40;
+			scrollYTar = MathHelper.Clamp(scrollYTar, -965, 135);
 		}
 		//Binding fade
 		DrawingLab.DrawLine(new Vector2(0, 240), new Vector2(640, 240), 480, Color.Black * bindAlpha, 0.3f);

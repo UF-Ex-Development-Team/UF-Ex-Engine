@@ -1644,14 +1644,13 @@ public static class EaseLibrary
 		},
 		[nameof(EaseState.Expo)] = (x) => x == 0 ? 0 : MathF.Pow(2, 10 * x - 10),
 		[nameof(EaseState.Back)] = (x) => 2.70158f * x * x * x - 1.70158f * x * x,
-		[nameof(EaseState.Bounce)] = (x) =>
-			x = 1 - x switch //Magic numbers, I know
-			{
-				< 1 / 2.75f => 1 - 7.5625f * x * x,
-				< 2 / 2.75f => 1.75f - 7.5625f * (x - 1.5f / 2.75f) * (x - 1.5f / 2.75f),
-				< 2.5f / 2.75f => 1.9375f - 7.5625f * (x - 2.25f / 2.75f) * (x - 2.25f / 2.75f),
-				_ => 1.984375f - 7.5625f * (x - 2.625f / 2.75f) * (x - 2.625f / 2.75f),
-			}
+		[nameof(EaseState.Bounce)] = (x) => x switch
+		{
+			< 1 / 2.75f => 7.5625f * x * x,
+			< 2 / 2.75f => 7.5625f * (x -= (1.5f / 2.75f)) * x + 0.75f,
+			< 2.5f / 2.75f => 7.5625f * (x -= (2.25f / 2.75f)) * x + 0.9375f,
+			_ => 7.5625f * (x -= (2.625f / 2.75f)) * x + 0.984375f
+		}
 	};
 	/// <summary>
 	/// Defines a custom ease function

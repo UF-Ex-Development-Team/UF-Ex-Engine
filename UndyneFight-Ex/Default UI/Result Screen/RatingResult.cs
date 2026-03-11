@@ -136,7 +136,7 @@ internal partial class StateShower
 				{
 					case RatingShowState.AddingRating:
 						ratingShowing.SkillColor = Color.Lerp(Color.Transparent, Color.Lime, Min(1, appearTime / 30f));
-						ratingShowing.SkillString = "+" + MathUtil.FloatToString(curRating - oldRating, 1);
+						ratingShowing.SkillString = "+" + MathUtil.FloatToString(curRating - oldRating, 2);
 						if (appearTime == 90)
 							ChangeState(RatingShowState.ShowRating);
 						break;
@@ -161,7 +161,7 @@ internal partial class StateShower
 						else if (appearTime >= 40)
 						{
 							ratingShowing.SkillColor = Color.Lerp(Color.Transparent, Color.Gold, Min(1, (appearTime - 40) / 30f));
-							ratingShowing.SkillString = $"{MathUtil.FloatToString(oldRating, 1)}->{MathUtil.FloatToString(curRating, 1)}";
+							ratingShowing.SkillString = $"{MathUtil.FloatToString(oldRating, 2)}->{MathUtil.FloatToString(curRating, 2)}";
 						}
 						break;
 				}

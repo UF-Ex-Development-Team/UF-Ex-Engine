@@ -19,9 +19,6 @@ public abstract class FightScene : Scene
 	/// The name display in fight
 	/// </summary>
 	internal NameShower NameShow { get; set; }
-
-	private bool playerAlive = true;
-	private readonly CheatDetector Detector = new();
 	/// <summary>
 	/// The <see cref="GameMode"/> the fight is in
 	/// </summary>
@@ -48,7 +45,6 @@ public abstract class FightScene : Scene
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public void PlayDeath()
 	{
-		playerAlive = false;
 		Fight.Functions.ResetBarrage();
 		PlayerDied();
 

@@ -194,7 +194,6 @@ internal partial class StateShower : Entity
 	internal static bool AP => (instance.miss + instance.nice + instance.okay) == 0;
 	internal SkillMark GenerateCurrentMark()
 	{
-		SkillMark mark;
 		bool buffed = (mode & GameMode.Buffed) == GameMode.Buffed;
 		float scorePercent = MathF.Min(1, score * 1.0f / (totalCount * 100));
 		bool AC = miss == 0;

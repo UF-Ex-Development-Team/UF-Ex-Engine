@@ -78,12 +78,7 @@ public class SongFightingScene : FightScene
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public void LoadMusic()
 		{
-			if (SongIllustration?.IsDisposed ?? false)
-			{
-				string name = SongIllustration.Name;
-				name = name.StartsWith("Content") ? name[8..] : name;
-				SongIllustration = DrawingLab.LoadContent<Texture2D>(Path.Combine(name.Split('\\')));
-			}
+			SongIllustration = GlobalData.GetWavePaint(Waveset);
 			Music = new(MusicOptimized ? musicPath + ".ogg" : musicPath, Loader);
 			MusicDuration = (float)Music.SongDuration.TotalSeconds * 62.5f;
 		}
@@ -183,7 +178,7 @@ public class SongFightingScene : FightScene
 	/// </summary>
 	private bool MusicPlayed = false;
 
-	void ProcessItems()
+	private void ProcessItems()
 	{
 		//Sanity check for the 0.5f delay
 		if (CurrentScene is not SongFightingScene)
@@ -213,14 +208,14 @@ public class SongFightingScene : FightScene
 		}
 	}
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	void WinFight()
+	private void WinFight()
 	{
 		StateShower ss = StateShower.instance;
 		ResetFightState();
 		ResetScene(new WinScene(ss, PlayerInstance.GameAnalyzer));
 	}
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	void ChallengeSave()
+	private void ChallengeSave()
 	{
 		SongResult result;
 		result = StateShower.instance.GenerateResult();
@@ -232,6 +227,39 @@ public class SongFightingScene : FightScene
 		ResetScene(ChallengeCount == ++CurChallengeNum
 			? new ChallengeWinScene(_challenge)
 			: new SongLoadingScene(_challenge, ChallengeCharts[1..]));
+	}
+	private async void InitializeChart()
+	{
+		songLoaded = true;
+		Task task = new(() =>
+		{
+			SetSongFight();
+			music = currentParam.Music;
+			if (PlayOffset < 0)
+				AddInstance(new InstantEvent(-PlayOffset, () =>
+				{
+					music.Play();
+					MusicPlayed = true;
+				}));
+			else
+			{
+				MusicPlayed = true;
+				music.PlayPosition = PlayOffset;
+				music.Play();
+			}
+			InstanceCreate(new SongConditionOptimizer());
+			isInBattle = true;
+			ResetTime();
+			//Initialize Items
+			if (PlayerManager.CurrentUser != null)
+				foreach (StoreItem item in ShopItemData.UserItems.Values)
+				{
+					if (item.Activated && (item.Attributes & StoreItem.ItemAttribute.Initialize) != 0)
+						item.InitializeItem();
+				}
+		});
+		task.RunSynchronously();
+		await task;
 	}
 	/// <inheritdoc/>
 	public override void Update()
@@ -251,35 +279,7 @@ public class SongFightingScene : FightScene
 		if (++appearTime >= 30)
 		{
 			if (!songLoaded)
-			{
-				lock (this)
-				{
-					SetSongFight();
-					music = currentParam.Music;
-					if (PlayOffset < 0)
-						AddInstance(new InstantEvent(-PlayOffset, () =>
-						{
-							music.Play();
-							MusicPlayed = true;
-						}));
-					else
-					{
-						MusicPlayed = true;
-						music.PlayPosition = PlayOffset;
-						music.Play();
-					}
-					InstanceCreate(new SongConditionOptimizer());
-					isInBattle = songLoaded = true;
-					ResetTime();
-					//Initialize Items
-					if (PlayerManager.CurrentUser != null)
-						foreach (StoreItem item in ShopItemData.UserItems.Values)
-						{
-							if (item.Activated && (item.Attributes & StoreItem.ItemAttribute.Initialize) != 0)
-								item.InitializeItem();
-						}
-				}
-			}
+				InitializeChart();
 			else if (waveset != null)
 				UpdateSong();
 			//Items
@@ -318,7 +318,7 @@ public class SongFightingScene : FightScene
 
 		MathUtil.rander = new Random(seed);
 		InstanceCreate(Accuracy = new());
-		InstanceCreate(ScoreState = new StateShower(waveset = currentParam.Waveset, currentParam.difficulty, JudgeState, currentParam.mode, currentParam.MusicDuration));
+		InstanceCreate(ScoreState = new StateShower(waveset = (IWaveSet)Activator.CreateInstance(currentParam.Waveset.GetType()), currentParam.difficulty, JudgeState, currentParam.mode, currentParam.MusicDuration));
 		InstanceCreate(Time = new());
 		//This function MUST be called before the creation of the player for proper
 		//garbage collection to prevent bugs such as:

@@ -60,14 +60,7 @@ internal partial class StateShower
 			AP = (AC = scoreResult.miss == 0 && totalNote > 0) && scoreResult.okay == 0 && scoreResult.nice == 0;
 			GenerateMark();
 			UpdateIn120 = true;
-
-			if (File.Exists(Path.Combine($"Content\\Musics\\{gamePlayed.Music}\\paint.xnb".Split('\\'))))
-			{
-				string curRoot = Scene.Loader.RootDirectory;
-				Scene.Loader.RootDirectory = "";
-				chartIllustration = DrawingLab.LoadContent<Texture2D>($"Content\\Musics\\{gamePlayed.Music}\\paint");
-				Scene.Loader.RootDirectory = curRoot;
-			}
+			chartIllustration = GlobalData.GetWavePaint(gamePlayed);
 
 			#region 分数保存
 			SongResult result = new(mark, score, scoreResult.judgeState != JudgementState.Lenient ? GetScorePercent() : 0, AC, AP);
@@ -270,7 +263,7 @@ internal partial class StateShower
 				SkillMark.Acceptable when scorePercent >= 0.93f => true,
 				SkillMark.Respectable when scorePercent >= 0.97f => true,
 				SkillMark.Excellent when (buffed && AC) || (scorePercent >= 0.99f && AC) => true,
-				SkillMark.Eminent when (buffed && scorePercent >= 0.995f && AC && okayCount == 0) => true,
+				SkillMark.Eminent when buffed && scorePercent >= 0.995f && AC && okayCount == 0 => true,
 				_ => false
 			};
 		}

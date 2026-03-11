@@ -116,18 +116,13 @@ public class Statistic : ISaveLoad
 	{
 		get
 		{
-			UpdateTime();
+			TimeSpan del = DateTime.Now - span;
+			playedTime += (float)del.TotalSeconds;
+			span = DateTime.Now;
 			return (int)playedTime;
 		}
 	}
 	private float playedTime = 0;
-	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	private void UpdateTime()
-	{
-		TimeSpan del = DateTime.Now - span;
-		playedTime += (float)del.TotalSeconds;
-		span = DateTime.Now;
-	}
 
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	internal void AddDeath() => DeathCount++;

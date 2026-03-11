@@ -23,5 +23,5 @@ public class FireBall : CircleCollisionBarrage
 		time += 0.5f;
 	}
 	/// <inheritdoc/>
-	public override void Draw() => GeneralDraw(FightResources.Sprites.fireball, Centre, col.White * Alpha, Scale * new vec2((time % 10) < 5 ? -1 : 1, 1), Rotation);
+	public override void Draw() => GeneralDraw(FightResources.Sprites.fireball, Centre, BarrageColorTypes[ColorType] * Alpha, Scale * new vec2((time % 10) < 5 ? -1 : 1, 1), Rotation);
 }

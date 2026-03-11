@@ -64,17 +64,15 @@ internal class CheatDetector : Entity
 	{
 		public override void Update()
 		{
-			if ((DateTime.Now.Second % 5) == 0)
+			if ((DateTime.Now.Second % 5) != 0)
+				return;
+			foreach (Process item in GameStates._allProcesses)
 			{
-				Process[] all = Process.GetProcesses();
-				foreach (Process item in all)
+				string name = item.ProcessName;
+				if (name.Contains("Cheat Engine") || name.Contains("cheatengine"))
 				{
-					string name = item.ProcessName;
-					if (name.Contains("Cheat Engine") || name.Contains("cheatengine"))
-					{
-						item.Kill();
-						break;
-					}
+					item.Kill();
+					break;
 				}
 			}
 		}

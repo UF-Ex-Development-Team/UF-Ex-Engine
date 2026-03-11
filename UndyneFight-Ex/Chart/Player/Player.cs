@@ -443,7 +443,7 @@ public partial class Player : Entity
 			//Orange soul trail effect
 			if (isOranged && (Gametime % 3) == 0)
 				GameStates.InstanceCreate(new RetentionEffect(this, 15, Color.Orange * 0.5f)
-					{ AngleMode = true });
+				{ AngleMode = true });
 
 			IsStable = !(IsMoved = (lastCentre - Centre).Length() >= 0.005f);
 		}

@@ -89,10 +89,8 @@ public class ChallengeScene(Scene previous_scene, Action exit_event) : Scene
 				foreach (Tuple<Type, Difficulty> v in challenge.Routes)
 				{
 					IWaveSet wave = Activator.CreateInstance(v.Item1) as IWaveSet;
-					string DispName = wave.Attributes.DisplayName;
-					ChallengeCharts[ChallengeList.Count].Add(new(DispName == string.Empty ? wave.FightName : DispName, v.Item2, wave.Attributes.ComplexDifficulty.TryGetValue(v.Item2, out float ComplexVal) ? ComplexVal : 0));
-					if (File.Exists(Path.Combine($"{AppContext.BaseDirectory}Content\\Musics\\{wave.Music}\\paint.xnb".Split('\\'))))
-						Illustrations[^1].Add(LoadContent<Texture2D>($"Content\\Musics\\{wave.Music}\\paint"));
+					ChallengeCharts[ChallengeList.Count].Add(new(GlobalData.GetWavesetDisplayName(wave), v.Item2, wave.Attributes.ComplexDifficulty.TryGetValue(v.Item2, out float ComplexVal) ? ComplexVal : 0));
+					Illustrations[^1].Add(GlobalData.GetWavePaint(wave));
 				}
 				ChallengeList.Add(challenge);
 			});
@@ -138,12 +136,7 @@ public class ChallengeScene(Scene previous_scene, Action exit_event) : Scene
 				{
 					IWaveSet cur = Activator.CreateInstance(ChallengeChart.Item1) as IWaveSet;
 					string path = "Content\\Musics\\" + cur.Music;
-					Texture2D texture = null;
-					if (File.Exists(Path.Combine($"{path}\\paint.xnb".Split('\\'))))
-						lock (this)
-						{
-							texture = LoadContent<Texture2D>($"{path}\\paint");
-						}
+					Texture2D texture = GlobalData.GetWavePaint(cur);
 					if (!File.Exists(Path.Combine($"{path}.xnb".Split('\\'))))
 						path += "\\song";
 					ListParams[i] = new(cur, texture, (int)ChallengeList[SelectedChallenge].Routes[i].Item2, path, JudgementState.Strict, GameMode.RestartDeny);

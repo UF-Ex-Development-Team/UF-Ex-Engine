@@ -19,14 +19,13 @@ public static class MouseSystem
 		MouseWheelDelta = currentState.ScrollWheelValue - lastState.ScrollWheelValue;
 		Moved = (PositionMoved = lastState.Position != currentState.Position) || MathF.Abs(MouseWheelDelta) > 0.1f || IsLeftClick() || IsRightClick();
 
-		if (GameOnFocus)
-		{
-			Vector2 real = CurrentState.Position.ToVector2();
+		if (!GameOnFocus)
+			return;
+		Vector2 real = CurrentState.Position.ToVector2();
 
-			Vector2 centre = new Vector2(240 * Aspect, 240) * SurfaceScale;
-			Vector2 delta = (real - ScreenSize / 2f) / float.Min(ScreenSize.X / (480f * Aspect * SurfaceScale), ScreenSize.Y / (480f * SurfaceScale));
-			TransferredPosition = centre + delta;
-		}
+		Vector2 centre = new Vector2(240 * Aspect, 240) * SurfaceScale;
+		Vector2 delta = (real - ScreenSize / 2f) / float.Min(ScreenSize.X / (480f * Aspect * SurfaceScale), ScreenSize.Y / (480f * SurfaceScale));
+		TransferredPosition = centre + delta;
 	}
 	private static MouseState currentState, lastState;
 	/// <summary>

@@ -20,24 +20,24 @@ public class LoadingScene : Scene
 			CurrentScene.CurrentDrawingSettings.defaultWidth = 640f;
 		if (unLoad)
 			Loader.Unload();
-		this.loadingFinished = loadingFinished;
+		LoadingFinishedEvent = loadingFinished;
 
-		Task thread = new(() =>
+		loadingTask = new(() =>
 		{
 			loadingAction();
 			finishedLoad = true;
 		});
-		loadingTask = thread;
+		//Load audio previews if its the initial loading screen
 		if (this is ResourcesLoadingScene)
 			LoadSongPreviews();
 	}
 
-	private readonly Action loadingFinished;
+	private readonly Action LoadingFinishedEvent;
 	private readonly Task loadingTask;
 	internal int appearTime = 0;
 
 	internal bool finishedLoad = false;
-	internal int LeastLoadingTime { get; set; } = 120;
+	internal const int LeastLoadingTime = 120;
 
 	internal bool eventInvoked = false;
 	internal bool SkipLoadingAudio = false;
@@ -50,7 +50,7 @@ public class LoadingScene : Scene
 		else if (appearTime >= LeastLoadingTime && finishedLoad && !eventInvoked && (AudioCache.Count == AudioPreviewPos.Count || SkipLoadingAudio || this is not ResourcesLoadingScene))
 		{
 			eventInvoked = true;
-			loadingFinished();
+			LoadingFinishedEvent();
 		}
 		base.Update();
 	}
@@ -88,14 +88,17 @@ public class SongLoadingScene : LoadingScene
 	/// <param name="challenge">The challenge to start</param>
 	/// <param name="songParams"></param>
 	public SongLoadingScene(Challenge challenge, params SongFightingScene.SceneParams[] songParams) : base(() =>
+	{
 		// loadingFinished
-		GameStates.InstanceCreate(new InstantEvent(30, () => ResetScene(new SongFightingScene(songParams[0], challenge)))), () =>
+		GameStates.InstanceCreate(new InstantEvent(30, () => ResetScene(new SongFightingScene(songParams[0], challenge))));
+		Loaded = true;
+	}, () =>
 	{
 		// loadingAction
 		if (songParams[0].Waveset.Attributes?.MusicOptimized ?? false)
 			songParams[0].MusicOptimized = true;
 		songParams[0].LoadMusic();
-	})
+	}, songParams[0].IsUnload)
 	{
 		if (IsInChallenge)
 		{
@@ -103,6 +106,7 @@ public class SongLoadingScene : LoadingScene
 			CurChallengeNum = 0;
 			ChallengeCharts = songParams;
 		}
+		Loaded = false;
 		SongLoadingScene.songParams = songParams[0];
 		difficulty = SongLoadingScene.songParams.difficulty;
 		Information = songParams[0].Waveset.Attributes;
@@ -145,8 +149,7 @@ public class SongLoadingScene : LoadingScene
 		else
 			FightResources.Font.FightFont.CentreDraw("No Paint", new Vector2(477.5f, 200), Color.Red * paintAlpha, 1, 1);
 		//Title
-		string curDispName = songParams.Waveset.Attributes?.DisplayName ?? string.Empty;
-		string songName = curDispName == string.Empty ? songParams.Waveset.FightName : curDispName;
+		string songName = GlobalData.GetWavesetDisplayName(songParams.Waveset);
 		Font.NormalFont.CentreDraw(songName, new Vector2(320, titleY), Color.White, new Vector2(float.Min(1, 600f / Font.NormalFont.SFX.MeasureString(songName).X), 1), 1);
 		string DiffText = difficulty switch
 		{
@@ -231,7 +234,8 @@ internal class ResourcesLoadingScene : LoadingScene
 	private int splashHoldTime = -90;
 	private bool splashIsFading = false;
 	private static ContentManager loader;
-	private SplashState state = SplashState.Undertale;
+	private SplashState SplashScreenState = SplashState.Undertale;
+	public static ResourcesLoadState LoadState = ResourcesLoadState.Title_Sprite;
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	private static void MainResourcesLoad()
 	{
@@ -241,11 +245,11 @@ internal class ResourcesLoadingScene : LoadingScene
 	public ResourcesLoadingScene(ContentManager loader) : base(() => ResetScene(new GameMenuScene()), MainResourcesLoad) => ResourcesLoadingScene.loader = loader;
 	public override void Draw()
 	{
-		if (state != SplashState.Ended)
+		if (SplashScreenState != SplashState.Ended)
 		{
 			//Splash screen
 			GeneralDraw(FightResources.Sprites.pixUnit, new(320, 240), Color.Black * (1 - splashAlpha), new(640, 480), depth: 0.99f);
-			if (state == SplashState.Undertale)
+			if (SplashScreenState == SplashState.Undertale)
 			{
 				Font.NormalFont.CentreDraw("This is an", new(320, 210), Color.White);
 				Font.NormalFont.CentreDraw("UNDERTALE", new(320, 240), Color.White, 2, 0.5f);
@@ -275,7 +279,7 @@ internal class ResourcesLoadingScene : LoadingScene
 			Font.NormalFont.CentreDraw($"Press Z to skip loading audio previews", new Vector2(320, 360), Color.White * MathF.Round(MathF.Abs(Functions.Sin(appearTime * 1.3f))), 0.6f, 0.98f);
 		else
 		{
-			string str = "Loading resources";
+			string str = $"Loading {LoadState.ToString().Replace('_', ' ')}";
 			for (int i = 0; i < DateTime.Now.Ticks / 5000000 % 4; i++)
 				str += ".";
 			Font.NormalFont.CentreDraw(str, new Vector2(320, 360), Color.White, 0.6f, 0.5f);
@@ -290,12 +294,12 @@ internal class ResourcesLoadingScene : LoadingScene
 			splashHoldTime++;
 		else
 			splashAlpha = float.Lerp(splashAlpha, splashIsFading ? 0 : 1, 0.08f);
-		if (state != SplashState.Ended)
+		if (SplashScreenState != SplashState.Ended)
 		{
 			if (splashAlpha < 0.005f && splashHoldTime >= 0 && splashIsFading)
 			{
 				splashAlpha = 0;
-				state = state == SplashState.Undertale ? SplashState.MadeBy : SplashState.Ended;
+				SplashScreenState = SplashScreenState == SplashState.Undertale ? SplashState.MadeBy : SplashState.Ended;
 				splashHoldTime = -90;
 				splashIsFading = false;
 			}
@@ -318,5 +322,16 @@ internal class ResourcesLoadingScene : LoadingScene
 		Undertale,
 		MadeBy,
 		Ended
+	}
+	public enum ResourcesLoadState
+	{
+		Title_Sprite,
+		Global_Sprites,
+		Fonts,
+		Global_Audio,
+		Global_Shaders,
+		Fight_Sprites,
+		Fight_Audio,
+		Finished
 	}
 }

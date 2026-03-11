@@ -36,8 +36,7 @@ internal class ChallengeResult(Challenge challenge) : Entity
 		{
 			Tuple<Type, Difficulty> tuple = (FatherObject as ChallengeResult).completedChallenge.Routes[index];
 			IWaveSet curChart = Activator.CreateInstance(tuple.Item1) as IWaveSet;
-			string curDispName = curChart.Attributes.DisplayName;
-			songName = curDispName == string.Empty ? curChart.FightName : curDispName;
+			songName = GlobalData.GetWavesetDisplayName(curChart);
 			difficulty = tuple.Item2;
 			difColor = (int)difficulty switch
 			{
@@ -158,13 +157,7 @@ internal class ChallengeResult(Challenge challenge) : Entity
 				totalAccuracy += float.Clamp(enumerator.Current.Accuracy, 0, 105);
 			}));
 			IWaveSet cur = Activator.CreateInstance(challenge.Routes[i].Item1) as IWaveSet;
-			if (File.Exists(Path.Combine($"{AppContext.BaseDirectory}Content\\Musics\\{cur.Music}\\paint.xnb".Split('\\'))))
-			{
-				string curRoot = Scene.Loader.RootDirectory;
-				Scene.Loader.RootDirectory = "";
-				ChartIllustrations[i] = GlobalResources.LoadContent<Texture2D>($"Content\\Musics\\{cur.Music}\\paint");
-				Scene.Loader.RootDirectory = curRoot;
-			}
+			ChartIllustrations[i] = GlobalData.GetWavePaint(cur);
 		}
 		alpha = 0;
 	}

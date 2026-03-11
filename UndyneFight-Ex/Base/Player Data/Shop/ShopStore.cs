@@ -222,19 +222,18 @@ public class ShopItemData : ISaveLoad
 			if (!AllItems.ContainsKey(itemInfo.Title))
 				continue;
 			StoreItem item = AllItems[itemInfo.Title];
-			if (item.InShop = itemInfo["unlocked"] is "true" or "True")
+			if (item.InShop = itemInfo["unlocked"] is not ("true" or "True"))
+				continue;
+			_ = UserItems.TryAdd(item.FullName, item);
+			UserItems[item.FullName].InShop = true;
+			UserItems[item.FullName].Count = item.Count = (int)MathUtil.FloatFromString(itemInfo["count"]);
+			UserItems[item.FullName].Activated = item.Activated = itemInfo["activated"] is "true" or "True";
+			try
 			{
-				_ = UserItems.TryAdd(item.FullName, item);
-				UserItems[item.FullName].InShop = true;
-				UserItems[item.FullName].Count = item.Count = (int)MathUtil.FloatFromString(itemInfo["count"]);
-				UserItems[item.FullName].Activated = item.Activated = itemInfo["activated"] is "true" or "True";
-				try
-				{
-					if ((item.Attributes & StoreItem.ItemAttribute.Cycle) != 0)
-						UserItems[item.FullName].ModeText = item.ModeText = itemInfo["mode"];
-				}
-				catch { }
+				if ((item.Attributes & StoreItem.ItemAttribute.Cycle) != 0)
+					UserItems[item.FullName].ModeText = item.ModeText = itemInfo["mode"];
 			}
+			catch { }
 		}
 	}
 	/// <inheritdoc/>

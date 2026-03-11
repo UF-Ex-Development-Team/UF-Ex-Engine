@@ -476,15 +476,12 @@ internal class SongSelector : Selector
 			}
 			else
 			{
-				if (Exists(Path.Combine($"{AppContext.BaseDirectory}{filePath}\\paint.xnb".Split('\\'))))
+				if (GlobalData.GetWavePaint(wave) != null)
 				{
-					string tmp = Scene.Loader.RootDirectory;
-					Scene.Loader.RootDirectory = "";
 					BackGround v;
-					AddChild(v = new BackGround(songImage = GlobalResources.LoadContent<Texture2D>($"{filePath}\\paint"), camera, new(320, 240 + y * 480)));
+					AddChild(v = new BackGround(songImage = GlobalData.GetWavePaint(wave), camera, new(320, 240 + y * 480)));
 					v.Alpha = 0.3f;
 					backs.Add(v);
-					Scene.Loader.RootDirectory = tmp;
 				}
 				filePath += "\\song";
 			}

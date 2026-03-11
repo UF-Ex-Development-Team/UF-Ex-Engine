@@ -28,7 +28,7 @@ internal class DynamicSong
 
 	public DynamicSong(string path)
 	{
-		ReadOgg(path);
+		_ = ReadOgg(path);
 		Name = path.Split("/").Last().Split(".")[0];
 	}
 
@@ -50,7 +50,7 @@ internal class DynamicSong
 		return result - result % 8;
 	}
 
-	private void ReadOgg(string path)
+	private async Task ReadOgg(string path)
 	{
 		VorbisReader vorbis = new(path);
 		channels = vorbis.Channels;
@@ -60,7 +60,7 @@ internal class DynamicSong
 		float[] buffer = new float[channels * sampleRate / 5];
 
 		List<byte> byteList = [];
-		lock (this)
+		Task task = new(()=>
 		{
 			while (vorbis.ReadSamples(buffer, 0, buffer.Length) > 0)
 			{
@@ -81,7 +81,9 @@ internal class DynamicSong
 					byteList.Add((byte)(temp >> 8));
 				}
 			}
-		}
+		});
+		task.RunSynchronously();
+		await task;
 		byteArray = [.. byteList];
 		bytesOverMilliseconds = byteArray.Length / (float)vorbis.TotalTime.TotalMilliseconds;
 

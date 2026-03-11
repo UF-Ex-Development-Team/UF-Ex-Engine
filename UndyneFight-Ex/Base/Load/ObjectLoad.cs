@@ -7,6 +7,7 @@ internal partial class GameMain : Game
 	public async void LoadObject()
 	{
 		Scene.PrepareLoader(Content.ServiceProvider);
+		GlobalData.Loader = new(Content.ServiceProvider) { RootDirectory = "Content" };
 
 		Task task = new(()=>
 		{

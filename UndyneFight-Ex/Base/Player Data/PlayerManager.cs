@@ -17,23 +17,18 @@ public static class PlayerManager
 			for (int i = 0; i < 6; i++)
 				s[i] = Convert.ToInt32(divs[i]);
 		}
-
-		//Directory.CreateDirectory("Mods\\Scripts");
-		//Directory.CreateDirectory("Mods\\Fights");
 		#region Create Folders
+		static void CheckCreateDirectory(string path)
+		{
+			if (!Directory.Exists(path))
+				_ = Directory.CreateDirectory(path);
+		}
 		//User folder
-		path = Path.Combine($"{GameStates.SavePath}\\Datas\\Users".Split('\\'));
-		if (!Directory.Exists(path))
-			_ = Directory.CreateDirectory(path);
-		//Directory.CreateDirectory("Datas\\Records");
+		CheckCreateDirectory(Path.Combine($"{GameStates.SavePath}\\Datas\\Users".Split('\\')));
 		//Licenses folder
-		path = Path.Combine($"{AppContext.BaseDirectory}Licenses".Split('\\'));
-		if (!Directory.Exists(path))
-			_ = Directory.CreateDirectory(path);
+		CheckCreateDirectory(Path.Combine($"{AppContext.BaseDirectory}Licenses".Split('\\')));
 		//Custom Charts folder
-		path = Path.Combine($"{GameStates.SavePath}\\Custom Charts".Split('\\'));
-		if (!Directory.Exists(path))
-			_ = Directory.CreateDirectory(path);
+		CheckCreateDirectory(Path.Combine($"{GameStates.SavePath}\\Custom Charts".Split('\\')));
 		path = Path.Combine($"{GameStates.SavePath}\\Custom Charts\\Note.txt".Split('\\'));
 		if (File.Exists(path))
 			File.Delete(path);
@@ -68,16 +63,19 @@ public static class PlayerManager
 		if (playerInfo.ContainsKey(s))
 		{
 			currentPlayer = s;
+			//Apply user settings
 			CurrentUser.ApplySettings();
 			_ = userSaveInfo.TryGetValue(currentPlayer, out SaveInfo saveInfo);
+			//Load user achievements
 			CurrentUser._achievement.Load(saveInfo.Nexts["Achievements"]);
 			_ = CurrentUser.CalculateRating();
 			Achievements.AchievementManager.CheckUserAchievements();
+			//Load user defined keybinds
 			CurrentUser.KeyBinds.Load(saveInfo.Nexts["Keybinds"]);
 			GameStates.KeyChecker.InputKeys = new(KeybindData.UserKeys);
+			//Store items into user inventory
 			ShopItemData.UserItems.Clear();
 			CurrentUser.ShopData.Load(saveInfo.Nexts["ShopData"]);
-			//Store items into user inventory
 			foreach (StoreItem item in ShopItemData.AllItems.Values)
 				if (item.DefaultInShop)
 					_ = ShopItemData.UserItems.TryAdd(item.FullName, item);

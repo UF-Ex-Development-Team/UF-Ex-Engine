@@ -37,7 +37,6 @@ public interface IAchievementCheck
 /// <param name="checker">The function to use</param>
 public class UserDataChecker(Func<User, int> checker) : IAchievementCheck
 {
-	private readonly Func<User, int> checker = checker;
 	/// <inheritdoc/>
 	public CheckerType CheckType => CheckerType.User;
 	/// <inheritdoc/>
@@ -49,8 +48,6 @@ public class UserDataChecker(Func<User, int> checker) : IAchievementCheck
 /// <param name="checker">The function to use</param>
 public class SongDataChecker(Func<SongSystem.SongPlayData, int> checker) : IAchievementCheck
 {
-	private readonly Func<SongSystem.SongPlayData, int> checker = checker;
-
 	/// <inheritdoc/>
 	public CheckerType CheckType => CheckerType.Song;
 	/// <inheritdoc/>
@@ -73,7 +70,7 @@ public class Achievement(string title, string introduction, int totalProgress, I
 	public bool CheckProgress(object checkObj)
 	{
 		bool last = CurrentProgress >= FullProgress && !Locked;
-		bool res = (Achieved = (CurrentProgress = Math.Max(CurrentProgress, ProgressChecker.ProgressCheck(checkObj))) >= FullProgress && !Locked) && !last;
+		bool res = (Achieved = (CurrentProgress = int.Max(CurrentProgress, ProgressChecker.ProgressCheck(checkObj))) >= FullProgress && !Locked) && !last;
 		if (res)
 			OnAchieve?.Invoke(this);
 		return res;
@@ -125,23 +122,33 @@ public class Achievement(string title, string introduction, int totalProgress, I
 internal static class AchievementManager
 {
 	public static Dictionary<string, Achievement> achievements = [];
-
+	/// <summary>
+	/// Checks all of the achievements that are user based
+	/// </summary>
 	public static void CheckUserAchievements()
 	{
 		if (PlayerManager.CurrentUser == null)
 			return;
 		foreach (Achievement s in achievements.Values)
-			if (!s.Achieved && s.CheckType == CheckerType.User && s.CheckProgress(PlayerManager.CurrentUser))
+			if (s.CheckType == CheckerType.User && s.CheckProgress(PlayerManager.CurrentUser))
 				ShowAchieved(s);
 	}
+	/// <summary>
+	/// Checks all the achievements that are chart based
+	/// </summary>
+	/// <param name="data"></param>
 	public static void CheckSongAchievements(SongSystem.SongPlayData data)
 	{
 		if (PlayerManager.CurrentUser == null)
 			return;
 		foreach (Achievement s in achievements.Values)
-			if (!s.Achieved && s.CheckType == CheckerType.Song && s.CheckProgress(data))
+			if (s.CheckType == CheckerType.Song && s.CheckProgress(data))
 				ShowAchieved(s);
 	}
+	/// <summary>
+	/// Show that the achievement is achieved
+	/// </summary>
+	/// <param name="achievement">The achievement to show</param>
 	public static void ShowAchieved(Achievement achievement) => GameStates.InstanceCreate(new AchievementResult(achievement));
 	/// <summary>
 	/// Adds an achievement

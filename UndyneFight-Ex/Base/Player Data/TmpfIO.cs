@@ -1,4 +1,5 @@
-﻿using static UndyneFight_Ex.MathUtil;
+﻿using System.Text;
+using static UndyneFight_Ex.MathUtil;
 
 namespace UndyneFight_Ex.IO;
 
@@ -222,24 +223,15 @@ public static class IOEvent
 	public static List<byte> ReadCustomFile(string Path)
 	{
 		FileStream stream = new(Path, FileMode.OpenOrCreate);
-		byte[] res = new byte[stream.Length];
-		_ = stream.Read(res, 0, res.Length);
 		stream.Dispose();
-		return Decoder(res);
+		return Decoder(File.ReadAllBytes(Path));
 	}
 	/// <summary>
-	/// 读取Tmp图片上的像素块的颜色值并得到一串字符列表
+	/// Reads the list of bytes in the tmpf file
 	/// </summary>
-	/// <returns>通过记忆图片得到的字符列表</returns>
+	/// <returns>The byte list in the tmpf file</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public static List<byte> ReadTmpfFile(string Path)
-	{
-		FileStream stream = new(Path + ".Tmpf", FileMode.OpenOrCreate);
-		byte[] res = new byte[stream.Length];
-		_ = stream.Read(res);
-		stream.Dispose();
-		return Decoder(res);
-	}
+	public static List<byte> ReadTmpfFile(string Path) => ReadCustomFile(Path + ".Tmpf");
 	/// <summary>
 	/// Convert a string into bytes
 	/// </summary>
@@ -276,7 +268,7 @@ public static class IOEvent
 		string temp = string.Empty;
 		foreach (char item in bytes.Select(v => (char)v))
 		{
-			if (item is not (char)1 and not (char)0)
+			if (item is not ((char)1 or (char)0))
 				temp += item;
 			else
 			{
@@ -334,24 +326,24 @@ public static class IOEvent
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static List<string> InfoToString(SaveInfo info)
 	{
+		StringBuilder sb = new();
 		List<string> res = [];
 		if (info.values != null)
 		{
-			string s = info.Title + ":";
+			_ = sb.Append(info.Title + ":");
 			for (int i = 0; i < info.values.Count; i++)
 			{
 				if (info.keysForIndexes.ContainsValue(i))
-					s += info.indexForKeys[i] + "=";
-				s += info.values[i];
+					_ = sb.Append(info.indexForKeys[i] + "=");
+				_ = sb.Append(info.values[i]);
 				if (i + 1 != info.values.Count)
-					s += ",";
+					_ = sb.Append(',');
 			}
-			res.Add(s);
+			res.Add(sb.ToString());
 		}
 		else
 		{
-			string s = info.Title + "{";
-			res.Add(s);
+			res.Add(info.Title + "{");
 			foreach (SaveInfo next in info.Nexts.Values)
 				res.AddRange(InfoToString(next));
 			res.Add("}");
@@ -379,9 +371,9 @@ public static class FileIO
 		return [.. bytes];
 	}
 	/// <summary>
-	/// 读取Tmp图片上的像素块的颜色值并得到一串字符列表
+	/// Reads the list of bytes in the tmpf file and converts it to <see cref="SaveInfo"/>
 	/// </summary>
-	/// <returns>通过记忆图片得到的字符列表</returns>
+	/// <returns>The save info of the tmpf file</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static SaveInfo ReadFile(string Path)
 	{
@@ -432,7 +424,6 @@ public static class FileIO
 
 		return res;
 	}
-
 	/// <summary>
 	/// Creates a new player file
 	/// </summary>

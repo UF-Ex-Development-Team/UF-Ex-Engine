@@ -158,9 +158,8 @@ public class GunBullet : Entity
 	{
 		switch (++appearTime)
 		{
-			case int x when x <= delayTime:
-				lerp = AlphaLerp(appearTime / delayTime);
-				currentDistance = (1 - lerp) * distance;
+			case int x when x < (int)delayTime:
+				currentDistance = (1 - (lerp = AlphaLerp(appearTime / delayTime))) * distance;
 				alpha = lerp * 0.7f + 0.1f;
 				break;
 			case int x when x == (int)delayTime:

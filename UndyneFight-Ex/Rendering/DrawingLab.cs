@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using System.Diagnostics;
 using static UndyneFight_Ex.GameMain;
 using static UndyneFight_Ex.MathUtil;
 using Color = Microsoft.Xna.Framework.Color;
@@ -464,6 +465,30 @@ public static class DrawingLab
 		DrawCircleFilled(centre + new Vector2(size.X / 2 - radius, -size.Y / 2 + radius), radius, 32, color, depth);
 		DrawCircleFilled(centre + size / 2 - new Vector2(radius), radius, 32, color, depth);
 		DrawCircleFilled(centre + new Vector2(-size.X / 2 + radius, size.Y / 2 - radius), radius, 32, color, depth);
+	}
+	/// <summary>
+	/// A general texture drawing function that integrates all functionalities from all FormalDraw functions
+	/// </summary>
+	/// <param name="texture">The texture to draw</param>
+	/// <param name="position">The position to draw the texture</param>
+	/// <param name="color">The color of the texture to draw (Default white)</param>
+	/// <param name="scale">The scale of the texture to draw (Default 1)</param>
+	/// <param name="rotation">The rotation of the texture to draw in radians (Default 0)</param>
+	/// <param name="spriteOrigin">The origin of the texture to draw (Default center of texture)</param>
+	/// <param name="texArea">The bounds of drawing on the screen (Default null for normal drawing)</param>
+	/// <param name="sourceRect">The region of the texture to render (Default null for full texture)</param>
+	/// <param name="depth">The depth of the texture to draw (Default current depth)</param>
+	public static void GeneralDraw(Texture2D texture, Vector2 position, Color? color = null, Vector2? scale = null, float rotation = 0, Vector2? spriteOrigin = null, CollideRect? texArea = null, CollideRect? sourceRect = null, float depth = 0)
+	{
+		if (texture is null)
+		{
+			Debug.WriteLine($"The texture is not a texture or is not loaded");
+			return;
+		}
+		Vector2 GetRotCen = spriteOrigin ?? new(texture.Width / 2f, texture.Height / 2f);
+		Vector2 drawingScale = scale ?? Vector2.One;
+		CollideRect rect = new(position - GetRotCen, texArea.HasValue ? texArea.Value.Size : texture.Bounds.Size.ToVector2());
+		MissionSpriteBatch.Draw(texture, rect, sourceRect, color ?? Color.White, rotation, GetRotCen, drawingScale, SpriteEffects.None, depth);
 	}
 	#endregion
 	/// <summary>

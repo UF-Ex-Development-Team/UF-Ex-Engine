@@ -459,20 +459,4 @@ public static class MathUtil
 	/// <param name="items">The number of items in the sequence</param>
 	/// <returns>The sum of the sequence</returns>
 	public static float GeometricSum(float start, float ratio, float items) => start * (1 - Pow(ratio, items)) / (1 - ratio);
-	/// <summary>
-	/// Gets the amount of substring inside of a string
-	/// </summary>
-	/// <param name="text">The source text</param>
-	/// <param name="substring">The substring to check</param>
-	/// <returns></returns>
-	public static int CountSubstring(this string text, string substring)
-	{
-		int count = 0, minIndex = text.IndexOf(substring, 0);
-		while (minIndex != -1)
-		{
-			minIndex = text.IndexOf(substring, minIndex + substring.Length);
-			count++;
-		}
-		return count;
-	}
 }

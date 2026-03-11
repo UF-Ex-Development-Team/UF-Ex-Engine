@@ -39,9 +39,9 @@ public partial class Arrow
 	/// </summary>
 	public float BlockTime { get; private set; }
 
-	private float perfectNegative, perfectPositive;
+	private float strongPerfectNegative, strongPerfectPositive;
+	private float weakPerfectNegative, weakPerfectPositive;
 	private float niceNegative, nicePositive;
-	private float okayNegative, okayPositive;
 
 	private bool isSoundPlayed = false;
 
@@ -65,28 +65,28 @@ public partial class Arrow
 		switch (JudgeState)
 		{
 			case JudgementState.Strict:
-				perfectNegative = -2.0f;
-				perfectPositive = 2.0f;
-				niceNegative = -3.3f;
-				nicePositive = 3.3f;
-				okayNegative = -6.5f;
-				okayPositive = 6.5f;
+				strongPerfectNegative = -2.0f;
+				strongPerfectPositive = 2.0f;
+				weakPerfectNegative = -3.3f;
+				weakPerfectPositive = 3.3f;
+				niceNegative = -6.5f;
+				nicePositive = 6.5f;
 				break;
 			case JudgementState.Balanced:
-				perfectNegative = -3.3f;
-				perfectPositive = 3.3f;
-				niceNegative = -5f;
-				nicePositive = 5.5f;
-				okayNegative = -7.8f;
-				okayPositive = 9f;
+				strongPerfectNegative = -3.3f;
+				strongPerfectPositive = 3.3f;
+				weakPerfectNegative = -5f;
+				weakPerfectPositive = 5.5f;
+				niceNegative = -7.8f;
+				nicePositive = 9f;
 				break;
 			case JudgementState.Lenient:
-				perfectNegative = -4f;
-				perfectPositive = 4.5f;
-				niceNegative = -5f;
-				nicePositive = 7.5f;
-				okayNegative = -8.5f;
-				okayPositive = 10f;
+				strongPerfectNegative = -4f;
+				strongPerfectPositive = 4.5f;
+				weakPerfectNegative = -5f;
+				weakPerfectPositive = 7.5f;
+				niceNegative = -8.5f;
+				nicePositive = 10f;
 				break;
 			default:
 				throw new ArgumentOutOfRangeException();
@@ -227,9 +227,9 @@ public partial class Arrow
 				JudgementState.Strict => 1.5f,
 				_ => throw new ArgumentException($"{JudgeState} is not in proper form", nameof(JudgeState)),
 			};
-			if (score <= 1 && time > 9f / div && del >= niceNegative + 0.6f)
+			if (score <= 1 && time > 9f / div && del >= weakPerfectNegative + 0.6f)
 				goto A;
-			if (score <= 1 && time > 15f / div && del >= okayNegative + 0.6f)
+			if (score <= 1 && time > 15f / div && del >= niceNegative + 0.6f)
 				goto A;
 
 			HitScore(score, time);
@@ -259,9 +259,9 @@ public partial class Arrow
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	private int GetScore(float time) => time switch
 	{
-		float x when x >= perfectNegative && x <= perfectPositive => 3,
-		float x when x >= niceNegative && x <= nicePositive => time > perfectPositive ? 4 : 5,
-		float x when x >= okayNegative && x <= okayPositive => 2,
+		float x when x >= strongPerfectNegative && x <= strongPerfectPositive => 3,
+		float x when x >= weakPerfectNegative && x <= weakPerfectPositive => x > strongPerfectPositive ? 4 : 5,
+		float x when x >= niceNegative && x <= nicePositive => 2,
 		_ => 1
 	};
 

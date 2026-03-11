@@ -29,6 +29,26 @@ public interface ISaveLoad
 public partial class User : ISaveLoad
 {
 	/// <summary>
+	/// The default info of new users
+	/// </summary>
+	private static readonly Dictionary<string, string> DefaultUserSaveInfo = new()
+	{
+		["Coins"] = "Coins:0",
+		["Achievements"] = "Achievements{",
+		["ChampionShips"] = "ChampionShips{",
+		["NormalFights"] = "NormalFights{",
+		["VIP"] = "VIP:false",
+		["AC"] = "AC{",
+		["AP"] = "AP{",
+		["Mark"] = "Mark{",
+		["Skill"] = "Skill:0",
+		["GameJolt"] = "GameJolt{",
+		["Settings"] = "Settings{",
+		["Keybinds"] = "Keybinds{",
+		["ShopData"] = "ShopData{",
+		["ChallengeData"] = "ChallengeData{"
+	};
+	/// <summary>
 	/// Creates a new user
 	/// </summary>
 	/// <param name="name">The name of the user</param>
@@ -44,20 +64,8 @@ public partial class User : ISaveLoad
 		info.Nexts.Add("Password", new SaveInfo("Password:" + MathUtil.StringHash(password)));
 		info.Nexts.Add("PlayerName", new SaveInfo("PlayerName:" + name));
 		info.Nexts.Add("UUID", new SaveInfo("UUID:" + uuid));
-		info.Nexts.Add("Coins", new SaveInfo("Coins:0"));
-		info.Nexts.Add("Achievements", new SaveInfo("Achievements{"));
-		info.Nexts.Add("ChampionShips", new SaveInfo("ChampionShips{"));
-		info.Nexts.Add("NormalFights", new SaveInfo("NormalFights{"));
-		info.Nexts.Add("VIP", new SaveInfo("VIP:false"));
-		info.Nexts.Add("AC", new SaveInfo("AC{"));
-		info.Nexts.Add("AP", new SaveInfo("AP{"));
-		info.Nexts.Add("Mark", new SaveInfo("Mark{"));
-		info.Nexts.Add("Skill", new SaveInfo("Skill:0"));
-		info.Nexts.Add("GameJolt", new SaveInfo("GameJolt{"));
-		info.Nexts.Add("Settings", new SaveInfo("Settings{"));
-		info.Nexts.Add("Keybinds", new SaveInfo("Keybinds{"));
-		info.Nexts.Add("ShopData", new SaveInfo("ShopData{"));
-		info.Nexts.Add("ChallengeData", new SaveInfo("ChallengeData{"));
+		foreach (KeyValuePair<string, string> defSaveInfos in DefaultUserSaveInfo)
+			info.Nexts.Add(defSaveInfos.Key, new SaveInfo(defSaveInfos.Value));
 		user.Load(info);
 		return user;
 	}
@@ -286,12 +294,10 @@ public partial class User : ISaveLoad
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public bool CheckPassword(string password)
 	{
-		if (Password == MathUtil.StringHash(password))
-		{
-			PasswordMemory = password;
-			return true;
-		}
-		return false;
+		if (Password != MathUtil.StringHash(password))
+			return false;
+		PasswordMemory = password;
+		return true;
 	}
 	/// <summary>
 	/// Invokes logout event

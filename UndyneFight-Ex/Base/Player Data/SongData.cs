@@ -141,9 +141,9 @@ public class SongData(string name) : ISaveLoad
 	public SaveInfo Save()
 	{
 		SaveInfo info = new(SongName + "{");
-		for (int i = 0; i < CurrentSongStates.Keys.Count; i++)
-			if (CurrentSongStates[CurrentSongStates.Keys.ElementAt(i)].Score > 0)
-				info.PushNext(GetInformation(CurrentSongStates.Keys.ElementAt(i)));
+		foreach (Difficulty diff in CurrentSongStates.Keys)
+			if (CurrentSongStates[diff].Score > 0)
+				info.PushNext(GetInformation(diff));
 		return info;
 	}
 	/// <summary>
@@ -154,8 +154,7 @@ public class SongData(string name) : ISaveLoad
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public void UpdateNew(Difficulty dif, SongResult result)
 	{
-		if (!CurrentSongStates.ContainsKey(dif))
-			CurrentSongStates.Add(dif, new SongState(dif, result));
+		_ = CurrentSongStates.TryAdd(dif, new SongState(dif, result));
 		CurrentSongStates[dif].UpdateNew(result);
 	}
 }
@@ -188,8 +187,7 @@ public class SongManager : ISaveLoad
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	internal void FinishedSong(string songName, Difficulty difficulty, SongResult result)
 	{
-		if (!songData.ContainsKey(songName))
-			songData.Add(songName, new SongData(songName));
+		songData.TryAdd(songName, new SongData(songName));
 		songData[songName].UpdateNew(difficulty, result);
 	}
 	/// <inheritdoc/>
@@ -207,8 +205,8 @@ public class SongManager : ISaveLoad
 	public SaveInfo Save()
 	{
 		SaveInfo info = new("NormalFights{");
-		for (int i = 0; i < songData.Count; i++)
-			info.PushNext(songData.ElementAt(i).Value.Save());
+		foreach (SongData data in songData.Values)
+			info.PushNext(data.Save());
 		return info;
 	}
 }

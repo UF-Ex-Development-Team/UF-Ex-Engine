@@ -1,5 +1,7 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
+using System;
 using System.Diagnostics;
+using System.Reflection.Metadata.Ecma335;
 using UndyneFight_Ex.Entities;
 
 namespace UndyneFight_Ex.Entities
@@ -171,10 +173,9 @@ namespace UndyneFight_Ex.Entities
 	/// <summary>
 	/// Invokes an action after a given delay
 	/// </summary>
+	[Obsolete("Use DelayEventProcessor.AddInstantEvent instead")]
 	public class InstantEvent : GameObject
 	{
-		private readonly Action _action;
-		private float _timeDelay;
 		/// <summary>
 		/// Invoke an action after the given delay
 		/// </summary>
@@ -182,28 +183,21 @@ namespace UndyneFight_Ex.Entities
 		/// <param name="action">The action to invoke</param>
 		public InstantEvent(float timeDelay, Action action)
 		{
-			_timeDelay = (int)timeDelay;
-			_action = action;
-			UpdateIn120 = true;
+			//Move to global processor
+			DelayEventProcessor.AddInstantEvent((int)timeDelay, action);
+			Dispose();
 		}
 		/// <inheritdoc/>
-		public override void Update()
-		{
-			if (_timeDelay <= 0)
-			{
-				_action();
-				Dispose();
-			}
-			_timeDelay -= 0.5f;
-		}
+		public override void Update() => throw new NotImplementedException();
 	}
 	/// <summary>
 	/// Invoke an action that lasts for a duration after a delay
 	/// </summary>
+	[Obsolete("Use DelayEventProcessor.AddTimeRangedEvent instead")]
 	public class TimeRangedEvent : GameObject
 	{
 		private readonly Action _action;
-		private float _timeDelay;
+		private readonly float _timeDelay;
 		private readonly float _duration;
 		/// <summary>
 		/// Invoke an action that lasts for the given duration after the given delay
@@ -231,17 +225,131 @@ namespace UndyneFight_Ex.Entities
 		/// <inheritdoc/>
 		public override void Update()
 		{
-			if (_timeDelay <= 0)
-			{
-				if (_timeDelay <= -_duration)
-				{
-					Dispose();
-					return;
-				}
-				_action();
-			}
-			_timeDelay -= UpdateIn120 ? 0.5f : 1;
+			//Move to global processor
+			DelayEventProcessor.AddTimeRangedEvent((int)_timeDelay, _action, (int)_duration, UpdateIn120);
+			Dispose();
 		}
+	}
+	/// <summary>
+	/// Global processor for delayed events
+	/// </summary>
+	public static class DelayEventProcessor
+	{
+		/// <summary>
+		/// Info of the event to delay
+		/// </summary>
+		/// <param name="delay">The amount of time to delay</param>
+		/// <param name="action">The action to invoke</param>
+		/// <param name="dur">The duration of the event</param>
+		/// <param name="is120">Whether the updating occurs every other frame</param>
+		internal struct EventInfo(float delay, Action action, float dur, bool is120 = false)
+		{
+			/// <summary>
+			/// Amount of time to delay
+			/// </summary>
+			public float TimeDelay = delay;
+			/// <summary>
+			/// The action to invoke
+			/// </summary>
+			public Action Action { get; init; } = action;
+			/// <summary>
+			/// The duration of the action
+			/// </summary>
+			public float Duration { get; init; } = dur;
+			/// <summary>
+			/// Whether the updating occurs every other frame
+			/// </summary>
+			internal readonly bool UpdateIn120 { get; init; } = dur == 0 || is120;
+		}
+		/// <summary>
+		/// The list of delayed instant events
+		/// </summary>
+		internal readonly static List<EventInfo> DelayedInstantEvents = [];
+		/// <summary>
+		/// The list of delayed time ranged events
+		/// </summary>
+		internal readonly static List<EventInfo> DelayedTimeRangedEvents = [];
+		/// <summary>
+		/// Whether the delay event schedule has been cleared from either a natural or action invoked scene transition
+		/// </summary>
+		internal static bool ScheduleCleared = false;
+		/// <summary>
+		/// Schedules a delayed instant event
+		/// </summary>
+		/// <param name="delay">The amount of time to delay</param>
+		/// <param name="action">The action to invoke</param>
+		public static void AddInstantEvent(int delay, Action action) => DelayedInstantEvents.Add(new EventInfo(delay, action, 0));
+		/// <summary>
+		/// Schedules a delayed time ranged event
+		/// </summary>
+		/// <param name="delay">The amount of time to delay</param>
+		/// <param name="action">The action to invoke</param>
+		/// <param name="dur">The duration of the event</param>
+		/// <param name="is120">Whether to update every other frame</param>
+		public static void AddTimeRangedEvent(int delay, Action action, int dur, bool is120) => DelayedTimeRangedEvents.Add(new EventInfo(delay, action, dur, is120));
+		/// <summary>
+		/// Processes all scheduled delay events
+		/// </summary>
+		internal static void ProcessDelayEvents()
+		{
+			ScheduleCleared = false;
+			//Process instant events
+			for (int i = DelayedInstantEvents.Count - 1; i >= 0; i--)
+			{
+				EventInfo info = DelayedInstantEvents[i];
+				if (info.TimeDelay <= 0) //Execute events
+				{
+					info.Action();
+					//Check if the action caused a scene transition that clears all events
+					if (!ScheduleCleared)
+						DelayedInstantEvents.RemoveAt(i); //If not then remove from list
+					else //If scene changed then all scheduled events are cleared
+						break;
+				}
+				else //Process events
+				{
+					info.TimeDelay -= 0.5f;
+					DelayedInstantEvents[i] = info;
+				}
+			}
+			//Process time ranged events
+			for (int i = DelayedTimeRangedEvents.Count - 1; i >= 0; i--)
+			{
+				EventInfo info = DelayedTimeRangedEvents[i];
+				if (info.TimeDelay <= 0) //Execute events
+				{
+					if (info.TimeDelay <= -info.Duration) //Remove event when reached end of life
+					{
+						DelayedTimeRangedEvents.RemoveAt(i);
+						continue; //Data removed, prevent execution
+					}
+					info.Action();
+					//Check if the action caused a scene transition that clears all events
+					if (ScheduleCleared)
+						break;
+				}
+				//Process events
+				info.TimeDelay -= info.UpdateIn120 ? 0.5f : 1;
+				DelayedTimeRangedEvents[i] = info;
+			}
+		}
+		/// <summary>
+		/// Clears all scheduled delay events
+		/// </summary>
+		internal static void ClearDelayEvents()
+		{
+			ClearInstantEvents();
+			ClearTimeRangedEvents();
+			ScheduleCleared = true;
+		}
+		/// <summary>
+		/// Clears all scheduled instant events
+		/// </summary>
+		public static void ClearInstantEvents() => DelayedInstantEvents.Clear();
+		/// <summary>
+		/// Clears all scheduled time ranged events
+		/// </summary>
+		public static void ClearTimeRangedEvents() => DelayedTimeRangedEvents.Clear();
 	}
 	/// <summary>
 	/// Background for legacy engine

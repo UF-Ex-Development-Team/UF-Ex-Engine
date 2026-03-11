@@ -57,7 +57,7 @@ public class NameShower : Entity
 	{
 		DisplayNameTime++;
 		Vector2 namePos = new(Centre.X, Centre.Y - FightFont.SFX.MeasureString("HP").Y / 2f + 4);
-		string showing = OverrideName == string.Empty ? (PlayerManager.CurrentUser is null ? "guest" : PlayerManager.currentPlayer) : OverrideName, displayName = string.Empty;
+		string showing = OverrideName.DefaultIfNullOrEmpty(PlayerManager.CurrentUser is null ? "guest" : PlayerManager.currentPlayer), displayName = string.Empty;
 		StringDotpadding(showing, ref displayName);
 		Vector2 lvPos = new(FightFont.SFX.MeasureString(displayName).X + 22 + Centre.X + (GameRule.nameColor == "Colorful" ? 20 : 0), Centre.Y - FightFont.SFX.MeasureString("HP").Y / 2f + 4);
 

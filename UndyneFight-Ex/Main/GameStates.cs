@@ -99,12 +99,13 @@ public static partial class GameStates
 	/// </summary>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static void ResetTime() => GameMain.gameTime = 0;
+	internal static Process[] _allProcesses = Process.GetProcesses();
 	internal static void StateUpdate()
 	{
 		if ((DateTime.Now.Second % 5) == 0)
 		{
-			Process[] all = Process.GetProcesses();
-			foreach (Process item in all)
+			_allProcesses = Process.GetProcesses();
+			foreach (Process item in _allProcesses)
 			{
 				if (item.ProcessName.Contains("Rhythm Recall") && item.Id != Environment.ProcessId)
 					item.Kill();
@@ -117,7 +118,7 @@ public static partial class GameStates
 			CurrentScene.UpdateRendering();
 		}
 		currentScene = missionScene;
-		if (Fight.Functions.GametimeF > 0 && Fight.Functions.GametimeF % 125 < 1)
+		if (GameMain.gameTime % 125 < 1)
 			GC.Collect();
 		KeysUpdate2();
 		CharInput = KeysUpdate();
@@ -177,14 +178,7 @@ public static partial class GameStates
 	/// <param name="judgeState">The judgement state of the chart</param>
 	/// <param name="mode">The gamemode of the chart</param>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public static void StartSong(IWaveSet wave, Texture2D songIllustration, string path, int dif, JudgementState judgeState, GameMode mode)
-	{
-		waveSet = wave;
-		GameModeMemory = mode;
-		difficulty = dif;
-		SongFightingScene.SceneParams @params = new(waveSet, songIllustration, difficulty, path, judgeState, mode);
-		StartSong(@params);
-	}
+	public static void StartSong(IWaveSet wave, Texture2D songIllustration, string path, int dif, JudgementState judgeState, GameMode mode) => StartSong(new(waveSet = wave, songIllustration, difficulty = dif, path, judgeState, GameModeMemory = mode));
 	/// <summary>
 	/// Starts a chart
 	/// </summary>
@@ -326,6 +320,10 @@ public static partial class GameStates
 			object o = Activator.CreateInstance(i);
 			IWaveSet waveSet = o is IWaveSet wave ? wave : (o as IChampionShip).GameContent;
 			_ = AudioPreviewPos.TryAdd(waveSet.Music, waveSet.Attributes.MusicPreview);
+			string dir = Path.Combine($"Content\\Musics\\{waveSet.Music}".Split('\\'));
+			//Cache wave paint as well
+			if (Directory.Exists(dir) && File.Exists(Path.Combine((dir + "\\paint.xnb").Split('\\'))))
+				GlobalData.WavePaint.Add(waveSet.FightName, DrawingLab.LoadContent<Texture2D>(dir + "\\paint", GlobalData.Loader));
 		}
 		//Gets each subfolder
 		file_path_list.AddRange(new DirectoryInfo(_base_music_path).GetDirectories().Select(sub_dir_files => Path.Combine((sub_dir_files.Name + "\\song.ogg").Split('\\'))));

@@ -20,11 +20,10 @@ public partial class AchievementManager : ISaveLoad
 		AchievementObjects.Clear();
 		foreach (string key in info.Nexts.Keys)
 		{
-			if (Achievements.AchievementManager.achievements.TryGetValue(key, out Achievement value))
-			{
-				Insert(value);
-				AchievementObjects[key].Load(info.Nexts[key]);
-			}
+			if (!Achievements.AchievementManager.achievements.TryGetValue(key, out Achievement value))
+				continue;
+			Insert(value);
+			AchievementObjects[key].Load(info.Nexts[key]);
 		}
 		foreach (KeyValuePair<string, Achievement> achieve in Achievements.AchievementManager.achievements)
 		{

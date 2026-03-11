@@ -38,8 +38,8 @@ public interface IShape
 	void Draw();
 }
 /// <summary>
- /// The data for drawing the shape
- /// </summary>
+/// The data for drawing the shape
+/// </summary>
 public struct DrawingData
 {
 	/// <summary>

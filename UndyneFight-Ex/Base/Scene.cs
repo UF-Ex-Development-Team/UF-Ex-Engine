@@ -141,6 +141,7 @@ public abstract class Scene : Entity
 		buffer.Clear();
 		_ = Objects.RemoveAll(s => s.Disposed);
 		EasingUtil.Processor.ProcessEase();
+		DelayEventProcessor.ProcessDelayEvents();
 		Objects.ForEach(s => s.TreeUpdate());
 		foreach (List<GameEventArgs> v in GameEvents.Values)
 			_ = v.RemoveAll(s => s.Disposed);
@@ -170,6 +171,7 @@ public abstract class Scene : Entity
 		Objects.Where(s => !s.CrossScene).ToList().ForEach(s => s.Dispose());
 		buffer.Clear();
 		EasingUtil.Processor.ClearEase();
+		DelayEventProcessor.ClearDelayEvents();
 		base.Dispose();
 	}
 	/// <summary>

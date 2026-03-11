@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework.Input;
+using System.Text;
 using UndyneFight_Ex.Entities;
 using UndyneFight_Ex.IO;
 using UndyneFight_Ex.UserService;
@@ -30,13 +31,28 @@ public static partial class GameStates
 			foreach (IdentityChecker item in _identityCheckers.Values)
 				item.Update(keyboardState);
 		}
+		/// <summary>
+		/// Check if the key is held
+		/// </summary>
+		/// <param name="identity">The input key to detect</param>
+		/// <returns>Whether the key is held</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal bool IsKeyDown(InputIdentity identity) => identity != InputIdentity.None && _identityCheckers[identity].IsKeyDown();
+		/// <summary>
+		/// Check if the key is pressed
+		/// </summary>
+		/// <param name="identity">The input key to detect</param>
+		/// <returns>Whether the key is pressed</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal bool IsKeyPressed(InputIdentity identity) => identity != InputIdentity.None && _identityCheckers[identity].IsKeyPressed();
 		private readonly Dictionary<InputIdentity, IdentityChecker> _identityCheckers = [];
+		/// <summary>
+		/// The list of default keys for each input identity
+		/// </summary>
 		public static readonly Dictionary<InputIdentity, List<Keys>> DefaultKeys = [];
-
+		/// <summary>
+		/// Initializes the default keys
+		/// </summary>
 		static KeyChecker()
 		{
 			InputKeys.Add(InputIdentity.Confirm, [Keys.Enter, Keys.Z]);
@@ -79,8 +95,15 @@ public static partial class GameStates
 			DefaultKeys = new(InputKeys);
 		}
 		private static readonly List<KeyChecker> allCheckers = [];
-
+		/// <summary>
+		/// The current key bindings for each input identity
+		/// </summary>
 		public static Dictionary<InputIdentity, List<Keys>> InputKeys { get; set; } = [];
+		/// <summary>
+		/// Sets the key bindings for an input identity
+		/// </summary>
+		/// <param name="identity">The input identity to set to</param>
+		/// <param name="mission">The keys assigned to the identity</param>
 		[MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
 		public static void SetIdentityKey(InputIdentity identity, List<Keys> mission)
 		{
@@ -104,39 +127,41 @@ public static partial class GameStates
 	/// 一个键盘操作录制器(播放)或者是一个键盘操作控制器(回放)
 	/// </summary>
 	private static Entity keyEventBuffer;
-
+	/// <summary>
+	/// Get the character the player is pressing
+	/// </summary>
+	/// <returns></returns>
 	internal static char KeysUpdate()
 	{
 		KeyboardState currentKeyState = Keyboard.GetState();
 		bool shift_pressed = currentKeyState.IsKeyDown(Keys.LeftShift) || currentKeyState.IsKeyDown(Keys.RightShift);
 		for (int i = 0; i < 256; i++)
 		{
-			if (IsKeyPressed120f((Keys)i))
+			if (!IsKeyPressed120f((Keys)i))
+				continue;
+			WordsChanged = true;
+			switch (i)
 			{
-				WordsChanged = true;
-				switch (i)
-				{
-					case > 47 and < 58:
-						return (char)i;
-					case > 64 and < 91: //Letters
-						return (char)(i + (shift_pressed ? 0 : 32));
-					case 188:
-						return shift_pressed ? '<' : ',';
-					case 189:
-						return shift_pressed ? '_' : '-';
-					case 190:
-						return shift_pressed ? '>' : '.';
-					case 187:
-						return shift_pressed ? '+' : '=';
-					case 191:
-						return shift_pressed ? '?' : '/';
-					case 186:
-						return shift_pressed ? ':' : ';';
-					case 0x20:
-						return (char)0x20;
-					case 13:
-						return (char)13;
-				}
+				case > 47 and < 58:
+					return (char)i;
+				case > 64 and < 91: //Letters
+					return (char)(i + (shift_pressed ? 0 : 32));
+				case 188:
+					return shift_pressed ? '<' : ',';
+				case 189:
+					return shift_pressed ? '_' : '-';
+				case 190:
+					return shift_pressed ? '>' : '.';
+				case 187:
+					return shift_pressed ? '+' : '=';
+				case 191:
+					return shift_pressed ? '?' : '/';
+				case 186:
+					return shift_pressed ? ':' : ';';
+				case 0x20:
+					return (char)0x20;
+				case 13:
+					return (char)13;
 			}
 		}
 		WordsChanged = false;
@@ -221,8 +246,14 @@ public static partial class GameStates
 	public static bool IsKeyDown(Keys key) => currentKeyState2.IsKeyDown(key);
 	#endregion
 }
+/// <summary>
+/// The save data of keybinds
+/// </summary>
 public class KeybindData : ISaveLoad
 {
+	/// <summary>
+	/// The key bindings the user is using
+	/// </summary>
 	public static Dictionary<InputIdentity, List<Keys>> UserKeys { get; set; } = new(DefaultKeys);
 	/// <inheritdoc/>
 	public List<ISaveLoad> Children => throw new NotImplementedException();
@@ -230,6 +261,7 @@ public class KeybindData : ISaveLoad
 	public void Load(SaveInfo info)
 	{
 		UserKeys.Clear();
+		List<string> addedStrings = [];
 		foreach (InputIdentity Identity in DefaultKeys.Keys)
 		{
 			List<Keys> finKey = [];
@@ -238,7 +270,12 @@ public class KeybindData : ISaveLoad
 			else
 			{
 				foreach (string keyString in value.fullValue.Split(','))
+				{
+					if (addedStrings.Contains(keyString))
+						continue;
 					finKey.Add(MiscUtil.StringToKey(keyString));
+					addedStrings.Add(keyString);
+				}
 			}
 			_ = UserKeys.TryAdd(Identity, finKey);
 		}
@@ -249,12 +286,19 @@ public class KeybindData : ISaveLoad
 	{
 		UserKeys ??= new(DefaultKeys);
 		SaveInfo info = new("Keybinds{");
+		StringBuilder sb = new();
+		List<string> addedStrings = [];
 		foreach (InputIdentity Identity in DefaultKeys.Keys)
 		{
-			string finText = string.Empty;
 			foreach (Keys finKey in UserKeys[Identity])
-				finText += MiscUtil.KeyToString(finKey) + ",";
-			info.PushNext(new SaveInfo($"{Identity}:{finText[..^1]}"));
+			{
+				string curStr = MiscUtil.KeyToString(finKey) + ",";
+				if (addedStrings.Contains(curStr))
+					continue;
+				_ = sb.Append(curStr);
+				addedStrings.Add(curStr);
+			}
+			info.PushNext(new SaveInfo($"{Identity}:{sb.ToString()[..^1]}"));
 		}
 		return info;
 	}
