@@ -296,10 +296,8 @@ public static partial class Functions
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static void SetPlayerMission(int val)
 	{
-		if (Player.hearts.Count <= val)
-			return;
-
-		Player.heartInstance = Player.hearts[val];
+		if (Player.hearts.Count > val)
+			Player.heartInstance = Player.hearts[val];
 	}
 	/// <summary>
 	/// Sets which player you are currently controlling
@@ -334,10 +332,8 @@ public static partial class Functions
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static void SetBoxMission(int val)
 	{
-		if (FightBox.boxes.Count <= val)
-			return;
-
-		FightBox.instance = FightBox.boxes[val];
+		if (FightBox.boxes.Count > val)
+			FightBox.instance = FightBox.boxes[val];
 	}
 	/// <summary>
 	/// Sets the box you are currently controlling
@@ -476,31 +472,21 @@ public static partial class Functions
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	private static void GiveAttribute(Arrow arr, ArrowAttribute attribute)
 	{
-		if ((attribute & ArrowAttribute.SpeedUp) == ArrowAttribute.SpeedUp)
-			arr.IsSpeedup = true;
-
-		if ((attribute & ArrowAttribute.RotateR) == ArrowAttribute.RotateR)
-			arr.IsRotate = true;
-
+		arr.IsSpeedup = (attribute & ArrowAttribute.SpeedUp) == ArrowAttribute.SpeedUp;
+		arr.IsRotate = (attribute & ArrowAttribute.RotateR) == ArrowAttribute.RotateR;
 		if ((attribute & ArrowAttribute.RotateL) == ArrowAttribute.RotateL)
 		{
 			arr.IsRotate = true;
 			arr.RotateScale = -1f;
 		}
-
 		if ((attribute & ArrowAttribute.Tap) == ArrowAttribute.Tap)
 			arr.JudgeType = Arrow.JudgementType.Tap;
 		if ((attribute & ArrowAttribute.Hold) == ArrowAttribute.Hold)
 			arr.JudgeType = Arrow.JudgementType.Hold;
-		if ((attribute & ArrowAttribute.Void) == ArrowAttribute.Void)
-			arr.VoidMode = true;
-
-		if ((attribute & ArrowAttribute.NoScore) == ArrowAttribute.NoScore)
-			arr.NoScore = true;
-		if ((attribute & ArrowAttribute.ForceGreen) == ArrowAttribute.ForceGreen)
-			arr.ForceGreenBack = true;
-		if ((attribute & ArrowAttribute.NoGoldTag) == ArrowAttribute.NoGoldTag)
-			arr.EnableGoldMark = false;
+		arr.VoidMode = (attribute & ArrowAttribute.Void) == ArrowAttribute.Void;
+		arr.NoScore = (attribute & ArrowAttribute.NoScore) == ArrowAttribute.NoScore;
+		arr.ForceGreenBack = (attribute & ArrowAttribute.ForceGreen) == ArrowAttribute.ForceGreen;
+		arr.EnableGoldMark = (attribute & ArrowAttribute.NoGoldTag) != ArrowAttribute.NoGoldTag;
 	}
 
 	/// <summary>
@@ -532,9 +518,7 @@ public static partial class Functions
 	public static Arrow MakeArrow(float shootShieldTime, int way, float speed, int color, int rotatingType, ArrowAttribute attribute = ArrowAttribute.None)
 	{
 		Arrow arr = new(Heart, shootShieldTime + GametimeF, Posmod(way, 4), speed, color, rotatingType);
-		if ((attribute & ArrowAttribute.SpeedUp) == ArrowAttribute.SpeedUp)
-			arr.IsSpeedup = true;
-
+		arr.IsSpeedup = (attribute & ArrowAttribute.SpeedUp) == ArrowAttribute.SpeedUp;
 		GiveAttribute(arr, attribute);
 		return arr;
 	}
@@ -544,11 +528,19 @@ public static partial class Functions
 	/// The allocated direction for arrows, use 'A' to access
 	/// </summary>
 	public static int[] DirectionAllocate { get; set; } = new int[10];
-
+	/// <summary>
+	/// Default arrow indicators with 1 char size
+	/// </summary>
 	public static HashSet<char> OneElementArrows { get; set; } = ['R', 'D', 'd'];
-
+	/// <summary>
+	/// A custom char to direction function, invoked by using 'C'
+	/// </summary>
 	public static Func<char, int> CustomAnalyzer { private get; set; } = null;
-
+	/// <summary>
+	/// Returns an arrow direction by the given tag
+	/// </summary>
+	/// <param name="wayTag">The string to parse</param>
+	/// <returns>The parsed direction</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static int GetWayFromTag(string wayTag)
 	{
@@ -559,9 +551,7 @@ public static partial class Functions
 			if (OneElementArrows.Contains(wayTag[0]))
 			{
 				if (wayTag.Length >= 2)
-				{
-					color = wayTag[1] == ' ' && wayTag.Length >= 3 ? int.Clamp(wayTag[2] - '0', 0, 9) : int.Clamp(wayTag[1] - '0', 0, 9);
-				}
+					color = int.Clamp(wayTag[wayTag[1] == ' ' && wayTag.Length >= 3 ? 2 : 1] - '0', 0, 9);
 			}
 			else if (wayTag.Length >= 3)
 				color = int.Clamp(wayTag[2] - '0', 0, 9);
@@ -620,7 +610,6 @@ public static partial class Functions
 	/// <param name="attribute">The arrow attribute of the arrow (Default none), use <see cref="ArrowAttribute"/>, to combine multiple, use 'attr1 | attr2'</param>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static void CreateArrow(float shootShieldTime, string wayTag, float speed, int color, int rotatingType, ArrowAttribute attribute = ArrowAttribute.None) => CreateArrow(shootShieldTime, GetWayFromTag(wayTag), speed, color, rotatingType, attribute);
-
 	/// <summary>
 	/// Create a spear
 	/// </summary>
@@ -645,7 +634,6 @@ public static partial class Functions
 	/// <param name="plt">The platform to create</param>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static void CreatePlatform(Platform plt) => InstanceCreate(plt);
-
 	/// <summary>
 	/// Create an <see cref="Entity"/>
 	/// </summary>
@@ -683,13 +671,13 @@ public static partial class Functions
 	public static void ArrowApply(string tag, Action<Arrow> action)
 	{
 		if (CurrentScene is SongFightingScene songFightScene)
-			AddInstance(new InstantEvent(1.2f, () =>
+			DelayEventProcessor.AddInstantEvent(1.2f, () =>
 			{
 				Dictionary<string, List<Arrow>> map = songFightScene.Accuracy.TaggedArrows;
 				if (!map.TryGetValue(tag, out List<Arrow> value))
 					return;
 				value.ForEach(s => action(s));
-			}));
+			});
 	}
 	[Obsolete("Use Arrow.UnitEasing or Arrow.ArrowEasing instead")]
 	public static class ArrowEase
@@ -840,7 +828,7 @@ public static partial class Functions
 	/// </summary>
 	/// <param name="times">Times to invoke the action with</param>
 	/// <param name="action">The <see cref="Action"/> to invoke</param>
-	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	[MethodImpl(MethodImplOptions.AggressiveInlining), Obsolete("It's a for loop, why would you use this")]
 	public static void Fortimes(int times, Action action)
 	{
 		for (int i = 1; i <= times; i++)
@@ -851,7 +839,7 @@ public static partial class Functions
 	/// </summary>
 	/// <param name="times">Times to invoke the action with</param>
 	/// <param name="action">The <see cref="Action"/> to invoke, with an integer parameter</param>
-	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	[MethodImpl(MethodImplOptions.AggressiveInlining), Obsolete("It's a for loop, why would you use this")]
 	public static void Fortimes(int times, Action<int> action)
 	{
 		for (int i = 0; i < times; i++)
@@ -885,7 +873,6 @@ public static partial class Functions
 	/// </summary>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static bool RandBool() => (LastRand = GetRandom(0, 1)) == 0;
-
 	/// <summary>
 	/// Returns the tangent of the specified angle in degrees
 	/// </summary>
@@ -907,7 +894,6 @@ public static partial class Functions
 	/// <returns>The sin value, range: [-1, 1] and <see cref="float.NaN"/></returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static float Sin(float rot) => MathF.Sin(GetRadian(rot));
-
 	/// <summary>
 	/// The last random integer generated
 	/// </summary>
@@ -916,7 +902,6 @@ public static partial class Functions
 	/// The last random float generated
 	/// </summary>
 	public static float LastRandFloat { get; set; }
-
 	/// <summary>
 	/// Play a sound effect, you should play multiple sounds for volume that is larger than 1
 	/// </summary>

@@ -29,11 +29,11 @@ public class Knife : Barrage
 
 		Line l = new((s) => Centre, (s) => Rotation);
 		CreateEntity(l);
-		AddInstance(new InstantEvent(delay, () =>
+		DelayEventProcessor.AddInstantEvent(delay, () =>
 		{
 			PlaySound(Sounds.largeKnife, 0.7f);
 			l.Dispose();
-		}));
+		});
 	}
 	/// <summary>
 	/// Creates a knife beam
@@ -50,7 +50,6 @@ public class Knife : Barrage
 	/// The color of the beam
 	/// </summary>
 	public Color DrawColor { get; set; } = Color.Purple;
-
 	/// <inheritdoc/>
 	public override void Draw()
 	{
@@ -69,14 +68,14 @@ public class Knife : Barrage
 		float A, B, C, dist;
 		bool needAP = ((CurrentScene as FightScene).Mode & GameMode.PerfectOnly) != 0;
 		if (Rotation % 90 is < 0.1f or > 89.9f)
-			dist = Centre.X - Heart.Centre.X;
+			dist = Centre.X - player.Centre.X;
 		else
 		{
 			float k = float.Tan(MathUtil.GetRadian(Rotation));
 			A = k;
 			B = -1;
 			C = -A * Centre.X - B * Centre.Y;
-			dist = (A * Heart.Centre.X + B * Heart.Centre.Y + C) / float.Sqrt(A * A + B * B);
+			dist = (A * player.Centre.X + B * player.Centre.Y + C) / float.Sqrt(A * A + B * B);
 		}
 
 		float res = Math.Abs(dist) - 2 - 8.5f * scale;
@@ -96,10 +95,9 @@ public class Knife : Barrage
 	TakeDamage:
 		if (!hasHit)
 			PushScore(0);
-		LoseHP(Heart);
+		LoseHP(player);
 		hasHit = true;
 	}
-
 	private float scale = 0;
 	private float rayAlpha = 1;
 	/// <inheritdoc/>

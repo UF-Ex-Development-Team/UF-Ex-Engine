@@ -41,7 +41,6 @@ public class ParasolMett : BulletShootable
 		images = Sprites.ParasolMett;
 		Image = images[0];
 		shootQueue = new();
-		Alpha = 1.0f;
 	}
 	/// <summary>
 	/// Creates a mettaton with parasol

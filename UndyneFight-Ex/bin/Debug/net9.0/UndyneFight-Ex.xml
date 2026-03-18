@@ -204,18 +204,18 @@
         </member>
         <member name="M:UndyneFight_Ex.Entities.TimeRangedEvent.#ctor(System.Single,System.Single,System.Action)">
             <summary>
-            Invoke an action that lasts for the given duration after the given delay
+            能够持续执行一段时间的事件
             </summary>
-            <param name="timeDelay">The delay to invoke the action</param>
-            <param name="duration">The duration of the action to invoke</param>
-            <param name="action">The action to invoke</param>
+            <param name="timeDelay">事件发生距离当时的帧数</param>
+            <param name="duration">事件会执行几次。填写 0 不会执行！</param>
+            <param name="action">给的事件</param>
         </member>
         <member name="M:UndyneFight_Ex.Entities.TimeRangedEvent.#ctor(System.Single,System.Action)">
             <summary>
-            Invoke an action that lasts for the given duration
-            </summary>
-            <param name="duration">The duration of the action to invoke</param>
-            <param name="action">The action to invoke</param>
+            能够持续执行一段时间的事件
+            </summary> 
+            <param name="duration">事件会执行几次。填写 0 不会执行！</param>
+            <param name="action">给的事件</param>
         </member>
         <member name="M:UndyneFight_Ex.Entities.TimeRangedEvent.Update">
             <inheritdoc/>
@@ -278,14 +278,14 @@
             Whether the delay event schedule has been cleared from either a natural or action invoked scene transition
             </summary>
         </member>
-        <member name="M:UndyneFight_Ex.Entities.DelayEventProcessor.AddInstantEvent(System.Int32,System.Action)">
+        <member name="M:UndyneFight_Ex.Entities.DelayEventProcessor.AddInstantEvent(System.Single,System.Action)">
             <summary>
             Schedules a delayed instant event
             </summary>
             <param name="delay">The amount of time to delay</param>
             <param name="action">The action to invoke</param>
         </member>
-        <member name="M:UndyneFight_Ex.Entities.DelayEventProcessor.AddTimeRangedEvent(System.Int32,System.Action,System.Int32,System.Boolean)">
+        <member name="M:UndyneFight_Ex.Entities.DelayEventProcessor.AddTimeRangedEvent(System.Single,System.Action,System.Single,System.Boolean)">
             <summary>
             Schedules a delayed time ranged event
             </summary>
@@ -1314,7 +1314,7 @@
             <param name="color">The color of the arrow, 0-> Blue, 1-> Red, 2-> Green, 3-> Purple</param>
             <param name="rotatingType">Rotation mode, 0-> None, 1-> Reverse, 2-> Diagonal</param>
         </member>
-        <member name="P:UndyneFight_Ex.Entities.Arrow.Mission">
+        <member name="F:UndyneFight_Ex.Entities.Arrow.Mission">
             <summary>
             The target heart of the arrow
             </summary>
@@ -5612,7 +5612,7 @@
             Actually going to pull this next version
             </summary>
         </member>
-        <member name="P:UndyneFight_Ex.GameStates.GameRule.nameColor">
+        <member name="P:UndyneFight_Ex.GameStates.GameRule.NameColor">
             <summary>
             The color of the player name, VIP can have blue/orange/colorful instead of only white
             </summary>
@@ -5752,21 +5752,6 @@
             </summary>
             <param name="ActionName">The name of the event to detect</param>
             <returns></returns>
-        </member>
-        <member name="F:UndyneFight_Ex.GameStates.AudioCache">
-            <summary>
-            The audio caches for song previews
-            </summary>
-        </member>
-        <member name="F:UndyneFight_Ex.GameStates.file_path_list">
-            <summary>
-            The directory of the file path
-            </summary>
-        </member>
-        <member name="M:UndyneFight_Ex.GameStates.LoadSongPreviews">
-            <summary>
-            Loads the song previews of the charts
-            </summary>
         </member>
         <member name="P:UndyneFight_Ex.GameStates.Aspect">
             <summary>
@@ -10919,6 +10904,23 @@
             The allocated direction for arrows, use 'A' to access
             </summary>
         </member>
+        <member name="P:UndyneFight_Ex.Fight.Functions.OneElementArrows">
+            <summary>
+            Default arrow indicators with 1 char size
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.Fight.Functions.CustomAnalyzer">
+            <summary>
+            A custom char to direction function, invoked by using 'C'
+            </summary>
+        </member>
+        <member name="M:UndyneFight_Ex.Fight.Functions.GetWayFromTag(System.String)">
+            <summary>
+            Returns an arrow direction by the given tag
+            </summary>
+            <param name="wayTag">The string to parse</param>
+            <returns>The parsed direction</returns>
+        </member>
         <member name="M:UndyneFight_Ex.Fight.Functions.MakeArrow(System.Single,System.String,System.Single,System.Int32,System.Int32,UndyneFight_Ex.Fight.Functions.ArrowAttribute)">
             <summary>
             Creates an arrow with a string as it's tag
@@ -12222,7 +12224,7 @@
             <param name="durationBeat">The duration of the action</param>
             <param name="action">The action to invoke</param>
         </member>
-        <member name="P:UndyneFight_Ex.SongSystem.WaveConstructor.ArrowProcesser">
+        <member name="P:UndyneFight_Ex.SongSystem.WaveConstructor.ArrowProcessor">
             <summary>
             The process for all arrows that will be executed in <see cref="M:UndyneFight_Ex.SongSystem.WaveConstructor.CreateChart(System.Single,System.Single,System.Single,System.String[])"/>
             </summary>
@@ -12373,6 +12375,13 @@
         <member name="M:UndyneFight_Ex.SongSystem.WaveConstructor.LoadImage(System.String)">
             <summary>
             Loads an image (.bmp /.gif /.jpg /.png, will auto dispose)
+            </summary>
+            <param name="path">Path of the image</param>
+            <returns>The loaded texture</returns>
+        </member>
+        <member name="M:UndyneFight_Ex.SongSystem.WaveConstructor.LoadImageAsync(System.String)">
+            <summary>
+            Loads an image asynchronously (.bmp /.gif /.jpg /.png, will auto dispose)
             </summary>
             <param name="path">Path of the image</param>
             <returns>The loaded texture</returns>
@@ -14351,6 +14360,71 @@
             </summary>
             <param name="set">The waveset to get</param>
             <returns>The paint if any, null if not</returns>
+        </member>
+        <member name="T:GlobalData.AudioPreviewData">
+            <summary>
+            The data for audio previews
+            </summary>
+        </member>
+        <member name="M:GlobalData.AudioPreviewData.#ctor(System.String,System.Single,System.Single,UndyneFight_Ex.Audio)">
+            <summary>
+            The data for audio previews
+            </summary>
+        </member>
+        <member name="F:GlobalData.AudioPreviewData.Path">
+            <summary>
+            The path to the audio preview
+            </summary>
+        </member>
+        <member name="F:GlobalData.AudioPreviewData.BeginSecond">
+            <summary>
+            The second the preview begins
+            </summary>
+        </member>
+        <member name="F:GlobalData.AudioPreviewData.EndSecond">
+            <summary>
+            The second the preview ends
+            </summary>
+        </member>
+        <member name="F:GlobalData.AudioPreviewData.PreviewAudio">
+            <summary>
+            The preview audio stored
+            </summary>
+        </member>
+        <member name="P:GlobalData.AudioPreviewData.IsLoaded">
+            <summary>
+            Whether the audio is loaded
+            </summary>
+        </member>
+        <member name="M:GlobalData.AudioPreviewData.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="F:GlobalData.AudioPreviewDatas">
+            <summary>
+            The list of audio preview datas
+            </summary>
+        </member>
+        <member name="P:GlobalData.LoadedPreviewAudioCount">
+            <summary>
+            The amount of loaded audio previews
+            </summary>
+        </member>
+        <member name="M:GlobalData.GetPreviewDataFromPath(System.String)">
+            <summary>
+            Gets the audio preview data from the path
+            </summary>
+            <param name="path">The name of the music</param>
+            <returns>The audio preview data of the music</returns>
+        </member>
+        <member name="F:GlobalData.QueueLoadFilePathList">
+            <summary>
+            The directory of the file path
+            </summary>
+        </member>
+        <member name="M:GlobalData.LoadSongPreviews">
+            <summary>
+            Loads the song previews of the charts
+            </summary>
         </member>
     </members>
 </doc>

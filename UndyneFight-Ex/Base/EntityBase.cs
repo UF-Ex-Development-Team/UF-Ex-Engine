@@ -1,7 +1,5 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
-using System;
 using System.Diagnostics;
-using System.Reflection.Metadata.Ecma335;
 using UndyneFight_Ex.Entities;
 
 namespace UndyneFight_Ex.Entities
@@ -183,12 +181,11 @@ namespace UndyneFight_Ex.Entities
 		/// <param name="action">The action to invoke</param>
 		public InstantEvent(float timeDelay, Action action)
 		{
-			//Move to global processor
-			DelayEventProcessor.AddInstantEvent((int)timeDelay, action);
+			DelayEventProcessor.AddInstantEvent(timeDelay, action);
 			Dispose();
 		}
 		/// <inheritdoc/>
-		public override void Update() => throw new NotImplementedException();
+		public override void Update() => Dispose();
 	}
 	/// <summary>
 	/// Invoke an action that lasts for a duration after a delay
@@ -197,14 +194,14 @@ namespace UndyneFight_Ex.Entities
 	public class TimeRangedEvent : GameObject
 	{
 		private readonly Action _action;
-		private readonly float _timeDelay;
+		private float _timeDelay;
 		private readonly float _duration;
 		/// <summary>
-		/// Invoke an action that lasts for the given duration after the given delay
+		/// 能够持续执行一段时间的事件
 		/// </summary>
-		/// <param name="timeDelay">The delay to invoke the action</param>
-		/// <param name="duration">The duration of the action to invoke</param>
-		/// <param name="action">The action to invoke</param>
+		/// <param name="timeDelay">事件发生距离当时的帧数</param>
+		/// <param name="duration">事件会执行几次。填写 0 不会执行！</param>
+		/// <param name="action">给的事件</param>
 		public TimeRangedEvent(float timeDelay, float duration, Action action)
 		{
 			_duration = (int)duration;
@@ -212,10 +209,10 @@ namespace UndyneFight_Ex.Entities
 			_action = action;
 		}
 		/// <summary>
-		/// Invoke an action that lasts for the given duration
-		/// </summary>
-		/// <param name="duration">The duration of the action to invoke</param>
-		/// <param name="action">The action to invoke</param>
+		/// 能够持续执行一段时间的事件
+		/// </summary> 
+		/// <param name="duration">事件会执行几次。填写 0 不会执行！</param>
+		/// <param name="action">给的事件</param>
 		public TimeRangedEvent(float duration, Action action)
 		{
 			_duration = (int)duration;
@@ -225,8 +222,7 @@ namespace UndyneFight_Ex.Entities
 		/// <inheritdoc/>
 		public override void Update()
 		{
-			//Move to global processor
-			DelayEventProcessor.AddTimeRangedEvent((int)_timeDelay, _action, (int)_duration, UpdateIn120);
+			DelayEventProcessor.AddTimeRangedEvent(_timeDelay, _action, _duration, UpdateIn120);
 			Dispose();
 		}
 	}
@@ -259,7 +255,7 @@ namespace UndyneFight_Ex.Entities
 			/// <summary>
 			/// Whether the updating occurs every other frame
 			/// </summary>
-			internal readonly bool UpdateIn120 { get; init; } = dur == 0 || is120;
+			internal readonly bool UpdateIn120 { get; init; } = is120;
 		}
 		/// <summary>
 		/// The list of delayed instant events
@@ -278,7 +274,7 @@ namespace UndyneFight_Ex.Entities
 		/// </summary>
 		/// <param name="delay">The amount of time to delay</param>
 		/// <param name="action">The action to invoke</param>
-		public static void AddInstantEvent(int delay, Action action) => DelayedInstantEvents.Add(new EventInfo(delay, action, 0));
+		public static void AddInstantEvent(float delay, Action action) => DelayedInstantEvents.Add(new EventInfo((int)delay, action, 0));
 		/// <summary>
 		/// Schedules a delayed time ranged event
 		/// </summary>
@@ -286,7 +282,7 @@ namespace UndyneFight_Ex.Entities
 		/// <param name="action">The action to invoke</param>
 		/// <param name="dur">The duration of the event</param>
 		/// <param name="is120">Whether to update every other frame</param>
-		public static void AddTimeRangedEvent(int delay, Action action, int dur, bool is120) => DelayedTimeRangedEvents.Add(new EventInfo(delay, action, dur, is120));
+		public static void AddTimeRangedEvent(float delay, Action action, float dur, bool is120) => DelayedTimeRangedEvents.Add(new EventInfo((int)delay, action, (int)dur, is120));
 		/// <summary>
 		/// Processes all scheduled delay events
 		/// </summary>
@@ -323,13 +319,14 @@ namespace UndyneFight_Ex.Entities
 						DelayedTimeRangedEvents.RemoveAt(i);
 						continue; //Data removed, prevent execution
 					}
-					info.Action();
+					if (info.UpdateIn120 || info.TimeDelay == (int)info.TimeDelay)
+						info.Action();
 					//Check if the action caused a scene transition that clears all events
 					if (ScheduleCleared)
 						break;
 				}
 				//Process events
-				info.TimeDelay -= info.UpdateIn120 ? 0.5f : 1;
+				info.TimeDelay -= 0.5f;
 				DelayedTimeRangedEvents[i] = info;
 			}
 		}

@@ -77,7 +77,7 @@ internal partial class GameMain : Game
 	}
 	protected override void OnExiting(object sender, ExitingEventArgs args)
 	{
-		GameStates.cancelTokenSource.Cancel();
+		GlobalData.cancelTokenSource.Cancel();
 		base.OnExiting(sender, args);
 	}
 

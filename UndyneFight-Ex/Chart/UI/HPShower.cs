@@ -89,7 +89,7 @@ internal class HPShower : Entity
 					hptext = "0" + hptext;
 				hpString = hptext + " / 20.00";
 			}
-			if (Heart.Shields?.Circle.Consumption > 1)
+			if (Heart?.Shields?.Circle.Consumption > 1)
 			{
 				hpString += $"/ {MathUtil.FloatToString(Heart.Shields.Circle.Consumption * 8 - 8, 2)}";
 			}

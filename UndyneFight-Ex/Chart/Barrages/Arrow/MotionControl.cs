@@ -40,8 +40,8 @@ public partial class Arrow : ICustomMotion
 				Color color = RandBool() ? Color.Red : Color.Orange;
 				GameStates.InstanceCreate(new Particle(color, speed, 20 + Rand(0, 12), Centre, FightResources.Sprites.fireParticle));
 			}
-			if (!mission.FixArrow)
-				Rotation += mission.Rotation;
+			if (!Mission.FixArrow)
+				Rotation += Mission.Rotation;
 			if (distance < 0)
 			{
 				if (LateWaitingScale <= 0.4f)
@@ -105,12 +105,12 @@ public partial class Arrow : ICustomMotion
 			_anchorOnHeart = false;
 			_missionCentre = value;
 		}
-		get => _anchorOnHeart ? mission.Centre : _missionCentre;
+		get => _anchorOnHeart ? Mission.Centre : _missionCentre;
 	}
 	private Vector2 _missionCentre;
 	private bool _anchorOnHeart = true;
 	/// <inheritdoc/>
-	public Vector2 CentrePosition => Centre - mission.Centre;
+	public Vector2 CentrePosition => Centre - Mission.Centre;
 	/// <summary>
 	/// The speed scale of the arrow when it goes near the soul (Default 0.5f)
 	/// </summary>

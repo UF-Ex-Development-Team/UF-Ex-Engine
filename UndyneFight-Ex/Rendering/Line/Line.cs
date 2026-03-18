@@ -243,9 +243,9 @@ public partial class Line : Entity
 	public void AlphaDecrease(float time, float? val = null, bool? willDispose = true)
 	{
 		float total = val ??= Alpha, once = total / time;
-		InstanceCreate(new TimeRangedEvent(time, () => Alpha -= once));
+		DelayEventProcessor.AddTimeRangedEvent(0, () => Alpha -= once, time, false);
 		if (val == Alpha && (willDispose ?? true))
-			InstanceCreate(new InstantEvent(time, Dispose));
+			DelayEventProcessor.AddInstantEvent(time, Dispose);
 	}
 	/// <summary>
 	/// Fades out the line by the given amount for the given duration after the given delay
@@ -254,11 +254,11 @@ public partial class Line : Entity
 	/// <param name="time">The time taken for the line to fade</param>
 	/// <param name="val">The amount to fade out (Default entirely)</param>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public void DelayAlphaDecrease(float delay, float time, float? val = null) => InstanceCreate(new InstantEvent(delay, () =>
+	public void DelayAlphaDecrease(float delay, float time, float? val = null) => DelayEventProcessor.AddInstantEvent(delay, () =>
 		{
 			float total = val ?? Alpha, once = total / time;
-			InstanceCreate(new TimeRangedEvent(time + 5, () => Alpha -= once));
-		}));
+			DelayEventProcessor.AddTimeRangedEvent(0, () => Alpha -= once, time + 5, false);
+		});
 	/// <summary>
 	/// Fades in the line by the given duration by the given value
 	/// </summary>
@@ -268,7 +268,7 @@ public partial class Line : Entity
 	public void AlphaIncrease(float time, float val = 1)
 	{
 		float total = val, once = total / time;
-		InstanceCreate(new TimeRangedEvent(time, () => Alpha += once));
+		DelayEventProcessor.AddTimeRangedEvent(0, () => Alpha += once, time, false);
 	}
 	/// <summary>
 	/// Fades in the line by the given amount for the given duration after the given delay
@@ -277,11 +277,11 @@ public partial class Line : Entity
 	/// <param name="time">The time taken for the line to fade</param>
 	/// <param name="val">The amount to fade in (Default 1)</param>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public void DelayAlphaIncrease(float delay, float time, float val = 1) => InstanceCreate(new InstantEvent(delay, () =>
+	public void DelayAlphaIncrease(float delay, float time, float val = 1) => DelayEventProcessor.AddInstantEvent(delay, () =>
 		{
 			float total = val, once = total / time;
-			InstanceCreate(new TimeRangedEvent(time, () => Alpha += once));
-		}));
+			DelayEventProcessor.AddTimeRangedEvent(0, () => Alpha += once, time, false);
+		});
 	/// <summary>
 	/// Decreases the alpha (time / 4) of the line and then increases it (time * 3 / 4)
 	/// </summary>
@@ -291,9 +291,9 @@ public partial class Line : Entity
 	public void AlphaDecreaseAndIncrease(float time, float val = 1)
 	{
 		float total = val, once = total / time;
-		InstanceCreate(new TimeRangedEvent(time / 4, () => Alpha -= once * 4));
-		InstanceCreate(new TimeRangedEvent(time / 4, time / 4 * 3, () => Alpha += once * 4 / 3));
-		InstanceCreate(new InstantEvent(time, () => { if (Alpha <= once) Dispose(); }));
+		DelayEventProcessor.AddTimeRangedEvent(0, () => Alpha -= once * 4, time / 4, false);
+		DelayEventProcessor.AddTimeRangedEvent(time / 4, () => Alpha += once * 4 / 3, time / 4 * 3, false);
+		DelayEventProcessor.AddInstantEvent(time, () => { if (Alpha <= once) Dispose(); });
 	}
 	/// <summary>
 	/// Increases the alpha (time / 4) of the line and then decreases it (time * 3 / 4)
@@ -304,9 +304,9 @@ public partial class Line : Entity
 	public void AlphaIncreaseAndDecrease(float time, float val = 1)
 	{
 		float total = val, once = total / time;
-		InstanceCreate(new TimeRangedEvent(time / 4, () => Alpha += once * 4));
-		InstanceCreate(new TimeRangedEvent(time / 4, time / 4 * 3, () => Alpha -= once * 4 / 3));
-		InstanceCreate(new InstantEvent(time, () => { if (Alpha <= once) Dispose(); }));
+		DelayEventProcessor.AddTimeRangedEvent(0, () => Alpha += once * 4, time / 4, false);
+		DelayEventProcessor.AddTimeRangedEvent(time / 4, () => Alpha -= once * 4 / 3, time / 4 * 3, false);
+		DelayEventProcessor.AddInstantEvent(time, () => { if (Alpha <= once) Dispose(); });
 	}
 	/// <summary>
 	/// Creates a clone of the line

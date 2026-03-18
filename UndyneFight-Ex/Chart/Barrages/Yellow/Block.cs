@@ -16,7 +16,6 @@ public class ShootableBlock : BulletShootable
 	{
 		AngleMode = true;
 		Image = Sprites.MettBlockA;
-		Alpha = 1.0f;
 		Depth = 0.45f;
 		PositionRoute = centreEasing.Easing;
 	}
@@ -42,7 +41,6 @@ public class ToughBlock : BulletShootable
 	{
 		AngleMode = true;
 		Image = Sprites.MettBlockB;
-		Alpha = 1.0f;
 		Depth = 0.45f;
 		PositionRoute = centreEasing.Easing;
 	}

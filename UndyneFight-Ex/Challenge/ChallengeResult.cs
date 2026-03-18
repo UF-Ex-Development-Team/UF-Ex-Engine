@@ -116,7 +116,7 @@ internal class ChallengeResult(Challenge challenge) : Entity
 				_ => "Extreme Plus"
 			};
 			DrawOutlinedText(diffStr, CollidingBox.TopRight - new Vector2(15 + NormalFont.SFX.MeasureString(difficulty.ToString()).X, -12.5f), 2, Color.Black, difColor);
-			DrawOutlinedText(MathUtil.FloatToString(float.Clamp(result.Accuracy * 100f, 0, 105), 2) + "%", CollidingBox.TopLeft + new Vector2(18, 58), 2, Color.Black, Color.Wheat);
+			DrawOutlinedText(MathUtil.FloatToString(float.Clamp(result.Accuracy * 100f, 0, 105), 2) + "%", CollidingBox.TopLeft + new Vector2(18, 58), 2, Color.Black, result.Accuracy >= 1 ? Color.Gold : Color.Wheat);
 			if (ChartSpecial == 1)
 				DrawOutlinedText("No Hit", CollidingBox.TopLeft + new Vector2(430, 37.5f), 2, Color.Black, Color.Orange, 0.8f);
 			else if (ChartSpecial == 2)

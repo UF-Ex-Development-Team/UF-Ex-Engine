@@ -57,10 +57,8 @@ public partial class Line
 		public override void Start()
 		{
 			follow = FatherObject as Line;
-
 			//process timeLag to a number which can be divided by 0.5f
 			timeLag = MathF.Round(timeLag * 2) / 2f;
-
 			base.Start();
 		}
 		/// <summary>

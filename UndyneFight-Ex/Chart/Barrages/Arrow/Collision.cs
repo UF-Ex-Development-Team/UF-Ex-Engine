@@ -93,22 +93,20 @@ public partial class Arrow
 		}
 	}
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	private void SmartSound()
+	private void SmartSound() => PlayHitSound(JudgeType switch
 	{
-		if (JudgeType == JudgementType.Default)
-			PlayHitSound(1f);
-		else if (JudgeType == JudgementType.Hold)
-			PlayHitSound(0.5f);
-		else if (JudgeType == JudgementType.Tap)
-			PlayHitSound(2);
-	}
+		JudgementType.Default => 1,
+		JudgementType.Hold => 0.5f,
+		JudgementType.Tap => 2,
+		_ => 0
+	});
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	private void CheckCollide()
 	{
-		if (!mission.Shields.Exist(ArrowColor))
+		if (!Mission.Shields.Exist(ArrowColor))
 			return;
-		int curShieldWay = mission.Shields.DirectionOf(ArrowColor);
-		bool attachedGB = mission.Shields.AttachedGB(ArrowColor);
+		int curShieldWay = Mission.Shields.DirectionOf(ArrowColor);
+		bool attachedGB = Mission.Shields.AttachedGB(ArrowColor);
 
 		if (TimeDelta < settingDelay + 0.25f && settingDelay > 1.5f && !isSoundPlayed)
 			SmartSound();
@@ -132,18 +130,18 @@ public partial class Arrow
 		}
 
 		float trueTime = rotatingType != 2
-			? mission.Shields.GetCollideChecker(ArrowColor).TimeOf(Way)
-			: mission.Shields.GetCollideChecker(ArrowColor).TimeOf(Way);
-		bool sameDir = mission.Shields.InSameDir(ArrowColor, way);
+			? Mission.Shields.GetCollideChecker(ArrowColor).TimeOf(Way)
+			: Mission.Shields.GetCollideChecker(ArrowColor).TimeOf(Way);
+		bool sameDir = Mission.Shields.InSameDir(ArrowColor, way);
 		if (JudgeType == JudgementType.Tap)
 		{
 			sameDir = false;
-			trueTime = mission.Shields.GetCollideChecker(ArrowColor).TapTimeOf(Way);
+			trueTime = Mission.Shields.GetCollideChecker(ArrowColor).TapTimeOf(Way);
 		}
 		else if (JudgeType == JudgementType.Hold)
 		{
 			sameDir = true;
-			trueTime = mission.Shields.GetCollideChecker(ArrowColor).HoldTimeOf(Way);
+			trueTime = Mission.Shields.GetCollideChecker(ArrowColor).HoldTimeOf(Way);
 		}
 		if (auto)
 			trueTime = 0;
@@ -214,7 +212,6 @@ public partial class Arrow
 				trueTime = TimeDelta;
 
 			float time = trueTime;
-			//if (lastClickTime > 6f && TimeDelta > -1.25f) goto A;
 			if (sameDir)
 				time = 0;
 			score = GetScore(time);
@@ -245,13 +242,13 @@ public partial class Arrow
 			HitScore(0, -100);
 			if (((CurrentScene as FightScene).Mode & GameMode.NoGreenSoul) == 0)
 			{
-				LoseHP(mission);
+				LoseHP(Mission);
 				GiveKR(1.2f);
 			}
 			else
 				playerHurt.CreateInstance().Play();
 			if (currentScene is SongFightingScene songFightScene)
-				songFightScene.Accuracy.PushDelta(0, 0, ArrowColor, way, mission.Shields);
+				songFightScene.Accuracy.PushDelta(0, 0, ArrowColor, way, Mission.Shields);
 			return;
 		}
 	}
@@ -271,12 +268,12 @@ public partial class Arrow
 		if (!NoScore)
 			Fight.AdvanceFunctions.PushScore(score);
 
-		mission.Shields.GetCollideChecker(ArrowColor).ArrowBlock(Way);
+		Mission.Shields.GetCollideChecker(ArrowColor).ArrowBlock(Way);
 		bool sameDir = false;
 		if (GameStates.CurrentScene is SongFightingScene songFightScene)
 		{
 			if (JudgeType != JudgementType.Tap)
-				sameDir = mission.Shields.InSameDir(ArrowColor, way);
+				sameDir = Mission.Shields.InSameDir(ArrowColor, way);
 
 			if (!sameDir)
 				songFightScene.PlayerInstance.GameAnalyzer.PushData(new Player.ArrowData(time, score, GametimeF));
@@ -290,7 +287,7 @@ public partial class Arrow
 			if (sameDir && !hasGreenFlag)
 				time = 0;
 
-			songFightScene.Accuracy.PushDelta(time, score, ArrowColor, way, mission.Shields);
+			songFightScene.Accuracy.PushDelta(time, score, ArrowColor, way, Mission.Shields);
 
 			bool precise = preciseWarning;
 			bool generateTip = precise ? (score != 3) : (score <= 2);
@@ -331,27 +328,28 @@ public partial class Arrow
 		if (score < 3 && score != 0 && ((CurrentScene as FightScene).Mode & GameMode.PerfectOnly) != 0)
 		{
 			Fight.AdvanceFunctions.PushScore(0);
-			LoseHP(mission);
+			LoseHP(Mission);
 		}
 		if (!sameDir || GoldenMarkIntensity >= 1 || JudgeState == JudgementState.Lenient)
-			mission.Shields.ValidRotated();
+			Mission.Shields.ValidRotated();
 		if (hasGreenFlag)
-			mission.Shields.ValidRotated();
+			Mission.Shields.ValidRotated();
 		if (score == 3)
-			mission.Shields.Consume(0.25f);
+			Mission.Shields.Consume(0.25f);
 	}
 
 	/// <inheritdoc/>
 	public override void Dispose()
 	{
-		InstanceCreate(new BreakArrow(Speed, Rotation + additiveRotation + mission.Shields.GetShield(ArrowColor).deltaRotation * 6, ArrowColor, rotatingType, Centre, Scale * DrawingScale));
+		InstanceCreate(new BreakArrow(Speed, Rotation + additiveRotation + Mission.Shields.GetShield(ArrowColor).deltaRotation * 6, ArrowColor, rotatingType, Centre, Scale * DrawingScale));
 		_ = AllArrows?.Remove(this);
 
 		base.Dispose();
 
-		if (HasTag())
-			foreach (string str in Tags)
-				if (AllTaggedArrows.TryGetValue(str, out List<Arrow> value))
-					_ = value.Remove(this);
+		if (!HasTag())
+			return;
+		foreach (string str in Tags)
+			if (AllTaggedArrows.TryGetValue(str, out List<Arrow> value))
+				_ = value.Remove(this);
 	}
 }

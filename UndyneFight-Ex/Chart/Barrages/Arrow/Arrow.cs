@@ -59,27 +59,23 @@ public partial class Arrow : Entity, IComparable<Arrow>
 		backColor = rotatingType;
 		hasGreenFlag = rotatingType == 2;
 		missionRotation = this.way * 90f;
-		this.mission = mission;
+		Mission = mission;
 	}
-	private Player.Heart mission;
 	/// <summary>
 	/// The target heart of the arrow
 	/// </summary>
-	public Player.Heart Mission
-	{
-		get => mission;
-		set => mission = value;
-	}
+	public Player.Heart Mission;
 	/// <inheritdoc/>
 	public override void Start()
 	{
 		base.Start();
-		if (HasTag())
-			foreach (string str in Tags)
-			{
-				if (!AllTaggedArrows.TryAdd(str, [this]))
-					AllTaggedArrows[str].Add(this);
-			}
+		if (!HasTag())
+			return;
+		foreach (string str in Tags)
+		{
+			if (!AllTaggedArrows.TryAdd(str, [this]))
+				AllTaggedArrows[str].Add(this);
+		}
 	}
 
 	/// <summary>

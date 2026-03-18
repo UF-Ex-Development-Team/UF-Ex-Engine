@@ -27,11 +27,11 @@ public partial class Arrow : Entity
 		public void TagApply(string tagName)
 		{
 			if (CurrentScene is SongFightingScene)
-				AddInstance(new InstantEvent(1.2f, () =>
+				DelayEventProcessor.AddInstantEvent(1, () =>
 				{
 					if (CurrentFightingScene.Accuracy.TaggedArrows.TryGetValue(tagName, out List<Arrow> value))
 						arrows.AddRange(value);
-				}));
+				});
 		}
 		/// <summary>
 		/// Applies the easing for the arrows

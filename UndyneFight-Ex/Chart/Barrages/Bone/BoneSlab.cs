@@ -21,7 +21,7 @@ public class Boneslab : Barrage, ICustomLength
 	private float currentHeight, missionHeight;
 	private readonly int appearDelay, totalTime;
 	private readonly float trueRotation;
-	private Color drawingColor;
+	private Color drawingColor = GameMain.CurrentDrawingSettings.themeColor;
 	/// <summary>
 	/// The <see cref="Action"/> to execute when the boneslab is created (When the warning ends)
 	/// </summary>
@@ -61,7 +61,7 @@ public class Boneslab : Barrage, ICustomLength
 	/// <inheritdoc/>
 	public new float AppearTime => appearTime - appearDelay;
 
-	private FightBox controllingBox;
+	private FightBox controllingBox = FightBox.instance;
 	/// <summary>
 	/// The box assigned to the boneslab
 	/// </summary>
@@ -81,8 +81,6 @@ public class Boneslab : Barrage, ICustomLength
 	/// <param name="lengthRouteParam">The parameters of the route</param>
 	public Boneslab(float rotation, int appearDelay, int totalTime, Func<ICustomLength, float> lengthRoute, float[] lengthRouteParam)
 	{
-		drawingColor = GameMain.CurrentDrawingSettings.themeColor;
-		controllingBox = FightBox.instance;
 		LengthRoute = lengthRoute;
 		LengthRouteParam = lengthRouteParam;
 		rotation %= 360;
@@ -101,8 +99,6 @@ public class Boneslab : Barrage, ICustomLength
 	public Boneslab(float rotation, float height, float appearDelay, float totalTime)
 	{
 		controlLayer = Surface.Hidden;
-		drawingColor = GameMain.CurrentDrawingSettings.themeColor;
-		controllingBox = FightBox.instance;
 		rotation %= 360;
 		trueRotation = rotation;
 		Rotation = rotation;

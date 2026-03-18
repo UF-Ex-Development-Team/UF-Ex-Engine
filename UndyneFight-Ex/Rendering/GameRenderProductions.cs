@@ -152,8 +152,7 @@ public static partial class GameStates
 				}
 				if (Fight.Functions.ScreenDrawing.whiteOutRest > 0)
 				{
-					Fight.Functions.ScreenDrawing.whiteOutRest--;
-					float scale = MathF.Min(0.955f, Fight.Functions.ScreenDrawing.SceneOutScale / (Fight.Functions.ScreenDrawing.whiteOutRest + 1f));
+					float scale = MathF.Min(0.955f, Fight.Functions.ScreenDrawing.SceneOutScale / (Fight.Functions.ScreenDrawing.whiteOutRest--));
 					alpha = alpha * (1 - scale) + scale;
 				}
 				else

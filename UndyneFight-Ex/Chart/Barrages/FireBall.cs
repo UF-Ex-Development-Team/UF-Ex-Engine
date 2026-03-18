@@ -13,7 +13,6 @@ public class FireBall : CircleCollisionBarrage
 	{
 		PositionRoute = _positionRoute.Easing;
 		Depth = 0.5f;
-		Alpha = 1.0f;
 		UpdateIn120 = true;
 	}
 	/// <inheritdoc/>

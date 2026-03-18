@@ -18,17 +18,15 @@ public partial class Player
 		private int appearTime = 0;
 		public override void Update()
 		{
-			if (++appearTime == 50)
-			{
-				FightResources.Sounds.die2.CreateInstance().Play();
-				int c = MathUtil.GetRandom(4, 6);
-				for (int i = 0; i < c; i++)
-					GameStates.InstanceCreate(new HeartPiece(playerPos, showingColor));
-				Dispose();
-			}
+			if (++appearTime != 50)
+				return;
+			FightResources.Sounds.die2.CreateInstance().Play();
+			int c = MathUtil.GetRandom(4, 6);
+			for (int i = 0; i < c; i++)
+				GameStates.InstanceCreate(new HeartPiece(playerPos, showingColor));
+			Dispose();
 		}
 	}
-
 	internal class HeartPiece : Entity
 	{
 		private static CollideRect screen = new(-50, -50, 740, 580);

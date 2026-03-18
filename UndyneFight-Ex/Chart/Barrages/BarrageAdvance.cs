@@ -11,19 +11,17 @@ public static class BarrageExtend
 {
 	private class SplitBone : Bone
 	{
-		public const float rotateSpeed = -2f;
 		private Vector2 speed;
 		public SplitBone(Vector2 centre, Vector2 speed, float rotation, float length)
 		{
 			Rotation = rotation;
 			this.speed = speed;
 			Length = length;
-			Alpha = 1;
 			Centre = centre;
 		}
 		public override void Update()
 		{
-			Rotation += rotateSpeed;
+			Rotation -= 2;
 			speed.Y += 0.02f;
 			Centre += speed;
 			base.Update();

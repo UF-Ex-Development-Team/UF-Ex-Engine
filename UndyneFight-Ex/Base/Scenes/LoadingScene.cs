@@ -6,6 +6,8 @@ using UndyneFight_Ex.GameInterface;
 using UndyneFight_Ex.SongSystem;
 using static UndyneFight_Ex.GameStates;
 using static UndyneFight_Ex.GlobalResources;
+using static GlobalData;
+using System.Diagnostics;
 
 namespace UndyneFight_Ex;
 
@@ -40,14 +42,13 @@ public class LoadingScene : Scene
 	internal const int LeastLoadingTime = 120;
 
 	internal bool eventInvoked = false;
-	internal bool SkipLoadingAudio = false;
 
 	/// <inheritdoc/>
 	public override void Update()
 	{
 		if (++appearTime == 2)
 			loadingTask.Start();
-		else if (appearTime >= LeastLoadingTime && finishedLoad && !eventInvoked && (AudioCache.Count == AudioPreviewPos.Count || SkipLoadingAudio || this is not ResourcesLoadingScene))
+		else if (appearTime >= LeastLoadingTime && finishedLoad && !eventInvoked && (this is not ResourcesLoadingScene || LoadedPreviewAudioCount == AudioPreviewDatas.Count))
 		{
 			eventInvoked = true;
 			LoadingFinishedEvent();
@@ -68,12 +69,11 @@ public class SongLoadingScene : LoadingScene
 	/// <param name="songParams">The parameters of the chart</param>
 	public SongLoadingScene(SongFightingScene.SceneParams songParams) : base(() =>
 	{
-		GameStates.InstanceCreate(new InstantEvent(90, () => ResetScene(new SongFightingScene(songParams))));
+		DelayEventProcessor.AddInstantEvent(90, () => ResetScene(new SongFightingScene(songParams)));
 		Loaded = true;
 	}, () =>
 	{
-		if (songParams.Waveset.Attributes?.MusicOptimized ?? false)
-			songParams.MusicOptimized = true;
+		songParams.MusicOptimized = songParams.Waveset.Attributes?.MusicOptimized ?? false;
 		SongLoadingScene.songParams.LoadMusic();
 	}, songParams.IsUnload)
 	{
@@ -90,7 +90,7 @@ public class SongLoadingScene : LoadingScene
 	public SongLoadingScene(Challenge challenge, params SongFightingScene.SceneParams[] songParams) : base(() =>
 	{
 		// loadingFinished
-		GameStates.InstanceCreate(new InstantEvent(30, () => ResetScene(new SongFightingScene(songParams[0], challenge))));
+		DelayEventProcessor.AddInstantEvent(30, () => ResetScene(new SongFightingScene(songParams[0], challenge)));
 		Loaded = true;
 	}, () =>
 	{
@@ -100,12 +100,10 @@ public class SongLoadingScene : LoadingScene
 		songParams[0].LoadMusic();
 	}, songParams[0].IsUnload)
 	{
-		if (IsInChallenge)
-		{
-			ChallengeCount = songParams.Length;
-			CurChallengeNum = 0;
-			ChallengeCharts = songParams;
-		}
+		IsInChallenge = true;
+		ChallengeCount = songParams.Length;
+		CurChallengeNum = 0;
+		ChallengeCharts = songParams;
 		Loaded = false;
 		SongLoadingScene.songParams = songParams[0];
 		difficulty = SongLoadingScene.songParams.difficulty;
@@ -269,21 +267,16 @@ internal class ResourcesLoadingScene : LoadingScene
 		for (int i = 0; i < 6; i++)
 			GeneralDraw(Sprites.progressArrow, new(395 + i * 20, 430), Color.White * (Functions.Sin((appearTime - i * 6 - 20) * 3.75f) * 0.9f + 0.1f) * 0.8f);
 		Font.NormalFont.CentreDraw($"Booting up game...", new(320, 120), Color.White, 0.8f, 0f);
-		Font.NormalFont.CentreDraw($"Loading audio previews: {AudioCache.Count}/{AudioPreviewPos.Count}", new Vector2(320, 320), Color.White * MathF.Abs(Functions.Sin(appearTime)), 0.6f, 0.98f);
-		float loadPercentage = (float)AudioCache.Count / AudioPreviewPos.Count;
+		Font.NormalFont.CentreDraw($"Loading audio previews: {LoadedPreviewAudioCount}/{AudioPreviewDatas.Count}", new Vector2(320, 320), Color.White * MathF.Abs(Functions.Sin(appearTime)), 0.6f, 0.98f);
+		float loadPercentage = (float)LoadedPreviewAudioCount / AudioPreviewDatas.Count;
 		loadProgress = float.Lerp(loadProgress, 200 * loadPercentage, 0.04f);
 		GeneralDraw(FightResources.Sprites.pixUnit, new Vector2(320, 320), Color.White, new Vector2(404, 24));
 		GeneralDraw(FightResources.Sprites.pixUnit, new Vector2(320, 320), Color.Gray, new Vector2(400, 20));
 		GeneralDraw(FightResources.Sprites.pixUnit, new Vector2(120 + loadProgress, 320), Color.LimeGreen, new Vector2(loadProgress * 2, 20));
-		if (appearTime >= LeastLoadingTime && finishedLoad && !eventInvoked)
-			Font.NormalFont.CentreDraw($"Press Z to skip loading audio previews", new Vector2(320, 360), Color.White * MathF.Round(MathF.Abs(Functions.Sin(appearTime * 1.3f))), 0.6f, 0.98f);
-		else
-		{
-			string str = $"Loading {LoadState.ToString().Replace('_', ' ')}";
-			for (int i = 0; i < DateTime.Now.Ticks / 5000000 % 4; i++)
-				str += ".";
-			Font.NormalFont.CentreDraw(str, new Vector2(320, 360), Color.White, 0.6f, 0.5f);
-		}
+		string str = $"Loading {LoadState.ToString().Replace('_', ' ')}";
+		for (int i = 0; i < DateTime.Now.Ticks / 5000000 % 4; i++)
+			str += ".";
+		Font.NormalFont.CentreDraw(str, new Vector2(320, 360), Color.White, 0.6f, 0.5f);
 		if (Sprites.loadingTexture != null)
 			GeneralDraw(Sprites.loadingTexture, GameStartUp.LoadingSettings.TitleCentrePosition, Color.White * (appearTime / 20f), new Vector2(MathF.Min(640f / Sprites.loadingTexture.Width, 1)));
 	}
@@ -294,28 +287,25 @@ internal class ResourcesLoadingScene : LoadingScene
 			splashHoldTime++;
 		else
 			splashAlpha = float.Lerp(splashAlpha, splashIsFading ? 0 : 1, 0.08f);
-		if (SplashScreenState != SplashState.Ended)
+		if (SplashScreenState == SplashState.Ended)
+			return;
+		if (splashAlpha < 0.005f && splashHoldTime >= 0 && splashIsFading)
 		{
-			if (splashAlpha < 0.005f && splashHoldTime >= 0 && splashIsFading)
+			splashAlpha = 0;
+			SplashScreenState = SplashScreenState == SplashState.Undertale ? SplashState.MadeBy : SplashState.Ended;
+			splashHoldTime = -90;
+			splashIsFading = false;
+		}
+		//Ensure evaluation order
+		else if ((1 - splashAlpha) < 0.005f || IsKeyPressed120f(InputIdentity.Confirm))
+		{
+			if (++splashHoldTime == 90)
 			{
-				splashAlpha = 0;
-				SplashScreenState = SplashScreenState == SplashState.Undertale ? SplashState.MadeBy : SplashState.Ended;
-				splashHoldTime = -90;
-				splashIsFading = false;
-			}
-			//Ensure evaluation order
-			else if ((1 - splashAlpha) < 0.005f || IsKeyPressed120f(InputIdentity.Confirm))
-			{
-				if (++splashHoldTime == 90)
-				{
-					splashIsFading = true;
-					//Buffer time for fading
-					splashHoldTime = -120;
-				}
+				splashIsFading = true;
+				//Buffer time for fading
+				splashHoldTime = -120;
 			}
 		}
-		else if (appearTime >= LeastLoadingTime && finishedLoad && !eventInvoked && IsKeyPressed120f(InputIdentity.Confirm))
-			SkipLoadingAudio = true;
 	}
 	private enum SplashState
 	{

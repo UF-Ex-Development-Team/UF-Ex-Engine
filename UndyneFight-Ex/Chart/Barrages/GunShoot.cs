@@ -60,20 +60,16 @@ internal class Bullet : Barrage
 	{
 		distance -= 12;
 		Centre = missionCentre + GetVector2(distance, Rotation);
-
 		if (!screen.Contain(Centre))
 			Dispose();
 	}
-
 	public override void Draw() => FormalDraw(Image, Centre, Color.White, 0.8f, GetRadian(Rotation), ImageCentre);
-
 	public override void Dispose()
 	{
 		if (!hasHit && MarkScore)
 			PushScore(score);
 		base.Dispose();
 	}
-
 	public override void GetCollide(Player.Heart player)
 	{
 		float res = (Centre - player.Centre).Length() - 11;
@@ -139,7 +135,6 @@ public class GunBullet : Entity
 	//TK: What is this.
 	private float lerp = 0f;
 	private float alpha = 0f;
-
 	/// <inheritdoc/>
 	public override void Draw()
 	{
@@ -152,7 +147,6 @@ public class GunBullet : Entity
 		else
 			FormalDraw(Image, Centre, Color.White * alpha, 0.62f * lerp, 0, ImageCentre);
 	}
-
 	/// <inheritdoc/>
 	public override void Update()
 	{
@@ -175,7 +169,6 @@ public class GunBullet : Entity
 				break;
 		}
 	}
-
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	private static float AlphaLerp(float x) => x / (2 - x);
 }

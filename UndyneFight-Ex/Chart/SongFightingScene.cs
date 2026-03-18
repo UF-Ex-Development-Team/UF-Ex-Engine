@@ -135,7 +135,6 @@ public class SongFightingScene : FightScene
 	/// The current <see cref="GameMode"/> of the chart
 	/// </summary>
 	public override GameMode Mode => mode;
-
 	private volatile bool songLoaded = false;
 	private Audio music;
 	private bool forceEnd = false;
@@ -168,16 +167,13 @@ public class SongFightingScene : FightScene
 	/// </summary>
 	public Texture2D SongIllustration => currentParam.SongIllustration;
 	private bool endRan = false;
-
 	private int restartTimer = 0;
-
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	internal void ForceEnd() => forceEnd = true;
 	/// <summary>
 	/// Whether the chart music has been played (Sanity check for negative <see cref="PlayOffset"/>)
 	/// </summary>
 	private bool MusicPlayed = false;
-
 	private void ProcessItems()
 	{
 		//Sanity check for the 0.5f delay
@@ -236,11 +232,11 @@ public class SongFightingScene : FightScene
 			SetSongFight();
 			music = currentParam.Music;
 			if (PlayOffset < 0)
-				AddInstance(new InstantEvent(-PlayOffset, () =>
+				DelayEventProcessor.AddInstantEvent(-PlayOffset, () =>
 				{
 					music.Play();
 					MusicPlayed = true;
-				}));
+				});
 			else
 			{
 				MusicPlayed = true;
@@ -284,7 +280,7 @@ public class SongFightingScene : FightScene
 				UpdateSong();
 			//Items
 			ProcessItems();
-			AddInstance(new InstantEvent(0.5f, ProcessItems));
+			DelayEventProcessor.AddInstantEvent(0.5f, ProcessItems);
 		}
 
 		bool needEnd = waveset != null && MusicPlayed && appearTime > currentParam.MusicDuration * 2 && (music?.IsEnd ?? false);
@@ -309,13 +305,11 @@ public class SongFightingScene : FightScene
 		mode = currentParam.mode;
 		base.Update();
 	}
-
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	private void SetSongFight()
 	{
 		for (int i = 0; i < 4; i++)
 			ShieldAuto[i] = (mode & GameMode.Autoplay) != 0;
-
 		MathUtil.rander = new Random(seed);
 		InstanceCreate(Accuracy = new());
 		InstanceCreate(ScoreState = new StateShower(waveset = (IWaveSet)Activator.CreateInstance(currentParam.Waveset.GetType()), currentParam.difficulty, JudgeState, currentParam.mode, currentParam.MusicDuration));

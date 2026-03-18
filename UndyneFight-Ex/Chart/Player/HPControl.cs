@@ -158,7 +158,6 @@ public partial class Player
 		{
 			KRHP = 0;
 			hp.Value = maxHP;
-
 			missionLostSpeed = MathF.Min(missionLostSpeed, 0.005f);
 		}
 		/// <summary>
@@ -170,7 +169,6 @@ public partial class Player
 		{
 			hp.Value = OverFlowAvailable ? hp + hp_ : Math.Min(hp + hp_, maxHP);
 			KRHP = MathF.Max(0, MathF.Min(KRHP, maxHP - hp));
-
 			missionLostSpeed = MathF.Min(missionLostSpeed, 0.005f);
 		}
 
@@ -178,9 +176,7 @@ public partial class Player
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public override void Update()
 		{
-			if (protectTime > 0)
-				protectTime--;
-			if (protectTime == 0)
+			if (--protectTime == 0)
 				ScoreProtected = false;
 			curLost = float.Lerp(curLost, missionLostSpeed, 0.05f);
 			missionLostSpeed *= 0.9995f;
@@ -191,12 +187,9 @@ public partial class Player
 			}
 			if (KR && KRHP > 0)
 			{
-				if (KRHP > hp)
-					KRHP = hp;
-
+				KRHP = float.Min(hp, KRHP);
 				float del = KRHP * 0.004f;
-				float krLose = 0;
-				krLose += del;
+				float krLose = del;
 				KRHP -= del;
 				float lose2 = Math.Min(0.004f, KRHP);
 				krLose += lose2;

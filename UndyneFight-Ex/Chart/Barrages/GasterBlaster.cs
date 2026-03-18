@@ -51,7 +51,6 @@ public abstract class GasterBlaster : Barrage
 	private protected bool rotateWay, laserIncreasing = true;
 
 	private protected float alpha = 0, beamAlpha = 1f, movingScale = 0.9f;
-
 	/// <inheritdoc/>
 	public override void Draw()
 	{
@@ -65,7 +64,6 @@ public abstract class GasterBlaster : Barrage
 			DrawingLab.DrawLine(laserPlace + GetVector2(14 * i, Rotation), laserPlace + GetVector2(14 * i + 12, Rotation), 14 * i * laserSize.Y * size.Y * 1.2f, drawingColor * beamAlpha, Depth);
 		DrawingLab.DrawLine(laserPlace + GetVector2(56, Rotation), laserPlace + GetVector2(1000 + laserSize.X, Rotation), 56 * laserSize.Y * size.Y * 1.2f, drawingColor * beamAlpha, Depth);
 	}
-
 	/// <inheritdoc/>
 	public override void Update()
 	{
@@ -78,7 +76,6 @@ public abstract class GasterBlaster : Barrage
 			laserPlace = GetVector2(27 * size.Y, Rotation) + Centre;
 			laserSize.X += recoilSpeed;
 		}
-
 		if ((int)(appearTime - waitingTime) == -12)
 			Image = Sprites.GBStart[1];
 		else if ((int)(appearTime - waitingTime) == -9)
@@ -97,41 +94,32 @@ public abstract class GasterBlaster : Barrage
 			PlaySound(Sounds.GBShoot, ShootVolume);
 		}
 	}
-
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	private protected void MoveToMission()
 	{
 		if (alpha <= 1f)
 			alpha += 0.06f * (1 / movingScale);
-
 		if (appearTime < waitingTime)
 			Centre = Centre * movingScale + missionPlace * (1 - movingScale);
-
 		Rotation += GetDelta() * (0.98f - movingScale) * (rotateWay ? 1 : -1);
 	}
-
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	private protected void PushDown()
 	{
 		Centre -= GetVector2(recoilSpeed += 0.4f, Rotation);
 		Image = Sprites.GBShooting[(int)Convert.ToSingle(appearTime % 6 <= 3)];
 		beamAlpha = beamAlpha * 0.8f + 0.2f;
-		if (laserIncreasing)
-		{
-			if ((laserSize.Y = laserSize.Y * 0.8f + 0.21f) >= 0.88f)
-				laserIncreasing = false;
-		}
-		else
+		if (!laserIncreasing)
 			laserSize.Y = 0.9f + Sin(laserAffectTime++ * 15) * 0.18f;
+		else if ((laserSize.Y = laserSize.Y * 0.8f + 0.21f) >= 0.88f)
+			laserIncreasing = false;
 	}
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	private protected void BeamDisappear()
 	{
 		Centre -= GetVector2(recoilSpeed += 0.45f, Rotation);
-
 		if (recoilSpeed >= 5f)
 			beamAlpha *= 0.9f;
-
 		if ((laserSize.Y -= MathF.Sqrt(appearTime - waitingTime - duration) / 36f) <= 0 && (!screen.Contain(Centre)))
 			Dispose();
 	}
@@ -164,7 +152,6 @@ public abstract class GasterBlaster : Barrage
 			if (delay <= 0f)
 				Dispose();
 		}
-		public override void Dispose() => base.Dispose();
 	}
 	/// <summary>
 	/// Delays the blaster by the given frames
@@ -198,7 +185,6 @@ public class GreenSoulGB : GasterBlaster
 
 	private bool stuck = false;
 	private float pushDelta;
-	private float distanceToSoul = 0;
 
 	private readonly float timeDelta;
 	/// <summary>
@@ -218,6 +204,7 @@ public class GreenSoulGB : GasterBlaster
 	/// <param name="duration">The duration of the blaster</param>
 	public GreenSoulGB(float shootShieldTime, int way, int color, float duration)
 	{
+		movingScale = shootShieldTime < 30 ? 0.5f + shootShieldTime / 90f : 0.93334f - 3f / shootShieldTime;
 		if (Settings.SettingsManager.DataLibrary.Mirror)
 			color ^= 1;
 		way = Posmod(way, 4);
@@ -287,9 +274,7 @@ public class GreenSoulGB : GasterBlaster
 					//check collision
 					CalcPush(dir);
 					PushDown();
-					distanceToSoul = (Centre - missionPlayer.Centre).Length();
-					Centre = missionPlayer.Centre + GetVector2(distanceToSoul, Way * 90 + (Follow ? Heart.Rotation : 0));
-					if (Follow && (missionPlayer.Centre - _lastPlayerPos).LengthSquared() > 0.10f)
+					if (Follow && (missionPlayer.Centre - _lastPlayerPos).LengthSquared() > 0.1f)
 						ArrangePos();
 					GetCollide();
 				}
@@ -338,7 +323,6 @@ public class GreenSoulGB : GasterBlaster
 		}
 		_lastPlayerPos = missionPlayer.Centre;
 	}
-
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	private void ArrangePos()
 	{
@@ -347,7 +331,6 @@ public class GreenSoulGB : GasterBlaster
 		float distance = Vector2.Dot(unitU, Centre - Heart.Centre);
 		Centre = Heart.Centre + unitU * distance;
 	}
-
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	private void CalcPush(int dir)
 	{
@@ -356,7 +339,6 @@ public class GreenSoulGB : GasterBlaster
 		laserPlace = missionPlayer.Centre + GetVector2(stuck ? -38 + pushDelta : 38, missionRotation);
 		pushDelta = missionPlayer.Shields.PushDelta(DrawingColor);
 	}
-
 	/// <inheritdoc/>
 	public override void Draw()
 	{
@@ -373,12 +355,10 @@ public class GreenSoulGB : GasterBlaster
 		//Stuck drawing
 		FormalDraw(StuckTexture, laserPlace + GetVector2(2, missionRotation), finCol, 1.33f * laserSize.Y, GetRadian(missionRotation + 180), new Vector2(0, 35));
 	}
-
 	/// <inheritdoc/>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public override void GetCollide(Player.Heart p = null)
 	{
-		_ = p ?? missionPlayer;
 		bool alw = Auto;
 		if (!stuck || pushDelta > 22)
 		{
@@ -414,7 +394,6 @@ public class GreenSoulGB : GasterBlaster
 		else if (pushDelta > 6 && stuck)
 			score = 1;
 	}
-
 	/// <inheritdoc/>
 	public override void Dispose()
 	{
@@ -429,7 +408,6 @@ public class GreenSoulGB : GasterBlaster
 		}
 		if (!hasHit)
 			missionPlayer.Shields.ValidRotated();
-
 		base.Dispose();
 	}
 }
@@ -483,12 +461,9 @@ public class NormalGB : GasterBlaster, ICollideAble
 	public override void Update()
 	{
 		MoveToMission();
-
 		base.Update();
-
 		if ((int)(appearTime - waitingTime) >= 0 && appearTime <= waitingTime + duration)
 			PushDown();
-
 		if (appearTime >= waitingTime + duration)
 			BeamDisappear();
 	}

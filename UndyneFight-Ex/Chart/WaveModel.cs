@@ -225,28 +225,28 @@ public class WaveConstructor : GameObject
 	/// <param name="delayBeat">The amount of    to delay</param>
 	/// <param name="action">The action to invoke</param>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public static void DelayBeat(float delayBeat, Action action) => AddInstance(new InstantEvent(BeatTime(delayBeat), action));
+	public static void DelayBeat(float delayBeat, Action action) => DelayEventProcessor.AddInstantEvent(BeatTime(delayBeat), action);
 	/// <summary>
 	/// Invokes an action after the given frames
 	/// </summary>
 	/// <param name="delay">The amount of frames to delay</param>
 	/// <param name="action">The action to invoke</param>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public static void Delay(float delay, Action action) => AddInstance(new InstantEvent(delay, action));
+	public static void Delay(float delay, Action action) => DelayEventProcessor.AddInstantEvent(delay, action);
 	/// <summary>
 	/// Invokes an action for the next given beats (Using int calculation, recommended not to use)
 	/// </summary>
 	/// <param name="durationBeat">The duration of the action</param>
 	/// <param name="action">The action to invoke</param>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public static void ForBeat(float durationBeat, Action action) => AddInstance(new TimeRangedEvent(BeatTime(durationBeat), action));
+	public static void ForBeat(float durationBeat, Action action) => DelayEventProcessor.AddTimeRangedEvent(0, action, BeatTime(durationBeat), false);
 	/// <summary>
 	/// Invokes an action for the next given beats (Using float calculation, recommended to use)
 	/// </summary>
 	/// <param name="durationBeat">The duration of the action</param>
 	/// <param name="action">The action to invoke</param>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public static void ForBeat120(float durationBeat, Action action) => AddInstance(new TimeRangedEvent(BeatTime(durationBeat), action) { UpdateIn120 = true });
+	public static void ForBeat120(float durationBeat, Action action) =>  DelayEventProcessor.AddTimeRangedEvent(0, action, BeatTime(durationBeat), true);
 	/// <summary>
 	/// Invokes an action for the next given beats after the given beats (Using int calculation, recommended not to use)
 	/// </summary>
@@ -254,7 +254,7 @@ public class WaveConstructor : GameObject
 	/// <param name="durationBeat">The duration of the action</param>
 	/// <param name="action">The action to invoke</param>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public static void ForBeat(float delayBeat, float durationBeat, Action action) => AddInstance(new TimeRangedEvent(BeatTime(delayBeat), BeatTime(durationBeat), action));
+	public static void ForBeat(float delayBeat, float durationBeat, Action action) => DelayEventProcessor.AddTimeRangedEvent(BeatTime(delayBeat), action, BeatTime(durationBeat), false);
 	/// <summary>
 	/// Invokes an action for the next given beats after the given beats (Using float calculation, recommended to use)
 	/// </summary>
@@ -262,12 +262,11 @@ public class WaveConstructor : GameObject
 	/// <param name="durationBeat">The duration of the action</param>
 	/// <param name="action">The action to invoke</param>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public static void ForBeat120(float delayBeat, float durationBeat, Action action) => AddInstance(new TimeRangedEvent(BeatTime(delayBeat), BeatTime(durationBeat), action) { UpdateIn120 = true });
+	public static void ForBeat120(float delayBeat, float durationBeat, Action action) => DelayEventProcessor.AddTimeRangedEvent(BeatTime(delayBeat), action, BeatTime(durationBeat), true);
 	/// <summary>
 	/// The process for all arrows that will be executed in <see cref="CreateChart(float, float, float, string[])"/>
 	/// </summary>
-	public Action<Arrow> ArrowProcesser { private get; set; } = null;
-
+	public Action<Arrow> ArrowProcessor { private get; set; } = null;
 	private class BracketTreeNode
 	{
 		public BracketTreeNode(string s)
@@ -311,7 +310,6 @@ public class WaveConstructor : GameObject
 			}
 			info = self;
 		}
-
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		private static void CalculateTimes(BracketTreeNode curNode, string mul)
 		{
@@ -344,7 +342,6 @@ public class WaveConstructor : GameObject
 
 			return mulInt;
 		}
-
 		private readonly string info;
 		private int boundL = 0, boundR = 0;
 		private string enumer = "";
@@ -397,10 +394,8 @@ public class WaveConstructor : GameObject
 		int tag = origin.LastIndexOf('{');
 		if (tag == -1)
 			throw new ArgumentException($"{nameof(origin)} has no character '{{'", origin);
-
 		string result = origin[(tag + 1)..^1];
 		origin = origin[..tag];
-
 		return result.Split(',');
 	}
 	/// <summary>
@@ -535,7 +530,7 @@ public class WaveConstructor : GameObject
 				arr.VolumeFactor *= Settings.VoidArrowVolume;
 			LastArrow = arr;
 
-			ArrowProcesser?.Invoke(arr);
+			ArrowProcessor?.Invoke(arr);
 		}
 		return result;
 	}
@@ -643,7 +638,6 @@ public class WaveConstructor : GameObject
 	{
 		string[] arrowTags = SplitBracket(allArrowTag);
 		List<GameObject> arrows = [];
-
 		for (int i = 0; i < arrowTags.Length; i++)
 		{
 			IEnumerable<GameObject> t = MakeChartObject(shootShieldTime, arrowTags[i], speed, ArrowAttribute.None, normalized);
@@ -657,7 +651,6 @@ public class WaveConstructor : GameObject
 	{
 		string[] arrowTags = SplitBracket(allArrowTag);
 		List<GameObject> arrows = [];
-
 		for (int i = 0; i < arrowTags.Length; i++)
 		{
 			IEnumerable<GameObject> t = MakeChartObject(shootShieldTime, arrowTags[i], speed, arrowattribute, normalized);
@@ -859,6 +852,19 @@ public class WaveConstructor : GameObject
 	public Texture2D LoadImage(string path)
 	{
 		Texture2D image = Texture2D.FromFile(GameStates.SpriteBatch.GraphicsDevice, path);
+		loadedImages.Add(image);
+		return image;
+	}
+	/// <summary>
+	/// Loads an image asynchronously (.bmp /.gif /.jpg /.png, will auto dispose)
+	/// </summary>
+	/// <param name="path">Path of the image</param>
+	/// <returns>The loaded texture</returns>
+	public async Task<Texture2D> LoadImageAsync(string path)
+	{
+		byte[] fileData = await Task.Run(() => File.ReadAllBytes(path));
+		using MemoryStream stream = new(fileData);
+		Texture2D image = Texture2D.FromStream(GameStates.SpriteBatch.GraphicsDevice, stream);
 		loadedImages.Add(image);
 		return image;
 	}

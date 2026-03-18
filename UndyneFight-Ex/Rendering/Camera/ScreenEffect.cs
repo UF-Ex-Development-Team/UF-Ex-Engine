@@ -221,13 +221,11 @@ public static partial class Functions
 
 				float progress = 0;
 
-				AddInstance(new TimeRangedEvent(time + 1, () =>
+				DelayEventProcessor.AddTimeRangedEvent(0, () =>
 				{
-					tick += 0.5f;
-					if (tick < time)
+					if ((tick += 0.5f) < time)
 					{
-						float scale = tick / time;
-						float newRot = MathUtil.Sigmoid01(MathF.Pow(scale, 0.7f));
+						float newRot = MathUtil.Sigmoid01(MathF.Pow(tick / time, 0.7f));
 						float del = newRot - progress;
 						progress = newRot;
 						last -= del * rotation;
@@ -238,8 +236,7 @@ public static partial class Functions
 						ScreenAngle += last;
 						last = 0;
 					}
-				})
-				{ UpdateIn120 = true });
+				}, time + 1, true);
 			}
 			/// <summary>
 			/// Rotates the screen angle to the given angle
@@ -283,13 +280,11 @@ public static partial class Functions
 
 				float progress = 0;
 
-				AddInstance(new TimeRangedEvent(time + 1, () =>
+				DelayEventProcessor.AddTimeRangedEvent(0, () =>
 				{
-					tick += 0.5f;
-					if (tick < time)
+					if ((tick += 0.5f) < time)
 					{
-						float scale = tick / time;
-						float newRot = AdvanceFunctions.Sin01(MathF.Pow(scale, 0.75f));
+						float newRot = AdvanceFunctions.Sin01(MathF.Pow(tick / time, 0.75f));
 						float del = newRot - progress;
 						progress = newRot;
 						last -= del * intensity;
@@ -300,8 +295,7 @@ public static partial class Functions
 						ScreenAngle += last;
 						last = 0;
 					}
-				})
-				{ UpdateIn120 = true });
+				}, time + 1, true);
 			}
 			/// <summary>
 			/// Expands the screen by the given size and then retracts to the original size
@@ -319,13 +313,11 @@ public static partial class Functions
 				intensity = 1 - MathF.Pow(0.98f, intensity);
 				float last = 0, tick = 0, progress = 0;
 
-				AddInstance(new TimeRangedEvent(time + 1, () =>
+				DelayEventProcessor.AddTimeRangedEvent(0, () =>
 				{
-					tick++;
-					if (tick < time)
+					if (++tick < time)
 					{
-						float scale = tick / time;
-						float newRot = AdvanceFunctions.Sin01(MathF.Pow(scale, 0.75f));
+						float newRot = AdvanceFunctions.Sin01(MathF.Pow(tick / time, 0.75f));
 						float del = newRot - progress;
 						progress = newRot;
 						last -= del * intensity;
@@ -336,7 +328,7 @@ public static partial class Functions
 						ScreenScale += last;
 						last = 0;
 					}
-				}));
+				}, time + 1, false);
 			}
 			/// <summary>
 			/// Retracts the screen by the given size and then expands to the original size
@@ -354,13 +346,11 @@ public static partial class Functions
 				intensity = MathF.Pow(0.98f, intensity) - 1;
 				float last = 0, tick = 0, progress = 0;
 
-				AddInstance(new TimeRangedEvent(time + 1, () =>
+				DelayEventProcessor.AddTimeRangedEvent(0, () =>
 				{
-					tick++;
-					if (tick < time)
+					if (++tick < time)
 					{
-						float scale = tick / time;
-						float newRot = AdvanceFunctions.Sin01(MathF.Pow(scale, 0.75f));
+						float newRot = AdvanceFunctions.Sin01(MathF.Pow(tick / time, 0.75f));
 						float del = newRot - progress;
 						progress = newRot;
 						last -= del * intensity;
@@ -371,7 +361,7 @@ public static partial class Functions
 						ScreenScale += last;
 						last = 0;
 					}
-				}));
+				}, time + 1, false);
 			}
 		}
 

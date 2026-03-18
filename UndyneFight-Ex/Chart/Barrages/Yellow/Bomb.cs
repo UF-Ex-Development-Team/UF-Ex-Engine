@@ -16,7 +16,6 @@ public class Bomb : BulletShootable
 			allStates = mode;
 			Centre = position;
 			Image = allStates[0];
-			Alpha = 1.0f;
 			Depth = 0.53f;
 			Hidden = false;
 		}
@@ -45,7 +44,6 @@ public class Bomb : BulletShootable
 	{
 		_explodeDelay = explodeDelay;
 		Image = Sprites.MettBomb[0];
-		Alpha = 1.0f;
 		PositionRoute = ease;
 		Depth = 0.501f;
 	}
@@ -64,7 +62,6 @@ public class Bomb : BulletShootable
 		PlaySound(Sounds.Warning);
 		isShot = true;
 	}
-
 	private int count = 0;
 	/// <summary>
 	/// Whether the bomb can be triggered by other explosions
