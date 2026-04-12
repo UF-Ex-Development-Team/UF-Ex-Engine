@@ -29,3 +29,6 @@ This documentation will categorize the functions and variables by their function
 
 ## Warning
 Due to the lack of documentation prior to v0.3.0, the descriptions of the variables/functions **may not be fully accurate**, if any discrepancy was found between the description of the variable/function and it's actual functionality, please report it in the Discord server.
+
+## Bug Report
+If you found a bug in the codes, please either submit a Github Issue or submit a bug report in the Discord server's bug channel.

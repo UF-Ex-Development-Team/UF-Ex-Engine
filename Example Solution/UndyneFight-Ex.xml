@@ -184,8 +184,10 @@
         </member>
         <member name="T:UndyneFight_Ex.Entities.InstantEvent">
             <summary>
-            Invokes an action after a given delay
+            Invoke an action after the given delay
             </summary>
+            <param name="timeDelay">The delay to invoke the action</param>
+            <param name="action">The action to invoke</param>
         </member>
         <member name="M:UndyneFight_Ex.Entities.InstantEvent.#ctor(System.Single,System.Action)">
             <summary>
@@ -771,7 +773,7 @@
             <param name="value">The value to set to (Default 0)</param>
             <returns>The result of the easing</returns>
         </member>
-        <member name="M:UndyneFight_Ex.Entities.SimplifiedEasing.Copy(UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2},System.Int32)">
+        <member name="M:UndyneFight_Ex.Entities.SimplifiedEasing.Copy(UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2},System.Int32,System.Boolean)">
             <summary>
             Returns a copy of the specified easing for the given amount of times
             </summary>
@@ -779,7 +781,7 @@
             <param name="times">The amount of times needed to copy</param>
             <returns>The result of the easing</returns>
         </member>
-        <member name="M:UndyneFight_Ex.Entities.SimplifiedEasing.Copy(UndyneFight_Ex.Entities.EaseUnit{System.Single},System.Int32)">
+        <member name="M:UndyneFight_Ex.Entities.SimplifiedEasing.Copy(UndyneFight_Ex.Entities.EaseUnit{System.Single},System.Int32,System.Boolean)">
             <summary>
             Returns a copy of the specified easing for the given amount of times
             </summary>
@@ -2439,9 +2441,6 @@
             <summary>
             The <see cref="T:System.Action"/> to execute when the boneslab is created (When the warning ends)
             </summary>
-        </member>
-        <member name="M:UndyneFight_Ex.Entities.Boneslab.Dispose">
-            <inheritdoc/>
         </member>
         <member name="P:UndyneFight_Ex.Entities.Boneslab.ColorType">
             <summary>
@@ -5753,6 +5752,11 @@
             <param name="ActionName">The name of the event to detect</param>
             <returns></returns>
         </member>
+        <member name="P:UndyneFight_Ex.GameStates.ApplicationSurface">
+            <summary>
+            The surface used for drawing the game
+            </summary>
+        </member>
         <member name="P:UndyneFight_Ex.GameStates.Aspect">
             <summary>
             Aspect ratio of the game
@@ -6310,6 +6314,11 @@
             <summary>
             UnloadContent will be called once per game and is the place to unload
             game-specific content.
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.GameMain.ApplicationSurface">
+            <summary>
+            The texture that the game is currently drawing on
             </summary>
         </member>
         <member name="M:UndyneFight_Ex.GameMain.Update(Microsoft.Xna.Framework.GameTime)">
@@ -8362,6 +8371,21 @@
         <member name="P:UndyneFight_Ex.UserService.User.Custom">
             <summary>
             Custom save info
+            </summary>
+        </member>
+        <member name="P:UndyneFight_Ex.UserService.User.SaveDataVersion">
+            <summary>
+            The version of the save data (Useful for when you messed up the save data)
+            </summary>
+        </member>
+        <member name="F:UndyneFight_Ex.UserService.User.LatestSaveDataVersion">
+            <summary>
+            The latest save data version
+            </summary>
+        </member>
+        <member name="F:UndyneFight_Ex.UserService.User.SaveDataConvert">
+            <summary>
+            The list of actions to invoke for data compatibility
             </summary>
         </member>
         <member name="M:UndyneFight_Ex.UserService.User.Load(UndyneFight_Ex.IO.SaveInfo)">
@@ -12184,7 +12208,7 @@
             <summary>
             Invokes an action after the given beats
             </summary>
-            <param name="delayBeat">The amount of    to delay</param>
+            <param name="delayBeat">The amount of beats to delay</param>
             <param name="action">The action to invoke</param>
         </member>
         <member name="M:UndyneFight_Ex.SongSystem.WaveConstructor.Delay(System.Single,System.Action)">
@@ -12614,6 +12638,16 @@
         <member name="P:UndyneFight_Ex.Settings.SettingsManager.DataLibrary.NewArrowDrawingMethod">
             <summary>
             Whether to use the new arrow drawing method or not
+            </summary>
+        </member>
+        <member name="T:UndyneFight_Ex.Program">
+            <summary>
+            The main class.
+            </summary>
+        </member>
+        <member name="M:UndyneFight_Ex.Program.Main">
+            <summary>
+            The main entry point for the application.
             </summary>
         </member>
         <member name="T:UndyneFight_Ex.DrawingLab">
@@ -14406,14 +14440,14 @@
             <param name="path">The name of the music</param>
             <returns>The audio preview data of the music</returns>
         </member>
-        <member name="F:GlobalData.QueueLoadFilePathList">
-            <summary>
-            The directory of the file path
-            </summary>
-        </member>
         <member name="M:GlobalData.LoadSongPreviews">
             <summary>
             Loads the song previews of the charts
+            </summary>
+        </member>
+        <member name="F:GlobalData.ChartDifficultyNames">
+            <summary>
+            The names of the difficulties of the charts
             </summary>
         </member>
     </members>
