@@ -15,4 +15,4 @@ The 0.2.2 version of the engine, along with the incomplete 0.2.2 version of Rhyt
 - Linux
 
 ## Documentation
-WIP
+[WIP](https://uf-ex-development-team.github.io/UF-Ex-Engine/UF-Ex%20Docs/introduction.html)
