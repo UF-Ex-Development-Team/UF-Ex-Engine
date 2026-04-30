@@ -22,40 +22,50 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "UF-Ex Docs/Basic Charting.md",
+      "source_relative_path": "UF-Ex Docs/Advanced/Optimization.md",
       "output": {
         ".html": {
-          "relative_path": "UF-Ex Docs/Basic Charting.html"
+          "relative_path": "UF-Ex Docs/Advanced/Optimization.html"
         }
       },
       "version": ""
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "UF-Ex Docs/Crash Course.md",
+      "source_relative_path": "UF-Ex Docs/Chart Tutorial/Crash Course.md",
       "output": {
         ".html": {
-          "relative_path": "UF-Ex Docs/Crash Course.html"
+          "relative_path": "UF-Ex Docs/Chart Tutorial/Crash Course.html"
         }
       },
       "version": ""
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "UF-Ex Docs/Introduction to Effects.md",
+      "source_relative_path": "UF-Ex Docs/Chart Tutorial/Making.md",
       "output": {
         ".html": {
-          "relative_path": "UF-Ex Docs/Introduction to Effects.html"
+          "relative_path": "UF-Ex Docs/Chart Tutorial/Making.html"
         }
       },
       "version": ""
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "UF-Ex Docs/Setting Up.md",
+      "source_relative_path": "UF-Ex Docs/Chart Tutorial/Setting Up.md",
       "output": {
         ".html": {
-          "relative_path": "UF-Ex Docs/Setting Up.html"
+          "relative_path": "UF-Ex Docs/Chart Tutorial/Setting Up.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "UF-Ex Docs/Menu Tutorial/Making.md",
+      "output": {
+        ".html": {
+          "relative_path": "UF-Ex Docs/Menu Tutorial/Making.html"
         }
       },
       "version": ""
@@ -5396,7 +5406,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "UndyneFight_Ex.Entities.Arrow.ClassicApplier",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.Arrow.ClassicApplier.yml\" sourcestartlinenumber=\"1\">Easing controller to delay or stop the arrow</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5410,7 +5420,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "UndyneFight_Ex.Entities.Arrow.EnsembleEasing",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.Arrow.EnsembleEasing.yml\" sourcestartlinenumber=\"1\">Easing controller for coordinate displacement, angle, and distance</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5438,7 +5448,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "UndyneFight_Ex.Entities.Arrow.UnitEasing",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.Arrow.UnitEasing.yml\" sourcestartlinenumber=\"1\">Easing controller for the arrow's position, angle, distance, and alpha</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5564,7 +5574,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "UndyneFight_Ex.Entities.ChallengeScene",
-      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.ChallengeScene.yml\" sourcestartlinenumber=\"1\">Challenge selection</p>\n"
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.ChallengeScene.yml\" sourcestartlinenumber=\"1\">Default challenge selection scene</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5621,6 +5631,20 @@
       "IsMRef": true,
       "Title": "UndyneFight_Ex.Entities.CustomSpear",
       "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.CustomSpear.yml\" sourcestartlinenumber=\"1\">A spear with custom motion (Initial alpha is 0, be aware)</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Entities.DelayEventProcessor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Entities.DelayEventProcessor.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Entities.DelayEventProcessor",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.DelayEventProcessor.yml\" sourcestartlinenumber=\"1\">Global processor for delayed events</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5802,7 +5826,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "UndyneFight_Ex.Entities.GameMenuScene",
-      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.GameMenuScene.yml\" sourcestartlinenumber=\"1\">The game menu scene</p>\n"
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.GameMenuScene.yml\" sourcestartlinenumber=\"1\">The default game menu scene</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5914,7 +5938,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "UndyneFight_Ex.Entities.InstantEvent",
-      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.InstantEvent.yml\" sourcestartlinenumber=\"1\">Invokes an action after a given delay</p>\n"
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.InstantEvent.yml\" sourcestartlinenumber=\"1\">Invoke an action after the given delay</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -6292,7 +6316,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "UndyneFight_Ex.Entities.RebindKeyScene",
-      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.RebindKeyScene.yml\" sourcestartlinenumber=\"1\">v0.3.0+ Rebinding scene</p>\n"
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Entities.RebindKeyScene.yml\" sourcestartlinenumber=\"1\">v0.3.0+ Rebinding scene, I hate everything about this</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -8280,7 +8304,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "UndyneFight_Ex.KeybindData",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.KeybindData.yml\" sourcestartlinenumber=\"1\">The save data of keybinds</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -8295,6 +8319,34 @@
       "IsMRef": true,
       "Title": "UndyneFight_Ex.LoadingScene",
       "Summary": "<p sourcefile=\"api/UndyneFight_Ex.LoadingScene.yml\" sourcestartlinenumber=\"1\">Loading scene</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Localization.DrawAlign.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Localization.DrawAlign.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Localization.DrawAlign",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Localization.DrawAlign.yml\" sourcestartlinenumber=\"1\">The drawing alignment of the localized text for <xref href=\"UndyneFight_Ex.Localization.DrawLocalizedText(System.String%2cMicrosoft.Xna.Framework.Vector2%2cSystem.Object%5b%5d%2cSystem.String%2cSystem.Nullable%7bMicrosoft.Xna.Framework.Vector2%7d%2cSystem.Nullable%7bMicrosoft.Xna.Framework.Color%7d%2cSystem.Single%2cSystem.Single%2cUndyneFight_Ex.Localization.DrawAlign)\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.Localization.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.Localization.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.Localization",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.Localization.yml\" sourcestartlinenumber=\"1\">Utilities for localization</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -8462,7 +8514,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "UndyneFight_Ex.RenderProduction",
-      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.RenderProduction.yml\" sourcestartlinenumber=\"1\">THe class for most rendering actions, see the documentation for more information</p>\n"
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.RenderProduction.yml\" sourcestartlinenumber=\"1\">The class for most rendering actions, see the documentation for more information</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -8970,6 +9022,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.StringUtil.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.StringUtil.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.StringUtil",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.StringUtil.yml\" sourcestartlinenumber=\"1\">Utilities for mathematical operations</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/UndyneFight_Ex.Surface.TransferUse.yml",
       "output": {
         ".html": {
@@ -9023,6 +9089,20 @@
       "IsMRef": true,
       "Title": "UndyneFight_Ex.TextEntity",
       "Summary": "<p sourcefile=\"api/UndyneFight_Ex.TextEntity.yml\" sourcestartlinenumber=\"1\">Draws a piece of static text</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UndyneFight_Ex.UFEXResourceAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UndyneFight_Ex.UFEXResourceAttribute.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "UndyneFight_Ex.UFEXResourceAttribute",
+      "Summary": "<p sourcefile=\"api/UndyneFight_Ex.UFEXResourceAttribute.yml\" sourcestartlinenumber=\"1\">The attribute to load custom resources</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -9360,31 +9440,44 @@
       "version": ""
     },
     {
+      "type": "Conceptual",
+      "source_relative_path": "docs/getting-started.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/getting-started.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/introduction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
       "type": "Resource",
       "source_relative_path": "images/Getting Started/Content Folder.png",
       "output": {
         "resource": {
           "relative_path": "images/Getting Started/Content Folder.png"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "images/Getting Started/Folder 1.png",
-      "output": {
-        "resource": {
-          "relative_path": "images/Getting Started/Folder 1.png"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "images/Getting Started/Folder 2.png",
-      "output": {
-        "resource": {
-          "relative_path": "images/Getting Started/Folder 2.png"
         }
       },
       "version": ""
@@ -9475,6 +9568,16 @@
       "output": {
         "resource": {
           "relative_path": "images/Icon.ico"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
         }
       },
       "version": ""

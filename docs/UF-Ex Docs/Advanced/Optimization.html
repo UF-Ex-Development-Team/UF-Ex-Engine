@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Preface | UF-Ex Docs </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Preface | UF-Ex Docs ">
+      
+      
+      <link rel="icon" href="../../images/Icon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UF-Ex Docs/Advanced/Optimization.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/Icon.ico" alt="UF-Ex Docs">
+            UF-Ex Docs
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="preface">Preface</h1>
+
+<p>Suppose you had completed the previous tutorials or already have decent amount of experience in using UF-Ex, you should have quite an amount of code that you had made previously. It is likely that you have developed a mindset &quot;if it works, don't touch it&quot;. While this is the safe play, it is not suited for long term development, and we aim to be better than just having the codes work.</p>
+<h1 id="what-is-optimization">What is optimization</h1>
+<p>Imagine you are solving a math problem during an exam, you would want to solve it as fast as possible and move on to the next question right? Coding is basically the same, it's best to execute codes as fast as possible so it can run more codes in 1 frame.</p>
+<p>However, speed isn't everything. Let's say you can bring a cheat sheet to the exam, and of course the fastest way to complete the exam is to have all the answers written on the cheat sheet beforehand. But of course, if there are 100 questions, the cheat sheet will be very messy, if it can even contain all the answers. In coding, the cheat sheet is the Memory stored in RAM. Grabbing data from memory would be fast, but it's not ideal to put a lot of data into memory just so some code can run a bit faster.</p>
+<p>Optimization in games is to reduce the time for the CPU to process the game's logic, reduce the time for the GPU to render the game's graphics, and to reduce the memory usage in RAM. In other words, <strong>make the game less likely to lag</strong>. While yes, you may think that because it didn't lag on your computer, then the code is fine. <strong>That is not true</strong>, it didn't lag on <strong>your</strong> computer, but there is no guarantee that other people won't experience lag, so it is best to optimize the codes so the chance of lagging reduces.</p>
+<h1 id="step-0-benchmarking">Step 0: Benchmarking</h1>
+<p>So now you understand why should we make codes run faster, but how do we know whether the code did run faster? Of course, you can always use the built-in profiler to check the CPU usage and the Memory Usage, but that's not enough, it is strongly recommended that you install <a href="https://benchmarkdotnet.org/">BenchmarkDotNet</a> to your solution so that you can effectively identify what codes need improvement and whether the new ones are improvements at all.</p>
+<h1 id="step-1">Step 1:</h1>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Give concrete examples to optimization using previous tutorial code</p>
+</div>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UF-Ex Docs/Advanced/Optimization.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

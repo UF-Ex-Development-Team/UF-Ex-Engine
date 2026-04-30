@@ -102,7 +102,7 @@ Class Arrow  <a class="header-action link-secondary" title="View source" href="h
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Arrow : Entity, IComparable, ICustomMotion</code></pre>
+    <pre><code class="lang-csharp hljs">public class Arrow : Entity, IComparable&lt;Arrow&gt;, ICustomMotion</code></pre>
   </div>
 
 
@@ -121,7 +121,7 @@ Class Arrow  <a class="header-action link-secondary" title="View source" href="h
   <dl class="typelist implements">
     <dt>Implements</dt>
     <dd>
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable">IComparable</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable</a>&lt;<a class="xref" href="UndyneFight_Ex.Entities.Arrow.html">Arrow</a>&gt;</div>
       <div><a class="xref" href="UndyneFight_Ex.Entities.ICustomMotion.html">ICustomMotion</a></div>
     </dd>
   </dl>
@@ -288,13 +288,6 @@ Class Arrow  <a class="header-action link-secondary" title="View source" href="h
     </div>
   </dd></dl>
 
-  <dl class="typelist extensionMethods">
-    <dt>Extension Methods</dt>
-    <dd>
-  <div>
-      <a class="xref" href="UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_InRange__1___0___0___0_">MathUtil.InRange&lt;T&gt;(T, T, T)</a>
-  </div>
-  </dd></dl>
 
 
 
@@ -352,6 +345,41 @@ Class Arrow  <a class="header-action link-secondary" title="View source" href="h
 
 
 
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="UndyneFight_Ex_Entities_Arrow_Mission" data-uid="UndyneFight_Ex.Entities.Arrow.Mission">
+  Mission
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Chart/Barrages/Arrow/Arrow.cs/#L67"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The target heart of the arrow</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Player.Heart Mission</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UndyneFight_Ex.Entities.Player.html">Player</a>.<a class="xref" href="UndyneFight_Ex.Entities.Player.Heart.html">Heart</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
   <h2 class="section" id="properties">Properties
 </h2>
 
@@ -360,7 +388,7 @@ Class Arrow  <a class="header-action link-secondary" title="View source" href="h
 
   <h3 id="UndyneFight_Ex_Entities_Arrow_Alpha" data-uid="UndyneFight_Ex.Entities.Arrow.Alpha">
   Alpha
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Chart/Barrages/Arrow/Arrow.cs/#L117"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Chart/Barrages/Arrow/Arrow.cs/#L113"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The alpha of the arrow</p>
@@ -392,7 +420,7 @@ Class Arrow  <a class="header-action link-secondary" title="View source" href="h
 
   <h3 id="UndyneFight_Ex_Entities_Arrow_AppearTime" data-uid="UndyneFight_Ex.Entities.Arrow.AppearTime">
   AppearTime
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Chart/Barrages/Arrow/Arrow.cs/#L193"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Chart/Barrages/Arrow/Arrow.cs/#L190"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The frames elapsed after creation</p>
@@ -424,7 +452,7 @@ Class Arrow  <a class="header-action link-secondary" title="View source" href="h
 
   <h3 id="UndyneFight_Ex_Entities_Arrow_ArrowColor" data-uid="UndyneFight_Ex.Entities.Arrow.ArrowColor">
   ArrowColor
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Chart/Barrages/Arrow/Arrow.cs/#L94"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Chart/Barrages/Arrow/Arrow.cs/#L90"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The color type of the arrow</p>
@@ -456,7 +484,7 @@ Class Arrow  <a class="header-action link-secondary" title="View source" href="h
 
   <h3 id="UndyneFight_Ex_Entities_Arrow_BlockTime" data-uid="UndyneFight_Ex.Entities.Arrow.BlockTime">
   BlockTime
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Chart/Barrages/Arrow/Collision.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Chart/Barrages/Arrow/Collision.cs/#L38"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The time when the arrow should be blocked</p>
@@ -520,7 +548,7 @@ Class Arrow  <a class="header-action link-secondary" title="View source" href="h
 
   <h3 id="UndyneFight_Ex_Entities_Arrow_CentreRotationOffset" data-uid="UndyneFight_Ex.Entities.Arrow.CentreRotationOffset">
   CentreRotationOffset
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Chart/Barrages/Arrow/Arrow.cs/#L105"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Chart/Barrages/Arrow/Arrow.cs/#L101"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The rotation with respect to the target</p>
@@ -552,7 +580,7 @@ Class Arrow  <a class="header-action link-secondary" title="View source" href="h
 
   <h3 id="UndyneFight_Ex_Entities_Arrow_JudgeType" data-uid="UndyneFight_Ex.Entities.Arrow.JudgeType">
   JudgeType
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Chart/Barrages/Arrow/Collision.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Chart/Barrages/Arrow/Collision.cs/#L34"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The judgement type of the arrow</p>
@@ -602,38 +630,6 @@ Class Arrow  <a class="header-action link-secondary" title="View source" href="h
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-  <a id="UndyneFight_Ex_Entities_Arrow_Mission_" data-uid="UndyneFight_Ex.Entities.Arrow.Mission*"></a>
-
-  <h3 id="UndyneFight_Ex_Entities_Arrow_Mission" data-uid="UndyneFight_Ex.Entities.Arrow.Mission">
-  Mission
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Chart/Barrages/Arrow/Arrow.cs/#L68"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>The target heart of the arrow</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Player.Heart Mission { get; set; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="UndyneFight_Ex.Entities.Player.html">Player</a>.<a class="xref" href="UndyneFight_Ex.Entities.Player.Heart.html">Heart</a></dt>
     <dd></dd>
   </dl>
 
@@ -936,7 +932,7 @@ Class Arrow  <a class="header-action link-secondary" title="View source" href="h
 
   <h3 id="UndyneFight_Ex_Entities_Arrow_SelfRotationOffset" data-uid="UndyneFight_Ex.Entities.Arrow.SelfRotationOffset">
   SelfRotationOffset
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Chart/Barrages/Arrow/Arrow.cs/#L109"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Chart/Barrages/Arrow/Arrow.cs/#L105"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The rotation of the arrow itself</p>
@@ -968,7 +964,7 @@ Class Arrow  <a class="header-action link-secondary" title="View source" href="h
 
   <h3 id="UndyneFight_Ex_Entities_Arrow_Speed" data-uid="UndyneFight_Ex.Entities.Arrow.Speed">
   Speed
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Chart/Barrages/Arrow/Arrow.cs/#L113"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Chart/Barrages/Arrow/Arrow.cs/#L109"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The speed of the arrow</p>
@@ -1064,7 +1060,7 @@ Class Arrow  <a class="header-action link-secondary" title="View source" href="h
 
   <h3 id="UndyneFight_Ex_Entities_Arrow_Way" data-uid="UndyneFight_Ex.Entities.Arrow.Way">
   Way
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Chart/Barrages/Arrow/Arrow.cs/#L100"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Chart/Barrages/Arrow/Arrow.cs/#L96"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The direction of the arrow (Right, Down, Left, Up)</p>
@@ -1098,9 +1094,9 @@ Class Arrow  <a class="header-action link-secondary" title="View source" href="h
 
   <a id="UndyneFight_Ex_Entities_Arrow_CompareTo_" data-uid="UndyneFight_Ex.Entities.Arrow.CompareTo*"></a>
 
-  <h3 id="UndyneFight_Ex_Entities_Arrow_CompareTo_System_Object_" data-uid="UndyneFight_Ex.Entities.Arrow.CompareTo(System.Object)">
-  CompareTo(object)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Chart/Barrages/Arrow/Arrow.cs/#L179"><i class="bi bi-code-slash"></i></a>
+  <h3 id="UndyneFight_Ex_Entities_Arrow_CompareTo_UndyneFight_Ex_Entities_Arrow_" data-uid="UndyneFight_Ex.Entities.Arrow.CompareTo(UndyneFight_Ex.Entities.Arrow)">
+  CompareTo(Arrow)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Chart/Barrages/Arrow/Arrow.cs/#L182"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Compares the current instance with another object of the same type and returns an integer that indicates whether the current instance precedes, follows, or occurs in the same position in the sort order as the other object.</p>
@@ -1108,21 +1104,20 @@ Class Arrow  <a class="header-action link-secondary" title="View source" href="h
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int CompareTo(object obj)</code></pre>
+    <pre><code class="lang-csharp hljs">public int CompareTo(Arrow obj)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>obj</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
-    <dd><p>An object to compare with this instance.</p>
-</dd>
+    <dt><code>obj</code> <a class="xref" href="UndyneFight_Ex.Entities.Arrow.html">Arrow</a></dt>
+    <dd></dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
     <dd><p>A value that indicates the relative order of the objects being compared. The return value has these meanings:</p>
- <table><thead><tr><th class="term"> Value</th><th class="description"> Meaning</th></tr></thead><tbody><tr><td class="term"> Less than zero</td><td class="description"> This instance precedes <code class="paramref">obj</code> in the sort order.</td></tr><tr><td class="term"> Zero</td><td class="description"> This instance occurs in the same position in the sort order as <code class="paramref">obj</code>.</td></tr><tr><td class="term"> Greater than zero</td><td class="description"> This instance follows <code class="paramref">obj</code> in the sort order.</td></tr></tbody></table>
+ <table><thead><tr><th class="term"> Value</th><th class="description"> Meaning</th></tr></thead><tbody><tr><td class="term"> Less than zero</td><td class="description"> This instance precedes <code class="paramref">other</code> in the sort order.</td></tr><tr><td class="term"> Zero</td><td class="description"> This instance occurs in the same position in the sort order as <code class="paramref">other</code>.</td></tr><tr><td class="term"> Greater than zero</td><td class="description"> This instance follows <code class="paramref">other</code> in the sort order.</td></tr></tbody></table>
 </dd>
   </dl>
 
@@ -1133,12 +1128,6 @@ Class Arrow  <a class="header-action link-secondary" title="View source" href="h
 
 
 
-  <h4 class="section">Exceptions</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
-    <dd><p><code class="paramref">obj</code> is not the same type as this instance.</p>
-</dd>
-  </dl>
 
 
 
@@ -1179,10 +1168,10 @@ Class Arrow  <a class="header-action link-secondary" title="View source" href="h
 
   <h3 id="UndyneFight_Ex_Entities_Arrow_Dispose" data-uid="UndyneFight_Ex.Entities.Arrow.Dispose">
   Dispose()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Chart/Barrages/Arrow/Collision.cs/#L374"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Chart/Barrages/Arrow/Collision.cs/#L334"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Disposes the object</p>
+  <div class="markdown level1 summary"><p>Disposes the object and its children</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -1206,7 +1195,7 @@ Class Arrow  <a class="header-action link-secondary" title="View source" href="h
 
   <h3 id="UndyneFight_Ex_Entities_Arrow_Draw" data-uid="UndyneFight_Ex.Entities.Arrow.Draw">
   Draw()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Chart/Barrages/Arrow/Arrow.cs/#L131"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Chart/Barrages/Arrow/Arrow.cs/#L127"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The rendering logic of the entity</p>
@@ -1233,7 +1222,7 @@ Class Arrow  <a class="header-action link-secondary" title="View source" href="h
 
   <h3 id="UndyneFight_Ex_Entities_Arrow_ResetColor_System_Int32_" data-uid="UndyneFight_Ex.Entities.Arrow.ResetColor(System.Int32)">
   ResetColor(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Chart/Barrages/Arrow/Arrow.cs/#L171"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Chart/Barrages/Arrow/Arrow.cs/#L174"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Sets the color of the arrow</p>
@@ -1266,7 +1255,7 @@ Class Arrow  <a class="header-action link-secondary" title="View source" href="h
 
   <h3 id="UndyneFight_Ex_Entities_Arrow_Start" data-uid="UndyneFight_Ex.Entities.Arrow.Start">
   Start()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Chart/Barrages/Arrow/Arrow.cs/#L74"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Chart/Barrages/Arrow/Arrow.cs/#L69"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The initialization of the object</p>
@@ -1326,7 +1315,7 @@ Class Arrow  <a class="header-action link-secondary" title="View source" href="h
 
   <h3 id="UndyneFight_Ex_Entities_Arrow_Update" data-uid="UndyneFight_Ex.Entities.Arrow.Update">
   Update()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Chart/Barrages/Arrow/Arrow.cs/#L156"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Chart/Barrages/Arrow/Arrow.cs/#L153"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The logic to run each frame</p>

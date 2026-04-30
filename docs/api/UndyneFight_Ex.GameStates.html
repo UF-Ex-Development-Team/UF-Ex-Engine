@@ -148,30 +148,32 @@ Class GameStates  <a class="header-action link-secondary" title="View source" hr
 
 
 
-  <h2 class="section" id="fields">Fields
+  <h2 class="section" id="properties">Properties
 </h2>
 
 
+  <a id="UndyneFight_Ex_GameStates_ApplicationSurface_" data-uid="UndyneFight_Ex.GameStates.ApplicationSurface*"></a>
 
-  <h3 id="UndyneFight_Ex_GameStates_AudioCache" data-uid="UndyneFight_Ex.GameStates.AudioCache">
-  AudioCache
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Main/GameStates.cs/#L302"><i class="bi bi-code-slash"></i></a>
+  <h3 id="UndyneFight_Ex_GameStates_ApplicationSurface" data-uid="UndyneFight_Ex.GameStates.ApplicationSurface">
+  ApplicationSurface
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Rendering/GameRenderProductions.cs/#L11"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>The audio caches for song previews</p>
+  <div class="markdown level1 summary"><p>The surface used for drawing the game</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static readonly Dictionary&lt;string, Audio&gt; AudioCache</code></pre>
+    <pre><code class="lang-csharp hljs">public static Texture2D ApplicationSurface { get; }</code></pre>
   </div>
 
 
 
 
-  <h4 class="section">Field Value</h4>
+
+  <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="UndyneFight_Ex.Audio.html">Audio</a>&gt;</dt>
+    <dt><span class="xref">Texture2D</span></dt>
     <dd></dd>
   </dl>
 
@@ -182,16 +184,11 @@ Class GameStates  <a class="header-action link-secondary" title="View source" hr
 
 
 
-
-  <h2 class="section" id="properties">Properties
-</h2>
-
-
   <a id="UndyneFight_Ex_GameStates_Aspect_" data-uid="UndyneFight_Ex.GameStates.Aspect*"></a>
 
   <h3 id="UndyneFight_Ex_GameStates_Aspect" data-uid="UndyneFight_Ex.GameStates.Aspect">
   Aspect
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Rendering/GameRenderProductions.cs/#L11"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Rendering/GameRenderProductions.cs/#L15"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Aspect ratio of the game</p>
@@ -223,7 +220,7 @@ Class GameStates  <a class="header-action link-secondary" title="View source" hr
 
   <h3 id="UndyneFight_Ex_GameStates_CharInput" data-uid="UndyneFight_Ex.GameStates.CharInput">
   CharInput
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/Input/KeyChecker.cs/#L98"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/Input/KeyChecker.cs/#L121"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The character the player has inputted</p>
@@ -255,7 +252,7 @@ Class GameStates  <a class="header-action link-secondary" title="View source" hr
 
   <h3 id="UndyneFight_Ex_GameStates_CurrentScene" data-uid="UndyneFight_Ex.GameStates.CurrentScene">
   CurrentScene
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Main/GameStates.cs/#L75"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Main/GameStates.cs/#L71"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The current scene of the game, i.e. <a class="xref" href="UndyneFight_Ex.Entities.SongFightingScene.html">SongFightingScene</a></p>
@@ -287,7 +284,7 @@ Class GameStates  <a class="header-action link-secondary" title="View source" hr
 
   <h3 id="UndyneFight_Ex_GameStates_CurrentWindow" data-uid="UndyneFight_Ex.GameStates.CurrentWindow">
   CurrentWindow
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Rendering/GameRenderProductions.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Rendering/GameRenderProductions.cs/#L28"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The current game window</p>
@@ -319,7 +316,7 @@ Class GameStates  <a class="header-action link-secondary" title="View source" hr
 
   <h3 id="UndyneFight_Ex_GameStates_DefaultKeys" data-uid="UndyneFight_Ex.GameStates.DefaultKeys">
   DefaultKeys
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/Input/KeyChecker.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/Input/KeyChecker.cs/#L15"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The default key bindings</p>
@@ -351,7 +348,7 @@ Class GameStates  <a class="header-action link-secondary" title="View source" hr
 
   <h3 id="UndyneFight_Ex_GameStates_ForceDisableTimeTips" data-uid="UndyneFight_Ex.GameStates.ForceDisableTimeTips">
   ForceDisableTimeTips
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Main/GameStates.cs/#L89"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Main/GameStates.cs/#L85"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Whether the time tips (Early, Late) are forcefully disabled</p>
@@ -383,7 +380,7 @@ Class GameStates  <a class="header-action link-secondary" title="View source" hr
 
   <h3 id="UndyneFight_Ex_GameStates_GameModeMemory" data-uid="UndyneFight_Ex.GameStates.GameModeMemory">
   GameModeMemory
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Main/GameStates.cs/#L93"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Main/GameStates.cs/#L89"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The GameMode used in the previous chart</p>
@@ -447,7 +444,7 @@ Class GameStates  <a class="header-action link-secondary" title="View source" hr
 
   <h3 id="UndyneFight_Ex_GameStates_GameOnFocus" data-uid="UndyneFight_Ex.GameStates.GameOnFocus">
   GameOnFocus
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Rendering/GameRenderProductions.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Rendering/GameRenderProductions.cs/#L32"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Whether the game window is focused (Not tabbed out)</p>
@@ -479,7 +476,7 @@ Class GameStates  <a class="header-action link-secondary" title="View source" hr
 
   <h3 id="UndyneFight_Ex_GameStates_GameWindow" data-uid="UndyneFight_Ex.GameStates.GameWindow">
   GameWindow
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Main/GameStates.cs/#L50"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Main/GameStates.cs/#L41"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The graphics device manager of the game</p>
@@ -507,11 +504,43 @@ Class GameStates  <a class="header-action link-secondary" title="View source" hr
 
 
 
+  <a id="UndyneFight_Ex_GameStates_NameColor_" data-uid="UndyneFight_Ex.GameStates.NameColor*"></a>
+
+  <h3 id="UndyneFight_Ex_GameStates_NameColor" data-uid="UndyneFight_Ex.GameStates.NameColor">
+  NameColor
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Main/GameStates.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The color of the player name, VIP can have blue/orange/colorful instead of only white</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string NameColor { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="UndyneFight_Ex_GameStates_ResizeMatrix_" data-uid="UndyneFight_Ex.GameStates.ResizeMatrix*"></a>
 
   <h3 id="UndyneFight_Ex_GameStates_ResizeMatrix" data-uid="UndyneFight_Ex.GameStates.ResizeMatrix">
   ResizeMatrix
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Rendering/GameRenderProductions.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Rendering/GameRenderProductions.cs/#L24"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The world matrix</p>
@@ -543,10 +572,10 @@ Class GameStates  <a class="header-action link-secondary" title="View source" hr
 
   <h3 id="UndyneFight_Ex_GameStates_SavePath" data-uid="UndyneFight_Ex.GameStates.SavePath">
   SavePath
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Main/GameStates.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Main/GameStates.cs/#L13"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>The save path to your game</p>
+  <div class="markdown level1 summary"><p>The save path to your game, note that there is no &quot;\&quot; at the end</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -575,7 +604,7 @@ Class GameStates  <a class="header-action link-secondary" title="View source" hr
 
   <h3 id="UndyneFight_Ex_GameStates_SpriteBatch" data-uid="UndyneFight_Ex.GameStates.SpriteBatch">
   SpriteBatch
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Main/GameStates.cs/#L46"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Main/GameStates.cs/#L37"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The sprite batch of the game</p>
@@ -607,7 +636,7 @@ Class GameStates  <a class="header-action link-secondary" title="View source" hr
 
   <h3 id="UndyneFight_Ex_GameStates_SurfaceScale" data-uid="UndyneFight_Ex.GameStates.SurfaceScale">
   SurfaceScale
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Rendering/GameRenderProductions.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Rendering/GameRenderProductions.cs/#L19"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The surface scale of the game</p>
@@ -639,7 +668,7 @@ Class GameStates  <a class="header-action link-secondary" title="View source" hr
 
   <h3 id="UndyneFight_Ex_GameStates_WordsChanged" data-uid="UndyneFight_Ex.GameStates.WordsChanged">
   WordsChanged
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/Input/KeyChecker.cs/#L94"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/Input/KeyChecker.cs/#L117"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Player has typed</p>
@@ -671,7 +700,7 @@ Class GameStates  <a class="header-action link-secondary" title="View source" hr
 
   <h3 id="UndyneFight_Ex_GameStates_difficulty" data-uid="UndyneFight_Ex.GameStates.difficulty">
   difficulty
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Main/GameStates.cs/#L85"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Main/GameStates.cs/#L81"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The difficulty of the current chart in <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, you can convert it back to <a class="xref" href="UndyneFight_Ex.SongSystem.Difficulty.html">Difficulty</a></p>
@@ -707,7 +736,7 @@ Class GameStates  <a class="header-action link-secondary" title="View source" hr
 
   <h3 id="UndyneFight_Ex_GameStates_Broadcast_UndyneFight_Ex_GameEventArgs_" data-uid="UndyneFight_Ex.GameStates.Broadcast(UndyneFight_Ex.GameEventArgs)">
   Broadcast(GameEventArgs)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Main/GameStates.cs/#L289"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Main/GameStates.cs/#L271"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Broadcast an event globally</p>
@@ -740,7 +769,7 @@ Class GameStates  <a class="header-action link-secondary" title="View source" hr
 
   <h3 id="UndyneFight_Ex_GameStates_ChangeSpeedScale_System_Single_" data-uid="UndyneFight_Ex.GameStates.ChangeSpeedScale(System.Single)">
   ChangeSpeedScale(float)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Main/GameStates.cs/#L270"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Main/GameStates.cs/#L252"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Changes the speed of the game</p>
@@ -772,7 +801,7 @@ Class GameStates  <a class="header-action link-secondary" title="View source" hr
 
   <h3 id="UndyneFight_Ex_GameStates_DetectEvent_System_String_" data-uid="UndyneFight_Ex.GameStates.DetectEvent(System.String)">
   DetectEvent(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Main/GameStates.cs/#L296"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Main/GameStates.cs/#L278"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Detect whether an event (Made from <a class="xref" href="UndyneFight_Ex.GameStates.html#UndyneFight_Ex_GameStates_Broadcast_UndyneFight_Ex_GameEventArgs_">Broadcast(GameEventArgs)</a>) has been called</p>
@@ -810,7 +839,7 @@ Class GameStates  <a class="header-action link-secondary" title="View source" hr
 
   <h3 id="UndyneFight_Ex_GameStates_EndFight" data-uid="UndyneFight_Ex.GameStates.EndFight">
   EndFight()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Main/GameStates.cs/#L259"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Main/GameStates.cs/#L241"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Ends the current fight/chart</p>
@@ -837,7 +866,7 @@ Class GameStates  <a class="header-action link-secondary" title="View source" hr
 
   <h3 id="UndyneFight_Ex_GameStates_FileWriteText_System_String_System_String_" data-uid="UndyneFight_Ex.GameStates.FileWriteText(System.String,System.String)">
   FileWriteText(string, string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Main/GameStates.cs/#L277"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Main/GameStates.cs/#L259"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Writes text onto an external file</p>
@@ -873,7 +902,7 @@ Class GameStates  <a class="header-action link-secondary" title="View source" hr
 
   <h3 id="UndyneFight_Ex_GameStates_InstanceCreate_UndyneFight_Ex_GameObject_" data-uid="UndyneFight_Ex.GameStates.InstanceCreate(UndyneFight_Ex.GameObject)">
   InstanceCreate(GameObject)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Main/GameStates.cs/#L56"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Main/GameStates.cs/#L47"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Creates an instance</p>
@@ -906,7 +935,7 @@ Class GameStates  <a class="header-action link-secondary" title="View source" hr
 
   <h3 id="UndyneFight_Ex_GameStates_InstanceDestroy_System_Type_" data-uid="UndyneFight_Ex.GameStates.InstanceDestroy(System.Type)">
   InstanceDestroy(Type)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Main/GameStates.cs/#L69"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Main/GameStates.cs/#L60"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Destroy all instances of the given type</p>
@@ -939,7 +968,7 @@ Class GameStates  <a class="header-action link-secondary" title="View source" hr
 
   <h3 id="UndyneFight_Ex_GameStates_InstanceExists_System_Type_" data-uid="UndyneFight_Ex.GameStates.InstanceExists(System.Type)">
   InstanceExists(Type)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Main/GameStates.cs/#L63"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Main/GameStates.cs/#L54"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Whether an instance already exists</p>
@@ -977,7 +1006,7 @@ Class GameStates  <a class="header-action link-secondary" title="View source" hr
 
   <h3 id="UndyneFight_Ex_GameStates_IsKeyDown_Microsoft_Xna_Framework_Input_Keys_" data-uid="UndyneFight_Ex.GameStates.IsKeyDown(Microsoft.Xna.Framework.Input.Keys)">
   IsKeyDown(Keys)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/Input/KeyChecker.cs/#L220"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/Input/KeyChecker.cs/#L245"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Check if a key is being held</p>
@@ -1016,7 +1045,7 @@ Class GameStates  <a class="header-action link-secondary" title="View source" hr
 
   <h3 id="UndyneFight_Ex_GameStates_IsKeyDown_UndyneFight_Ex_InputIdentity_" data-uid="UndyneFight_Ex.GameStates.IsKeyDown(UndyneFight_Ex.InputIdentity)">
   IsKeyDown(InputIdentity)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/Input/KeyChecker.cs/#L206"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/Input/KeyChecker.cs/#L231"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Check if a key is being held</p>
@@ -1055,7 +1084,7 @@ Class GameStates  <a class="header-action link-secondary" title="View source" hr
 
   <h3 id="UndyneFight_Ex_GameStates_IsKeyPressed_UndyneFight_Ex_InputIdentity_" data-uid="UndyneFight_Ex.GameStates.IsKeyPressed(UndyneFight_Ex.InputIdentity)">
   IsKeyPressed(InputIdentity)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/Input/KeyChecker.cs/#L192"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/Input/KeyChecker.cs/#L217"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Check if a key is pressed (Used when <a class="xref" href="UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_UpdateIn120">UpdateIn120</a> is false)</p>
@@ -1094,7 +1123,7 @@ Class GameStates  <a class="header-action link-secondary" title="View source" hr
 
   <h3 id="UndyneFight_Ex_GameStates_IsKeyPressed120f_Microsoft_Xna_Framework_Input_Keys_" data-uid="UndyneFight_Ex.GameStates.IsKeyPressed120f(Microsoft.Xna.Framework.Input.Keys)">
   IsKeyPressed120f(Keys)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/Input/KeyChecker.cs/#L213"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/Input/KeyChecker.cs/#L238"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Check if a key is pressed (Used when <a class="xref" href="UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_UpdateIn120">UpdateIn120</a> is true)</p>
@@ -1133,7 +1162,7 @@ Class GameStates  <a class="header-action link-secondary" title="View source" hr
 
   <h3 id="UndyneFight_Ex_GameStates_IsKeyPressed120f_UndyneFight_Ex_InputIdentity_" data-uid="UndyneFight_Ex.GameStates.IsKeyPressed120f(UndyneFight_Ex.InputIdentity)">
   IsKeyPressed120f(InputIdentity)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/Input/KeyChecker.cs/#L199"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/Input/KeyChecker.cs/#L224"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Check if a key is pressed (Used when <a class="xref" href="UndyneFight_Ex.GameObject.html#UndyneFight_Ex_GameObject_UpdateIn120">UpdateIn120</a> is true)</p>
@@ -1168,38 +1197,11 @@ Class GameStates  <a class="header-action link-secondary" title="View source" hr
 
 
 
-  <a id="UndyneFight_Ex_GameStates_LoadSongPreviews_" data-uid="UndyneFight_Ex.GameStates.LoadSongPreviews*"></a>
-
-  <h3 id="UndyneFight_Ex_GameStates_LoadSongPreviews" data-uid="UndyneFight_Ex.GameStates.LoadSongPreviews">
-  LoadSongPreviews()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Main/GameStates.cs/#L317"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Loads the song previews of the charts</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void LoadSongPreviews()</code></pre>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
   <a id="UndyneFight_Ex_GameStates_ResetFightState_" data-uid="UndyneFight_Ex.GameStates.ResetFightState*"></a>
 
   <h3 id="UndyneFight_Ex_GameStates_ResetFightState" data-uid="UndyneFight_Ex.GameStates.ResetFightState">
   ResetFightState()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Main/GameStates.cs/#L223"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Main/GameStates.cs/#L207"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Resets the fight state</p>
@@ -1226,7 +1228,7 @@ Class GameStates  <a class="header-action link-secondary" title="View source" hr
 
   <h3 id="UndyneFight_Ex_GameStates_ResetRendering" data-uid="UndyneFight_Ex.GameStates.ResetRendering">
   ResetRendering()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Rendering/GameRenderProductions.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Rendering/GameRenderProductions.cs/#L36"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Resets rendering settings</p>
@@ -1253,7 +1255,7 @@ Class GameStates  <a class="header-action link-secondary" title="View source" hr
 
   <h3 id="UndyneFight_Ex_GameStates_ResetScene_UndyneFight_Ex_Scene_" data-uid="UndyneFight_Ex.GameStates.ResetScene(UndyneFight_Ex.Scene)">
   ResetScene(Scene)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Main/GameStates.cs/#L204"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Main/GameStates.cs/#L188"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Sets the current scene into a new one</p>
@@ -1286,7 +1288,7 @@ Class GameStates  <a class="header-action link-secondary" title="View source" hr
 
   <h3 id="UndyneFight_Ex_GameStates_ResetTime" data-uid="UndyneFight_Ex.GameStates.ResetTime">
   ResetTime()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Main/GameStates.cs/#L100"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Main/GameStates.cs/#L96"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Reset <span class="xref">UndyneFight_Ex.GameMain.gameTime</span> to 0</p>
@@ -1313,7 +1315,7 @@ Class GameStates  <a class="header-action link-secondary" title="View source" hr
 
   <h3 id="UndyneFight_Ex_GameStates_SelectBattle_UndyneFight_Ex_Fight_IClassicFight_UndyneFight_Ex_SongSystem_GameMode_" data-uid="UndyneFight_Ex.GameStates.SelectBattle(UndyneFight_Ex.Fight.IClassicFight,UndyneFight_Ex.SongSystem.GameMode)">
   SelectBattle(IClassicFight, GameMode)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Main/GameStates.cs/#L155"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Main/GameStates.cs/#L146"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Selects a fight</p>
@@ -1349,7 +1351,7 @@ Class GameStates  <a class="header-action link-secondary" title="View source" hr
 
   <h3 id="UndyneFight_Ex_GameStates_StartSong_UndyneFight_Ex_Entities_SongFightingScene_SceneParams_" data-uid="UndyneFight_Ex.GameStates.StartSong(UndyneFight_Ex.Entities.SongFightingScene.SceneParams)">
   StartSong(SceneParams)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Main/GameStates.cs/#L192"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Main/GameStates.cs/#L176"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Starts a chart</p>
@@ -1382,7 +1384,7 @@ Class GameStates  <a class="header-action link-secondary" title="View source" hr
 
   <h3 id="UndyneFight_Ex_GameStates_StartSong_UndyneFight_Ex_SongSystem_IWaveSet_Microsoft_Xna_Framework_Graphics_Texture2D_System_String_System_Int32_UndyneFight_Ex_SongSystem_JudgementState_UndyneFight_Ex_SongSystem_GameMode_" data-uid="UndyneFight_Ex.GameStates.StartSong(UndyneFight_Ex.SongSystem.IWaveSet,Microsoft.Xna.Framework.Graphics.Texture2D,System.String,System.Int32,UndyneFight_Ex.SongSystem.JudgementState,UndyneFight_Ex.SongSystem.GameMode)">
   StartSong(IWaveSet, Texture2D, string, int, JudgementState, GameMode)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Main/GameStates.cs/#L179"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Main/GameStates.cs/#L170"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Starts a chart</p>

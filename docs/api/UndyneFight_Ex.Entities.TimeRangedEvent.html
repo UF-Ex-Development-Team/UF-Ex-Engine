@@ -89,7 +89,7 @@
 
 
   <h1 id="UndyneFight_Ex_Entities_TimeRangedEvent" data-uid="UndyneFight_Ex.Entities.TimeRangedEvent" class="text-break">
-Class TimeRangedEvent  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/EntityBase.cs/#L203"><i class="bi bi-code-slash"></i></a>
+Class TimeRangedEvent  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/EntityBase.cs/#L193"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -102,7 +102,8 @@ Class TimeRangedEvent  <a class="header-action link-secondary" title="View sourc
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class TimeRangedEvent : GameObject</code></pre>
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Use DelayEventProcessor.AddTimeRangedEvent instead&quot;)]
+public class TimeRangedEvent : GameObject</code></pre>
   </div>
 
 
@@ -233,10 +234,10 @@ Class TimeRangedEvent  <a class="header-action link-secondary" title="View sourc
 
   <h3 id="UndyneFight_Ex_Entities_TimeRangedEvent__ctor_System_Single_System_Action_" data-uid="UndyneFight_Ex.Entities.TimeRangedEvent.#ctor(System.Single,System.Action)">
   TimeRangedEvent(float, Action)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/EntityBase.cs/#L225"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/EntityBase.cs/#L216"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Invoke an action that lasts for the given duration</p>
+  <div class="markdown level1 summary"><p>能够持续执行一段时间的事件</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -247,10 +248,10 @@ Class TimeRangedEvent  <a class="header-action link-secondary" title="View sourc
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>duration</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
-    <dd><p>The duration of the action to invoke</p>
+    <dd><p>事件会执行几次。填写 0 不会执行！</p>
 </dd>
     <dt><code>action</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action">Action</a></dt>
-    <dd><p>The action to invoke</p>
+    <dd><p>给的事件</p>
 </dd>
   </dl>
 
@@ -269,10 +270,10 @@ Class TimeRangedEvent  <a class="header-action link-secondary" title="View sourc
 
   <h3 id="UndyneFight_Ex_Entities_TimeRangedEvent__ctor_System_Single_System_Single_System_Action_" data-uid="UndyneFight_Ex.Entities.TimeRangedEvent.#ctor(System.Single,System.Single,System.Action)">
   TimeRangedEvent(float, float, Action)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/EntityBase.cs/#L214"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/EntityBase.cs/#L205"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Invoke an action that lasts for the given duration after the given delay</p>
+  <div class="markdown level1 summary"><p>能够持续执行一段时间的事件</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -283,13 +284,13 @@ Class TimeRangedEvent  <a class="header-action link-secondary" title="View sourc
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>timeDelay</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
-    <dd><p>The delay to invoke the action</p>
+    <dd><p>事件发生距离当时的帧数</p>
 </dd>
     <dt><code>duration</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
-    <dd><p>The duration of the action to invoke</p>
+    <dd><p>事件会执行几次。填写 0 不会执行！</p>
 </dd>
     <dt><code>action</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action">Action</a></dt>
-    <dd><p>The action to invoke</p>
+    <dd><p>给的事件</p>
 </dd>
   </dl>
 
@@ -312,7 +313,7 @@ Class TimeRangedEvent  <a class="header-action link-secondary" title="View sourc
 
   <h3 id="UndyneFight_Ex_Entities_TimeRangedEvent_Update" data-uid="UndyneFight_Ex.Entities.TimeRangedEvent.Update">
   Update()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/EntityBase.cs/#L232"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/EntityBase.cs/#L223"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The logic to run each frame</p>
@@ -339,7 +340,7 @@ Class TimeRangedEvent  <a class="header-action link-secondary" title="View sourc
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/EntityBase.cs/#L203" class="edit-link">Edit this page</a>
+          <a href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UndyneFight-Ex/Base/EntityBase.cs/#L193" class="edit-link">Edit this page</a>
         </div>
 
 

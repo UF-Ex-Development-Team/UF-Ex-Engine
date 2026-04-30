@@ -3959,6 +3959,22 @@ references:
   isSpec: "True"
   fullName: UndyneFight_Ex.DrawingLab.DrawVector
   nameWithType: DrawingLab.DrawVector
+- uid: UndyneFight_Ex.DrawingLab.GeneralDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Vector2},System.Single,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{UndyneFight_Ex.CollideRect},System.Nullable{UndyneFight_Ex.CollideRect},System.Single)
+  name: GeneralDraw(Texture2D, Vector2, Color?, Vector2?, float, Vector2?, CollideRect?, CollideRect?, float)
+  href: api/UndyneFight_Ex.DrawingLab.html#UndyneFight_Ex_DrawingLab_GeneralDraw_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_System_Nullable_Microsoft_Xna_Framework_Color__System_Nullable_Microsoft_Xna_Framework_Vector2__System_Single_System_Nullable_Microsoft_Xna_Framework_Vector2__System_Nullable_UndyneFight_Ex_CollideRect__System_Nullable_UndyneFight_Ex_CollideRect__System_Single_
+  commentId: M:UndyneFight_Ex.DrawingLab.GeneralDraw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Color},System.Nullable{Microsoft.Xna.Framework.Vector2},System.Single,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{UndyneFight_Ex.CollideRect},System.Nullable{UndyneFight_Ex.CollideRect},System.Single)
+  name.vb: GeneralDraw(Texture2D, Vector2, Color?, Vector2?, Single, Vector2?, CollideRect?, CollideRect?, Single)
+  fullName: UndyneFight_Ex.DrawingLab.GeneralDraw(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Color?, Microsoft.Xna.Framework.Vector2?, float, Microsoft.Xna.Framework.Vector2?, UndyneFight_Ex.CollideRect?, UndyneFight_Ex.CollideRect?, float)
+  fullName.vb: UndyneFight_Ex.DrawingLab.GeneralDraw(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Color?, Microsoft.Xna.Framework.Vector2?, Single, Microsoft.Xna.Framework.Vector2?, UndyneFight_Ex.CollideRect?, UndyneFight_Ex.CollideRect?, Single)
+  nameWithType: DrawingLab.GeneralDraw(Texture2D, Vector2, Color?, Vector2?, float, Vector2?, CollideRect?, CollideRect?, float)
+  nameWithType.vb: DrawingLab.GeneralDraw(Texture2D, Vector2, Color?, Vector2?, Single, Vector2?, CollideRect?, CollideRect?, Single)
+- uid: UndyneFight_Ex.DrawingLab.GeneralDraw*
+  name: GeneralDraw
+  href: api/UndyneFight_Ex.DrawingLab.html#UndyneFight_Ex_DrawingLab_GeneralDraw_
+  commentId: Overload:UndyneFight_Ex.DrawingLab.GeneralDraw
+  isSpec: "True"
+  fullName: UndyneFight_Ex.DrawingLab.GeneralDraw
+  nameWithType: DrawingLab.GeneralDraw
 - uid: UndyneFight_Ex.DrawingLab.GetIndices(Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture[])
   name: GetIndices(VertexPositionColorTexture[])
   href: api/UndyneFight_Ex.DrawingLab.html#UndyneFight_Ex_DrawingLab_GetIndices_Microsoft_Xna_Framework_Graphics_VertexPositionColorTexture___
@@ -4749,13 +4765,19 @@ references:
   nameWithType: Arrow.ClassicApplier.Update
 - uid: UndyneFight_Ex.Entities.Arrow.CompareTo(System.Object)
   name: CompareTo(object)
-  href: api/UndyneFight_Ex.Entities.Arrow.html#UndyneFight_Ex_Entities_Arrow_CompareTo_System_Object_
+  href: UF-Ex%20Docs/api/UndyneFight_Ex.Entities.Arrow.html#UndyneFight_Ex_Entities_Arrow_CompareTo_System_Object_
   commentId: M:UndyneFight_Ex.Entities.Arrow.CompareTo(System.Object)
   name.vb: CompareTo(Object)
   fullName: UndyneFight_Ex.Entities.Arrow.CompareTo(object)
   fullName.vb: UndyneFight_Ex.Entities.Arrow.CompareTo(Object)
   nameWithType: Arrow.CompareTo(object)
   nameWithType.vb: Arrow.CompareTo(Object)
+- uid: UndyneFight_Ex.Entities.Arrow.CompareTo(UndyneFight_Ex.Entities.Arrow)
+  name: CompareTo(Arrow)
+  href: api/UndyneFight_Ex.Entities.Arrow.html#UndyneFight_Ex_Entities_Arrow_CompareTo_UndyneFight_Ex_Entities_Arrow_
+  commentId: M:UndyneFight_Ex.Entities.Arrow.CompareTo(UndyneFight_Ex.Entities.Arrow)
+  fullName: UndyneFight_Ex.Entities.Arrow.CompareTo(UndyneFight_Ex.Entities.Arrow)
+  nameWithType: Arrow.CompareTo(Arrow)
 - uid: UndyneFight_Ex.Entities.Arrow.CompareTo*
   name: CompareTo
   href: api/UndyneFight_Ex.Entities.Arrow.html#UndyneFight_Ex_Entities_Arrow_CompareTo_
@@ -4960,14 +4982,13 @@ references:
 - uid: UndyneFight_Ex.Entities.Arrow.Mission
   name: Mission
   href: api/UndyneFight_Ex.Entities.Arrow.html#UndyneFight_Ex_Entities_Arrow_Mission
-  commentId: P:UndyneFight_Ex.Entities.Arrow.Mission
+  commentId: F:UndyneFight_Ex.Entities.Arrow.Mission
   fullName: UndyneFight_Ex.Entities.Arrow.Mission
   nameWithType: Arrow.Mission
 - uid: UndyneFight_Ex.Entities.Arrow.Mission*
   name: Mission
-  href: api/UndyneFight_Ex.Entities.Arrow.html#UndyneFight_Ex_Entities_Arrow_Mission_
+  href: UF-Ex%20Docs/api/UndyneFight_Ex.Entities.Arrow.html#UndyneFight_Ex_Entities_Arrow_Mission_
   commentId: Overload:UndyneFight_Ex.Entities.Arrow.Mission
-  isSpec: "True"
   fullName: UndyneFight_Ex.Entities.Arrow.Mission
   nameWithType: Arrow.Mission
 - uid: UndyneFight_Ex.Entities.Arrow.MissionCentre
@@ -6090,15 +6111,14 @@ references:
   nameWithType: Boneslab.ControllingBox
 - uid: UndyneFight_Ex.Entities.Boneslab.Dispose
   name: Dispose()
-  href: api/UndyneFight_Ex.Entities.Boneslab.html#UndyneFight_Ex_Entities_Boneslab_Dispose
+  href: UF-Ex%20Docs/api/UndyneFight_Ex.Entities.Boneslab.html#UndyneFight_Ex_Entities_Boneslab_Dispose
   commentId: M:UndyneFight_Ex.Entities.Boneslab.Dispose
   fullName: UndyneFight_Ex.Entities.Boneslab.Dispose()
   nameWithType: Boneslab.Dispose()
 - uid: UndyneFight_Ex.Entities.Boneslab.Dispose*
   name: Dispose
-  href: api/UndyneFight_Ex.Entities.Boneslab.html#UndyneFight_Ex_Entities_Boneslab_Dispose_
+  href: UF-Ex%20Docs/api/UndyneFight_Ex.Entities.Boneslab.html#UndyneFight_Ex_Entities_Boneslab_Dispose_
   commentId: Overload:UndyneFight_Ex.Entities.Boneslab.Dispose
-  isSpec: "True"
   fullName: UndyneFight_Ex.Entities.Boneslab.Dispose
   nameWithType: Boneslab.Dispose
 - uid: UndyneFight_Ex.Entities.Boneslab.Draw
@@ -6767,9 +6787,18 @@ references:
   fullName.vb: UndyneFight_Ex.Entities.CustomSpear.New
   nameWithType: CustomSpear.CustomSpear
   nameWithType.vb: CustomSpear.New
+- uid: UndyneFight_Ex.Entities.CustomSpear.AlphaDecrease(System.Single,System.Nullable{System.Single},System.Boolean)
+  name: AlphaDecrease(float, float?, bool)
+  href: api/UndyneFight_Ex.Entities.CustomSpear.html#UndyneFight_Ex_Entities_CustomSpear_AlphaDecrease_System_Single_System_Nullable_System_Single__System_Boolean_
+  commentId: M:UndyneFight_Ex.Entities.CustomSpear.AlphaDecrease(System.Single,System.Nullable{System.Single},System.Boolean)
+  name.vb: AlphaDecrease(Single, Single?, Boolean)
+  fullName: UndyneFight_Ex.Entities.CustomSpear.AlphaDecrease(float, float?, bool)
+  fullName.vb: UndyneFight_Ex.Entities.CustomSpear.AlphaDecrease(Single, Single?, Boolean)
+  nameWithType: CustomSpear.AlphaDecrease(float, float?, bool)
+  nameWithType.vb: CustomSpear.AlphaDecrease(Single, Single?, Boolean)
 - uid: UndyneFight_Ex.Entities.CustomSpear.AlphaDecrease(System.Single,System.Nullable{System.Single},System.Nullable{System.Boolean})
   name: AlphaDecrease(float, float?, bool?)
-  href: api/UndyneFight_Ex.Entities.CustomSpear.html#UndyneFight_Ex_Entities_CustomSpear_AlphaDecrease_System_Single_System_Nullable_System_Single__System_Nullable_System_Boolean__
+  href: UF-Ex%20Docs/api/UndyneFight_Ex.Entities.CustomSpear.html#UndyneFight_Ex_Entities_CustomSpear_AlphaDecrease_System_Single_System_Nullable_System_Single__System_Nullable_System_Boolean__
   commentId: M:UndyneFight_Ex.Entities.CustomSpear.AlphaDecrease(System.Single,System.Nullable{System.Single},System.Nullable{System.Boolean})
   name.vb: AlphaDecrease(Single, Single?, Boolean?)
   fullName: UndyneFight_Ex.Entities.CustomSpear.AlphaDecrease(float, float?, bool?)
@@ -6825,6 +6854,70 @@ references:
   isSpec: "True"
   fullName: UndyneFight_Ex.Entities.CustomSpear.Update
   nameWithType: CustomSpear.Update
+- uid: UndyneFight_Ex.Entities.DelayEventProcessor
+  name: DelayEventProcessor
+  href: api/UndyneFight_Ex.Entities.DelayEventProcessor.html
+  commentId: T:UndyneFight_Ex.Entities.DelayEventProcessor
+  fullName: UndyneFight_Ex.Entities.DelayEventProcessor
+  nameWithType: DelayEventProcessor
+- uid: UndyneFight_Ex.Entities.DelayEventProcessor.AddInstantEvent(System.Single,System.Action)
+  name: AddInstantEvent(float, Action)
+  href: api/UndyneFight_Ex.Entities.DelayEventProcessor.html#UndyneFight_Ex_Entities_DelayEventProcessor_AddInstantEvent_System_Single_System_Action_
+  commentId: M:UndyneFight_Ex.Entities.DelayEventProcessor.AddInstantEvent(System.Single,System.Action)
+  name.vb: AddInstantEvent(Single, Action)
+  fullName: UndyneFight_Ex.Entities.DelayEventProcessor.AddInstantEvent(float, System.Action)
+  fullName.vb: UndyneFight_Ex.Entities.DelayEventProcessor.AddInstantEvent(Single, System.Action)
+  nameWithType: DelayEventProcessor.AddInstantEvent(float, Action)
+  nameWithType.vb: DelayEventProcessor.AddInstantEvent(Single, Action)
+- uid: UndyneFight_Ex.Entities.DelayEventProcessor.AddInstantEvent*
+  name: AddInstantEvent
+  href: api/UndyneFight_Ex.Entities.DelayEventProcessor.html#UndyneFight_Ex_Entities_DelayEventProcessor_AddInstantEvent_
+  commentId: Overload:UndyneFight_Ex.Entities.DelayEventProcessor.AddInstantEvent
+  isSpec: "True"
+  fullName: UndyneFight_Ex.Entities.DelayEventProcessor.AddInstantEvent
+  nameWithType: DelayEventProcessor.AddInstantEvent
+- uid: UndyneFight_Ex.Entities.DelayEventProcessor.AddTimeRangedEvent(System.Single,System.Action,System.Single,System.Boolean)
+  name: AddTimeRangedEvent(float, Action, float, bool)
+  href: api/UndyneFight_Ex.Entities.DelayEventProcessor.html#UndyneFight_Ex_Entities_DelayEventProcessor_AddTimeRangedEvent_System_Single_System_Action_System_Single_System_Boolean_
+  commentId: M:UndyneFight_Ex.Entities.DelayEventProcessor.AddTimeRangedEvent(System.Single,System.Action,System.Single,System.Boolean)
+  name.vb: AddTimeRangedEvent(Single, Action, Single, Boolean)
+  fullName: UndyneFight_Ex.Entities.DelayEventProcessor.AddTimeRangedEvent(float, System.Action, float, bool)
+  fullName.vb: UndyneFight_Ex.Entities.DelayEventProcessor.AddTimeRangedEvent(Single, System.Action, Single, Boolean)
+  nameWithType: DelayEventProcessor.AddTimeRangedEvent(float, Action, float, bool)
+  nameWithType.vb: DelayEventProcessor.AddTimeRangedEvent(Single, Action, Single, Boolean)
+- uid: UndyneFight_Ex.Entities.DelayEventProcessor.AddTimeRangedEvent*
+  name: AddTimeRangedEvent
+  href: api/UndyneFight_Ex.Entities.DelayEventProcessor.html#UndyneFight_Ex_Entities_DelayEventProcessor_AddTimeRangedEvent_
+  commentId: Overload:UndyneFight_Ex.Entities.DelayEventProcessor.AddTimeRangedEvent
+  isSpec: "True"
+  fullName: UndyneFight_Ex.Entities.DelayEventProcessor.AddTimeRangedEvent
+  nameWithType: DelayEventProcessor.AddTimeRangedEvent
+- uid: UndyneFight_Ex.Entities.DelayEventProcessor.ClearInstantEvents
+  name: ClearInstantEvents()
+  href: api/UndyneFight_Ex.Entities.DelayEventProcessor.html#UndyneFight_Ex_Entities_DelayEventProcessor_ClearInstantEvents
+  commentId: M:UndyneFight_Ex.Entities.DelayEventProcessor.ClearInstantEvents
+  fullName: UndyneFight_Ex.Entities.DelayEventProcessor.ClearInstantEvents()
+  nameWithType: DelayEventProcessor.ClearInstantEvents()
+- uid: UndyneFight_Ex.Entities.DelayEventProcessor.ClearInstantEvents*
+  name: ClearInstantEvents
+  href: api/UndyneFight_Ex.Entities.DelayEventProcessor.html#UndyneFight_Ex_Entities_DelayEventProcessor_ClearInstantEvents_
+  commentId: Overload:UndyneFight_Ex.Entities.DelayEventProcessor.ClearInstantEvents
+  isSpec: "True"
+  fullName: UndyneFight_Ex.Entities.DelayEventProcessor.ClearInstantEvents
+  nameWithType: DelayEventProcessor.ClearInstantEvents
+- uid: UndyneFight_Ex.Entities.DelayEventProcessor.ClearTimeRangedEvents
+  name: ClearTimeRangedEvents()
+  href: api/UndyneFight_Ex.Entities.DelayEventProcessor.html#UndyneFight_Ex_Entities_DelayEventProcessor_ClearTimeRangedEvents
+  commentId: M:UndyneFight_Ex.Entities.DelayEventProcessor.ClearTimeRangedEvents
+  fullName: UndyneFight_Ex.Entities.DelayEventProcessor.ClearTimeRangedEvents()
+  nameWithType: DelayEventProcessor.ClearTimeRangedEvents()
+- uid: UndyneFight_Ex.Entities.DelayEventProcessor.ClearTimeRangedEvents*
+  name: ClearTimeRangedEvents
+  href: api/UndyneFight_Ex.Entities.DelayEventProcessor.html#UndyneFight_Ex_Entities_DelayEventProcessor_ClearTimeRangedEvents_
+  commentId: Overload:UndyneFight_Ex.Entities.DelayEventProcessor.ClearTimeRangedEvents
+  isSpec: "True"
+  fullName: UndyneFight_Ex.Entities.DelayEventProcessor.ClearTimeRangedEvents
+  nameWithType: DelayEventProcessor.ClearTimeRangedEvents
 - uid: UndyneFight_Ex.Entities.DownBone
   name: DownBone
   href: api/UndyneFight_Ex.Entities.DownBone.html
@@ -6917,6 +7010,15 @@ references:
   fullName.vb: UndyneFight_Ex.Entities.EaseLibrary.GetValue(Single, String, UndyneFight_Ex.Entities.EaseLibrary.EaseMode)
   nameWithType: EaseLibrary.GetValue(float, string, EaseLibrary.EaseMode)
   nameWithType.vb: EaseLibrary.GetValue(Single, String, EaseLibrary.EaseMode)
+- uid: UndyneFight_Ex.Entities.EaseLibrary.GetValue(System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState,UndyneFight_Ex.Entities.EaseLibrary.EaseMode)
+  name: GetValue(float, EaseState, EaseMode)
+  href: api/UndyneFight_Ex.Entities.EaseLibrary.html#UndyneFight_Ex_Entities_EaseLibrary_GetValue_System_Single_UndyneFight_Ex_Entities_SimplifiedEasing_EaseState_UndyneFight_Ex_Entities_EaseLibrary_EaseMode_
+  commentId: M:UndyneFight_Ex.Entities.EaseLibrary.GetValue(System.Single,UndyneFight_Ex.Entities.SimplifiedEasing.EaseState,UndyneFight_Ex.Entities.EaseLibrary.EaseMode)
+  name.vb: GetValue(Single, EaseState, EaseMode)
+  fullName: UndyneFight_Ex.Entities.EaseLibrary.GetValue(float, UndyneFight_Ex.Entities.SimplifiedEasing.EaseState, UndyneFight_Ex.Entities.EaseLibrary.EaseMode)
+  fullName.vb: UndyneFight_Ex.Entities.EaseLibrary.GetValue(Single, UndyneFight_Ex.Entities.SimplifiedEasing.EaseState, UndyneFight_Ex.Entities.EaseLibrary.EaseMode)
+  nameWithType: EaseLibrary.GetValue(float, SimplifiedEasing.EaseState, EaseLibrary.EaseMode)
+  nameWithType.vb: EaseLibrary.GetValue(Single, SimplifiedEasing.EaseState, EaseLibrary.EaseMode)
 - uid: UndyneFight_Ex.Entities.EaseLibrary.GetValue*
   name: GetValue
   href: api/UndyneFight_Ex.Entities.EaseLibrary.html#UndyneFight_Ex_Entities_EaseLibrary_GetValue_
@@ -8871,7 +8973,7 @@ references:
   nameWithType: GameMenuScene
 - uid: UndyneFight_Ex.Entities.GameMenuScene.#ctor
   name: GameMenuScene()
-  href: api/UndyneFight_Ex.Entities.GameMenuScene.html#UndyneFight_Ex_Entities_GameMenuScene__ctor
+  href: UF-Ex%20Docs/api/UndyneFight_Ex.Entities.GameMenuScene.html#UndyneFight_Ex_Entities_GameMenuScene__ctor
   commentId: M:UndyneFight_Ex.Entities.GameMenuScene.#ctor
   name.vb: New()
   fullName: UndyneFight_Ex.Entities.GameMenuScene.GameMenuScene()
@@ -8880,25 +8982,36 @@ references:
   nameWithType.vb: GameMenuScene.New()
 - uid: UndyneFight_Ex.Entities.GameMenuScene.#ctor*
   name: GameMenuScene
-  href: api/UndyneFight_Ex.Entities.GameMenuScene.html#UndyneFight_Ex_Entities_GameMenuScene__ctor_
+  href: UF-Ex%20Docs/api/UndyneFight_Ex.Entities.GameMenuScene.html#UndyneFight_Ex_Entities_GameMenuScene__ctor_
   commentId: Overload:UndyneFight_Ex.Entities.GameMenuScene.#ctor
-  isSpec: "True"
   name.vb: New
   fullName: UndyneFight_Ex.Entities.GameMenuScene.GameMenuScene
   fullName.vb: UndyneFight_Ex.Entities.GameMenuScene.New
   nameWithType: GameMenuScene.GameMenuScene
   nameWithType.vb: GameMenuScene.New
+- uid: UndyneFight_Ex.Entities.GameMenuScene.Start
+  name: Start()
+  href: api/UndyneFight_Ex.Entities.GameMenuScene.html#UndyneFight_Ex_Entities_GameMenuScene_Start
+  commentId: M:UndyneFight_Ex.Entities.GameMenuScene.Start
+  fullName: UndyneFight_Ex.Entities.GameMenuScene.Start()
+  nameWithType: GameMenuScene.Start()
+- uid: UndyneFight_Ex.Entities.GameMenuScene.Start*
+  name: Start
+  href: api/UndyneFight_Ex.Entities.GameMenuScene.html#UndyneFight_Ex_Entities_GameMenuScene_Start_
+  commentId: Overload:UndyneFight_Ex.Entities.GameMenuScene.Start
+  isSpec: "True"
+  fullName: UndyneFight_Ex.Entities.GameMenuScene.Start
+  nameWithType: GameMenuScene.Start
 - uid: UndyneFight_Ex.Entities.GameMenuScene.Update
   name: Update()
-  href: api/UndyneFight_Ex.Entities.GameMenuScene.html#UndyneFight_Ex_Entities_GameMenuScene_Update
+  href: UF-Ex%20Docs/api/UndyneFight_Ex.Entities.GameMenuScene.html#UndyneFight_Ex_Entities_GameMenuScene_Update
   commentId: M:UndyneFight_Ex.Entities.GameMenuScene.Update
   fullName: UndyneFight_Ex.Entities.GameMenuScene.Update()
   nameWithType: GameMenuScene.Update()
 - uid: UndyneFight_Ex.Entities.GameMenuScene.Update*
   name: Update
-  href: api/UndyneFight_Ex.Entities.GameMenuScene.html#UndyneFight_Ex_Entities_GameMenuScene_Update_
+  href: UF-Ex%20Docs/api/UndyneFight_Ex.Entities.GameMenuScene.html#UndyneFight_Ex_Entities_GameMenuScene_Update_
   commentId: Overload:UndyneFight_Ex.Entities.GameMenuScene.Update
-  isSpec: "True"
   fullName: UndyneFight_Ex.Entities.GameMenuScene.Update
   nameWithType: GameMenuScene.Update
 - uid: UndyneFight_Ex.Entities.GasterBlaster
@@ -9772,9 +9885,18 @@ references:
   isSpec: "True"
   fullName: UndyneFight_Ex.Entities.Line.Alpha
   nameWithType: Line.Alpha
+- uid: UndyneFight_Ex.Entities.Line.AlphaDecrease(System.Single,System.Nullable{System.Single},System.Boolean)
+  name: AlphaDecrease(float, float?, bool)
+  href: api/UndyneFight_Ex.Entities.Line.html#UndyneFight_Ex_Entities_Line_AlphaDecrease_System_Single_System_Nullable_System_Single__System_Boolean_
+  commentId: M:UndyneFight_Ex.Entities.Line.AlphaDecrease(System.Single,System.Nullable{System.Single},System.Boolean)
+  name.vb: AlphaDecrease(Single, Single?, Boolean)
+  fullName: UndyneFight_Ex.Entities.Line.AlphaDecrease(float, float?, bool)
+  fullName.vb: UndyneFight_Ex.Entities.Line.AlphaDecrease(Single, Single?, Boolean)
+  nameWithType: Line.AlphaDecrease(float, float?, bool)
+  nameWithType.vb: Line.AlphaDecrease(Single, Single?, Boolean)
 - uid: UndyneFight_Ex.Entities.Line.AlphaDecrease(System.Single,System.Nullable{System.Single},System.Nullable{System.Boolean})
   name: AlphaDecrease(float, float?, bool?)
-  href: api/UndyneFight_Ex.Entities.Line.html#UndyneFight_Ex_Entities_Line_AlphaDecrease_System_Single_System_Nullable_System_Single__System_Nullable_System_Boolean__
+  href: UF-Ex%20Docs/api/UndyneFight_Ex.Entities.Line.html#UndyneFight_Ex_Entities_Line_AlphaDecrease_System_Single_System_Nullable_System_Single__System_Nullable_System_Boolean__
   commentId: M:UndyneFight_Ex.Entities.Line.AlphaDecrease(System.Single,System.Nullable{System.Single},System.Nullable{System.Boolean})
   name.vb: AlphaDecrease(Single, Single?, Boolean?)
   fullName: UndyneFight_Ex.Entities.Line.AlphaDecrease(float, float?, bool?)
@@ -10545,15 +10667,14 @@ references:
   nameWithType.vb: NormalGB.New
 - uid: UndyneFight_Ex.Entities.NormalGB.Dispose
   name: Dispose()
-  href: api/UndyneFight_Ex.Entities.NormalGB.html#UndyneFight_Ex_Entities_NormalGB_Dispose
+  href: UF-Ex%20Docs/api/UndyneFight_Ex.Entities.NormalGB.html#UndyneFight_Ex_Entities_NormalGB_Dispose
   commentId: M:UndyneFight_Ex.Entities.NormalGB.Dispose
   fullName: UndyneFight_Ex.Entities.NormalGB.Dispose()
   nameWithType: NormalGB.Dispose()
 - uid: UndyneFight_Ex.Entities.NormalGB.Dispose*
   name: Dispose
-  href: api/UndyneFight_Ex.Entities.NormalGB.html#UndyneFight_Ex_Entities_NormalGB_Dispose_
+  href: UF-Ex%20Docs/api/UndyneFight_Ex.Entities.NormalGB.html#UndyneFight_Ex_Entities_NormalGB_Dispose_
   commentId: Overload:UndyneFight_Ex.Entities.NormalGB.Dispose
-  isSpec: "True"
   fullName: UndyneFight_Ex.Entities.NormalGB.Dispose
   nameWithType: NormalGB.Dispose
 - uid: UndyneFight_Ex.Entities.NormalGB.GetCollide(UndyneFight_Ex.Entities.Player.Heart)
@@ -13213,22 +13334,40 @@ references:
   nameWithType: SimplifiedEasing.Combine
 - uid: UndyneFight_Ex.Entities.SimplifiedEasing.Copy(UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2},System.Int32)
   name: Copy(EaseUnit<Vector2>, int)
-  href: api/UndyneFight_Ex.Entities.SimplifiedEasing.html#UndyneFight_Ex_Entities_SimplifiedEasing_Copy_UndyneFight_Ex_Entities_EaseUnit_Microsoft_Xna_Framework_Vector2__System_Int32_
+  href: UF-Ex%20Docs/api/UndyneFight_Ex.Entities.SimplifiedEasing.html#UndyneFight_Ex_Entities_SimplifiedEasing_Copy_UndyneFight_Ex_Entities_EaseUnit_Microsoft_Xna_Framework_Vector2__System_Int32_
   commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.Copy(UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2},System.Int32)
   name.vb: Copy(EaseUnit(Of Vector2), Integer)
   fullName: UndyneFight_Ex.Entities.SimplifiedEasing.Copy(UndyneFight_Ex.Entities.EaseUnit<Microsoft.Xna.Framework.Vector2>, int)
   fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.Copy(UndyneFight_Ex.Entities.EaseUnit(Of Microsoft.Xna.Framework.Vector2), Integer)
   nameWithType: SimplifiedEasing.Copy(EaseUnit<Vector2>, int)
   nameWithType.vb: SimplifiedEasing.Copy(EaseUnit(Of Vector2), Integer)
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.Copy(UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2},System.Int32,System.Boolean)
+  name: Copy(EaseUnit<Vector2>, int, bool)
+  href: api/UndyneFight_Ex.Entities.SimplifiedEasing.html#UndyneFight_Ex_Entities_SimplifiedEasing_Copy_UndyneFight_Ex_Entities_EaseUnit_Microsoft_Xna_Framework_Vector2__System_Int32_System_Boolean_
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.Copy(UndyneFight_Ex.Entities.EaseUnit{Microsoft.Xna.Framework.Vector2},System.Int32,System.Boolean)
+  name.vb: Copy(EaseUnit(Of Vector2), Integer, Boolean)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.Copy(UndyneFight_Ex.Entities.EaseUnit<Microsoft.Xna.Framework.Vector2>, int, bool)
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.Copy(UndyneFight_Ex.Entities.EaseUnit(Of Microsoft.Xna.Framework.Vector2), Integer, Boolean)
+  nameWithType: SimplifiedEasing.Copy(EaseUnit<Vector2>, int, bool)
+  nameWithType.vb: SimplifiedEasing.Copy(EaseUnit(Of Vector2), Integer, Boolean)
 - uid: UndyneFight_Ex.Entities.SimplifiedEasing.Copy(UndyneFight_Ex.Entities.EaseUnit{System.Single},System.Int32)
   name: Copy(EaseUnit<float>, int)
-  href: api/UndyneFight_Ex.Entities.SimplifiedEasing.html#UndyneFight_Ex_Entities_SimplifiedEasing_Copy_UndyneFight_Ex_Entities_EaseUnit_System_Single__System_Int32_
+  href: UF-Ex%20Docs/api/UndyneFight_Ex.Entities.SimplifiedEasing.html#UndyneFight_Ex_Entities_SimplifiedEasing_Copy_UndyneFight_Ex_Entities_EaseUnit_System_Single__System_Int32_
   commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.Copy(UndyneFight_Ex.Entities.EaseUnit{System.Single},System.Int32)
   name.vb: Copy(EaseUnit(Of Single), Integer)
   fullName: UndyneFight_Ex.Entities.SimplifiedEasing.Copy(UndyneFight_Ex.Entities.EaseUnit<float>, int)
   fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.Copy(UndyneFight_Ex.Entities.EaseUnit(Of Single), Integer)
   nameWithType: SimplifiedEasing.Copy(EaseUnit<float>, int)
   nameWithType.vb: SimplifiedEasing.Copy(EaseUnit(Of Single), Integer)
+- uid: UndyneFight_Ex.Entities.SimplifiedEasing.Copy(UndyneFight_Ex.Entities.EaseUnit{System.Single},System.Int32,System.Boolean)
+  name: Copy(EaseUnit<float>, int, bool)
+  href: api/UndyneFight_Ex.Entities.SimplifiedEasing.html#UndyneFight_Ex_Entities_SimplifiedEasing_Copy_UndyneFight_Ex_Entities_EaseUnit_System_Single__System_Int32_System_Boolean_
+  commentId: M:UndyneFight_Ex.Entities.SimplifiedEasing.Copy(UndyneFight_Ex.Entities.EaseUnit{System.Single},System.Int32,System.Boolean)
+  name.vb: Copy(EaseUnit(Of Single), Integer, Boolean)
+  fullName: UndyneFight_Ex.Entities.SimplifiedEasing.Copy(UndyneFight_Ex.Entities.EaseUnit<float>, int, bool)
+  fullName.vb: UndyneFight_Ex.Entities.SimplifiedEasing.Copy(UndyneFight_Ex.Entities.EaseUnit(Of Single), Integer, Boolean)
+  nameWithType: SimplifiedEasing.Copy(EaseUnit<float>, int, bool)
+  nameWithType.vb: SimplifiedEasing.Copy(EaseUnit(Of Single), Integer, Boolean)
 - uid: UndyneFight_Ex.Entities.SimplifiedEasing.Copy*
   name: Copy
   href: api/UndyneFight_Ex.Entities.SimplifiedEasing.html#UndyneFight_Ex_Entities_SimplifiedEasing_Copy_
@@ -14045,14 +14184,13 @@ references:
 - uid: UndyneFight_Ex.Entities.SongFightingScene.SceneParams.Waveset
   name: Waveset
   href: api/UndyneFight_Ex.Entities.SongFightingScene.SceneParams.html#UndyneFight_Ex_Entities_SongFightingScene_SceneParams_Waveset
-  commentId: P:UndyneFight_Ex.Entities.SongFightingScene.SceneParams.Waveset
+  commentId: F:UndyneFight_Ex.Entities.SongFightingScene.SceneParams.Waveset
   fullName: UndyneFight_Ex.Entities.SongFightingScene.SceneParams.Waveset
   nameWithType: SongFightingScene.SceneParams.Waveset
 - uid: UndyneFight_Ex.Entities.SongFightingScene.SceneParams.Waveset*
   name: Waveset
-  href: api/UndyneFight_Ex.Entities.SongFightingScene.SceneParams.html#UndyneFight_Ex_Entities_SongFightingScene_SceneParams_Waveset_
+  href: UF-Ex%20Docs/api/UndyneFight_Ex.Entities.SongFightingScene.SceneParams.html#UndyneFight_Ex_Entities_SongFightingScene_SceneParams_Waveset_
   commentId: Overload:UndyneFight_Ex.Entities.SongFightingScene.SceneParams.Waveset
-  isSpec: "True"
   fullName: UndyneFight_Ex.Entities.SongFightingScene.SceneParams.Waveset
   nameWithType: SongFightingScene.SceneParams.Waveset
 - uid: UndyneFight_Ex.Entities.SongFightingScene.SceneParams.difficulty
@@ -21835,6 +21973,45 @@ references:
   isSpec: "True"
   fullName: UndyneFight_Ex.FightResources.Sprites.SoulShoot
   nameWithType: FightResources.Sprites.SoulShoot
+- uid: UndyneFight_Ex.FightResources.Sprites.accuracyBar
+  name: accuracyBar
+  href: api/UndyneFight_Ex.FightResources.Sprites.html#UndyneFight_Ex_FightResources_Sprites_accuracyBar
+  commentId: P:UndyneFight_Ex.FightResources.Sprites.accuracyBar
+  fullName: UndyneFight_Ex.FightResources.Sprites.accuracyBar
+  nameWithType: FightResources.Sprites.accuracyBar
+- uid: UndyneFight_Ex.FightResources.Sprites.accuracyBar*
+  name: accuracyBar
+  href: api/UndyneFight_Ex.FightResources.Sprites.html#UndyneFight_Ex_FightResources_Sprites_accuracyBar_
+  commentId: Overload:UndyneFight_Ex.FightResources.Sprites.accuracyBar
+  isSpec: "True"
+  fullName: UndyneFight_Ex.FightResources.Sprites.accuracyBar
+  nameWithType: FightResources.Sprites.accuracyBar
+- uid: UndyneFight_Ex.FightResources.Sprites.accuracyPointers
+  name: accuracyPointers
+  href: api/UndyneFight_Ex.FightResources.Sprites.html#UndyneFight_Ex_FightResources_Sprites_accuracyPointers
+  commentId: P:UndyneFight_Ex.FightResources.Sprites.accuracyPointers
+  fullName: UndyneFight_Ex.FightResources.Sprites.accuracyPointers
+  nameWithType: FightResources.Sprites.accuracyPointers
+- uid: UndyneFight_Ex.FightResources.Sprites.accuracyPointers*
+  name: accuracyPointers
+  href: api/UndyneFight_Ex.FightResources.Sprites.html#UndyneFight_Ex_FightResources_Sprites_accuracyPointers_
+  commentId: Overload:UndyneFight_Ex.FightResources.Sprites.accuracyPointers
+  isSpec: "True"
+  fullName: UndyneFight_Ex.FightResources.Sprites.accuracyPointers
+  nameWithType: FightResources.Sprites.accuracyPointers
+- uid: UndyneFight_Ex.FightResources.Sprites.allPerfectText
+  name: allPerfectText
+  href: api/UndyneFight_Ex.FightResources.Sprites.html#UndyneFight_Ex_FightResources_Sprites_allPerfectText
+  commentId: P:UndyneFight_Ex.FightResources.Sprites.allPerfectText
+  fullName: UndyneFight_Ex.FightResources.Sprites.allPerfectText
+  nameWithType: FightResources.Sprites.allPerfectText
+- uid: UndyneFight_Ex.FightResources.Sprites.allPerfectText*
+  name: allPerfectText
+  href: api/UndyneFight_Ex.FightResources.Sprites.html#UndyneFight_Ex_FightResources_Sprites_allPerfectText_
+  commentId: Overload:UndyneFight_Ex.FightResources.Sprites.allPerfectText
+  isSpec: "True"
+  fullName: UndyneFight_Ex.FightResources.Sprites.allPerfectText
+  nameWithType: FightResources.Sprites.allPerfectText
 - uid: UndyneFight_Ex.FightResources.Sprites.arrow
   name: arrow
   href: api/UndyneFight_Ex.FightResources.Sprites.html#UndyneFight_Ex_FightResources_Sprites_arrow
@@ -23650,6 +23827,19 @@ references:
   commentId: T:UndyneFight_Ex.GameStates
   fullName: UndyneFight_Ex.GameStates
   nameWithType: GameStates
+- uid: UndyneFight_Ex.GameStates.ApplicationSurface
+  name: ApplicationSurface
+  href: api/UndyneFight_Ex.GameStates.html#UndyneFight_Ex_GameStates_ApplicationSurface
+  commentId: P:UndyneFight_Ex.GameStates.ApplicationSurface
+  fullName: UndyneFight_Ex.GameStates.ApplicationSurface
+  nameWithType: GameStates.ApplicationSurface
+- uid: UndyneFight_Ex.GameStates.ApplicationSurface*
+  name: ApplicationSurface
+  href: api/UndyneFight_Ex.GameStates.html#UndyneFight_Ex_GameStates_ApplicationSurface_
+  commentId: Overload:UndyneFight_Ex.GameStates.ApplicationSurface
+  isSpec: "True"
+  fullName: UndyneFight_Ex.GameStates.ApplicationSurface
+  nameWithType: GameStates.ApplicationSurface
 - uid: UndyneFight_Ex.GameStates.Aspect
   name: Aspect
   href: api/UndyneFight_Ex.GameStates.html#UndyneFight_Ex_GameStates_Aspect
@@ -23665,7 +23855,7 @@ references:
   nameWithType: GameStates.Aspect
 - uid: UndyneFight_Ex.GameStates.AudioCache
   name: AudioCache
-  href: api/UndyneFight_Ex.GameStates.html#UndyneFight_Ex_GameStates_AudioCache
+  href: UF-Ex%20Docs/api/UndyneFight_Ex.GameStates.html#UndyneFight_Ex_GameStates_AudioCache
   commentId: F:UndyneFight_Ex.GameStates.AudioCache
   fullName: UndyneFight_Ex.GameStates.AudioCache
   nameWithType: GameStates.AudioCache
@@ -23971,17 +24161,29 @@ references:
   nameWithType: GameStates.IsKeyPressed120f
 - uid: UndyneFight_Ex.GameStates.LoadSongPreviews
   name: LoadSongPreviews()
-  href: api/UndyneFight_Ex.GameStates.html#UndyneFight_Ex_GameStates_LoadSongPreviews
+  href: UF-Ex%20Docs/api/UndyneFight_Ex.GameStates.html#UndyneFight_Ex_GameStates_LoadSongPreviews
   commentId: M:UndyneFight_Ex.GameStates.LoadSongPreviews
   fullName: UndyneFight_Ex.GameStates.LoadSongPreviews()
   nameWithType: GameStates.LoadSongPreviews()
 - uid: UndyneFight_Ex.GameStates.LoadSongPreviews*
   name: LoadSongPreviews
-  href: api/UndyneFight_Ex.GameStates.html#UndyneFight_Ex_GameStates_LoadSongPreviews_
+  href: UF-Ex%20Docs/api/UndyneFight_Ex.GameStates.html#UndyneFight_Ex_GameStates_LoadSongPreviews_
   commentId: Overload:UndyneFight_Ex.GameStates.LoadSongPreviews
-  isSpec: "True"
   fullName: UndyneFight_Ex.GameStates.LoadSongPreviews
   nameWithType: GameStates.LoadSongPreviews
+- uid: UndyneFight_Ex.GameStates.NameColor
+  name: NameColor
+  href: api/UndyneFight_Ex.GameStates.html#UndyneFight_Ex_GameStates_NameColor
+  commentId: P:UndyneFight_Ex.GameStates.NameColor
+  fullName: UndyneFight_Ex.GameStates.NameColor
+  nameWithType: GameStates.NameColor
+- uid: UndyneFight_Ex.GameStates.NameColor*
+  name: NameColor
+  href: api/UndyneFight_Ex.GameStates.html#UndyneFight_Ex_GameStates_NameColor_
+  commentId: Overload:UndyneFight_Ex.GameStates.NameColor
+  isSpec: "True"
+  fullName: UndyneFight_Ex.GameStates.NameColor
+  nameWithType: GameStates.NameColor
 - uid: UndyneFight_Ex.GameStates.ResetFightState
   name: ResetFightState()
   href: api/UndyneFight_Ex.GameStates.html#UndyneFight_Ex_GameStates_ResetFightState
@@ -27153,6 +27355,168 @@ references:
   isSpec: "True"
   fullName: UndyneFight_Ex.LoadingScene.Update
   nameWithType: LoadingScene.Update
+- uid: UndyneFight_Ex.Localization
+  name: Localization
+  href: api/UndyneFight_Ex.Localization.html
+  commentId: T:UndyneFight_Ex.Localization
+  fullName: UndyneFight_Ex.Localization
+  nameWithType: Localization
+- uid: UndyneFight_Ex.Localization.CurrentLanguage
+  name: CurrentLanguage
+  href: api/UndyneFight_Ex.Localization.html#UndyneFight_Ex_Localization_CurrentLanguage
+  commentId: P:UndyneFight_Ex.Localization.CurrentLanguage
+  fullName: UndyneFight_Ex.Localization.CurrentLanguage
+  nameWithType: Localization.CurrentLanguage
+- uid: UndyneFight_Ex.Localization.CurrentLanguage*
+  name: CurrentLanguage
+  href: api/UndyneFight_Ex.Localization.html#UndyneFight_Ex_Localization_CurrentLanguage_
+  commentId: Overload:UndyneFight_Ex.Localization.CurrentLanguage
+  isSpec: "True"
+  fullName: UndyneFight_Ex.Localization.CurrentLanguage
+  nameWithType: Localization.CurrentLanguage
+- uid: UndyneFight_Ex.Localization.DrawAlign
+  name: Localization.DrawAlign
+  href: api/UndyneFight_Ex.Localization.DrawAlign.html
+  commentId: T:UndyneFight_Ex.Localization.DrawAlign
+  fullName: UndyneFight_Ex.Localization.DrawAlign
+  nameWithType: Localization.DrawAlign
+- uid: UndyneFight_Ex.Localization.DrawAlign.Left
+  name: Left
+  href: api/UndyneFight_Ex.Localization.DrawAlign.html#UndyneFight_Ex_Localization_DrawAlign_Left
+  commentId: F:UndyneFight_Ex.Localization.DrawAlign.Left
+  fullName: UndyneFight_Ex.Localization.DrawAlign.Left
+  nameWithType: Localization.DrawAlign.Left
+- uid: UndyneFight_Ex.Localization.DrawAlign.Middle
+  name: Middle
+  href: api/UndyneFight_Ex.Localization.DrawAlign.html#UndyneFight_Ex_Localization_DrawAlign_Middle
+  commentId: F:UndyneFight_Ex.Localization.DrawAlign.Middle
+  fullName: UndyneFight_Ex.Localization.DrawAlign.Middle
+  nameWithType: Localization.DrawAlign.Middle
+- uid: UndyneFight_Ex.Localization.DrawAlign.Right
+  name: Right
+  href: api/UndyneFight_Ex.Localization.DrawAlign.html#UndyneFight_Ex_Localization_DrawAlign_Right
+  commentId: F:UndyneFight_Ex.Localization.DrawAlign.Right
+  fullName: UndyneFight_Ex.Localization.DrawAlign.Right
+  nameWithType: Localization.DrawAlign.Right
+- uid: UndyneFight_Ex.Localization.DrawLocalizedText(System.String,Microsoft.Xna.Framework.Vector2,System.Object[],System.String,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Color},System.Single,System.Single,UndyneFight_Ex.Localization.DrawAlign)
+  name: DrawLocalizedText(string, Vector2, object[], string, Vector2?, Color?, float, float, DrawAlign)
+  href: api/UndyneFight_Ex.Localization.html#UndyneFight_Ex_Localization_DrawLocalizedText_System_String_Microsoft_Xna_Framework_Vector2_System_Object___System_String_System_Nullable_Microsoft_Xna_Framework_Vector2__System_Nullable_Microsoft_Xna_Framework_Color__System_Single_System_Single_UndyneFight_Ex_Localization_DrawAlign_
+  commentId: M:UndyneFight_Ex.Localization.DrawLocalizedText(System.String,Microsoft.Xna.Framework.Vector2,System.Object[],System.String,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Color},System.Single,System.Single,UndyneFight_Ex.Localization.DrawAlign)
+  name.vb: DrawLocalizedText(String, Vector2, Object(), String, Vector2?, Color?, Single, Single, DrawAlign)
+  fullName: UndyneFight_Ex.Localization.DrawLocalizedText(string, Microsoft.Xna.Framework.Vector2, object[], string, Microsoft.Xna.Framework.Vector2?, Microsoft.Xna.Framework.Color?, float, float, UndyneFight_Ex.Localization.DrawAlign)
+  fullName.vb: UndyneFight_Ex.Localization.DrawLocalizedText(String, Microsoft.Xna.Framework.Vector2, Object(), String, Microsoft.Xna.Framework.Vector2?, Microsoft.Xna.Framework.Color?, Single, Single, UndyneFight_Ex.Localization.DrawAlign)
+  nameWithType: Localization.DrawLocalizedText(string, Vector2, object[], string, Vector2?, Color?, float, float, Localization.DrawAlign)
+  nameWithType.vb: Localization.DrawLocalizedText(String, Vector2, Object(), String, Vector2?, Color?, Single, Single, Localization.DrawAlign)
+- uid: UndyneFight_Ex.Localization.DrawLocalizedText*
+  name: DrawLocalizedText
+  href: api/UndyneFight_Ex.Localization.html#UndyneFight_Ex_Localization_DrawLocalizedText_
+  commentId: Overload:UndyneFight_Ex.Localization.DrawLocalizedText
+  isSpec: "True"
+  fullName: UndyneFight_Ex.Localization.DrawLocalizedText
+  nameWithType: Localization.DrawLocalizedText
+- uid: UndyneFight_Ex.Localization.EnableHotReload
+  name: EnableHotReload
+  href: api/UndyneFight_Ex.Localization.html#UndyneFight_Ex_Localization_EnableHotReload
+  commentId: P:UndyneFight_Ex.Localization.EnableHotReload
+  fullName: UndyneFight_Ex.Localization.EnableHotReload
+  nameWithType: Localization.EnableHotReload
+- uid: UndyneFight_Ex.Localization.EnableHotReload*
+  name: EnableHotReload
+  href: api/UndyneFight_Ex.Localization.html#UndyneFight_Ex_Localization_EnableHotReload_
+  commentId: Overload:UndyneFight_Ex.Localization.EnableHotReload
+  isSpec: "True"
+  fullName: UndyneFight_Ex.Localization.EnableHotReload
+  nameWithType: Localization.EnableHotReload
+- uid: UndyneFight_Ex.Localization.GetFont(System.String)
+  name: GetFont(string)
+  href: api/UndyneFight_Ex.Localization.html#UndyneFight_Ex_Localization_GetFont_System_String_
+  commentId: M:UndyneFight_Ex.Localization.GetFont(System.String)
+  name.vb: GetFont(String)
+  fullName: UndyneFight_Ex.Localization.GetFont(string)
+  fullName.vb: UndyneFight_Ex.Localization.GetFont(String)
+  nameWithType: Localization.GetFont(string)
+  nameWithType.vb: Localization.GetFont(String)
+- uid: UndyneFight_Ex.Localization.GetFont*
+  name: GetFont
+  href: api/UndyneFight_Ex.Localization.html#UndyneFight_Ex_Localization_GetFont_
+  commentId: Overload:UndyneFight_Ex.Localization.GetFont
+  isSpec: "True"
+  fullName: UndyneFight_Ex.Localization.GetFont
+  nameWithType: Localization.GetFont
+- uid: UndyneFight_Ex.Localization.GetFontData(System.String)
+  name: GetFontData(string)
+  href: api/UndyneFight_Ex.Localization.html#UndyneFight_Ex_Localization_GetFontData_System_String_
+  commentId: M:UndyneFight_Ex.Localization.GetFontData(System.String)
+  name.vb: GetFontData(String)
+  fullName: UndyneFight_Ex.Localization.GetFontData(string)
+  fullName.vb: UndyneFight_Ex.Localization.GetFontData(String)
+  nameWithType: Localization.GetFontData(string)
+  nameWithType.vb: Localization.GetFontData(String)
+- uid: UndyneFight_Ex.Localization.GetFontData*
+  name: GetFontData
+  href: api/UndyneFight_Ex.Localization.html#UndyneFight_Ex_Localization_GetFontData_
+  commentId: Overload:UndyneFight_Ex.Localization.GetFontData
+  isSpec: "True"
+  fullName: UndyneFight_Ex.Localization.GetFontData
+  nameWithType: Localization.GetFontData
+- uid: UndyneFight_Ex.Localization.GetFontScale(System.String)
+  name: GetFontScale(string)
+  href: api/UndyneFight_Ex.Localization.html#UndyneFight_Ex_Localization_GetFontScale_System_String_
+  commentId: M:UndyneFight_Ex.Localization.GetFontScale(System.String)
+  name.vb: GetFontScale(String)
+  fullName: UndyneFight_Ex.Localization.GetFontScale(string)
+  fullName.vb: UndyneFight_Ex.Localization.GetFontScale(String)
+  nameWithType: Localization.GetFontScale(string)
+  nameWithType.vb: Localization.GetFontScale(String)
+- uid: UndyneFight_Ex.Localization.GetFontScale*
+  name: GetFontScale
+  href: api/UndyneFight_Ex.Localization.html#UndyneFight_Ex_Localization_GetFontScale_
+  commentId: Overload:UndyneFight_Ex.Localization.GetFontScale
+  isSpec: "True"
+  fullName: UndyneFight_Ex.Localization.GetFontScale
+  nameWithType: Localization.GetFontScale
+- uid: UndyneFight_Ex.Localization.GetText(System.String,System.Object[])
+  name: GetText(string, params object[])
+  href: api/UndyneFight_Ex.Localization.html#UndyneFight_Ex_Localization_GetText_System_String_System_Object___
+  commentId: M:UndyneFight_Ex.Localization.GetText(System.String,System.Object[])
+  name.vb: GetText(String, ParamArray Object())
+  fullName: UndyneFight_Ex.Localization.GetText(string, params object[])
+  fullName.vb: UndyneFight_Ex.Localization.GetText(String, ParamArray Object())
+  nameWithType: Localization.GetText(string, params object[])
+  nameWithType.vb: Localization.GetText(String, ParamArray Object())
+- uid: UndyneFight_Ex.Localization.GetText*
+  name: GetText
+  href: api/UndyneFight_Ex.Localization.html#UndyneFight_Ex_Localization_GetText_
+  commentId: Overload:UndyneFight_Ex.Localization.GetText
+  isSpec: "True"
+  fullName: UndyneFight_Ex.Localization.GetText
+  nameWithType: Localization.GetText
+- uid: UndyneFight_Ex.Localization.GetTranslationData
+  name: GetTranslationData()
+  href: api/UndyneFight_Ex.Localization.html#UndyneFight_Ex_Localization_GetTranslationData
+  commentId: M:UndyneFight_Ex.Localization.GetTranslationData
+  fullName: UndyneFight_Ex.Localization.GetTranslationData()
+  nameWithType: Localization.GetTranslationData()
+- uid: UndyneFight_Ex.Localization.GetTranslationData*
+  name: GetTranslationData
+  href: api/UndyneFight_Ex.Localization.html#UndyneFight_Ex_Localization_GetTranslationData_
+  commentId: Overload:UndyneFight_Ex.Localization.GetTranslationData
+  isSpec: "True"
+  fullName: UndyneFight_Ex.Localization.GetTranslationData
+  nameWithType: Localization.GetTranslationData
+- uid: UndyneFight_Ex.Localization.Initialize
+  name: Initialize()
+  href: api/UndyneFight_Ex.Localization.html#UndyneFight_Ex_Localization_Initialize
+  commentId: M:UndyneFight_Ex.Localization.Initialize
+  fullName: UndyneFight_Ex.Localization.Initialize()
+  nameWithType: Localization.Initialize()
+- uid: UndyneFight_Ex.Localization.Initialize*
+  name: Initialize
+  href: api/UndyneFight_Ex.Localization.html#UndyneFight_Ex_Localization_Initialize_
+  commentId: Overload:UndyneFight_Ex.Localization.Initialize
+  isSpec: "True"
+  fullName: UndyneFight_Ex.Localization.Initialize
+  nameWithType: Localization.Initialize
 - uid: UndyneFight_Ex.MathUtil
   name: MathUtil
   href: api/UndyneFight_Ex.MathUtil.html
@@ -27214,7 +27578,7 @@ references:
   nameWithType: MathUtil.Cos
 - uid: UndyneFight_Ex.MathUtil.CountSubstring(System.String,System.String)
   name: CountSubstring(string, string)
-  href: api/UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_CountSubstring_System_String_System_String_
+  href: UF-Ex%20Docs/api/UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_CountSubstring_System_String_System_String_
   commentId: M:UndyneFight_Ex.MathUtil.CountSubstring(System.String,System.String)
   name.vb: CountSubstring(String, String)
   fullName: UndyneFight_Ex.MathUtil.CountSubstring(string, string)
@@ -27223,9 +27587,8 @@ references:
   nameWithType.vb: MathUtil.CountSubstring(String, String)
 - uid: UndyneFight_Ex.MathUtil.CountSubstring*
   name: CountSubstring
-  href: api/UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_CountSubstring_
+  href: UF-Ex%20Docs/api/UndyneFight_Ex.MathUtil.html#UndyneFight_Ex_MathUtil_CountSubstring_
   commentId: Overload:UndyneFight_Ex.MathUtil.CountSubstring
-  isSpec: "True"
   fullName: UndyneFight_Ex.MathUtil.CountSubstring
   nameWithType: MathUtil.CountSubstring
 - uid: UndyneFight_Ex.MathUtil.Cross(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
@@ -28999,13 +29362,13 @@ references:
   nameWithType: RenderProduction.DrawTexture(Texture2D, Rectangle, Rectangle?, Color)
 - uid: UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2)
   name: DrawTexture(Texture2D, Vector2)
-  href: api/UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_DrawTexture_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_
+  href: UF-Ex%20Docs/api/UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_DrawTexture_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_
   commentId: M:UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2)
   fullName: UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Vector2)
   nameWithType: RenderProduction.DrawTexture(Texture2D, Vector2)
 - uid: UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
   name: DrawTexture(Texture2D, Vector2, Color)
-  href: api/UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_DrawTexture_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_
+  href: UF-Ex%20Docs/api/UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_DrawTexture_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_Microsoft_Xna_Framework_Color_
   commentId: M:UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
   fullName: UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Color)
   nameWithType: RenderProduction.DrawTexture(Texture2D, Vector2, Color)
@@ -29024,6 +29387,12 @@ references:
   fullName.vb: UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Color, Single)
   nameWithType: RenderProduction.DrawTexture(Texture2D, Vector2, Color, float)
   nameWithType.vb: RenderProduction.DrawTexture(Texture2D, Vector2, Color, Single)
+- uid: UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Color})
+  name: DrawTexture(Texture2D, Vector2, Color?)
+  href: api/UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_DrawTexture_Microsoft_Xna_Framework_Graphics_Texture2D_Microsoft_Xna_Framework_Vector2_System_Nullable_Microsoft_Xna_Framework_Color__
+  commentId: M:UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Color})
+  fullName: UndyneFight_Ex.RenderProduction.DrawTexture(Microsoft.Xna.Framework.Graphics.Texture2D, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Color?)
+  nameWithType: RenderProduction.DrawTexture(Texture2D, Vector2, Color?)
 - uid: UndyneFight_Ex.RenderProduction.DrawTexture*
   name: DrawTexture
   href: api/UndyneFight_Ex.RenderProduction.html#UndyneFight_Ex_RenderProduction_DrawTexture_
@@ -29866,6 +30235,19 @@ references:
   isSpec: "True"
   fullName: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.Mirror
   nameWithType: SettingsManager.DataLibrary.Mirror
+- uid: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.NewArrowDrawingMethod
+  name: NewArrowDrawingMethod
+  href: api/UndyneFight_Ex.Settings.SettingsManager.DataLibrary.html#UndyneFight_Ex_Settings_SettingsManager_DataLibrary_NewArrowDrawingMethod
+  commentId: P:UndyneFight_Ex.Settings.SettingsManager.DataLibrary.NewArrowDrawingMethod
+  fullName: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.NewArrowDrawingMethod
+  nameWithType: SettingsManager.DataLibrary.NewArrowDrawingMethod
+- uid: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.NewArrowDrawingMethod*
+  name: NewArrowDrawingMethod
+  href: api/UndyneFight_Ex.Settings.SettingsManager.DataLibrary.html#UndyneFight_Ex_Settings_SettingsManager_DataLibrary_NewArrowDrawingMethod_
+  commentId: Overload:UndyneFight_Ex.Settings.SettingsManager.DataLibrary.NewArrowDrawingMethod
+  isSpec: "True"
+  fullName: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.NewArrowDrawingMethod
+  nameWithType: SettingsManager.DataLibrary.NewArrowDrawingMethod
 - uid: UndyneFight_Ex.Settings.SettingsManager.DataLibrary.Reset(System.String)
   name: Reset(string)
   href: UF-Ex%20Docs/api/UndyneFight_Ex.Settings.SettingsManager.DataLibrary.html#UndyneFight_Ex_Settings_SettingsManager_DataLibrary_Reset_System_String_
@@ -30899,14 +31281,13 @@ references:
 - uid: UndyneFight_Ex.Shapes.Triangle.Inradius
   name: Inradius
   href: api/UndyneFight_Ex.Shapes.Triangle.html#UndyneFight_Ex_Shapes_Triangle_Inradius
-  commentId: P:UndyneFight_Ex.Shapes.Triangle.Inradius
+  commentId: F:UndyneFight_Ex.Shapes.Triangle.Inradius
   fullName: UndyneFight_Ex.Shapes.Triangle.Inradius
   nameWithType: Triangle.Inradius
 - uid: UndyneFight_Ex.Shapes.Triangle.Inradius*
   name: Inradius
-  href: api/UndyneFight_Ex.Shapes.Triangle.html#UndyneFight_Ex_Shapes_Triangle_Inradius_
+  href: UF-Ex%20Docs/api/UndyneFight_Ex.Shapes.Triangle.html#UndyneFight_Ex_Shapes_Triangle_Inradius_
   commentId: Overload:UndyneFight_Ex.Shapes.Triangle.Inradius
-  isSpec: "True"
   fullName: UndyneFight_Ex.Shapes.Triangle.Inradius
   nameWithType: Triangle.Inradius
 - uid: UndyneFight_Ex.Shapes.Triangle.IntersectsWith(UndyneFight_Ex.Shapes.IShape)
@@ -30935,6 +31316,12 @@ references:
   isSpec: "True"
   fullName: UndyneFight_Ex.Shapes.Triangle.Rotation
   nameWithType: Triangle.Rotation
+- uid: UndyneFight_Ex.Shapes.Triangle.Semiperimeter
+  name: Semiperimeter
+  href: api/UndyneFight_Ex.Shapes.Triangle.html#UndyneFight_Ex_Shapes_Triangle_Semiperimeter
+  commentId: F:UndyneFight_Ex.Shapes.Triangle.Semiperimeter
+  fullName: UndyneFight_Ex.Shapes.Triangle.Semiperimeter
+  nameWithType: Triangle.Semiperimeter
 - uid: UndyneFight_Ex.Shapes.Triangle.Vertices
   name: Vertices
   href: api/UndyneFight_Ex.Shapes.Triangle.html#UndyneFight_Ex_Shapes_Triangle_Vertices
@@ -32052,17 +32439,29 @@ references:
   nameWithType: WaveConstructor.ArrowAllocate
 - uid: UndyneFight_Ex.SongSystem.WaveConstructor.ArrowProcesser
   name: ArrowProcesser
-  href: api/UndyneFight_Ex.SongSystem.WaveConstructor.html#UndyneFight_Ex_SongSystem_WaveConstructor_ArrowProcesser
+  href: UF-Ex%20Docs/api/UndyneFight_Ex.SongSystem.WaveConstructor.html#UndyneFight_Ex_SongSystem_WaveConstructor_ArrowProcesser
   commentId: P:UndyneFight_Ex.SongSystem.WaveConstructor.ArrowProcesser
   fullName: UndyneFight_Ex.SongSystem.WaveConstructor.ArrowProcesser
   nameWithType: WaveConstructor.ArrowProcesser
 - uid: UndyneFight_Ex.SongSystem.WaveConstructor.ArrowProcesser*
   name: ArrowProcesser
-  href: api/UndyneFight_Ex.SongSystem.WaveConstructor.html#UndyneFight_Ex_SongSystem_WaveConstructor_ArrowProcesser_
+  href: UF-Ex%20Docs/api/UndyneFight_Ex.SongSystem.WaveConstructor.html#UndyneFight_Ex_SongSystem_WaveConstructor_ArrowProcesser_
   commentId: Overload:UndyneFight_Ex.SongSystem.WaveConstructor.ArrowProcesser
-  isSpec: "True"
   fullName: UndyneFight_Ex.SongSystem.WaveConstructor.ArrowProcesser
   nameWithType: WaveConstructor.ArrowProcesser
+- uid: UndyneFight_Ex.SongSystem.WaveConstructor.ArrowProcessor
+  name: ArrowProcessor
+  href: api/UndyneFight_Ex.SongSystem.WaveConstructor.html#UndyneFight_Ex_SongSystem_WaveConstructor_ArrowProcessor
+  commentId: P:UndyneFight_Ex.SongSystem.WaveConstructor.ArrowProcessor
+  fullName: UndyneFight_Ex.SongSystem.WaveConstructor.ArrowProcessor
+  nameWithType: WaveConstructor.ArrowProcessor
+- uid: UndyneFight_Ex.SongSystem.WaveConstructor.ArrowProcessor*
+  name: ArrowProcessor
+  href: api/UndyneFight_Ex.SongSystem.WaveConstructor.html#UndyneFight_Ex_SongSystem_WaveConstructor_ArrowProcessor_
+  commentId: Overload:UndyneFight_Ex.SongSystem.WaveConstructor.ArrowProcessor
+  isSpec: "True"
+  fullName: UndyneFight_Ex.SongSystem.WaveConstructor.ArrowProcessor
+  nameWithType: WaveConstructor.ArrowProcessor
 - uid: UndyneFight_Ex.SongSystem.WaveConstructor.At0thBeat(System.Single)
   name: At0thBeat(float)
   href: api/UndyneFight_Ex.SongSystem.WaveConstructor.html#UndyneFight_Ex_SongSystem_WaveConstructor_At0thBeat_System_Single_
@@ -32097,13 +32496,22 @@ references:
   nameWithType: WaveConstructor.AtKthBeat
 - uid: UndyneFight_Ex.SongSystem.WaveConstructor.BeatTime(System.Single)
   name: BeatTime(float)
-  href: api/UndyneFight_Ex.SongSystem.WaveConstructor.html#UndyneFight_Ex_SongSystem_WaveConstructor_BeatTime_System_Single_
+  href: UF-Ex%20Docs/api/UndyneFight_Ex.SongSystem.WaveConstructor.html#UndyneFight_Ex_SongSystem_WaveConstructor_BeatTime_System_Single_
   commentId: M:UndyneFight_Ex.SongSystem.WaveConstructor.BeatTime(System.Single)
   name.vb: BeatTime(Single)
   fullName: UndyneFight_Ex.SongSystem.WaveConstructor.BeatTime(float)
   fullName.vb: UndyneFight_Ex.SongSystem.WaveConstructor.BeatTime(Single)
   nameWithType: WaveConstructor.BeatTime(float)
   nameWithType.vb: WaveConstructor.BeatTime(Single)
+- uid: UndyneFight_Ex.SongSystem.WaveConstructor.BeatTime(System.Single,System.Boolean)
+  name: BeatTime(float, bool)
+  href: api/UndyneFight_Ex.SongSystem.WaveConstructor.html#UndyneFight_Ex_SongSystem_WaveConstructor_BeatTime_System_Single_System_Boolean_
+  commentId: M:UndyneFight_Ex.SongSystem.WaveConstructor.BeatTime(System.Single,System.Boolean)
+  name.vb: BeatTime(Single, Boolean)
+  fullName: UndyneFight_Ex.SongSystem.WaveConstructor.BeatTime(float, bool)
+  fullName.vb: UndyneFight_Ex.SongSystem.WaveConstructor.BeatTime(Single, Boolean)
+  nameWithType: WaveConstructor.BeatTime(float, bool)
+  nameWithType.vb: WaveConstructor.BeatTime(Single, Boolean)
 - uid: UndyneFight_Ex.SongSystem.WaveConstructor.BeatTime*
   name: BeatTime
   href: api/UndyneFight_Ex.SongSystem.WaveConstructor.html#UndyneFight_Ex_SongSystem_WaveConstructor_BeatTime_
@@ -32404,6 +32812,31 @@ references:
   isSpec: "True"
   fullName: UndyneFight_Ex.SongSystem.WaveConstructor.LoadImage
   nameWithType: WaveConstructor.LoadImage
+- uid: UndyneFight_Ex.SongSystem.WaveConstructor.LoadImageAsync(System.String)
+  name: LoadImageAsync(string)
+  href: api/UndyneFight_Ex.SongSystem.WaveConstructor.html#UndyneFight_Ex_SongSystem_WaveConstructor_LoadImageAsync_System_String_
+  commentId: M:UndyneFight_Ex.SongSystem.WaveConstructor.LoadImageAsync(System.String)
+  name.vb: LoadImageAsync(String)
+  fullName: UndyneFight_Ex.SongSystem.WaveConstructor.LoadImageAsync(string)
+  fullName.vb: UndyneFight_Ex.SongSystem.WaveConstructor.LoadImageAsync(String)
+  nameWithType: WaveConstructor.LoadImageAsync(string)
+  nameWithType.vb: WaveConstructor.LoadImageAsync(String)
+- uid: UndyneFight_Ex.SongSystem.WaveConstructor.LoadImageAsync*
+  name: LoadImageAsync
+  href: api/UndyneFight_Ex.SongSystem.WaveConstructor.html#UndyneFight_Ex_SongSystem_WaveConstructor_LoadImageAsync_
+  commentId: Overload:UndyneFight_Ex.SongSystem.WaveConstructor.LoadImageAsync
+  isSpec: "True"
+  fullName: UndyneFight_Ex.SongSystem.WaveConstructor.LoadImageAsync
+  nameWithType: WaveConstructor.LoadImageAsync
+- uid: UndyneFight_Ex.SongSystem.WaveConstructor.MakeArrows(System.Single,System.Single,System.String)
+  name: MakeArrows(float, float, string)
+  href: api/UndyneFight_Ex.SongSystem.WaveConstructor.html#UndyneFight_Ex_SongSystem_WaveConstructor_MakeArrows_System_Single_System_Single_System_String_
+  commentId: M:UndyneFight_Ex.SongSystem.WaveConstructor.MakeArrows(System.Single,System.Single,System.String)
+  name.vb: MakeArrows(Single, Single, String)
+  fullName: UndyneFight_Ex.SongSystem.WaveConstructor.MakeArrows(float, float, string)
+  fullName.vb: UndyneFight_Ex.SongSystem.WaveConstructor.MakeArrows(Single, Single, String)
+  nameWithType: WaveConstructor.MakeArrows(float, float, string)
+  nameWithType.vb: WaveConstructor.MakeArrows(Single, Single, String)
 - uid: UndyneFight_Ex.SongSystem.WaveConstructor.MakeArrows(System.Single,System.Single,System.String,System.Boolean)
   name: MakeArrows(float, float, string, bool)
   href: api/UndyneFight_Ex.SongSystem.WaveConstructor.html#UndyneFight_Ex_SongSystem_WaveConstructor_MakeArrows_System_Single_System_Single_System_String_System_Boolean_
@@ -32808,6 +33241,60 @@ references:
   commentId: F:UndyneFight_Ex.SpriteBatchEX._graphicDevice
   fullName: UndyneFight_Ex.SpriteBatchEX._graphicDevice
   nameWithType: SpriteBatchEX._graphicDevice
+- uid: UndyneFight_Ex.StringUtil
+  name: StringUtil
+  href: api/UndyneFight_Ex.StringUtil.html
+  commentId: T:UndyneFight_Ex.StringUtil
+  fullName: UndyneFight_Ex.StringUtil
+  nameWithType: StringUtil
+- uid: UndyneFight_Ex.StringUtil.DefaultIfNullOrEmpty(System.String,System.String)
+  name: DefaultIfNullOrEmpty(string, string)
+  href: api/UndyneFight_Ex.StringUtil.html#UndyneFight_Ex_StringUtil_DefaultIfNullOrEmpty_System_String_System_String_
+  commentId: M:UndyneFight_Ex.StringUtil.DefaultIfNullOrEmpty(System.String,System.String)
+  name.vb: DefaultIfNullOrEmpty(String, String)
+  fullName: UndyneFight_Ex.StringUtil.DefaultIfNullOrEmpty(string, string)
+  fullName.vb: UndyneFight_Ex.StringUtil.DefaultIfNullOrEmpty(String, String)
+  nameWithType: StringUtil.DefaultIfNullOrEmpty(string, string)
+  nameWithType.vb: StringUtil.DefaultIfNullOrEmpty(String, String)
+- uid: UndyneFight_Ex.StringUtil.DefaultIfNullOrEmpty*
+  name: DefaultIfNullOrEmpty
+  href: api/UndyneFight_Ex.StringUtil.html#UndyneFight_Ex_StringUtil_DefaultIfNullOrEmpty_
+  commentId: Overload:UndyneFight_Ex.StringUtil.DefaultIfNullOrEmpty
+  isSpec: "True"
+  fullName: UndyneFight_Ex.StringUtil.DefaultIfNullOrEmpty
+  nameWithType: StringUtil.DefaultIfNullOrEmpty
+- uid: UndyneFight_Ex.StringUtil.ShiftingEllipsis(System.String,System.Int32,System.Single)
+  name: ShiftingEllipsis(string, int, float)
+  href: api/UndyneFight_Ex.StringUtil.html#UndyneFight_Ex_StringUtil_ShiftingEllipsis_System_String_System_Int32_System_Single_
+  commentId: M:UndyneFight_Ex.StringUtil.ShiftingEllipsis(System.String,System.Int32,System.Single)
+  name.vb: ShiftingEllipsis(String, Integer, Single)
+  fullName: UndyneFight_Ex.StringUtil.ShiftingEllipsis(string, int, float)
+  fullName.vb: UndyneFight_Ex.StringUtil.ShiftingEllipsis(String, Integer, Single)
+  nameWithType: StringUtil.ShiftingEllipsis(string, int, float)
+  nameWithType.vb: StringUtil.ShiftingEllipsis(String, Integer, Single)
+- uid: UndyneFight_Ex.StringUtil.ShiftingEllipsis*
+  name: ShiftingEllipsis
+  href: api/UndyneFight_Ex.StringUtil.html#UndyneFight_Ex_StringUtil_ShiftingEllipsis_
+  commentId: Overload:UndyneFight_Ex.StringUtil.ShiftingEllipsis
+  isSpec: "True"
+  fullName: UndyneFight_Ex.StringUtil.ShiftingEllipsis
+  nameWithType: StringUtil.ShiftingEllipsis
+- uid: UndyneFight_Ex.StringUtil.SubstringCount(System.String,System.String)
+  name: SubstringCount(string, string)
+  href: api/UndyneFight_Ex.StringUtil.html#UndyneFight_Ex_StringUtil_SubstringCount_System_String_System_String_
+  commentId: M:UndyneFight_Ex.StringUtil.SubstringCount(System.String,System.String)
+  name.vb: SubstringCount(String, String)
+  fullName: UndyneFight_Ex.StringUtil.SubstringCount(string, string)
+  fullName.vb: UndyneFight_Ex.StringUtil.SubstringCount(String, String)
+  nameWithType: StringUtil.SubstringCount(string, string)
+  nameWithType.vb: StringUtil.SubstringCount(String, String)
+- uid: UndyneFight_Ex.StringUtil.SubstringCount*
+  name: SubstringCount
+  href: api/UndyneFight_Ex.StringUtil.html#UndyneFight_Ex_StringUtil_SubstringCount_
+  commentId: Overload:UndyneFight_Ex.StringUtil.SubstringCount
+  isSpec: "True"
+  fullName: UndyneFight_Ex.StringUtil.SubstringCount
+  nameWithType: StringUtil.SubstringCount
 - uid: UndyneFight_Ex.Surface
   name: Surface
   href: api/UndyneFight_Ex.Surface.html
@@ -33207,6 +33694,82 @@ references:
   isSpec: "True"
   fullName: UndyneFight_Ex.TextEntity.Update
   nameWithType: TextEntity.Update
+- uid: UndyneFight_Ex.UFEXResourceAttribute
+  name: UFEXResourceAttribute
+  href: api/UndyneFight_Ex.UFEXResourceAttribute.html
+  commentId: T:UndyneFight_Ex.UFEXResourceAttribute
+  fullName: UndyneFight_Ex.UFEXResourceAttribute
+  nameWithType: UFEXResourceAttribute
+- uid: UndyneFight_Ex.UFEXResourceAttribute.#ctor(System.String,System.Type,System.Int32[],System.String[])
+  name: UFEXResourceAttribute(string, Type, int[], string[])
+  href: api/UndyneFight_Ex.UFEXResourceAttribute.html#UndyneFight_Ex_UFEXResourceAttribute__ctor_System_String_System_Type_System_Int32___System_String___
+  commentId: M:UndyneFight_Ex.UFEXResourceAttribute.#ctor(System.String,System.Type,System.Int32[],System.String[])
+  name.vb: New(String, Type, Integer(), String())
+  fullName: UndyneFight_Ex.UFEXResourceAttribute.UFEXResourceAttribute(string, System.Type, int[], string[])
+  fullName.vb: UndyneFight_Ex.UFEXResourceAttribute.New(String, System.Type, Integer(), String())
+  nameWithType: UFEXResourceAttribute.UFEXResourceAttribute(string, Type, int[], string[])
+  nameWithType.vb: UFEXResourceAttribute.New(String, Type, Integer(), String())
+- uid: UndyneFight_Ex.UFEXResourceAttribute.#ctor*
+  name: UFEXResourceAttribute
+  href: api/UndyneFight_Ex.UFEXResourceAttribute.html#UndyneFight_Ex_UFEXResourceAttribute__ctor_
+  commentId: Overload:UndyneFight_Ex.UFEXResourceAttribute.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: UndyneFight_Ex.UFEXResourceAttribute.UFEXResourceAttribute
+  fullName.vb: UndyneFight_Ex.UFEXResourceAttribute.New
+  nameWithType: UFEXResourceAttribute.UFEXResourceAttribute
+  nameWithType.vb: UFEXResourceAttribute.New
+- uid: UndyneFight_Ex.UFEXResourceAttribute.Dimensions
+  name: Dimensions
+  href: api/UndyneFight_Ex.UFEXResourceAttribute.html#UndyneFight_Ex_UFEXResourceAttribute_Dimensions
+  commentId: F:UndyneFight_Ex.UFEXResourceAttribute.Dimensions
+  fullName: UndyneFight_Ex.UFEXResourceAttribute.Dimensions
+  nameWithType: UFEXResourceAttribute.Dimensions
+- uid: UndyneFight_Ex.UFEXResourceAttribute.IndexReplacement
+  name: IndexReplacement
+  href: api/UndyneFight_Ex.UFEXResourceAttribute.html#UndyneFight_Ex_UFEXResourceAttribute_IndexReplacement
+  commentId: F:UndyneFight_Ex.UFEXResourceAttribute.IndexReplacement
+  fullName: UndyneFight_Ex.UFEXResourceAttribute.IndexReplacement
+  nameWithType: UFEXResourceAttribute.IndexReplacement
+- uid: UndyneFight_Ex.UFEXResourceAttribute.Loaded
+  name: Loaded
+  href: api/UndyneFight_Ex.UFEXResourceAttribute.html#UndyneFight_Ex_UFEXResourceAttribute_Loaded
+  commentId: P:UndyneFight_Ex.UFEXResourceAttribute.Loaded
+  fullName: UndyneFight_Ex.UFEXResourceAttribute.Loaded
+  nameWithType: UFEXResourceAttribute.Loaded
+- uid: UndyneFight_Ex.UFEXResourceAttribute.Loaded*
+  name: Loaded
+  href: api/UndyneFight_Ex.UFEXResourceAttribute.html#UndyneFight_Ex_UFEXResourceAttribute_Loaded_
+  commentId: Overload:UndyneFight_Ex.UFEXResourceAttribute.Loaded
+  isSpec: "True"
+  fullName: UndyneFight_Ex.UFEXResourceAttribute.Loaded
+  nameWithType: UFEXResourceAttribute.Loaded
+- uid: UndyneFight_Ex.UFEXResourceAttribute.Path
+  name: Path
+  href: api/UndyneFight_Ex.UFEXResourceAttribute.html#UndyneFight_Ex_UFEXResourceAttribute_Path
+  commentId: P:UndyneFight_Ex.UFEXResourceAttribute.Path
+  fullName: UndyneFight_Ex.UFEXResourceAttribute.Path
+  nameWithType: UFEXResourceAttribute.Path
+- uid: UndyneFight_Ex.UFEXResourceAttribute.Path*
+  name: Path
+  href: api/UndyneFight_Ex.UFEXResourceAttribute.html#UndyneFight_Ex_UFEXResourceAttribute_Path_
+  commentId: Overload:UndyneFight_Ex.UFEXResourceAttribute.Path
+  isSpec: "True"
+  fullName: UndyneFight_Ex.UFEXResourceAttribute.Path
+  nameWithType: UFEXResourceAttribute.Path
+- uid: UndyneFight_Ex.UFEXResourceAttribute.Type
+  name: Type
+  href: api/UndyneFight_Ex.UFEXResourceAttribute.html#UndyneFight_Ex_UFEXResourceAttribute_Type
+  commentId: P:UndyneFight_Ex.UFEXResourceAttribute.Type
+  fullName: UndyneFight_Ex.UFEXResourceAttribute.Type
+  nameWithType: UFEXResourceAttribute.Type
+- uid: UndyneFight_Ex.UFEXResourceAttribute.Type*
+  name: Type
+  href: api/UndyneFight_Ex.UFEXResourceAttribute.html#UndyneFight_Ex_UFEXResourceAttribute_Type_
+  commentId: Overload:UndyneFight_Ex.UFEXResourceAttribute.Type
+  isSpec: "True"
+  fullName: UndyneFight_Ex.UFEXResourceAttribute.Type
+  nameWithType: UFEXResourceAttribute.Type
 - uid: UndyneFight_Ex.UserService
   name: UndyneFight_Ex.UserService
   href: api/UndyneFight_Ex.UserService.html
