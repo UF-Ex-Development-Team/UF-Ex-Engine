@@ -31,11 +31,13 @@ public class ParticleGather : Entity
 		rotations = new float[count];
 		sizes = new float[count];
 		speeds = new float[count];
+		//Cache for optimization
+		float minSpdRange = speed_range[0], maxSpdRange = speed_range[1], minSizeRange = size_range[0], maxSizeRange = size_range[1];
 		for (int i = 0; i < count; i++)
 		{
 			rotations[i] = Rand(0, 359f);
-			speeds[i] = Rand(speed_range[0], speed_range[1]);
-			sizes[i] = Rand(size_range[0], size_range[1]);
+			speeds[i] = Rand(minSpdRange, maxSpdRange);
+			sizes[i] = Rand(minSizeRange, maxSizeRange);
 		}
 
 		drawingColor = color;
@@ -55,10 +57,9 @@ public class ParticleGather : Entity
 	/// <inheritdoc/>
 	public override void Draw()
 	{
+		Color drawCol = drawingColor * MathHelper.Min(0.7f, 1.3f * appearTime / duration);
 		for (int i = 0; i < count; i++)
-		{
-			FormalDraw(Image, Centre + GetVector2(speeds[i] * timeLeft, rotations[i]), drawingColor * MathHelper.Min(0.7f, appearTime / (duration / 1.3f)), sizes[i], 0, ImageCentre);
-		}
+			FormalDraw(Image, Centre + GetVector2(speeds[i] * timeLeft, rotations[i]), drawCol, sizes[i], 0, ImageCentre);
 	}
 }
 /// <summary>
@@ -109,7 +110,7 @@ public class Particle : Entity
 		set
 		{
 			autoRotate = value;
-			RotateSpeed = value ? Rand(-42, 42) / 20f : 0f;
+			RotateSpeed = value ? Rand(-2.1f, 2.1f) : 0;
 		}
 	}
 	/// <summary>

@@ -97,7 +97,11 @@ namespace UndyneFight_Ex.Entities
 			/// Cubic Sinusoidal motion, [Intensity, Wavelength, Initial Time, Constant]
 			/// The formula is: Intensity * Sin((AppearTime + Initial Time) / Wavelength * PI * 2) ^ 3 + Constant
 			/// </summary>
-			public static readonly Func<ICustomLength, float> sin3 = (s) => s.LengthRouteParam[3] + s.LengthRouteParam[0] * MathF.Pow(MathF.Sin((s.AppearTime + s.LengthRouteParam[2]) / s.LengthRouteParam[1] * MathF.PI * 2), 3);
+			public static readonly Func<ICustomLength, float> sin3 = (s) =>
+			{
+				float sine = MathF.Sin((s.AppearTime + s.LengthRouteParam[2]) / s.LengthRouteParam[1] * MathF.PI * 2);
+				return s.LengthRouteParam[3] + s.LengthRouteParam[0] * sine * sine * sine;
+			};
 			/// <summary>
 			/// Stable value, [Value]
 			/// </summary>
@@ -190,7 +194,7 @@ namespace UndyneFight_Ex.Entities
 	public class TimeRangedEvent : GameObject
 	{
 		private readonly Action _action;
-		private float _timeDelay;
+		private readonly float _timeDelay;
 		private readonly float _duration;
 		/// <summary>
 		/// 能够持续执行一段时间的事件
@@ -256,11 +260,11 @@ namespace UndyneFight_Ex.Entities
 		/// <summary>
 		/// The list of delayed instant events
 		/// </summary>
-		internal readonly static List<EventInfo> DelayedInstantEvents = [];
+		internal static readonly List<EventInfo> DelayedInstantEvents = [];
 		/// <summary>
 		/// The list of delayed time ranged events
 		/// </summary>
-		internal readonly static List<EventInfo> DelayedTimeRangedEvents = [];
+		internal static readonly List<EventInfo> DelayedTimeRangedEvents = [];
 		/// <summary>
 		/// Whether the delay event schedule has been cleared from either a natural or action invoked scene transition
 		/// </summary>
@@ -310,7 +314,7 @@ namespace UndyneFight_Ex.Entities
 				EventInfo info = DelayedTimeRangedEvents[i];
 				if (info.TimeDelay <= 0) //Execute events
 				{
-					if (info.TimeDelay <= -info.Duration) //Remove event when reached end of life
+					if (info.TimeDelay < -info.Duration) //Remove event when reached end of life
 					{
 						DelayedTimeRangedEvents.RemoveAt(i);
 						continue; //Data removed, prevent execution
@@ -582,9 +586,8 @@ namespace UndyneFight_Ex
 			}
 			Vector2 GetRotCen = spriteOrigin ?? new(texture.Width / 2f, texture.Height / 2f);
 			Vector2 drawingScale = scale ?? Vector2.One;
-			CollideRect rect = new(position - GetRotCen, texArea.HasValue ? texArea.Value.Size : texture.Bounds.Size.ToVector2());
 			if (!NotInScene(texture, position, drawingScale, rotation, GetRotCen))
-				GameMain.MissionSpriteBatch.Draw(texture, rect, sourceRect, (color ?? Color.White) * controlLayer.drawingAlpha, rotation, GetRotCen, drawingScale, SpriteEffects.None, depth ?? Depth);
+				GameMain.MissionSpriteBatch.Draw(texture, new CollideRect(position - GetRotCen, texArea.HasValue ? texArea.Value.Size : texture.Bounds.Size.ToVector2()), sourceRect, (color ?? Color.White) * controlLayer.drawingAlpha, rotation, GetRotCen, drawingScale, SpriteEffects.None, depth ?? Depth);
 		}
 		private static float SqrtTwo => MathF.Sqrt(2);
 		/// <summary>
@@ -600,46 +603,22 @@ namespace UndyneFight_Ex
 		{
 			if (!DrawOptimize)
 				return false;
-			Scene.DrawingSettings drawingSettings = CurrentScene.CurrentDrawingSettings;
-			float scale = 1 / MathF.Abs(drawingSettings.screenScale) * (MathF.Abs(MathF.Sin(drawingSettings.screenAngle * 2)) * (SqrtTwo - 1) + 1) * 1.212f;
-			Vector4 extend = drawingSettings.Extending;
-			float scrWidth = drawingSettings.defaultWidth;
-			float scrHeight = scrWidth / GameStates.Aspect;
-			CollideRect cur = new(0, -scrHeight * extend.W, scrWidth * scale * GameStates.SurfaceScale, scrHeight * (scale + extend.W) * GameStates.SurfaceScale);
-			cur.SetCentre(new Vector2(scrWidth / 2f, (1 - extend.W) * 0.5f * scrHeight) * GameStates.SurfaceScale);
-			cur.Offset(-drawingSettings.screenDelta / drawingSettings.screenScale);
-
-			Vector2 pos = CurrentScene.CurrentDrawingSettings.screenDelta;
-			Vector2 dim = new(640, 480);
-			float rot = CurrentScene.CurrentDrawingSettings.screenAngle;
-			float scrScale = CurrentScene.CurrentDrawingSettings.screenScale;
-			Vector2 trans = pos - centre;
-			trans.Rotate(-rot);
-			trans /= scrScale;
-
-			//if (cur.Contain(centre))
-			if (trans != Vector2.Clamp(-dim / 2, trans, dim / 2))
-				return false;
-
-			Vector2 size = tex.Bounds.Size.ToVector2() * drawingScale;
-			rotateCentre *= drawingScale;
-			Vector2[] points = [Vector2.Zero, new(size.X, 0), new(0, size.Y), size];
-			for (int i = 0; i < points.Length; i++)
-				points[i] -= rotateCentre;
-			Vector2[] reals = new Vector2[4];
-			for (int i = 0; i < reals.Length; i++)
-				reals[i] = MathUtil.Rotate(points[i], MathUtil.GetAngle(rotation)) + centre;
-			float[] dirs =
-			[
-				reals.Min(dir => dir.X),
-				reals.Max(dir => dir.X),
-				reals.Min(dir => dir.Y),
-				reals.Max(dir => dir.Y),
-			];
-			CollideRect bounding = new(dirs[0], dirs[2], dirs[1] - dirs[0], dirs[3] - dirs[2]);
-
-			return !bounding.Intersects(cur);
+			//Create transform matrix of the texture
+			Matrix transform = Matrix.CreateTranslation(-rotateCentre.X, -rotateCentre.Y, 0) * Matrix.CreateScale(drawingScale.X, drawingScale.Y, 1) * Matrix.CreateRotationZ(rotation) * Matrix.CreateTranslation(centre.X, centre.Y, 0);
+			Vector2[] corners = [Vector2.Zero, new(tex.Width, 0), new(0, tex.Height), new(tex.Width, tex.Height)];
+			//Apply transformation
+			for (int i = 0; i < corners.Length; i++)
+				corners[i] = Vector2.Transform(corners[i], transform);
+			//Get approximate bounding box of the transformed texture
+			float minX = corners.Min(v => v.X);
+			float maxX = corners.Max(v => v.X);
+			float minY = corners.Min(v => v.Y);
+			float maxY = corners.Max(v => v.Y);
+			//AABB check
+			Rectangle boundingBox = new((int)minX, (int)minY, (int)(maxX - minX), (int)(maxY - minY));
+			return !ViewBox.Intersects(boundingBox);
 		}
+		private static readonly Rectangle ViewBox = new(0, 0, 640, 480);
 		/// <summary>
 		/// The depth of the entity (The higher the value is, the less shallow it is)
 		/// </summary>
@@ -867,7 +846,7 @@ namespace UndyneFight_Ex
 				for (int i = 0; i < value.Length; i++)
 					tags[i] = new Tag(value[i]);
 			}
-			get => [.. from n in tags select n.tagName];
+			get => [.. tags.Select(n => n.tagName)];
 		}
 		/// <summary>
 		/// Whether the game object has any tags

@@ -19,7 +19,7 @@ public static class SettingsResetInterface
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	internal static void ApplySettings()
 	{
-		MediaPlayer.Volume = SoundEffect.MasterVolume = MathF.Pow(DataLibrary.masterVolume / 100f, 2);
+		MediaPlayer.Volume = SoundEffect.MasterVolume = DataLibrary.masterVolume * DataLibrary.masterVolume / 10000f;
 
 		GameMain.ResetRendering();
 	}

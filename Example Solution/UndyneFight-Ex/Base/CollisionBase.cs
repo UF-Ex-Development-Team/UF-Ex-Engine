@@ -65,12 +65,10 @@ public class GravityLine
 		{
 			collidePlayers.ForEach(s =>
 			{
-				Vector2 oldPos = s.Centre;
-				float dx = s.Centre.X - Centre.X, dy = s.Centre.Y - Centre.Y;
 				Vector2 _delta = newCen - prevCen;
 				if (Math.Abs(delta) > 1e-5f)
 				{
-					float ori = MathF.Atan2(dy, dx);
+					float ori = MathF.Atan2(s.Centre.Y - Centre.Y, s.Centre.X - Centre.X);
 					float length = GetDistance(Centre, s.Centre);
 					_delta += Centre + GetVector2(length, (ori + delta) / PI * 180) - s.Centre;
 				}
@@ -150,9 +148,7 @@ public class GravityLine
 	{
 		if (!IsEnable || !(isCollide = Math.Abs(Distance(player)) <= 8.01f + width && GetDistance(player.Centre, Centre) <= (Length / 2 + 6)))
 			return false;
-		Vector2 v1 = player.Centre - Centre;
-		Vector2 v2 = GetVector2(1, player.Rotation - 90);
-		if (Vector2.Dot(v1, v2) < 0)
+		if (Vector2.Dot(player.Centre - Centre, GetVector2(1, player.Rotation - 90)) < 0)
 			return isCollide = false;
 		collidePlayers.Add(player);
 		return true;

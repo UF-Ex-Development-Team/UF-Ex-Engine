@@ -142,8 +142,8 @@ public abstract class GasterBlaster : Barrage
 		{
 			GasterBlaster control = FatherObject as GasterBlaster;
 			float del = type == DelayType.Pull
-				? Math.Max(0.5f, MathF.Min(3, delay * 0.1f))
-				: Math.Max(0.4f, MathF.Min(1, (delay > 10 ? 10 : MathF.Sqrt(delay * 2)) * 0.3f));
+				? Math.Clamp(delay * 0.1f, 0.5f, 3)
+				: Math.Clamp((delay > 10 ? 10 : MathF.Sqrt(delay * 2)) * 0.3f, 0.4f, 1);
 			if (delay < del)
 				del = delay;
 			del /= 2;
@@ -238,7 +238,7 @@ public class GreenSoulGB : GasterBlaster
 	public int DrawingColor { get; }
 	private int ShieldDirection => missionPlayer.Shields.DirectionOf(DrawingColor);
 	private ParticleGather ParticleEffect;
-	internal bool Auto => (DebugState.ShieldAuto[0] && DrawingColor == 0) || (DebugState.ShieldAuto[1] && DrawingColor == 1) || (DebugState.ShieldAuto[2] && DrawingColor == 2) || (DebugState.ShieldAuto[3] && DrawingColor == 3);
+	internal bool Auto => DebugState.ShieldAuto[DrawingColor]; //No safety check here because it should already be done in creation
 
 	private Vector2 _lastPlayerPos;
 	private float _lastPlayerRot;
@@ -275,7 +275,7 @@ public class GreenSoulGB : GasterBlaster
 					//check collision
 					CalcPush(dir);
 					PushDown();
-					if (Follow && ((missionPlayer.Centre - _lastPlayerPos).LengthSquared() > 0.1f) || missionPlayer.Rotation != _lastPlayerRot)
+					if ((Follow && ((missionPlayer.Centre - _lastPlayerPos).LengthSquared() > 0.1f)) || missionPlayer.Rotation != _lastPlayerRot)
 						ArrangePos();
 					GetCollide();
 				}
@@ -291,7 +291,6 @@ public class GreenSoulGB : GasterBlaster
 			{
 				if (appearTime < adjustedWaitingTime)
 					Centre = Follow ? missionPlace : Centre * movingScale + missionPlace * (1 - movingScale);
-
 				Rotation = missionRotation * 0.12f + Rotation * 0.88f;
 				if (alpha < 1)
 					alpha += 0.1f;
@@ -474,7 +473,7 @@ public class NormalGB : GasterBlaster, ICollideAble
 	/// </summary>
 	public override void GetCollide(Player.Heart heart)
 	{
-		//If the Cos of the angle is < 0, then Theta is (90, 180), therefore the heart is behind blaster
+		//If the Cos(Theta) < 0, then Theta is (90, 180), therefore the heart is behind blaster
 		if ((Cos(GetVector2(1, Rotation), Centre - Heart.Centre) > 0) ||
 			//Early exit in cases beam should not be drawn
 			appearTime > waitingTime + duration + 2 || (appearTime < waitingTime - 2) || alpha <= 0.8f ||
@@ -482,17 +481,9 @@ public class NormalGB : GasterBlaster, ICollideAble
 			heart.SoulType == 1)
 			return;
 
-		float A, B, C, dist;
-		if (Rotation == 0)
-			dist = Centre.X - heart.Centre.X;
-		else
-		{
-			float k = (float)Math.Tan(GetRadian(Rotation));
-			A = k;
-			B = -1;
-			C = -A * Centre.X - B * Centre.Y;
-			dist = (float)((A * heart.Centre.X + B * heart.Centre.Y + C) / Math.Sqrt(A * A + B * B));
-		}
+		float dist = Rotation == 0
+			? Centre.X - heart.Centre.X //If the blaster is colinear, directly compare the X distance
+			: MathUtil.ScalarProject(new(MathF.Tan(GetRadian(Rotation)), -1), heart.Centre - Centre);
 		float res = Math.Abs(dist) - (32 * laserSize.Y * size.Y - 2);
 
 		if (res < 0)

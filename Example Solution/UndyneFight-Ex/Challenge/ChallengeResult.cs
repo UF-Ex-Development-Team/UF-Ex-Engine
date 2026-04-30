@@ -2,7 +2,6 @@
 using UndyneFight_Ex.SongSystem;
 using static UndyneFight_Ex.Entities.SimplifiedEasing;
 using static UndyneFight_Ex.GameStates;
-using static UndyneFight_Ex.GlobalResources.Font;
 
 namespace UndyneFight_Ex.Entities;
 
@@ -11,6 +10,7 @@ internal class ChallengeResult(Challenge challenge) : Entity
 	private Texture2D[] ChartIllustrations;
 	private class SingleResult : Entity
 	{
+		private readonly GLFont NormalFont = Localization.GetFont("NormalFont");
 		private SongResult result;
 		/// <summary>
 		/// The illustration of the single chart
@@ -74,9 +74,11 @@ internal class ChallengeResult(Challenge challenge) : Entity
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		private void DrawOutlinedText(string text, Vector2 pos, float thickness, Color outline_col, Color main_col, float scale = 1)
 		{
+			GLFont font = Localization.GetFont("NormalFont");
+			scale *= Localization.GetFontScale("NormalFont");
 			for (int i = 0; i < 8; i++)
-				NormalFont.Draw(text, pos + MathUtil.GetVector2(thickness, i * 45), outline_col, scale, Depth);
-			NormalFont.Draw(text, pos, main_col, scale, Depth + 0.01f);
+				font.Draw(text, pos + MathUtil.GetVector2(thickness, i * 45), outline_col, scale, Depth);
+			font.Draw(text, pos, main_col, scale, Depth + 0.01f);
 		}
 		public override void Draw()
 		{
@@ -110,17 +112,13 @@ internal class ChallengeResult(Challenge challenge) : Entity
 				new VertexPositionColorTexture(new Vector3(Vertices[3], Depth), IllustrationColor, Vertices[3] / ScreenSize));
 
 			DrawOutlinedText(songName, CollidingBox.TopLeft + new Vector2(18, 15.5f), 2, Color.Black, Color.White);
-			string diffStr = difficulty switch
-			{
-				_ when difficulty != Difficulty.ExtremePlus => difficulty.ToString(),
-				_ => "Extreme Plus"
-			};
+			string diffStr = Localization.GetText($"Difficulty[{difficulty}]");
 			DrawOutlinedText(diffStr, CollidingBox.TopRight - new Vector2(15 + NormalFont.SFX.MeasureString(difficulty.ToString()).X, -12.5f), 2, Color.Black, difColor);
 			DrawOutlinedText(MathUtil.FloatToString(float.Clamp(result.Accuracy * 100f, 0, 105), 2) + "%", CollidingBox.TopLeft + new Vector2(18, 58), 2, Color.Black, result.Accuracy >= 1 ? Color.Gold : Color.Wheat);
 			if (ChartSpecial == 1)
-				DrawOutlinedText("No Hit", CollidingBox.TopLeft + new Vector2(430, 37.5f), 2, Color.Black, Color.Orange, 0.8f);
+				DrawOutlinedText(Localization.GetText("Challenge.NoHit"), CollidingBox.TopLeft + new Vector2(430, 37.5f), 2, Color.Black, Color.Orange, 0.8f);
 			else if (ChartSpecial == 2)
-				DrawOutlinedText("All Perfect", CollidingBox.TopLeft + new Vector2(410, 37.5f), 2, Color.Black, Color.Gold, 0.8f);
+				DrawOutlinedText(Localization.GetText("Challenge.AP"), CollidingBox.TopLeft + new Vector2(410, 37.5f), 2, Color.Black, Color.Gold, 0.8f);
 			DrawOutlinedText(result.Score.ToString(), CollidingBox.TopLeft + new Vector2(158, 58), 2, Color.Black, Color.White);
 			DrawOutlinedText(mark.ToString(), CollidingBox.TopLeft + new Vector2(410, 75) - NormalFont.SFX.MeasureString(mark.ToString()) / 2, 2, Color.Black, remarkColor, 1.32f);
 		}
@@ -145,7 +143,7 @@ internal class ChallengeResult(Challenge challenge) : Entity
 		{
 			float delay = i * 12;
 			int t = i;
-			InstanceCreate(new InstantEvent(delay, () =>
+			DelayEventProcessor.AddInstantEvent(delay, () =>
 			{
 				_ = enumerator.MoveNext();
 				int FCorAP = 0;
@@ -155,7 +153,7 @@ internal class ChallengeResult(Challenge challenge) : Entity
 					FCorAP = 2;
 				AddChild(new SingleResult(enumerator.Current, t, ChartIllustrations[t++], FCorAP));
 				totalAccuracy += float.Clamp(enumerator.Current.Accuracy, 0, 105);
-			}));
+			});
 			IWaveSet cur = Activator.CreateInstance(challenge.Routes[i].Item1) as IWaveSet;
 			ChartIllustrations[i] = GlobalData.GetWavePaint(cur);
 		}
@@ -170,15 +168,14 @@ internal class ChallengeResult(Challenge challenge) : Entity
 		float acc = totalAccuracy * 100;
 		result = acc switch
 		{
-			_ when acc >= 300 => "Impeccable",
-			_ when acc >= 297 => "Eminent",
-			_ when acc >= 294 => "Excellent",
-			_ when acc >= 291 => "Respectable+",
-			_ when acc >= 288 => "Respectable",
-			_ when acc >= 279 => "Acceptable+",
-			_ when acc >= 270 => "Acceptable",
-			_ => "Unaccepted"
+			_ when acc >= 300 => "SkillRating.Impeccable",
+			_ when acc >= 297 => "SkillRating.Eminent",
+			_ when acc >= 294 => "SkillRating.Excellent",
+			_ when acc >= 288 => "SkillRating.Respectable",
+			_ when acc >= 270 => "SkillRating.Acceptable",
+			_ => "SkillRating.Failed"
 		};
+		bool plus = acc is (>= 291 and < 294) or (>= 279 and < 288);
 		resultColor = acc switch
 		{
 			_ when acc >= 300 => Color.Goldenrod,
@@ -188,18 +185,19 @@ internal class ChallengeResult(Challenge challenge) : Entity
 			_ when acc >= 270 => Color.SpringGreen,
 			_ => Color.DarkRed
 		};
-		FightResources.Font.NormalFont.CentreDraw("Challenge Result", new(320, 31), Color.White);
-		FightResources.Font.NormalFont.CentreDraw("Total:" + MathUtil.FloatToString(curShowAccuracy * 100, 1) + "%", new Vector2(totalX, 410), Color.Wheat);
-		if (calcFinished)
-		{
-			if (totalAccuracy >= 300)
-				for (float i = 0; i < 5; i += 0.5f)
-					for (int k = 0; k < 16; k++)
-						FightResources.Font.NormalFont.CentreDraw(result, new Vector2(475, 408) + MathUtil.GetVector2(i * 1.5f, k * 22.5f), Color.Lerp(Color.Black, resultColor, alpha - i * 0.2f), 1.5f, 0, 0.5f - i * 0.1f);
-			FightResources.Font.NormalFont.CentreDraw(result, new Vector2(475, 408), Color.Lerp(Color.Black, resultColor, alpha), 1.5f, 0, 0.5f);
-			if (appearTime % 60 < 30)
-				FightResources.Font.NormalFont.CentreDraw("Press Z to return", new Vector2(320, 449), Color.Lime);
-		}
+		Localization.DrawLocalizedText("Challenge.Result", new Vector2(320, 31), align: Localization.DrawAlign.Middle);
+		Localization.DrawLocalizedText("Challenge.Total%", new Vector2(totalX, 410), [MathUtil.FloatToString(curShowAccuracy * 100, 1)], align: Localization.DrawAlign.Middle, color: Color.Wheat);
+		if (!calcFinished)
+			return;
+		GLFont font = Localization.GetFont("NormalFont");
+		float fontScale = Localization.GetFontScale("NormalFont");
+		if (totalAccuracy >= 300)
+			for (float i = 0; i < 5; i += 0.5f)
+				for (int k = 0; k < 16; k++)
+					font.CentreDraw(Localization.GetText(result) + (plus ? "+" : ""), new Vector2(475, 408) + MathUtil.GetVector2(i * 1.5f, k * 22.5f), Color.Lerp(Color.Black, resultColor, alpha - i * 0.2f), 1.5f * fontScale, 0, 0.5f - i * 0.1f);
+		font.CentreDraw(Localization.GetText(result) + (plus ? "+" : ""), new Vector2(475, 408), Color.Lerp(Color.Black, resultColor, alpha), 1.5f * fontScale, 0, 0.5f);
+		if (appearTime % 60 < 30)
+			Localization.DrawLocalizedText("Challenge.Return", new Vector2(320, 449), [MiscUtil.GetInputKeys(InputIdentity.Confirm)[0]], color: Color.Lime);
 	}
 	private bool calcFinished = false;
 	private float alpha = 0;

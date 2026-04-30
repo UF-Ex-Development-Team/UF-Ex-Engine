@@ -66,7 +66,10 @@ public class NormalSpear : Spear
 		if (appearTime == 0 && !IsMute)
 			FightResources.Sounds.spearAppear.CreateInstance().Play();
 		if (++appearTime < WaitingTime)
-			Rotation += MathF.Pow(WaitingTime + 8 - appearTime, 1.5f) / 31 * (59 / WaitingTime);
+		{
+			float time = WaitingTime + 8 - appearTime;
+			Rotation += time * MathF.Sqrt(time) / 31 * (59 / WaitingTime);
+		}
 		else if (appearTime == (int)WaitingTime + 1)
 		{
 			Rotation = DelayTargeting ? MathF.Atan2(Heart.Centre.Y - Centre.Y, Heart.Centre.X - Centre.X) * 180 / MathF.PI
@@ -143,7 +146,7 @@ public class Pike : Spear
 	/// <inheritdoc/>
 	public override void Update()
 	{
-		if (appearTime == 0 && (!isSpawnMute) && (!spawnSoundPlayed))
+		if (appearTime == 0 && !isSpawnMute && !spawnSoundPlayed)
 		{
 			spawnSoundPlayed = true;
 			FightResources.Sounds.spearAppear.CreateInstance().Play();
@@ -151,7 +154,7 @@ public class Pike : Spear
 		appearTime++;
 		Alpha = Max(Alpha, Min(appearTime, alphaChangeTime) / alphaChangeTime);
 		if (appearTime < waitingTime && appearTime <= 72)
-			Centre += GetVector2((float)Math.Cos(appearTime / 25f), Rotation);
+			Centre += GetVector2(MathF.Cos(appearTime / 25f), Rotation);
 		else if (appearTime >= waitingTime)
 		{
 			if (appearTime == waitingTime && (!shootSoundPlayed) && (!isShootMute))
@@ -160,9 +163,9 @@ public class Pike : Spear
 				FightResources.Sounds.spearShoot.CreateInstance().Play();
 			}
 			Centre += GetVector2(speed += Acceleration, Rotation);
+			if (appearTime >= waitingTime + 240)
+				Dispose();
 		}
-		if (appearTime >= waitingTime + 240)
-			Dispose();
 
 		base.Update();
 	}
@@ -297,11 +300,7 @@ public class CustomSpear : Spear, ICustomMotion
 	/// <param name="time">The duration of the alpha increase</param>
 	/// <param name="val">The amount of alpha to increase (Default 1)</param>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public void AlphaIncrease(float time, float val = 1)
-	{
-		float total = val, once = total / time;
-		AddInstance(new TimeRangedEvent(time, () => Alpha += once));
-	}
+	public void AlphaIncrease(float time, float val = 1) => DelayEventProcessor.AddTimeRangedEvent(0, () => Alpha += val / time, time, false);
 	/// <summary>
 	/// Decreases the alpha of the spear
 	/// </summary>
@@ -309,11 +308,11 @@ public class CustomSpear : Spear, ICustomMotion
 	/// <param name="val">The amount of alpha to decrease (Default entirely)</param>
 	/// <param name="willDispose">Whether the spear will be disposed if the alpha reaches 0 (Default true)</param>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public void AlphaDecrease(float time, float? val = null, bool? willDispose = true)
+	public void AlphaDecrease(float time, float? val = null, bool willDispose = true)
 	{
 		float total = val ??= Alpha, once = total / time;
-		AddInstance(new TimeRangedEvent(time, () => Alpha -= once));
-		if (val == Alpha && (willDispose ?? true))
-			AddInstance(new InstantEvent(time, Dispose));
+		DelayEventProcessor.AddTimeRangedEvent(0, () => Alpha -= once, time, false);
+		if (val == Alpha && willDispose)
+			DelayEventProcessor.AddInstantEvent(time, Dispose);
 	}
 }

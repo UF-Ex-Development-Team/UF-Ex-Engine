@@ -58,25 +58,22 @@ public abstract class FightScene : Scene
 	/// <inheritdoc/>
 	public override void Update()
 	{
-		if (stopTime <= 0.01f)
-		{
-			GasterBlaster.shootSoundPlayed = GasterBlaster.spawnSoundPlayed = Pike.shootSoundPlayed = Pike.spawnSoundPlayed = false;
-
-			foreach (Player.Heart heart in Player.hearts)
-			{
-				if (heart.SoulType == 1)
-					continue;
-				foreach (GameObject entity in Objects)
-				{
-					if (entity is ICollideAble collideAble)
-						collideAble.GetCollide(heart);
-				}
-			}
-		}
-
+		if (stopTime > 0.01f)
+			goto A;
+		GasterBlaster.shootSoundPlayed = GasterBlaster.spawnSoundPlayed = Pike.shootSoundPlayed = Pike.spawnSoundPlayed = false;
+		GameObject[] objs = [.. Objects];
+		Player.Heart[] hearts = [.. Player.hearts];
+		foreach (ICollideAble entity in objs.OfType<ICollideAble>())
+			foreach (Player.Heart heart in hearts)
+				if (heart.SoulType != 1)
+					entity.GetCollide(heart);
+		A:
 		base.Update();
 	}
 }
+/// <summary>
+/// The fighting scene for classic fights (Not charts)
+/// </summary>
 internal class NormalFightingScene : FightScene
 {
 	private int appearTime = 0, restartTimer = 0;
@@ -93,9 +90,8 @@ internal class NormalFightingScene : FightScene
 	protected override void PlayerDied() => ResetScene(new TryAgainScene(current, mode));
 	public override void Update()
 	{
-		if (appearTime == 0)
+		if (appearTime++ == 0)
 			Fight.ClassicFightEnterance.CreateClassicFight(current);
-		appearTime++;
 		base.Update();
 
 		restartTimer = IsKeyDown(InputIdentity.Reset) ? restartTimer + 1 : 0;

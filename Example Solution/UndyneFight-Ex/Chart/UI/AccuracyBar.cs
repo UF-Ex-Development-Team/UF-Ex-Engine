@@ -32,21 +32,20 @@ public class AccuracyBar : Entity
 		}
 		public override void Start()
 		{
-			controlLayer = (FatherObject as Entity).controlLayer;
+			Entity fatherEntity = FatherObject as Entity;
+			controlLayer = fatherEntity.controlLayer;
 			if (areaBelong == 0)
-				Centre = (FatherObject as Entity).Centre + new Vector2(float.Clamp(MathUtil.SignedPow(timeDel, 1.3f) * 6f, -70, 70), 0);
+				Centre = fatherEntity.Centre + new Vector2(float.Clamp(MathUtil.SignedPow(timeDel, 1.3f) * 6f, -70, 70), 0);
 			else if (areaBelong == -1)
-				Centre = (FatherObject as Entity).Centre + new Vector2(-75, 0);
+				Centre = fatherEntity.Centre + new Vector2(-75, 0);
 		}
 
 		public override void Draw()
 		{
 			float ra = MathF.Min(alpha, 1) * (Fight.Functions.ScreenDrawing.UIColor.A / 255f);
-			Depth = 0.2f;
-			FormalDraw(Sprites.accuracyPointers[1], Centre, drawingColor * ra, 0, Sprites.accuracyPointers[1].Bounds.Size.ToVector2() / 2);
-			Depth = 0.01f;
-			FormalDraw(Sprites.accuracyPointers[0], Centre - new Vector2(3, 0), Color.White * ra, 0, Sprites.accuracyPointers[0].Bounds.Size.ToVector2() / 2);
-			FormalDraw(Sprites.accuracyPointers[2], Centre + new Vector2(3, 0), Color.White * ra, 0, Sprites.accuracyPointers[2].Bounds.Size.ToVector2() / 2);
+			GeneralDraw(Sprites.accuracyPointers[1], Centre, drawingColor * ra, depth: 0.2f);
+			GeneralDraw(Sprites.accuracyPointers[0], Centre - new Vector2(3, 0), Color.White * ra, depth: 0.01f);
+			GeneralDraw(Sprites.accuracyPointers[2], Centre + new Vector2(3, 0), Color.White * ra, depth: 0.01f);
 		}
 
 		public override void Update()
@@ -64,19 +63,14 @@ public class AccuracyBar : Entity
 	}
 
 	/// <inheritdoc/>
-	public override void Draw()
-	{
-		Depth = 0.15f;
-		FormalDraw(Image, Centre, Color.White * (Fight.Functions.ScreenDrawing.UIColor.A / 255f), 0, ImageCentre);
-	}
+	public override void Draw() => GeneralDraw(Image, Centre, Color.White * (Fight.Functions.ScreenDrawing.UIColor.A / 255f), depth: 0.15f);
 
 	private int appearTime = 0;
 	/// <inheritdoc/>
 	public override void Update()
 	{
-		appearTime++;
 		Centre = Centre * 0.9f + new Vector2(320, 482) * 0.1f;
-		if (appearTime % 4 != 0 || !EnabledGolden)
+		if (++appearTime % 4 != 0 || !EnabledGolden)
 			return;
 		Arrow[] arrows = [.. AllArrows];
 		Array.Sort(arrows);

@@ -1,8 +1,8 @@
 ﻿using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
-using UndyneFight_Ex.GameInterface;
 using System.Reflection;
+using UndyneFight_Ex.GameInterface;
 using static UndyneFight_Ex.GlobalResources.Effects;
 using static UndyneFight_Ex.GlobalResources.Sprites;
 
@@ -279,9 +279,6 @@ public static class FightResources
 	/// <returns>The loaded content</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static T LoadContent<T>(string path, ContentManager cm = null) => DrawingLab.LoadContent<T>(path, cm);
-	private static readonly string[] shardCol = ["white", "yellow", "green", "purple"];
-	private static readonly string[] arrType = ["", "circle_", "rot_", "tran_"];
-	private static readonly string[] arrColType = ["blue", "red", "green", "purple"];
 	/// <summary>
 	/// The entire spritesheet for UF-Ex
 	/// </summary>

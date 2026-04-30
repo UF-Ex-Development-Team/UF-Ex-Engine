@@ -26,7 +26,7 @@ struct VertexShaderOutput
 
 float4 MainPS(VertexShaderOutput input) : COLOR
 {
-    return lerp(tex2D(SpriteTextureSampler, input.TextureCoordinates) * input.Color, flinkerColor, percent * flinkerColor.w);
+	return lerp(tex2D(SpriteTextureSampler, input.TextureCoordinates) * input.Color, flinkerColor, percent * flinkerColor.w);
 }
 
 technique SpriteDrawing

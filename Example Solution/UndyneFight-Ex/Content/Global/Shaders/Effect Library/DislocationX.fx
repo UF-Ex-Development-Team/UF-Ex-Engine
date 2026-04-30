@@ -29,44 +29,44 @@ float iTime;
 
 float hash11(float p)
 {
-    p = frac(p * 230.1031);
-    p *= p + 33.33;
-    p *= p + p;
-    return frac(p);
+	p = frac(p * 230.1031);
+	p *= p + 33.33;
+	p *= p + p;
+	return frac(p);
 }
 
 float4 MainPS(VertexShaderOutput input) : COLOR
 {
-    float2 uvOld = input.TextureCoordinates;
-    float y = uvOld.y + iTime;
-    int chunk = (int) (y / iChunkHeight);
+	float2 uvOld = input.TextureCoordinates;
+	float y = uvOld.y + iTime;
+	int chunk = (int)(y / iChunkHeight);
 	
-    float del = iIntensity * hash11(chunk);
+	float del = iIntensity * hash11(chunk);
 	
-    return input.Color * tex2D(SpriteTextureSampler, float2(del, 0) + uvOld);
+	return input.Color * tex2D(SpriteTextureSampler, float2(del, 0) + uvOld);
 }
 float4 MainPS2(VertexShaderOutput input) : COLOR
 {
-    float2 uvOld = input.TextureCoordinates;
-    float y = uvOld.y + iTime;
-    int chunk = (int) (y / iChunkHeight);
+	float2 uvOld = input.TextureCoordinates;
+	float y = uvOld.y + iTime;
+	int chunk = (int)(y / iChunkHeight);
 	
-    float del = iIntensity * (hash11(chunk) * 2 - 1);
+	float del = iIntensity * (hash11(chunk) * 2 - 1);
 	
-    float4 result;
-    if (del > 0)
-    {
+	float4 result;
+	if (del > 0)
+	{
 		float4 rg_a = input.Color * tex2D(SpriteTextureSampler, uvOld);
-        rg_a.b = input.Color.b * tex2D(SpriteTextureSampler, float2(del, 0) + uvOld).b;
-        result = rg_a;
-    }
-    else
-    {
-        float4 _gba = input.Color * tex2D(SpriteTextureSampler, uvOld);
-        _gba.r = input.Color.r * tex2D(SpriteTextureSampler, float2(del, 0) + uvOld).r;
-        result = _gba;
-    }
-    return result;
+		rg_a.b = input.Color.b * tex2D(SpriteTextureSampler, float2(del, 0) + uvOld).b;
+		result = rg_a;
+	}
+	else
+	{
+		float4 _gba = input.Color * tex2D(SpriteTextureSampler, uvOld);
+		_gba.r = input.Color.r * tex2D(SpriteTextureSampler, float2(del, 0) + uvOld).r;
+		result = _gba;
+	}
+	return result;
 }
 
 technique SpriteDrawing

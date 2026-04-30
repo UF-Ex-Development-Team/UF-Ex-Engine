@@ -56,17 +56,14 @@ internal class HPShower : Entity
 	public CollideRect CurrentArea => fullarea;
 	public override void Draw()
 	{
+		float AlphaScale = CurrentDrawingSettings.UIColor.A / 255f;
 		Vector2 hpPos = Vertical ? new Vector2(CollidingBox.GetCentre().X, FullRect.Down + 45) : new Vector2(CollidingBox.X - 30, CollidingBox.GetCentre().Y);
-		FormalDraw(Image, hpPos, CurrentDrawingSettings.UIColor, 1.1f, 0.0f, ImageCentre);
+		GeneralDraw(Image, hpPos, CurrentDrawingSettings.UIColor, new Vector2(1.1f));
 		if (HeartAttribute.KR && PlayerInstance.hpControl.KRHPExist)
-		{
-			Depth = 0.06f;
-			FormalDraw(pixUnit, KRRect, hpKRCurrent * (CurrentDrawingSettings.UIColor.A / 255f));
-		}
-		Depth = 0.05f;
-		FormalDraw(pixUnit, collidingBox, hpExistCurrent * (CurrentDrawingSettings.UIColor.A / 255f));
+			GeneralDraw(pixUnit, KRRect.GetCentre(), hpKRCurrent * AlphaScale, KRRect.Size, depth: 0.06f);
+		GeneralDraw(pixUnit, collidingBox.GetCentre(), hpExistCurrent * AlphaScale, collidingBox.Size, depth: 0.05f);
 		Depth = 0.0f;
-		FormalDraw(pixUnit, FullRect, hpLoseCurrent * (CurrentDrawingSettings.UIColor.A / 255f));
+		GeneralDraw(pixUnit, FullRect.GetCentre(), hpLoseCurrent * AlphaScale, FullRect.Size, depth: 0);
 
 		string hpString;
 		HeartAttribute.HP = float.Clamp(HeartAttribute.HP, 0, HeartAttribute.MaxHP);
@@ -97,13 +94,13 @@ internal class HPShower : Entity
 		if (!Vertical)
 		{
 			if (HeartAttribute.KR)
-				FormalDraw(krText, new Vector2(FullRect.Right + 20, hpPos.Y), CurrentDrawingSettings.UIColor, 1.1f, 0.0f, ImageCentre);
+				GeneralDraw(krText, new Vector2(FullRect.Right + 20, hpPos.Y), CurrentDrawingSettings.UIColor, new Vector2(1.1f));
 			FightFont.Draw(hpString, new Vector2(FullRect.Right + (HeartAttribute.KR ? 45 : 20), collidingBox.Y + 4), Buffed ? Color.Gold * (CurrentDrawingSettings.UIColor.A / 255f) : CurrentDrawingSettings.UIColor);
 		}
 		else
 		{
 			if (HeartAttribute.KR)
-				FormalDraw(krText, new Vector2(hpPos.X, FullRect.Down + 20), CurrentDrawingSettings.UIColor, 1.1f, 0.0f, ImageCentre);
+				GeneralDraw(krText, new Vector2(hpPos.X, FullRect.Down + 20), CurrentDrawingSettings.UIColor, new Vector2(1.1f));
 			if (((CurrentScene as FightScene).Mode & GameMode.Practice) != 0)
 			{
 				FightFont.CentreDraw(hpString, new Vector2(FullRect.GetCentre().X + 4, FullRect.GetCentre().Y + FullRect.Height / 2f + (HeartAttribute.KR ? 49 : 24)), CurrentDrawingSettings.UIColor, 1, 0, 0);
@@ -120,19 +117,7 @@ internal class HPShower : Entity
 
 	public override void Update()
 	{
-		CalculatePosition();
-
-		float scale = 1;
-		if (Buffed)
-			scale = MathHelper.Clamp(1.25f - PlayerInstance.hpControl.LostSpeed * 0.5f, 0.1f, 1.0f);
-		scale = 1 - scale;
-		hpExistCurrent = Color.Lerp(hpExistColor, Color.Firebrick, scale) * (CurrentDrawingSettings.UIColor.A / 255f);
-		hpLoseCurrent = Color.Lerp(hpLoseColor, Color.Firebrick, scale) * (CurrentDrawingSettings.UIColor.A / 255f);
-		hpKRCurrent = Color.Lerp(hpKRColor, Color.Firebrick, scale) * (CurrentDrawingSettings.UIColor.A / 255f);
-	}
-	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	private void CalculatePosition()
-	{
+		//Calculate position
 		FullRect = fullarea;
 		collidingBox = fullarea;
 
@@ -161,5 +146,12 @@ internal class HPShower : Entity
 			KRRect.Height = collidingBox.Down - KRRect.Y + 1;
 			KRRect.Width = collidingBox.Width;
 		}
+
+		float scale = 0, AlphaScale = CurrentDrawingSettings.UIColor.A / 255f;
+		if (Buffed)
+			scale = 1 - MathHelper.Clamp(1.25f - PlayerInstance.hpControl.LostSpeed * 0.5f, 0.1f, 1.0f);
+		hpExistCurrent = Color.Lerp(hpExistColor, Color.Firebrick, scale) * AlphaScale;
+		hpLoseCurrent = Color.Lerp(hpLoseColor, Color.Firebrick, scale) * AlphaScale;
+		hpKRCurrent = Color.Lerp(hpKRColor, Color.Firebrick, scale) * AlphaScale;
 	}
 }

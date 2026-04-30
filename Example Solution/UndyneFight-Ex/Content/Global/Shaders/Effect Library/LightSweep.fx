@@ -33,14 +33,14 @@ struct VertexShaderOutput
 
 float point_distance(float2 center, float angle, float2 position)
 {
-    return abs(dot(float2(-sin(angle), cos(angle)), position - center));
+	return abs(dot(float2(-sin(angle), cos(angle)), position - center));
 }
 
 //return tex2D(samplerTexture, SIZEPIXEL * Position);
 
 float4 MainPS(VertexShaderOutput input) : COLOR
 {
-    return input.Color * saturate(iSweepIntensity *
+	return input.Color * saturate(iSweepIntensity *
 	exp(-point_distance(iCenter, iDirection, input.TextureCoordinates * float2(WIDTH, HEIGHT)) / iWidth * 8.63378723));
 }
 

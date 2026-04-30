@@ -94,6 +94,17 @@ public static class GlobalData
 	internal static float AudioLoadProgress => AudioLoadingTasks.Where(s => s.IsCompletedSuccessfully).Count() / AudioLoadingTasks.Count;
 	internal static HashSet<string> QueueLoadSongs = [];
 	/// <summary>
+	/// The default difficulty names for <see cref="IWaveSet"/>
+	/// </summary>
+	private static readonly Dictionary<Difficulty, string> DefaultDiffNames = new()
+	{
+		[Difficulty.Noob] = Localization.GetText($"Difficulty[{0}]"),
+		[Difficulty.Easy] = Localization.GetText($"Difficulty[{1}]"),
+		[Difficulty.Normal] = Localization.GetText($"Difficulty[{2}]"),
+		[Difficulty.Hard] = Localization.GetText($"Difficulty[{3}]"),
+		[Difficulty.Extreme] = Localization.GetText($"Difficulty[{4}]")
+	};
+	/// <summary>
 	/// Loads the song previews of the charts
 	/// </summary>
 	[MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
@@ -104,8 +115,8 @@ public static class GlobalData
 			System.IO.Compression.ZipFile.ExtractToDirectory(Path.Combine("Content", "FFMpeg.zip"), "Content");
 		//Store audio preview positions
 		List<Type> allCharts = [..FightSystem.AllSongs.Values.Concat(FightSystem.CustomSongs.Values)];
-		foreach (var extraSongs in FightSystem.ExtraSongSets)
-			allCharts.AddRange([..extraSongs.Values]);
+		foreach (SongSet extraSongs in FightSystem.ExtraSongSets)
+			allCharts.AddRange([.. extraSongs.Values]);
 		foreach (Type i in allCharts)
 		{
 			object o = Activator.CreateInstance(i);
@@ -113,30 +124,21 @@ public static class GlobalData
 			if (o is IChampionShip cmp)
 			{
 				Dictionary<Difficulty, string> curDiffNames = [];
-				foreach (var val in cmp.DifficultyPanel)
-					curDiffNames.Add(val.Value, val.Key);
+				//Read the user defined difficulty names of the championship chart
+				foreach (Difficulty val in cmp.DifficultyPanel.Values)
+					curDiffNames.Add(val, Localization.GetText($"Difficulty[{(int)val}]"));
 				ChartDifficultyNames.Add(cmp.GameContent.FightName, curDiffNames);
 			}
 			IWaveSet waveSet = o is IWaveSet wave ? wave : (o as IChampionShip).GameContent;
 			WaveCache.Add(waveSet.FightName, waveSet);
 			//Store difficulty name of wavesets
 			if (o is IWaveSet)
-			{
-				ChartDifficultyNames.Add(waveSet.FightName, new()
-				{
-					[Difficulty.Noob] = "Noob",
-					[Difficulty.Easy] = "Easy",
-					[Difficulty.Normal] = "Normal",
-					[Difficulty.Hard] = "Hard",
-					[Difficulty.Extreme] = "Extreme",
-					[Difficulty.ExtremePlus] = "Extreme+",
-				});
-			}
-			bool test = File.Exists(Path.Combine($"Content\\Musics\\{waveSet.Music + "\\song.ogg"}".Split('\\')));
-			if (!QueueLoadSongs.Contains(waveSet.Music + "\\song.ogg") && File.Exists(Path.Combine($"Content\\Musics\\{waveSet.Music + "\\song.ogg"}".Split('\\'))))
+				ChartDifficultyNames.Add(waveSet.FightName, DefaultDiffNames);
+			//Queue audio preview for loading
+			if (!QueueLoadSongs.Contains(waveSet.Music + "\\song.ogg"))
 			{
 				AudioPreviewDatas.Add(new(waveSet.Music, waveSet.Attributes.MusicPreview[0], waveSet.Attributes.MusicPreview[1], null));
-				QueueLoadSongs.Add(waveSet.Music + "\\song.ogg");
+				_ = QueueLoadSongs.Add(waveSet.Music + "\\song.ogg");
 			}
 			string dir = Path.Combine($"Content\\Musics\\{waveSet.Music}".Split('\\'));
 			//Cache wave paint as well
@@ -213,7 +215,7 @@ public static class GlobalData
 				AudioPreviewData? prevDat = GetPreviewDataFromPath(key);
 				if (prevDat.HasValue)
 				{
-					var prevDatActVal = prevDat.Value;
+					AudioPreviewData prevDatActVal = prevDat.Value;
 					int i = AudioPreviewDatas.IndexOf(prevDatActVal);
 					prevDatActVal.PreviewAudio = new Audio(preview_file_final_name);
 					AudioPreviewDatas[i] = prevDatActVal;
@@ -227,6 +229,6 @@ public static class GlobalData
 	/// <summary>
 	/// The names of the difficulties of the charts
 	/// </summary>
-	public static Dictionary<string, Dictionary<Difficulty, string>> ChartDifficultyNames = [];
+	public static readonly Dictionary<string, Dictionary<Difficulty, string>> ChartDifficultyNames = [];
 	#endregion
 }

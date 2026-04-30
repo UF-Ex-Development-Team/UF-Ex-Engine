@@ -58,7 +58,7 @@ internal partial class GameMain : Game
 		Graphics.PreferredBackBufferHeight = 480;
 		Graphics.PreferredBackBufferWidth = 640;
 		Window.AllowUserResizing = true;
-		Window.Title = "Rhythm Recall Rcade";
+		Window.Title = GameStates.GameName;
 		Graphics.ApplyChanges();
 
 		SpriteEffect = new(Graphics.GraphicsDevice);
@@ -83,8 +83,8 @@ internal partial class GameMain : Game
 
 	private void ClientBoundChanged()
 	{
-		float trueX = Window.ClientBounds.Width, trueY = Window.ClientBounds.Height;
-		screenSize = new Vector2(Window.ClientBounds.Width, Window.ClientBounds.Height);
+		screenSize = Window.ClientBounds.Size.ToVector2();
+		float trueX = screenSize.X, trueY = screenSize.Y;
 		if (screenSize.X >= screenSize.Y * Aspect)
 			trueX = trueY * Aspect;
 		else
@@ -118,13 +118,14 @@ internal partial class GameMain : Game
 		{
 			// Create a new SpriteBatch, which can be used to draw textures.
 			MissionSpriteBatch = new SpriteBatchEX(GraphicsDevice);
-			LoadObject();
 
 #if !DEBUG && REPELL
              try
                 {
 #endif
 			GlobalResources.Initialize(Content);
+			Localization.Initialize();
+			LoadObject();
 			GameStates.ResetScene(new ResourcesLoadingScene(Content));
 #if !DEBUG && REPELL
                 }
@@ -248,13 +249,14 @@ internal partial class GameMain : Game
 		#endregion
 
 		Update120F = GameMain.gameTime == (int)GameMain.gameTime;
+		Localization.ProcessHotReload();
 		GameStates.StateUpdate();
 
 		ResetDrawingSettings();
 
 		if (GameStates.IsKeyPressed120f(InputIdentity.ScreenShot))
 		{
-			string FileDirectory = GameStates.SavePath + "Datas\\Screenshot";
+			string FileDirectory = GameStates.SavePath + "\\Datas\\Screenshot";
 			if (!Directory.Exists(FileDirectory))
 				Directory.CreateDirectory(FileDirectory);
 			DateTime Time = DateTime.Now;

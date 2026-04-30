@@ -26,14 +26,9 @@ struct VertexShaderOutput
 
 float4 MainPS(VertexShaderOutput input) : COLOR
 { 
-    float scale = 0;
-    float2 pos = input.TextureCoordinates * SIZE;
-    scale = max(scale, max(max(
-    (boundDistance.x - (480 - pos.y)) / boundDistance.x,
-    (boundDistance.y - pos.x) / boundDistance.y), max(
-    (boundDistance.z - pos.y) / boundDistance.z,
-    (boundDistance.w - (640 - pos.x)) / boundDistance.w)));
-    return tex2D(SpriteTextureSampler, input.TextureCoordinates) * input.Color + mixColor * scale;
+	float2 pos = input.TextureCoordinates * SIZE;
+	float4 bounds = 1. + float4(pos.y - 480, -pos.x, -pos.y, pos.x - 640) / boundDistance;
+	return tex2D(SpriteTextureSampler, input.TextureCoordinates) * input.Color + mixColor * max(0, max(max(bounds.x, bounds.y), max(bounds.z, bounds.w)));
 }
 
 technique SpriteDrawing

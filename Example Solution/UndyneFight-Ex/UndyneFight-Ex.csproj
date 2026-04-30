@@ -39,20 +39,22 @@
     <EmbeddedResource Remove="Content\obj\**" />
     <None Remove="Content\bin\**" />
     <None Remove="Content\obj\**" />
+    <None Remove="Default UI\User\AccountManageUI.cs~RF567c71.TMP" />
     <None Remove="Icon.ico" />
     <None Remove="Icon.bmp" />
     <EmbeddedResource Include="Icon.ico" />
     <EmbeddedResource Include="Icon.bmp" />
     <None Include="Chart\Barrages\Bone\Bone Base.cs" />
-    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="4.14.0">
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="5.3.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="MonoGame.Extended.Content.Pipeline" Version="5.3.1" />
+    <PackageReference Include="MonoGame.Extended.Content.Pipeline" Version="5.5.1" />
     <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.4.1" />
     <PackageReference Include="MonoGame.Content.Builder.Task" Version="3.8.4.1" />
-    <PackageReference Include="NAudio" Version="2.2.1" />
+    <PackageReference Include="NAudio" Version="2.3.0" />
     <PackageReference Include="NAudio.Vorbis" Version="1.5.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
   </ItemGroup>
   <Target Name="RestoreDotnetTools" BeforeTargets="Restore">
     <Message Text="Restoring dotnet tools" Importance="High" />

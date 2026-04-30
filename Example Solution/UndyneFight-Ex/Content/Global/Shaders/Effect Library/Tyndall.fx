@@ -22,50 +22,50 @@ uniform float iSampling; //采样率建议(1.0)
 
 sampler2D SpriteTextureSampler = sampler_state
 {
-    Texture = <SpriteTexture>;
+	Texture = <SpriteTexture>;
 };
 
 struct VertexShaderOutput
 {
-    float4 Position : SV_POSITION;
-    float4 Color : COLOR0;
-    float2 TextureCoordinates : TEXCOORD0;
+	float4 Position : SV_POSITION;
+	float4 Color : COLOR0;
+	float2 TextureCoordinates : TEXCOORD0;
 };
 
 float4 localToColor(sampler2D samplerTexture, float2 Position)
 {
-    return tex2D(samplerTexture, SIZEPIXEL * Position);
+	return tex2D(samplerTexture, SIZEPIXEL * Position);
 }
 
 float4 MainPS(VertexShaderOutput input) : COLOR
 {
-    float2 v_vPosition = input.TextureCoordinates * SIZESURFACE;
-    float2 direction = normalize(iLightPos - v_vPosition);
-    float2 current_step = v_vPosition;
+	float2 v_vPosition = input.TextureCoordinates * SIZESURFACE;
+	float2 direction = normalize(iLightPos - v_vPosition);
+	float2 current_step = v_vPosition;
 	
-    float3 total = 0;
-    for (int i = 0; i < int(amount); i++)
-    {
-        float3 result = localToColor(SpriteTextureSampler, current_step).xyz;
-        result = smoothstep(0.0, 1.0, result); //blur
-        
-        total += result;
-        current_step -= direction * iDistance;
-    }
-    
-    total /= amount * iSampling;
+	float3 total = 0;
+	for (int i = 0; i < int(amount); i++)
+	{
+		float3 result = localToColor(SpriteTextureSampler, current_step).xyz;
+		result = smoothstep(0.0, 1.0, result); //blur
+		
+		total += result;
+		current_step -= direction * iDistance;
+	}
 	
-    float4 original = localToColor(SpriteTextureSampler, v_vPosition); //blur
-    float3 over = sqrt(original.rgb); //blur
-    total = lerp(original.xyz, over, total * 2.0); //blur
+	total /= amount * iSampling;
+	
+	float4 original = localToColor(SpriteTextureSampler, v_vPosition); //blur
+	float3 over = sqrt(original.rgb); //blur
+	total = lerp(original.xyz, over, total * 2.0); //blur
 
-    return input.Color * float4(total, 1.0);
+	return input.Color * float4(total, 1.0);
 }
 
 technique SpriteDrawing
 {
-    pass P0
-    {
-        PixelShader = compile PS_SHADERMODEL MainPS();
-    }
+	pass P0
+	{
+		PixelShader = compile PS_SHADERMODEL MainPS();
+	}
 };

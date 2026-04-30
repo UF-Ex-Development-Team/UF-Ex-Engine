@@ -25,7 +25,8 @@ public static class DrawingLab
 		Vector2[] vector2s = new Vector2[pointList.Length];
 		for (i = 0; i < pointList.Length; i++)
 		{
-			vector2s[i] = new(pointList[i].Position.X, pointList[i].Position.Y);
+			Vector3 pos = pointList[i].Position;
+			vector2s[i] = new(pos.X, pos.Y);
 		}
 		List<Tuple<int, int, int>> results = GetIndices(vector2s);
 		int[] indices = new int[results.Count * 3];
@@ -47,7 +48,8 @@ public static class DrawingLab
 		Vector2[] vector2s = new Vector2[pointList.Length];
 		for (int i = 0; i < pointList.Length; i++)
 		{
-			vector2s[i] = new(pointList[i].Position.X, pointList[i].Position.Y);
+			Vector3 pos = pointList[i].Position;
+			vector2s[i] = new(pos.X, pos.Y);
 		}
 		return GetIndices(vector2s);
 	}
@@ -73,9 +75,7 @@ public static class DrawingLab
 			return [];
 		//Triangle
 		if (pointList.Length == 3)
-		{
 			return [new Tuple<int, int, int>(pointList[0].Item1, pointList[1].Item1, pointList[2].Item1)];
-		}
 		List<Tuple<int, int, int>> result = [];
 
 		List<int> reflexes = null;
@@ -85,9 +85,7 @@ public static class DrawingLab
 		Vector2 last = pointList[0].Item2 - pointList[^1].Item2;
 		for (int i = 0; i < pointList.Length; i++)
 		{
-			int i2 = i + 1;
-			if (i2 == pointList.Length)
-				i2 = 0;
+			int i2 = (i + 1) % pointList.Length;
 			Vector2 cur = pointList[i2].Item2 - pointList[i].Item2;
 			if (reflex[i] = last.Cross(cur) < 0)
 			{
@@ -101,22 +99,20 @@ public static class DrawingLab
 			last = cur;
 		}
 
-		if (!existReflex) //凸多边形
+		if (!existReflex) //Convex polygon
 		{
 			for (int i = 2; i < pointList.Length; i++)
-			{
 				result.Add(new(pointList[0].Item1, pointList[i - 1].Item1, pointList[i].Item1));
-			}
 			return result;
 		}
-		// 凹多边形
+		//Concave polygon
 		int length = pointList.Length;
-		bool[] used = new bool[pointList.Length];
+		bool[] used = new bool[length];
 		for (int i = 0; i < pointList.Length; i++)
 		{
 			if (i == pointList.Length - 1 && used[0])
 				break;
-			if (!reflex[i]) // 可能是可以分割的顶点
+			if (!reflex[i]) //Potential sliceable vertex
 			{
 				int v1 = i, v0 = i - 1, v2 = i + 1;
 				if (v0 < 0)
@@ -126,21 +122,21 @@ public static class DrawingLab
 
 				Vector2 pv1 = pointList[v1].Item2, pv0 = pointList[v0].Item2, pv2 = pointList[v2].Item2;
 
-				bool flag = true;
-				foreach (int j in reflexes) // 检验是否可以分割
+				bool sliceable = true;
+				foreach (int j in reflexes) //Check if its sliceable
 				{
 					if (j == v2 || j == v0)
 						continue;
 					if (InTriangle(pv1, pv0, pv2, pointList[j].Item2))
-					{ // 在三角形内，不可分割
-						flag = false;
+					{
+						//Within the triangle formed by the vertex and its two adjacent vertices, which means it is not sliceable
+						sliceable = false;
 						break;
 					}
 				}
-				used[i] = flag;
-				if (flag) // 添加一组三角
+				if (used[i] = sliceable) //If it is sliceable, mark it as used and add the triangle to the result
 				{
-					length -= 1;
+					length--;
 					i++;
 					result.Add(new(pointList[v1].Item1, pointList[v0].Item1, pointList[v2].Item1));
 				}
@@ -151,13 +147,8 @@ public static class DrawingLab
 		int k = 0;
 		Tuple<int, Vector2>[] tuples = new Tuple<int, Vector2>[length];
 		for (int i = 0; i < pointList.Length; i++)
-		{
 			if (!used[i])
-			{
-				tuples[k] = pointList[i];
-				k++;
-			}
-		}
+				tuples[k++] = pointList[i];
 		result.AddRange(GetIndices(tuples));
 
 		return result;
@@ -195,9 +186,15 @@ public static class DrawingLab
 		int q = Convert.ToInt32(value * (1 - f * saturation));
 		int t = Convert.ToInt32(value * (1 - (1 - f) * saturation));
 
-		Color output = hi == 0
-			? new(v, t, p)
-			: hi == 1 ? new(q, v, p) : hi == 2 ? new(p, v, t) : hi == 3 ? new(p, q, v) : hi == 4 ? new(t, p, v) : new(v, p, q);
+		Color output = hi switch
+		{
+			0 => new(v, t, p),
+			1 => new(q, v, p),
+			2 => new(p, v, t),
+			3 => new(p, q, v),
+			4 => new(t, p, v),
+			_ => new(v, p, q)
+		};
 		//Apply alpha
 		output = new(output, input_a);
 		return output.ToVector4();
@@ -211,10 +208,10 @@ public static class DrawingLab
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static Vector2 UVPosition(Vector2[] triangle, Vector2 cur)
 	{
-		Vector2 dirX, dirY;
-		dirX = triangle[1] - triangle[0];
-		dirY = triangle[2] - triangle[0];
-		Vector2 target = cur - triangle[0];
+		Vector2 dirX, dirY, first = triangle[0];
+		dirX = triangle[1] - first;
+		dirY = triangle[2] - first;
+		Vector2 target = cur - first;
 		float proX = dirX.ScalarProject(target), proY = dirY.ScalarProject(target);
 		return new Vector2(proX / dirX.Length(), proY / dirY.Length());
 	}
@@ -277,11 +274,13 @@ public static class DrawingLab
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static void DrawRectangle(CollideRect rect, Color color, float width, float depth)
 	{
-		Vector2 V2 = rect.TopLeft + new Vector2(0, rect.Height);
-		Vector2 V3 = rect.TopLeft + new Vector2(rect.Width, 0);
-		Vector2 V4 = rect.TopLeft + new Vector2(rect.Width, rect.Height);
-		DrawLine(rect.TopLeft, V2, width, color, depth);
-		DrawLine(rect.TopLeft, V3, width, color, depth);
+		Vector2 TL = rect.TopLeft;
+		float rectWidth = rect.Width, rectHeight = rect.Height;
+		Vector2 V2 = TL + new Vector2(0, rectHeight);
+		Vector2 V3 = TL + new Vector2(rectWidth, 0);
+		Vector2 V4 = TL + new Vector2(rectWidth, rectHeight);
+		DrawLine(TL, V2, width, color, depth);
+		DrawLine(TL, V3, width, color, depth);
 		DrawLine(V2, V4, width, color, depth);
 		DrawLine(V3, V4, width, color, depth);
 	}
@@ -311,11 +310,12 @@ public static class DrawingLab
 	public static void DrawCircleSections(Vector2 center, float radius, int vertexnum, float thickness, Color col, float depth, float startang, float endang)
 	{
 		vertexnum = Math.Max(3, vertexnum);
+		float step = 360f / vertexnum;
 		for (int i = 0; i < vertexnum; i++)
 		{
-			bool check = (i + 1) * 360 / vertexnum + startang > endang;
-			DrawLine(center + GetVector2(radius, i * 360f / vertexnum + startang),
-					check ? center + GetVector2(radius, endang) : center + GetVector2(radius, (i + 1) * 360f / vertexnum + startang),
+			bool check = (i + 1) * step + startang > endang;
+			DrawLine(center + GetVector2(radius, i * step + startang),
+					check ? center + GetVector2(radius, endang) : center + GetVector2(radius, (i + 1) * step + startang),
 					thickness, col, depth);
 			if (check)
 				break;
@@ -345,12 +345,13 @@ public static class DrawingLab
 	public static void DrawCircleFilledSections(Vector2 center, float radius, int vertexnum, Color col, float depth, float startang, float endang)
 	{
 		vertexnum = Math.Max(3, vertexnum);
+		float step = 360f / vertexnum;
 		for (int i = 0; i < vertexnum; i++)
 		{
-			bool check = (i + 1) * 360 / vertexnum + startang > endang;
+			bool check = (i + 1) * step + startang > endang;
 			DrawTriangle(center,
-						center + GetVector2(radius, i * 360f / vertexnum + startang),
-						check ? center + GetVector2(radius, endang) : center + GetVector2(radius, (i + 1) * 360f / vertexnum + startang),
+						center + GetVector2(radius, i * step + startang),
+						check ? center + GetVector2(radius, endang) : center + GetVector2(radius, (i + 1) * step + startang),
 						col, depth);
 			if (check)
 				break;

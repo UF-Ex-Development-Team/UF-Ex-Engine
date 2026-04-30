@@ -58,7 +58,6 @@ public partial class Souls
 			float dis1 = MathUtil.ScalarProject(normal, del1), dis2 = MathUtil.ScalarProject(normal, del2);
 			if (dis1 < 0)
 			{
-				_ = -dis1;
 				dis2 = -dis2;
 				normal = -normal;
 			}

@@ -4,44 +4,35 @@ using UndyneFight_Ex.SongSystem;
 namespace UndyneFight_Ex.Entities;
 
 /// <summary>
-/// The game menu scene
+/// The default game menu scene
 /// </summary>
-public class GameMenuScene() : Scene()
+public class GameMenuScene : Scene
 {
-	private bool initialized = false;
 	/// <inheritdoc/>
-	public override void Update()
-	{
-		if (!initialized)
-		{
-			initialized = true;
-			GameStartUp.MainSceneIntro();
-		}
-
-		base.Update();
-	}
+	public override void Start() => GameStartUp.MainSceneIntro();
 }
-
+/// <summary>
+/// Gameover scene
+/// </summary>
 internal class TryAgainScene : Scene
 {
 	private int appearTime = 0;
 	private float alpha = 1;
-	private readonly GameObject obj;
-	public TryAgainScene(StateShower shower) : this() => obj = new StateShower.FailureShower(shower);
-	public TryAgainScene(Fight.IClassicFight fight, GameMode mode) : this() => obj = new Fight.FailureShower(fight, mode);
+	private readonly GameObject FailUI;
+	public TryAgainScene(StateShower shower) : this() => FailUI = new StateShower.FailureShower(shower);
+	public TryAgainScene(Fight.IClassicFight fight, GameMode mode) : this() => FailUI = new Fight.FailureShower(fight, mode);
 	private TryAgainScene() => PlayerManager.CurrentUser?.PlayerStatistic.AddDeath();
 	public override void Update()
 	{
 		alpha = float.Lerp(alpha, 0.2f, 0.16f);
 		if (++appearTime == 100)
-			InstanceCreate(obj);
+			InstanceCreate(FailUI);
 		base.Update();
 	}
 	public override void Draw()
 	{
 		base.Draw();
-		FormalDraw(GameStates.GameoverBackground, new CollideRect(0, 0, 640, 480), Color.White * alpha);
+		GeneralDraw(GameStates.GameoverBackground, new Vector2(320, 240), Color.White * alpha, new Vector2(640, 480) / GameStates.GameoverBackground.Bounds.Size.ToVector2());
 	}
 }
-
 internal class WinScene(StateShower ss, Player.Analyzer analyzer) : Scene(UFEXSettings.SongCompleteCreate(ss, analyzer)) { }

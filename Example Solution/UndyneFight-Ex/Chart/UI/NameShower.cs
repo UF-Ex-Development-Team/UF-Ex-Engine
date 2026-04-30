@@ -32,36 +32,15 @@ public class NameShower : Entity
 	/// The name of the player
 	/// </summary>
 	internal static string name;
-	private int DisplayNameTime = 0, DisplayNameBufferTime = 0;
-	private void StringDotpadding(string FullName, ref string Name)
-	{
-		int MinIndex = MathHelper.Clamp(DisplayNameTime > 90 ? (DisplayNameTime - 90) / 30 : 0, 0, FullName.Length - 8);
-		if (MinIndex == FullName.Length - 8)
-			DisplayNameBufferTime++;
-		if (DisplayNameBufferTime >= FullName.Length + 18)
-		{
-			DisplayNameTime = 0;
-			DisplayNameBufferTime = 0;
-		}
-		//Dot padding
-		if (FullName.Length > 9 && MinIndex > 0)
-			for (int j = 0; j < int.Min(3, MinIndex); j++)
-				Name += ".";
-		Name += FullName.Length > 9 ? FullName[MinIndex..(8 + MinIndex)] : FullName;
-		if (Name != FullName)
-			for (int j = 0; j < 3 - int.Min(3, MinIndex); j++)
-				Name += ".";
-	}
+	private float DisplayNameTime = 0;
 	/// <inheritdoc/>
 	public override void Draw()
 	{
-		DisplayNameTime++;
 		Vector2 namePos = new(Centre.X, Centre.Y - FightFont.SFX.MeasureString("HP").Y / 2f + 4);
-		string showing = OverrideName.DefaultIfNullOrEmpty(PlayerManager.CurrentUser is null ? "guest" : PlayerManager.currentPlayer), displayName = string.Empty;
-		StringDotpadding(showing, ref displayName);
-		Vector2 lvPos = new(FightFont.SFX.MeasureString(displayName).X + 22 + Centre.X + (GameRule.NameColor == "Colorful" ? 20 : 0), Centre.Y - FightFont.SFX.MeasureString("HP").Y / 2f + 4);
+		string showing = OverrideName.DefaultIfNullOrEmpty(PlayerManager.CurrentUser is null ? "guest" : PlayerManager.currentPlayer), displayName = StringUtil.ShiftingEllipsis(showing, 8, DisplayNameTime += 1/90f);
+		Vector2 lvPos = new(FightFont.SFX.MeasureString(displayName).X + 22 + Centre.X + (NameColor == "Colorful" ? 20 : 0), Centre.Y - FightFont.SFX.MeasureString("HP").Y / 2f + 4);
 
-		switch (GameRule.NameColor)
+		switch (NameColor)
 		{
 			case "White":
 				FightFont.Draw(displayName, namePos, Color.White * nameAlpha);
@@ -82,7 +61,7 @@ public class NameShower : Entity
 				break;
 		}
 
-		string trueLV = (level != string.Empty) ? level : difficulty.ToString();
+		string trueLV = level.DefaultIfNullOrEmpty(difficulty.ToString());
 		FightFont.Draw("lv " + trueLV, lvPos, GameMain.CurrentDrawingSettings.UIColor * nameAlpha);
 	}
 	/// <inheritdoc/>

@@ -25,22 +25,22 @@ struct VertexShaderOutput
 
 float4 MainPS(VertexShaderOutput input) : COLOR
 {
-    float4 color = 0;
-    float weight[4];
-    
-    weight[0] = (1.415 - distance(input.TextureCoordinates, float2(0, 0))) / 1.415;
-    weight[1] = (1.415 - distance(input.TextureCoordinates, float2(0, 1))) / 1.415;
-    weight[2] = (1.415 - distance(input.TextureCoordinates, float2(1, 0))) / 1.415;
-    weight[3] = (1.415 - distance(input.TextureCoordinates, float2(1, 1))) / 1.415;
-    
-    float tot = weight[0] + weight[1] + weight[2] + weight[3];
-    
-    for (int i = 0; i <= 3; i++)
-    {
-        color.rgb += weight[i] * colors[i].rgb / tot;
-    }
-    color.a = tex2D(SpriteTextureSampler, input.TextureCoordinates).a;
-    return tex2D(SpriteTextureSampler, input.TextureCoordinates) * input.Color * color;
+	float4 color = 0;
+	float weight[4];
+	
+	weight[0] = (1.415 - distance(input.TextureCoordinates, float2(0, 0))) / 1.415;
+	weight[1] = (1.415 - distance(input.TextureCoordinates, float2(0, 1))) / 1.415;
+	weight[2] = (1.415 - distance(input.TextureCoordinates, float2(1, 0))) / 1.415;
+	weight[3] = (1.415 - distance(input.TextureCoordinates, float2(1, 1))) / 1.415;
+	
+	float tot = weight[0] + weight[1] + weight[2] + weight[3];
+	
+	for (int i = 0; i <= 3; i++)
+	{
+		color.rgb += weight[i] * colors[i].rgb / tot;
+	}
+	color.a = tex2D(SpriteTextureSampler, input.TextureCoordinates).a;
+	return tex2D(SpriteTextureSampler, input.TextureCoordinates) * input.Color * color;
 }
 
 technique SpriteDrawing

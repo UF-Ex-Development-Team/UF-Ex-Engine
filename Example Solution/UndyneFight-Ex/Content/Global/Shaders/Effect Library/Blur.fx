@@ -22,49 +22,48 @@ uniform float2 iFactor;
 
 sampler2D SpriteTextureSampler = sampler_state
 {
-    Texture = <SpriteTexture>;
+	Texture = <SpriteTexture>;
 };
 
 struct VertexShaderOutput
 {
-    float4 Position : SV_POSITION;
-    float4 Color : COLOR0;
-    float2 TextureCoordinates : TEXCOORD0;
+	float4 Position : SV_POSITION;
+	float4 Color : COLOR0;
+	float2 TextureCoordinates : TEXCOORD0;
 };
 
 float4 localToColor(sampler2D samplerTexture, float2 Position)
 {
-    return tex2D(samplerTexture, SIZEPIXEL * Position);
+	return tex2D(samplerTexture, SIZEPIXEL * Position);
 }
 
 float MappingToDistribution(float len)
 {
-    float sig = max(iSigma2, 0.001f);
-    return (exp(-pow(len, 2.0) / (2.0 * sig))) / (2.0 * PI * sig);
+	float sig = max(iSigma2, 0.001f);
+	return exp(-len * len * 0.5 / sig) * 0.5 / (PI * sig);
 }
 
 float4 MainPS(VertexShaderOutput input) : COLOR
 {
-    float InitialValueSum = MappingToDistribution(0.);
-    for (float i = 1; i <= RADIUS; i++)
-        InitialValueSum += MappingToDistribution(i) * 2.;
+	float InitialValueSum = MappingToDistribution(0.);
+	for (float i = 1; i <= RADIUS; i++)
+		InitialValueSum += MappingToDistribution(i) * 2.;
 	
-    float4 color = localToColor(SpriteTextureSampler, input.TextureCoordinates * SIZESURFACE) * MappingToDistribution(0.) / InitialValueSum;
-    for (i = 1; i <= RADIUS; i++)
-    {
-        color += localToColor(SpriteTextureSampler, input.TextureCoordinates * SIZESURFACE + (iFactor * i)) * (MappingToDistribution(i) / InitialValueSum);
-        color += localToColor(SpriteTextureSampler, input.TextureCoordinates * SIZESURFACE - (iFactor * i)) * (MappingToDistribution(i) / InitialValueSum);
-    }
-
-    color = clamp(color, 0., 1.);
-
-    return input.Color * color;
+	float4 color = localToColor(SpriteTextureSampler, input.TextureCoordinates * SIZESURFACE) * MappingToDistribution(0.) / InitialValueSum;
+	for (i = 1; i <= RADIUS; i++)
+	{
+		float avg_map = MappingToDistribution(i) / InitialValueSum;
+		float2 delta = iFactor * i;
+		color += localToColor(SpriteTextureSampler, input.TextureCoordinates * SIZESURFACE + delta) * avg_map;
+		color += localToColor(SpriteTextureSampler, input.TextureCoordinates * SIZESURFACE - delta) * avg_map;
+	}
+	return input.Color * saturate(color);
 }
 
 technique SpriteDrawing
 {
-    pass P0
-    {
-        PixelShader = compile PS_SHADERMODEL MainPS();
-    }
+	pass P0
+	{
+		PixelShader = compile PS_SHADERMODEL MainPS();
+	}
 };

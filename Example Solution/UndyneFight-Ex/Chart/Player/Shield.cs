@@ -67,7 +67,8 @@ public partial class Player
 					float scale = Math.Min(Pow(rotateStartTime, 1.5f) / 2.1f * 0.04f, 0.18f);
 					if (delta <= 35f)
 					{
-						scale *= 0.8f * Pow((delta + 37) / 77f, 1.5f) + 0.2f * 1;
+						float deltaLerp = (delta + 37) / 77f;
+						scale *= 0.8f * deltaLerp * MathF.Sqrt(deltaLerp) + 0.2f * 1;
 						scale = Math.Min(1, scale * (1 + 15f / (delta * delta + 12)));
 					}
 					Rotation = MathUtil.Posmod(Rotation + delta * scale * (rotateWay ? 1 : -1), 360);
@@ -119,7 +120,7 @@ public partial class Player
 			internal void Push(GreenSoulGB gb)
 			{
 				int color = gb.DrawingColor;
-				bool Auto = (DebugState.ShieldAuto[0] && color == 0) || (DebugState.ShieldAuto[1] && color == 1) || (DebugState.ShieldAuto[2] && color == 2) || (DebugState.ShieldAuto[3] && color == 3);
+				bool Auto = DebugState.ShieldAuto[color];
 
 				if (Auto || GameStates.IsKeyDown(UpdateKeys[gb.Way]))
 					attachedGB = gb;
@@ -204,10 +205,11 @@ public partial class Player
 				if (rotateStarted)
 				{
 					float delta = Math.Min((missionRotation - Rotation + 360) % 360, (360 - missionRotation + Rotation) % 360);
-					float scale = Math.Min(Pow(rotateStartTime, 1.5f) / 2.1f * 0.04f, 0.18f);
+					float scale = Math.Min(rotateStartTime * Sqrt(rotateStartTime) / 2.1f * 0.04f, 0.18f);
 					if (delta <= 35f)
 					{
-						scale *= 0.8f * Pow((delta + 37) / 77f, 1.5f) + 0.2f * 1;
+						float deltaLerp = (delta + 37) / 77f;
+						scale *= 0.8f * deltaLerp * Sqrt(deltaLerp) + 0.2f * 1;
 						scale = Math.Min(1, scale * (1 + 15f / (delta * delta + 12)));
 					}
 					Rotation = MathUtil.Posmod(Rotation + delta * scale * (rotateWay ? 1 : -1), 360);
@@ -319,8 +321,7 @@ public partial class Player
 						Rotation = att.Rotation;
 						Depth = att.Depth + 0.0101f;
 					}
-					drawingScale += darkerSpeed / 100f;
-					if (drawingScale >= 2f)
+					if ((drawingScale += darkerSpeed / 100f) >= 2f)
 						Dispose();
 				}
 
@@ -390,22 +391,11 @@ public partial class Player
 				Heart mission = FatherObject as Heart;
 				Shield bshield = new(0, mission) { UpdateKeys = [InputIdentity.MainRight, InputIdentity.MainDown, InputIdentity.MainLeft, InputIdentity.MainUp] };
 				Shield rshield = new(1, mission) { UpdateKeys = [InputIdentity.SecondRight, InputIdentity.SecondDown, InputIdentity.SecondLeft, InputIdentity.SecondUp] };
-
-				_ = new Shield(2, mission) { UpdateKeys = [InputIdentity.FourthRight, InputIdentity.FourthDown, InputIdentity.FourthLeft, InputIdentity.FourthUp] };
-
-				_ = new Shield(3, mission) { UpdateKeys = [InputIdentity.ThirdRight, InputIdentity.ThirdDown, InputIdentity.ThirdLeft, InputIdentity.ThirdUp] };
 				shields.Add(0, BShield = bshield);
 				shields.Add(1, RShield = rshield);
-				//shields.Add(2,pshield);
-				//shields.Add(3,gshield);
 				AddChild(bshield);
 				AddChild(rshield);
-				//AddChild(pshield);
-				//AddChild(gshield);
 				AddChild(Circle = new());
-
-				//this.AddChildObject(pshield);
-				//this.AddChildObject(gshield); 
 			}
 
 			[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -436,20 +426,16 @@ public partial class Player
 				}
 				else if (mission.SoulType == 1)
 				{
-					foreach (KeyValuePair<int, Shield> v in shields)
+					foreach (Shield v in shields.Values)
 					{
-						Shield s = v.Value;
-						s.enabled = true;
-						s.CheckKey();
+						v.enabled = true;
+						v.CheckKey();
 					}
 				}
 				else
 				{
-					foreach (KeyValuePair<int, Shield> v in shields)
-					{
-						Shield s = v.Value;
-						s.enabled = false;
-					}
+					foreach (Shield v in shields.Values)
+						v.enabled = false;
 				}
 			}
 
@@ -499,9 +485,8 @@ public partial class Player
 				Vector2 createCentre = mission.Centre + MathUtil.GetVector2(33, ang - 180);
 				for (int i = 0, n = Rand(5, 20); i < n; i++)
 				{
-					float rotation1 = ang + 90 + Rand(0, 1) * 180;
 					float rdelta = Rand(0, 1f) * Rand(0, 1f) * Rand(0, 1f) * RandSignal();
-					rotation1 += rdelta * 90;
+					float rotation1 = ang + 90 + Rand(0, 1) * 180 + rdelta * 90;
 					GameStates.InstanceCreate(new Particle(col * Rand(0.67f, 0.85f) * (ScreenDrawing.UIColor.A / 255f), MathUtil.GetVector2(Rand(0, 9f), rotation1), Rand(4, 8), createCentre, RandBool() ? FightResources.Sprites.square : FightResources.Sprites.fireParticle)
 					{ DarkingSpeed = Rand(15f, 18f), SlowLerp = 0.25f });
 				}
@@ -580,8 +565,9 @@ public partial class Player
 			/// <inheritdoc/>
 			public override void Update()
 			{
-				enabled = (FatherObject.FatherObject as Heart).SoulType == 1;
-				Centre = (FatherObject.FatherObject as Heart).Centre;
+				Heart grandfather = FatherObject.FatherObject as Heart;
+				enabled = grandfather.SoulType == 1;
+				Centre = grandfather.Centre;
 				curColor = Color.Lerp(curColor, DrawingColor, 0.1f);
 				drawConsumption = drawConsumption * 0.9f + Consumption * 0.1f;
 			}

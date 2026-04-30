@@ -105,10 +105,9 @@ public partial class Player
 			if (protectTime > 0)
 				return;
 
-			protectTime = !KR ? 110 : 5;
+			protectTime = KR ? 5 : 110;
 
-			bool NoGreenSoul = ((CurrentScene as FightScene).Mode & GameMode.NoGreenSoul) != 0;
-			if (!NoGreenSoul || (heart.SoulType != 1 && NoGreenSoul))
+			if (((CurrentScene as FightScene).Mode & GameMode.NoGreenSoul) == 0 || heart.SoulType != 1)
 			{
 				if (!InvincibleToPhysic)
 					hp.Value -= DamageTaken;
@@ -146,8 +145,7 @@ public partial class Player
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal void ResetMaxHP(float hpCnt)
 		{
-			maxHP = hpCnt;
-			hp.Value = NoHIT ? (maxHP = 1) : maxHP;
+			hp.Value = maxHP = NoHIT ? 1 : hpCnt;
 			KRHP = 0;
 		}
 		/// <summary>

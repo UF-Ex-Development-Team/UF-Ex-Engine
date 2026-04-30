@@ -28,25 +28,26 @@ public abstract class BulletShootable : PerfectCollisionBarrage
 			EventArguments.Dispose();
 		}
 		_ = detects.RemoveAll(s => s.Disposed);
+		//Get vertices of this box
+		float imgWidth = Image.Width, imgHeight = Image.Height;
+		float sqrt = MathF.Sqrt(imgWidth * imgWidth + imgHeight * imgHeight) * Scale / 2f;
+		Vector2[] thisVertices = new Vector2[4];
+		for (int i = 0; i < 4; i++)
+			thisVertices[i] = Centre + MathUtil.GetVector2(sqrt, 45 + i * 90 + Rotation);
 		detects.ForEach(bullet =>
 		{
-			if (bullet.BeingUpdated)
-			{
-				//Get vertices of this box
-				float sqrt = MathF.Sqrt(MathF.Pow(Image.Width, 2) + MathF.Pow(Image.Height, 2)) * Scale / 2f;
-				Vector2[] thisVertices = new Vector2[4];
-				for (int i = 0; i < 4; i++)
-					thisVertices[i] = Centre + MathUtil.GetVector2(sqrt, 45 + i * 90 + Rotation);
-				//Get vertices of the soul bullet
-				sqrt = MathF.Sqrt(MathF.Pow(bullet.Image.Width, 2) + MathF.Pow(bullet.Image.Height, 2)) * Scale / 2f + 2;
-				Vector2[] bulletVertices = new Vector2[4];
-				float theta = MathUtil.GetAngle(MathF.Atan(bullet.Image.Width / (float)bullet.Image.Height));
-				float[] verticesAngles = [theta, 180 - theta, 180 + theta, -theta];
-				for (int i = 0; i < 4; i++)
-					bulletVertices[i] = bullet.Centre + MathUtil.GetVector2(sqrt, verticesAngles[i] + bullet.Rotation);
-				if (MathUtil.PolygonCollide(thisVertices, bulletVertices))
-					OnShot(bullet);
-			}
+			if (!bullet.BeingUpdated)
+				return;
+			//Get vertices of the soul bullet
+			float bulWidth = bullet.Image.Width, bulHeight = bullet.Image.Height;
+			sqrt = MathF.Sqrt(bulWidth * bulWidth + bulHeight * bulHeight) * Scale / 2f + 2;
+			Vector2[] bulletVertices = new Vector2[4];
+			float theta = MathUtil.GetAngle(MathF.Atan(bulWidth / (float)bulHeight));
+			float[] verticesAngles = [theta, 180 - theta, 180 + theta, -theta];
+			for (int i = 0; i < 4; i++)
+				bulletVertices[i] = bullet.Centre + MathUtil.GetVector2(sqrt, verticesAngles[i] + bullet.Rotation);
+			if (MathUtil.PolygonCollide(thisVertices, bulletVertices))
+				OnShot(bullet);
 		});
 		(EventExists, EventArguments) = TryDetect("Explode");
 		//Early exit if no event exists
@@ -62,10 +63,7 @@ public abstract class BulletShootable : PerfectCollisionBarrage
 			if (b.AbleLink)
 				b.Explode();
 		}
-		else
-		{
-			if (et.Destructive)
-				Dispose();
-		}
+		else if (et.Destructive)
+			Dispose();
 	}
 }

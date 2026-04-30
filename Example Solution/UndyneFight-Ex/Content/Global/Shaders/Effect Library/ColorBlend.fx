@@ -25,14 +25,14 @@ struct VertexShaderOutput
 
 float4 Test(VertexShaderOutput input) : COLOR
 { 
-    return tex2D(sampler0, input.TextureCoordinates) * tex2D(sampler1, input.TextureCoordinates);
+	return tex2D(sampler0, input.TextureCoordinates) * tex2D(sampler1, input.TextureCoordinates);
 
 }
  
 technique SpriteDrawing
 { 
-    pass P0
-    {
-        PixelShader = compile PS_SHADERMODEL Test();
-    } 
+	pass P0
+	{
+		PixelShader = compile PS_SHADERMODEL Test();
+	} 
 };

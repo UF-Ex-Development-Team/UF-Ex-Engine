@@ -8,6 +8,9 @@ namespace UndyneFight_Ex;
 /// </summary>
 public abstract class RenderProduction : IComparable<RenderProduction>
 {
+	/// <summary>
+	/// Whether the game is set to high drawing quality
+	/// </summary>
 	private static bool HighQuality => Settings.SettingsManager.DataLibrary.drawingQuality == Settings.SettingsManager.DataLibrary.DrawingQuality.High;
 	/// <summary>
 	/// The scale factor of the surface
@@ -40,9 +43,10 @@ public abstract class RenderProduction : IComparable<RenderProduction>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	private static Vector2 Adapt(Vector2 origin)
 	{
+		//Use default size when not in high quality (Which uses actual window size)
 		if (!HighQuality)
 			return new Vector2(480f * GameMain.Aspect, 480) * GameStates.SurfaceScale;
-
+		//Choose the adapted size based on the aspect ratio of the window
 		float trueX, trueY;
 		if (origin.X >= origin.Y * GameMain.Aspect)
 		{
@@ -82,7 +86,7 @@ public abstract class RenderProduction : IComparable<RenderProduction>
 		BlendState = blendState;
 		this.depth = depth;
 		if (depth is > 1 or < 0)
-			throw new ArgumentException(string.Format("the value {0} have to be in 0~1", nameof(depth)), nameof(depth));
+			throw new ArgumentException(string.Format("the value {0} have to be in (0, 1)", nameof(depth)), nameof(depth));
 		HelperTargets.ForEach(t => t = new(WindowDevice, 640, 480, false, SurfaceFormat.Color, DepthFormat.None));
 	}
 	/// <summary>
@@ -97,7 +101,9 @@ public abstract class RenderProduction : IComparable<RenderProduction>
 	/// The blending state of the <see cref="RenderProduction"/>, see <see href="https://docs.monogame.net/api/Microsoft.Xna.Framework.Graphics.BlendState.html"/> for more information
 	/// </summary>
 	public BlendState BlendState { private get; set; }
-
+	/// <summary>
+	/// Whether <see cref="Transform"/> is used
+	/// </summary>
 	private bool enabledMatrix = false;
 	private Matrix matrix;
 	/// <summary>
@@ -120,11 +126,7 @@ public abstract class RenderProduction : IComparable<RenderProduction>
 	/// <returns></returns>
 	/// <exception cref="NotImplementedException"></exception>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public int CompareTo(RenderProduction r)
-	{
-		RenderProduction obj = r;
-		return obj == null ? throw new NotImplementedException() : depth < obj.depth ? -1 : depth == obj.depth ? 0 : 1;
-	}
+	public int CompareTo(RenderProduction r) => depth.CompareTo(r.depth);
 	/// <summary>
 	/// Clears resource buffers and sets the given color in all buffers
 	/// </summary>
@@ -246,7 +248,7 @@ public abstract class RenderProduction : IComparable<RenderProduction>
 	/// <param name="s">The texture to draw</param>
 	/// <param name="pos">The position to the texture draw in</param>
 	/// <param name="color">The color to draw the texture in</param>
-	protected void DrawTexture(Texture2D s, Vector2 pos, Color color) => DrawTexture(s, new Rectangle(pos.ToPoint(), s.Bounds.Size), null, color);
+	protected void DrawTexture(Texture2D s, Vector2 pos, Color? color = null) => DrawTexture(s, new Rectangle(pos.ToPoint(), s.Bounds.Size), null, color ?? Color.White);
 	/// <summary>
 	/// Draws a texture
 	/// </summary>
@@ -280,13 +282,6 @@ public abstract class RenderProduction : IComparable<RenderProduction>
 	/// <param name="color">The color to draw the texture in</param>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	protected void DrawTexture(Texture2D s, Rectangle bound, Color color) => DrawTexture(s, bound, null, color);
-	/// <summary>
-	/// Draws a texture
-	/// </summary>
-	/// <param name="s">The texture to draw</param>
-	/// <param name="pos">The position to draw the texture</param>
-	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	protected void DrawTexture(Texture2D s, Vector2 pos) => DrawTexture(s, pos, Color.White);
 	/// <summary>
 	/// Event to occur when the window size changed
 	/// </summary>
@@ -326,7 +321,7 @@ public abstract class RenderProduction : IComparable<RenderProduction>
 		GameDevice.SetRenderTarget(MissionTarget);
 	}
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	private static void TrySetTarget(RenderTarget2D mission)
+	private static void TrySetTarget(RenderTarget2D? mission = null)
 	{
 		if (currentTarget == mission)
 			return;
@@ -379,7 +374,7 @@ public abstract class RenderProduction : IComparable<RenderProduction>
 	/// <param name="target">The render target to remove</param>
 	public static void RemoveHelperTarget(RenderTarget2D target)
 	{
-		if (!HelperTargets[..Surface.internalSurfaces.Length].Contains(target))
+		if (HelperTargets[..Surface.internalSurfaces.Length].Contains(target))
 			_ = HelperTargets.Remove(target);
 	}
 	/// <summary>
@@ -450,9 +445,7 @@ public class Surface : RenderProduction
 				return;
 			VertexPositionColorTexture[] Vertices = new VertexPositionColorTexture[_vertices.Length];
 			for (int i = 0; i < _vertices.Length; i++)
-			{
 				Vertices[i] = new(new(_vertices[i].CurrentPosition, 0.395f), Color.White, _vertices[i].CurrentPosition / new Vector2(640, 480));
-			}
 			if (Vertices.Length == 4)
 				SpriteBatch.DrawVertex(Image, 0.39f, Vertices);
 			else
@@ -460,11 +453,11 @@ public class Surface : RenderProduction
 				List<Tuple<int, int, int>> indices = DrawingLab.GetIndices(Vertices);
 				int[] input = new int[indices.Count * 3];
 				int x = 0;
-				for (int i = 0; i < indices.Count; i++)
+				foreach (Tuple<int, int, int> curIndex in indices)
 				{
-					input[x++] = indices[i].Item1;
-					input[x++] = indices[i].Item2;
-					input[x++] = indices[i].Item3;
+					input[x++] = curIndex.Item1;
+					input[x++] = curIndex.Item2;
+					input[x++] = curIndex.Item3;
 				}
 				SpriteBatch.DrawVertex(Image, 0.39f, input, Vertices);
 			}
@@ -565,8 +558,11 @@ public class Surface : RenderProduction
 		}
 		else if (Transfer == TransferUse.Custom)
 			transfer = CustomMatrix;
+		//Store current rendered texture
 		MissionTarget = RenderPaint;
+		//Set background color
 		ResetTargetColor(BackGroundColor);
+		//Apply matrix transformation and draw
 		Transform = transfer;
 		DrawEntities(entities);
 	}
@@ -575,32 +571,38 @@ public class Surface : RenderProduction
 	internal static void DistributeEntity(Entity[] entities, Matrix transfer)
 	{
 		NormalTransfer = transfer;
+		//Updates all surfaces
 		Dictionary<string, Surface> surfaces = GameStates.CurrentScene.CurrentDrawingSettings.surfaces;
 		foreach (Surface surfs in surfaces.Values)
 			surfs.Update();
+		//Apply all entities to their corresponding surfaces
 		Dictionary<Surface, List<Entity>> distributer = [];
 		foreach (Entity entity in entities)
 		{
 			_ = distributer.TryAdd(entity.controlLayer, []);
 			distributer[entity.controlLayer].Add(entity);
 		}
+		//Failsafe for no entities drawn on the masked surface
 		_ = distributer.TryAdd(Hidden, []);
+		//Draw all masked entities
 		Hidden.Draw([.. distributer[Hidden]], transfer);
 		_ = distributer.Remove(Hidden);
+		//Apply masking of the boxes
 		for (int i = 0; i < FightBox.boxes.Count; i++)
 			distributer[Normal].Add(new BoxPartDrawer(Hidden.RenderPaint, FightBox.boxes[i].Vertices));
+		//All other user defined surfaces
 		foreach (Surface surfs in surfaces.Values)
 		{
 			//Unsure whether it's useful or not
-			if (surfs != Normal && surfs != Hidden)
-			{
-				_ = distributer.TryAdd(surfs, []);
-				surfs.Draw([.. distributer[surfs]], transfer);
-				_ = distributer.Remove(surfs);
-				if (surfs.RestrictArea.Length > 0)
-					distributer[surfs].Add(new BoxPartDrawer(surfs.RenderPaint, surfs.RestrictArea));
-			}
+			if (surfs == Normal || surfs == Hidden)
+				continue;
+			_ = distributer.TryAdd(surfs, []);
+			surfs.Draw([.. distributer[surfs]], transfer);
+			_ = distributer.Remove(surfs);
+			if (surfs.RestrictArea.Length > 0)
+				distributer[surfs].Add(new BoxPartDrawer(surfs.RenderPaint, surfs.RestrictArea));
 		}
+		//Draw the rest of the entities on the normal surface
 		foreach (KeyValuePair<Surface, List<Entity>> kvp in distributer)
 			kvp.Key.Draw([.. kvp.Value], transfer);
 	}
@@ -635,18 +637,22 @@ public class RenderingManager
 	public RenderTarget2D Draw(RenderTarget2D startTarget)
 	{
 		_ = surfaces.RemoveWhere((s) => s.disposed);
-		surfaces.ToList().ForEach(t => { if (t.Enabled) startTarget = t.Draw(startTarget); });
+		foreach (RenderProduction surf in surfaces)
+		{
+			if (surf.Enabled)
+				startTarget = surf.Draw(startTarget);
+		}
 		return startTarget;
 	}
 	/// <summary>
-	/// Updates al surfaces to the new window size
+	/// Updates all surfaces to the new window size
 	/// </summary>
 	/// <param name="vec">The new window size</param>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public void WindowSizeChanged(Vector2 vec)
 	{
-		for (int i = 0; i < surfaces.Count; i++)
-			surfaces.ElementAt(i).WindowSizeChanged(vec);
+		foreach (RenderProduction surf in surfaces)
+			surf.WindowSizeChanged(vec);
 	}
 	/// <summary>
 	/// Adds a production to the rendering pipeline
@@ -662,8 +668,8 @@ public class RenderingManager
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	internal void UpdateAll()
 	{
-		for (int i = 0; i < surfaces.Count; i++)
-			surfaces.ElementAt(i).Update();
+		foreach (RenderProduction surf in surfaces)
+			surf.Update();
 	}
 	/// <summary>
 	/// Resets the production state (Removes all <see cref="RenderProduction"/>)
@@ -671,8 +677,8 @@ public class RenderingManager
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public void ResetProduction()
 	{
-		for (int i = 0; i < surfaces.Count; i++)
-			surfaces.ElementAt(i).Dispose();
+		foreach (RenderProduction surf in surfaces)
+			surf.Dispose();
 		surfaces.Clear();
 	}
 }

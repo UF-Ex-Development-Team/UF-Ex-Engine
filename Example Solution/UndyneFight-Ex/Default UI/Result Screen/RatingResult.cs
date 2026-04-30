@@ -60,69 +60,66 @@ internal partial class StateShower
 			}
 			public void IntoCentre()
 			{
-				InstanceCreate(new TimeRangedEvent(100, () =>
+				DelayEventProcessor.AddTimeRangedEvent(0, () =>
 				{
 					CollideRect v = ratingShowing.CollidingBox;
 					v.SetCentre(Vector2.Lerp(ratingShowing.CollidingBox.GetCentre(), new(320, 180), 0.2f));
 					ratingShowing.SetArea(v);
 					ratingShowing.CoinColor = Color.Lerp(ratingShowing.CoinColor, Color.Transparent, 0.2f);
 					ratingShowing.MedalAlpha = float.Lerp(ratingShowing.MedalAlpha, 0, 0.2f);
-				}));
-				string text = curRating == 100 ? "Amazing!" : "Congratulations!";
-				InstanceCreate(new InstantEvent(120, () => InstanceCreate(new TextPrinter(text, new Vector2(320 - GlobalResources.Font.FightFont.SFX.MeasureString(text).X / 2, 280))
+				}, 100, false);
+				string text = Localization.GetText(curRating == 100 ? "RatingBox.FullCongrat" : "RatingBox.Congrat");
+				DelayEventProcessor.AddInstantEvent(120, () => InstanceCreate(new TextPrinter(text, new Vector2(320 - GlobalResources.Font.FightFont.SFX.MeasureString(text).X / 2, 280))
 				{
 					Depth = 1
-				})));
-				InstanceCreate(new InstantEvent(210, () =>
+				}));
+				DelayEventProcessor.AddInstantEvent(210, () =>
 				{
 					string[] Texts = curRating switch
 					{
 						<85 => [
-							"Don't be affected by the brilliant achievements of others!",
-							"As long as you do yourself well, you are respectable.",
+							Localization.GetText("RatingBox.FlavourText[0][0]"),
+							Localization.GetText("RatingBox.FlavourText[0][1]")
 						],
 						<95 => [
-							"Don't be arrogant for brilliant achievements of yourself!",
-							"Only when you have a calm mind will you move forward."
+							Localization.GetText("RatingBox.FlavourText[1][0]"),
+							Localization.GetText("RatingBox.FlavourText[1][1]")
 						],
 						<100 => [
-							"You have overcame a lot of challenges.",
-							"But you can push even further, good luck!"
+							Localization.GetText("RatingBox.FlavourText[2][0]"),
+							Localization.GetText("RatingBox.FlavourText[2][1]")
 						],
-						100 => [
-							"You've reached the summit, but every mountain hides another peak.",
-							"Stay humble, there will be more ;)"
+						_ => [
+							Localization.GetText("RatingBox.FlavourText[3][0]"),
+							Localization.GetText("RatingBox.FlavourText[3][1]")
 						]
 					};
 					for (int i = 0; i < Texts.Length; i++)
 						InstanceCreate(new TextPrinter($"$${Texts[i]}", new Vector2(320 - GlobalResources.Font.FightFont.SFX.MeasureString(Texts[i]).X * 0.62f / 2, 335 + i * 35), new TextSizeAttribute(0.62f), new TextSpeedAttribute(15))
 						{
-							Depth = 1
+							Depth = 1,
 						});
-				}));
+				});
 				ChangeState(RatingShowState.Encourage);
 			}
 			public bool ProgressMade { get; private init; }
-			public override void Draw() { }
 
 			[MethodImpl(MethodImplOptions.AggressiveInlining)]
 			public void AddCoin(int coins)
 			{
 				ratingShowing.CoinString = "+" + coins;
-				AddChild(new InstantEvent(120, () =>
+				DelayEventProcessor.AddInstantEvent(120, () =>
 				{
 					ratingShowing.CoinColor = Color.Gold;
 					ratingShowing.CoinString = MathUtil.FloatToString(PlayerManager.CurrentUser.ShopData.CashManager.Coins);
-				}));
+				});
 				float alpha = 1;
-				AddChild(new TimeRangedEvent(60, 59, () =>
+				DelayEventProcessor.AddTimeRangedEvent(60, () =>
 				{
 					alpha -= 1 / (59f * 2f);
 					ratingShowing.CoinColor = Color.Gold * alpha;
-				})
-				{ UpdateIn120 = true });
+				}, 59, true);
 			}
-
 			public override void Update()
 			{
 				if (curState == 0)
@@ -142,7 +139,7 @@ internal partial class StateShower
 						break;
 					case RatingShowState.KeepRating:
 						ratingShowing.SkillColor = Color.Lerp(Color.Transparent, Color.Silver, Min(1, appearTime / 30f));
-						ratingShowing.SkillString = "No Progress";
+						ratingShowing.SkillString = Localization.GetText("ResultScreen.NoProgress");
 						if (appearTime == 90)
 							ChangeState(RatingShowState.ShowRating);
 						break;
@@ -167,6 +164,7 @@ internal partial class StateShower
 				}
 				appearTime++;
 			}
+			public override void Draw() { }
 			[MethodImpl(MethodImplOptions.AggressiveInlining)]
 			private void ChangeState(RatingShowState state)
 			{

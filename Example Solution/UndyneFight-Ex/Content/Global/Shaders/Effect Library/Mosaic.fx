@@ -30,7 +30,7 @@ struct VertexShaderOutput
 float4 MainPS(VertexShaderOutput input) : COLOR
 {
 	float2 screen_size = float2(WIDTH, HEIGHT);
-    return input.Color * tex2D(SpriteTextureSampler, floor(input.TextureCoordinates * screen_size / iBlockSize) * iBlockSize / screen_size);
+	return input.Color * tex2D(SpriteTextureSampler, floor(input.TextureCoordinates * screen_size / iBlockSize) * iBlockSize / screen_size);
 }
 
 technique SpriteDrawing

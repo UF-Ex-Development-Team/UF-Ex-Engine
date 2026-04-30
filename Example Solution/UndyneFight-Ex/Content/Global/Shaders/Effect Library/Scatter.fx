@@ -28,17 +28,17 @@ struct VertexShaderOutput
 
 float4 MainPS(VertexShaderOutput input) : COLOR
 { 
-    float x = input.TextureCoordinates.x; 
-    float y = input.TextureCoordinates.y;
-    float4 col = tex2D(SpriteTextureSampler, input.TextureCoordinates);
-    float hashX = (frac(sin(y * 12351 + time) * 9875 - (y + 1) * 12351 * (x + 1)));
-    if (hashX > ratio)
-        return col;
+	float x = input.TextureCoordinates.x; 
+	float y = input.TextureCoordinates.y;
+	float4 col = tex2D(SpriteTextureSampler, input.TextureCoordinates);
+	float hashX = (frac(sin(y * 12351 + time) * 9875 - (y + 1) * 12351 * (x + 1)));
+	if (hashX > ratio)
+		return col;
 	
-    float hash = (frac(sin(y * 123 + time) * (-820 + time) + y * 100 * y * 1286)) * intensity / 640;
-    float4 colR = tex2D(SpriteTextureSampler, input.TextureCoordinates - float2(hash, 0));
-    float4 colB = tex2D(SpriteTextureSampler, input.TextureCoordinates + float2(hash, 0));
-    return float4(colR.r, col.g, colB.b, col.a);
+	float hash = (frac(sin(y * 123 + time) * (time - 820) + y * y * 128600)) * intensity / 640;
+	float4 colR = tex2D(SpriteTextureSampler, input.TextureCoordinates - float2(hash, 0));
+	float4 colB = tex2D(SpriteTextureSampler, input.TextureCoordinates + float2(hash, 0));
+	return float4(colR.r, col.g, colB.b, col.a);
 }
 
 technique SpriteDrawing

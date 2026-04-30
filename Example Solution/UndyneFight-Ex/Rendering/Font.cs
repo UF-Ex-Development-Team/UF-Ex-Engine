@@ -102,10 +102,13 @@ public class GLFont
 	{
 		sb ??= MissionSpriteBatch;
 		string[] lines = texts.Split('\n');
-		vec2 Size = SFX.MeasureString(texts);
-		float initY = -Size.Y / 2;
+		float initY = -SFX.MeasureString(texts).Y / 2;
 		for (int i = 0; i < lines.Length; i++)
-			sb.DrawString(this, lines[i], location + new vec2(-SFX.MeasureString(lines[i]).X / 2, initY + i * SFX.MeasureString(lines[i]).Y), color * Surface.Normal.drawingAlpha);
+		{
+			string curLine = lines[i];
+			Vector2 curMeasure = SFX.MeasureString(curLine);
+			sb.DrawString(this, curLine, location + new vec2(-curMeasure.X / 2, initY + i * curMeasure.Y), color * Surface.Normal.drawingAlpha);
+		}
 	}
 	/// <summary>
 	/// Draws text that is aligned to the center
@@ -129,10 +132,13 @@ public class GLFont
 	public void CentreDraw(string texts, Vector2 location, Color color, vec2 scale, float depth)
 	{
 		string[] lines = texts.Split('\n');
-		vec2 Size = SFX.MeasureString(texts);
-		float initY = -Size.Y / 2 * scale.Y;
+		float initY = -SFX.MeasureString(texts).Y * scale.Y / 2f;
 		for (int i = 0; i < lines.Length; i++)
-			MissionSpriteBatch.DrawString(this, lines[i], location + new vec2(0, initY + (i + 0.8f) * SFX.MeasureString(lines[i]).Y * scale.Y), color * Surface.Normal.drawingAlpha, 0, SFX.MeasureString(lines[i]) / 2, scale, SpriteEffects.None, depth);
+		{
+			string curLine = lines[i];
+			Vector2 curMeasure = SFX.MeasureString(curLine);
+			MissionSpriteBatch.DrawString(this, curLine, location + new vec2(0, initY + (i + 0.8f) * curMeasure.Y * scale.Y), color * Surface.Normal.drawingAlpha, 0, curMeasure / 2, scale, SpriteEffects.None, depth);
+		}
 	}
 	/// <summary>
 	/// Draws text that is aligned to the center
@@ -158,10 +164,13 @@ public class GLFont
 	public void CentreDraw(string texts, Vector2 location, Color color, vec2 scale, float rotation, float depth)
 	{
 		string[] lines = texts.Split('\n');
-		vec2 Size = SFX.MeasureString(texts);
-		float initY = -Size.Y / 2 * scale.Y;
+		float initY = -SFX.MeasureString(texts).Y * scale.Y / 2f;
 		for (int i = 0; i < lines.Length; i++)
-			MissionSpriteBatch.DrawString(this, lines[i], location + new vec2(0, initY + (i + 0.5f) * SFX.MeasureString(lines[i]).Y * scale.Y), color * Surface.Normal.drawingAlpha, rotation, SFX.MeasureString(lines[i]) / 2, scale, SpriteEffects.None, depth);
+		{
+			string curLine = lines[i];
+			Vector2 curMeasure = SFX.MeasureString(curLine);
+			MissionSpriteBatch.DrawString(this, curLine, location + new vec2(0, initY + (i + 0.8f) * curMeasure.Y * scale.Y), color * Surface.Normal.drawingAlpha, rotation, curMeasure / 2, scale, SpriteEffects.None, depth);
+		}
 	}
 	/// <summary>
 	/// Draws a piece of text that will break to a new line when the given limit is reached
@@ -304,8 +313,8 @@ public class GLFont
 			return size;
 		else
 		{
-			_ = _storedGlyphSizes.TryAdd(ch, size);
-			return SFX.Glyphs[GetGlyphIndexOrDefault(ch)].Cropping.Size.ToVector2();
+			_storedGlyphSizes.Add(ch, size = SFX.Glyphs[GetGlyphIndexOrDefault(ch)].Cropping.Size.ToVector2());
+			return size;
 		}
 	}
 }

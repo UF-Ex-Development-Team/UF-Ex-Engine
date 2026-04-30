@@ -47,41 +47,43 @@ internal partial class StateShower : Entity
 			combo = 0;
 		}
 		else
+		{
 			combo++;
+			maxCombo = Math.Max(maxCombo, combo);
+		}
 
-		maxCombo = Math.Max(maxCombo, combo);
 		string DispTxt = "";
 		Color DispCol = Color.White;
 		switch (type)
 		{
 			case 0:
-				DispTxt = "Miss";
+				DispTxt = Localization.GetText("ChartJudgement.Miss");
 				DispCol = Color.Red;
 				miss++;
 				break;
 			case 1:
-				DispTxt = "Okay";
+				DispTxt = Localization.GetText("ChartJudgement.Okay");
 				DispCol = Color.Green;
 				okay++;
 				break;
 			case 2:
-				DispTxt = "Nice";
+				DispTxt = Localization.GetText("ChartJudgement.Nice");
 				DispCol = Color.LightBlue;
 				nice++;
 				break;
 			case 3:
-				DispTxt = "Perfect!";
+				DispTxt = Localization.GetText("ChartJudgement.Perfect");
 				DispCol = Color.Gold;
 				perfect++;
 				break;
 			case 4:
-				DispTxt = "PerfectE";
+				DispTxt = Localization.GetText("ChartJudgement.PerfectE");
 				DispCol = Color.Orange;
 				perfect++;
 				perfectE++;
 				break;
 			case 5:
-				DispTxt = "PerfectL";
+				DispTxt = Localization.GetText("ChartJudgement.PerfectL");
 				DispCol = Color.Orange;
 				perfect++;
 				perfectL++;
@@ -92,21 +94,20 @@ internal partial class StateShower : Entity
 		current = v;
 		totalCount++;
 
-		int perfectScore = judgeState switch
-		{
-			JudgementState.Strict => 100,
-			JudgementState.Balanced => 98,
-			_ => 96,
-		};
 		if (type == 0)
 			return;
 		score.Value = score + (int)(type switch
 		{
-			1 => 0,
-			2 => 40,
-			3 => perfectScore,
-			4 => 80,
-			5 => 80,
+			1 => 0, //Okay
+			2 => 40, //Nice
+			3 => judgeState switch
+			{
+				JudgementState.Strict => 100,
+				JudgementState.Balanced => 98,
+				_ => 96,
+			}, //Perfect
+			4 => 80, //PerfectE
+			5 => 80, //PerfectL
 			_ => throw new NotImplementedException()
 		} * CurrentFightingScene.ScoreMultiplier);
 	}
@@ -148,8 +149,7 @@ internal partial class StateShower : Entity
 		public ScoreText(string text, Color cl, int combo)
 		{
 			this.combo = combo;
-			color = cl;
-			color *= CurrentScene.CurrentDrawingSettings.UIColor.A / 255f;
+			color = cl * (CurrentScene.CurrentDrawingSettings.UIColor.A / 255f);
 			Centre = new Vector2(540, 80);
 			this.text = text;
 		}
@@ -167,21 +167,18 @@ internal partial class StateShower : Entity
 			if (++appearTime == 60)
 				GetOut();
 
-			if (!isOuting)
-			{
-				if (alpha <= 1f)
-				{
-					collidingBox.Y -= 1.6f * (1f - alpha);
-					alpha = alpha * 0.8f + 1.1f * 0.2f;
-				}
-			}
-			else
+			if (isOuting)
 			{
 				collidingBox.Y -= 3f * outingSpeed;
 				outingSpeed += 0.06f;
 				alpha -= 0.06f;
 				if (scale > 0)
 					scale -= 0.02f;
+			}
+			else if (alpha <= 1f)
+			{
+				collidingBox.Y -= 1.6f * (1f - alpha);
+				alpha = alpha * 0.8f + 1.1f * 0.2f;
 			}
 			if (alpha <= 0)
 				Dispose();
@@ -194,8 +191,8 @@ internal partial class StateShower : Entity
 	internal static bool AP => (instance.miss + instance.nice + instance.okay) == 0;
 	internal SkillMark GenerateCurrentMark()
 	{
-		bool buffed = (mode & GameMode.Buffed) == GameMode.Buffed;
-		float scorePercent = MathF.Min(1, score * 1.0f / (totalCount * 100));
+		bool buffed = (mode & GameMode.Buffed) != 0;
+		float scorePercent = MathF.Min(1, score / (totalCount * 100f));
 		bool AC = miss == 0;
 		bool AP = (miss + okay + nice) == 0;
 		return scorePercent switch
@@ -222,7 +219,6 @@ internal partial class StateShower : Entity
 	internal Action NiceAction { get; set; }
 	internal Action PerfectAction { get; set; }
 	internal Action EndAction { get; set; }
-	//private float FontScale { get; set; } = 0.75f;
 	internal StateShower(IWaveSet waveSet, int difficulty, JudgementState judgeState, GameMode mode, float duration)
 	{
 		songDuration = duration;

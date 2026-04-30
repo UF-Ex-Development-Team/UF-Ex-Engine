@@ -187,7 +187,7 @@ public class SongManager : ISaveLoad
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	internal void FinishedSong(string songName, Difficulty difficulty, SongResult result)
 	{
-		songData.TryAdd(songName, new SongData(songName));
+		_ = songData.TryAdd(songName, new SongData(songName));
 		songData[songName].UpdateNew(difficulty, result);
 	}
 	/// <inheritdoc/>

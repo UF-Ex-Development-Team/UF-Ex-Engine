@@ -122,9 +122,9 @@ public class SaveInfo
 			values = [];
 			keysForIndexes = [];
 			indexForKeys = [];
-			List<string> units = [..u1[1].Split(',')];
+			string[] units = u1[1].Split(',');
 			string[] parts;
-			units.ForEach(s =>
+			Array.ForEach(units, s =>
 			{
 				parts = s.Split('=');
 				if (parts.Length == 1)
@@ -179,7 +179,7 @@ public static class IOEvent
 	private static List<byte> Decoder(byte[] bytes)
 	{
 		for (int i = 0; i < bytes.Length; i++)
-			bytes[i] = (byte)((256 - (bytes[i] + i)) % 256);
+			bytes[i] = (byte)-(bytes[i] + i); //(256 - (bytes[i] + i)) % 256 is the same as -(bytes[i] + i) in bytes due to underflow
 		return [.. bytes];
 	}
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -187,7 +187,7 @@ public static class IOEvent
 	{
 		byte[] b = [.. bytes];
 		for (int i = 0; i < b.Length; i++)
-			b[i] = (byte)((256 * 8192 - (bytes[i] + i)) % 256);
+			b[i] = (byte)-(bytes[i] + i); //((256 * 8192 - (bytes[i] + i)) % 256) is the same as -(bytes[i] + i) in bytes due to underflow
 		return b;
 	}
 	/// <summary>
@@ -221,12 +221,7 @@ public static class IOEvent
 	/// <param name="Path">The path to the file</param>
 	/// <returns>The list of bytes on the image file</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public static List<byte> ReadCustomFile(string Path)
-	{
-		FileStream stream = new(Path, FileMode.OpenOrCreate);
-		stream.Dispose();
-		return Decoder(File.ReadAllBytes(Path));
-	}
+	public static List<byte> ReadCustomFile(string Path) => Decoder(File.ReadAllBytes(Path));
 	/// <summary>
 	/// Reads the list of bytes in the tmpf file
 	/// </summary>
@@ -249,12 +244,14 @@ public static class IOEvent
 	public static List<byte> StringToByte(List<string> strings)
 	{
 		List<byte> bytes = [];
-		strings.ForEach((element) =>
+		System.Collections.ObjectModel.ReadOnlyCollection<string> span = strings.AsReadOnly();
+		foreach (string element in span)
 		{
-			foreach (char item in element)
+			ReadOnlySpan<char> subspan = element.AsSpan();
+			foreach (char item in subspan)
 				bytes.Add((byte)item);
 			bytes.Add(1);
-		});
+		}
 		return bytes;
 	}
 	/// <summary>
@@ -267,8 +264,10 @@ public static class IOEvent
 	{
 		List<string> strs = [];
 		string temp = string.Empty;
-		foreach (char item in bytes.Select(v => (char)v))
+		System.Collections.ObjectModel.ReadOnlyCollection<byte> span = bytes.AsReadOnly();
+		foreach (byte curByte in span)
 		{
+			char item = (char)curByte;
 			if (item is not ((char)1 or (char)0))
 				temp += item;
 			else
@@ -368,7 +367,7 @@ public static class FileIO
 	private static List<byte> Decoder(byte[] bytes)
 	{
 		for (int i = 0; i < bytes.Length; i++)
-			bytes[i] = (byte)((256 - (bytes[i] + i)) % 256);
+			bytes[i] = (byte)-(bytes[i] + i);
 		return [.. bytes];
 	}
 	/// <summary>

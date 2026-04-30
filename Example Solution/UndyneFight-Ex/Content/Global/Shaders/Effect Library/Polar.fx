@@ -35,7 +35,7 @@ float4 localToColor(sampler2D samplerTexture, float2 Position)
 
 float vectorToAngle(float2 vec)
 {
-    return ((-atan2(vec.y, vec.x) + 2.0 * PI) % 2.0 * PI) - PI;
+	return atan2(-vec.y, vec.x);
 }
 
 float2 coordinates_to_polar(float2 location, float2 center)

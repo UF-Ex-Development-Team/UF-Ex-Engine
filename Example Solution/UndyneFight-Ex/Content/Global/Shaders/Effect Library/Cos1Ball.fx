@@ -15,12 +15,12 @@ float scale2;
 
 float2 Turnpolar( float2 pos )
 {
-	return float2( atan2(pos.y, pos.x), length(pos) );
+	return float2(atan2(pos.y, pos.x), length(pos));
 }
 
 float2 Turnposition( float2 polar )
 {
-	return float2( cos(polar.x) * polar.y, sin(polar.x) * polar.y );
+	return float2(cos(polar.x), sin(polar.x)) * polar.y;
 }
 
 sampler2D SpriteTextureSampler = sampler_state
@@ -37,12 +37,12 @@ struct VertexShaderOutput
 
 float4 MainPS(VertexShaderOutput input) : COLOR
 {
-    float2 center = float2(fSize.x / 2.0, fSize.y / 2.0);
-    float2 position = float2(fSize.x * input.TextureCoordinates.x, fSize.y * input.TextureCoordinates.y);
-    float2 using_polar = Turnpolar(position - center);
-    float2 using_position = Turnposition(float2(using_polar.x, asin(using_polar.y / (length(center) * fSizeMult)) / fBallArgument * (length(center) * fSizeMult))) * fBallArgument / scale2
-    +center;
-    float2 using_TextureCoord = float2(using_position.x / fSize.x, using_position.y / fSize.y);
+	float2 center = fSize * 0.5;
+	float2 position = fSize * input.TextureCoordinates;
+	float2 using_polar = Turnpolar(position - center);
+	float mult_len = length(center) * fSizeMult;
+	float2 using_position = Turnposition(float2(using_polar.x, asin(using_polar.y / mult_len) / fBallArgument * mult_len)) * fBallArgument / scale2 + center;
+	float2 using_TextureCoord = using_position / fSize;
 	return tex2D(SpriteTextureSampler, using_TextureCoord) * input.Color;
 }
 

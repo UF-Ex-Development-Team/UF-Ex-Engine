@@ -10,10 +10,12 @@ public partial class Player
 			{
 				private const float FarTime = 90;
 				private Shield father;
-				private readonly bool[] blockedArrow = [false, false, false, false];
-				private readonly float[] timeDelayed = [FarTime, FarTime, FarTime, FarTime];
-				private readonly float[] tapTime = [FarTime, FarTime, FarTime, FarTime];
-				private readonly float[] holdTime = [FarTime, FarTime, FarTime, FarTime];
+				private struct CollisionData()
+				{
+					public bool BlockedArrow = false;
+					public float TimeDelayed = FarTime, TapTime = FarTime, HoldTime = FarTime;
+				}
+				private readonly CollisionData[] collisionData = [new(), new(), new(), new()];
 
 				public CollisionSide() => UpdateIn120 = true;
 				public override void Start()
@@ -23,44 +25,50 @@ public partial class Player
 				}
 				public override void Update()
 				{
+					bool shieldAttachingGB = father.AttachingGB;
 					for (int i = 0; i < 4; i++)
 					{
-						if (!blockedArrow[i])
-							timeDelayed[i] += 0.5f;
-						tapTime[i] += 0.5f;
-						holdTime[i] += 1f;
-						if (GameStates.IsKeyPressed120f(father.UpdateKeys[i]))
+						CollisionData curColData = collisionData[i];
+						InputIdentity curUpdateKey = father.UpdateKeys[i];
+						if (!curColData.BlockedArrow)
+							curColData.TimeDelayed += 0.5f;
+						curColData.TapTime += 0.5f;
+						curColData.HoldTime += 1f;
+						if (GameStates.IsKeyPressed120f(curUpdateKey))
 						{
-							blockedArrow[i] = false;
-							timeDelayed[i] = 0;
-							tapTime[i] = 0;
+							curColData.BlockedArrow = false;
+							curColData.TimeDelayed = 0;
+							curColData.TapTime = 0;
 						}
-						if (blockedArrow[i] && father.Way != i)
+						if (curColData.BlockedArrow && father.Way != i)
 						{
-							blockedArrow[i] = false;
-							timeDelayed[i] = FarTime;
+							curColData.BlockedArrow = false;
+							curColData.TimeDelayed = FarTime;
 						}
-						if (GameStates.IsKeyDown(father.UpdateKeys[i]))
-							holdTime[i] = 0;
-						if (GameStates.IsKeyPressed120f(father.UpdateKeys[i]) || (father.AttachingGB && father.attachedGB.Way == i))
-							timeDelayed[i] = 0;
+						if (GameStates.IsKeyDown(curUpdateKey))
+							curColData.HoldTime = 0;
+						if (GameStates.IsKeyPressed120f(curUpdateKey) || (shieldAttachingGB && father.attachedGB.Way == i))
+							curColData.TimeDelayed = 0;
+						collisionData[i] = curColData;
 					}
 				}
 				public override void Draw() { }
 				[MethodImpl(MethodImplOptions.AggressiveInlining)]
 				internal void ArrowBlock(int direction)
 				{
-					blockedArrow[direction] = father.Way == direction;
-					timeDelayed[direction] = blockedArrow[direction] ? 0 : FarTime;
-					tapTime[direction] = FarTime;
+					CollisionData curColData = collisionData[direction];
+					curColData.BlockedArrow = father.Way == direction;
+					curColData.TimeDelayed = curColData.BlockedArrow ? 0 : FarTime;
+					curColData.TapTime = FarTime;
+					collisionData[direction] = curColData;
 				}
 				[MethodImpl(MethodImplOptions.AggressiveInlining)]
 
-				internal float TimeOf(int way) => timeDelayed[way];
+				internal float TimeOf(int way) => collisionData[way].TimeDelayed;
 				[MethodImpl(MethodImplOptions.AggressiveInlining)]
-				internal float TapTimeOf(int way) => tapTime[way];
+				internal float TapTimeOf(int way) => collisionData[way].TapTime;
 				[MethodImpl(MethodImplOptions.AggressiveInlining)]
-				internal float HoldTimeOf(int way) => holdTime[way];
+				internal float HoldTimeOf(int way) => collisionData[way].HoldTime;
 			}
 		}
 	}

@@ -148,7 +148,7 @@ public class PrintingSettings
 	/// <summary>
 	/// The font for the text (Default <see cref="FightResources.Font.NormalFont"/>)
 	/// </summary>
-	public GLFont renderFont = FightResources.Font.NormalFont;
+	public GLFont renderFont = Localization.GetFont("NormalFont");
 	/// <summary>
 	/// The printing sound of the typer (Default <see cref="FightResources.Sounds.printWord"/>)
 	/// </summary>

@@ -166,7 +166,7 @@ public partial class User : ISaveLoad
 		//Get name and password
 		PlayerName = info.GetDirectory("PlayerName").StringValue;
 		Password = Convert.ToInt64(info.GetDirectory("Password").StringValue);
-		info.Nexts.TryAdd("SaveDataVersion", new SaveInfo("SaveDataVersion:0"));
+		_ = info.Nexts.TryAdd("SaveDataVersion", new SaveInfo("SaveDataVersion:0"));
 		SaveDataVersion = info.GetDirectory("SaveDataVersion").IntValue;
 		//Get Unique User ID, if not then generate one
 		if (info.Nexts.ContainsKey("UUID"))

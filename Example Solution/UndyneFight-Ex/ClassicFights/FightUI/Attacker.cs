@@ -28,7 +28,7 @@ internal class AttackTrail : Entity
 			float c = (300 - Math.Abs(Centre.X - 320)) / 300f;
 			if (c >= 0)
 			{
-				float val = MathF.Pow(c, 2) * ClassicFight.PlayerInformation.AttackDamage;
+				float val = c * c * ClassicFight.PlayerInformation.AttackDamage;
 				AttackTarget.Attacking(val);
 			}
 			else

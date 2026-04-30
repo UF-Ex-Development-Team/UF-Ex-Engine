@@ -298,7 +298,7 @@ public class KeybindData : ISaveLoad
 				_ = sb.Append(curStr);
 			}
 			if (sb.Length == 0)
-				sb.Append(',');
+				_ = sb.Append(',');
 			info.PushNext(new SaveInfo($"{Identity}:{sb.ToString()[..^1]}"));
 			sb = sb.Clear();
 		}

@@ -141,9 +141,7 @@ public class Star : Entity, ICollideAble, ICustomMotion
 	}
 	private int scoreResult = 3;
 	private bool hasHit = false;
-	private static JudgementState JudgeState => GameStates.CurrentScene is SongFightingScene songFightScene
-				? songFightScene.JudgeState
-				: JudgementState.Lenient;
+	private static JudgementState JudgeState => GameStates.CurrentScene is SongFightingScene ? CurrentFightingScene.JudgeState : JudgementState.Lenient;
 	/// <summary>
 	/// Whether the star counts to the score or not
 	/// </summary>
@@ -237,23 +235,16 @@ public class Fireball : Entity, ICustomMotion, ICollideAble
 	{
 		set
 		{
-			switch (value)
+			if (value is < 0 or > 2)
+				throw new ArgumentOutOfRangeException(nameof(value), value, "The value can only be 0, 1 or 2");
+			colorType = value;
+			drawcolor = value switch
 			{
-				case 0:
-					drawcolor = Color.White;
-					colorType = 0;
-					break;
-				case 1:
-					drawcolor = new Color(110, 203, 255, 255);
-					colorType = 1;
-					break;
-				case 2:
-					drawcolor = Color.Orange;
-					colorType = 2;
-					break;
-				default:
-					throw new ArgumentOutOfRangeException(nameof(value), value, "The value can only be 0, 1 or 2");
-			}
+				0 => Color.White,
+				1 => new Color(110, 203, 255, 255),
+				2 => Color.Orange,
+				_ => drawcolor
+			};
 		}
 	}
 	/// <inheritdoc/>
@@ -303,7 +294,6 @@ public class Fireball : Entity, ICustomMotion, ICollideAble
 	public override void Draw()
 	{
 		Depth = 0.9f;
-		DrawEvent();
 		FormalDraw(Image, Centre, drawcolor * Alpha, Scale * new Vector2(index == 1 ? -1 : 1, 1), Rotation, ImageCentre);
 	}
 	/// <inheritdoc/>
@@ -316,6 +306,11 @@ public class Fireball : Entity, ICustomMotion, ICollideAble
 	/// <inheritdoc/>
 	public override void Update()
 	{
+		if ((AppearTime += 0.5f) % 64 == 0)
+		{
+			index++;
+			index %= 2;
+		}
 		controlLayer = IsHidden ? Surface.Hidden : Surface.Normal;
 		Centre = ease?.Invoke(this) ?? Centre;
 		if (Centre.X >= 880 || Centre.X <= -240 || Centre.Y >= 480 + 240 || Centre.Y <= -240 || Alpha <= 0)
@@ -325,15 +320,6 @@ public class Fireball : Entity, ICustomMotion, ICollideAble
 	/// Whether the fireball is masked inside of the board
 	/// </summary>
 	public bool IsHidden { set; private get; } = false;
-	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	private void DrawEvent()
-	{
-		if ((AppearTime += 0.5f) % 64 == 0)
-		{
-			index++;
-			index %= 2;
-		}
-	}
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	private bool Collide(Vector2 org) => MathUtil.GetDistance(Centre, org) <= 6.5f * Scale;
 }
@@ -567,30 +553,30 @@ public static class DrawingUtil
 	public static void SetScreenScale(float size, float duration)
 	{
 		float start = ScreenDrawing.ScreenScale, end = size, del = start - end, t = 0;
-		AddInstance(new TimeRangedEvent(duration, () =>
+		DelayEventProcessor.AddTimeRangedEvent(0, () =>
 		{
 			float x = t / (duration - 1), f = 2 * x - x * x;
 			ScreenDrawing.ScreenScale = start - del * f;
 			t++;
-		}));
+		}, duration, false);
 	}
 	[MethodImpl(MethodImplOptions.AggressiveInlining), Obsolete("There are better functions")]
 	public static void MinusScreenScale(float MaxSize, float time)
 	{
 		float start = ScreenDrawing.ScreenScale, end = start - MaxSize, del = start - end, t = 0;
-		AddInstance(new TimeRangedEvent(0, time / 2f, () =>
+		DelayEventProcessor.AddTimeRangedEvent(0, () =>
 		{
-			float x = t / (time / 2f - 1), f = 2 * x - x * x;
+			float x = t / (time / 2 - 1), f = x * x;
 			ScreenDrawing.ScreenScale = start - del * f;
 			t++;
-		}));
+		}, time / 2f, false);
 		float t2 = 0, start2 = start - MaxSize, end2 = start, del2 = start2 - end2;
-		AddInstance(new TimeRangedEvent(time / 2f, time / 2f, () =>
+		DelayEventProcessor.AddTimeRangedEvent(time / 2, () =>
 		{
-			float x = t2 / (time / 2f - 1), f = x * x;
+			float x = t2 / (time / 2 - 1), f = x * x;
 			ScreenDrawing.ScreenScale = start2 - del2 * f;
 			t2++;
-		}));
+		}, time / 2, false);
 	}
 	/// <summary>
 	/// Sets the screen angle to the target angle in the given duration using Quadratic easing (<see cref="SimplifiedEasing.EaseState.Quad"/>)
@@ -601,49 +587,49 @@ public static class DrawingUtil
 	public static void ScreenAngle(float angle, float time)
 	{
 		float start = ScreenDrawing.ScreenAngle, end = angle, del = start - end, t = 0;
-		AddInstance(new TimeRangedEvent(0, time, () =>
+		DelayEventProcessor.AddTimeRangedEvent(0, () =>
 		{
 			float x = t / (time - 1), f = 2 * x - x * x;
 			ScreenDrawing.ScreenAngle = start - del * f;
 			t++;
-		}));
+		}, time, false);
 	}
 	[MethodImpl(MethodImplOptions.AggressiveInlining), Obsolete("There are better functions")]
 	public static void PlusRotate(float MaxAngle, float time)
 	{
 		float start = ScreenDrawing.ScreenAngle, end = start + MaxAngle, del = start - end, t = 0;
-		AddInstance(new TimeRangedEvent(0, time / 2f, () =>
+		DelayEventProcessor.AddTimeRangedEvent(0, () =>
 		{
 			float x = t / (time / 2f), f = 2 * x - x * x;
 			ScreenDrawing.ScreenAngle = start - del * f;
 			t++;
-		}));
+		}, time / 2, false);
 		float t2 = 0, start2 = start + MaxAngle, end2 = start, del2 = start2 - end2;
-		AddInstance(new TimeRangedEvent(time / 2f + 1, time / 2f, () =>
+		DelayEventProcessor.AddTimeRangedEvent(time / 2f + 1, () =>
 		{
-			float x = t2 / (time / 2f), f = x * x;
+			float x = t2 / (time / 2f - 1), f = x * x;
 			ScreenDrawing.ScreenAngle = start2 - del2 * f;
 			t2++;
-		}));
+		}, time / 2f, false);
 	}
 	[MethodImpl(MethodImplOptions.AggressiveInlining), Obsolete("There are better functions")]
 	public static void PlusScreenScale(float MaxSize, float time)
 	{
 		time = (int)time;
 		float start = ScreenDrawing.ScreenScale, end = start + MaxSize, del = start - end, t = 0;
-		AddInstance(new TimeRangedEvent(0, time / 2f, () =>
+		DelayEventProcessor.AddTimeRangedEvent(0, () =>
 		{
-			float x = t / (time / 2f), f = 2 * x - x * x;
+			float x = t / (time / 2f), f = x * x;
 			ScreenDrawing.ScreenScale = start - del * f;
 			t++;
-		}));
+		}, time / 2f, false);
 		float t2 = 0, start2 = start + MaxSize, end2 = start, del2 = start2 - end2;
-		AddInstance(new TimeRangedEvent(time / 2f + 1, time / 2f, () =>
+		DelayEventProcessor.AddTimeRangedEvent(time / 2f + 1, () =>
 		{
 			float x = t2 / (time / 2f), f = x * x;
 			ScreenDrawing.ScreenScale = start2 - del2 * f;
 			t2++;
-		}));
+		}, time / 2f, false);
 	}
 	/// <summary>
 	/// Shakes the screen
@@ -665,9 +651,9 @@ public static class DrawingUtil
 	{
 		for (int a = 0; a < times; a++)
 		{
-			AddInstance(new TimeRangedEvent(a * interval, 1, () => ScreenDrawing.ScreenPositionDelta = new Vector2(Rand(-rangeX, rangeX), Rand(-rangeY, rangeY))));
+			DelayEventProcessor.AddInstantEvent(a * interval, () => ScreenDrawing.ScreenPositionDelta = new Vector2(Rand(-rangeX, rangeX), Rand(-rangeY, rangeY)));
 		}
-		AddInstance(new InstantEvent((times + 1) * interval, () => ScreenDrawing.ScreenPositionDelta = Vector2.Zero));
+		DelayEventProcessor.AddInstantEvent((times + 1) * interval, () => ScreenDrawing.ScreenPositionDelta = Vector2.Zero);
 	}
 	[MethodImpl(MethodImplOptions.AggressiveInlining), Obsolete("There are better functions")]
 	public static void Rain(float speed, float rotate, bool way)
@@ -680,11 +666,11 @@ public static class DrawingUtil
 		else
 			for (int b = 0; b < 2; b++)
 				CreateEntity(rain);
-		AddInstance(new TimeRangedEvent(0, 180, () =>
+		DelayEventProcessor.AddTimeRangedEvent(0, () =>
 		{
 			rain.xCenter += Cos(rotate + 90) * speed;
 			rain.yCenter += Sin(rotate + 90) * speed;
-		}));
+		}, 180, false);
 	}
 	/// <summary>
 	/// Creates a screen fading in and out
@@ -701,7 +687,7 @@ public static class DrawingUtil
 		{
 			MaskSquare maskSquare = new(-320, -240, 960, 720, (int)(inDuration + duration + outDuration), color ?? Color.Black, 1);
 			CreateEntity(maskSquare);
-			AddInstance(new TimeRangedEvent(duration, outDuration + 1, () => maskSquare.alpha -= 1 / outDuration));
+			DelayEventProcessor.AddTimeRangedEvent(duration, () => maskSquare.alpha -= 1 / outDuration, outDuration + 1, false);
 		}
 		else if (inDuration <= 0)
 		{
@@ -711,8 +697,8 @@ public static class DrawingUtil
 		{
 			MaskSquare maskSquare = new(-320, -240, 960, 720, (int)(inDuration + duration + outDuration), color ?? Color.Black, 0);
 			CreateEntity(maskSquare);
-			AddInstance(new TimeRangedEvent(inDuration + 1, () => maskSquare.alpha += 1 / inDuration));
-			AddInstance(new TimeRangedEvent(inDuration + 1 + duration, outDuration + 1, () => maskSquare.alpha -= 1 / outDuration));
+			DelayEventProcessor.AddTimeRangedEvent(0, () => maskSquare.alpha += 1 / inDuration, inDuration + 1, false);
+			DelayEventProcessor.AddTimeRangedEvent(inDuration + 1 + duration, () => maskSquare.alpha -= 1 / outDuration, outDuration + 1, false);
 		}
 	}
 	/// <summary>
@@ -724,7 +710,7 @@ public static class DrawingUtil
 	public static void RotateWithBack(float duration, float range)
 	{
 		ScreenDrawing.CameraEffect.RotateTo(range, duration / 2);
-		AddInstance(new InstantEvent(duration / 2 + 1, () => ScreenDrawing.CameraEffect.RotateTo(0, duration / 2 - 1)));
+		DelayEventProcessor.AddInstantEvent(duration / 2 + 1, () => ScreenDrawing.CameraEffect.RotateTo(0, duration / 2 - 1));
 	}
 	/// <summary>
 	/// Rotates the camera and rotates it to the negation of it before rotating it to the origin (10 -> 25 -> -25 -> 0)
@@ -735,10 +721,8 @@ public static class DrawingUtil
 	public static void RotateSymmetricBack(float duration, float range)
 	{
 		ScreenDrawing.CameraEffect.RotateTo(range, duration / 3);
-		AddInstance(new InstantEvent(duration / 3 + 1, () =>
-			ScreenDrawing.CameraEffect.RotateTo(-range, duration / 3 - 1)));
-		AddInstance(new InstantEvent(duration / 3 * 2 + 1, () =>
-			ScreenDrawing.CameraEffect.RotateTo(0, duration / 3 - 1)));
+		DelayEventProcessor.AddInstantEvent(duration / 3 + 1, () => ScreenDrawing.CameraEffect.RotateTo(-range, duration / 3 - 1));
+		DelayEventProcessor.AddInstantEvent(duration / 3 * 2 + 1, () => ScreenDrawing.CameraEffect.RotateTo(0, duration / 3 - 1));
 	}
 	/// <summary>
 	/// Lerps the box and heart to green soul position (If the duration is shorter than the required lerp time, then the lerp will be incomplete. If the required lerp duration is shorter than the duration, then the lerp duration will be shortened)
@@ -747,11 +731,11 @@ public static class DrawingUtil
 	/// <param name="getto">The target position</param>
 	/// <param name="lerpcount">The lerp amount</param>
 	[MethodImpl(MethodImplOptions.AggressiveInlining), Obsolete("Use easing functions instead")]
-	public static void LerpGreenBox(float duration, Vector2 getto, float lerpcount) => AddInstance(new TimeRangedEvent(duration, () =>
-																								{
-																									InstantSetBox(BoxStates.Centre * (1 - lerpcount) + getto * lerpcount, 84, 84);
-																									InstantTP(Heart.Centre * (1 - lerpcount) + getto * lerpcount);
-																								}));
+	public static void LerpGreenBox(float duration, Vector2 getto, float lerpcount) => DelayEventProcessor.AddTimeRangedEvent(0, () =>
+	{
+		InstantSetBox(BoxStates.Centre * (1 - lerpcount) + getto * lerpcount, 84, 84);
+		InstantTP(Heart.Centre * (1 - lerpcount) + getto * lerpcount);
+	}, duration, false);
 	/// <summary>
 	/// Lerps the screen position (If the duration is shorter than the required lerp time, then the lerp will be incomplete. If the required lerp duration is shorter than the duration, then the lerp duration will be shortened)
 	/// </summary>
@@ -759,8 +743,7 @@ public static class DrawingUtil
 	/// <param name="getto">The target position</param>
 	/// <param name="lerpcount">The lerp amount</param>
 	[MethodImpl(MethodImplOptions.AggressiveInlining), Obsolete("Use easing functions instead")]
-	public static void LerpScreenPos(float duration, Vector2 getto, float lerpcount) => AddInstance(new TimeRangedEvent(duration, () =>
-																									 ScreenDrawing.ScreenPositionDelta = ScreenDrawing.ScreenPositionDelta * (1 - lerpcount) + getto * lerpcount));
+	public static void LerpScreenPos(float duration, Vector2 getto, float lerpcount) => DelayEventProcessor.AddTimeRangedEvent(0, () => ScreenDrawing.ScreenPositionDelta = ScreenDrawing.ScreenPositionDelta * (1 - lerpcount) + getto * lerpcount, duration, false);
 	/// <summary>
 	/// Lerps the screen scale (If the duration is shorter than the required lerp time, then the lerp will be incomplete. If the required lerp duration is shorter than the duration, then the lerp duration will be shortened)
 	/// </summary>
@@ -768,8 +751,7 @@ public static class DrawingUtil
 	/// <param name="getto">The target position</param>
 	/// <param name="lerpcount">The lerp amount</param>
 	[MethodImpl(MethodImplOptions.AggressiveInlining), Obsolete("Use easing functions instead")]
-	public static void LerpScreenScale(float duration, float getto, float lerpcount) => AddInstance(new TimeRangedEvent(duration, () =>
-																									 ScreenDrawing.ScreenScale = ScreenDrawing.ScreenScale * (1 - lerpcount) + getto * lerpcount));
+	public static void LerpScreenScale(float duration, float getto, float lerpcount) => DelayEventProcessor.AddTimeRangedEvent(0, () => ScreenDrawing.ScreenScale = ScreenDrawing.ScreenScale * (1 - lerpcount) + getto * lerpcount, duration, false);
 	/// <summary>
 	/// Creates a masking rectangle
 	/// </summary>
@@ -789,7 +771,7 @@ public static class DrawingUtil
 		/// <inheritdoc/>
 		public override void Draw()
 		{
-			FormalDraw(Sprites.pixUnit, new CollideRect(LeftUpX, LeftUpY, width, height).ToRectangle(), color * alpha);
+			FormalDraw(Sprites.pixUnit, new CollideRect(LeftUpX, LeftUpY, width, height), color * alpha);
 			Depth = 0.99f;
 		}
 		/// <inheritdoc/>
@@ -978,7 +960,7 @@ public static class LineMoveLibrary
 	public static void AlphaSin(NormalLine Line, float duration, float range, float startrange, float frequency, float startfrequency)
 	{
 		float sin = startfrequency;
-		AddInstance(new TimeRangedEvent(duration, () => Line.alpha = startrange + Sin(sin += frequency / duration) * range));
+		DelayEventProcessor.AddTimeRangedEvent(0, () => Line.alpha = startrange + Sin(sin += frequency / duration) * range, duration, false);
 	}
 	/// <summary>
 	/// 线段的Alpha-Sin,该重载表示经过duration时间闪烁一次(alpha=1)
@@ -987,7 +969,7 @@ public static class LineMoveLibrary
 	public static void AlphaSin(Linerotate Line, float duration)
 	{
 		float sin = 0;
-		AddInstance(new TimeRangedEvent(duration, () => Line.alpha = Sin(sin += 360 / duration)));
+		DelayEventProcessor.AddTimeRangedEvent(0, () => Line.alpha = Sin(sin += 360 / duration), duration, false);
 	}
 	/// <summary>
 	/// 提供一些线段有的Tag,赋予这些线段的Alpha以Sin缓动
@@ -1001,13 +983,13 @@ public static class LineMoveLibrary
 		{
 			int x = a;
 			float speed = startfrequency;
-			AddInstance(new TimeRangedEvent(duration, () => L[x].alpha = startrange + Sin(speed += 360 / frequency) * range));
+			DelayEventProcessor.AddTimeRangedEvent(0, () => L[x].alpha = startrange + Sin(speed += 360 / frequency) * range, duration, false);
 		}
 		for (int a = 0; a < Line.Length; a++)
 		{
 			int x = a;
 			float sin = startfrequency;
-			AddInstance(new TimeRangedEvent(duration, () => Line[x].alpha = startrange + Sin(sin += 360 / frequency) * range));
+			DelayEventProcessor.AddTimeRangedEvent(0, () => Line[x].alpha = startrange + Sin(sin += 360 / frequency) * range, duration, false);
 		}
 	}
 	/// <summary>
@@ -1020,8 +1002,7 @@ public static class LineMoveLibrary
 		for (int a = 0; a < Line.Length; a++)
 		{
 			int x = a;
-			AddInstance(new TimeRangedEvent(duration, () =>
-				Line[x].alpha = lerpto * count + Line[x].alpha * (1 - count)));
+			DelayEventProcessor.AddTimeRangedEvent(0, () => Line[x].alpha = lerpto * count + Line[x].alpha * (1 - count), duration, false);
 		}
 	}
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1031,8 +1012,7 @@ public static class LineMoveLibrary
 		for (int a = 0; a < Line.Length; a++)
 		{
 			int x = a;
-			AddInstance(new TimeRangedEvent(duration, () =>
-				Line[x].alpha = lerpto * count + Line[x].alpha * (1 - count)));
+			DelayEventProcessor.AddTimeRangedEvent(0, () => Line[x].alpha = lerpto * count + Line[x].alpha * (1 - count), duration, false);
 		}
 	}
 	/// <summary>
@@ -1045,11 +1025,11 @@ public static class LineMoveLibrary
 		for (int a = 0; a < Line.Length; a++)
 		{
 			int x = a;
-			AddInstance(new TimeRangedEvent(duration, () =>
+			DelayEventProcessor.AddTimeRangedEvent(0, () =>
 			{
 				Line[x].xCenter = Line[x].xCenter * (1 - count) + lerpto.X * count;
 				Line[x].yCenter = Line[x].yCenter * (1 - count) + lerpto.Y * count;
-			}));
+			}, duration, false);
 		}
 	}
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1059,11 +1039,11 @@ public static class LineMoveLibrary
 		for (int a = 0; a < Line.Length; a++)
 		{
 			int x = a;
-			AddInstance(new TimeRangedEvent(duration, () =>
+			DelayEventProcessor.AddTimeRangedEvent(0, () =>
 			{
 				Line[x].xCenter = Line[x].xCenter * (1 - count) + lerpto.X * count;
 				Line[x].yCenter = Line[x].yCenter * (1 - count) + lerpto.Y * count;
-			}));
+			}, duration, false);
 		}
 	}
 	/// <summary>
@@ -1077,13 +1057,13 @@ public static class LineMoveLibrary
 		{
 			int x = a;
 			float addx = 0, addy = 0;
-			AddInstance(new TimeRangedEvent(duration, () =>
+			DelayEventProcessor.AddTimeRangedEvent(0, () =>
 			{
 				Line[x].xCenter += addx;
 				Line[x].yCenter += addy;
 				addx = addx * (1 - count) + speed.X * count;
 				addy = addy * (1 - count) + speed.Y * count;
-			}));
+			}, duration, false);
 		}
 	}
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1094,19 +1074,18 @@ public static class LineMoveLibrary
 		{
 			int x = a;
 			float addx = speed.X, addy = speed.Y;
-			AddInstance(new TimeRangedEvent(duration, () =>
+			DelayEventProcessor.AddTimeRangedEvent(0, () =>
 			{
 				Line[x].xCenter += addx;
 				Line[x].yCenter += addy;
-			}));
+			}, duration, false);
 		}
 	}
 	/// <summary>
 	/// 线段的Rotate-Lerp缓动,count为目标的lerp插值
 	/// </summary>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public static void RotLerp(Linerotate Line, float duration, float lerpto, float count) => AddInstance(new TimeRangedEvent(duration, () =>
-			Line.rotate = lerpto * count + Line.rotate * (1 - count)));
+	public static void RotLerp(Linerotate Line, float duration, float lerpto, float count) => DelayEventProcessor.AddTimeRangedEvent(0, () => Line.rotate = lerpto * count + Line.rotate * (1 - count), duration, false);
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static void LRotLerp(string LineTags, float duration, float lerpto, float count)
 	{
@@ -1114,8 +1093,7 @@ public static class LineMoveLibrary
 		for (int a = 0; a < Line.Length; a++)
 		{
 			int x = a;
-			AddInstance(new TimeRangedEvent(duration, () =>
-				Line[x].rotate = lerpto * count + Line[x].rotate * (1 - count)));
+			DelayEventProcessor.AddTimeRangedEvent(0, () => Line[x].rotate = lerpto * count + Line[x].rotate * (1 - count), duration, false);
 		}
 	}
 }
@@ -1135,27 +1113,21 @@ public static class ShadowLibrary
 			line.InsertRetention(new(i * delay, deep - deep / times * i));
 	}
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public static void SetOffset(Arrow arrow, float offset)
+	public static void SetOffset(Arrow arrow, float offset) => arrow.Offset = arrow.Way switch
 	{
-		if (arrow.Way == 0)
-			arrow.Offset = new(0, offset);
-		if (arrow.Way == 1)
-			arrow.Offset = new(offset, 0);
-		if (arrow.Way == 2)
-			arrow.Offset = new(0, -offset);
-		if (arrow.Way == 3)
-			arrow.Offset = new(-offset, 0);
-	}
+		0 => new Vector2(0, offset),
+		1 => new Vector2(offset, 0),
+		2 => new Vector2(0, -offset),
+		3 => new Vector2(-offset, 0),
+		_ => arrow.Offset
+	};
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public static void SetOffset2(Arrow arrow, float offset)
+	public static void SetOffset2(Arrow arrow, float offset) => arrow.Offset = arrow.Way switch
 	{
-		if (arrow.Way == 0)
-			arrow.Offset = new(0, offset);
-		if (arrow.Way == 1)
-			arrow.Offset = new(offset, 0);
-		if (arrow.Way == 2)
-			arrow.Offset = new(0, offset);
-		if (arrow.Way == 3)
-			arrow.Offset = new(offset, 0);
-	}
+		0 => new Vector2(0, offset),
+		1 => new Vector2(offset, 0),
+		2 => new Vector2(0, offset),
+		3 => new Vector2(offset, 0),
+		_ => arrow.Offset
+	};
 }

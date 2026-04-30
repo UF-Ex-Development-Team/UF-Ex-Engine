@@ -2,6 +2,8 @@
 
 namespace UndyneFight_Ex.Shapes;
 
+//Can you tell I love Math
+
 /// <summary>
 /// Interface for shapes
 /// </summary>
@@ -97,7 +99,19 @@ public struct DrawingData
 public struct Triangle(Vector2 v1, Vector2 v2, Vector2 v3) : IShape
 {
 	/// <inheritdoc/>
-	public Vector2[] Vertices { get; set; } = [v1, v2, v3];
+	public Vector2[] Vertices {
+		readonly get => _vertices;
+		set	{
+			_vertices = value;
+			//Cache computed values for optimization
+			A = (Vertices[1] - Vertices[0]).Length();
+			B = (Vertices[2] - Vertices[1]).Length();
+			C = (Vertices[0] - Vertices[2]).Length();
+			Semiperimeter = (A + B + C) / 2;
+			Inradius = float.Sqrt((Semiperimeter - A) * (Semiperimeter - B) * (Semiperimeter - C) / Semiperimeter);
+		}
+	}
+	private Vector2[] _vertices { get; set; } = [v1, v2, v3];
 	private float _rotation;
 	/// <inheritdoc/>
 	public float Rotation
@@ -118,10 +132,9 @@ public struct Triangle(Vector2 v1, Vector2 v2, Vector2 v3) : IShape
 	{
 		if (shape is Triangle or Rectangle)
 		{
-			for (int i = 0; i < 3; i++)
-				foreach (Vector2 vertex in shape.Vertices)
-					if (!InTriangle(Vertices[0], Vertices[1], Vertices[2], vertex))
-						return false;
+			foreach (Vector2 vertex in shape.Vertices)
+				if (!InTriangle(Vertices[0], Vertices[1], Vertices[2], vertex))
+					return false;
 			return true;
 		}
 		else if (shape is Circle circ)
@@ -138,14 +151,16 @@ public struct Triangle(Vector2 v1, Vector2 v2, Vector2 v3) : IShape
 		return false;
 	}
 	//The length of the sides of the triangle denoted by triangle ABC
-	private readonly float A => (Vertices[1] - Vertices[0]).Length();
-	private readonly float B => (Vertices[2] - Vertices[1]).Length();
-	private readonly float C => (Vertices[0] - Vertices[2]).Length();
+	private float A, B, C;
+	/// <summary>
+	/// The semiperimeter of the triangle
+	/// </summary>
+	public float Semiperimeter;
 	/// <summary>
 	/// Radius of the inscribed circle
 	/// <see href="https://en.wikipedia.org/wiki/Incircle_and_excircles"/>
 	/// </summary>
-	public readonly float Inradius => float.Sqrt((B + C - A) * (A + C - B) * (A + B - C) / (A + B + C) / 4);
+	public float Inradius;
 	/// <inheritdoc/>
 	public readonly void Draw()
 	{
@@ -185,14 +200,7 @@ public struct Triangle(Vector2 v1, Vector2 v2, Vector2 v3) : IShape
 	/// <summary>
 	/// Gets the incenter of the triangle
 	/// </summary>
-	public readonly Vector2 Incenter
-	{
-		get
-		{
-			float A = (Vertices[1] - Vertices[0]).Length(), B = (Vertices[2] - Vertices[1]).Length(), C = (Vertices[0] - Vertices[2]).Length();
-			return (A * Vertices[0] + B * Vertices[1] + C * Vertices[2]) / (A + B + C);
-		}
-	}
+	public readonly Vector2 Incenter => (A * Vertices[0] + B * Vertices[1] + C * Vertices[2]) / (A + B + C);
 	#region Operators
 	/// <summary>
 	/// Offsets the triangle by the given vector
@@ -285,10 +293,9 @@ public struct Rectangle : IShape
 	{
 		if (shape is Triangle or Rectangle)
 		{
-			for (int i = 0; i < 4; i++)
-				foreach (Vector2 vertex in shape.Vertices)
-					if (!InTriangle(Vertices[0], Vertices[1], Vertices[2], vertex) && !InTriangle(Vertices[1], Vertices[2], Vertices[0], vertex))
-						return false;
+			foreach (Vector2 vertex in shape.Vertices)
+				if (!InTriangle(Vertices[0], Vertices[1], Vertices[2], vertex) && !InTriangle(Vertices[1], Vertices[2], Vertices[0], vertex))
+					return false;
 			return true;
 		}
 		else if (shape is Circle circ)
@@ -500,15 +507,18 @@ public struct Circle : IShape
 	{
 		if (shape is Triangle or Rectangle)
 		{
+			//If a vertex of the shape is outside, then it is not contained
 			for (int i = 0; i < shape.Vertices.Length; i++)
 				if ((shape.Vertices[i] - Center).Length() >= Radius)
 					return false;
 		}
 		else if (shape is Circle circ)
 		{
-			return (circ.Center - Center).Length() < Radius + circ.Radius;
+			//If furthest distance the contained circle can be is when the two circles are touching each other internally,
+			//meaning the distance between the centers + the smaller radius can only at most be the larger radius
+			return (circ.Center - Center).Length() + circ.Radius <= Radius;
 		}
-		return true;
+		return false;
 	}
 	/// <inheritdoc/>
 	public readonly void Draw()
@@ -517,7 +527,7 @@ public struct Circle : IShape
 		{
 			for (int i = 0; i < Resolution; i++)
 			{
-				DrawingLab.DrawLineColors(Center + GetVector2(Radius, Rotation + i * 360 / Resolution), Center + GetVector2(Radius, Rotation + (i + 1) * 360 / Resolution), DrawData.Width, [DrawData.BlendArray[(i + 1) % Resolution], DrawData.BlendArray[i], DrawData.BlendArray[i], DrawData.BlendArray[(i + 1) % Resolution]], DrawData.Depth);
+				DrawingLab.DrawLineColors(Center + GetVector2(Radius, Rotation + i * 360 / Resolution),Center + GetVector2(Radius, Rotation + (i + 1) * 360 / Resolution), DrawData.Width, [DrawData.BlendArray[(i + 1) % Resolution], DrawData.BlendArray[i], DrawData.BlendArray[i], DrawData.BlendArray[(i + 1) % Resolution]], DrawData.Depth);
 			}
 		}
 		else if (DrawData.DrawingMode == DrawingData.DrawMode.Filled)
@@ -531,15 +541,9 @@ public struct Circle : IShape
 	/// <inheritdoc/>
 	public readonly bool IntersectsWith(IShape shape)
 	{
-		if (shape is Triangle tri)
-			return (Center - tri.Incenter).Length() + Radius <= tri.Inradius;
-		else if (shape is Rectangle rect)
-		{
-			//For it to intersect, the line must be not contained by the circle, so distance < radius and both ends not simultaneously inscribed
-			for (int i = 0; i < 4; i++)
-				if (DistanceToLine(Center, rect.Vertices[i], rect.Vertices[(i + 1) % 4]) < Radius && ((rect.Vertices[i] - Center).Length() > Radius || (rect.Vertices[(i + 1) % 4] - Center).Length() > Radius))
-					return true;
-		}
+		//Surprise
+		if (shape is Triangle or Rectangle)
+			return shape.IntersectsWith(this);
 		else if (shape is Circle circ)
 		{
 			float dist = (Center - circ.Center).Length();

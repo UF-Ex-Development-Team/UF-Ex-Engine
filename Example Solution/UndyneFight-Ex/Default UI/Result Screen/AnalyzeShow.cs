@@ -1,7 +1,6 @@
 ﻿using static System.MathF;
 using static UndyneFight_Ex.DrawingLab;
 using static UndyneFight_Ex.Entities.Player;
-using static UndyneFight_Ex.GlobalResources.Font;
 
 namespace UndyneFight_Ex.Entities;
 
@@ -15,7 +14,6 @@ internal partial class StateShower
 			public bool Enabled { get; internal set; }
 
 			private readonly Analyzer analyzer;
-
 			public AnalyzeShow(Analyzer analyzer)
 			{
 				Depth = 0.3f;
@@ -71,9 +69,7 @@ internal partial class StateShower
 				{
 					float v = 0;
 					for (int j = 0; j < 6; j++)
-					{
 						v += remarkCount[i, j];
-					}
 					remarkHeightMax = Max(remarkHeightMax, v);
 					remarkTotal[i] = v;
 				}
@@ -105,8 +101,7 @@ internal partial class StateShower
 
 			private float remarkHeightMax = 0;
 			[MethodImpl(MethodImplOptions.AggressiveInlining)]
-			private static float PosLerp(float lPos, float rPos, float lTime, float rTime, float curTime) =>
-				(rPos - lPos) * ((curTime - lTime) / (rTime - lTime)) + lPos;
+			private static float PosLerp(float lPos, float rPos, float lTime, float rTime, float curTime) => (rPos - lPos) * ((curTime - lTime) / (rTime - lTime)) + lPos;
 			public override void Draw()
 			{
 				if (!Enabled)
@@ -168,9 +163,8 @@ internal partial class StateShower
 				DrawLine(new Vector2(graphL - 4, centreY), new Vector2(graphR, centreY), 2, Color.Lerp(Color.Transparent, Color.Silver, Alpha), 0.99f);
 
 				lastX = graphL;
-
-				FightFont.Draw("early", new Vector2(graphL + 2, centreY + 5), Color.Lerp(Color.Transparent, Color.Orange, Alpha), MathF.PI / 2, 0.6f, 0.99f);
-				FightFont.Draw("late", new Vector2(graphL + 2, centreY - 42), Color.Lerp(Color.Transparent, Color.Violet, Alpha), MathF.PI / 2, 0.6f, 0.99f);
+				Localization.DrawLocalizedText("ResultScreen.Early", new Vector2(graphL + 2, centreY + 5), null, "FightFont", new(0.6f), Color.Lerp(Color.Transparent, Color.Orange, Alpha), PI / 2, 0.99f);
+				Localization.DrawLocalizedText("ResultScreen.Late", new Vector2(graphL + 2, centreY - 42), null, "FightFont", new(0.6f), Color.Lerp(Color.Transparent, Color.Violet, Alpha), PI / 2, 0.99f);
 
 				float lastY = averageDelta[0], lastYP = averagePositiveDelta[0], lastYN = averageNegativeDelta[0];
 				for (int i = 1; i < SplitCount; i++)
@@ -181,16 +175,13 @@ internal partial class StateShower
 					yp = float.Clamp(yp, -5, 5);
 					yn = float.Clamp(yn, -5, 5);
 
-					DrawLine(new Vector2(lastX, lastY * 10 + centreY), new Vector2(x, y1 * 10 + centreY),
-						1, Color.Lerp(Color.Transparent, Color.White, Alpha), 0.5f);
+					DrawLine(new Vector2(lastX, lastY * 10 + centreY), new Vector2(x, y1 * 10 + centreY), 1, Color.Lerp(Color.Transparent, Color.White, Alpha), 0.5f);
 
 					if (Abs(yp) > 0.01f || Abs(lastYP) > 0.01f)
-						DrawLine(new Vector2(lastX, lastYP * 10 + centreY), new Vector2(x, yp * 10 + centreY),
-							1, Color.Lerp(Color.Transparent, Color.Orange, Alpha), 0.55f);
+						DrawLine(new Vector2(lastX, lastYP * 10 + centreY), new Vector2(x, yp * 10 + centreY), 1, Color.Lerp(Color.Transparent, Color.Orange, Alpha), 0.55f);
 
 					if (Abs(yn) > 0.01f || Abs(lastYN) > 0.01f)
-						DrawLine(new Vector2(lastX, lastYN * 10 + centreY), new Vector2(x, yn * 10 + centreY),
-							1, Color.Lerp(Color.Transparent, Color.Violet, Alpha), 0.55f);
+						DrawLine(new Vector2(lastX, lastYN * 10 + centreY), new Vector2(x, yn * 10 + centreY), 1, Color.Lerp(Color.Transparent, Color.Violet, Alpha), 0.55f);
 
 					lastY = y1;
 					lastYP = yp;
@@ -199,7 +190,6 @@ internal partial class StateShower
 					lastX = x;
 				}
 			}
-
 			public override void Update() { }
 		}
 	}

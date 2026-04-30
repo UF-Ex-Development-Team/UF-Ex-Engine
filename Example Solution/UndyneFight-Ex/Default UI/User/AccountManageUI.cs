@@ -207,30 +207,30 @@ internal partial class AccountManager : Selector
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		private static void Change()
 		{
-			switch (GameRule.NameColor)
+			switch (NameColor)
 			{
 				case "White":
-					GameRule.NameColor = "Blue";
+					NameColor = "Blue";
 					break;
 				case "Blue":
-					GameRule.NameColor = (PlayerManager.PlayerSkill >= 75) ?
+					NameColor = (PlayerManager.PlayerSkill >= 75) ?
 					"Orange" : "White";
 					break;
 				case "Orange":
-					GameRule.NameColor = (PlayerManager.PlayerSkill >= 90) ?
+					NameColor = (PlayerManager.PlayerSkill >= 90) ?
 					"Colorful" : "White";
 					break;
 				case "Colorful":
-					GameRule.NameColor = "White";
+					NameColor = "White";
 					break;
 			}
 		}
-		public ChangeColor() : base("Current name color: " + GameRule.NameColor, new Vector2(320, instance.SelectionCount * 50 + 110)) => MaxSize = 1.2f;
+		public ChangeColor() : base("Current name color: " + NameColor, new Vector2(320, instance.SelectionCount * 50 + 110)) => MaxSize = 1.2f;
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public override void SelectionEvent()
 		{
 			Change();
-			texts = "Current name color: " + GameRule.NameColor;
+			texts = "Current name color: " + NameColor;
 			base.SelectionEvent();
 		}
 	}

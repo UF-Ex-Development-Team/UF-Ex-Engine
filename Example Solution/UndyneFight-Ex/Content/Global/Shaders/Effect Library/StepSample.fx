@@ -39,21 +39,21 @@ float4 localToColor(sampler2D samplerTexture, float2 Position)
 
 float4 MainPS(VertexShaderOutput input) : COLOR
 {
-    float2 v_vPosition = input.TextureCoordinates * SIZESURFACE;
-    float2 direction = normalize(iLightPos - v_vPosition);
-    float2 current_step = v_vPosition;
+	float2 v_vPosition = input.TextureCoordinates * SIZESURFACE;
+	float2 direction = normalize(iLightPos - v_vPosition);
+	float2 current_step = v_vPosition;
 	
-    float3 total = 0;
-    for( int i = 0; i < int(amount); i ++ )
-    {
-        float3 result = localToColor(SpriteTextureSampler, current_step).xyz;
-        
-        total += result;
-        current_step -= direction * iDistance;
-    }
-    
-    total /= amount * iSampling;
-    return input.Color * float4(total, 1.0);
+	float3 total = 0;
+	for( int i = 0; i < int(amount); i++ )
+	{
+		float3 result = localToColor(SpriteTextureSampler, current_step).xyz;
+		
+		total += result;
+		current_step -= direction * iDistance;
+	}
+	
+	total /= amount * iSampling;
+	return input.Color * float4(total, 1.0);
 }
 
 technique SpriteDrawing

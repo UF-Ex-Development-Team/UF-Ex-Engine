@@ -14,7 +14,7 @@ Texture2D SpriteTexture;
 
 sampler2D SpriteTextureSampler = sampler_state
 {
-    Texture = <SpriteTexture>;
+	Texture = <SpriteTexture>;
 };
 
 
@@ -27,17 +27,12 @@ struct VertexShaderOutput
 
 float4 NeonlineGetColor(float2 _xy, float1 time, float4 using_color)
 {
-    return using_color * max(0, min(1,
-		(sin(((_xy.y + time / 250.0) * 103.0 + time / 90.0) * 4.0) *
-		sin((_xy.y * 64.0 - time / 50.0) * 2.0) -
-		sin(((_xy.y + time / 450.0) * 52.0 + time / 70.0) * 3.0) -
-		cos((_xy.y * 49.0 - time / 30.0) * 3.0)
-		) * 0.6 + 0.1));
+	return using_color * saturate((sin(412.0 * _xy.y + 1.6924 * time) * sin(128.0 * _xy.y - 0.04 * time) - sin(156.0 * _xy.y + 0.3895 * time) - cos(147.0 * _xy.y - 0.1 * time)) * 0.6 + 0.1);
 }
 
 float4 MainPS(VertexShaderOutput input) : COLOR
 {
-    return tex2D(SpriteTextureSampler, input.TextureCoordinates) + NeonlineGetColor(input.TextureCoordinates, maintime, maincolor);
+	return tex2D(SpriteTextureSampler, input.TextureCoordinates) + NeonlineGetColor(input.TextureCoordinates, maintime, maincolor);
 }
 
 technique SpriteDrawing

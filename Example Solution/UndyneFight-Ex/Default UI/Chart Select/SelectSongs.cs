@@ -460,7 +460,7 @@ internal class SongSelector : Selector
 			if (wave.Attributes != null && wave.Attributes.Hidden)
 				continue;
 
-			string name = wave.Attributes.DisplayName == "" ? wave.FightName : wave.Attributes.DisplayName;
+			string name = GlobalData.GetWavesetDisplayName(wave);
 
 			string filePath = $"Content\\Musics\\{wave.Music}";
 
@@ -901,9 +901,7 @@ internal class DifficultySelector : Selector
 	}
 	private void DrawInformation()
 	{
-		string DisplayName = wave.FightName;
-		if (!string.IsNullOrEmpty(wave.Attributes?.DisplayName))
-			DisplayName = wave.Attributes.DisplayName;
+		string DisplayName = GlobalData.GetWavesetDisplayName(wave);
 		DisplayName = Abbreviation(DisplayName, time += 2);
 		if (!SongSelector.IsRaceSong)
 		{

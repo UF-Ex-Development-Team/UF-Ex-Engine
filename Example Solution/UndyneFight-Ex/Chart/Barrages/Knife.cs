@@ -41,7 +41,7 @@ public class Knife : Barrage
 	/// <param name="delay">The duration of the warning</param>
 	/// <param name="centre">The centre of the beam</param>
 	/// <param name="rot">The rotation of the beam</param>
-	public Knife(float delay, Vector2 centre, float rot) : this(delay, SimplifiedEasing.Stable(0, centre), SimplifiedEasing.Stable(0, rot)) { }
+	public Knife(float delay, Vector2 centre, float rot) : this(delay, (s) => centre, (s) => rot) { }
 	/// <summary>
 	/// The appear time of the knife beam
 	/// </summary>
@@ -65,18 +65,10 @@ public class Knife : Barrage
 	{
 		if (AppearTime < delay)
 			return;
-		float A, B, C, dist;
 		bool needAP = ((CurrentScene as FightScene).Mode & GameMode.PerfectOnly) != 0;
-		if (Rotation % 90 is < 0.1f or > 89.9f)
-			dist = Centre.X - player.Centre.X;
-		else
-		{
-			float k = float.Tan(MathUtil.GetRadian(Rotation));
-			A = k;
-			B = -1;
-			C = -A * Centre.X - B * Centre.Y;
-			dist = (A * player.Centre.X + B * player.Centre.Y + C) / float.Sqrt(A * A + B * B);
-		}
+		float dist = Rotation % 90 is < 0.1f or > 89.9f
+			? Centre.X - player.Centre.X //Compute directly if is parallel
+			: MathUtil.ScalarProject(new(float.Tan(MathUtil.GetRadian(Rotation)), -1), player.Centre - Centre);
 
 		float res = Math.Abs(dist) - 2 - 8.5f * scale;
 

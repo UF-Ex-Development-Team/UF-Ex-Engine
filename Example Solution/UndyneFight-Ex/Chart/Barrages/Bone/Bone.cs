@@ -310,7 +310,7 @@ public class SideCircleBone : Bone
 			  dist2 = r / cosV - 3;
 
 		if (appearTime > duration)
-			dist1 += MathF.Pow(appearTime - duration, 2) / 3;
+			dist1 += (appearTime - duration) * (appearTime - duration) / 3;
 		float dist = (dist1 + dist2) / 2;
 
 		Length = dist2 - dist1;

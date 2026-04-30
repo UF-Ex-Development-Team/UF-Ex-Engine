@@ -1,6 +1,5 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using static UndyneFight_Ex.DrawingLab;
-using static UndyneFight_Ex.GlobalResources.Font;
 
 namespace UndyneFight_Ex.Entities;
 
@@ -22,8 +21,8 @@ internal class RatingShowing : Entity
 	/// <summary>
 	/// Player Name
 	/// </summary>
-	private string name = "";
-	private bool enabled = false;
+	private string name = string.Empty;
+	private static bool enabled => PlayerManager.CurrentUser != null;
 	/// <summary>
 	/// Special Color for user (Rating)
 	/// </summary>
@@ -35,6 +34,7 @@ internal class RatingShowing : Entity
 	public float MedalAlpha = 1;
 	public override void Draw()
 	{
+		GLFont NormalFont = Localization.GetFont("NormalFont");
 		if (!enabled)
 			return;
 		Depth = 0.99f;
@@ -47,36 +47,35 @@ internal class RatingShowing : Entity
 			1, special, 0.2f);
 		NormalFont.Draw(name, new Vector2(5, 10) + collidingBox.TopLeft, Color.White, 0.8f, 0.4f);
 		NormalFont.Draw(SkillString, new Vector2(5, 38) + collidingBox.TopLeft, SkillColor, 0.8f, 0.4f);
-		NormalFont.Draw($"Coins:{CoinString}G", new Vector2(8, -14) + collidingBox.TopLeft, CoinColor, 0.72f, 0.4f);
+		NormalFont.Draw(Localization.GetText("RatingBox.Coins", CoinString), new Vector2(8, -14) + collidingBox.TopLeft, CoinColor, 0.72f, 0.4f);
 
 		Vector2 centre = ImageCentre;
 		centre.Ceiling();
 		Depth = 0.98f;
-		if (skill >= 60)
-		{
-			FormalDraw(skill > 90 ? starMedal : Image, new Vector2(-12, 30) + collidingBox.TopRight, Color.White * MedalAlpha, 0, centre);
-			if (skill >= 70)
-			{
-				FormalDraw(skill > 92.5f ? starMedal : Image, new Vector2(-37, 30) + collidingBox.TopRight, Color.White * MedalAlpha, 0, centre);
-				if (skill >= 80)
-					FormalDraw(skill > 95f ? starMedal : Image, new Vector2(-62, 30) + collidingBox.TopRight, Color.White * MedalAlpha, 0, centre);
-			}
-		}
+		if (skill < 60)
+			return;
+		FormalDraw(skill > 90 ? starMedal : Image, new Vector2(-12, 30) + collidingBox.TopRight, Color.White * MedalAlpha, 0, centre);
+		if (skill < 70)
+			return;
+		FormalDraw(skill > 92.5f ? starMedal : Image, new Vector2(-37, 30) + collidingBox.TopRight, Color.White * MedalAlpha, 0, centre);
+		if (skill >= 80)
+			FormalDraw(skill > 95f ? starMedal : Image, new Vector2(-62, 30) + collidingBox.TopRight, Color.White * MedalAlpha, 0, centre);
 	}
 
 	private readonly Color[] SkillColors = [Color.Lime, Color.LawnGreen, Color.Blue, Color.MediumPurple, Color.Red, Color.OrangeRed, Color.Orange, Color.Gold];
 	public override void Update()
 	{
-		if (!(enabled = PlayerManager.CurrentUser != null))
+		if (!enabled)
 			return;
 		name = PlayerManager.CurrentUser.PlayerName;
 		skill = PlayerManager.PlayerSkill;
-		if (skill >= 20)
-			for (int i = 2; i < 9; i++)
-			{
-				if (skill >= i * 10)
-					special = SkillColors[i - 2];
-			}
+		for (int i = 2; i < 9; i++)
+		{
+			if (skill >= i * 10)
+				special = SkillColors[i - 2];
+			else
+				break;
+		}
 		if (string.IsNullOrEmpty(SkillString))
 			SkillString = MathUtil.FloatToString(skill, 2);
 		if (string.IsNullOrEmpty(CoinString))

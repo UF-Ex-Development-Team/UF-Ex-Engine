@@ -9,7 +9,6 @@ public partial class Player : Entity
 		private readonly float size;
 		private readonly Color color;
 		private float light = 1.0f;
-
 		public CollideEffect(Color color, float size)
 		{
 			controlLayer = Surface.Hidden;
@@ -472,8 +471,8 @@ public partial class Player : Entity
 			switch (type)
 			{
 				case 1:
-					if (!(CurrentScene as SongFightingScene).GreenSoulUsed)
-						(CurrentScene as SongFightingScene).GreenSoulUsed = true;
+					if (!CurrentFightingScene.GreenSoulUsed)
+						CurrentFightingScene.GreenSoulUsed = true;
 					break;
 				case 2:
 					jumpTimeLeft = JumpTimeLimit;
@@ -522,8 +521,7 @@ public partial class Player : Entity
 			}
 
 			controllingBox.InstanceMove(new CollideRect(controllingBox.Vertices[0].CurrentPosition, controllingBox.Vertices[2].CurrentPosition - controllingBox.Vertices[0].CurrentPosition));
-			mergeTime++;
-			if (mergeTime == 25)
+			if (++mergeTime == 25)
 				Dispose();
 		}
 
@@ -604,12 +602,11 @@ public partial class Player : Entity
 		public void InstantTP(Vector2 mission)
 		{
 			Centre = mission;
-			if (Shields != null)
-			{
-				Shields.Circle.Centre = mission;
-				Shields.RShield.Centre = mission;
-				Shields.BShield.Centre = mission;
-			}
+			if (Shields == null)
+				return;
+			Shields.Circle.Centre = mission;
+			Shields.RShield.Centre = mission;
+			Shields.BShield.Centre = mission;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -624,7 +621,7 @@ public partial class Player : Entity
 		/// </summary>
 		/// <param name="duration">The duration to set the angle of the soul for</param>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public void FollowScreen(float duration) => AddInstance(new TimeRangedEvent(duration, () => InstantSetRotation(ScreenDrawing.ScreenAngle)) { UpdateIn120 = true });
+		public void FollowScreen(float duration) => DelayEventProcessor.AddTimeRangedEvent(0, () => InstantSetRotation(ScreenDrawing.ScreenAngle), duration, true);
 		#endregion
 
 		/// <inheritdoc/>

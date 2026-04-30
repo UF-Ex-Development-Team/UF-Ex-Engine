@@ -42,7 +42,7 @@ public partial class Line
 	/// </summary>
 	/// <param name="v">The delay before disposing</param>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public void DelayDispose(float v) => AddChild(new InstantEvent(v, Dispose));
+	public void DelayDispose(float v) => DelayEventProcessor.AddInstantEvent(v, Dispose);
 	/// <summary>
 	/// The retention effect of the line
 	/// </summary>
@@ -88,7 +88,9 @@ public partial class Line
 		{
 			if (!available || alpha <= 0)
 				return;
+			//The line itself
 			DrawTargetLine(vec1, vec2);
+			//The mirrored lines
 			if (verticalMirror)
 				DrawTargetLine(new Vector2(vec1.X, 480 - vec1.Y), new Vector2(vec2.X, 480 - vec2.Y));
 			if (transverseMirror)
@@ -98,7 +100,9 @@ public partial class Line
 
 			if (!verticalLine)
 				return;
+			//The vertical line itself
 			DrawTargetLine(new Vector2(560 - vec1.Y, vec1.X - 80), new Vector2(560 - vec2.Y, vec2.X - 80));
+			//The vertical mirrored lines
 			if (transverseMirror)
 				DrawTargetLine(new Vector2(640 - (560 - vec1.Y), vec1.X - 80), new Vector2(640 - (560 - vec2.Y), vec2.X - 80));
 			if (verticalMirror)
@@ -115,12 +119,8 @@ public partial class Line
 		/// <inheritdoc/>
 		public override void Update()
 		{
-			if (!follow.storer.DataStore.TryGetValue(follow.AppearTime - timeLag, out LineState value))
-			{
-				available = false;
+			if (!(available = follow.storer.DataStore.TryGetValue(follow.AppearTime - timeLag, out LineState value)))
 				return;
-			}
-			available = true;
 			vec1 = value.p1;
 			vec2 = value.p2;
 			alpha = alphaGenerator(value.alpha);

@@ -50,27 +50,29 @@ public static partial class GameStates
 	private static class GameRenderProductions
 	{
 		private static RenderTarget2D normalTarget1, normalTarget2, bufferTarget;
+		/// <summary>
+		/// The shader for buffed mode
+		/// </summary>
 		public class RenderBackGround : RenderProduction, IDisposable
 		{
 			public RenderBackGround() : base(GlobalResources.Effects.backGroundShader, SpriteSortMode.Immediate, BlendState.AlphaBlend, 0.05f)
 			{
-				normalTarget1 = new RenderTarget2D(WindowDevice, (int)(480 * GameMain.Aspect * SurfaceScale), (int)(480 * SurfaceScale), false, SurfaceFormat.Color, DepthFormat.None);
-				normalTarget2 = new RenderTarget2D(WindowDevice, (int)(480 * GameMain.Aspect * SurfaceScale), (int)(480 * SurfaceScale), false, SurfaceFormat.Color, DepthFormat.None);
+				int defScale = (int)(480 * SurfaceScale);
+				normalTarget1 = new RenderTarget2D(WindowDevice, (int)(defScale * GameMain.Aspect), defScale, false, SurfaceFormat.Color, DepthFormat.None);
+				normalTarget2 = new RenderTarget2D(WindowDevice, (int)(defScale * GameMain.Aspect), defScale, false, SurfaceFormat.Color, DepthFormat.None);
 			}
 
 			[MethodImpl(MethodImplOptions.AggressiveInlining)]
 			public override void WindowSizeChanged(Vector2 vec)
 			{
 				Vector4 extending = Vector4.Zero;
-
 				Point p = new((int)vec.X, (int)(vec.Y * (extending.W + extending.Y + 1)));
 				if (normalTarget1 == null || p != normalTarget1.Bounds.Size)
 				{
 					normalTarget1 = new RenderTarget2D(WindowDevice, p.X, p.Y, false, SurfaceFormat.Color, DepthFormat.None);
 					normalTarget2 = new RenderTarget2D(WindowDevice, p.X, p.Y, false, SurfaceFormat.Color, DepthFormat.None);
 				}
-				extending = CurrentScene != null ? CurrentScene.CurrentDrawingSettings.Extending : Vector4.Zero;
-
+				extending = CurrentScene?.CurrentDrawingSettings.Extending ?? Vector4.Zero;
 				bufferTarget = new RenderTarget2D(WindowDevice, (int)vec.X, (int)(vec.Y * (extending.W + extending.Y + 1)), false, SurfaceFormat.Color, DepthFormat.None);
 			}
 
@@ -86,8 +88,7 @@ public static partial class GameStates
 				Vector4 vec = Fight.Functions.ScreenDrawing.BoundDistance;
 				if (CurrentScene is FightScene fightScene && (fightScene.Mode & SongSystem.GameMode.Buffed) != 0 && fightScene.PlayerInstance != null)
 				{
-					float scale = fightScene.PlayerInstance.hpControl.LostSpeed / 3 - 0.125f;
-					scale = MathHelper.Clamp(scale, 0, 0.5f) + fightScene.PlayerInstance.hpControl.Under1HPScale * 0.5f;
+					float scale = MathHelper.Clamp(fightScene.PlayerInstance.hpControl.LostSpeed / 3 - 0.125f, 0, 0.5f) + fightScene.PlayerInstance.hpControl.Under1HPScale * 0.5f;
 					vec.Y = float.Lerp(vec.Y, 100, scale * 0.9f);
 					vec.W = float.Lerp(vec.W, 100, scale * 0.9f);
 				}
@@ -98,10 +99,9 @@ public static partial class GameStates
 			{
 				Vector4 vec = Fight.Functions.ScreenDrawing.BoundColor.ToVector4();
 
-				if (CurrentScene is FightScene FScene && (FScene.Mode & SongSystem.GameMode.Buffed) != 0 && FScene.PlayerInstance != null)
+				if (CurrentScene is FightScene fightScene && (fightScene.Mode & SongSystem.GameMode.Buffed) != 0 && fightScene.PlayerInstance != null)
 				{
-					float scale = FScene.PlayerInstance.hpControl.LostSpeed / 3 - 0.125f;
-					scale = MathHelper.Clamp(scale, 0, 0.5f) + FScene.PlayerInstance.hpControl.Under1HPScale * 0.5f;
+					float scale = MathHelper.Clamp(fightScene.PlayerInstance.hpControl.LostSpeed / 3 - 0.125f, 0, 0.5f) + fightScene.PlayerInstance.hpControl.Under1HPScale * 0.5f;
 					vec = Vector4.Lerp(vec, Color.DarkRed.ToVector4(), scale * 0.9f);
 				}
 				return vec;
@@ -124,10 +124,8 @@ public static partial class GameStates
 				return MissionTarget;
 			}
 		}
-		public class RenderEntities : RenderProduction
+		public class RenderEntities() : RenderProduction(null, SpriteSortMode.FrontToBack, BlendState.AlphaBlend, 0.1f)
 		{
-			public RenderEntities() : base(null, SpriteSortMode.FrontToBack, BlendState.AlphaBlend, 0.1f) { }
-
 			public override RenderTarget2D Draw(RenderTarget2D obj)
 			{
 				MissionTarget = bufferTarget;
@@ -137,10 +135,11 @@ public static partial class GameStates
 				return missionScene.DrawAll(bufferTarget);
 			}
 		}
-		public class OutScreenShader : RenderProduction
+		/// <summary>
+		/// The shader for the flicker effect
+		/// </summary>
+		public class OutScreenShader() : RenderProduction(null, SpriteSortMode.Immediate, BlendState.AlphaBlend, 0.15f)
 		{
-			public OutScreenShader() : base(null, SpriteSortMode.Immediate, BlendState.AlphaBlend, 0.15f) { }
-
 			private Color flickerColor;
 			private float alpha = 0;
 
@@ -156,23 +155,20 @@ public static partial class GameStates
 				}
 				if (Fight.Functions.ScreenDrawing.whiteOutRest > 0)
 				{
-					float scale = MathF.Min(0.955f, Fight.Functions.ScreenDrawing.SceneOutScale / (Fight.Functions.ScreenDrawing.whiteOutRest--));
+					float scale = MathF.Min(0.955f, Fight.Functions.ScreenDrawing.SceneOutScale / Fight.Functions.ScreenDrawing.whiteOutRest--);
 					alpha = alpha * (1 - scale) + scale;
 				}
 				else
-				{
 					alpha *= 0.86f;
-				}
 				flickerColor = Fight.Functions.ScreenDrawing.flickerColor;
 			}
 			public override RenderTarget2D Draw(RenderTarget2D obj)
 			{
 				float alp = alpha;
 				Color col = flickerColor;
-				if (CurrentScene is FightScene && ((CurrentScene as FightScene).Mode & SongSystem.GameMode.Buffed) != 0 && (CurrentScene as FightScene).PlayerInstance != null)
+				if (CurrentScene is FightScene fightScene && (fightScene.Mode & SongSystem.GameMode.Buffed) != 0 && fightScene.PlayerInstance != null)
 				{
-					float scale = (CurrentScene as FightScene).PlayerInstance.hpControl.LostSpeed / 3 - 0.125f;
-					scale = MathHelper.Clamp(scale, 0, 0.5f) + (CurrentScene as FightScene).PlayerInstance.hpControl.Under1HPScale * 0.3f;
+					float scale = MathHelper.Clamp(fightScene.PlayerInstance.hpControl.LostSpeed / 3 - 0.125f, 0, 0.5f) + fightScene.PlayerInstance.hpControl.Under1HPScale * 0.3f;
 					alp = float.Lerp(alp, 0.8f, scale);
 					col = Color.Lerp(alpha < 0.05f ? Color.Transparent : col, Color.DarkRed, scale * 1.2f);
 				}
@@ -184,6 +180,9 @@ public static partial class GameStates
 				return MissionTarget;
 			}
 		}
+		/// <summary>
+		/// Blue reduction shader
+		/// </summary>
 		public class AntiBlueProduction() : RenderProduction(GlobalResources.Effects.reduceBlueShader, SpriteSortMode.Immediate, BlendState.Opaque, 0.25f)
 		{
 			public override RenderTarget2D Draw(RenderTarget2D obj)

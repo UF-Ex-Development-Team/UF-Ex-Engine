@@ -250,7 +250,7 @@ public class TextSelection(string texts, vec2 centre) : Entity, ISelectAble
 		private readonly string texts = s.texts;
 		private float alpha = s.alpha, size = s.size * s.currentSize;
 		private col showingColor = col.Lerp(s.showingColor, col.Gold, 0.5f);
-		public override void Draw() => FightResources.Font.NormalFont.CentreDraw(texts, s.Centre, showingColor * alpha, size, 0.9f);
+		public override void Draw() => Localization.GetFont("NormalFont").CentreDraw(texts, s.Centre, showingColor * alpha, size, 0.9f);
 
 		public override void Update()
 		{

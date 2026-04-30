@@ -22,7 +22,13 @@ public static class SimplifiedEasing
 		public float[] PositionRouteParam { get; set; }
 
 		public float AppearTime { get; set; } = 0;
+		/// <summary>
+		/// The simulated Vector2 easing value
+		/// </summary>
 		public Vector2 CentrePosition { get; set; }
+		/// <summary>
+		/// The simulated float easing value
+		/// </summary>
 		public float Rotation { get; set; } = 0;
 
 		public override void Update()
@@ -643,8 +649,7 @@ public static class SimplifiedEasing
 	/// <param name="yEase">The easing of the y value (Use <see cref="Stable(float, float)"/> for stable value</param>
 	/// <returns>The combined easing function</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public static EaseUnit<Vector2> Combine(EaseUnit<float> xEase, EaseUnit<float> yEase) =>
-		new(new(xEase.Start, yEase.Start), new(xEase.End, yEase.End), MathF.Max(xEase.Time, yEase.Time), (s) => new(xEase.Easing(s), yEase.Easing(s)));
+	public static EaseUnit<Vector2> Combine(EaseUnit<float> xEase, EaseUnit<float> yEase) => new(new(xEase.Start, yEase.Start), new(xEase.End, yEase.End), MathF.Max(xEase.Time, yEase.Time), (s) => new(xEase.Easing(s), yEase.Easing(s)));
 	/// <summary>
 	/// Returns a sine wave easing
 	/// </summary>
@@ -786,25 +791,25 @@ public static class EasingUtil
 			(s) =>
 			{
 				float cur = Math.Max(0, time - s.AppearTime) / time;
-				return new Vector2(0, cur * cur) * distance;
+				return new Vector2(0, cur * cur * distance);
 			};
 		public static Func<ICustomMotion, Vector2> FromUp(float distance, float time) =>
 			(s) =>
 			{
 				float cur = Math.Max(0, time - s.AppearTime) / time;
-				return new Vector2(0, -cur * cur) * distance;
+				return new Vector2(0, -cur * cur * distance);
 			};
 		public static Func<ICustomMotion, Vector2> FromRight(float distance, float time) =>
 			(s) =>
 			{
 				float cur = Math.Max(0, time - s.AppearTime) / time;
-				return new Vector2(cur * cur, 0) * distance;
+				return new Vector2(cur * cur * distance, 0);
 			};
 		public static Func<ICustomMotion, Vector2> FromLeft(float distance, float time) =>
 			(s) =>
 			{
 				float cur = Math.Max(0, time - s.AppearTime) / time;
-				return new Vector2(-cur * cur, 0) * distance;
+				return new Vector2(-cur * cur * distance, 0);
 			};
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static Func<ICustomMotion, Vector2> Circle(Vector2 centre, float radius, float roundTime, float startingRotation) => (s) => centre + GetVector2(radius, s.AppearTime / roundTime * 360f + startingRotation);
@@ -1494,6 +1499,7 @@ public static class EasingUtil
 		public static void PushProcess(bool Adjust, Action<Vector2> easeAction, params EaseUnit<Vector2>[] eases)
 		{
 			EaseProcess<Vector2> process = new(Adjust, easeAction);
+			//Deconstruct into time and function pair to avoid overhead
 			(float, EaseUnit<Vector2>)[] easeArray = new (float, EaseUnit<Vector2>)[eases.Length];
 			for (int i = 0; i < eases.Length; i++)
 				easeArray[i] = (eases[i].Time, eases[i]);
@@ -1626,7 +1632,7 @@ public static class EaseLibrary
 	}
 	#endregion
 	/// <summary>
-	/// Easing library (All are EaseIn functions as EaseOut functions are "1 - EaseIn" and others are combinations of both)
+	/// Easing library (All are EaseIn functions as EaseOut functions are "1 - EaseIn", others are combinations of both)
 	/// </summary>
 	private static readonly Dictionary<string, Func<float, float>> _EasingFunctions = new()
 	{
@@ -1647,9 +1653,9 @@ public static class EaseLibrary
 		[nameof(EaseState.Bounce)] = (x) => x switch
 		{
 			< 1 / 2.75f => 7.5625f * x * x,
-			< 2 / 2.75f => 7.5625f * (x -= (1.5f / 2.75f)) * x + 0.75f,
-			< 2.5f / 2.75f => 7.5625f * (x -= (2.25f / 2.75f)) * x + 0.9375f,
-			_ => 7.5625f * (x -= (2.625f / 2.75f)) * x + 0.984375f
+			< 2 / 2.75f => 7.5625f * (x -= 1.5f / 2.75f) * x + 0.75f,
+			< 2.5f / 2.75f => 7.5625f * (x -= 2.25f / 2.75f) * x + 0.9375f,
+			_ => 7.5625f * (x -= 2.625f / 2.75f) * x + 0.984375f
 		}
 	};
 	/// <summary>

@@ -177,9 +177,9 @@ public abstract class PerfectCollisionBarrage() : Barrage
 				//The displacement vector for the check
 				Displacement = Vector2.Zero;
 		//Oh look, big loop
-		for (int curY = 0; curY < Mask.Height; curY++)
+		for (int curY = 0, Height = Mask.Height; curY < Height; curY++)
 		{
-			for (int curX = 0; curX < Mask.Width; curX++)
+			for (int curX = 0, Width = Mask.Width; curX < Width; curX++)
 			{
 				Vector2 roundedPos = CheckPos + Displacement;
 				//If the pixel is within the destination texture (Array is zero based, therefore the end is not inclusive)
@@ -187,7 +187,7 @@ public abstract class PerfectCollisionBarrage() : Barrage
 				if (roundedPos == Vector2.Clamp(roundedPos, Vector2.Zero, new(15)))
 				{
 					//Get the colors of the overlapped pixels
-					Color SourcePixel = ColorBits[curX + curY * Mask.Width],
+					Color SourcePixel = ColorBits[curX + curY * Width],
 							DestPixel = DestBitData[(int)roundedPos.X + (int)roundedPos.Y * 16];
 					//If source pixel has reached the alpha threshold and the destination pixel is not transparent,
 					if (SourcePixel.A > AlphaThreshold && DestPixel.A > 0)

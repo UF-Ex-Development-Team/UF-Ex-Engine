@@ -30,24 +30,23 @@ struct VertexShaderOutput
 
 float4 localToColor(sampler2D textureSampler, float2 location)//获取表面上一点的颜色值
 {
-    location = fmod(location, SCREEN);
-    return tex2D(textureSampler, location / SCREEN);
+	return tex2D(textureSampler, fmod(location, SCREEN) / SCREEN);
 }
 
 float4 MainPS(VertexShaderOutput input) : COLOR
 {
-    float2 v_vPosition = input.TextureCoordinates * SCREEN;
+	float2 v_vPosition = input.TextureCoordinates * SCREEN;
 	
-    float distort = localToColor(Sampler0, v_vPosition * 0.3149657 + iTime * 0.1) * iDistort;
-    float color = localToColor(Sampler1, float2(v_vPosition.x - iTime * 0.21335, v_vPosition.y + iTime) + distort);
+	float distort = localToColor(Sampler0, v_vPosition * 0.3149657 + iTime * 0.1) * iDistort;
+	float color = localToColor(Sampler1, float2(v_vPosition.x - iTime * 0.21335, v_vPosition.y + iTime) + distort);
 
-    float grand = smoothstep(iHeight, HEIGHT, v_vPosition.y);
-    color += grand * 0.5;
+	float grand = smoothstep(iHeight, HEIGHT, v_vPosition.y);
+	color += grand * 0.5;
 	
-    float color_value = color * min(1.0, color * grand);
-    float color_edge_value = 1.0 - (min(color + iPieceRate, 1.0) - color) / iPieceRate;
+	float color_value = color * min(1.0, color * grand);
+	float color_edge_value = 1.0 - (min(color + iPieceRate, 1.0) - color) / iPieceRate;
 	
-    return float4(input.Color.rgb * (color_value * iBlend + color_edge_value * iBlendEdge), input.Color.a);
+	return float4(input.Color.rgb * (color_value * iBlend + color_edge_value * iBlendEdge), input.Color.a);
 }
 
 technique SpriteDrawing

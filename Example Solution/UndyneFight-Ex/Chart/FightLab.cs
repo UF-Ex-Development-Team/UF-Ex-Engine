@@ -398,7 +398,7 @@ public static partial class Functions
 	/// <param name="tag">The tag to contain</param>
 	/// <returns>The array of objects of the type <typeparamref name="T"/> that contains the <paramref name="tag"/></returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public static T[] GetAll<T>(string tag) where T : GameObject => [.. (from x in Objects where x.ContainTag(tag) select x).OfType<T>()];
+	public static T[] GetAll<T>(string tag) where T : GameObject => [.. Objects.Where(x => x.ContainTag(tag)).OfType<T>()];
 	/// <summary>
 	/// Gets all the objects of the given type
 	/// </summary>
@@ -472,21 +472,21 @@ public static partial class Functions
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	private static void GiveAttribute(Arrow arr, ArrowAttribute attribute)
 	{
-		arr.IsSpeedup = (attribute & ArrowAttribute.SpeedUp) == ArrowAttribute.SpeedUp;
-		arr.IsRotate = (attribute & ArrowAttribute.RotateR) == ArrowAttribute.RotateR;
-		if ((attribute & ArrowAttribute.RotateL) == ArrowAttribute.RotateL)
+		arr.IsSpeedup = (attribute & ArrowAttribute.SpeedUp) != 0;
+		arr.IsRotate = (attribute & ArrowAttribute.RotateR) != 0;
+		if ((attribute & ArrowAttribute.RotateL) != 0)
 		{
 			arr.IsRotate = true;
 			arr.RotateScale = -1f;
 		}
-		if ((attribute & ArrowAttribute.Tap) == ArrowAttribute.Tap)
+		if ((attribute & ArrowAttribute.Tap) != 0)
 			arr.JudgeType = Arrow.JudgementType.Tap;
-		if ((attribute & ArrowAttribute.Hold) == ArrowAttribute.Hold)
+		if ((attribute & ArrowAttribute.Hold) != 0)
 			arr.JudgeType = Arrow.JudgementType.Hold;
-		arr.VoidMode = (attribute & ArrowAttribute.Void) == ArrowAttribute.Void;
-		arr.NoScore = (attribute & ArrowAttribute.NoScore) == ArrowAttribute.NoScore;
-		arr.ForceGreenBack = (attribute & ArrowAttribute.ForceGreen) == ArrowAttribute.ForceGreen;
-		arr.EnableGoldMark = (attribute & ArrowAttribute.NoGoldTag) != ArrowAttribute.NoGoldTag;
+		arr.VoidMode = (attribute & ArrowAttribute.Void) != 0;
+		arr.NoScore = (attribute & ArrowAttribute.NoScore) != 0;
+		arr.ForceGreenBack = (attribute & ArrowAttribute.ForceGreen) != 0;
+		arr.EnableGoldMark = (attribute & ArrowAttribute.NoGoldTag) == 0;
 	}
 
 	/// <summary>
@@ -517,8 +517,10 @@ public static partial class Functions
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static Arrow MakeArrow(float shootShieldTime, int way, float speed, int color, int rotatingType, ArrowAttribute attribute = ArrowAttribute.None)
 	{
-		Arrow arr = new(Heart, shootShieldTime + GametimeF, Posmod(way, 4), speed, color, rotatingType);
-		arr.IsSpeedup = (attribute & ArrowAttribute.SpeedUp) == ArrowAttribute.SpeedUp;
+		Arrow arr = new(Heart, shootShieldTime + GametimeF, Posmod(way, 4), speed, color, rotatingType)
+		{
+			IsSpeedup = (attribute & ArrowAttribute.SpeedUp) != 0
+		};
 		GiveAttribute(arr, attribute);
 		return arr;
 	}

@@ -7,12 +7,9 @@ internal class AchievementResult : Entity
 		// actions
 		SetID(currentList.Count + 1);
 		currentY = targetY;
-
 		collidingBox = new(vec2.Zero, new(156, 76));
-
 		Depth = 0.90f;
 		CrossScene = true;
-
 		currentList.Enqueue(this);
 		this.achievement = achievement;
 		achDesc = achievement.AchievementIntroduction.Length > 17 ? achievement.AchievementIntroduction[..14] + "..." : achievement.AchievementIntroduction;
@@ -32,16 +29,16 @@ internal class AchievementResult : Entity
 	private void SetID(int index) => targetY = 522 - 10 - (id = index) * 85;
 
 	private const int totalTime = 300;
-	private static readonly GLFont font = GlobalResources.Font.NormalFont;
-
+	private static readonly GLFont font = Localization.GetFont("NormalFont");
+	private static readonly float fontScale = Localization.GetFontScale("NormalFont");
 	public override void Draw()
 	{
 		DrawingLab.DrawRectangle(collidingBox, col.White, 2f, Depth + 0.01f);
 		FormalDraw(FightResources.Sprites.pixUnit, collidingBox.ToRectangle(), col.Black);
-		font.LimitDraw("Achievement Unlocked!", collidingBox.TopLeft + new vec2(10, 10), col.White, collidingBox.Size - new vec2(20, 5), 10, 0.4f, Depth + 0.02f);
-		font.LimitDraw(achievement.Title, collidingBox.TopLeft + new vec2(10, 25), col.White, new vec2(collidingBox.Width, 20), 10, 0.5f, Depth + 0.02f);
+		font.LimitDraw(Localization.GetText("Achievement.Unlock"), collidingBox.TopLeft + new vec2(10, 10), col.White, collidingBox.Size - new vec2(20, 5), 10, 0.4f * fontScale, Depth + 0.02f);
+		font.LimitDraw(achievement.Title, collidingBox.TopLeft + new vec2(10, 25), col.White, new vec2(collidingBox.Width, 20), 10, 0.5f * fontScale, Depth + 0.02f);
 		DrawingLab.DrawLine(collidingBox.TopLeft + new vec2(10, 43), collidingBox.TopRight + new vec2(-10, 43), 1, col.Silver, Depth + 0.02f);
-		font.LimitDraw(achDesc, collidingBox.TopLeft + new vec2(10, 50), col.White, new vec2(collidingBox.Width, 20), 10, 0.5f, Depth + 0.02f);
+		font.LimitDraw(achDesc, collidingBox.TopLeft + new vec2(10, 50), col.White, new vec2(collidingBox.Width, 20), 10, 0.5f * fontScale, Depth + 0.02f);
 	}
 
 	public override void Update()

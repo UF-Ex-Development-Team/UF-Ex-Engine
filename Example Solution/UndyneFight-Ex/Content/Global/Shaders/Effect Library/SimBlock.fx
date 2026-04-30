@@ -35,12 +35,14 @@ float4 localToColor(sampler2D textureSampler, float4 textureData, float2 locatio
 
 bool isEmpty(float4 color)
 {
-	return ( ( color.x + color.y + color.z == 0 ) || ( color.w == 0.0 ) );
+	return color.xyz == 0 || color.w == 0;
 }
 
 float2 vec2Rotation(float2 vec, float ang)
 {
-	return float2(vec.x * cos(ang) - vec.y * sin(ang), vec.x * sin(ang) + vec.y * cos(ang));
+	float s, c;
+	sincos(ang, s, c);
+	return float2(vec.x * c - vec.y * s, vec.x * s + vec.y * c);
 }
 
 float4 MainPS(VertexShaderOutput input) : COLOR
@@ -49,7 +51,7 @@ float4 MainPS(VertexShaderOutput input) : COLOR
 	if (!isEmpty(color))
 	{
 		float2 checkPosition = float2(1.0, 0.0);
-		[unroll(32)] for (int i = 0; i < ACCURACY; i += 1)
+		[unroll(ACCURACY)] for (int i = 0; i < ACCURACY; i += 1)
 		{
 			for (float j = 0.; j < 5.0; j += 1.0)
 				if (isEmpty(localToColor(SpriteTextureSampler, textureData, input.TextureCoordinates * iSize + checkPosition * j, iSize)))

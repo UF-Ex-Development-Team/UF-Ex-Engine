@@ -23,7 +23,7 @@ struct VertexShaderOutput
 
 float4 MainPS(VertexShaderOutput input) : COLOR
 {
-    return smoothstep(0, 1, (0.5 - length(input.TextureCoordinates - 0.5)) * 2);
+	return smoothstep(0, 1, 1. - length(input.TextureCoordinates - 0.5) * 2);
 }
 
 technique SpriteDrawing

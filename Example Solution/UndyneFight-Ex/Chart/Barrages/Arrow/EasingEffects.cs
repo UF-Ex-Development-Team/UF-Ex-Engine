@@ -1,5 +1,4 @@
 ﻿using static UndyneFight_Ex.Entities.SimplifiedEasing;
-using static UndyneFight_Ex.Fight.Functions;
 
 namespace UndyneFight_Ex.Entities;
 
@@ -129,13 +128,13 @@ public partial class Arrow : Entity
 			maxIndex = ToArrayIndex(_easingTimeMax) + 1;
 			if (maxIndex > 0)
 			{
-				if (positionEaseEnabled && (positionBuffer == null || maxIndex > positionBuffer.Length))
+				if (positionEaseEnabled && maxIndex > (positionBuffer?.Length ?? 0))
 					positionBuffer = new Vector2[maxIndex];
-				if (rotationEaseEnabled && (rotationBuffer == null || maxIndex > rotationBuffer.Length))
+				if (rotationEaseEnabled && maxIndex > (rotationBuffer?.Length ?? 0))
 					rotationBuffer = new float[maxIndex];
-				if (distanceEaseEnabled && (distanceBuffer == null || maxIndex > distanceBuffer.Length))
+				if (distanceEaseEnabled && maxIndex > (distanceBuffer?.Length ?? 0))
 					distanceBuffer = new float[maxIndex];
-				if (alphaEaseEnabled && (alphaBuffer == null || maxIndex > alphaBuffer.Length))
+				if (alphaEaseEnabled && maxIndex > (alphaBuffer?.Length ?? 0))
 					alphaBuffer = new float[maxIndex];
 			}
 		}
@@ -204,7 +203,7 @@ public partial class Arrow : Entity
 		private int arrayIndex = -1;
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		private static int ToArrayIndex(float x) => (int)((x - 0.5f) * 2f);
+		private static int ToArrayIndex(float x) => (int)(x * 2 - 1);
 
 		/// <inheritdoc/>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]

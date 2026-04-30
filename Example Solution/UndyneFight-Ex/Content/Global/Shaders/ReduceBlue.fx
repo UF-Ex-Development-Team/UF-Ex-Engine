@@ -25,9 +25,9 @@ struct VertexShaderOutput
 float4 MainPS(VertexShaderOutput input) : COLOR
 {
 	float4 color = tex2D(SpriteTextureSampler,input.TextureCoordinates) * input.Color;
-    float weight = color.r * color.g * 0.75f + 0.25f;
+	float weight = color.r * color.g * 0.75f + 0.25f;
 	color.b *= 1 - reduceBlueAmount * weight;
-    return color;
+	return color;
 }
 
 technique SpriteDrawing

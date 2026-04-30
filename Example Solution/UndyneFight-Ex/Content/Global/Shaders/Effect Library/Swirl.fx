@@ -23,31 +23,31 @@ uniform float iDistort; //弯曲度
 
 sampler2D SpriteTextureSampler = sampler_state
 {
-    Texture = <SpriteTexture>;
+	Texture = <SpriteTexture>;
 };
 
 struct VertexShaderOutput
 {
-    float4 Position : SV_POSITION;
-    float4 Color : COLOR0;
-    float2 TextureCoordinates : TEXCOORD0;
+	float4 Position : SV_POSITION;
+	float4 Color : COLOR0;
+	float2 TextureCoordinates : TEXCOORD0;
 };
 
 float4 MainPS(VertexShaderOutput input) : COLOR
 {
-    float2 vector_center = (input.TextureCoordinates - .5) * SIZESURFACE;
-    float v_length = length(vector_center);
+	float2 vector_center = (input.TextureCoordinates - .5) * SIZESURFACE;
+	float v_length = length(vector_center);
 	
-    float rate_length = saturate((iRadius.x - v_length) / iRadius.y); //距离变化
-    float rate_angle = PI2 - atan2(vector_center.y, vector_center.x) + tan(v_length * 0.01) * iDistort; //角度变化
+	float rate_length = saturate((iRadius.x - v_length) / iRadius.y); //距离变化
+	float rate_angle = PI2 - atan2(vector_center.y, vector_center.x) + tan(v_length * 0.01) * iDistort; //角度变化
 
-    return input.Color * rate_length * (sin(rate_angle * iDense) * 0.5f + 0.5f);
+	return input.Color * rate_length * (sin(rate_angle * iDense) * 0.5f + 0.5f);
 }
 
 technique SpriteDrawing
 {
-    pass P0
-    {
-        PixelShader = compile PS_SHADERMODEL MainPS();
-    }
+	pass P0
+	{
+		PixelShader = compile PS_SHADERMODEL MainPS();
+	}
 };

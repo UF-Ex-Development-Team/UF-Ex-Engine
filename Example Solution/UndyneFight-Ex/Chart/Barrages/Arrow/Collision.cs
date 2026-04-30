@@ -27,9 +27,7 @@ public partial class Arrow
 		Hold = 2
 	}
 
-	private static JudgementState JudgeState => GameStates.CurrentScene is SongFightingScene songFightScene
-				? songFightScene.JudgeState
-				: JudgementState.Lenient;
+	private static JudgementState JudgeState => GameStates.CurrentScene is SongFightingScene ? CurrentFightingScene.JudgeState : JudgementState.Lenient;
 	/// <summary>
 	/// The judgement type of the arrow
 	/// </summary>
@@ -129,9 +127,7 @@ public partial class Arrow
 				}
 		}
 
-		float trueTime = rotatingType != 2
-			? Mission.Shields.GetCollideChecker(ArrowColor).TimeOf(Way)
-			: Mission.Shields.GetCollideChecker(ArrowColor).TimeOf(Way);
+		float trueTime = Mission.Shields.GetCollideChecker(ArrowColor).TimeOf(Way);
 		bool sameDir = Mission.Shields.InSameDir(ArrowColor, way);
 		if (JudgeType == JudgementType.Tap)
 		{
@@ -149,19 +145,19 @@ public partial class Arrow
 		if (JudgeType == JudgementType.Tap)
 		{
 			if (auto && TimeDelta >= 0.5f)
-				goto A;
+				goto CheckDamage;
 			float time;
 			if (trueTime == 0)
 				time = TimeDelta;
 			else
-				goto A;
+				goto CheckDamage;
 			float timeMax = 6.5f;
 			if (JudgeState == JudgementState.Lenient)
 				timeMax += 4.5f;
 			else if (JudgeState == JudgementState.Balanced)
 				timeMax += 2.75f;
 			if (time > timeMax)
-				goto A;
+				goto CheckDamage;
 			int score = GetScore(time * 1.125f);
 			HitScore(score, time);
 			PlayHitSound(2);
@@ -171,9 +167,9 @@ public partial class Arrow
 		else if (JudgeType == JudgementType.Hold)
 		{
 			if (TimeDelta >= 0.5f)
-				goto A;
+				goto CheckDamage;
 			if (trueTime > 5f)
-				goto A;
+				goto CheckDamage;
 			int score = GetScore(trueTime);
 			HitScore(score, TimeDelta);
 			PlayHitSound(0.5f);
@@ -183,17 +179,14 @@ public partial class Arrow
 		{
 			if (attachedGB)
 			{
-				if (sameDir)
-				{
-					if (TimeDelta >= 0.5f)
-						goto A;
-				}
-				else
+				if (!sameDir)
 				{
 					if (trueTime != 0)
-						goto A;
+						goto CheckDamage;
 					trueTime = TimeDelta;
 				}
+				else if (TimeDelta >= 0.5f)
+					goto CheckDamage;
 			}
 			float timeMax = 6;
 			if (JudgeState == JudgementState.Lenient)
@@ -207,7 +200,7 @@ public partial class Arrow
 
 			int score;
 			if (trueTime > timeMax && way != curShieldWay)
-				goto A;
+				goto CheckDamage;
 			if (TimeDelta < -0.5f && trueTime < timeMax)
 				trueTime = TimeDelta;
 
@@ -224,10 +217,13 @@ public partial class Arrow
 				JudgementState.Strict => 1.5f,
 				_ => throw new ArgumentException($"{JudgeState} is not in proper form", nameof(JudgeState)),
 			};
-			if (score <= 1 && time > 9f / div && del >= weakPerfectNegative + 0.6f)
-				goto A;
-			if (score <= 1 && time > 15f / div && del >= niceNegative + 0.6f)
-				goto A;
+			if (score <= 1)
+			{
+				if (time > 9f / div && del >= weakPerfectNegative + 0.6f)
+					goto CheckDamage;
+				if (time > 15f / div && del >= niceNegative + 0.6f)
+					goto CheckDamage;
+			}
 
 			HitScore(score, time);
 			PlayHitSound(1f);
@@ -235,7 +231,7 @@ public partial class Arrow
 			return;
 		}
 
-	A:
+	CheckDamage:
 		if (distance / distanceFactor <= -34 - (hasGreenFlag ? 7 : 0))
 		{
 			Dispose();
@@ -270,30 +266,26 @@ public partial class Arrow
 
 		Mission.Shields.GetCollideChecker(ArrowColor).ArrowBlock(Way);
 		bool sameDir = false;
-		if (GameStates.CurrentScene is SongFightingScene songFightScene)
+		if (GameStates.CurrentScene is SongFightingScene)
 		{
 			if (JudgeType != JudgementType.Tap)
 				sameDir = Mission.Shields.InSameDir(ArrowColor, way);
 
 			if (!sameDir)
-				songFightScene.PlayerInstance.GameAnalyzer.PushData(new Player.ArrowData(time, score, GametimeF));
+				CurrentFightingScene.PlayerInstance.GameAnalyzer.PushData(new Player.ArrowData(time, score, GametimeF));
 
 			float abs = MathF.Abs(time);
 			if (abs <= 2.0f && JudgeState == JudgementState.Strict && !sameDir && !NoScore)
 				Fight.AdvanceFunctions.PushBonus(5 - abs * 2.5f);
 
-			if (score == 3 && time > 0)
-				time /= 1.9f;
 			if (sameDir && !hasGreenFlag)
 				time = 0;
+			else if (score == 3 && time > 0)
+				time /= 1.9f;
 
-			songFightScene.Accuracy.PushDelta(time, score, ArrowColor, way, Mission.Shields);
+			CurrentFightingScene.Accuracy.PushDelta(time, score, ArrowColor, way, Mission.Shields);
 
-			bool precise = preciseWarning;
-			bool generateTip = precise ? (score != 3) : (score <= 2);
-			if (JudgeType == JudgementType.Hold || ForceDisableTimeTips)
-				generateTip = false;
-			if (generateTip)
+			if ((preciseWarning ? (score != 3) : (score <= 2)) && JudgeType != JudgementType.Hold && !ForceDisableTimeTips)
 			{
 				Color tipscolor = Color.CornflowerBlue;
 				float xVec = Heart.Centre.Y + 30;

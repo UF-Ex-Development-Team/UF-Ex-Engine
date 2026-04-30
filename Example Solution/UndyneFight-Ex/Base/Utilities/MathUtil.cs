@@ -24,11 +24,9 @@ public static class MathUtil
 	/// <returns>Whether two lines intersect</returns>
 	public static bool LineIntersect((Vector2 Start, Vector2 End) lineA, (Vector2 Start, Vector2 End) lineB)
 	{
-		Vector2 A = lineA.End - lineA.Start, B = lineB.End - lineB.Start;
+		Vector2 A = lineA.End - lineA.Start, B = lineB.End - lineB.Start, Delta = lineA.Start - lineB.Start;
 		float determinant = A.Cross(B);
-		return determinant != 0 &&
-			InRange((B.X * (lineA.Start.Y - lineB.Start.Y) - B.Y * (lineA.Start.X - lineB.Start.X)) / determinant, 0, 1) &&
-			InRange((A.X * (lineA.Start.Y - lineB.Start.Y) - A.Y * (lineA.Start.X - lineB.Start.X)) / determinant, 0, 1);
+		return determinant != 0 && InRange(B.Cross(Delta), 0, determinant) && InRange(A.Cross(Delta), 0, determinant);
 	}
 	/// <summary>
 	/// Checks whether the point is inside of a triangle
@@ -89,38 +87,25 @@ public static class MathUtil
 	/// <returns></returns>
 	public static bool PolygonCollide(Vector2[] polygonA, Vector2[] polygonB)
 	{
-		//Convert polygon to list of lines
-		static List<(Vector2, Vector2)> ConvertToLine(Vector2[] polygon)
+		//Triangulate the polygons
+		List<Tuple<int, int, int>> polygonAIndices = DrawingLab.GetIndices(polygonA);
+		List<Tuple<int, int, int>> polygonBIndices = DrawingLab.GetIndices(polygonB);
+		for (int i = 0; i < polygonAIndices.Count; i++)
 		{
-			List<(Vector2, Vector2)> list = [];
-			for (int i = 0; i < polygon.Length; i++)
-				list.Add(new(polygon[i], polygon[(i + 1) % polygon.Length]));
-			return list;
-		}
-		List<(Vector2 StartPoint, Vector2 EndPoint)> LinesA = ConvertToLine(polygonA), LinesB = ConvertToLine(polygonB);
-		static bool PointOverlap(Vector2 Point, List<(Vector2, Vector2)> Polygon)
-		{
-			int PointIntersectCount = 0;
-			(Vector2, Vector2) test = new(Point, new Vector2(Point.X + 10000, Point.Y));
-			foreach ((Vector2, Vector2) L in Polygon)
-				if (LineIntersect(test, L))
-					PointIntersectCount++;
-			return PointIntersectCount % 2 != 0;
-		}
-
-		//Check if any two pairs of lines intersect
-		foreach ((Vector2, Vector2) lineA in LinesA)
-			foreach ((Vector2, Vector2) lineB in LinesB)
-				if (LineIntersect(lineA, lineB))
+			//Current triangle of polygon A
+			Tuple<int, int, int> curAIndices = polygonAIndices[i];
+			Vector2 A1 = polygonA[curAIndices.Item1], A2 = polygonA[curAIndices.Item2], A3 = polygonA[curAIndices.Item3];
+			for (int j = 0; j < polygonBIndices.Count; j++)
+			{
+				//Current triangle of polygon B
+				Tuple<int, int, int> curBIndices = polygonBIndices[j];
+				Vector2 B1 = polygonB[curBIndices.Item1], B2 = polygonB[curBIndices.Item2], B3 = polygonB[curBIndices.Item3];
+				//If any of the vertices of one triangle is inside the other triangle, then the two polygons are colliding
+				if (InTriangle(A1, A2, A3, B1) || InTriangle(A1, A2, A3, B2) || InTriangle(A1, A2, A3, B3) ||
+					InTriangle(B1, B2, B3, A1) || InTriangle(B1, B2, B3, A2) || InTriangle(B1, B2, B3, A3))
 					return true;
-		//Check if two points collide with respect to polygonA
-		foreach ((Vector2 StartPoint, _) in LinesA)
-			if (PointOverlap(StartPoint, LinesB))
-				return true;
-		//Check if two points collide with respect to polygonB
-		foreach ((Vector2 StartPoint, _) in LinesB)
-			if (PointOverlap(StartPoint, LinesA))
-				return true;
+			}
+		}
 		return false;
 	}
 	#endregion
@@ -166,7 +151,11 @@ public static class MathUtil
 	/// <param name="Start">The first end of the line</param>
 	/// <param name="End">The second end of the line</param>
 	/// <returns>The distance of the point to line</returns>
-	public static float DistanceToLine(Vector2 Point, Vector2 Start, Vector2 End) => MathF.Abs((End.Y - Start.Y) * Point.X - (End.X - Start.X) * Point.Y + End.X * Start.Y - End.Y * Start.X) / (End - Start).Length();
+	public static float DistanceToLine(Vector2 Point, Vector2 Start, Vector2 End)
+	{
+		Vector2 Delta = End - Start;
+		return MathF.Abs(Point.Cross(Delta) + End.Cross(Start)) / Delta.Length();
+	}
 	/// <summary>
 	/// Returns the minimal angle difference between two angles
 	/// </summary>
@@ -221,7 +210,7 @@ public static class MathUtil
 	public static float MinRotate(float rot1, float rot2)
 	{
 		if (MathF.Abs(rot1 - rot2) <= 0.001f)
-			return 0.0f;
+			return 0f;
 		float a1 = (rot2 + 360 - rot1) % 360;
 		return a1 <= 180 ? a1 : -((rot1 + 360 - rot2) % 360);
 	}

@@ -24,60 +24,57 @@ Texture2D SpriteTexture;
 
 sampler2D SpriteTextureSampler = sampler_state
 {
-    Texture = <SpriteTexture>;
+	Texture = <SpriteTexture>;
 };
 
 struct VertexShaderOutput
 {
-    float4 Position : SV_POSITION;
-    float4 Color : COLOR0;
-    float2 TextureCoordinates : TEXCOORD0;
+	float4 Position : SV_POSITION;
+	float4 Color : COLOR0;
+	float2 TextureCoordinates : TEXCOORD0;
 };
 
 float4 localToColor(sampler2D samplerTexture, float2 Position)
 {
-    if ((Position.x > 1.0) || (Position.y > 1.0) || (Position.x < 0.0) || (Position.y < 0.0))
-        return float4(0.0, 0.0, 0.0, 0.0);
-    else
-        return tex2D(samplerTexture, Position);
+	return ((Position.x > 1.0) || (Position.y > 1.0) || (Position.x < 0.0) || (Position.y < 0.0)) ? 0 : tex2D(samplerTexture, Position);
 }
 
 float3 vectorRotation(float3 rotVector, float3 forceVector, float angle)
 {
-    return (rotVector * cos(angle) + cross(rotVector, forceVector) * sin(angle) + forceVector * (dot(forceVector, rotVector) * (1.0 - cos(angle))));
+	return rotVector * cos(angle) + cross(rotVector, forceVector) * sin(angle) + forceVector * (dot(forceVector, rotVector) * (1.0 - cos(angle)));
 }
 
 float3 breakVector(float3 _vector, float3 normalVectorX, float3 normalVectorY, float3 normalVectorZ)
 {
-    return float3(dot(_vector, normalVectorX), dot(_vector, normalVectorY), dot(_vector, normalVectorZ));
+	return mul(float3x3(normalVectorX, normalVectorY, normalVectorZ), _vector);
 }
 
 float4 MainPS(VertexShaderOutput input) : COLOR
 {
-    float2 v_vPosition = itextureSize * input.TextureCoordinates;
-    float2 surfaceVector = float2(v_vPosition - iVisuospatial.xy / 2.0);
-    float3 cameraVector = surfaceVector.x * iRight + surfaceVector.y * iDown + iVisuospatial.z * iAhead;
-    cameraVector = normalize(vectorRotation(cameraVector, iAhead, iRotation.z));
-    float4 color = float4(0.0, 0.0, 0.0, 0.0);
+	float2 v_vPosition = itextureSize * input.TextureCoordinates;
+	float2 surfaceVector = float2(v_vPosition - iVisuospatial.xy * 0.5);
+	float3 cameraVector = surfaceVector.x * iRight + surfaceVector.y * iDown + iVisuospatial.z * iAhead;
+	cameraVector = normalize(vectorRotation(cameraVector, iAhead, iRotation.z));
+	float4 color = 0;
 	
-    float vectorCheck = dot(iProjectAxisZ, cameraVector);
-    if (vectorCheck != 0.0)
-    {
-        float crashLength = -(dot(iProjectAxisZ, iPosition) - dot(iProjectAxisZ, iProjectPoint)) / vectorCheck;
-        if (crashLength > 0.0)
-        {
-            float3 surfaceVector = iPosition + cameraVector * crashLength - iProjectPoint + iProjectAxisX * iProjectPointOffect.x + iProjectAxisY * iProjectPointOffect.y;
-            float3 textureVector = breakVector(surfaceVector, iProjectAxisX, iProjectAxisY, iProjectAxisZ);
-            color += localToColor(SpriteTextureSampler, textureVector.xy / itextureSize);
-        }
-    }
-    return input.Color * color;
+	float vectorCheck = dot(iProjectAxisZ, cameraVector);
+	if (vectorCheck != 0.0)
+	{
+		float crashLength = -dot(iProjectAxisZ, iProjectPoint - iPosition) / vectorCheck;
+		if (crashLength > 0.0)
+		{
+			float3 surfaceVector = iPosition + cameraVector * crashLength - iProjectPoint + iProjectAxisX * iProjectPointOffect.x + iProjectAxisY * iProjectPointOffect.y;
+			float3 textureVector = breakVector(surfaceVector, iProjectAxisX, iProjectAxisY, iProjectAxisZ);
+			color += localToColor(SpriteTextureSampler, textureVector.xy / itextureSize);
+		}
+	}
+	return input.Color * color;
 }
 
 technique SpriteDrawing
 {
-    pass P0
-    {
-        PixelShader = compile PS_SHADERMODEL MainPS();
-    }
+	pass P0
+	{
+		PixelShader = compile PS_SHADERMODEL MainPS();
+	}
 };

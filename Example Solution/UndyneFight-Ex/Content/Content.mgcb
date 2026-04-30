@@ -14,6 +14,9 @@
 
 #---------------------------------- Content ---------------------------------#
 
+#begin DefaultEnglish.json
+/copy:DefaultEnglish.json
+
 #begin FFMpeg.zip
 /copy:FFMpeg.zip
 
@@ -730,7 +733,5 @@
 /build:UndyneFight_Ex Spritesheet-texture.png
 
 #begin UndyneFight_Ex Spritesheet.json
-/importer:TexturePackerJsonImporter
-/processor:TexturePackerProcessor
-/build:UndyneFight_Ex Spritesheet.json
+/copy:UndyneFight_Ex Spritesheet.json
 

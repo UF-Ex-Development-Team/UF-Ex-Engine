@@ -12,9 +12,9 @@ public static class UFEXSettings
 	public static string GamejoltPrivateKey { get; set; }
 	[Obsolete("Gamejolt support is currently removed")]
 	public static int GamejoltID { get; set; }
-	[Obsolete("Why would you ever do this")]
+	[Obsolete("I can't believe I was convinced to make this a thing again soon")]
 	public static string MainServerURL { get; set; }
-	[Obsolete("Why would you ever do this")]
+	[Obsolete("I can't believe I was convinced to make this a thing again soon")]
 	public static int MainServerPort { get; set; }
 	/// <summary>
 	/// Actions to invoke when a chart is completed

@@ -1,5 +1,4 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
-using System.Diagnostics;
 using UndyneFight_Ex.Entities;
 using UndyneFight_Ex.IO;
 using UndyneFight_Ex.SongSystem;
@@ -9,21 +8,13 @@ namespace UndyneFight_Ex;
 public static partial class GameStates
 {
 	/// <summary>
-	/// The save path to your game
+	/// The save path to your game, note that there is no "\\" at the end
 	/// </summary>
 	public static string SavePath => $"{Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)}\\{GameName}";
 	/// <summary>
-	/// Actually going to pull this next version
+	/// The color of the player name, VIP can have blue/orange/colorful instead of only white
 	/// </summary>
-	[Obsolete("Will pull up to GameStates next version")]
-	public static class GameRule
-	{
-		/// <summary>
-		/// The color of the player name, VIP can have blue/orange/colorful instead of only white
-		/// </summary>
-		public static string NameColor { get; set; } = "White";
-
-	}
+	public static string NameColor { get; set; } = "White";
 	/// <summary>
 	/// Whether the player is currently in a challenge
 	/// </summary>
@@ -36,6 +27,9 @@ public static partial class GameStates
 	/// The amount of challenges
 	/// </summary>
 	internal static int ChallengeCount = 0;
+	/// <summary>
+	/// The list of charts in the current challenge
+	/// </summary>
 	internal static SongFightingScene.SceneParams[] ChallengeCharts = [];
 	/// <summary>
 	/// The sprite batch of the game
@@ -57,13 +51,18 @@ public static partial class GameStates
 	/// </summary>
 	/// <param name="e">The game object to check</param>
 	/// <returns></returns>
-	public static bool InstanceExists(Type e) => Objects.FindAll(s => s.GetType() == e).Count > 0;
+	public static bool InstanceExists(Type e) => Objects.Exists(s => s.GetType() == e);
 	/// <summary>
 	/// Destroy all instances of the given type
 	/// </summary>
 	/// <param name="e">The object to dispose</param>
 	/// <returns></returns>
-	public static void InstanceDestroy(Type e) => Objects.FindAll(s => s.GetType() == e).ForEach((s) => s.Dispose());
+	public static void InstanceDestroy(Type e)
+	{
+		foreach (GameObject obj in Objects)
+			if (obj.GetType() == e)
+				obj.Dispose();
+	}
 
 	internal static Scene currentScene, missionScene;
 	/// <summary>
@@ -99,14 +98,17 @@ public static partial class GameStates
 	internal static void StateUpdate()
 	{
 		GameMain.gameTime += 0.5f;
+		//Process scene rendering
 		if (CurrentScene != null && GameMain.Update120F)
 		{
 			MainScene.UpdateAll();
 			CurrentScene.UpdateRendering();
 		}
 		currentScene = missionScene;
-		if (GameMain.gameTime % 125 < 1)
+		//Force garbage collect
+		if (DateTime.Now.Second % 5 == 0)
 			GC.Collect();
+		//Check player input
 		KeysUpdate2();
 		CharInput = KeysUpdate();
 		if (hacked)
@@ -114,6 +116,7 @@ public static partial class GameStates
 			GameMain.ExitGame();
 			throw new Exception("You Dirty Hacker!");
 		}
+		//Process scene logic
 		currentScene.Update();
 	}
 
@@ -122,7 +125,7 @@ public static partial class GameStates
 	{
 		List<Entity> result = [];
 		CurrentScene.Objects.ForEach(s => result.AddRange(s.GetDrawableTree()));
-		result.Add(CurrentScene);
+		result.Add(CurrentScene); //The scene itself is also an entity
 		return [.. result];
 	}
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -193,7 +196,7 @@ public static partial class GameStates
 		}
 		missionScene = scene;
 		if (currentScene?.CurrentDrawingSettings.Extending != Vector4.Zero)
-			missionScene.InstanceCreate(new InstantEvent(1, GameMain.ResetRendering));
+			DelayEventProcessor.AddInstantEvent(1, GameMain.ResetRendering);
 		crossObjects?.ForEach(s => missionScene.InstanceCreate(s));
 		ResetTime();
 		GameMain.ResetRendering();
@@ -208,9 +211,9 @@ public static partial class GameStates
 		isInBattle = false;
 
 		Player.Heart.ResetMove();
-		NameShower.level = "";
+		NameShower.level = string.Empty;
 		NameShower.name = null;
-		NameShower.OverrideName = "";
+		NameShower.OverrideName = string.Empty;
 		NameShower.nameAlpha = 1;
 
 		Surface.Hidden.BackGroundColor = Color.Black;

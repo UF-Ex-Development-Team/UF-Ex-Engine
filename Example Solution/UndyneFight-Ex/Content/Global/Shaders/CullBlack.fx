@@ -23,14 +23,13 @@ struct VertexShaderOutput
 
 float4 MainPS(VertexShaderOutput input) : COLOR
 {
-    float4 color = tex2D(SpriteTextureSampler, input.TextureCoordinates) * input.Color;
-    if (input.Color.a < 0.99)
-        return color;
-    float deltas = abs(color.r - color.g) + abs(color.g - color.b) + abs(color.b - color.r);
-    float c = (color.r + color.g + color.b);
-    if (deltas < 0.001 && c < 0.1)
-        return 0;
-    return color;
+	float4 color = tex2D(SpriteTextureSampler, input.TextureCoordinates) * input.Color;
+	if (input.Color.a < 0.99)
+		return color;
+	float brightness = color.r + color.g + color.b;
+	if (brightness < 0.1 && max(abs(color.r - color.g), abs(color.g - color.b)) < 0.001)
+		return float4(0);
+	return color;
 }
 
 technique SpriteDrawing

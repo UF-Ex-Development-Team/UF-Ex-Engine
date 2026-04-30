@@ -62,13 +62,13 @@ public class ZaWarudo : GameObject
 		if (frozenColor != Color.Black)
 		{
 			BoundDistance = (appearTime <= totalTime)
-			? BoundDistance * 0.87f + Vector4.One * frozenDepth * 0.13f
+			? BoundDistance * 0.87f + new Vector4(frozenDepth * 0.13f)
 			: BoundDistance *= 0.87f;
 		}
 		if (++appearTime <= 16)
 			ScreenScale += (16 - appearTime) / 720f;
 		if (appearTime is >= 8 and <= 36)
-			GameMain.GameSpeed = GameMain.gameSpeed * 0.8f + scale * 0.2f;
+			GameMain.GameSpeed = GameMain.GameSpeed * 0.8f + scale * 0.2f;
 		if (appearTime >= totalTime)
 		{
 			ScreenScale = GameMain.CurrentDrawingSettings.screenScale * 0.91f + oldScreenSize * 0.09f;

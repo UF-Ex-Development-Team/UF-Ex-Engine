@@ -1,4 +1,6 @@
-﻿namespace UndyneFight_Ex.Entities;
+﻿using System.Collections;
+
+namespace UndyneFight_Ex.Entities;
 
 /// <summary>
 /// A custom box vertex
@@ -25,7 +27,7 @@ public class BoxVertex
 		get
 		{
 			if (_id == -1)
-				_id = Previous == null ? 0 : Previous.ID + 1;
+				_id = (Previous?.ID ?? -1) + 1;
 			return _id;
 		}
 	}
@@ -308,6 +310,7 @@ public class RectangleBox : FightBox
 		InstanceMove(area);
 		gravityLines = [right, down, left, up];
 	}
+	private readonly BitArray enabled = new(4);
 	/// <inheritdoc/>
 	public override void Update()
 	{
@@ -329,11 +332,11 @@ public class RectangleBox : FightBox
 
 		if (detect == null)
 			return;
-		bool[] enabled = [false, false, false, false];
+		enabled.SetAll(false);
 		if (detect.SoulType is 2 or 5)
 			enabled[detect.YFacing] = true;
 		else
-			enabled = [true, true, true, true];
+			enabled.SetAll(true);
 		for (int i = 0; i < 4; i++)
 			gravityLines[i].enabled = enabled[i];
 	}

@@ -42,7 +42,6 @@ public partial class Player
 				if (mission.lastChangeTime >= 3)
 				{
 					mission.purpleLineLength = _curBox.CollidingBox.Width;
-
 					mission.Centre += _curBox.Centre - mission.lastBoxCentre;
 				}
 
@@ -178,11 +177,11 @@ public partial class Player
 				}
 				if (res && mission.isForced)
 				{
-					float v = mission.forcedSpeed;
-					if (v >= 3)
+					float forcedSpd = mission.forcedSpeed;
+					if (forcedSpd >= 3)
 					{
-						Fight.Functions.PlaySound(FightResources.Sounds.slam, Math.Min(1, MathF.Sqrt(v - 1) / 3f));
-						InstanceCreate(new Advanced.ScreenShaker((int)Math.Ceiling(Math.Sqrt(v - 2) * 1.33f), 4 + MathF.Sqrt(v * 1.33f + 1) * 1.56f, 3, trueRot));
+						Fight.Functions.PlaySound(FightResources.Sounds.slam, Math.Min(1, MathF.Sqrt(forcedSpd - 1) / 3f));
+						InstanceCreate(new Advanced.ScreenShaker((int)Math.Ceiling(Math.Sqrt(forcedSpd - 2) * 1.33f), 4 + MathF.Sqrt(forcedSpd * 1.33f + 1) * 1.56f, 3, trueRot));
 					}
 					mission.isForced = false;
 				}
@@ -233,8 +232,7 @@ public partial class Player
 				Vector2 ori = mission.Centre;
 				mission.Centre += GetVector2(mission.gravitySpeed * 0.5f, trueRot);
 
-				bool jumpKeyDown = IsKeyDown(Keys_[jumpKey]) &&
-					((!IsKeyDown(Keys_[(jumpKey + 2) % 4])) || hearts.Count >= 2);
+				bool jumpKeyDown = IsKeyDown(Keys_[jumpKey]) && (!IsKeyDown(Keys_[(jumpKey + 2) % 4]) || hearts.Count >= 2);
 
 				if (jumpKeyDown)
 				{
@@ -407,8 +405,7 @@ public partial class Player
 						float rot = (v.Rotation / PI * 180 - xFacing + 180) % 180;
 						if (rot < -90)
 							rot += 180;
-
-						if (rot > 90)
+						else if (rot > 90)
 							rot -= 180;
 
 						final = rot;

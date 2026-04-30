@@ -1,0 +1,181 @@
+{
+    "Fonts": {
+        "NormalFont": {
+            "Path": "NormalFont",
+            "Scale": 1
+        },
+        "FightFont": {
+            "Path": "FightFont",
+            "Scale": 1
+        },
+        "DamageFont": {
+            "Path": "DamageFont",
+            "Scale": 1
+        }
+    },
+
+    "Difficulty": ["Noob", "Easy", "Normal", "Hard", "Extreme", "Extreme+"],
+
+    "GameModifiers": {
+        "None": "None",
+        "NoGreenSoul": "No Green Soul",
+        "Practice": "Practice",
+        "Autoplay": "Autoplay",
+        "Items": "Items"
+    },
+
+    "SkillRating": {
+        "Impeccable": "Impeccable",
+        "Eminent": "Eminent",
+        "Excellent": "Excellent",
+        "Respectable": "Respectable",
+        "Respectable+": "Respectable+",
+        "Acceptable+": "Acceptable+",
+        "Acceptable": "Acceptable",
+        "Ordinary": "Ordinary",
+        "Failed": "Failed"
+    },
+
+    "JudgementState": {
+        "Strict": "Strict",
+        "Balanced": "Balanced",
+        "Lenient": "Lenient",
+        "StrictShort": "(S)",
+        "BalancedShort": "(B)",
+        "LenientShort": "(L)"
+    },
+
+    "RatingBox": {
+        "Coins": "Coins:{0}G",
+        "FullCongrat": "Amazing!",
+        "Congrat": "Congratulations!",
+        "FlavourText": [
+            ["Don't be affected by the brilliant achievements of others!", "As long as you do yourself well, you are respectable."],
+            ["Don't be arrogant for brilliant achievements of yourself!", "Only when you have a calm mind will you move forward."],
+            ["You have overcame a lot of challenges.", "But you can push even further, good luck!"],
+            ["You've reached the summit, but every mountain hides another peak.", "Stay humble, there will be more ;)"]
+        ]
+    },
+
+    "Achievement": {
+        "Unlock": "Achievement unlocked!"
+    },
+    
+    "LoginUI": {
+        "Username": "Username: ",
+        "Password": "Password: "
+    },
+
+    "LoadingScene" :{
+        "Barrage": "Barrage:",
+        "Composer": "Composer:",
+        "Paint": "Paint:",
+        "Effect": "Effect:",
+        "NoPaint": "No Paint",
+
+        "Tips": [
+            "Every character worth your attention",
+            "Tips: Do not bite off more than you can chew",
+            "Fun Fact: Practice mode starts with 99HP instead of Infinite HP formerly",
+            "Fun Fact: 2021 Spring Celebration is the first championship with two segments",
+            "Fun Fact: 2023 Memory is the first championship with 2 secret charts",
+            "Fun Fact: Indihome Packet Phoenix div 1 was had Ex difficulty before becoming Ex+",
+            "Fun Fact: Freedom Dive div 1 final part had twice the blue arrows before the nerf",
+            "Fun Fact: Undyne Extreme was nerfed several times and the difficulty drastically dropped",
+            "Fun Fact: Did you notice that arrows have reduced speed between the SOUL and shields?",
+            "Nagareteku toki no naka de demo Kedarusa ga hora guru guru mawatte",
+            "In a desperate conflict   With a ruthless enemy",
+            "We're no strangers to love",
+            "Right after the break",
+            "Creeper...Aww man",
+            "Fun Fact: Did you know one of the developers didn't even study computer at school?"
+        ]
+    },
+
+    "SplashScreen": {
+        "First": ["This is an", "UNDERTALE", "fangame"],
+        "Second": ["This game is made possible by", "Monogame and UF-Ex"],
+        "Boot": "Botting up game...",
+        "AudioPreview": "Loading audio previews: {0}/{1}",
+        "Loading": "Loading {0}",
+        "LoadState": {
+            "Title_Sprite": "title sprites",
+            "Global_Sprites": "global sprites",
+            "Fonts": "fonts",
+            "Global_Audio": "global audio",
+            "Global_Shaders": "global shaders",
+            "Fight_Sprites": "fight sprites",
+            "Fight_Audio": "fight audio",
+            "Finished": "finished"
+        }
+    },
+
+    "Challenge": {
+        "BestScore": "Best Score:\n{0}%",
+        "NoData": "No Data",
+        "ComplexDiff": "Complex Difficulty: {0}",
+        "Begin": "Press Confirm to start",
+        "SideTexts": ["Strict Mode", "No Restarts", "No Modifiers"],
+        "NoHit": "No Hit",
+        "AP": "All Perfect",
+        "Result": "Challenge Result",
+        "Total%": "Total: {0}%",
+        "Return": "Press {0} to return"
+    },
+
+    "ChartJudgement": {
+        "Miss": "Miss",
+        "Okay": "Okay",
+        "Nice": "Nice",
+        "Perfect": "Perfect",
+        "PerfectL": "PerfectL",
+        "PerfectE": "PerfectE"
+    },
+
+    "ResultScreen": {
+        "Options": ["Play\nsummary", "Graph\nanalyze", "Resources\ngained"],
+        "YourScore": "Your Score:",
+        "NewRecord": "New Record!",
+        "BestScore": "Best Score: {0}",
+        "NoHit": "NO HIT",
+        "Miss": "Miss",
+        "Okay": "Okay",
+        "Nice": "Nice",
+        "Perfect": "Perfect",
+        "EarlyLate": "Early: {0} Late: {1}",
+        "EarlyLateShort": "(E: {0} L: {1})",
+        "MaxCombo": "Max Combo: {0}",
+        "NoBarrage": "!NO BARRAGE!",
+
+        "RatingGained": "Rating gained:",
+        "Complete": ["Complete:", "Complete Rating:"],
+        "Complex": ["Complex:", "Complex Rating:"],
+        "FullCombo": ["Full Combo:", "Full Combo Rating:"],
+        "AllPerfect": ["All Perfect:", "All Perfect Rating:"],
+        "Unrated": "Unrated Chart",
+        "NoProgress": "No progress",
+        "NextPage": "Next Page ->",
+        "PrevPage": "<- Previous Page",
+
+        "Result": "Result of {0}:",
+        "Modifiers": "Modifiers: {0}",
+        "ArrowSpeed": "Arrow speed: {0}x",
+        "LeaveRestart": "{0}: Leave\n{1}: Restart",
+        "Diff": "Difficulty:",
+        "UnlockItem": "Item unlocked!",
+
+        "Early": "Early",
+        "Late": "Late"
+    },
+
+    "FailScreen": {
+        "Lose": "You lose",
+        "LoseAgain": "You lose again",
+        "Survived": "Time survived: {0}s",
+        "Halved": "Halved score: {0}",
+        "Modifiers": "Modifiers used\nScore not saved",
+        "Details": "Press {0} for more details",
+        "TryAgain": "Try Again",
+        "Quit": "Quit"
+    }
+}

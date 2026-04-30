@@ -114,13 +114,8 @@ public static partial class Functions
 			[MethodImpl(MethodImplOptions.AggressiveInlining)]
 			private static void MoveSurface(Surface surface)
 			{
-				if (GameStates.CurrentScene is not SongFightingScene scene)
-					return;
-				scene.NameShow.controlLayer = surface;
-				scene.HPBar.controlLayer = surface;
-				scene.Accuracy.controlLayer = surface;
-				scene.Time.controlLayer = surface;
-				scene.ScoreState.controlLayer = surface;
+				if (GameStates.CurrentScene is SongFightingScene scene)
+					scene.NameShow.controlLayer = scene.HPBar.controlLayer = scene.Accuracy.controlLayer = scene.Time.controlLayer = scene.ScoreState.controlLayer = surface;
 			}
 			/// <summary>
 			/// Creates a separate surface for the UI, making the UI not affected by the screen effects
@@ -131,7 +126,7 @@ public static partial class Functions
 			{
 				Surface surf;
 				Scene scene = GameStates.CurrentScene;
-				if (!scene.CurrentDrawingSettings.surfaces.TryGetValue("UI", out Surface value))
+				if (!scene.CurrentDrawingSettings.surfaces.TryGetValue("UI", out Surface uiSurf))
 					scene.CurrentDrawingSettings.surfaces.Add("UI", surf = new("UI")
 					{
 						BlendState = BlendState.AlphaBlend,
@@ -140,7 +135,7 @@ public static partial class Functions
 						DisableExpand = true
 					});
 				else
-					surf = value;
+					surf = uiSurf;
 				MoveSurface(surf);
 				UISurfaceDrawing production;
 				SceneRendering.InsertProduction(production = new UISurfaceDrawing(surf));
@@ -169,30 +164,31 @@ public static partial class Functions
 		/// </summary>
 		public static class HPBar
 		{
+			private static FightScene CurrentFightScene => GameStates.CurrentScene as FightScene;
 			/// <summary>
 			/// The color of existing HP
 			/// </summary>
-			public static Color HPExistColor { get => (GameStates.CurrentScene as FightScene).HPBar.HPExistColor; set => (GameStates.CurrentScene as FightScene).HPBar.HPExistColor = value; }
+			public static Color HPExistColor { get => CurrentFightScene.HPBar.HPExistColor; set => CurrentFightScene.HPBar.HPExistColor = value; }
 			/// <summary>
 			/// The color of existing KR
 			/// </summary>
-			public static Color KRExistColor { get => (GameStates.CurrentScene as FightScene).HPBar.HPKRColor; set => (GameStates.CurrentScene as FightScene).HPBar.HPKRColor = value; }
+			public static Color KRExistColor { get => CurrentFightScene.HPBar.HPKRColor; set => CurrentFightScene.HPBar.HPKRColor = value; }
 			/// <summary>
 			/// THe color of the HP Bar
 			/// </summary>
-			public static Color HPLoseColor { get => (GameStates.CurrentScene as FightScene).HPBar.HPLoseColor; set => (GameStates.CurrentScene as FightScene).HPBar.HPLoseColor = value; }
+			public static Color HPLoseColor { get => CurrentFightScene.HPBar.HPLoseColor; set => CurrentFightScene.HPBar.HPLoseColor = value; }
 			/// <summary>
 			/// The rectangular area occupied by the HP bar
 			/// </summary>
 			public static CollideRect AreaOccupied
 			{
-				set => (GameStates.CurrentScene as FightScene).HPBar.ResetArea(value);
-				get => (GameStates.CurrentScene as FightScene).HPBar.CurrentArea;
+				set => CurrentFightScene.HPBar.ResetArea(value);
+				get => CurrentFightScene.HPBar.CurrentArea;
 			}
 			/// <summary>
 			/// Sets whether the HP Bar is displayed vertically
 			/// </summary>
-			public static bool Vertical { set => (GameStates.CurrentScene as FightScene).HPBar.Vertical = value; }
+			public static bool Vertical { set => CurrentFightScene.HPBar.Vertical = value; }
 		}
 		/// <summary>
 		/// Camera effect methods
@@ -215,11 +211,8 @@ public static partial class Functions
 			public static void Rotate(float rotation, float time)
 			{
 				if (time < 0)
-					throw new ArgumentOutOfRangeException(nameof(time), string.Format("参数 {0} 必须为正数 或 0", nameof(time)));
-				float last = rotation;
-				float tick = 0;
-
-				float progress = 0;
+					throw new ArgumentOutOfRangeException(nameof(time), string.Format("Parameter {0} must be greater or equal to 0", nameof(time)));
+				float last = rotation, tick = 0, progress = 0;
 
 				DelayEventProcessor.AddTimeRangedEvent(0, () =>
 				{
@@ -268,17 +261,14 @@ public static partial class Functions
 			public static void Convulse(float intensity, float time, bool direction)
 			{
 				if (intensity <= 0)
-					throw new ArgumentOutOfRangeException(nameof(intensity), string.Format("参数 {0} 必须为正数", intensity));
+					throw new ArgumentOutOfRangeException(nameof(intensity), string.Format("Parameter {0} must be positive", intensity));
 				if (time < 0)
-					throw new ArgumentOutOfRangeException(nameof(time), string.Format("参数 {0} 必须为正数 或 0", time));
+					throw new ArgumentOutOfRangeException(nameof(time), string.Format("Parameter {0} must be greater or equal to 0", time));
 
 				intensity = MathF.Sqrt(intensity);
 				if (!direction)
 					intensity = -intensity;
-				float last = 0;
-				float tick = 0;
-
-				float progress = 0;
+				float last = 0, tick = 0, progress = 0;
 
 				DelayEventProcessor.AddTimeRangedEvent(0, () =>
 				{
@@ -306,9 +296,9 @@ public static partial class Functions
 			public static void SizeExpand(float intensity, float time)
 			{
 				if (intensity <= 0)
-					throw new ArgumentOutOfRangeException(nameof(intensity), string.Format("参数 {0} 必须为正数", nameof(intensity)));
+					throw new ArgumentOutOfRangeException(nameof(intensity), string.Format("Parameter {0} must be positive", nameof(intensity)));
 				if (time < 0)
-					throw new ArgumentOutOfRangeException(nameof(time), string.Format("参数 {0} 必须为正数 或 0", nameof(time)));
+					throw new ArgumentOutOfRangeException(nameof(time), string.Format("Parameter {0} must be greater or equal to 0", nameof(time)));
 
 				intensity = 1 - MathF.Pow(0.98f, intensity);
 				float last = 0, tick = 0, progress = 0;
@@ -339,9 +329,9 @@ public static partial class Functions
 			public static void SizeShrink(float intensity, float time)
 			{
 				if (intensity <= 0)
-					throw new ArgumentOutOfRangeException(nameof(intensity), string.Format("参数 {0} 必须为正数", nameof(intensity)));
+					throw new ArgumentOutOfRangeException(nameof(intensity), string.Format("Parameter {0} must be positive", nameof(intensity)));
 				if (time < 0)
-					throw new ArgumentOutOfRangeException(nameof(time), string.Format("参数 {0} 必须为正数 或 0", nameof(time)));
+					throw new ArgumentOutOfRangeException(nameof(time), string.Format("Parameter {0} must be greater or equal to 0", nameof(time)));
 
 				intensity = MathF.Pow(0.98f, intensity) - 1;
 				float last = 0, tick = 0, progress = 0;
@@ -398,11 +388,7 @@ public static partial class Functions
 		/// </summary>
 		/// <param name="time">The duration of the fading</param>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static void WhiteOut(float time)
-		{
-			flickerColor = Color.White;
-			whiteOutRest = time;
-		}
+		public static void WhiteOut(float time) => SceneOut(Color.White, time);
 		/// <summary>
 		/// The color of the UI
 		/// </summary>
@@ -470,7 +456,7 @@ public static partial class Functions
 		}
 
 		/// <summary>
-		/// The rotation of the screen
+		/// The rotation of the screen in degrees
 		/// </summary>
 		public static float ScreenAngle
 		{
@@ -641,9 +627,7 @@ public static partial class Functions
 				private void Initialize()
 				{
 					for (int i = 0; i < lightSources.Length; i++)
-					{
 						lightSources[i] = new RenderTarget2D(WindowDevice, lightSize * 2, lightSize * 2);
-					}
 					MissionTarget = lightSources[0];
 					ResetTargetColor(Color.Transparent);
 					Shader = GlobalResources.Effects.Lights[0];
@@ -868,7 +852,11 @@ public static partial class Functions
 					public Tuple<Rectangle, Vector2, int>[] GetMoves()
 					{
 						List<Tuple<Rectangle, Vector2, int>> res = [];
-						ChildObjects.ForEach(s => res.Add(new Tuple<Rectangle, Vector2, int>((s as MoveBlock).Area, (s as MoveBlock).Delta, (s as MoveBlock).ColorType)));
+						ChildObjects.ForEach(s =>
+						{
+							MoveBlock block = s as MoveBlock;
+							res.Add(new Tuple<Rectangle, Vector2, int>(block.Area, block.Delta, block.ColorType));
+						});
 						return [.. res];
 					}
 				}
@@ -899,7 +887,7 @@ public static partial class Functions
 							DrawTexture(HelperTarget, finRect + new Vector2(-RGBSplitIntensity, 0), rect, Color.Red);
 							DrawTexture(HelperTarget, finRect + new Vector2(RGBSplitIntensity, 0), rect, new Color(0, 0, 1f));
 						}
-						DrawTexture(HelperTarget, finRect.ToRectangle(), rect, Color.White);
+						DrawTexture(HelperTarget, finRect, rect, Color.White);
 					}
 					return MissionTarget;
 				}

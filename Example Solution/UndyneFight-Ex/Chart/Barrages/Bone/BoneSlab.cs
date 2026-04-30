@@ -1,6 +1,5 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using UndyneFight_Ex.SongSystem;
-using static UndyneFight_Ex.Fight.AdvanceFunctions;
 using static UndyneFight_Ex.FightResources;
 using static UndyneFight_Ex.MathUtil;
 
@@ -33,21 +32,16 @@ public class Boneslab : Barrage, ICustomLength
 	{
 		set
 		{
-			switch (value)
+			if (value is < 0 or > 2)
+				throw new ArgumentOutOfRangeException(nameof(value), "ColorType must be between 0 and 2.");
+			colorType = value;
+			drawingColor = value switch
 			{
-				case 0:
-					drawingColor = Color.White;
-					colorType = 0;
-					break;
-				case 1:
-					drawingColor = new Color(110, 203, 255, 255);
-					colorType = 1;
-					break;
-				case 2:
-					drawingColor = Color.Orange;
-					colorType = 2;
-					break;
-			}
+				0 => Color.White,
+				1 => new Color(110, 203, 255, 255),
+				2 => Color.Orange,
+				_ => drawingColor
+			};
 		}
 	}
 	/// <inheritdoc/>
@@ -102,27 +96,28 @@ public class Boneslab : Barrage, ICustomLength
 	/// <inheritdoc/>
 	public override void Draw()
 	{
+		RectangleBox controlRectBox = controllingBox as RectangleBox;
 		if (trueRotation is 90 or 270)
-			GameMain.MissionSpriteBatch.Draw(BoneSlabTexture, renderPlace, new System.Drawing.RectangleF(0, 320 - currentHeight, (controllingBox as RectangleBox).Height, currentHeight),
-				drawingColor, GetRadian(Rotation) + MathF.PI, new Vector2((controllingBox as RectangleBox).Height / 2, 0), 1.0f, SpriteEffects.None, 0.499f);
+			GameMain.MissionSpriteBatch.Draw(BoneSlabTexture, renderPlace, new System.Drawing.RectangleF(0, 320 - currentHeight, controlRectBox.Height, currentHeight),
+				drawingColor, GetRadian(Rotation) + MathF.PI, new Vector2(controlRectBox.Height / 2, 0), 1.0f, SpriteEffects.None, 0.499f);
 		if (trueRotation is 0 or 180)
-			GameMain.MissionSpriteBatch.Draw(BoneSlabTexture, renderPlace, new System.Drawing.RectangleF(0, 320 - currentHeight, (controllingBox as RectangleBox).Width, currentHeight),
-				drawingColor, GetRadian(Rotation) + MathF.PI, new Vector2((controllingBox as RectangleBox).Width / 2, 0), 1.0f, SpriteEffects.None, 0.499f);
+			GameMain.MissionSpriteBatch.Draw(BoneSlabTexture, renderPlace, new System.Drawing.RectangleF(0, 320 - currentHeight, controlRectBox.Width, currentHeight),
+				drawingColor, GetRadian(Rotation) + MathF.PI, new Vector2(controlRectBox.Width / 2, 0), 1.0f, SpriteEffects.None, 0.499f);
 
 		if (appearTime >= appearDelay)
 			return;
 
 		if (trueRotation is 90 or 270)
 			GameMain.MissionSpriteBatch.Draw(WarningLine, _warningLine,
-			new Rectangle(0, 0, (int)(controllingBox as RectangleBox).Height, 2),
+			new Rectangle(0, 0, (int)controlRectBox.Height, 2),
 			appearTime % 6 < 3 ? Color.Red : Color.Yellow,
-			GetRadian(Rotation) + MathF.PI, new Vector2((controllingBox as RectangleBox).Height / 2, 0),
+			GetRadian(Rotation) + MathF.PI, new Vector2(controlRectBox.Height / 2, 0),
 			1.0f, SpriteEffects.None, 0.3f);
 		else
 			GameMain.MissionSpriteBatch.Draw(WarningLine, _warningLine,
-			new Rectangle(0, 0, (int)(controllingBox as RectangleBox).Width, 2),
+			new Rectangle(0, 0, (int)controlRectBox.Width, 2),
 			appearTime % 6 < 3 ? Color.Red : Color.Yellow,
-			GetRadian(Rotation) + MathF.PI, new Vector2((controllingBox as RectangleBox).Width / 2, 0),
+			GetRadian(Rotation) + MathF.PI, new Vector2(controlRectBox.Width / 2, 0),
 			1.0f, SpriteEffects.None, 0.3f);
 	}
 
@@ -146,21 +141,20 @@ public class Boneslab : Barrage, ICustomLength
 				else if (appearTime <= appearDelay + totalTime)
 					currentHeight = LengthRoute(this);
 				else
-					currentHeight -= ((appearTime - appearDelay - totalTime) / 1.2f + 0.5f) * MathF.Sqrt(missionHeight) / 7 * (7f / boneslabOuttime);
-				goto A;
+					currentHeight -= ((appearTime - appearDelay - totalTime) / 1.2f + 0.5f) * MathF.Sqrt(missionHeight) / boneslabOuttime;
+				goto DisposingCheck;
 			}
 			if (appearTime <= appearDelay + boneslabOuttime)
 			{
 				currentHeight += missionHeight / 20f;
-				currentHeight = missionHeight * 0.22f + currentHeight * 0.78f;
-				currentHeight = Math.Min(currentHeight, missionHeight);
+				currentHeight = Math.Min(missionHeight * 0.22f + currentHeight * 0.78f, missionHeight);
 			}
 			else if (appearTime >= appearDelay + totalTime)
-				currentHeight -= ((appearTime - appearDelay - totalTime) / 1.2f + 0.5f) * MathF.Sqrt(missionHeight) / 7 * (7f / boneslabOuttime);
+				currentHeight -= ((appearTime - appearDelay - totalTime) / 1.2f + 0.5f) * MathF.Sqrt(missionHeight) / boneslabOuttime;
 			else
 				currentHeight = missionHeight;
 
-			A:
+			DisposingCheck:
 			if (currentHeight < -4)
 				Dispose();
 		}

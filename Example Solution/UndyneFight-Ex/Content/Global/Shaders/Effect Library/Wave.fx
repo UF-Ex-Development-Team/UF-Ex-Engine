@@ -28,17 +28,17 @@ float iTime;
 
 float4 MainPS3x(VertexShaderOutput input) : COLOR
 { 
-    float y = input.TextureCoordinates.y + iTime;
-    float del = 0;
-    for (int i = 0; i < 3; i++)
-        del += sin(y * iFrequency[i]) * iIntensity[i];
-    return tex2D(SpriteTextureSampler, input.TextureCoordinates + float2(del, 0));
+	float y = input.TextureCoordinates.y + iTime;
+	float del = 0;
+	for (int i = 0; i < 3; i++)
+		del += sin(y * iFrequency[i]) * iIntensity[i];
+	return tex2D(SpriteTextureSampler, input.TextureCoordinates + float2(del, 0));
 }
 
 technique SpriteDrawing3x
 {
-    pass P0
-    {
-        PixelShader = compile PS_SHADERMODEL MainPS3x();
-    }
+	pass P0
+	{
+		PixelShader = compile PS_SHADERMODEL MainPS3x();
+	}
 }

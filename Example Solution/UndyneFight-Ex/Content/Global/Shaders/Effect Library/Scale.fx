@@ -8,7 +8,7 @@
 #endif
 
 //#define CAMERAHIGH 400.0
-#define PI 3.1415926
+#define DOUBLE_PI 6.2831852
 
 uniform float2 iPos;
 uniform float iValue;//程度
@@ -36,14 +36,14 @@ float4 localToColor(sampler2D samplerTexture, float2 Position)
 
 float vectorToAngle(float2 vec)
 {
-	return (-atan2(vec.y, vec.x) + 2.0 * PI);
+	return (-atan2(vec.y, vec.x) + DOUBLE_PI);
 }
 
 float4 MainPS(VertexShaderOutput input) : COLOR
 {
 	float2 v_vPosition = input.TextureCoordinates * SIZESURFACE;
 	float2 Vector = v_vPosition - iPos;
-    Vector *= (1.0 + smoothstep(0.0, 0.3, max(0.0, -length(Vector) / 320.0 * 0.3 + 0.3)) * iValue);
+	Vector *= (1.0 + smoothstep(0.0, 0.3, max(0.0, -length(Vector) / 320.0 * 0.3 + 0.3)) * iValue);
 	return input.Color * localToColor(SpriteTextureSampler, Vector + iPos);
 }
 

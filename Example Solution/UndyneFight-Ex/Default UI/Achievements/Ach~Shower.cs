@@ -17,7 +17,9 @@ public class AchievementUI : Entity
 	private readonly Vector2[] TargetBoxPosition, ActualBoxPosition;
 	private int KeyHolding = 0;
 	private readonly int State = 0;
-
+	/// <summary>
+	/// v0.3.0+ Achievement UI
+	/// </summary>
 	public AchievementUI()
 	{
 		UpdateIn120 = true;
@@ -45,6 +47,7 @@ public class AchievementUI : Entity
 			TargetBoxPosition[i].Y = 240 + (i - Selection) * 80;
 		}
 	}
+	/// <inheritdoc/>
 	public override void Update()
 	{
 		//Exit
@@ -85,6 +88,7 @@ public class AchievementUI : Entity
 	}
 	private readonly Color[] colors = [Color.Coral, Color.LightGoldenrodYellow, Color.Lime, Color.Azure];
 	private static int colorTime = 0, colorIndex = 0;
+	/// <inheritdoc/>
 	public override void Draw()
 	{
 		//Cover background

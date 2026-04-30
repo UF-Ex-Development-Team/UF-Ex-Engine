@@ -1,7 +1,6 @@
 ﻿using UndyneFight_Ex.SongSystem;
 using static UndyneFight_Ex.FightResources.Sounds;
 using static UndyneFight_Ex.GameStates;
-using static UndyneFight_Ex.GlobalResources.Font;
 
 namespace UndyneFight_Ex.Entities;
 
@@ -72,16 +71,7 @@ internal partial class StateShower
 					PushSelection(new ReTry(s.wave));
 
 				PushSelection(new GiveUp());
-				DiffText = difficulty switch
-				{
-					0 => "Noob Mode",
-					1 => "Easy Mode",
-					2 => "Normal Mode",
-					3 => "Hard Mode",
-					4 => "Extreme Mode",
-					5 => "Extreme Plus",
-					_ => "?"
-				};
+				DiffText = Localization.GetText($"Difficulty[{difficulty}]");
 				DiffCol = difficulty switch
 				{
 					0 => Color.White,
@@ -92,7 +82,6 @@ internal partial class StateShower
 					_ => Color.Gray
 				};
 			}
-
 			public override void Update()
 			{
 				displayDetail ^= IsKeyPressed120f(InputIdentity.Alternate);
@@ -100,12 +89,11 @@ internal partial class StateShower
 					alpha += 0.025f;
 				blurIntensity = float.Lerp(blurIntensity, 2, 0.06f);
 				detailY = float.Lerp(detailY, displayDetail ? 340 : 485, 0.12f);
-
 				base.Update();
 			}
-
 			public override void Draw()
 			{
+				GLFont NormalFont = Localization.GetFont("NormalFont");
 				//Background drawing
 				Depth -= 0.01f;
 				CollideRect Normal = new(0, 0, 640, 480);
@@ -114,42 +102,41 @@ internal partial class StateShower
 				//Draw name
 				if (!IsInChallenge && lastParam is not null)
 				{
-					string SongDisplayName = lastParam.Waveset.Attributes.DisplayName;
 					string ChartDiff = lastParam.Waveset.Attributes.ComplexDifficulty.ContainsKey((Difficulty)difficulty) ? MathUtil.FloatToString(lastParam.Waveset.Attributes.ComplexDifficulty[(Difficulty)difficulty]) : "?";
-					NormalFont.CentreDraw($"{((SongDisplayName == string.Empty) ? lastParam.Waveset.FightName : SongDisplayName)}", new Vector2(320, 30), Color.White, 1, 0.1f);
+					NormalFont.CentreDraw($"{GlobalData.GetWavesetDisplayName(lastParam.Waveset)}", new Vector2(320, 30), Color.White, 1, 0.1f);
 					NormalFont.CentreDraw($"{GlobalData.ChartDifficultyNames[lastParam.Waveset.FightName][(Difficulty)difficulty]} {ChartDiff}", new Vector2(320, 60), DiffCol, 1, 0.1f);
 				}
+				Color lerpCol = Color.Lerp(Color.Black, Color.White, alpha);
 				//You lose
-				NormalFont.CentreDraw(tryCount == 1 ? "You lose" : "You lose again", new Vector2(320, 105), Color.Lerp(Color.Black, Color.White, alpha), 1, 0.1f);
+				Localization.DrawLocalizedText(tryCount == 1 ? "FailScreen.Lose" : "FailScreen.LoseAgain", new Vector2(320, 105), color: lerpCol, depth: 0.1f, align: Localization.DrawAlign.Middle);
 				//Time and score
-				NormalFont.CentreDraw($"Time survived: {MathUtil.FloatToString(MathF.Round((previousTimeSurvive[0] - 2) / 62.5f, 2))}s", new Vector2(320, 145), Color.Lerp(Color.Black, Color.White, alpha), 0.92f, 0.1f);
-				NormalFont.CentreDraw(recordMark ? "Halved score: " + halvedScore : "Modifiers used\nScore not saved", new Vector2(320, recordMark ? 180 : 195), Color.Lerp(Color.Black, Color.White, alpha), 0.92f, 0.1f);
+				Localization.DrawLocalizedText("FailScreen.Survived", new Vector2(320, 145), [MathUtil.FloatToString(MathF.Round((previousTimeSurvive[0] - 2) / 62.5f, 2))], color: lerpCol, scale: new(0.92f), depth: 0.1f, align: Localization.DrawAlign.Middle);
+				Localization.DrawLocalizedText(recordMark ? "FailScreen.Halved" : "FailScreen.Modifiers", new Vector2(320, recordMark ? 180 : 195), recordMark ? [halvedScore] : [], scale: new(0.92f), color: lerpCol, depth: 0.1f, align: Localization.DrawAlign.Middle);
 				//Space hint
-				NormalFont.CentreDraw("Press Spacebar for more details", new Vector2(320, 860 - detailY), Color.Lerp(Color.Black, Color.GreenYellow, alpha), 0.92f, 0.08f);
+				Localization.DrawLocalizedText("FailScreen.Details", new Vector2(320, 860 - detailY), [MiscUtil.GetInputKeys(InputIdentity.Alternate)[0]], scale: new(0.92f), color: Color.Lerp(Color.Black, Color.GreenYellow, alpha), depth: 0.08f, align: Localization.DrawAlign.Middle);
 				//Detailed
 				DrawingLab.DrawLine(new Vector2(0, detailY), new Vector2(640, detailY), 3, Color.White, 0.1f);
 				DrawingLab.DrawLine(new Vector2(0, detailY + (480 - detailY) / 2), new Vector2(640, detailY + (480 - detailY) / 2), 480 - detailY, Color.Black, 0.09f);
 				if (instance == null)
 					return;
-				NormalFont.Draw($"Max Combo: {instance.maxCombo}", new Vector2(40, detailY + 10), Color.White, 1, 0.1f);
-				NormalFont.Draw("Miss", new Vector2(40, detailY + 40), Color.Red, 1, 0.1f);
+				Localization.DrawLocalizedText("ResultScreen.MaxCombo", new Vector2(40, detailY + 10), [instance.maxCombo], depth: 0.1f);
+				Localization.DrawLocalizedText("ChartJudgement.Miss", new Vector2(40, detailY + 40), color: Color.Red, depth: 0.1f);
 				NormalFont.Draw(instance.miss.ToString(), new Vector2(40, detailY + 70), Color.White, 1, 0.1f);
-				NormalFont.Draw("Okay", new Vector2(190, detailY + 40), Color.Green, 1, 0.1f);
+				Localization.DrawLocalizedText("ChartJudgement.Okay", new Vector2(190, detailY + 40), color: Color.Green, depth: 0.1f);
 				NormalFont.Draw(instance.okay.ToString(), new Vector2(190, detailY + 70), Color.White, 1, 0.1f);
-				NormalFont.Draw("Nice", new Vector2(330, detailY + 40), Color.LightBlue, 1, 0.1f);
+				Localization.DrawLocalizedText("ChartJudgement.Nice", new Vector2(330, detailY + 40), color: Color.LightBlue, depth: 0.1f);
 				NormalFont.Draw(instance.nice.ToString(), new Vector2(330, detailY + 70), Color.White, 1, 0.1f);
-				NormalFont.Draw("Perfect", new Vector2(480, detailY + 40), Color.Gold, 1, 0.1f);
+				Localization.DrawLocalizedText("ChartJudgement.Perfect", new Vector2(480, detailY + 40), color: Color.Gold, depth: 0.1f);
 				NormalFont.Draw(instance.perfect.ToString(), new Vector2(480, detailY + 70), Color.White, 1, 0.1f);
-				NormalFont.Draw($"(E:{instance.perfectE}, L:{instance.perfectL})", new Vector2(480, detailY + 100), Color.Orange, 0.75f, 0.1f);
+				Localization.DrawLocalizedText("ResultScreen.EarlyLateShort", new Vector2(480, detailY + 100), [instance.perfectE, instance.perfectL], color: Color.Orange, scale: new(0.75f), depth: 0.1f);
 
 				base.Draw();
 			}
 		}
-
 		private class ReTry : TextSelection
 		{
 			private readonly IWaveSet wave;
-			public ReTry(IWaveSet wave) : base("Try again", new Vector2(320, 250)) { Size = 1.0f; this.wave = wave; }
+			public ReTry(IWaveSet wave) : base(Localization.GetText("FailScreen.TryAgain"), new Vector2(320, 250)) { Size = 1.0f; this.wave = wave; }
 			[MethodImpl(MethodImplOptions.AggressiveInlining)]
 			public override void SelectionEvent()
 			{
@@ -158,10 +145,9 @@ internal partial class StateShower
 				base.SelectionEvent();
 			}
 		}
-
 		private class GiveUp : TextSelection
 		{
-			public GiveUp() : base("Quit", new Vector2(320, 300)) => Size = 1.0f;
+			public GiveUp() : base(Localization.GetText("FailScreen.Quit"), new Vector2(320, 300)) => Size = 1.0f;
 			[MethodImpl(MethodImplOptions.AggressiveInlining)]
 			public override void SelectionEvent()
 			{
@@ -176,9 +162,7 @@ internal partial class StateShower
 				IsInChallenge = false;
 			}
 		}
-
 		public override void Draw() { }
-
 		public override void Update()
 		{
 			if (retrySelector.Disposed)

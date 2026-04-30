@@ -15,11 +15,10 @@ internal class TimeShower : Entity
 			col.G = (byte)Math.Max(col.G - 2, 0);
 			col.B = (byte)Math.Max(col.B - 2, 0);
 		}
-		int d = (int)((GametimeF - GametimeDelta) / 62.5f * 60f);
-		if (d < 0)
-			d = 0;
+		int d = (int)float.Max(0, (GametimeF - GametimeDelta) / 62.5f * 60f);
 		int min = d / 3600, sec = d / 60 % 60;
 		float ms = MathF.Round(d % 60 * 100/60f);
+		//Note that the dotpadding method here is faster as there is no int -> string conversion
 		FightResources.Font.NormalFont.CentreDraw($"{min}:{(sec < 10 ? "0" : "") + sec}:{(ms < 10 ? "0" : "") + ms}",
 			new Vector2(94, 30), col);
 		//FightResources.Font.FightFont.Draw("(Beta 12)", new Vector2(580, 0), Color.Gray * 0.5f, 0.5f, 1);
@@ -27,7 +26,7 @@ internal class TimeShower : Entity
 		IWaveSet curWave = CurrentFightingScene.waveset;
 		if (curWave is null)
 			return;
-		if (curWave is WaveConstructor waveset)
+		if (curWave is WaveConstructor)
 		{
 			if (!WaveConstructor._isMultiBPM)
 				FightResources.Font.NormalFont.CentreDraw($"Beat: {FloatToString(GametimeF / WaveConstructor.SingleBeat, 1)}", new Vector2(94, 50), col, 0.7f, 0.3f);

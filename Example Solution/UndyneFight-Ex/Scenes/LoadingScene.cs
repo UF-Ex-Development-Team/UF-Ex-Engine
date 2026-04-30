@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using Newtonsoft.Json.Linq;
 using UndyneFight_Ex.Entities;
 using UndyneFight_Ex.Fight;
 using UndyneFight_Ex.GameInterface;
@@ -45,15 +46,15 @@ public class LoadingScene : Scene
 	/// <inheritdoc/>
 	public override void Update()
 	{
+		//Run the loading task after a tiny buffer
 		if (++appearTime == 2)
 			loadingTask.Start();
+		//Loading is finished when the task is complete and all audio previews are loaded if it's the initial loading screen
 		else if (appearTime >= LeastLoadingTime && finishedLoad && !eventInvoked && (this is not ResourcesLoadingScene || LoadedPreviewAudioCount == AudioPreviewDatas.Count))
 		{
 			eventInvoked = true;
 			LoadingFinishedEvent();
 		}
-		if (IsKeyPressed120f(InputIdentity.Cancel))
-			ResetScene(new GameMenuScene());
 		base.Update();
 	}
 }
@@ -70,18 +71,21 @@ public class SongLoadingScene : LoadingScene
 	/// <param name="songParams">The parameters of the chart</param>
 	public SongLoadingScene(SongFightingScene.SceneParams songParams) : base(() =>
 	{
+		//When loading is done, move to chart scene after the fade out animation
 		DelayEventProcessor.AddInstantEvent(90, () => ResetScene(new SongFightingScene(songParams)));
 		Loaded = true;
 	}, () =>
 	{
+		//Main loading action
 		songParams.MusicOptimized = songParams.Waveset.Attributes?.MusicOptimized ?? false;
 		SongLoadingScene.songParams.LoadMusic();
 	}, songParams.IsUnload)
 	{
+		//Other stuff
 		Loaded = false;
 		SongLoadingScene.songParams = songParams;
 		Information = songParams.Waveset.Attributes;
-		tipID = MathUtil.GetRandom(0, additions.Length - 1);
+		tipID = MathUtil.GetRandom(0, Tips.Count() - 1);
 	}
 	/// <summary>
 	/// New load challenge method
@@ -90,17 +94,18 @@ public class SongLoadingScene : LoadingScene
 	/// <param name="songParams"></param>
 	public SongLoadingScene(Challenge challenge, params SongFightingScene.SceneParams[] songParams) : base(() =>
 	{
-		// loadingFinished
+		//When loading is done, move to chart scene after the fade out animation
 		DelayEventProcessor.AddInstantEvent(30, () => ResetScene(new SongFightingScene(songParams[0], challenge)));
 		Loaded = true;
 	}, () =>
 	{
-		// loadingAction
+		//Main loading action
 		if (songParams[0].Waveset.Attributes?.MusicOptimized ?? false)
 			songParams[0].MusicOptimized = true;
 		songParams[0].LoadMusic();
 	}, songParams[0].IsUnload)
 	{
+		//Other stuff
 		IsInChallenge = true;
 		ChallengeCount = songParams.Length;
 		CurChallengeNum = 0;
@@ -109,35 +114,21 @@ public class SongLoadingScene : LoadingScene
 		SongLoadingScene.songParams = songParams[0];
 		difficulty = SongLoadingScene.songParams.difficulty;
 		Information = songParams[0].Waveset.Attributes;
-		tipID = MathUtil.GetRandom(0, additions.Length - 1);
+		tipID = MathUtil.GetRandom(0, Tips.Count() - 1);
 	}
 	private float alpha = 0, tipY = 500, infoX = -640, titleY = -80, titleAlpha = 0, paintAlpha = 1;
 	private static bool Loaded = false;
 
-	private readonly string[] additions = [
-		"Every character worth your attention",
-		"Tips: Do not bite off more than you can chew",
-		"Fun Fact: Practice mode starts with 99HP instead of Infinite HP formerly",
-		"Fun Fact: 2021 Spring Celebration is the first championship with two segments",
-		"Fun Fact: 2023 Memory is the first championship with 2 secret charts",
-		"Fun Fact: Indihome Packet Phoenix div 1 was had Ex difficulty before becoming Ex+",
-		"Fun Fact: Freedom Dive div 1 final part had twice the blue arrows before the nerf",
-		"Fun Fact: Undyne Extreme was nerfed several times and the difficulty drastically dropped",
-		"Fun Fact: Did you notice that arrows have reduced speed between the SOUL and shields?",
-		"Nagareteku toki no naka de demo Kedarusa ga hora guru guru mawatte",
-		"In a desperate conflict   With a ruthless enemy",
-		"We're no strangers to love",
-		"Right after the break",
-		"Creeper...Aww man",
-		"Fun Fact: Did you know one of the developers didn't even study computer at school?",
-	];
+	private readonly JToken Tips = Localization.GetTranslationData().SelectToken("LoadingScene.Tips");
 
 	/// <inheritdoc/>
 	public override void Draw()
 	{
+		(GLFont drawFont, float fontScale) = Localization.GetFontData("NormalFont");
 		Depth = -0.1f;
 		DrawingLab.DrawRectangle(new Rectangle(new(316, 79), new(323, 242)), Color.DeepSkyBlue * paintAlpha * 0.6f, 2.5f, 0.99f);
 		Texture2D chartPaint = songParams.SongIllustration;
+		//Fake blur, I need to figure out how to apply shaders on the fly
 		if (chartPaint != null)
 		{
 			for (int i = 0; i < 8; i++)
@@ -146,10 +137,10 @@ public class SongLoadingScene : LoadingScene
 			GeneralDraw(chartPaint, new Vector2(477.5f, 200), Color.White * paintAlpha, new Vector2(320f / chartPaint.Width, 240f / chartPaint.Height), depth: 1);
 		}
 		else
-			FightResources.Font.FightFont.CentreDraw("No Paint", new Vector2(477.5f, 200), Color.Red * paintAlpha, 1, 1);
+			Localization.DrawLocalizedText("LoadingScene.NoPaint", new Vector2(477.5f, 200), font: "FightFont", color: Color.Red * paintAlpha, depth: 1, align: Localization.DrawAlign.Middle);
 		//Title
 		string songName = GetWavesetDisplayName(songParams.Waveset);
-		Font.NormalFont.CentreDraw(songName, new Vector2(320, titleY), Color.White, new Vector2(float.Min(1, 600f / Font.NormalFont.SFX.MeasureString(songName).X), 1), 1);
+		drawFont.CentreDraw(songName, new Vector2(320, titleY), Color.White, new Vector2(float.Min(1, 600f / Font.NormalFont.SFX.MeasureString(songName).X), 1), 1);
 		Color DiffCol = difficulty switch
 		{
 			0 => Color.White,
@@ -159,55 +150,61 @@ public class SongLoadingScene : LoadingScene
 			4 => Color.Orange,
 			_ => Color.Gray
 		};
-		Font.NormalFont.CentreDraw(ChartDifficultyNames[songParams.Waveset.FightName][(Difficulty)difficulty], new Vector2(320, titleY + 35), DiffCol, 1, 0.1f);
+		drawFont.CentreDraw(ChartDifficultyNames[songParams.Waveset.FightName][(Difficulty)difficulty], new Vector2(320, titleY + 35), DiffCol, fontScale, 0.1f);
+		Color lerpWhite = Color.White * alpha;
+		//Chart information
 		if (Information != null)
 		{
 			int CurPos = 150;
 			if (Information.BarrageAuthor != "Unknown")
 			{
-				Font.NormalFont.Draw("Barrage:", new(infoX, CurPos), Color.White * alpha, 0.8f, 0.5f);
+				Localization.DrawLocalizedText("LoadingScene.Barrage", new Vector2(infoX, CurPos), scale: new(0.8f), color: lerpWhite, depth: 0.5f);
 				CurPos += 22;
-				Font.NormalFont.Draw(Information.BarrageAuthor, new(infoX + 20, CurPos), Color.White * alpha, float.Min(0.4f, 280f / Font.NormalFont.SFX.MeasureString(Information.BarrageAuthor).X), 0.5f);
+				drawFont.Draw(Information.BarrageAuthor, new(infoX + 20, CurPos), lerpWhite, float.Min(0.4f, 280f / Font.NormalFont.SFX.MeasureString(Information.BarrageAuthor).X) * fontScale, 0.5f);
 				CurPos += 15;
 			}
 			if (Information.SongAuthor != "Unknown")
 			{
-				Font.NormalFont.Draw("Composer:", new(infoX, CurPos), Color.White * alpha, 0.8f, 0.5f);
+				Localization.DrawLocalizedText("LoadingScene.Composer", new Vector2(infoX, CurPos), scale: new(0.8f), color: lerpWhite, depth: 0.5f);
 				CurPos += 22;
-				Font.NormalFont.Draw(Information.SongAuthor, new(infoX + 20, CurPos), Color.White * alpha, float.Min(0.4f, 280f / Font.NormalFont.SFX.MeasureString(Information.SongAuthor).X), 0.5f);
+				drawFont.Draw(Information.SongAuthor, new(infoX + 20, CurPos), lerpWhite, float.Min(0.4f, 280f / Font.NormalFont.SFX.MeasureString(Information.SongAuthor).X) * fontScale, 0.5f);
 				CurPos += 15;
 			}
 			if (Information.PaintAuthor != "Unknown")
 			{
-				Font.NormalFont.Draw("Paint:", new(infoX, CurPos), Color.White * alpha, 0.8f, 0.5f);
+				Localization.DrawLocalizedText("LoadingScene.Paint", new Vector2(infoX, CurPos), scale: new(0.8f), color: lerpWhite, depth: 0.5f);
 				CurPos += 22;
-				Font.NormalFont.Draw(Information.PaintAuthor, new(infoX + 20, CurPos), Color.White * alpha, float.Min(0.4f, 280f / Font.NormalFont.SFX.MeasureString(Information.PaintAuthor).X), 0.5f);
+				drawFont.Draw(Information.PaintAuthor, new(infoX + 20, CurPos), lerpWhite, float.Min(0.4f, 280f / Font.NormalFont.SFX.MeasureString(Information.PaintAuthor).X) * fontScale, 0.5f);
 				CurPos += 15;
 			}
 			if (Information.AttributeAuthor != "Unknown")
 			{
-				Font.NormalFont.Draw("Effect:", new(infoX, CurPos), Color.White * alpha, 0.8f, 0.5f);
+				Localization.DrawLocalizedText("LoadingScene.Effect", new Vector2(infoX, CurPos), scale: new(0.8f), color: lerpWhite, depth: 0.5f);
 				CurPos += 22;
-				Font.NormalFont.Draw(Information.AttributeAuthor, new(infoX + 20, CurPos), Color.White * alpha, float.Min(0.4f, 280f / Font.NormalFont.SFX.MeasureString(Information.AttributeAuthor).X), 0.5f);
+				drawFont.Draw(Information.AttributeAuthor, new(infoX + 20, CurPos), lerpWhite, float.Min(0.4f, 280f / Font.NormalFont.SFX.MeasureString(Information.AttributeAuthor).X) * fontScale, 0.5f);
 			}
 
-			Font.NormalFont.CentreDraw(Information.Extra, new(320, 360), Information.ExtraColor * alpha, 0.75f, 0.5f);
+			drawFont.CentreDraw(Information.Extra, new(320, 360), Information.ExtraColor * alpha, 0.75f * fontScale, 0.5f);
 		}
-		Font.NormalFont.Draw(additions[tipID], new(12, tipY), Color.White * alpha, MathF.Min(0.48f, 600f / Font.NormalFont.SFX.MeasureString(additions[tipID]).X), 0.5f);
+		//Tips
+		drawFont.Draw(Tips[tipID].ToString(), new Vector2(12, tipY), lerpWhite, float.Min(0.48f, 600f / Font.NormalFont.SFX.MeasureString(Tips[tipID].ToString()).X) * fontScale, 0.5f);
 		base.Draw();
-		GeneralDraw(Sprites.loadingText, new Vector2(280, 430), Color.White * alpha, depth: 1);
+		//Loading sprites
+		GeneralDraw(Sprites.loadingText, new Vector2(280, 430), lerpWhite, depth: 1);
 		for (int i = 0; i < 6; i++)
-			GeneralDraw(Sprites.progressArrow, new(395 + i * 20, 430), Color.White * (Functions.Sin((appearTime - i * 6 - 20) * 3.75f) * 0.9f + 0.1f) * 0.8f * alpha);
+			GeneralDraw(Sprites.progressArrow, new(395 + i * 20, 430), lerpWhite * (Functions.Sin((appearTime - i * 6 - 20) * 3.75f) * 0.9f + 0.1f) * 0.8f);
 	}
 	private int tipID;
 	/// <inheritdoc/>
 	public override void Update()
 	{
+		//Change tips
 		if (IsKeyPressed120f(InputIdentity.Alternate))
 		{
 			Functions.PlaySound(FightResources.Sounds.Ding);
-			tipID = MathUtil.GetRandom(0, additions.Length - 1);
+			tipID = MathUtil.GetRandom(0, Tips.Count() - 1);
 		}
+		//Lerping stuff
 		alpha = float.Lerp(alpha, Loaded ? 0 : 1, 0.16f);
 		titleAlpha = float.Lerp(titleAlpha, Loaded ? 0 : 1, 0.03f);
 		paintAlpha = float.Lerp(paintAlpha, Loaded ? 0 : 1, 0.08f);
@@ -217,6 +214,9 @@ public class SongLoadingScene : LoadingScene
 		base.Update();
 	}
 }
+/// <summary>
+/// Initial loading scene for loading global resources
+/// </summary>
 internal class ResourcesLoadingScene : LoadingScene
 {
 	private float loadProgress = 0, splashAlpha = 0;
@@ -234,46 +234,46 @@ internal class ResourcesLoadingScene : LoadingScene
 	public ResourcesLoadingScene(ContentManager loader) : base(() => ResetScene(new GameMenuScene()), MainResourcesLoad) => ResourcesLoadingScene.loader = loader;
 	public override void Draw()
 	{
+		(GLFont drawFont, float fontScale) = Localization.GetFontData("NormalFont");
 		if (SplashScreenState != SplashState.Ended)
 		{
 			//Splash screen
 			GeneralDraw(FightResources.Sprites.pixUnit, new(320, 240), Color.Black * (1 - splashAlpha), new(640, 480), depth: 0.99f);
 			if (SplashScreenState == SplashState.Undertale)
 			{
-				Font.NormalFont.CentreDraw("This is an", new(320, 210), Color.White);
-				Font.NormalFont.CentreDraw("UNDERTALE", new(320, 240), Color.White, 2, 0.5f);
-				Font.NormalFont.CentreDraw("fangame", new(320, 280), Color.White);
+				Localization.DrawLocalizedText("SplashScreen.First[0]", new Vector2(320, 200), align: Localization.DrawAlign.Middle);
+				Localization.DrawLocalizedText("SplashScreen.First[1]", new Vector2(320, 240), scale: new(2), align: Localization.DrawAlign.Middle);
+				Localization.DrawLocalizedText("SplashScreen.First[2]", new Vector2(320, 280), align: Localization.DrawAlign.Middle);
 			}
 			else
 			{
-				Font.NormalFont.CentreDraw("This game is made possible by", new(320, 210), Color.White);
-				Font.NormalFont.CentreDraw("Monogame and UF-Ex", new(320, 240), Color.White);
+				Localization.DrawLocalizedText("SplashScreen.Second[0]", new Vector2(320, 225), align: Localization.DrawAlign.Middle);
+				Localization.DrawLocalizedText("SplashScreen.Second[1]", new Vector2(320, 255), align: Localization.DrawAlign.Middle);
 			}
 			return;
 		}
 		GeneralDraw(FightResources.Sprites.pixUnit, new(320, 240), Color.Black * (1 - splashAlpha), new(640, 480), depth: 0.99f);
 		base.Draw();
-		float alpha = appearTime / 20f;
-		GeneralDraw(Sprites.loadingText, new Vector2(280, 430), Color.White * alpha);
+		GeneralDraw(Sprites.loadingText, new Vector2(280, 430), Color.White * (appearTime / 20f));
 		for (int i = 0; i < 6; i++)
 			GeneralDraw(Sprites.progressArrow, new(395 + i * 20, 430), Color.White * (Functions.Sin((appearTime - i * 6 - 20) * 3.75f) * 0.9f + 0.1f) * 0.8f);
-		Font.NormalFont.CentreDraw($"Booting up game...", new(320, 120), Color.White, 0.8f, 0f);
-		Font.NormalFont.CentreDraw($"Loading audio previews: {LoadedPreviewAudioCount}/{AudioPreviewDatas.Count}", new Vector2(320, 320), Color.White * MathF.Abs(Functions.Sin(appearTime)), 0.6f, 0.98f);
-		float loadPercentage = (float)LoadedPreviewAudioCount / AudioPreviewDatas.Count;
-		loadProgress = float.Lerp(loadProgress, 200 * loadPercentage, 0.04f);
+		Localization.DrawLocalizedText("SplashScreen.Boot", new Vector2(320, 120), scale: new Vector2(0.8f), depth: 0, align: Localization.DrawAlign.Middle);
+		//Audio preview loading bar
+		Localization.DrawLocalizedText("SplashScreen.AudioPreview", new Vector2(320, 320), [LoadedPreviewAudioCount, AudioPreviewDatas.Count], color: Color.White * MathF.Abs(Functions.Sin(appearTime)), scale: new Vector2(0.6f), depth: 0.98f, align: Localization.DrawAlign.Middle);
 		GeneralDraw(FightResources.Sprites.pixUnit, new Vector2(320, 320), Color.White, new Vector2(404, 24));
 		GeneralDraw(FightResources.Sprites.pixUnit, new Vector2(320, 320), Color.Gray, new Vector2(400, 20));
 		GeneralDraw(FightResources.Sprites.pixUnit, new Vector2(120 + loadProgress, 320), Color.LimeGreen, new Vector2(loadProgress * 2, 20));
-		string str = $"Loading {LoadState.ToString().Replace('_', ' ')}";
+		string str = Localization.GetText("SplashScreen.Loading", Localization.GetText($"SplashScreen.LoadState.{LoadState}"));
 		for (int i = 0; i < DateTime.Now.Ticks / 5000000 % 4; i++)
 			str += ".";
-		Font.NormalFont.CentreDraw(str, new Vector2(320, 360), Color.White, 0.6f, 0.5f);
+		drawFont.CentreDraw(str, new Vector2(320, 360), Color.White, 0.6f * fontScale, 0.5f);
 		if (Sprites.loadingTexture != null)
 			GeneralDraw(Sprites.loadingTexture, GameStartUp.LoadingSettings.TitleCentrePosition, Color.White * (appearTime / 20f), new Vector2(MathF.Min(640f / Sprites.loadingTexture.Width, 1)));
 	}
 	public override void Update()
 	{
 		base.Update();
+		loadProgress = float.Lerp(loadProgress, 200f * LoadedPreviewAudioCount / AudioPreviewDatas.Count, 0.04f);
 		if (splashHoldTime < 0)
 			splashHoldTime++;
 		else
@@ -288,14 +288,11 @@ internal class ResourcesLoadingScene : LoadingScene
 			splashIsFading = false;
 		}
 		//Ensure evaluation order
-		else if ((1 - splashAlpha) < 0.005f || IsKeyPressed120f(InputIdentity.Confirm))
+		else if ((splashAlpha > 0.995f || IsKeyPressed120f(InputIdentity.Confirm)) && ++splashHoldTime == 90)
 		{
-			if (++splashHoldTime == 90)
-			{
-				splashIsFading = true;
-				//Buffer time for fading
-				splashHoldTime = -120;
-			}
+			splashIsFading = true;
+			//Buffer time for fading
+			splashHoldTime = -120;
 		}
 	}
 	private enum SplashState
@@ -304,7 +301,7 @@ internal class ResourcesLoadingScene : LoadingScene
 		MadeBy,
 		Ended
 	}
-	public enum ResourcesLoadState
+	internal enum ResourcesLoadState
 	{
 		Title_Sprite,
 		Global_Sprites,

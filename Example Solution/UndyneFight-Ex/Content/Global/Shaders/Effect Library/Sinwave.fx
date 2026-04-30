@@ -26,11 +26,11 @@ float time3, sin3;
 
 float4 MainPS(VertexShaderOutput input) : COLOR
 {
-    float v = input.TextureCoordinates.y + input.TextureCoordinates.x * 0.8;
-    float del = sin(v * 260 + time1) * sin1 
+	float v = input.TextureCoordinates.y + input.TextureCoordinates.x * 0.8;
+	float del = sin(v * 260 + time1) * sin1 
 			  + sin(v * 165 + time2) * sin2
 			  + sin(v * 115 + time3) * sin3;
-    return tex2D(SpriteTextureSampler, input.TextureCoordinates + float2(del, del * -0.8)) * input.Color;
+	return tex2D(SpriteTextureSampler, input.TextureCoordinates + float2(del, del * -0.8)) * input.Color;
 }
 
 technique SpriteDrawing

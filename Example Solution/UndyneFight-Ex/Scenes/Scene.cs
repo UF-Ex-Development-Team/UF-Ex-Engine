@@ -47,7 +47,6 @@ public abstract class Scene : Entity
 			}
 		}
 		private Vector4 extending;
-
 		internal float SurfaceScale => defaultWidth / 640f;
 		/// <summary>
 		/// Initializes the drawing settings
@@ -97,6 +96,7 @@ public abstract class Scene : Entity
 	/// </summary>
 	public override void Draw()
 	{
+		//Skips all draw event when flicker is active
 		if (stopTime > 0.01f)
 			return;
 	}
@@ -110,7 +110,6 @@ public abstract class Scene : Entity
 	{
 		if (!GameEvents.TryGetValue(gameEventArgs.ActionName, out List<GameEventArgs> value))
 			GameEvents.Add(gameEventArgs.ActionName, value = []);
-
 		value.Add(gameEventArgs);
 	}
 	/// <summary>
@@ -137,7 +136,7 @@ public abstract class Scene : Entity
 			Fight.Functions.ScreenDrawing.Reset();
 			Start();
 		}
-		buffer.ForEach(Objects.Add);
+		Objects.AddRange(buffer);
 		buffer.Clear();
 		_ = Objects.RemoveAll(s => s.Disposed);
 		EasingUtil.Processor.ProcessEase();
@@ -168,7 +167,9 @@ public abstract class Scene : Entity
 	/// </summary>
 	public override void Dispose()
 	{
-		Objects.Where(s => !s.CrossScene).ToList().ForEach(s => s.Dispose());
+		foreach (GameObject obj in Objects)
+			if (!obj.CrossScene)
+				obj.Dispose();
 		buffer.Clear();
 		EasingUtil.Processor.ClearEase();
 		DelayEventProcessor.ClearDelayEvents();

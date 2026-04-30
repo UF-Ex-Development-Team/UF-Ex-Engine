@@ -21,8 +21,7 @@ public partial class Player
 			if (++appearTime != 50)
 				return;
 			FightResources.Sounds.die2.CreateInstance().Play();
-			int c = MathUtil.GetRandom(4, 6);
-			for (int i = 0; i < c; i++)
+			for (int i = 0, c = MathUtil.GetRandom(4, 6); i < c; i++)
 				GameStates.InstanceCreate(new HeartPiece(playerPos, showingColor));
 			Dispose();
 		}

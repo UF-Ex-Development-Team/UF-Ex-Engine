@@ -35,24 +35,16 @@ public class Bone : LineCollisionBarrage
 	{
 		set
 		{
-			base.ColorType = (int)value;
-			switch (value)
+			if (value is < 0 or > 2)
+				throw new ArgumentOutOfRangeException(nameof(value), value, "The value can only be 0, 1 or 2");
+			base.ColorType = colorType = (int)value;
+			drawingColor = value switch
 			{
-				case 0:
-					drawingColor = Color.White;
-					colorType = 0;
-					break;
-				case 1:
-					drawingColor = new Color(110, 203, 255, 255);
-					colorType = 1;
-					break;
-				case 2:
-					drawingColor = Color.Orange;
-					colorType = 2;
-					break;
-				default:
-					throw new ArgumentOutOfRangeException(nameof(value), value, "The value can only be 0, 1 or 2");
-			}
+				0 => Color.White,
+				1 => new Color(110, 203, 255, 255),
+				2 => Color.Orange,
+				_ => drawingColor
+			};
 		}
 		get => colorType;
 	}

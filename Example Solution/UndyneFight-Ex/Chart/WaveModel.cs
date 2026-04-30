@@ -203,21 +203,18 @@ public class WaveConstructor : GameObject
 	{
 		if (!_isMultiBPM)
 			return (int)(GametimeF % BeatTime(beatCount) * 2) == (int)K * 2;
-		else
+		float AccumulateFrames = 0, curBeat = CurrentFightingScene.Time.curBeat;
+		foreach ((float bpmCount, float bpm) in _MultiBPM)
 		{
-			float AccumulateFrames = 0, curBeat = CurrentFightingScene.Time.curBeat;
-			foreach ((float bpmCount, float bpm) in _MultiBPM)
+			if (curBeat <= bpmCount)
+				return (int)((GametimeF - AccumulateFrames) % bpm * 2) == (int)K * 2;
+			else
 			{
-				if (curBeat <= bpmCount)
-					return (int)((GametimeF - AccumulateFrames) % bpm * 2) == (int)K * 2;
-				else
-				{
-					AccumulateFrames += bpmCount * bpm;
-					curBeat -= bpmCount;
-				}
+				AccumulateFrames += bpmCount * bpm;
+				curBeat -= bpmCount;
 			}
-			return false;
 		}
+		return false;
 	}
 	/// <summary>
 	/// Invokes an action after the given beats
@@ -246,7 +243,7 @@ public class WaveConstructor : GameObject
 	/// <param name="durationBeat">The duration of the action</param>
 	/// <param name="action">The action to invoke</param>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public static void ForBeat120(float durationBeat, Action action) =>  DelayEventProcessor.AddTimeRangedEvent(0, action, BeatTime(durationBeat), true);
+	public static void ForBeat120(float durationBeat, Action action) => DelayEventProcessor.AddTimeRangedEvent(0, action, BeatTime(durationBeat), true);
 	/// <summary>
 	/// Invokes an action for the next given beats after the given beats (Using int calculation, recommended not to use)
 	/// </summary>
@@ -274,15 +271,17 @@ public class WaveConstructor : GameObject
 			string cur = string.Empty, self = string.Empty;
 			BracketTreeNode curNode = null;
 			int cnt = 0;
-			for (int i = 0; i < s.Length; i++)
+			ReadOnlySpan<char> span = s.AsSpan();
+			for (int i = 0; i < span.Length; i++)
 			{
-				if (s[i] == '(')
+				char curChar = span[i];
+				if (curChar == '(')
 				{
 					//Increment count after checking
 					if (cnt++ > 0)
-						cur += s[i];
+						cur += curChar;
 				}
-				else if (s[i] == ')')
+				else if (curChar == ')')
 				{
 					if (--cnt == 0)
 					{
@@ -290,22 +289,22 @@ public class WaveConstructor : GameObject
 						cur = string.Empty;
 					}
 					else
-						cur += s[i];
+						cur += curChar;
 				}
-				else if (cnt == 0 && s[i] == '[')
+				else if (cnt == 0 && curChar == '[')
 				{
 					i++;
 					string mul = string.Empty;
-					for (; s[i] != ']'; i++)
-						mul += s[i];
+					for (; span[i] != ']'; i++)
+						mul += span[i];
 					CalculateTimes(curNode, mul);
 				}
 				else
 				{
 					if (cnt == 0)
-						self += s[i];
+						self += curChar;
 					else
-						cur += s[i];
+						cur += curChar;
 				}
 			}
 			info = self;
@@ -332,13 +331,10 @@ public class WaveConstructor : GameObject
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		private static int TryParseInt(BracketTreeNode curNode, string mul)
 		{
-			if (int.TryParse(mul, out int mulInt))
-			{
-				if (curNode == null)
-					throw new ArgumentException(string.Format("[] must be placed after )"));
-			}
-			else
+			if (!int.TryParse(mul, out int mulInt))
 				throw new ArgumentException(string.Format("{0} isn't a number in the []", mul));
+			else if (curNode == null)
+				throw new ArgumentException(string.Format("[] must be placed after )"));
 
 			return mulInt;
 		}
@@ -352,8 +348,8 @@ public class WaveConstructor : GameObject
 			// in the foreach, we recursively get the items in the subtrees.
 			foreach (BracketTreeNode son in sons)
 			{
-				bool existEnumer;
-				if (existEnumer = !string.IsNullOrEmpty(son.enumer))
+				bool existEnumer = !string.IsNullOrEmpty(son.enumer);
+				if (existEnumer)
 					enums.Add(son.enumer, 0);
 				for (int i = son.boundL; i <= son.boundR; i++)
 				{
@@ -398,6 +394,16 @@ public class WaveConstructor : GameObject
 		origin = origin[..tag];
 		return result.Split(',');
 	}
+	private static readonly Dictionary<char, ArrowAttribute> SpecialCharToAttribute = new()
+	{
+		['~'] = ArrowAttribute.Void,
+		['*'] = ArrowAttribute.Tap,
+		['_'] = ArrowAttribute.Hold,
+		['<'] = ArrowAttribute.RotateL,
+		['>'] = ArrowAttribute.RotateR,
+		['^'] = ArrowAttribute.SpeedUp,
+		['!'] = ArrowAttribute.NoScore
+	};
 	/// <summary>
 	/// This is the most unmaintainable code as rated in the MSVS Code Metrics, only having 29/100
 	/// </summary>
@@ -435,7 +441,6 @@ public class WaveConstructor : GameObject
 		}
 		string tag = null;
 		float speedMul = 1f;
-		bool isVoid = false;
 		//Apply speed multiplication
 		if (speedPos != -1)
 			speedMul = tagPos > speedPos
@@ -454,43 +459,17 @@ public class WaveConstructor : GameObject
 			origin = origin[..cut1];
 		//Arrow attributes
 		int curSpecialI = 0;
-		if (origin[curSpecialI] == '~')
+		foreach (char c in origin)
 		{
-			arrowAttribute |= ArrowAttribute.Void;
+			if (!SpecialCharToAttribute.TryGetValue(c, out ArrowAttribute att))
+				continue;
+			//Ignore hold if is tap
+			if (att == ArrowAttribute.Hold && (arrowAttribute & ArrowAttribute.Tap) != 0)
+				continue;
 			curSpecialI++;
-			isVoid = true;
-		}
-		if (origin[curSpecialI] == '*')
-		{
-			arrowAttribute |= ArrowAttribute.Tap;
-			curSpecialI++;
-			if (Settings.GreenTap)
+			arrowAttribute |= att;
+			if (att == ArrowAttribute.Tap && Settings.GreenTap)
 				arrowAttribute |= ArrowAttribute.ForceGreen;
-		}
-		else if (origin[curSpecialI] == '_')
-		{
-			arrowAttribute |= ArrowAttribute.Hold;
-			curSpecialI++;
-		}
-		if (origin[curSpecialI] == '<')
-		{
-			arrowAttribute |= ArrowAttribute.RotateL;
-			curSpecialI++;
-		}
-		else if (origin[curSpecialI] == '>')
-		{
-			arrowAttribute |= ArrowAttribute.RotateR;
-			curSpecialI++;
-		}
-		if (origin[curSpecialI] == '^')
-		{
-			arrowAttribute |= ArrowAttribute.SpeedUp;
-			curSpecialI++;
-		}
-		if (origin[curSpecialI] == '!')
-		{
-			arrowAttribute |= ArrowAttribute.NoScore;
-			curSpecialI++;
 		}
 		origin = origin[curSpecialI..];
 		bool GB = origin[0] is '#' or '%', hasArrowInGB = origin[0] == '#';
@@ -526,7 +505,7 @@ public class WaveConstructor : GameObject
 		{
 			if (entityTags != null)
 				arr.Tags = entityTags;
-			if (isVoid)
+			if ((arrowAttribute & ArrowAttribute.Void) != 0)
 				arr.VolumeFactor *= Settings.VoidArrowVolume;
 			LastArrow = arr;
 
@@ -592,13 +571,9 @@ public class WaveConstructor : GameObject
 			return;
 		}
 		if (delayMode)
-		{
 			DelayEventProcessor.AddInstantEvent(delay, func);
-		}
 		else
-		{
 			func();
-		}
 	}
 	/// <summary>
 	/// The settings of the charts
@@ -636,9 +611,7 @@ public class WaveConstructor : GameObject
 	{
 		string[] arrowTags = SplitBracket(allArrowTag);
 		for (int i = 0; i < arrowTags.Length; i++)
-		{
 			MakeChartObject(shootShieldTime, arrowTags[i], speed, ArrowAttribute.None, normalized);
-		}
 	}
 	public GameObject[] MakeArrows(float shootShieldTime, float speed, string allArrowTag)
 	{
@@ -652,30 +625,20 @@ public class WaveConstructor : GameObject
 	{
 		string[] arrowTags = SplitBracket(allArrowTag);
 		for (int i = 0; i < arrowTags.Length; i++)
-		{
 			MakeChartObject(shootShieldTime, arrowTags[i], speed, arrowattribute, normalized);
-		}
 	}
 	[MethodImpl(MethodImplOptions.AggressiveInlining), Obsolete("Use CreateChart() instead")]
 	public void CreateArrows(float shootShieldTime, float speed, string allArrowTag)
 	{
 		GameObject[] arrows = MakeArrows(shootShieldTime, speed, allArrowTag);
 		for (int i = 0; i < arrows.Length; i++)
-		{
 			if (arrows[i] != null)
 				AddInstance(arrows[i]);
-		}
 	}
 	[MethodImpl(MethodImplOptions.AggressiveInlining), Obsolete("Use CreateChart() instead")]
-	public void CreateArrows(float shootShieldTime, float speed, string allArrowTag, ArrowAttribute arrowAttribute)
-	{
-		MakeArrows(shootShieldTime, speed, allArrowTag, arrowAttribute);
-	}
+	public void CreateArrows(float shootShieldTime, float speed, string allArrowTag, ArrowAttribute arrowAttribute) => MakeArrows(shootShieldTime, speed, allArrowTag, arrowAttribute);
 	[MethodImpl(MethodImplOptions.AggressiveInlining), Obsolete("Use CreateChart() instead")]
-	public void NormalizedChart(float shootShieldTime, float speed, string allArrowTag)
-	{
-		MakeArrows(shootShieldTime, speed, allArrowTag, true);
-	}
+	public void NormalizedChart(float shootShieldTime, float speed, string allArrowTag) => MakeArrows(shootShieldTime, speed, allArrowTag, true);
 	[MethodImpl(MethodImplOptions.AggressiveInlining), Obsolete("Use CreateChart() instead")]
 	public GameObject[] NormalizedObjects(float shootShieldTime, float speed, string allArrowTag)
 	{
@@ -755,7 +718,7 @@ public class WaveConstructor : GameObject
 	/// Adding '@' at the end or wrapping it in curly brackets would apply a tag to the arrow, i.e. "$0@E" or "$0{E}" would apply the tag "E" to the arrow
 	/// </summary>
 	/// <param name="Delay">The delay for the events to be executed, generally used for preventing spawning immediately within view</param>
-	/// <param name="Beat">Duration of 8 beats, generally used with <see cref="BeatTime(float)"/></param>
+	/// <param name="Beat">Duration of 8 beats, generally used with <see cref="BeatTime(float, bool)"/></param>
 	/// <param name="arrowspeed">The speed of the arrows</param>
 	/// <param name="Barrage">The array of strings that contains the barrage</param>
 	[MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]

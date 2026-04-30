@@ -36,7 +36,8 @@ float mapping(float vector_length, float progress, float radius)
 	progress = max(progress, 0.0001);
 	float radius_value = radius * 0.368626;
 	float progress_sqrt = sqrt(progress);
-	return min((sin(clamp((vector_length - progress * radius) / radius_value + 1.0, -1.0, 1.0) * 1.57) / 2.0 + 0.5), 1.0) * 
+	//1.57 is half of pi, in case you don't know
+	return (sin(clamp((vector_length - progress * radius) / radius_value + 1.0, -1.0, 1.0) * 1.57) * 0.5 + 0.5) * 
 				atan(vector_length / 30.0) * (pow(progress, 1.0 / 6.0) * (1.0 - progress_sqrt)) / (radius * progress_sqrt) * vector_length * (radius * progress_sqrt - vector_length);
 }
 
@@ -46,9 +47,9 @@ float4 MainPS(VertexShaderOutput input) : COLOR
 	float2 vector_center = v_vPosition - iCenter;
 	float vector_length = length(vector_center);
 	
-    float2 vector_result = v_vPosition - clamp(mapping(vector_length, iProgress, iRadius), 0, vector_length) * normalize(vector_center);
+	float2 vector_result = v_vPosition - clamp(mapping(vector_length, iProgress, iRadius), 0, vector_length) * normalize(vector_center);
 
-    return input.Color * tex2D(SpriteTextureSampler, vector_result / float2(WIDTH, HEIGHT));
+	return input.Color * tex2D(SpriteTextureSampler, vector_result / float2(WIDTH, HEIGHT));
 }
 
 technique SpriteDrawing

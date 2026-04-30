@@ -15,7 +15,9 @@ public class SongFightingScene : FightScene
 {
 	private class SongConditionOptimizer : Entity
 	{
+#if DEBUG
 		private static readonly Process curProcess = Process.GetCurrentProcess();
+#endif
 		public SongConditionOptimizer() => UpdateIn120 = true;
 		public override void Draw()
 		{
@@ -29,6 +31,7 @@ public class SongFightingScene : FightScene
 
 		public override void Update()
 		{
+			//Syncs the music position to the current chart time
 			float idealPos = GametimeF - GametimeDelta + CurrentFightingScene.PlayOffset;
 			float curTime = CurrentFightingScene.music.TryGetPosition(out bool result);
 			if (result && MathF.Abs(curTime - idealPos) > 20 && idealPos > 0)
@@ -61,8 +64,14 @@ public class SongFightingScene : FightScene
 		/// The current difficulty of the chart
 		/// </summary>
 		public int difficulty = difficulty;
-		private string pathDir => Path.Combine("Content", "Musics", Waveset.Music);
-		private string musicPath => Directory.Exists(pathDir) ? Path.Combine(pathDir, "song") : pathDir;
+		/// <summary>
+		/// The name of the directory of the music
+		/// </summary>
+		private string MusicDirectory => Path.Combine("Content", "Musics", Waveset.Music);
+		/// <summary>
+		/// The path to the music file
+		/// </summary>
+		private string MusicPath => Directory.Exists(MusicDirectory) ? Path.Combine(MusicDirectory, "song") : MusicDirectory;
 		/// <summary>
 		/// The current <see cref="GameMode"/> of the chart
 		/// </summary>
@@ -76,13 +85,13 @@ public class SongFightingScene : FightScene
 		/// </summary>
 		public bool MusicOptimized { get; set; } = false;
 		/// <summary>
-		/// Loads the music
+		/// Loads the music and stores the chart illustration
 		/// </summary>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public void LoadMusic()
 		{
 			SongIllustration = GlobalData.GetWavePaint(Waveset);
-			Music = new(MusicOptimized ? musicPath + ".ogg" : musicPath, Loader);
+			Music = new(MusicOptimized ? MusicPath + ".ogg" : MusicPath, Loader);
 			MusicDuration = (float)Music.SongDuration.TotalSeconds * 62.5f;
 		}
 		/// <summary>
@@ -106,7 +115,9 @@ public class SongFightingScene : FightScene
 		/// </summary>
 		public bool IsUnload { get; private set; } = unload;
 	}
-
+	/// <summary>
+	/// The waveset of the current chart
+	/// </summary>
 	internal IWaveSet waveset;
 	private readonly SceneParams currentParam;
 	private int appearTime = 0;
@@ -138,8 +149,17 @@ public class SongFightingScene : FightScene
 	/// The current <see cref="GameMode"/> of the chart
 	/// </summary>
 	public override GameMode Mode => mode;
+	/// <summary>
+	/// Whether the chart is loaded
+	/// </summary>
 	private volatile bool songLoaded = false;
+	/// <summary>
+	/// The music of the chart
+	/// </summary>
 	private Audio music;
+	/// <summary>
+	/// Whether the chart is forced to end
+	/// </summary>
 	private bool forceEnd = false;
 	/// <summary>
 	/// The offset of the music of the chart (In frames)
@@ -169,8 +189,17 @@ public class SongFightingScene : FightScene
 	/// The illustration of the chart
 	/// </summary>
 	public Texture2D SongIllustration => currentParam.SongIllustration;
+	/// <summary>
+	/// Whether the end of the chart has been invoked
+	/// </summary>
 	private bool endRan = false;
+	/// <summary>
+	/// The restart timer for holding <see cref="InputIdentity.Reset"/>
+	/// </summary>
 	private int restartTimer = 0;
+	/// <summary>
+	/// Forces the chart to end
+	/// </summary>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	internal void ForceEnd() => forceEnd = true;
 	/// <summary>
@@ -179,29 +208,31 @@ public class SongFightingScene : FightScene
 	private bool MusicPlayed = false;
 	private void ProcessItems()
 	{
-		//Sanity check for the 0.5f delay
-		if (CurrentScene is not SongFightingScene)
+		//Sanity check for the 0.5f delay and ignore items if not logged in
+		if (CurrentScene is not SongFightingScene || PlayerManager.CurrentUser == null)
 			return;
 		ScoreMultiplier = 1;
-		if (PlayerManager.CurrentUser == null)
-			return;
 		foreach (StoreItem item in ShopItemData.UserItems.Values)
 		{
+			//Only process activated items
 			if (!item.Activated)
 				continue;
 			bool ItemVoidScore = (item.Attributes & StoreItem.ItemAttribute.VoidScore) != 0;
+			//Process decoration items
 			if ((item.Attributes & StoreItem.ItemAttribute.Decoration) != 0)
 			{
 				item.Decoration();
 				if (ItemVoidScore)
 					ItemUsed = true;
 			}
+			//Process consumable items
 			if ((item.Attributes & StoreItem.ItemAttribute.Consumable) != 0 && item.TriggerCondition())
 			{
 				item.Used();
 				if (ItemVoidScore)
 					ItemUsed = true;
 			}
+			//Process items that reduces score
 			if (item.Affecting && (item.Attributes & StoreItem.ItemAttribute.ReduceScore) != 0)
 				ScoreMultiplier *= 1 - item.ReducePercentage;
 		}
@@ -216,16 +247,14 @@ public class SongFightingScene : FightScene
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	private void ChallengeSave()
 	{
-		SongResult result;
-		result = StateShower.instance.GenerateResult();
-		PlayerManager.RecordMark(currentParam.Waveset.FightName, currentParam.difficulty,
-			result.CurrentMark, result.Score, result.AC, result.AP, result.Accuracy);
+		//Save challenge result
+		SongResult result = StateShower.instance.GenerateResult();
+		PlayerManager.RecordMark(currentParam.Waveset.FightName, currentParam.difficulty, result.CurrentMark, result.Score, result.AC, result.AP, result.Accuracy);
 		PlayerManager.Save();
 		ResetFightState();
 		_challenge.ResultBuffer.Add(result);
-		ResetScene(ChallengeCount == ++CurChallengeNum
-			? new ChallengeWinScene(_challenge)
-			: new SongLoadingScene(_challenge, ChallengeCharts[1..]));
+		//Move to next challenge chart if not yet done, otherwise move to result scene
+		ResetScene(ChallengeCount == ++CurChallengeNum ? new ChallengeWinScene(_challenge) : new SongLoadingScene(_challenge, ChallengeCharts[1..]));
 	}
 	private async void InitializeChart()
 	{
@@ -233,6 +262,7 @@ public class SongFightingScene : FightScene
 		Task task = new(() =>
 		{
 			SetSongFight();
+			//Play music with offset
 			music = currentParam.Music;
 			if (PlayOffset < 0)
 				DelayEventProcessor.AddInstantEvent(-PlayOffset, () =>
@@ -263,6 +293,7 @@ public class SongFightingScene : FightScene
 	/// <inheritdoc/>
 	public override void Update()
 	{
+		//Quick restart
 		if (waveset != null)
 		{
 			restartTimer = IsKeyDown(InputIdentity.Reset) ? restartTimer++ : 0;
@@ -273,7 +304,6 @@ public class SongFightingScene : FightScene
 				return;
 			}
 		}
-
 		//Play Music
 		if (++appearTime >= 30)
 		{
@@ -285,13 +315,14 @@ public class SongFightingScene : FightScene
 			ProcessItems();
 			DelayEventProcessor.AddInstantEvent(0.5f, ProcessItems);
 		}
-
+		//Invoke the ending event when song finishes
 		bool needEnd = waveset != null && MusicPlayed && appearTime > currentParam.MusicDuration * 2 && (music?.IsEnd ?? false);
 		if (needEnd && !endRan)
 		{
 			StateShower.instance.EndAction?.Invoke();
 			endRan = true;
 		}
+		//Fade out when chart ends
 		if ((needEnd && AutoEnd) || forceEnd)
 		{
 			Surface.Normal.drawingAlpha -= 0.015f;
@@ -308,6 +339,9 @@ public class SongFightingScene : FightScene
 		mode = currentParam.mode;
 		base.Update();
 	}
+	/// <summary>
+	/// Initializes the UI elements of the chart and initializes the chart itself
+	/// </summary>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	private void SetSongFight()
 	{
@@ -327,6 +361,9 @@ public class SongFightingScene : FightScene
 			InstanceCreate(obj);
 		waveset.Start();
 	}
+	/// <summary>
+	/// Main chart processing logic
+	/// </summary>
 	private void UpdateSong()
 	{
 		if (waveset is IWaveSetS waveS)

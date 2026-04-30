@@ -1,6 +1,5 @@
 ﻿using static UndyneFight_Ex.DrawingLab;
 using static UndyneFight_Ex.Fight.Functions;
-using static UndyneFight_Ex.GameStates;
 
 namespace UndyneFight_Ex.Entities;
 
@@ -79,19 +78,19 @@ public partial class Line : Entity
 	/// </summary>
 	/// <param name="vec1">The position of the first end of the line</param>
 	/// <param name="vec2">The position of the second end of the line</param>
-	public Line(Vector2 vec1, Vector2 vec2) : this(SimplifiedEasing.Stable(0, vec1), SimplifiedEasing.Stable(0, vec2)) { }
+	public Line(Vector2 vec1, Vector2 vec2) : this((s) => vec1, (s) => vec2) { }
 	/// <summary>
 	/// Creates a line
 	/// </summary>
 	/// <param name="centre">The center of the line</param>
 	/// <param name="rotation">The rotation of the line</param>
-	public Line(Vector2 centre, float rotation) : this(centre, SimplifiedEasing.Stable(0, rotation)) { }
+	public Line(Vector2 centre, float rotation) : this(centre, (s) => rotation) { }
 	/// <summary>
 	/// Creates a line with the y coordinate being 240
 	/// </summary>
 	/// <param name="Xcentre">The x coordinate of the line</param>
 	/// <param name="rotation">The rotation of the line</param>
-	public Line(float Xcentre, float rotation) : this(SimplifiedEasing.Stable(0, Xcentre, 240), SimplifiedEasing.Stable(0, rotation)) { }
+	public Line(float Xcentre, float rotation) : this((s) => new Vector2(Xcentre, 240), (s) => rotation) { }
 	/// <summary>
 	/// Creates a line
 	/// </summary>
@@ -108,7 +107,7 @@ public partial class Line : Entity
 	/// </summary>
 	/// <param name="centre">The center of the line</param>
 	/// <param name="rotationEasing">The easing of the rotation of the line</param>
-	public Line(Vector2 centre, Func<ICustomMotion, float> rotationEasing) : this(SimplifiedEasing.Stable(0, centre), rotationEasing) { }
+	public Line(Vector2 centre, Func<ICustomMotion, float> rotationEasing) : this((s) => centre, rotationEasing) { }
 	/// <summary>
 	/// Creates a line
 	/// </summary>
@@ -123,39 +122,11 @@ public partial class Line : Entity
 		Vector2 centre = new();
 		vec2 easing1(ICustomMotion s)
 		{
-			rotation = rotationEasing(s);
 			centre = centreEasing(s);
-			float jr = rotation;
-			jr = MathUtil.Posmod(jr, 180);
-			Vector2 result;
-			xCalc = jr is < 45 or > 135f;
-			if (xCalc)
-			{
-				float dist = centre.X + 640;
-				result = new(-640, centre.Y - Tan(rotation) * dist);
-			}
-			else
-			{
-				float dist = centre.Y + 480;
-				result = new(centre.X - dist / Tan(rotation), -480);
-			}
-			return result;
+			xCalc = MathUtil.Posmod(rotation = rotationEasing(s), 180) is < 45 or > 135f;
+			return xCalc ? new(-640, centre.Y - Tan(rotation) * (centre.X + 640)) : new(centre.X - (centre.Y + 480) / Tan(rotation), -480);
 		}
-		vec2 easing2(ICustomMotion s)
-		{
-			Vector2 result;
-			if (xCalc)
-			{
-				float dist = 1280 - centre.X;
-				result = new(1280, centre.Y + Tan(rotation) * dist);
-			}
-			else
-			{
-				float dist = 960 - centre.Y;
-				result = new(centre.X + dist / Tan(rotation), 960);
-			}
-			return result;
-		}
+		vec2 easing2(ICustomMotion s) => xCalc ? new(1280, centre.Y + Tan(rotation) * (1280 - centre.X)) : new(centre.X + (960 - centre.Y) / Tan(rotation), 960);
 		AddChild(vec1 = new(easing1));
 		AddChild(vec2 = new(easing2));
 	}
@@ -200,7 +171,9 @@ public partial class Line : Entity
 	{
 		if (Alpha <= 0)
 			return;
+		//The line itself
 		DrawTargetLine(vec1.CentrePosition, vec2.CentrePosition);
+		//The mirrored lines
 		if (VerticalMirror)
 			DrawTargetLine(new Vector2(vec1.CentrePosition.X, 480 - vec1.CentrePosition.Y), new Vector2(vec2.CentrePosition.X, 480 - vec2.CentrePosition.Y));
 		if (TransverseMirror)
@@ -210,7 +183,9 @@ public partial class Line : Entity
 
 		if (!VerticalLine)
 			return;
+		//The vertical line itself
 		DrawTargetLine(new Vector2(-vec1.CentrePosition.Y - 80, vec1.CentrePosition.X - 80), new Vector2(-vec2.CentrePosition.Y - 80, vec2.CentrePosition.X - 80));
+		//The mirrored vertical lines
 		if (TransverseMirror)
 			DrawTargetLine(new Vector2(640 - (560 - vec1.CentrePosition.Y), vec1.CentrePosition.X - 80), new Vector2(640 - (560 - vec2.CentrePosition.Y), vec2.CentrePosition.X - 80));
 		if (VerticalMirror)
@@ -240,11 +215,11 @@ public partial class Line : Entity
 	/// <param name="val">The amount of alpha to decrease (Default entirely)</param>
 	/// <param name="willDispose">Whether the line will automatically dispose when the alpha reaches 0 (Default true)</param>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public void AlphaDecrease(float time, float? val = null, bool? willDispose = true)
+	public void AlphaDecrease(float time, float? val = null, bool willDispose = true)
 	{
 		float total = val ??= Alpha, once = total / time;
 		DelayEventProcessor.AddTimeRangedEvent(0, () => Alpha -= once, time, false);
-		if (val == Alpha && (willDispose ?? true))
+		if (val == Alpha && willDispose)
 			DelayEventProcessor.AddInstantEvent(time, Dispose);
 	}
 	/// <summary>
