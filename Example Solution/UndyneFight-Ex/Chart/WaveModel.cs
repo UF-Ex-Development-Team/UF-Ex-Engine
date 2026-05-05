@@ -106,6 +106,7 @@ public class WaveConstructor : GameObject
 	/// <param name="isBPM">Whether <paramref name="beatTime"/> is the BPM itself (Default false)</param>
 	public WaveConstructor(float beatTime, bool isBPM = false)
 	{
+		_isMultiBPM = false;
 		SingleBeat = isBPM ? (62.5f / (beatTime / 60f)) : beatTime;
 		DelayEnabled = true;
 	}

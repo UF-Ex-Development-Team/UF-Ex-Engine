@@ -88,10 +88,10 @@ public static class Localization
 			//Store the font for the language
 			foreach (string FontKey in DefaultLocalizedFonts.Keys)
 			{
-				string fontPath = data._translations["Fonts"][FontKey]["Path"].ToString();
+				string fontPath = _localizationDirectory + "\\" + data._translations["Fonts"][FontKey]["Path"].ToString();
 				//Load font file if exists
 				if (File.Exists(fontPath))
-					data.FontData[FontKey] = (DrawingLab.LoadContent<GLFont>(fontPath), data._translations["Fonts"][FontKey]["Scale"].Value<float>());
+					data.FontData[FontKey] = (new GLFont(fontPath, GameMain.instance.Content), data._translations["Fonts"][FontKey]["Scale"].Value<float>());
 				else //Check if it's a built-in font
 				{
 					//If the font specified is a built-in font
@@ -219,15 +219,15 @@ public static class Localization
 	/// <summary>
 	/// Draws the localized text with the given parameters
 	/// </summary>
-	/// <param name="key"></param>
-	/// <param name="position"></param>
-	/// <param name="param"></param>
-	/// <param name="font"></param>
-	/// <param name="scale"></param>
-	/// <param name="color"></param>
-	/// <param name="rotation"></param>
-	/// <param name="depth"></param>
-	/// <param name="align"></param>
+	/// <param name="key">The key used in the localization file</param>
+	/// <param name="position">The position to draw the text</param>
+	/// <param name="param">The optional parameters used in the text</param>
+	/// <param name="font">The font used to draw the text</param>
+	/// <param name="scale">The scale of the text</param>
+	/// <param name="color">The color of the text</param>
+	/// <param name="rotation">The rotation of the text</param>
+	/// <param name="depth">The depth of the text</param>
+	/// <param name="align">The alignment of the text</param>
 	public static void DrawLocalizedText(string key, Vector2 position, object[] param = null, string font = "NormalFont", Vector2? scale = null, Color? color = null, float rotation = 0, float depth = 0, DrawAlign align = DrawAlign.Left)
 	{
 		if (GetFont(font) is null)
