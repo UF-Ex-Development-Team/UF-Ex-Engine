@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Setting up the chart | UF-Ex Docs </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Setting up the chart | UF-Ex Docs ">
+      
+      
+      <link rel="icon" href="../../images/Icon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UF-Ex Docs/Chart Tutorial/Chart Setup.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/Icon.ico" alt="UF-Ex Docs">
+            UF-Ex Docs
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="setting-up-the-chart">Setting up the chart</h1>
+
+<h2 id="importing-music">Importing music</h2>
+<p>By pressing (Ctrl +) F5, the game should run normally.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Ctrl + F5 will not attach the debugger to the executable, it will run faster but will not show an error log if the game crashes.</p>
+</div>
+<p>If you try to select a song, you should see this.</p>
+<img width="908" height="458" alt="image" src="/images/Getting Started/Import No Music.png">
+<p>A bracket indicates that there is no associated music file for the chart, that means you need to import it.
+To import assets, select “Content.mgcb” in the “Content” folder</p>
+<img width="429" height="314" alt="image" src="/images/Getting Started/Content Folder.png">
+<p>You can just double click it or choose “Open With -&gt; MGCB Editor”.
+<strong>If there is no such folder named “Musics”</strong>, create one by right clicking “Content”, and select “Add -&gt; New Folder” and name it “Musics”.</p>
+<img width="807" height="145" alt="image" src="/images/Getting Started/MGCB Editor.png">
+<p>After having the “Musics” folder, create a folder that matches the name of the chart, in this case, it would be “My First Chart”.
+Right click on the newly created folder and select “Add -&gt; Existing Item”, then you can select the music you want to import, make sure it says the imported music is set to a song.
+After importing the music, rename the music asset into “song.(file type)” (If the music you imported was an .wav file, name it to song.wav, and so on)
+If you want to add a chart cover, simply import an image file and rename it into “paint.png”.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>In this tutorial, go to <code>Tutorials/00. Assets</code> and copy <code>Neo.ogg</code>.</p>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The engine has auto scaling for chart covers, but it is best to set it to a 4:3 ratio to avoid visual bugs.</p>
+</div>
+<p>After importing the chart assets, make sure to “Build” the MGCB by pressing F6.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>It is best to use “Rebuild” if you have removed or renamed assets so the previous file cache will be removed.</p>
+</div>
+<h2 id="basic-template-information">Basic template information</h2>
+<p>Some comments are inside <code>Normal Model</code> and <code>Championship Model</code> to help you understand each aspect. In this tutorial, we will start from <strong><code>Normal Model</code></strong>, <code>Championship Model</code> will be discussed later.</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_IWaveSet" role="tab" aria-controls="tabpanel_1_IWaveSet" data-tab="IWaveSet" tabindex="0" aria-selected="true">IWaveSet (Classic)</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_IWaveSetS" role="tab" aria-controls="tabpanel_1_IWaveSetS" data-tab="IWaveSetS" tabindex="-1">IWaveSetS (Simplified)</a>
+</li>
+</ul>
+<section id="tabpanel_1_IWaveSet" role="tabpanel" data-tab="IWaveSet">
+
+<pre><code class="lang-csharp">class MyFirstChart : WaveConstructor, IWaveSet
+</code></pre>
+<p><code>WaveConstructor</code> contains the basic methods for charting such as beat calculation and the main chart making function.
+<code>IWaveSet</code> is the <a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/interface">interface</a> that stores the basic information of the chart, such as the difficulties and music name.</p>
+<pre><code class="lang-csharp">public MyFirstChart() : base(62.5f / (100 / 60f)) { }
+</code></pre>
+<p>The “100” is the BPM of the chart, if you are unsure of the BPM, you can use an online BPM checker or use Malody (More accurate) to find the BPM of the music.
+If there are multiple BPM in the chart, simply put them in arrays like this:</p>
+<pre><code class="lang-csharp">public MyFirstChart() : base([10, 300], [10, 50], [999, 230]) { }
+</code></pre>
+<p>This means that the first 10 beats have 300 bpm, the next 10 beats have 50 bpm, and the next 999 beats have 230 bpm.</p>
+<p>Most information are already provided in &quot;Normal Model.cs&quot;, you may view the basic setup there.</p>
+</section>
+<section id="tabpanel_1_IWaveSetS" role="tabpanel" data-tab="IWaveSetS" aria-hidden="true" hidden="hidden">
+
+<p>Sometimes, you may find that you need to copy and paste chunks of code from one difficulty to another, and when you need to change certain aspects of the code, you need to manually change them all. Not only is this process boring and tedious, it makes the code unreadable and too large. In short, this is poor coding practice and should be avoided.</p>
+<p>To simplify the charting process, IWaveSetS is created, your code can now look as simple as this</p>
+<pre><code class="lang-csharp">public void Chart()
+{
+    Effect();
+    switch (CurrentDifficulty)
+    {
+        case Difficulty.Noob:
+            //Noob mode
+            break;
+        case Difficulty.Normal:
+            //Normal mode
+            break;
+    }
+}
+</code></pre>
+<p>Or even this</p>
+<pre><code class="lang-csharp">public void Chart()
+{
+    if (InBeat(0))
+    {
+        int spd = CurrentDifficulty switch
+        {
+            Difficulty.Noob =&gt; 4,
+            Difficulty.Easy =&gt; 5,
+            Difficulty.Normal =&gt; 6
+        }
+        CreateChart(0, BeatTime(1), spd, [&quot;R&quot;, &quot;&quot;, &quot;&quot;, &quot;etc&quot;]);
+    }
+}
+</code></pre>
+<p>Not only is the code more efficient, it is more readable and easy to keep track of.</p>
+</section>
+</div>
+<h2 id="setting-up-chart-information">Setting up chart information</h2>
+<p>As mentioned above, you should first input the BPM of the music, in this case, Power of NEO has a BPM of <strong>36.25</strong>, so instead of the default</p>
+<pre><code class="lang-csharp">class MyFirstChart() : WaveConstructor([(20, 100), (20, 200)]), IWaveSet
+</code></pre>
+<p>You should modify it to</p>
+<pre><code class="lang-csharp">class MyFirstChart() : WaveConstructor(36.25f), IWaveSet
+</code></pre>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EdensStudio/Rhythm-Recall-TK-Edition/blob/main/UF-Ex Docs/Chart Tutorial/Chart Setup.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
