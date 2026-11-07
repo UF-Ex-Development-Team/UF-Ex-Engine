@@ -1,0 +1,859 @@
+
+#----------------------------- Global Properties ----------------------------#
+
+/outputDir:bin/$(Platform)
+/intermediateDir:obj/$(Platform)
+/platform:Windows
+/config:
+/profile:Reach
+/compress:True
+
+#-------------------------------- References --------------------------------#
+
+/reference:../pipeline-references/MonoGame.Extended.Content.Pipeline.dll
+
+#---------------------------------- Content ---------------------------------#
+
+#begin DefaultEnglish.json
+/copy:DefaultEnglish.json
+
+#begin Global/Loading/Loading.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/processorParam:Version=3.8.5.0
+/build:Global/Loading/Loading.png
+
+#begin Global/Loading/ProgressArrow.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/processorParam:Version=3.8.5.0
+/build:Global/Loading/ProgressArrow.png
+
+#begin Global/Shaders/BackGroundShader.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/processorParam:Defines=
+/processorParam:Version=3.8.5.0
+/build:Global/Shaders/BackGroundShader.fx
+
+#begin Global/Shaders/Colorful.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/processorParam:Defines=
+/processorParam:Version=3.8.5.0
+/build:Global/Shaders/Colorful.fx
+
+#begin Global/Shaders/Effect Library/Aurora.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/processorParam:Defines=
+/processorParam:Version=3.8.5.0
+/build:Global/Shaders/Effect Library/Aurora.fx
+
+#begin Global/Shaders/Effect Library/BallShaping/noise.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/processorParam:Version=3.8.5.0
+/build:Global/Shaders/Effect Library/BallShaping/noise.png
+
+#begin Global/Shaders/Effect Library/Blur.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/processorParam:Defines=
+/processorParam:Version=3.8.5.0
+/build:Global/Shaders/Effect Library/Blur.fx
+
+#begin Global/Shaders/Effect Library/BlurKawase.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/processorParam:Defines=
+/processorParam:Version=3.8.5.0
+/build:Global/Shaders/Effect Library/BlurKawase.fx
+
+#begin Global/Shaders/Effect Library/CameraSurface.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/processorParam:Defines=
+/processorParam:Version=3.8.5.0
+/build:Global/Shaders/Effect Library/CameraSurface.fx
+
+#begin Global/Shaders/Effect Library/ColorBlend.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/processorParam:Defines=
+/processorParam:Version=3.8.5.0
+/build:Global/Shaders/Effect Library/ColorBlend.fx
+
+#begin Global/Shaders/Effect Library/Cos1Ball.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Optimize
+/processorParam:Defines=
+/processorParam:Version=3.8.5.0
+/build:Global/Shaders/Effect Library/Cos1Ball.fx
+
+#begin Global/Shaders/Effect Library/DislocationX.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/processorParam:Defines=
+/processorParam:Version=3.8.5.0
+/build:Global/Shaders/Effect Library/DislocationX.fx
+
+#begin Global/Shaders/Effect Library/Gray.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/processorParam:Defines=
+/processorParam:Version=3.8.5.0
+/build:Global/Shaders/Effect Library/Gray.fx
+
+#begin Global/Shaders/Effect Library/hashtex.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/processorParam:Version=3.8.5.0
+/build:Global/Shaders/Effect Library/hashtex.png
+
+#begin Global/Shaders/Effect Library/hashtex2.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/processorParam:Version=3.8.5.0
+/build:Global/Shaders/Effect Library/hashtex2.png
+
+#begin Global/Shaders/Effect Library/LightSweep.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/processorParam:Defines=
+/processorParam:Version=3.8.5.0
+/build:Global/Shaders/Effect Library/LightSweep.fx
+
+#begin Global/Shaders/Effect Library/Mosaic.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/processorParam:Defines=
+/processorParam:Version=3.8.5.0
+/build:Global/Shaders/Effect Library/Mosaic.fx
+
+#begin Global/Shaders/Effect Library/NeonLine.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/processorParam:Defines=
+/processorParam:Version=3.8.5.0
+/build:Global/Shaders/Effect Library/NeonLine.fx
+
+#begin Global/Shaders/Effect Library/NoiseFire.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/processorParam:Defines=
+/processorParam:Version=3.8.5.0
+/build:Global/Shaders/Effect Library/NoiseFire.fx
+
+#begin Global/Shaders/Effect Library/Polar.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/processorParam:Defines=
+/processorParam:Version=3.8.5.0
+/build:Global/Shaders/Effect Library/Polar.fx
+
+#begin Global/Shaders/Effect Library/RadialWave.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/processorParam:Defines=
+/processorParam:Version=3.8.5.0
+/build:Global/Shaders/Effect Library/RadialWave.fx
+
+#begin Global/Shaders/Effect Library/Scale.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/processorParam:Defines=
+/processorParam:Version=3.8.5.0
+/build:Global/Shaders/Effect Library/Scale.fx
+
+#begin Global/Shaders/Effect Library/Scatter.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/processorParam:Defines=
+/processorParam:Version=3.8.5.0
+/build:Global/Shaders/Effect Library/Scatter.fx
+
+#begin Global/Shaders/Effect Library/Seismic.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/processorParam:Defines=
+/processorParam:Version=3.8.5.0
+/build:Global/Shaders/Effect Library/Seismic.fx
+
+#begin Global/Shaders/Effect Library/Sinwave.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/processorParam:Defines=
+/processorParam:Version=3.8.5.0
+/build:Global/Shaders/Effect Library/Sinwave.fx
+
+#begin Global/Shaders/Effect Library/Sprial3D.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/processorParam:Defines=
+/processorParam:Version=3.8.5.0
+/build:Global/Shaders/Effect Library/Sprial3D.fx
+
+#begin Global/Shaders/Effect Library/StepSample.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Optimize
+/processorParam:Defines=
+/processorParam:Version=3.8.5.0
+/build:Global/Shaders/Effect Library/StepSample.fx
+
+#begin Global/Shaders/Effect Library/Swirl.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/processorParam:Defines=
+/processorParam:Version=3.8.5.0
+/build:Global/Shaders/Effect Library/Swirl.fx
+
+#begin Global/Shaders/Effect Library/Tyndall.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/processorParam:Defines=
+/processorParam:Version=3.8.5.0
+/build:Global/Shaders/Effect Library/Tyndall.fx
+
+#begin Global/Shaders/Effect Library/Wave.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/processorParam:Defines=
+/processorParam:Version=3.8.5.0
+/build:Global/Shaders/Effect Library/Wave.fx
+
+#begin Global/Shaders/Effect Library/Wrong.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/processorParam:Defines=
+/processorParam:Version=3.8.5.0
+/build:Global/Shaders/Effect Library/Wrong.fx
+
+#begin Global/Shaders/Internal Effect/Light0.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/processorParam:Defines=
+/processorParam:Version=3.8.5.0
+/build:Global/Shaders/Internal Effect/Light0.fx
+
+#begin Global/Shaders/ReduceBlue.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/processorParam:Defines=
+/processorParam:Version=3.8.5.0
+/build:Global/Shaders/ReduceBlue.fx
+
+#begin Global/Shaders/ScreenShader.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/processorParam:Defines=
+/processorParam:Version=3.8.5.0
+/build:Global/Shaders/ScreenShader.fx
+
+#begin Global/UI/cup_highres.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/processorParam:Version=3.8.5.0
+/build:Global/UI/cup_highres.png
+
+#begin Global/UI/cup.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/processorParam:Version=3.8.5.0
+/build:Global/UI/cup.png
+
+#begin Global/UI/debugArrow.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/processorParam:Version=3.8.5.0
+/build:Global/UI/debugArrow.png
+
+#begin Global/UI/login.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/processorParam:Version=3.8.5.0
+/build:Global/UI/login.png
+
+#begin Global/UI/maingame.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/processorParam:Version=3.8.5.0
+/build:Global/UI/maingame.png
+
+#begin Global/UI/medal0.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/processorParam:Version=3.8.5.0
+/build:Global/UI/medal0.png
+
+#begin Global/UI/medal1.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/processorParam:Version=3.8.5.0
+/build:Global/UI/medal1.png
+
+#begin Global/UI/medal2.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/processorParam:Version=3.8.5.0
+/build:Global/UI/medal2.png
+
+#begin Global/UI/options.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/processorParam:Version=3.8.5.0
+/build:Global/UI/options.png
+
+#begin Global/UI/PlaceCheck.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/processorParam:Version=3.8.5.0
+/build:Global/UI/PlaceCheck.png
+
+#begin Global/UI/record.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/processorParam:Version=3.8.5.0
+/build:Global/UI/record.png
+
+#begin Global/UI/stars.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/processorParam:Version=3.8.5.0
+/build:Global/UI/stars.png
+
+#begin Sounds/a_startsound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/processorParam:Version=3.8.5.0
+/build:Sounds/a_startsound.wav
+
+#begin Sounds/arcana eden kick.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/processorParam:Version=3.8.5.0
+/build:Sounds/arcana eden kick.wav
+
+#begin Sounds/arrowStuck.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/processorParam:Version=3.8.5.0
+/build:Sounds/arrowStuck.wav
+
+#begin Sounds/attack.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/processorParam:Version=3.8.5.0
+/build:Sounds/attack.wav
+
+#begin Sounds/bomb.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/processorParam:Version=3.8.5.0
+/build:Sounds/bomb.wav
+
+#begin Sounds/boneslab_spawn.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/processorParam:Version=3.8.5.0
+/build:Sounds/boneslab_spawn.wav
+
+#begin Sounds/change.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/processorParam:Version=3.8.5.0
+/build:Sounds/change.wav
+
+#begin Sounds/choose_1.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/processorParam:Version=3.8.5.0
+/build:Sounds/choose_1.wav
+
+#begin Sounds/choose_2.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/processorParam:Version=3.8.5.0
+/build:Sounds/choose_2.wav
+
+#begin Sounds/damaged.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/processorParam:Version=3.8.5.0
+/build:Sounds/damaged.wav
+
+#begin Sounds/die_1.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/processorParam:Version=3.8.5.0
+/build:Sounds/die_1.wav
+
+#begin Sounds/die_2.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/processorParam:Version=3.8.5.0
+/build:Sounds/die_2.wav
+
+#begin Sounds/exploding1.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/processorParam:Version=3.8.5.0
+/build:Sounds/exploding1.wav
+
+#begin Sounds/exploding2.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/processorParam:Version=3.8.5.0
+/build:Sounds/exploding2.wav
+
+#begin Sounds/gameover.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/processorParam:Version=3.8.5.0
+/build:Sounds/gameover.wav
+
+#begin Sounds/giga.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/processorParam:Version=3.8.5.0
+/build:Sounds/giga.wav
+
+#begin Sounds/gunShot.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/processorParam:Version=3.8.5.0
+/build:Sounds/gunShot.wav
+
+#begin Sounds/heal.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/processorParam:Version=3.8.5.0
+/build:Sounds/heal.wav
+
+#begin Sounds/hit.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/processorParam:Version=3.8.5.0
+/build:Sounds/hit.wav
+
+#begin Sounds/hurt.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/processorParam:Version=3.8.5.0
+/build:Sounds/hurt.wav
+
+#begin Sounds/knife.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/processorParam:Version=3.8.5.0
+/build:Sounds/knife.wav
+
+#begin Sounds/L_GB_summon.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/processorParam:Version=3.8.5.0
+/build:Sounds/L_GB_summon.wav
+
+#begin Sounds/objBurst.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/processorParam:Version=3.8.5.0
+/build:Sounds/objBurst.wav
+
+#begin Sounds/pierce.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/processorParam:Version=3.8.5.0
+/build:Sounds/pierce.wav
+
+#begin Sounds/S_GB_shot.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/processorParam:Version=3.8.5.0
+/build:Sounds/S_GB_shot.wav
+
+#begin Sounds/S_GB_summon.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/processorParam:Version=3.8.5.0
+/build:Sounds/S_GB_summon.wav
+
+#begin Sounds/sans_sound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/processorParam:Version=3.8.5.0
+/build:Sounds/sans_sound.wav
+
+#begin Sounds/shoot.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/processorParam:Version=3.8.5.0
+/build:Sounds/shoot.wav
+
+#begin Sounds/slam.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/processorParam:Version=3.8.5.0
+/build:Sounds/slam.wav
+
+#begin Sounds/slice.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/processorParam:Version=3.8.5.0
+/build:Sounds/slice.wav
+
+#begin Sounds/sparkles.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/processorParam:Version=3.8.5.0
+/build:Sounds/sparkles.wav
+
+#begin Sounds/spawn.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/processorParam:Version=3.8.5.0
+/build:Sounds/spawn.wav
+
+#begin Sounds/spawn2.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/processorParam:Version=3.8.5.0
+/build:Sounds/spawn2.wav
+
+#begin Sounds/star0.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/processorParam:Version=3.8.5.0
+/build:Sounds/star0.wav
+
+#begin Sounds/star1.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/processorParam:Version=3.8.5.0
+/build:Sounds/star1.wav
+
+#begin Sounds/switch.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/processorParam:Version=3.8.5.0
+/build:Sounds/switch.wav
+
+#begin Sounds/targeting.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/processorParam:Version=3.8.5.0
+/build:Sounds/targeting.wav
+
+#begin Sounds/toss.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/processorParam:Version=3.8.5.0
+/build:Sounds/toss.wav
+
+#begin Sounds/unsure_GB.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/processorParam:Version=3.8.5.0
+/build:Sounds/unsure_GB.wav
+
+#begin Sounds/warning.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/processorParam:Version=3.8.5.0
+/build:Sounds/warning.wav
+
+#begin Sounds/word_sound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/processorParam:Version=3.8.5.0
+/build:Sounds/word_sound.wav
+
+#begin Sprites/font/Chinese.ttf
+/copy:Sprites/font/Chinese.ttf
+
+#begin Sprites/font/chinese.xnb
+/copy:Sprites/font/chinese.xnb
+
+#begin Sprites/font/crypt-of-tomorrow-ut-font-no-rus.ttf
+/copy:Sprites/font/crypt-of-tomorrow-ut-font-no-rus.ttf
+
+#begin Sprites/font/DamageShow.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/processorParam:Version=3.8.5.0
+/build:Sprites/font/DamageShow.spritefont
+
+#begin Sprites/font/damageShow.ttf
+/copy:Sprites/font/damageShow.ttf
+
+#begin Sprites/font/File.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/processorParam:Version=3.8.5.0
+/build:Sprites/font/File.spritefont
+
+#begin Sprites/font/Japanese.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/processorParam:Version=3.8.5.0
+/build:Sprites/font/Japanese.spritefont
+
+#begin Sprites/font/japanese.ttf
+/copy:Sprites/font/japanese.ttf
+
+#begin Sprites/font/Japanese.xnb
+/copy:Sprites/font/Japanese.xnb
+
+#begin Sprites/font/menu.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/processorParam:Version=3.8.5.0
+/build:Sprites/font/menu.spritefont
+
+#begin Sprites/font/menu.ttf
+/copy:Sprites/font/menu.ttf
+
+#begin Sprites/font/normal.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/processorParam:Version=3.8.5.0
+/build:Sprites/font/normal.spritefont
+
+#begin Sprites/font/normal.ttf
+/copy:Sprites/font/normal.ttf
+
+#begin Sprites/font/sans.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/processorParam:Version=3.8.5.0
+/build:Sprites/font/sans.spritefont
+
+#begin Sprites/font/sans.ttf
+/copy:Sprites/font/sans.ttf
+
+#begin Sprites/font/title.otf
+/copy:Sprites/font/title.otf
+
+#begin Sprites/font/UIFont.xnb
+/copy:Sprites/font/UIFont.xnb
+
+#begin UndyneFight_Ex Spritesheet-texture.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/processorParam:Version=3.8.5.0
+/build:UndyneFight_Ex Spritesheet-texture.png
+
+#begin UndyneFight_Ex Spritesheet.json
+/importer:TexturePackerJsonImporter
+/processor:TexturePackerProcessor
+/processorParam:Version=6.0.0.0
+/build:UndyneFight_Ex Spritesheet.json
+

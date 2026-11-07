@@ -1,0 +1,431 @@
+﻿using System.Drawing;
+using System.Security.Cryptography;
+using System.Text;
+using static System.Math;
+using static System.MathF;
+
+namespace UndyneFight_Ex;
+/// <summary>
+/// Utilities for mathematical operations
+/// </summary>
+public static class MathUtil
+{
+	internal static Random rander = new();
+	/// <summary>
+	/// Pi
+	/// </summary>
+	public const float PI = MathF.PI;
+	#region Collision
+	/// <summary>
+	/// Checks if two lines intersect each other
+	/// </summary>
+	/// <param name="lineA">The source line</param>
+	/// <param name="lineB">The destination line</param>
+	/// <returns>Whether two lines intersect</returns>
+	public static bool LineIntersect((Vector2 Start, Vector2 End) lineA, (Vector2 Start, Vector2 End) lineB)
+	{
+		Vector2 A = lineA.End - lineA.Start, B = lineB.End - lineB.Start, Delta = lineA.Start - lineB.Start;
+		float determinant = A.Cross(B);
+		return determinant != 0 && InRange(B.Cross(Delta), 0, determinant) && InRange(A.Cross(Delta), 0, determinant);
+	}
+	/// <summary>
+	/// Checks whether the point is inside of a triangle
+	/// </summary>
+	/// <param name="A">First vertex of the triangle</param>
+	/// <param name="B">Second vertex of the triangle</param>
+	/// <param name="C">Third vertex of the triangle</param>
+	/// <param name="Point">The point to check</param>
+	/// <returns>Whether the point is inside the triangle</returns>
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	public static bool InTriangle(Vector2 A, Vector2 B, Vector2 C, Vector2 Point)
+	{
+		Vector2 AB = B - A, BC = C - B, CA = A - C;
+		Vector2 AP = Point - A, BP = Point - B, CP = Point - C;
+		bool ClockwiseToAB = AB.Cross(AP) > 0;
+		return !(ClockwiseToAB ^ BC.Cross(BP) > 0) && !(ClockwiseToAB ^ CA.Cross(CP) > 0);
+	}
+	/// <summary>
+	/// Checks if a rectangle is colliding with a triangle
+	/// </summary>
+	/// <param name="sourceRectTL">The coordinate of the top left corner of the source rectangle</param>
+	/// <param name="sourceRectBR">The coordinate of the bottom right corner of the source rectangle</param>
+	/// <param name="destTriV1">The coordinate of the first vertex of the triangle</param>
+	/// <param name="destTriV2">The coordinate of the second vertex of the triangle</param>
+	/// <param name="destTriV3">The coordinate of the third vertex of the triangle</param>
+	/// <returns>0 -> Does not intersect or collide; 1 -> Rectangle is inside of Triangle; 2 -> Rectangle intersects the Triangle</returns>
+	public static int RectangleInTriangle(Vector2 sourceRectTL, Vector2 sourceRectBR, Vector2 destTriV1, Vector2 destTriV2, Vector2 destTriV3)
+	{
+		(Vector2 Start, Vector2 End)[] RectLines = [(sourceRectTL, new(sourceRectTL.X, sourceRectBR.Y)), (new(sourceRectTL.X, sourceRectBR.Y), sourceRectBR), (sourceRectBR, new(sourceRectBR.X, sourceRectTL.Y)), (new(sourceRectBR.X, sourceRectTL.Y), sourceRectTL)];
+		(Vector2 Start, Vector2 End)[] TriLines = [(destTriV1, destTriV2), (destTriV2, destTriV3), (destTriV3, destTriV1)];
+		for (int i = 0; i < 4; i++)
+			for (int ii = 0; ii < 3; ii++)
+			{
+				if (LineIntersect(RectLines[i], TriLines[ii]))
+					return 2;
+			}
+		return InTriangle(destTriV1, destTriV2, destTriV3, sourceRectTL) && InTriangle(destTriV1, destTriV2, destTriV3, sourceRectBR) && InTriangle(destTriV1, destTriV2, destTriV3, new Vector2(sourceRectTL.X, sourceRectBR.Y)) && InTriangle(destTriV1, destTriV2, destTriV3, new Vector2(sourceRectBR.X, sourceRectTL.Y)) ? 1 : 0;
+	}
+	/// <summary>
+	/// Checks if two rectangles collide or intersect
+	/// </summary>
+	/// <param name="sourceTL">The coordinate of the top left corner of the source rectangle</param>
+	/// <param name="sourceBR">The coordinate of the bottom right corner of the source rectangle</param>
+	/// <param name="destTL">The coordinate of the top left corner of the destination rectangle</param>
+	/// <param name="destBR">The coordinate of the bottom right corner of the destination rectangle</param>
+	/// <returns>0 -> Does not intersect or collide; 1 -> Source rectangle is inside Destination rectangle; 2 -> Source rectangle intersects with Destination rectangle</returns>
+	public static int RectangleInRectangle(Vector2 sourceTL, Vector2 sourceBR, Vector2 destTL, Vector2 destBR)
+	{
+		RectangleF source = new(new(sourceTL.X, sourceTL.Y), new(sourceBR.X, sourceBR.Y)),
+					dest = new(new(destTL.X, destTL.Y), new(destBR.X, destBR.Y));
+		return dest.Contains(source) ? 1 : dest.IntersectsWith(source) ? 2 : 0;
+	}
+	/// <summary>
+	/// Checks whether two polygons are colliding
+	/// </summary>
+	/// <param name="polygonA">The list of vertices of the first polygon (In clockwise order)</param>
+	/// <param name="polygonB">The list of vertices of the second polygon (In clockwise order)</param>
+	/// <returns></returns>
+	public static bool PolygonCollide(Vector2[] polygonA, Vector2[] polygonB)
+	{
+		//Triangulate the polygons
+		List<Tuple<int, int, int>> polygonAIndices = DrawingLab.GetIndices(polygonA);
+		List<Tuple<int, int, int>> polygonBIndices = DrawingLab.GetIndices(polygonB);
+		for (int i = 0; i < polygonAIndices.Count; i++)
+		{
+			//Current triangle of polygon A
+			Tuple<int, int, int> curAIndices = polygonAIndices[i];
+			Vector2 A1 = polygonA[curAIndices.Item1], A2 = polygonA[curAIndices.Item2], A3 = polygonA[curAIndices.Item3];
+			for (int j = 0; j < polygonBIndices.Count; j++)
+			{
+				//Current triangle of polygon B
+				Tuple<int, int, int> curBIndices = polygonBIndices[j];
+				Vector2 B1 = polygonB[curBIndices.Item1], B2 = polygonB[curBIndices.Item2], B3 = polygonB[curBIndices.Item3];
+				//If any of the vertices of one triangle is inside the other triangle, then the two polygons are colliding
+				if (InTriangle(A1, A2, A3, B1) || InTriangle(A1, A2, A3, B2) || InTriangle(A1, A2, A3, B3) ||
+					InTriangle(B1, B2, B3, A1) || InTriangle(B1, B2, B3, A2) || InTriangle(B1, B2, B3, A3))
+					return true;
+			}
+		}
+		return false;
+	}
+	#endregion
+	/// <summary>
+	/// Converts a float to a string, regardless of decimal separator
+	/// </summary>
+	/// <param name="val">The value to convert to string</param>
+	/// <param name="digits">The rounding digit of the string</param>
+	/// <returns>The string of the float</returns>
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	public static string FloatToString(float val, int digits = 0)
+	{
+		string padMeth = "0.";
+		for (int i = 0; i < digits; i++)
+			padMeth += "0";
+		return Round(val, digits).ToString(padMeth).Replace(',', '.');
+	}
+	/// <summary>
+	/// Converts a float from a string, regardless of decimal separator
+	/// </summary>
+	/// <param name="str">The string to convert to a float</param>
+	/// <returns>The float from string</returns>
+	[MethodImpl(MethodImplOptions.AggressiveInlining), Obsolete("Use string.ToFloat() instead")]
+	public static float FloatFromString(string str) => str.ToFloat();
+	/// <summary>
+	/// Returns the minimal angle difference between two angles
+	/// </summary>
+	/// <param name="rot1">The first angle</param>
+	/// <param name="rot2">The second angle</param>
+	/// <returns>The angle difference, range is [0, 180]</returns>
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	public static float RotationDist(float rot1, float rot2) => MathF.Min((rot1 + 360 - rot2) % 360, (rot2 + 360 - rot1) % 360);
+	/// <summary>
+	/// Returns the minimal angle difference between two angles
+	/// </summary>
+	/// <param name="rot1">The first angle</param>
+	/// <param name="rot2">The second angle</param>
+	/// <returns>The angle difference, [0, 180]</returns>
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	public static float MinRotate(float rot1, float rot2)
+	{
+		if (MathF.Abs(rot1 - rot2) <= 0.001f)
+			return 0f;
+		float a1 = (rot2 + 360 - rot1) % 360;
+		return a1 <= 180 ? a1 : -((rot1 + 360 - rot2) % 360);
+	}
+	/// <summary>
+	/// Returns the value raised to the specific amount of power, maintaining it's original sign
+	/// </summary>
+	/// <param name="val">The value to raise</param>
+	/// <param name="pow">The power to raise to</param>
+	/// <returns>The number raised to the power <paramref name="pow"/> maintaining the sign of <paramref name="val"/>.</returns>
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	public static float SignedPow(float val, float pow) => val >= 0 ? Pow(val, pow) : -Pow(-val, pow);
+	/// <summary>
+	/// Adjusted <see cref="Tanh(float)"/> value, used for smooth transition. range and domain are both [0, 1]
+	/// </summary>
+	/// <param name="val"></param>
+	/// <returns></returns>
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	public static float Sigmoid01(float val) => (Tanh(val * 6 - 3) / 0.99505f + 1) / 2f;
+	/// <summary>
+	/// Gets the radian equivalent of the angle in degrees
+	/// </summary>
+	/// <param name="angle">The angle to convert to radians</param>
+	/// <returns>The angle in radians</returns>
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	public static float GetRadian(float angle) => angle / 180 * MathF.PI;
+	/// <summary>
+	/// Gets the degree equivalent of the angle in radians
+	/// </summary>
+	/// <param name="angle">The angle to convert to degrees</param>
+	/// <returns>The angle in degrees</returns>
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	public static float GetAngle(float angle) => angle / MathF.PI * 180;
+	/// <summary>
+	/// Gets a random value at [<paramref name="x"/>, <paramref name="y"/>]
+	/// </summary>
+	/// <param name="x">The minimum integer</param>
+	/// <param name="y">The maximum integer</param>
+	/// <returns>The random integer</returns>
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	public static int GetRandom(int x, int y) => rander.Next(x, y + 1);
+	/// <summary>
+	/// Gets a random value at [<paramref name="x"/>, <paramref name="y"/>]
+	/// </summary>
+	/// <param name="x">The minimum value</param>
+	/// <param name="y">The maximum value</param>
+	/// <returns>The random value</returns>
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	public static float GetRandom(float x, float y) => float.Lerp(x, y, (float)rander.NextDouble());
+	/// <summary>
+	/// Gets a random value from the specified values
+	/// </summary>
+	/// <typeparam name="T">Can be any type</typeparam>
+	/// <param name="inputs">The values for getting</param>
+	/// <returns>The random value from the specified values</returns>
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	public static T RandIn<T>(params T[] inputs) => inputs[GetRandom(0, inputs.Length - 1)];
+	/// <summary>
+	/// Hashes the given string
+	/// </summary>
+	/// <param name="s">The string to hash</param>
+	/// <returns>The hashed value</returns>
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	public static uint StringHash(string s) => Convert.ToUInt32(QuickPow(97, GetHashCode(s)) % (1u << 31));
+	/// <summary>
+	/// Gets the hash code of the string
+	/// </summary>
+	/// <param name="s">The string to hash</param>
+	/// <returns>The hash code</returns>
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	private static ulong GetHashCode(string s)
+	{
+		ulong res = 0;
+		foreach (char c in s)
+			res = res * 131 + Convert.ToUInt64((int)c);
+		return res;
+	}
+	/// <summary>
+	/// Raises <paramref name="a"/> by the power of <paramref name="b"/>.
+	/// </summary>
+	/// <param name="a">The value to raise</param>
+	/// <param name="b">The power to raise to</param>
+	/// <returns><paramref name="a"/> raised to the power of <paramref name="b"/></returns>
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	public static ulong QuickPow(ulong a, ulong b)
+	{
+		ulong ret = 1, pow = a;
+
+		while (b != 0)
+		{
+			if ((b & 1) == 1)
+				ret *= pow;
+			pow *= pow;
+			b /= 2;
+		}
+		return ret;
+	}
+	/// <summary>
+	/// Value wrap-around of <paramref name="a"/> between [0, <paramref name="b"/>]
+	/// </summary>
+	/// <param name="a">The value to wrap around</param>
+	/// <param name="b">The max value that can be attained by <paramref name="a"/></param>
+	/// <returns>The wrapped value</returns>
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	public static int Posmod(int a, int b)
+	{
+		int value = a % b;
+		while ((value < 0 && b > 0) || (value > 0 && b < 0))
+			value += b;
+		return value;
+	}
+	/// <summary>
+	/// Value wrap-around of <paramref name="a"/> between [0, <paramref name="b"/>]
+	/// </summary>
+	/// <param name="a">The value to wrap around</param>
+	/// <param name="b">The max value that can be attained by <paramref name="a"/></param>
+	/// <returns>The wrapped value</returns>
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	public static float Posmod(float a, float b)
+	{
+		float value = a % b;
+		while ((value < 0 && b > 0) || (value > 0 && b < 0))
+			value += b;
+		return value;
+	}
+	/// <summary>
+	/// RSA encryption for a string
+	/// </summary>
+	/// <param name="password">The string to encrypt</param>
+	/// <param name="rsaKeyPublic">The key of encryption</param>
+	/// <returns>The encrypted string</returns>
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	public static string Encrypt(string password, string rsaKeyPublic)
+	{
+		RSACryptoServiceProvider rsa = new();
+		rsa.FromXmlString(rsaKeyPublic);
+		return Convert.ToBase64String(rsa.Encrypt(Encoding.ASCII.GetBytes(password), false));
+	}
+	/// <summary>
+	/// RSA decryption of a string
+	/// </summary>
+	/// <param name="base64Origin">The string to decrypt</param>
+	/// <param name="rsaKeyPrivate">The key of encryption</param>
+	/// <returns>The decrypted string</returns>
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	public static string Decrypt(string base64Origin, string rsaKeyPrivate)
+	{
+		RSACryptoServiceProvider rsa = new();
+		rsa.FromXmlString(rsaKeyPrivate);
+
+		byte[] buffer = Convert.FromBase64String(base64Origin);
+		byte[] DecryptBuffer = rsa.Decrypt(buffer, false);
+		string str = Encoding.UTF8.GetString(DecryptBuffer);
+
+		return str;
+	}
+	/// <summary>
+	/// Check whether the value is inside of a range
+	/// </summary>
+	/// <typeparam name="T">Any type that is a <see cref="IComparable"/></typeparam>
+	/// <param name="value">The value to check</param>
+	/// <param name="min">The minimum range</param>
+	/// <param name="max">The maximum range</param>
+	/// <returns>Whether value is [<paramref name="min"/>,<paramref name="max"/>]</returns>
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	public static bool InRange<T>(this T value, T min, T max) where T : IComparable => value.CompareTo(min) >= 0 && value.CompareTo(max) <= 0;
+	/// <summary>
+	/// Gets the sum of the arithmetic sequence
+	/// </summary>
+	/// <param name="start">The first term of the sequence</param>
+	/// <param name="diff">The difference between each term in the sequence</param>
+	/// <param name="items">The number of items in the sequence</param>
+	/// <returns>The sum of the sequence</returns>
+	public static float ArithmeticSum(float start, float diff, float items) => (start + start + diff * (items - 1)) * items / 2;
+	/// <summary>
+	/// Gets the sum of the geometric sequence
+	/// </summary>
+	/// <param name="start">The first term of the sequence</param>
+	/// <param name="ratio">The ratio between each term in the sequence</param>
+	/// <param name="items">The number of items in the sequence</param>
+	/// <returns>The sum of the sequence</returns>
+	public static float GeometricSum(float start, float ratio, float items) => start * (1 - Pow(ratio, items)) / (1 - ratio);
+	#region Vector functions
+	/// <summary>
+	/// Gets the distance of a point to a line
+	/// </summary>
+	/// <param name="Point">The point to evaluate</param>
+	/// <param name="Start">The first end of the line</param>
+	/// <param name="End">The second end of the line</param>
+	/// <returns>The distance of the point to line</returns>
+	[Obsolete("Use Vector2.DistanceToLine() instead"), MethodImpl(MethodImplOptions.AggressiveInlining)]
+	public static float DistanceToLine(Vector2 Point, Vector2 Start, Vector2 End) => Point.DistanceToLine(Start, End);
+	/// <summary>
+	/// Returns the scalar projection of a vector onto the given vector
+	/// </summary>
+	/// <param name="origin">The vector to project</param>
+	/// <param name="vec">The vector to project to</param>
+	/// <returns>The scalar projection of a vector</returns>
+	[MethodImpl(MethodImplOptions.AggressiveInlining), Obsolete("Use Vector2.ScalarProject() instead")]
+	public static float ScalarProject(Vector2 origin, Vector2 vec) => origin.ScalarProject(vec);
+	/// <summary>
+	/// Projects a vector onto the given vector
+	/// </summary>
+	/// <param name="origin">The vector to project</param>
+	/// <param name="vec">The vector to project to</param>
+	/// <returns>The projected vector</returns>
+	[MethodImpl(MethodImplOptions.AggressiveInlining), Obsolete("Use Vector2.Project() instead")]
+	public static Vector2 Project(Vector2 origin, Vector2 vec) => origin.Project(vec);
+	/// <summary>
+	/// Rotates the vector by the given angle in degrees
+	/// </summary>
+	/// <param name="origin">The original vector</param>
+	/// <param name="rot">The amount of degrees to rotate</param>
+	/// <returns>The rotated vector</returns>
+	[MethodImpl(MethodImplOptions.AggressiveInlining), Obsolete("Use Vector2.RotateDegrees() instead")]
+	public static Vector2 Rotate(Vector2 origin, float rot) => origin.RotateDegrees(rot);
+	/// <summary>
+	/// Rotates the vector by the given angle in radians
+	/// </summary>
+	/// <param name="origin">The original vector</param>
+	/// <param name="rad">The amount of degrees to rotate in radians</param>
+	/// <returns>The rotated vector</returns>
+	[MethodImpl(MethodImplOptions.AggressiveInlining), Obsolete("Use Vector2.Rotate() instead")]
+	public static Vector2 RotateRadian(Vector2 origin, float rad) => Vector2.Rotate(origin, rad);
+	/// <summary>
+	/// Get the angle in degrees between the two vectors
+	/// </summary>
+	/// <param name="start">The starting vector</param>
+	/// <param name="end">The ending vector</param>
+	/// <returns>The angle between the two vectors in degrees</returns>
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	public static float Direction(Vector2 start, Vector2 end) => (end - start).Direction();
+	/// <summary>
+	/// Gets the direction of the vector with respect to the origin in degrees
+	/// </summary>
+	/// <param name="vec">The vector to check</param>
+	/// <returns>The angle of the vector in degrees</returns>
+	[MethodImpl(MethodImplOptions.AggressiveInlining), Obsolete("Use Vector2.Direction() instead")]
+	public static float Direction(Vector2 vec) => vec.Direction();
+	/// <summary>
+	/// The determinant/cross product of two 2D vectors
+	/// </summary>
+	/// <param name="vec">The first vector</param>
+	/// <param name="vec2">The second vector</param>
+	/// <returns>The determinant/cross product</returns>
+	[MethodImpl(MethodImplOptions.AggressiveInlining), Obsolete("Use Vector2.Cross() instead")]
+	public static float Cross(Vector2 vec, Vector2 vec2) => vec.Cross(vec2);
+	/// <summary>
+	/// The cross product of two 3D vectors
+	/// </summary>
+	/// <param name="vec">The first vector</param>
+	/// <param name="vec2">The second vector</param>
+	/// <returns>The cross product</returns>
+	[MethodImpl(MethodImplOptions.AggressiveInlining), Obsolete("Use Vector3.Cross() instead")]
+	public static Vector3 Cross(Vector3 vec, Vector3 vec2) => vec.Cross(vec2);
+	/// <summary>
+	/// Calculates the <see cref="Vector2"/> using the given <paramref name="length"/> and <paramref name="angle"/>.
+	/// </summary>
+	/// <param name="length">The specified length of the vector</param>
+	/// <param name="angle">The specified angle (in degrees)</param>
+	/// <returns></returns>
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	public static Vector2 GetVector2(float length, float angle) => new Vector2(MathF.Cos(GetRadian(angle)), Sin(GetRadian(angle))) * length;
+	/// <summary>
+	/// Gets the distance between two vectors
+	/// </summary>
+	/// <param name="P1">The first vector</param>
+	/// <param name="P2">The second vector</param>
+	/// <returns></returns>
+	[MethodImpl(MethodImplOptions.AggressiveInlining), Obsolete("Use Vector2.Distance instead")]
+	public static float GetDistance(Vector2 P1, Vector2 P2) => Vector2.Distance(P1, P2);
+	/// <summary>
+	/// The cosine value from vector calculation, see <see href="https://en.wikipedia.org/wiki/Cosine_similarity"/> for more information
+	/// </summary>
+	/// <param name="a">The first vector</param>
+	/// <param name="b">The second vector</param>
+	/// <returns>The cosine value of the angle between the two vectors</returns>
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	public static float Cos(Vector2 a, Vector2 b) => Vector2.Dot(a, b) / (a.Length() * b.Length());
+	#endregion
+}

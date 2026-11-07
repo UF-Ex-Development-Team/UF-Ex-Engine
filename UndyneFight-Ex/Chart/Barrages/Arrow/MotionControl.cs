@@ -1,0 +1,141 @@
+﻿using UndyneFight_Ex.Settings;
+using static UndyneFight_Ex.Fight.Functions;
+
+namespace UndyneFight_Ex.Entities;
+
+public partial class Arrow : ICustomMotion
+{
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	private void PositionCalculate()
+	{
+		additiveRotation = (RotationRoute?.Invoke(this) ?? 0) + CentreRotationOffset;
+
+		if (PositionRoute == null)
+		{
+			if (RotateType == 1)
+			{
+				distance = (BlockTime - GametimeF) * Speed;
+				if (distance >= 186)
+					distance -= 75 * 1.5f;
+				else if (distance >= 36)
+					distance -= (distance - 36) * 0.75f;
+
+				float d = float.Clamp(distance - 36, 0, 37.5f) / 37.5f;
+				Rotation = missionRotation + d * float.Sqrt(d) * 180 * RotateScale;
+			}
+			else
+			{
+				distance = (BlockTime - GametimeF) * Speed;
+				Rotation = missionRotation + (hasGreenFlag ? 45 : 0);
+			}
+			if (IsRotate)
+				Rotation += (BlockTime - GametimeF) * 2.5f * RotateScale;
+
+			float trueSPP = speedUpPlace * ((Way % 2 == 0) ? 1.35f : 1.0f);
+			if (IsSpeedup && distance >= trueSPP)
+				distance -= (distance - trueSPP) / 1.8f;
+			else if (RandBool() && IsSpeedup)
+			{
+				Vector2 speed = MathUtil.GetVector2(Rand(2, 3f), Rotation + Rand(-25, 25));
+				Color color = RandBool() ? Color.Red : Color.Orange;
+				GameStates.InstanceCreate(new Particle(color, speed, 20 + Rand(0, 12), Centre, FightResources.Sprites.fireParticle));
+			}
+			if (!Mission.FixArrow)
+				Rotation += Mission.Rotation;
+			if (distance < 0)
+			{
+				if (LateWaitingScale <= 0.4f)
+					distanceFactor = 0.4f / LateWaitingScale;
+				distance *= 0.72f * float.Max(float.Max(0.4f, LateWaitingScale), 1 + distance / 200f);
+			}
+
+			float extraDist = (Scale - 1) * 10f + additiveDistance;
+			Vector2 offset = Offset;
+			if (RotateOffset)
+				offset = offset.RotateDegrees(Rotation + CentreRotationOffset);
+			Centre = MissionCentre + MathUtil.GetVector2(distance + 44 + 5 + extraDist + (hasGreenFlag ? 5 : 0), Rotation + CentreRotationOffset) + offset;
+		}
+		else
+		{
+			Vector2 res1 = PositionRoute(this);
+			float dist = res1.Length(), rotation = res1.Direction();
+			rotation += Rotation;
+			dist += 44 + 5 + (hasGreenFlag ? 5 : 0);
+			float extraDist = (Scale - 1) * 10f + additiveDistance;
+			Centre = MissionCentre + MathUtil.GetVector2(dist + extraDist, rotation + CentreRotationOffset) * SettingsManager.DataLibrary.ArrowSpeed;
+		}
+
+		if (lastScale != Scale)
+		{
+			Scale *= basicScale;
+			lastScale = Scale;
+		}
+	}
+
+	private float lastScale = -0.5f;
+
+	private float distanceFactor = 1.0f;
+
+	private float additiveRotation = 0;
+	private float additiveDistance = 0;
+
+	/// <inheritdoc/>
+	public Func<ICustomMotion, Vector2> PositionRoute { get; set; } = null;
+	/// <inheritdoc/>
+	public Func<ICustomMotion, float> RotationRoute { get; set; } = null;
+	/// <inheritdoc/>
+	public float[] RotationRouteParam
+	{
+		get => throw new NotImplementedException();
+		set => throw new NotImplementedException();
+	}
+	/// <inheritdoc/>
+	public float[] PositionRouteParam
+	{
+		get => throw new NotImplementedException();
+		set => throw new NotImplementedException();
+	}
+#if NET10_0_OR_GREATER
+	/// <summary>
+	/// The target position of the arrow (Default the heart)
+	/// </summary>
+	public Vector2 MissionCentre
+	{
+		set
+		{
+			_anchorOnHeart = false;
+			field = value;
+		}
+		get => _anchorOnHeart ? Mission.Centre : field;
+	}
+#else
+	/// <summary>
+	/// The target position of the arrow (Default the heart)
+	/// </summary>
+	public Vector2 MissionCentre
+	{
+		set
+		{
+			_anchorOnHeart = false;
+			_missionCentre = value;
+		}
+		get => _anchorOnHeart ? Mission.Centre : _missionCentre;
+	}
+	private Vector2 _missionCentre;
+#endif
+	private bool _anchorOnHeart = true;
+	/// <inheritdoc/>
+	public Vector2 CentrePosition => Centre - Mission.Centre;
+	/// <summary>
+	/// The speed scale of the arrow when it goes near the soul (Default 0.5f)
+	/// </summary>
+	public float LateWaitingScale { get; set; } = 0.5f;
+	/// <summary>
+	/// The position offset of the arrow
+	/// </summary>
+	public Vector2 Offset { get; set; }
+	/// <summary>
+	/// Whether <see cref="CentreRotationOffset"/> is enabled
+	/// </summary>
+	public bool RotateOffset { get; set; } = false;
+}

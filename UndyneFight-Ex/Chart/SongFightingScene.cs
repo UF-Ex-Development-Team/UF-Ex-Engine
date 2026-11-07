@@ -1,0 +1,543 @@
+﻿using Microsoft.Xna.Framework.Graphics;
+using System.Diagnostics;
+using UndyneFight_Ex.Server;
+using UndyneFight_Ex.SongSystem;
+using UndyneFight_Ex.UserService;
+using static UndyneFight_Ex.DebugState;
+using static UndyneFight_Ex.Fight.Functions;
+using static UndyneFight_Ex.GameStates;
+
+namespace UndyneFight_Ex.Entities;
+
+/// <summary>
+/// Chart scene
+/// </summary>
+public class SongFightingScene : FightScene
+{
+	private class SongConditionOptimizer : Entity
+	{
+#if DEBUG
+		private static readonly Process curProcess = Process.GetCurrentProcess();
+#endif
+		public SongConditionOptimizer() => UpdateIn120 = true;
+		public override void Draw()
+		{
+#if DEBUG
+			if (ShowRenderCost)
+			{
+				FightResources.Font.NormalFont.Draw($"Update:{GameMain.UpdateCost:F0}ms\nRender:{GameMain.RenderMs}ms\n{Math.Round(GameMain.RenderTicks / 10000.0, 3)} ticks\nObj. Cnt.:{GameStates.Objects.Count}\nMemory:{curProcess.WorkingSet64 / (1024 * 1024)}MB", new(40, 150), Color.White, 0.7f, 0.1f);
+			}
+#endif
+		}
+		public override void Update()
+		{
+			//Syncs the music position to the current chart time
+			float idealPos = GametimeF - GametimeDelta + CurrentFightingScene.PlayOffset;
+			float curTime = CurrentFightingScene.music.TryGetPosition(out bool result);
+			if (result && MathF.Abs(curTime - idealPos) > 20 && idealPos > 0 && curTime > 0)
+				CurrentFightingScene.SetSongPosition(idealPos);
+		}
+	}
+	/// <summary>
+	/// Sets the current song to the given position
+	/// </summary>
+	/// <param name="position">The position to set to</param>
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	public void SetSongPosition(float position) => music?.TrySetPosition(position);
+	/// <summary>
+	/// Sets the parameters of the chart
+	/// </summary>
+	/// <param name="waveset">The <see cref="IWaveSet"/> interface of the chart</param>
+	/// <param name="songIllustration">The illustration of the chart</param>
+	/// <param name="difficulty">The current difficulty of the chart</param>
+	/// <param name="musicPath">The file path to the music of the chart</param>
+	/// <param name="judgeState">The judgement state of the current chart</param>
+	/// <param name="mode">The game mode of the chart (Default <see cref="GameMode.None"/></param>
+	/// <param name="unload">Unload assets (Default true)</param>
+	public class SceneParams(IWaveSet waveset, Texture2D songIllustration, int difficulty, string musicPath, JudgementState judgeState, GameMode mode = GameMode.None, bool unload = true)
+	{
+		/// <summary>
+		/// The <see cref="IWaveSet"/> of the current chart
+		/// </summary>
+		public IWaveSet Waveset = FightSystem.AllWaves[waveset.FightName].Wave;
+		/// <summary>
+		/// The current difficulty of the chart
+		/// </summary>
+		public int difficulty = difficulty;
+		/// <summary>
+		/// The name of the directory of the music
+		/// </summary>
+		private string MusicDirectory => Path.Combine("Content", "Musics", Waveset.Music);
+		/// <summary>
+		/// The path to the music file
+		/// </summary>
+		private string MusicPath => Directory.Exists(MusicDirectory) ? Path.Combine(MusicDirectory, "song") : MusicDirectory;
+		/// <summary>
+		/// The current <see cref="GameMode"/> of the chart
+		/// </summary>
+		public GameMode mode = mode;
+		/// <summary>
+		/// The current <see cref="JudgementState"/> of the chart
+		/// </summary>
+		public JudgementState JudgeState = judgeState;
+		/// <summary>
+		/// Is the music an ogg file
+		/// </summary>
+		public bool MusicOptimized { get; set; } = false;
+		/// <summary>
+		/// Loads the music and stores the chart illustration
+		/// </summary>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public void LoadMusic()
+		{
+			SongIllustration = GlobalData.GetWavePaint(Waveset);
+			Music = new(MusicOptimized ? MusicPath + ".ogg" : MusicPath, Loader);
+			MusicDuration = (float)Music.SongDuration.TotalSeconds * 62.5f;
+		}
+		/// <summary>
+		/// The current music of the chart
+		/// </summary>
+		public Audio Music { get; private set; }
+		/// <summary>
+		/// Whether the music is loaded
+		/// </summary>
+		public bool MusicLoaded => Music != null;
+		/// <summary>
+		/// The duration of the music (In frames)
+		/// </summary>
+		public float MusicDuration { get; private set; }
+		/// <summary>
+		/// The illustration of the chart
+		/// </summary>
+		public Texture2D SongIllustration { get; set; } = songIllustration;
+		/// <summary>
+		/// Whether the assets will be unloaded
+		/// </summary>
+		public bool IsUnload { get; private set; } = unload;
+	}
+	/// <summary>
+	/// The waveset of the current chart
+	/// </summary>
+	internal IWaveSet waveset;
+	private readonly SceneParams currentParam;
+	private int appearTime = 0;
+	/// <inheritdoc/>
+	public SongFightingScene(SceneParams _params, Challenge challenge = null)
+	{
+		_challenge = challenge;
+		lastParam = currentParam = _params;
+		difficulty = _params.difficulty;
+	}
+	private readonly Challenge _challenge = null;
+	/// <summary>
+	/// The accuracy bar
+	/// </summary>
+	public AccuracyBar Accuracy { get; set; }
+	internal StateShower ScoreState { get; set; }
+	internal TimeShower Time { get; set; }
+	/// <summary>
+	/// The current <see cref="JudgementState"/> of the chart
+	/// </summary>
+	public JudgementState JudgeState => currentParam.JudgeState;
+	/// <summary>
+	/// The current <see cref="SongSystem.Difficulty"/> of the chart
+	/// </summary>
+	public Difficulty CurrentDifficulty => (Difficulty)currentParam.difficulty;
+
+	private GameMode mode;
+	/// <summary>
+	/// The current <see cref="GameMode"/> of the chart
+	/// </summary>
+	public override GameMode Mode => mode;
+	/// <summary>
+	/// Whether the chart is loaded
+	/// </summary>
+	private volatile bool songLoaded = false;
+	/// <summary>
+	/// The music of the chart
+	/// </summary>
+	private Audio music;
+	/// <summary>
+	/// Whether the chart is forced to end
+	/// </summary>
+	private bool forceEnd = false;
+	/// <summary>
+	/// The offset of the music of the chart (In frames)
+	/// </summary>
+	public float PlayOffset { get; set; } = 0;
+	/// <summary>
+	/// Whether the chart will automatically end after the song ends
+	/// </summary>
+	public bool AutoEnd { get; set; } = true;
+	/// <summary>
+	/// Whether the HP had reached 0 in <see cref="GameMode.Practice"/>
+	/// </summary>
+	internal bool HPReached0 = false;
+	/// <summary>
+	/// Whether the soul had became green in <see cref="GameMode.NoGreenSoul"/>
+	/// </summary>
+	internal bool GreenSoulUsed = false;
+	/// <summary>
+	/// Whether an item was used (that affects result) during the chart
+	/// </summary>
+	internal bool ItemUsed = false;
+	/// <summary>
+	/// The score multiplier
+	/// </summary>
+	internal float ScoreMultiplier = 1;
+	/// <summary>
+	/// The damage taken throughout the chart
+	/// </summary>
+	internal float DamageTaken = 0;
+	/// <summary>
+	/// The amount of times the player has died in the chart (For <see cref="GameMode.Practice"/>)
+	/// </summary>
+	internal int DeathCount = 0;
+	/// <summary>
+	/// The illustration of the chart
+	/// </summary>
+	public Texture2D SongIllustration => currentParam.SongIllustration;
+	/// <summary>
+	/// Whether the end of the chart has been invoked
+	/// </summary>
+	private bool endRan = false;
+	/// <summary>
+	/// The restart timer for holding <see cref="InputIdentity.Reset"/>
+	/// </summary>
+	private int restartTimer = 0;
+	/// <summary>
+	/// Forces the chart to end
+	/// </summary>
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	internal void ForceEnd() => forceEnd = true;
+	/// <summary>
+	/// Whether the chart music has been played (Sanity check for negative <see cref="PlayOffset"/>)
+	/// </summary>
+	private bool MusicPlayed = false;
+	private void ProcessItems()
+	{
+		//Sanity check for the 0.5f delay and ignore items if not logged in
+		if (CurrentScene is not SongFightingScene || PlayerManager.CurrentUser == null)
+			return;
+		ScoreMultiplier = 1;
+		foreach (StoreItem item in ShopItemData.UserItems.Values)
+		{
+			//Only process activated items
+			if (!item.Activated)
+				continue;
+			bool ItemVoidScore = (item.Attributes & StoreItem.ItemAttribute.VoidScore) != 0;
+			//Process decoration items
+			if ((item.Attributes & StoreItem.ItemAttribute.Decoration) != 0)
+			{
+				item.Decoration();
+				if (ItemVoidScore)
+					ItemUsed = true;
+			}
+			//Process consumable items
+			if ((item.Attributes & StoreItem.ItemAttribute.Consumable) != 0 && item.TriggerCondition())
+			{
+				item.Used();
+				if (ItemVoidScore)
+					ItemUsed = true;
+			}
+			//Process items that reduces score
+			if (item.Affecting && (item.Attributes & StoreItem.ItemAttribute.ReduceScore) != 0)
+				ScoreMultiplier *= 1 - item.ReducePercentage;
+		}
+	}
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	private void WinFight()
+	{
+		StateShower ss = StateShower.instance;
+		ss.damageTaken = DamageTaken;
+		ss.deathCount = DeathCount;
+		ResetFightState();
+		ResetScene(new WinScene(ss, PlayerInstance.GameAnalyzer));
+	}
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	private void ChallengeSave()
+	{
+		//Save challenge result
+		SongResult result = StateShower.instance.GenerateResult();
+		PlayerManager.RecordMark(currentParam.Waveset.FightName, currentParam.difficulty, result.CurrentMark, result.Score, result.FC, result.AP, result.Accuracy);
+		PlayerManager.Save();
+		ResetFightState();
+		_challenge.ResultBuffer.Add(result);
+		//Move to next challenge chart if not yet done, otherwise move to result scene
+		ResetScene(ChallengeCount == ++CurChallengeNum ? new ChallengeWinScene(_challenge) : new SongLoadingScene(_challenge, ChallengeCharts[1..]));
+	}
+	internal bool IsSpectating = false;
+	internal int SpectatingUser = 0;
+	internal float SpectatingGametimeF = 0;
+	internal float prevTargetGametimeF = 0;
+	private bool AnomalyTriggered = false;
+	private async void InitializeChart()
+	{
+		IsSpectating = false;
+		songLoaded = true;
+		if (OverallNetManager.IsSuccessfullyConnected)
+			MathUtil.rander = new(OverallNetManager.PlayerData.Seed);
+		Task task = new(() =>
+		{
+			SetSongFight();
+			//Play music with offset
+			music = currentParam.Music;
+			if (PlayOffset < 0)
+				DelayEventProcessor.AddInstantEvent(-PlayOffset, () =>
+				{
+					music.Play();
+					MusicPlayed = true;
+				});
+			else
+			{
+				MusicPlayed = true;
+				music.PlayPosition = PlayOffset;
+				music.Play();
+			}
+			InstanceCreate(new SongConditionOptimizer());
+			isInBattle = true;
+			ResetTime();
+			//Initialize Items
+			if (PlayerManager.CurrentUser != null)
+				foreach (StoreItem item in ShopItemData.UserItems.Values)
+				{
+					//Deactivate all items
+					item.Affecting = false;
+					if (item.Activated && (item.Attributes & StoreItem.ItemAttribute.Initialize) != 0)
+						item.InitializeItem();
+				}
+		});
+		task.RunSynchronously();
+		await task;
+	}
+	public void SkipTo(float position)
+	{
+		if (GametimeF >= position)
+			return;
+		HeartAttribute.InvincibleToPhysics = true;
+		while (GametimeF < position)
+		{
+			GametimeDelta += 0.5f;
+			PlayOffset += 0.5f;
+			GameMain.gameTime += 0.5f;
+			CurrentScene.Update();
+		}
+		HeartAttribute.InvincibleToPhysics = false;
+		SetSongPosition(position);
+	}
+	/// <inheritdoc/>
+	public override void Update()
+	{
+		//Quick restart
+		if (waveset != null)
+		{
+			restartTimer = IsKeyDown(InputIdentity.Reset) ? restartTimer++ : 0;
+			if ((restartTimer >= 60 || (IsKeyDown(InputIdentity.Reset) && IsKeyDown(InputIdentity.Alternate))) && !OverallNetManager.IsSuccessfullyConnected)
+			{
+				PlayDeath();
+				goto BaseUpdate;
+			}
+		}
+		//Play Music
+		if (++appearTime >= 30)
+		{
+			if (!songLoaded)
+				InitializeChart();
+			else if (waveset != null)
+			{
+				//Process live spectating data
+				if (OverallNetManager.IsSuccessfullyConnected && !OverallNetManager.PlayerData.IsAlive)
+				{
+					List<OverallNetManager.ConnectedUserData> aliveUsers = [.. OverallNetManager.ConnectedUsers.Where(user => user.IsAlive)];
+					//Fallback if no users are alive and somehow the game didn't move to result screen
+					if (aliveUsers.Count > 0)
+					{
+						//Cycle spectating users
+						SpectatingUser = MathUtil.Posmod(SpectatingUser + (IsKeyPressed120f(InputIdentity.MainRight) ? 1 : IsKeyPressed120f(InputIdentity.MainLeft) ? -1 : 0), aliveUsers.Count);
+						OverallNetManager.ConnectedUserData curSpecUser = aliveUsers[SpectatingUser];
+						if (prevTargetGametimeF != curSpecUser.SurviveTime)
+							prevTargetGametimeF = SpectatingGametimeF;
+						SpectatingGametimeF = curSpecUser.SurviveTime;
+						//Only process difference if time difference exceeds 2 frames
+						float timeDelta = SpectatingGametimeF - GametimeF;
+						if (MathF.Abs(timeDelta) > 2f)
+						{
+							//When behind the spectated user, speed up
+							float targetSpeed = 1 + timeDelta * 0.02f;
+							GameMain.GameSpeed = timeDelta > 0 ? MathHelper.Clamp(targetSpeed, 1, 2) : MathHelper.Clamp(targetSpeed, 0.1f, 1);
+						}
+						HeartAttribute.DamageTaken = 0;
+						HeartAttribute.KRDamage = 0;
+						HeartAttribute.HP = curSpecUser.CurrentHP;
+						HeartAttribute.MaxHP = curSpecUser.CurrentMaxHP;
+						HeartAttribute.KRHP = curSpecUser.CurrentKR;
+						NameShower.OverrideName = curSpecUser.PlayerName;
+						HeartAttribute.Speed = HeartAttribute.JumpSpeed = HeartAttribute.UmbrellaSpeed = 0;
+						//Sync soul position and data
+						vec2[] soulPositions = OverallNetManager.DeserializeVector2Array(curSpecUser.SoulPosition);
+						for (int i = 0; i < Player.hearts.Count; i++)
+						{
+							Player.Heart curHeart = Player.hearts[i];
+							if (i < soulPositions?.Length)
+								curHeart.Centre = soulPositions[i];
+							float[] rotArr = OverallNetManager.DeserializeFloatArray(curSpecUser.SoulRotation);
+							if (rotArr?.Length > 0)
+								curHeart.Rotation = rotArr[i];
+							Player.hearts[i] = curHeart;
+						}
+					}
+					else if (!endRan) //Fall to result
+						EndSong();
+				}
+				UpdateSong();
+			}
+			//Items
+			ProcessItems();
+			DelayEventProcessor.AddInstantEvent(0.5f, ProcessItems);
+		}
+		//Invoke the ending event when song finishes
+		bool needEnd = waveset != null && MusicPlayed && appearTime > currentParam.MusicDuration * 2 && (music?.IsEnd ?? false);
+		if (needEnd && !endRan)
+		{
+			StateShower.instance.EndAction?.Invoke();
+			endRan = true;
+		}
+		//Fade out when chart ends
+		if ((needEnd && AutoEnd) || forceEnd)
+		{
+			Surface.Normal.drawingAlpha -= 0.015f;
+			ScreenDrawing.MasterAlpha -= 0.015f;
+			if (Surface.Normal.drawingAlpha < 0 && ScreenDrawing.MasterAlpha < 0)
+			{
+				ScreenDrawing.MasterAlpha = 1;
+				if (_challenge == null || !IsInChallenge)
+				{
+					//Set chart as finished in net data
+					if (OverallNetManager.PlayerData != null)
+					{
+						OverallNetManager.ConnectedUserData curDat = OverallNetManager.PlayerData;
+						curDat.ChartEnded = true;
+						if (curDat.IsAlive)
+							curDat.SurviveTime = GametimeF;
+						OverallNetManager.PlayerData = curDat;
+					}
+					WinFight();
+				}
+				else
+					ChallengeSave();
+			}
+		}
+		mode = currentParam.mode;
+	BaseUpdate:
+		base.Update();
+	}
+	/// <summary>
+	/// Initializes the UI elements of the chart and initializes the chart itself
+	/// </summary>
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	private void SetSongFight()
+	{
+		for (int i = 0; i < 4; i++)
+			ShieldAuto[i] = (mode & GameMode.Autoplay) != 0;
+		MathUtil.rander = new Random(seed);
+		InstanceCreate(Accuracy = new());
+		InstanceCreate(ScoreState = new StateShower(waveset = (IWaveSet)Activator.CreateInstance(currentParam.Waveset.GetType()), currentParam.difficulty, JudgeState, currentParam.mode, currentParam.MusicDuration));
+		InstanceCreate(Time = new());
+		//This function MUST be called before the creation of the player for proper
+		//garbage collection to prevent bugs such as:
+		//Blue soul not moving after giving force
+		StartBattle();
+		InstanceCreate(PlayerInstance = new());
+		InstanceCreate(HPBar = new());
+		if (waveset is GameObject obj)
+			InstanceCreate(obj);
+		waveset.Start();
+		if (OverallNetManager.IsSuccessfullyConnected)
+		{
+			OverallNetManager.ConnectedUserData curDat = OverallNetManager.PlayerData;
+			curDat.CurrentHP = HeartAttribute.HP;
+			curDat.CurrentKR = HeartAttribute.KRHP;
+			curDat.CurrentMaxHP = HeartAttribute.MaxHP;
+			OverallNetManager.PlayerData = curDat;
+		}
+		else
+			CheckAnomaly();
+	}
+	/// <summary>
+	/// Main chart processing logic
+	/// </summary>
+	private void UpdateSong()
+	{
+		if (waveset is IWaveSetS waveS)
+			waveS.Chart();
+		else
+		{
+			switch (currentParam.difficulty)
+			{
+				case 0:
+					waveset.Noob();
+					break;
+				case 1:
+					waveset.Easy();
+					break;
+				case 2:
+					waveset.Normal();
+					break;
+				case 3:
+					waveset.Hard();
+					break;
+				case 4:
+					waveset.Extreme();
+					break;
+				case 5:
+					waveset.ExtremePlus();
+					break;
+			}
+		}
+		CheckAnomaly();
+	}
+	private void CheckAnomaly()
+	{
+		if (PlayerManager.UserLogin && (waveset.Attributes.AnomalyUnlockedCondition() ? Settings.SettingsManager.DataLibrary.AnomalyReplay : waveset.Attributes.AnomalyCondition()) && !AnomalyTriggered && !OverallNetManager.IsSuccessfullyConnected)
+		{
+			waveset.Attributes.AnomalyOnTrigger?.Invoke();
+			AnomalyTriggered = true;
+		}
+	}
+	//debug
+	private void TempIntro()
+	{
+		// debug
+		_challenge.ResultBuffer.Add(new SongResult(SkillMark.Impeccable, 0, 0.99f, false, false));
+		_challenge.ResultBuffer.Add(new SongResult(SkillMark.Excellent, 0, 0.98f, true, false));
+		_challenge.ResultBuffer.Add(new SongResult(SkillMark.Acceptable, 0, 0.96f, true, true));
+		ResetScene(new ChallengeWinScene(_challenge));
+	}
+	/// <inheritdoc/>
+	public override void Dispose()
+	{
+		if (!IsInChallenge)
+			difficulty = -1;
+		music?.Stop();
+		currentParam.Music?.Stop();
+		base.Dispose();
+		waveset = null;
+	}
+	/// <summary>
+	/// Call player death event
+	/// </summary>
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	protected override void PlayerDied()
+	{
+		if (OverallNetManager.IsSuccessfullyConnected)
+		{
+			OverallNetManager.ConnectedUserData curDat = OverallNetManager.PlayerData;
+			curDat.SurviveTime = GametimeF;
+			curDat.IsAlive = false;
+			OverallNetManager.PlayerData = curDat;
+			Log("User died.", true);
+		}
+		else
+			ResetScene(new TryAgainScene(StateShower.instance));
+	}
+}

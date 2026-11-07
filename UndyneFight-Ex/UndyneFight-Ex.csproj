@@ -1,0 +1,76 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <RollForward>Major</RollForward>
+    <PublishReadyToRun>false</PublishReadyToRun>
+    <TieredCompilation>false</TieredCompilation>
+    <Configurations>Debug;Release;Beta</Configurations>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <GenerateDocumentationFile>False</GenerateDocumentationFile>
+    <Version>0.5.0</Version>
+    <Description>UF-Ex Engine</Description>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
+    <ImplicitUsings>enable</ImplicitUsings>
+	<MonoGameExtendedPipelineReferencePath>$(MSBuildThisFileDirectory)pipeline-references</MonoGameExtendedPipelineReferencePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>True</Optimize>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <DebugType>embedded</DebugType>
+    <IsTrimmable>False</IsTrimmable>
+    <IsAotCompatible>True</IsAotCompatible>
+    <IsPublishable>False</IsPublishable>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Beta|AnyCPU'">
+    <Optimize>True</Optimize>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <DebugType>embedded</DebugType>
+    <IsTrimmable>False</IsTrimmable>
+    <IsAotCompatible>True</IsAotCompatible>
+    <IsPublishable>False</IsPublishable>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <DebugType>embedded</DebugType>
+    <IsTrimmable>True</IsTrimmable>
+    <IsAotCompatible>True</IsAotCompatible>
+    <IsPublishable>False</IsPublishable>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Content\bin\**" />
+    <Compile Remove="Content\obj\**" />
+    <Compile Remove="Native\**" />
+    <EmbeddedResource Remove="Content\bin\**" />
+    <EmbeddedResource Remove="Content\obj\**" />
+    <EmbeddedResource Remove="Native\**" />
+    <None Remove="Content\bin\**" />
+    <None Remove="Content\obj\**" />
+    <None Remove="Native\**" />
+    <None Remove="Icon.ico" />
+    <None Remove="Icon.bmp" />
+    <EmbeddedResource Include="Icon.ico" />
+    <EmbeddedResource Include="Icon.bmp" />
+    <None Include="Chart\Barrages\Bone\Bone Base.cs" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="5.9.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="MonoGame.Extended" Version="6.1.1" />
+    <PackageReference Include="MonoGame.Extended.Content.Pipeline" Version="6.1.1" />
+    <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.6" />
+    <PackageReference Include="MonoGame.Content.Builder.Task" Version="3.8.6" />
+    <PackageReference Include="NAudio" Version="3.3.0" />
+    <PackageReference Include="NAudio.Vorbis" Version="3.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="14.0.1-beta2" />
+    <PackageReference Include="OpenTK.Audio.OpenAL" Version="5.0.0-pre.14" />
+    <PackageReference Include="SpaceWizards.Sdl" Version="1.1.2" />
+  </ItemGroup>
+  <Target Name="RestoreDotnetTools" BeforeTargets="Restore">
+    <Message Text="Restoring dotnet tools" Importance="High" />
+    <Exec Command="dotnet tool restore" />
+  </Target>
+</Project>

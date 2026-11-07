@@ -1,0 +1,117 @@
+﻿using static UndyneFight_Ex.FightResources;
+
+namespace UndyneFight_Ex.Entities;
+
+/// <summary>
+/// The accuracy bar at the bottom of the screen
+/// </summary>
+public class AccuracyBar : Entity
+{
+	internal class AccuracyPointer : Entity
+	{
+		private Color drawingColor;
+		private readonly float timeDel;
+		private float alpha = 4;
+		private readonly int areaBelong;
+		public AccuracyPointer(float timedel, DefaultValues.ScoreType remark)
+		{
+			UpdateIn120 = true;
+			if (remark == DefaultValues.ScoreType.Miss)
+				areaBelong = -1;
+			drawingColor = remark switch
+			{
+				DefaultValues.ScoreType.Miss => Color.Silver,
+				DefaultValues.ScoreType.Okay => Color.LawnGreen,
+				DefaultValues.ScoreType.Nice => Color.CadetBlue,
+				DefaultValues.ScoreType.Perfect => Color.Gold,
+				_ => Color.Orange,
+			};
+			timeDel = timedel;
+		}
+		public override void Start()
+		{
+			Entity fatherEntity = FatherObject as Entity;
+			if (areaBelong == 0)
+				Centre = fatherEntity.Centre + new Vector2(float.Clamp(MathUtil.SignedPow(timeDel, 1.3f) * 6f, -70, 70), 0);
+			else if (areaBelong == -1)
+				Centre = fatherEntity.Centre + new Vector2(-75, 0);
+		}
+
+		public override void Draw()
+		{
+			float ra = MathF.Min(alpha, 1) * (Fight.Functions.ScreenDrawing.UIColor.A / 255f);
+			GeneralDraw(Sprites.accuracyPointers[1], Centre, drawingColor * ra, depth: 0.2f);
+			GeneralDraw(Sprites.accuracyPointers[0], Centre - new Vector2(3, 0), Color.White * ra, depth: 0.01f);
+			GeneralDraw(Sprites.accuracyPointers[2], Centre + new Vector2(3, 0), Color.White * ra, depth: 0.01f);
+		}
+
+		public override void Update()
+		{
+			controlLayer = CurrentFightingScene.Accuracy.controlLayer; 
+			if ((alpha -= 0.009f) < 0)
+				Dispose();
+		}
+	}
+	public AccuracyBar()
+	{
+		Depth = DefaultValues.DEFAULT_ACCURACY_BAR_DEPTH;
+		Image = Sprites.accuracyBar;
+		Centre = DefaultValues.DEFAULT_ACCURACY_BAR_POSITION;
+		UpdateIn120 = true;
+	}
+
+	/// <inheritdoc/>
+	public override void Draw() => GeneralDraw(Image, Centre, Color.White * (Fight.Functions.ScreenDrawing.UIColor.A / 255f), depth: 0.15f);
+
+	private int appearTime = 0;
+	/// <inheritdoc/>
+	public override void Update()
+	{
+		Centre = Centre * 0.9f + new Vector2(320, 482) * 0.1f;
+		if (++appearTime % 4 != 0 || !EnabledGolden)
+			return;
+		Arrow[] arrows = [.. AllArrows];
+		Array.Sort(arrows);
+		for (int i = 0; i < arrows.Length; i++)
+			arrows[i].GoldenMarkIntensity = 0;
+		List<Arrow> timeSame = [];
+		void add()
+		{
+			if (timeSame.Count < 2)
+			{
+				timeSame.Clear();
+				return;
+			}
+			int[] counts = [0, 0, 0, 0];
+			timeSame.ForEach(s => { s.GoldenMarkIntensity = 1; counts[s.Way]++; });
+			for (int i = 0; i < 4; i++)
+			{
+				if (counts[i] <= 1)
+					continue;
+				timeSame.ForEach(s => { if (s.Way == i) s.GoldenMarkIntensity = 2; });
+			}
+			timeSame.Clear();
+		}
+		for (int i = 0; i < arrows.Length; i++)
+		{
+			if (i != 0 && arrows[i].BlockTime - arrows[i - 1].BlockTime > SpecifyTime)
+				add();
+			timeSame.Add(arrows[i]);
+		}
+		add();
+	}
+	private float SpecifyTime { get; set; } = 0.6f;
+	/// <summary>
+	/// Whether the golden outline of arrows are enabled
+	/// </summary>
+	public bool EnabledGolden { get; set; } = true;
+
+	internal List<Arrow> AllArrows { get; init; } = [];
+	internal Dictionary<string, List<Arrow>> TaggedArrows { get; init; } = [];
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	internal void PushDelta(float time, DefaultValues.ScoreType remark, int col, int way, Player.Heart.ShieldManager shieldManager)
+	{
+		AddChild(new AccuracyPointer(time, remark));
+		shieldManager.ShieldShine(way, col, remark);
+	}
+}

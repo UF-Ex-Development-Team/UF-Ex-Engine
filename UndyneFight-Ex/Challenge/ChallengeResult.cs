@@ -1,0 +1,221 @@
+﻿using Microsoft.Xna.Framework.Graphics;
+using UndyneFight_Ex.SongSystem;
+using static UndyneFight_Ex.Entities.SimplifiedEasing;
+using static UndyneFight_Ex.GameStates;
+
+namespace UndyneFight_Ex.Entities;
+
+internal class ChallengeResult(Challenge challenge) : Entity
+{
+	private Texture2D[] ChartIllustrations;
+	private class SingleResult : Entity
+	{
+		private readonly GLFont NormalFont = Localization.GetFont("NormalFont");
+		private SongResult result;
+		/// <summary>
+		/// The illustration of the single chart
+		/// </summary>
+		private readonly Texture2D illustration;
+		/// <summary>
+		/// 0 -> Normal, 1 -> No Hit, 2 -> AP
+		/// </summary>
+		public int ChartSpecial = 0;
+		public SingleResult(SongResult result, int index, Texture2D illustration, int ExtraAttributes = 0)
+		{
+			ChartSpecial = ExtraAttributes;
+			this.illustration = illustration;
+			this.index = index;
+			collidingBox = new CollideRect(Vector2.Zero, new(575, 91));
+			this.result = result;
+			bool direction = index % 2 == 0;
+			Centre = new Vector2(direction ? -320 : 960, index * 100 + 113);
+			RunEase((s) => Centre = s, EaseOut(60, new Vector2(direction ? -320 : 960, index * 100 + 113), new Vector2(343 - index * 22.5f, index * 100 + 113), EaseState.Quint));
+		}
+		private readonly int index;
+		public override void Start()
+		{
+			Tuple<Type, Difficulty> tuple = (FatherObject as ChallengeResult).completedChallenge.Routes[index];
+			IWaveSet curChart = Activator.CreateInstance(tuple.Item1) as IWaveSet;
+			songName = GlobalData.GetWavesetDisplayName(curChart);
+			difficulty = tuple.Item2;
+			difColor = (int)difficulty switch
+			{
+				0 => Color.White,
+				1 => Color.LawnGreen,
+				2 => Color.LightBlue,
+				3 => Color.MediumPurple,
+				4 => Color.Orange,
+				_ => Color.Gray
+			};
+			remarkColor = (mark = result.CurrentMark) switch
+			{
+				SkillMark.Failed => Color.DarkRed,
+				SkillMark.Ordinary => Color.Green,
+				SkillMark.Acceptable => Color.SpringGreen,
+				SkillMark.Respectable => Color.LightSkyBlue,
+				SkillMark.Excellent => Color.MediumPurple,
+				SkillMark.Eminent => Color.OrangeRed,
+				SkillMark.Impeccable => Color.Goldenrod,
+				_ => throw new ArgumentException($"{nameof(mark)} has something wrong", nameof(mark))
+			};
+		}
+		private SkillMark mark;
+		private Difficulty difficulty;
+		private Color difColor, remarkColor;
+		private string songName;
+		/// <summary>
+		/// The size of the screen
+		/// </summary>
+		private static readonly Vector2 ScreenSize = new(640, 480);
+		/// <summary>
+		/// The color of the background illustration
+		/// </summary>
+		private static readonly Color IllustrationColor = Color.Lerp(Color.Black, Color.White, 0.5f);
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		private void DrawOutlinedText(string text, Vector2 pos, float thickness, Color outline_col, Color main_col, float scale = 1)
+		{
+			GLFont font = Localization.GetFont("NormalFont");
+			scale *= Localization.GetFontScale("NormalFont");
+			for (int i = 0; i < 8; i++)
+				font.Draw(text, pos + MathUtil.GetVector2(thickness, i * 45), outline_col, scale, Depth);
+			font.Draw(text, pos, main_col, scale, Depth + 0.01f);
+		}
+		public override void Draw()
+		{
+			CollideRect RectBox = CollidingBox;
+			Vector2[] Vertices =
+			[
+				RectBox.TopLeft + new Vector2(10, 0),
+				RectBox.TopRight + new Vector2(10, 0),
+				RectBox.BottomRight - new Vector2(10, 0),
+				RectBox.BottomLeft - new Vector2(10, 0)
+			];
+			SpriteBatch.DrawVertex(FightResources.Sprites.pixUnit, Depth - 0.2f,
+				new VertexPositionColorTexture(new Vector3(Vertices[0], Depth), Color.White, Vector2.Zero),
+				new VertexPositionColorTexture(new Vector3(Vertices[1], Depth), difColor, Vector2.UnitX),
+				new VertexPositionColorTexture(new Vector3(Vertices[2], Depth), remarkColor, Vector2.One),
+				new VertexPositionColorTexture(new Vector3(Vertices[3], Depth), difColor, Vector2.UnitY));
+			RectBox.Width -= 5;
+			RectBox.Height -= 5;
+			RectBox.Offset(new Vector2(2.5f));
+			Vertices =
+			[
+				RectBox.TopLeft + new Vector2(10, 0),
+				RectBox.TopRight + new Vector2(10, 0),
+				RectBox.BottomRight - new Vector2(10, 0),
+				RectBox.BottomLeft - new Vector2(10, 0)
+			];
+			SpriteBatch.DrawVertex(illustration, Depth - 0.15f,
+				new VertexPositionColorTexture(new Vector3(Vertices[0], Depth), IllustrationColor, Vertices[0] / ScreenSize),
+				new VertexPositionColorTexture(new Vector3(Vertices[1], Depth), IllustrationColor, Vertices[1] / ScreenSize),
+				new VertexPositionColorTexture(new Vector3(Vertices[2], Depth), IllustrationColor, Vertices[2] / ScreenSize),
+				new VertexPositionColorTexture(new Vector3(Vertices[3], Depth), IllustrationColor, Vertices[3] / ScreenSize));
+
+			DrawOutlinedText(songName, CollidingBox.TopLeft + new Vector2(18, 15.5f), 2, Color.Black, Color.White);
+			string diffStr = DefaultValues.DifficultyTypes[(int)difficulty].Name;
+			DrawOutlinedText(diffStr, CollidingBox.TopRight - new Vector2(15 + NormalFont.SFX.MeasureString(diffStr).X, -12.5f), 2, Color.Black, difColor);
+			DrawOutlinedText(MathUtil.FloatToString(float.Clamp(result.Accuracy * 100f, 0, 105), 2) + "%", CollidingBox.TopLeft + new Vector2(18, 58), 2, Color.Black, result.Accuracy >= 1 ? Color.Gold : Color.Wheat);
+			if (ChartSpecial == 1)
+				DrawOutlinedText(Localization.GetText("Challenge.NoHit"), CollidingBox.TopLeft + new Vector2(430, 37.5f), 2, Color.Black, Color.Orange, 0.8f);
+			else if (ChartSpecial == 2)
+				DrawOutlinedText(Localization.GetText("Challenge.AP"), CollidingBox.TopLeft + new Vector2(410, 37.5f), 2, Color.Black, Color.Gold, 0.8f);
+			DrawOutlinedText(result.Score.ToString(), CollidingBox.TopLeft + new Vector2(158, 58), 2, Color.Black, Color.White);
+			DrawOutlinedText(mark.ToString(), CollidingBox.TopLeft + new Vector2(410, 75) - NormalFont.SFX.MeasureString(mark.ToString()) / 2, 2, Color.Black, remarkColor, 1.32f);
+		}
+
+		public override void Update() { }
+	}
+	private readonly Challenge completedChallenge = challenge;
+
+	public override void Start() => CreateResultUI(completedChallenge);
+
+	private float totalAccuracy = 0;
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	private void CreateResultUI(Challenge challenge)
+	{
+		ChartIllustrations = new Texture2D[challenge.ResultBuffer.Count];
+		List<SongResult>.Enumerator enumerator = challenge.ResultBuffer.GetEnumerator();
+		curShowAccuracy = 0;
+		totalAccuracy = 0;
+		totalX = -120;
+		appearTime = 0;
+		for (int i = 0; i < 3; i++)
+		{
+			float delay = i * 12;
+			int t = i;
+			DelayEventProcessor.AddInstantEvent(delay, () =>
+			{
+				_ = enumerator.MoveNext();
+				int FCorAP = 0;
+				if (enumerator.Current.FC)
+					FCorAP = 1;
+				if (enumerator.Current.AP)
+					FCorAP = 2;
+				AddChild(new SingleResult(enumerator.Current, t, ChartIllustrations[t++], FCorAP));
+				totalAccuracy += float.Clamp(enumerator.Current.Accuracy, 0, 1.05f);
+			});
+			IWaveSet cur = Activator.CreateInstance(challenge.Routes[i].Item1) as IWaveSet;
+			ChartIllustrations[i] = GlobalData.GetWavePaint(cur);
+		}
+		alpha = 0;
+	}
+	private string result;
+	private Color resultColor;
+	private float curShowAccuracy;
+	private float totalX = -120;
+	public override void Draw()
+	{
+		float acc = totalAccuracy * 100;
+		result = acc switch
+		{
+			_ when acc >= 300 => "SkillRating.Impeccable",
+			_ when acc >= 297 => "SkillRating.Eminent",
+			_ when acc >= 294 => "SkillRating.Excellent",
+			_ when acc >= 288 => "SkillRating.Respectable",
+			_ when acc >= 270 => "SkillRating.Acceptable",
+			_ => "SkillRating.Failed"
+		};
+		bool plus = acc is (>= 291 and < 294) or (>= 279 and < 288);
+		resultColor = acc switch
+		{
+			_ when acc >= 300 => Color.Goldenrod,
+			_ when acc >= 297 => Color.OrangeRed,
+			_ when acc >= 294 => Color.MediumPurple,
+			_ when acc >= 288 => Color.LightSkyBlue,
+			_ when acc >= 270 => Color.SpringGreen,
+			_ => Color.DarkRed
+		};
+		Localization.DrawLocalizedText("Challenge.Result", new Vector2(320, 31), align: Localization.DrawAlign.Middle);
+		Localization.DrawLocalizedText("Challenge.Total%", new Vector2(totalX, 410), [MathUtil.FloatToString(curShowAccuracy * 100, 1)], align: Localization.DrawAlign.Middle, color: Color.Wheat);
+		if (!calcFinished)
+			return;
+		GLFont font = Localization.GetFont("NormalFont");
+		float fontScale = Localization.GetFontScale("NormalFont");
+		if (totalAccuracy >= 300)
+			for (float i = 0; i < 5; i += 0.5f)
+				for (int k = 0; k < 16; k++)
+					font.CentreDraw(Localization.GetText(result) + (plus ? "+" : ""), new Vector2(475, 408) + MathUtil.GetVector2(i * 1.5f, k * 22.5f), Color.Lerp(Color.Black, resultColor, alpha - i * 0.2f), 1.5f * fontScale, 0, 0.5f - i * 0.1f);
+		font.CentreDraw(Localization.GetText(result) + (plus ? "+" : ""), new Vector2(475, 408), Color.Lerp(Color.Black, resultColor, alpha), 1.5f * fontScale, 0, 0.5f);
+		if (appearTime % 60 < 30)
+			Localization.DrawLocalizedText("Challenge.Return", new Vector2(320, 449), [MiscUtil.GetInputKeys(InputIdentity.Confirm)[0]], color: Color.Lime, align: Localization.DrawAlign.Middle);
+	}
+	private bool calcFinished = false;
+	private float alpha = 0;
+	private int appearTime = 0;
+	public override void Update()
+	{
+		if (IsKeyPressed(InputIdentity.Confirm))
+			ResetScene(new GameMenuScene());
+		curShowAccuracy = float.Lerp(curShowAccuracy, totalAccuracy + 0.00002f, 0.07f);
+		calcFinished = MathF.Abs(curShowAccuracy - totalAccuracy) < 0.00003f;
+		if (calcFinished)
+		{
+			totalX = float.Lerp(totalX, 140, 0.12f);
+			appearTime++;
+			if (alpha < 1)
+				alpha += 0.05f;
+		}
+		else
+			totalX = float.Lerp(totalX, 320, 0.12f);
+	}
+}

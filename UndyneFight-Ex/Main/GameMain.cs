@@ -1,0 +1,314 @@
+﻿using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using System.Diagnostics;
+using UndyneFight_Ex.GameInterface;
+using UndyneFight_Ex.Server;
+using static System.MathF;
+using static UndyneFight_Ex.Settings.SettingsManager;
+
+namespace UndyneFight_Ex;
+
+/// <summary>
+/// This is the main type for your game.
+/// </summary>
+internal partial class GameMain : Game
+{
+	internal static float Aspect { get; set; } = 4f / 3f;
+	internal static GameMain instance;
+
+	public static GameWindow CurrentWindow => instance.Window;
+	public static Texture2D[] RegisterTextures = new Texture2D[3];
+
+	public static GraphicsDeviceManager Graphics { get; private set; }
+	public static SpriteBatchEX MissionSpriteBatch { get; private set; }
+
+	public static SpriteEffect SpriteEffect { get; private set; }
+	public static EffectPass SpritePass { get; private set; }
+
+	public static float gameTime = 0;
+
+	public static float shaderParam = 0f;
+
+	public static float GameSpeed = 1;
+
+	public static void ExitGame() => instance.Exit();
+
+	internal GameMain()
+	{
+		instance = this;
+		Graphics = new GraphicsDeviceManager(this);
+		Content.RootDirectory = "Content";
+		TargetElapsedTime = new TimeSpan(0, 0, 0, 0, 8 * 1);
+	}
+	private void Window_TextInput(object? sender, TextInputEventArgs e) => GameStates.EnqueueTextChar(e.Character);
+	/// <summary>
+	/// Allows the game to perform any initialization it needs to before starting to run.
+	/// This is where it can query for any required services and load any non-graphic
+	/// related content.  Calling base.Initialize will enumerate through any components
+	/// and initialize them as well.
+	/// </summary>
+	protected override void Initialize()
+	{
+		Graphics.SynchronizeWithVerticalRetrace = false;
+		Graphics.PreferMultiSampling = true;
+		Graphics.PreferredBackBufferHeight = 480;
+		Graphics.PreferredBackBufferWidth = 640;
+		Window.AllowUserResizing = true;
+		Window.Title = GameStates.GameName;
+		Graphics.ApplyChanges();
+
+		SpriteEffect = new(Graphics.GraphicsDevice);
+		SpritePass = SpriteEffect.CurrentTechnique.Passes[0];
+#if DEBUG
+		debugTarget1 = new RenderTarget2D(GraphicsDevice, 96, 35, true, SurfaceFormat.Color, DepthFormat.None);
+		debugTarget2 = new RenderTarget2D(GraphicsDevice, 96, 35, true, SurfaceFormat.Color, DepthFormat.None);
+#endif
+		finalTarget = new RenderTarget2D(GraphicsDevice, (int)(480f * Aspect), 480, false, SurfaceFormat.Color, DepthFormat.None);
+		RenderProduction.HelperTargets = [
+			new(Graphics.GraphicsDevice, 640, 480, false, SurfaceFormat.Color, DepthFormat.None),
+			new(Graphics.GraphicsDevice, 640, 480, false, SurfaceFormat.Color, DepthFormat.None),
+			new(Graphics.GraphicsDevice, 640, 480, false, SurfaceFormat.Color, DepthFormat.None)
+		];
+		DataLibrary.Initialize();
+		Window.ClientSizeChanged += (s, t) => ClientBoundChanged();
+		Window.TextInput += Window_TextInput;
+		RenderProduction.UpdateBase(new(480f * Aspect, 480));
+		//base.Initialize();
+		LoadContent();
+		DrawingLab.Initialize();
+		MouseSystem.Initialize();
+		UFEXSettings.Update += MouseSystem.Update;
+	}
+	protected override void OnExiting(object sender, ExitingEventArgs args)
+	{
+		GlobalData.cancelTokenSource.Cancel();
+		UnloadContent();
+		base.OnExiting(sender, args);
+	}
+
+	private void ClientBoundChanged()
+	{
+		screenSize = Window.ClientBounds.Size.ToVector2();
+		float trueX = screenSize.X, trueY = screenSize.Y;
+		if (screenSize.X >= screenSize.Y * Aspect)
+			trueX = trueY * Aspect;
+		else
+			trueY = trueX / Aspect;
+
+		RenderProduction.UpdateBase(new(trueX, trueY));
+		GameStates.WindowSizeChanged(new(trueX, trueY));
+	}
+
+	public static void ResetRendering()
+	{
+		DrawFPS = DataLibrary.DrawFPS;
+		instance.ClientBoundChanged();
+		Graphics.SynchronizeWithVerticalRetrace = false;
+		MissionSpriteBatch.DefaultState = DataLibrary.SamplerState switch
+		{
+			"Nearest" => SpriteBatchEX.NearestSample,
+			"3x Linear" => SamplerState.LinearClamp,
+			"Anisotropic" => SamplerState.AnisotropicClamp,
+			_ => throw new Exception("Non-existent SamplerState")
+		};
+	}
+
+	/// <summary>
+	/// LoadContent will be called once per game and is the place to load
+	/// all of your content.
+	/// </summary>
+	protected override async void LoadContent()
+	{
+		Task task = new(()=>
+		{
+			MissionSpriteBatch = new SpriteBatchEX(GraphicsDevice);
+
+#if !DEBUG && REPELL
+             try
+                {
+#endif
+			GlobalResources.Initialize(Content);
+			Localization.Initialize();
+			LoadObject();
+			GameStates.ResetScene(new ResourcesLoadingScene(Content));
+#if !DEBUG && REPELL
+                }
+                catch (Exception e)
+                {  
+                    throw new Exception("The ResourcePack has something wrong!", e);
+                }
+#endif
+			InitializeRendering();
+		});
+		task.RunSynchronously();
+		await task;
+		bool LoadedPreviews = await GlobalData.LoadSongPreviews();
+		PlayerManager.Initialize();
+	}
+
+	/// <summary>
+	/// UnloadContent will be called once per game and is the place to unload
+	/// game-specific content.
+	/// </summary>
+	protected override void UnloadContent()
+	{
+		Content.Unload();
+		GlobalData.Loader.Unload();
+
+		Fight.Functions.Loader.Dispose();
+		base.UnloadContent();
+
+		GC.Collect();
+		if (OverallNetManager.IsConnectedAsClient)
+			ClientLogic.DisconnectFromServer();
+		else if (OverallNetManager.IsConnectedAsServer)
+			ServerLogic.server.Stop();
+	}
+
+	#region RenderTargets
+#if DEBUG
+	private RenderTarget2D debugTarget1;
+	private RenderTarget2D debugTarget2;
+#endif
+
+	private RenderTarget2D finalTarget;
+	/// <summary>
+	/// The texture that the game is currently drawing on
+	/// </summary>
+	public static Texture2D ApplicationSurface => instance.finalTarget;
+	internal Texture2D SetGameoverScreen() => GameStates.GameoverBackground = finalTarget;
+
+	#endregion
+
+	#region fields 
+
+	private static float basicAngle = Atan2(-320, -240);
+	private const float quarterAngle = 0.5f * PI;
+	private static Vector2 screenSize = new(480 * Aspect, 480);
+	private static float screenDistance = Sqrt(360 * 360 + 270 * 270);
+	private static Matrix matrix;
+	public static Matrix ResizeMatrix => matrix;
+
+	internal static Vector2 ScreenSize => screenSize;
+
+	internal static Scene.DrawingSettings CurrentDrawingSettings => GameStates.CurrentScene?.CurrentDrawingSettings;
+
+	internal static bool Update120F { get; private set; }
+
+	#endregion
+
+	#region 反变速
+	private static readonly float speedRematcher = 1.0f;
+	#endregion
+
+
+	private bool escPressed = false;
+	private float escHeld = 0;
+	protected override bool BeginDraw()
+	{
+		float frameTime = 1000f / DrawFPS;
+		if (_totalElapsedMS > frameTime)
+		{
+			_totalElapsedMS -= frameTime;
+			return true;
+		}
+		return false;
+	}
+	public static float DrawFPS { get; set; } = 125f;
+	private float _totalElapsedMS = 0;
+	private readonly Stopwatch UpdateTimer = Stopwatch.StartNew();
+
+	public static float UpdateCost = 0.0f;
+
+	/// <summary>
+	/// Allows the game to run logic such as updating the world,
+	/// checking for collisions, gathering input, and playing audio.
+	/// </summary>
+	/// <param name="gameTime">Provides a snapshot of timing values.</param>
+	protected override void Update(GameTime gameTime)
+	{
+#if DEBUG
+		UpdateTimer.Reset();
+		UpdateTimer.Start();
+#endif
+		_totalElapsedMS += gameTime.ElapsedGameTime.Milliseconds;
+		if (_totalElapsedMS > 100f)
+			_totalElapsedMS /= 2f;
+		#region Event for times
+		TargetElapsedTime = new TimeSpan(0, 0, 0, 0, Math.Max(1, (int)(8f / GameSpeed * speedRematcher)));
+
+		//Pausing
+		if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+		{
+			if (!escPressed)
+				escPressed = true;
+			if (escHeld++ >= 62.5f * 1.5f)
+				Exit();
+		}
+		else
+		{
+			escPressed = false;
+			escHeld = 0;
+		}
+		if (GameStates.IsKeyPressed120f(InputIdentity.FullScreen))
+			ToggleFullScreen();
+		#endregion
+		Update120F = GameMain.gameTime == (int)GameMain.gameTime;
+		Localization.ProcessHotReload();
+		GameStates.StateUpdate();
+
+		ResetDrawingSettings();
+
+		if (GameStates.IsKeyPressed120f(InputIdentity.ScreenShot))
+		{
+			string FileDirectory = Path.Combine(GameStates.SavePath, "Datas", "Screenshot");
+			if (!Directory.Exists(FileDirectory))
+				Directory.CreateDirectory(FileDirectory);
+			DateTime Time = DateTime.Now;
+			string time = $"{Time.Year}_{Time.Month}_{Time.Day}-{Time.Hour}_{Time.Minute}_{Time.Second}";
+			Stream stream = new FileStream(GlobalData.GetTruePath($"{FileDirectory}\\{time}.png"), FileMode.Create);
+			finalTarget.SaveAsJpeg(stream, finalTarget.Width, finalTarget.Height);
+			stream.Flush();
+			stream.Dispose();
+		}
+		UFEXSettings.DoUpdate();
+
+#if DEBUG
+		UpdateCost = (float)UpdateTimer.Elapsed.TotalMilliseconds;
+#endif
+		base.Update(gameTime);
+	}
+
+	private bool _isFullScreen = false;
+
+	public static bool OnFocus => instance.IsActive;
+
+	public void ToggleFullScreen()
+	{
+		_isFullScreen ^= true;
+		Window.AllowUserResizing = !_isFullScreen;
+		if (_isFullScreen)
+		{
+			GraphicsAdapter adapter = Graphics.GraphicsDevice.Adapter;
+			Graphics.PreferredBackBufferWidth = adapter.CurrentDisplayMode.Width;
+			Graphics.PreferredBackBufferHeight = adapter.CurrentDisplayMode.Height;
+			try
+			{ Audio.PrepareForDeviceChangeAll(); }
+			catch { }
+			Graphics.ToggleFullScreen();
+			Graphics.ApplyChanges();
+		}
+		else
+		{
+			Graphics.PreferredBackBufferWidth = (int)(480 * Aspect);
+			Graphics.PreferredBackBufferHeight = 480;
+			ClientBoundChanged();
+			Graphics.ApplyChanges();
+			try
+			{ Audio.PrepareForDeviceChangeAll(); }
+			catch { }
+			Graphics.ToggleFullScreen();
+		}
+		Graphics.HardwareModeSwitch = _isFullScreen;
+	}
+}

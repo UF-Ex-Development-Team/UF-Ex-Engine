@@ -1,0 +1,53 @@
+﻿namespace UndyneFight_Ex.Entities;
+
+public partial class Player
+{
+	internal class BrokenHeart : Entity
+	{
+		private static vec2 playerPos;
+		private col showingColor;
+		public BrokenHeart()
+		{
+			Centre = playerPos = heartInstance.Centre;
+			FightResources.Sounds.die1.CreateInstance().Play();
+			showingColor = heartInstance.CurrentMoveState.StateColor;
+			Image = FightResources.Sprites.brokenHeart;
+		}
+		public override void Draw() => GeneralDraw(Image, Centre, showingColor);
+
+		private int appearTime = 0;
+		public override void Update()
+		{
+			if (++appearTime != 50)
+				return;
+			FightResources.Sounds.die2.CreateInstance().Play();
+			for (int i = 0, c = MathUtil.GetRandom(4, 6); i < c; i++)
+				GameStates.InstanceCreate(new HeartPiece(playerPos, showingColor));
+			Dispose();
+		}
+	}
+	internal class HeartPiece : Entity
+	{
+		private static CollideRect screen = new(-50, -50, 740, 580);
+		private vec2 speed;
+		private readonly float rotateSpeed;
+		private col color;
+		public HeartPiece(vec2 startPos, col color)
+		{
+			Depth = DefaultValues.DEFAULT_HEART_PIECE_DEPTH;
+			this.color = color;
+			rotateSpeed = MathUtil.GetRandom(-40, 40) / 300f;
+			Centre = startPos;
+			speed = new vec2(MathUtil.GetRandom(-40, 40), MathUtil.GetRandom(-50, 20)) / 8f;
+			Image = FightResources.Sprites.heartPieces[MathUtil.GetRandom(0, 4)];
+		}
+		public override void Draw() => GeneralDraw(Image, Centre, color, vec2.One, Rotation);
+		public override void Update()
+		{
+			if (!screen.Contain(Centre += speed))
+				Dispose();
+			Rotation += rotateSpeed;
+			speed.Y += 0.12f;
+		}
+	}
+}
