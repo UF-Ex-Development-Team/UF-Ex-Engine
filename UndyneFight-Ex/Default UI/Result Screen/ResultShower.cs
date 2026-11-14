@@ -455,8 +455,8 @@ internal partial class StateShower
 				if (AC && i == 0)
 				{
 					string noHitText = Localization.GetText("ResultScreen.NoHit");
-					NormalFont.DrawContainedText(noHitText, new Rectangle(147, upperY + 12, 120, 30), Color.Black, 1, 0.119f);
-					NormalFont.DrawContainedText(noHitText, new Rectangle(145, upperY + 10, 120, 30), Color.Orange, 1, 0.12f);
+					NormalFont.DrawContainedText(noHitText, new Rectangle(147, upperY + 12, 120, 30), Color.Black * alpha, 1, 0.119f);
+					NormalFont.DrawContainedText(noHitText, new Rectangle(145, upperY + 10, 120, 30), Color.Orange * alpha, 1, 0.12f);
 				}
 			}
 			//PAccuracy
